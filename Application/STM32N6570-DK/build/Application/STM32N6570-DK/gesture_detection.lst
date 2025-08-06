@@ -1,0 +1,1606 @@
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 1
+
+
+   1              		.arch armv8.1-m.main
+   2              		.fpu fpv5-d16
+   3              		.arch_extension dsp
+   4              		.arch_extension fp
+   5              		.arch_extension fp.dp
+   6              		.arch_extension mve
+   7              		.arch_extension mve.fp
+   8              		.eabi_attribute 5, "cortex-m55"
+   9              		.eabi_attribute 28, 1
+  10              		.eabi_attribute 20, 1
+  11              		.eabi_attribute 21, 1
+  12              		.eabi_attribute 23, 3
+  13              		.eabi_attribute 24, 1
+  14              		.eabi_attribute 25, 1
+  15              		.eabi_attribute 26, 1
+  16              		.eabi_attribute 30, 4
+  17              		.eabi_attribute 34, 1
+  18              		.eabi_attribute 38, 1
+  19              		.eabi_attribute 18, 4
+  20              		.file	"gesture_detection.c"
+  21              		.text
+  22              	.Ltext0:
+  23              		.cfi_sections	.debug_frame
+  24              		.file 1 "Src/gesture_detection.c"
+  25              		.section	.text.Gesture_Init,"ax",%progbits
+  26              		.align	1
+  27              		.global	Gesture_Init
+  28              		.syntax unified
+  29              		.thumb
+  30              		.thumb_func
+  32              	Gesture_Init:
+  33              	.LVL0:
+  34              	.LFB3339:
+   1:Src/gesture_detection.c **** /**
+   2:Src/gesture_detection.c ****  ******************************************************************************
+   3:Src/gesture_detection.c ****  * @file    gesture_detection.c
+   4:Src/gesture_detection.c ****  * @author  Your Name
+   5:Src/gesture_detection.c ****  * @brief   Gesture detection implementation
+   6:Src/gesture_detection.c ****  ******************************************************************************
+   7:Src/gesture_detection.c ****  */
+   8:Src/gesture_detection.c **** 
+   9:Src/gesture_detection.c **** #include "gesture_detection.h"
+  10:Src/gesture_detection.c **** #include "main.h"
+  11:Src/gesture_detection.c **** #include "display_spe.h"
+  12:Src/gesture_detection.c **** #include <math.h>
+  13:Src/gesture_detection.c **** #include <string.h>
+  14:Src/gesture_detection.c **** 
+  15:Src/gesture_detection.c **** 
+  16:Src/gesture_detection.c **** void Gesture_Init(GestureDetector_t *detector)
+  17:Src/gesture_detection.c **** {
+  35              		.loc 1 17 1 view -0
+  36              		.cfi_startproc
+  37              		@ args = 0, pretend = 0, frame = 0
+  38              		@ frame_needed = 0, uses_anonymous_args = 0
+  39              		@ link register save eliminated.
+  18:Src/gesture_detection.c ****     memset(detector, 0, sizeof(GestureDetector_t));
+  40              		.loc 1 18 5 view .LVU1
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 2
+
+
+  41 0000 4FF40362 		mov	r2, #2096
+  42 0004 0021     		movs	r1, #0
+  43 0006 FFF7FEBF 		b	memset
+  44              	.LVL1:
+  45              		.loc 1 18 5 is_stmt 0 view .LVU2
+  46              		.cfi_endproc
+  47              	.LFE3339:
+  49              		.section	.text.Gesture_CalculateDistance,"ax",%progbits
+  50              		.align	1
+  51              		.global	Gesture_CalculateDistance
+  52              		.syntax unified
+  53              		.thumb
+  54              		.thumb_func
+  56              	Gesture_CalculateDistance:
+  57              	.LVL2:
+  58              	.LFB3340:
+  19:Src/gesture_detection.c ****     detector->last_detected_gesture = GESTURE_NONE;
+  20:Src/gesture_detection.c ****     detector->current_display_gesture = GESTURE_NONE;
+  21:Src/gesture_detection.c ****     detector->gesture_display_timeout = 0;
+  22:Src/gesture_detection.c **** }
+  23:Src/gesture_detection.c **** 
+  24:Src/gesture_detection.c **** float32_t Gesture_CalculateDistance(float32_t x1, float32_t y1, float32_t x2, float32_t y2)
+  25:Src/gesture_detection.c **** {
+  59              		.loc 1 25 1 is_stmt 1 view -0
+  60              		.cfi_startproc
+  61              		@ args = 0, pretend = 0, frame = 0
+  62              		@ frame_needed = 0, uses_anonymous_args = 0
+  63              		@ link register save eliminated.
+  26:Src/gesture_detection.c ****     float32_t dx = x2 - x1;
+  64              		.loc 1 26 5 view .LVU4
+  65              		.loc 1 26 15 is_stmt 0 view .LVU5
+  66 0000 31EE401A 		vsub.f32	s2, s2, s0
+  67              	.LVL3:
+  27:Src/gesture_detection.c ****     float32_t dy = y2 - y1;
+  68              		.loc 1 27 5 is_stmt 1 view .LVU6
+  69              		.loc 1 27 15 is_stmt 0 view .LVU7
+  70 0004 31EEE00A 		vsub.f32	s0, s3, s1
+  71              	.LVL4:
+  28:Src/gesture_detection.c ****     return sqrtf(dx * dx + dy * dy);
+  72              		.loc 1 28 5 is_stmt 1 view .LVU8
+  73              		.loc 1 28 31 is_stmt 0 view .LVU9
+  74 0008 20EE000A 		vmul.f32	s0, s0, s0
+  75              	.LVL5:
+  76              		.loc 1 28 12 view .LVU10
+  77 000c A1EE010A 		vfma.f32	s0, s2, s2
+  78 0010 FFF7FEBF 		b	sqrtf
+  79              	.LVL6:
+  80              		.loc 1 28 12 view .LVU11
+  81              		.cfi_endproc
+  82              	.LFE3340:
+  84              		.section	.text.Gesture_CalculateSpeed,"ax",%progbits
+  85              		.align	1
+  86              		.global	Gesture_CalculateSpeed
+  87              		.syntax unified
+  88              		.thumb
+  89              		.thumb_func
+  91              	Gesture_CalculateSpeed:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 3
+
+
+  92              	.LVL7:
+  93              	.LFB3341:
+  29:Src/gesture_detection.c **** }
+  30:Src/gesture_detection.c **** 
+  31:Src/gesture_detection.c **** float32_t Gesture_CalculateSpeed(KeypointHistory_t *history, uint8_t current_idx, uint8_t frames_ba
+  32:Src/gesture_detection.c **** {
+  94              		.loc 1 32 1 is_stmt 1 view -0
+  95              		.cfi_startproc
+  96              		@ args = 0, pretend = 0, frame = 0
+  97              		@ frame_needed = 0, uses_anonymous_args = 0
+  33:Src/gesture_detection.c ****     if (frames_back >= GESTURE_HISTORY_SIZE) return 0.0f;
+  98              		.loc 1 33 5 view .LVU13
+  99              		.loc 1 33 8 is_stmt 0 view .LVU14
+ 100 0000 092A     		cmp	r2, #9
+  32:Src/gesture_detection.c ****     if (frames_back >= GESTURE_HISTORY_SIZE) return 0.0f;
+ 101              		.loc 1 32 1 view .LVU15
+ 102 0002 38B5     		push	{r3, r4, r5, lr}
+ 103              		.cfi_def_cfa_offset 16
+ 104              		.cfi_offset 3, -16
+ 105              		.cfi_offset 4, -12
+ 106              		.cfi_offset 5, -8
+ 107              		.cfi_offset 14, -4
+ 108              		.loc 1 33 8 view .LVU16
+ 109 0004 02D9     		bls	.L4
+ 110              	.LVL8:
+ 111              	.L6:
+ 112              		.loc 1 33 53 discriminator 1 view .LVU17
+ 113 0006 9FED140A 		vldr.32	s0, .L10
+ 114              	.L3:
+  34:Src/gesture_detection.c **** 
+  35:Src/gesture_detection.c ****     uint8_t prev_idx = (current_idx - frames_back + GESTURE_HISTORY_SIZE) % GESTURE_HISTORY_SIZE;
+  36:Src/gesture_detection.c **** 
+  37:Src/gesture_detection.c ****     float32_t distance = Gesture_CalculateDistance(
+  38:Src/gesture_detection.c ****         history[prev_idx].x, history[prev_idx].y,
+  39:Src/gesture_detection.c ****         history[current_idx].x, history[current_idx].y
+  40:Src/gesture_detection.c ****     );
+  41:Src/gesture_detection.c **** 
+  42:Src/gesture_detection.c ****     uint32_t time_diff = history[current_idx].timestamp - history[prev_idx].timestamp;
+  43:Src/gesture_detection.c ****     if (time_diff == 0) return 0.0f;
+  44:Src/gesture_detection.c **** 
+  45:Src/gesture_detection.c ****     return distance / (time_diff / 1000.0f); // Speed per second
+  46:Src/gesture_detection.c **** }
+ 115              		.loc 1 46 1 view .LVU18
+ 116 000a 38BD     		pop	{r3, r4, r5, pc}
+ 117              	.LVL9:
+ 118              	.L4:
+  35:Src/gesture_detection.c **** 
+ 119              		.loc 1 35 5 is_stmt 1 view .LVU19
+  37:Src/gesture_detection.c ****         history[prev_idx].x, history[prev_idx].y,
+ 120              		.loc 1 37 5 view .LVU20
+  35:Src/gesture_detection.c **** 
+ 121              		.loc 1 35 75 is_stmt 0 view .LVU21
+ 122 000c 0A23     		movs	r3, #10
+  35:Src/gesture_detection.c **** 
+ 123              		.loc 1 35 37 view .LVU22
+ 124 000e 8C1A     		subs	r4, r1, r2
+  35:Src/gesture_detection.c **** 
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 4
+
+
+ 125              		.loc 1 35 51 view .LVU23
+ 126 0010 0A34     		adds	r4, r4, #10
+  35:Src/gesture_detection.c **** 
+ 127              		.loc 1 35 75 view .LVU24
+ 128 0012 B4FBF3F2 		udiv	r2, r4, r3
+ 129              	.LVL10:
+  35:Src/gesture_detection.c **** 
+ 130              		.loc 1 35 75 view .LVU25
+ 131 0016 03FB1244 		mls	r4, r3, r2, r4
+  39:Src/gesture_detection.c ****     );
+ 132              		.loc 1 39 16 view .LVU26
+ 133 001a 00EB0115 		add	r5, r0, r1, lsl #4
+  38:Src/gesture_detection.c ****         history[current_idx].x, history[current_idx].y
+ 134              		.loc 1 38 16 view .LVU27
+ 135 001e 00EB0414 		add	r4, r0, r4, lsl #4
+  37:Src/gesture_detection.c ****         history[prev_idx].x, history[prev_idx].y,
+ 136              		.loc 1 37 26 view .LVU28
+ 137 0022 D5ED011A 		vldr.32	s3, [r5, #4]
+ 138 0026 95ED001A 		vldr.32	s2, [r5]
+ 139 002a D4ED010A 		vldr.32	s1, [r4, #4]
+ 140 002e 94ED000A 		vldr.32	s0, [r4]
+ 141 0032 FFF7FEFF 		bl	Gesture_CalculateDistance
+ 142              	.LVL11:
+  42:Src/gesture_detection.c ****     if (time_diff == 0) return 0.0f;
+ 143              		.loc 1 42 14 view .LVU29
+ 144 0036 EB68     		ldr	r3, [r5, #12]
+ 145 0038 E268     		ldr	r2, [r4, #12]
+  37:Src/gesture_detection.c ****         history[prev_idx].x, history[prev_idx].y,
+ 146              		.loc 1 37 26 view .LVU30
+ 147 003a B0EE407A 		vmov.f32	s14, s0
+ 148              	.LVL12:
+  42:Src/gesture_detection.c ****     if (time_diff == 0) return 0.0f;
+ 149              		.loc 1 42 5 is_stmt 1 view .LVU31
+  43:Src/gesture_detection.c **** 
+ 150              		.loc 1 43 5 view .LVU32
+  43:Src/gesture_detection.c **** 
+ 151              		.loc 1 43 8 is_stmt 0 view .LVU33
+ 152 003e 9B1A     		subs	r3, r3, r2
+ 153              	.LVL13:
+  43:Src/gesture_detection.c **** 
+ 154              		.loc 1 43 8 view .LVU34
+ 155 0040 E1D0     		beq	.L6
+  45:Src/gesture_detection.c **** }
+ 156              		.loc 1 45 5 is_stmt 1 view .LVU35
+  45:Src/gesture_detection.c **** }
+ 157              		.loc 1 45 34 is_stmt 0 view .LVU36
+ 158 0042 07EE903A 		vmov	s15, r3	@ int
+ 159 0046 9FED056A 		vldr.32	s12, .L10+4
+ 160 004a F8EE677A 		vcvt.f32.u32	s15, s15
+ 161 004e C7EE866A 		vdiv.f32	s13, s15, s12
+  45:Src/gesture_detection.c **** }
+ 162              		.loc 1 45 21 view .LVU37
+ 163 0052 87EE260A 		vdiv.f32	s0, s14, s13
+ 164              	.LVL14:
+  45:Src/gesture_detection.c **** }
+ 165              		.loc 1 45 21 view .LVU38
+ 166 0056 D8E7     		b	.L3
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 5
+
+
+ 167              	.L11:
+ 168              		.align	2
+ 169              	.L10:
+ 170 0058 00000000 		.word	0
+ 171 005c 00007A44 		.word	1148846080
+ 172              		.cfi_endproc
+ 173              	.LFE3341:
+ 175              		.section	.text.Gesture_Detect,"ax",%progbits
+ 176              		.align	1
+ 177              		.global	Gesture_Detect
+ 178              		.syntax unified
+ 179              		.thumb
+ 180              		.thumb_func
+ 182              	Gesture_Detect:
+ 183              	.LVL15:
+ 184              	.LFB3344:
+  47:Src/gesture_detection.c **** 
+  48:Src/gesture_detection.c **** static GestureType_t Detect_ArmSwipe(GestureDetector_t *detector, spe_pp_outBuffer_t *keypoints)
+  49:Src/gesture_detection.c **** {
+  50:Src/gesture_detection.c ****     uint8_t curr_idx = detector->history_index;
+  51:Src/gesture_detection.c ****     uint8_t prev_idx = (curr_idx - 1 + GESTURE_HISTORY_SIZE) % GESTURE_HISTORY_SIZE;
+  52:Src/gesture_detection.c **** 
+  53:Src/gesture_detection.c ****     // Check right arm swipe
+  54:Src/gesture_detection.c ****     KeypointHistory_t *right_wrist = detector->history[KEYPOINT_RIGHT_WRIST];
+  55:Src/gesture_detection.c ****     KeypointHistory_t *right_shoulder = detector->history[KEYPOINT_RIGHT_SHOULDER];
+  56:Src/gesture_detection.c **** 
+  57:Src/gesture_detection.c ****     if (right_wrist[curr_idx].confidence > MIN_CONFIDENCE &&
+  58:Src/gesture_detection.c ****         right_shoulder[curr_idx].confidence > MIN_CONFIDENCE) {
+  59:Src/gesture_detection.c **** 
+  60:Src/gesture_detection.c ****         // Calculate horizontal movement of wrist
+  61:Src/gesture_detection.c ****         float32_t wrist_dx = right_wrist[curr_idx].x - right_wrist[prev_idx].x;
+  62:Src/gesture_detection.c ****         float32_t wrist_speed = Gesture_CalculateSpeed(right_wrist, curr_idx, 3);
+  63:Src/gesture_detection.c **** 
+  64:Src/gesture_detection.c ****         // Check if wrist is moving significantly horizontally
+  65:Src/gesture_detection.c ****         if (fabsf(wrist_dx) > 0.05f && wrist_speed > SWIPE_MIN_SPEED) {
+  66:Src/gesture_detection.c ****             // Check if arm is extended (wrist far from shoulder)
+  67:Src/gesture_detection.c ****             float32_t arm_extension = Gesture_CalculateDistance(
+  68:Src/gesture_detection.c ****                 right_wrist[curr_idx].x, right_wrist[curr_idx].y,
+  69:Src/gesture_detection.c ****                 right_shoulder[curr_idx].x, right_shoulder[curr_idx].y
+  70:Src/gesture_detection.c ****             );
+  71:Src/gesture_detection.c **** 
+  72:Src/gesture_detection.c ****             if (arm_extension > 0.2f) { // Arm is extended
+  73:Src/gesture_detection.c ****                 if (wrist_dx > 0) {
+  74:Src/gesture_detection.c ****                     return GESTURE_RIGHT_ARM_SWIPE_RIGHT;
+  75:Src/gesture_detection.c ****                 } else {
+  76:Src/gesture_detection.c ****                     return GESTURE_RIGHT_ARM_SWIPE_LEFT;
+  77:Src/gesture_detection.c ****                 }
+  78:Src/gesture_detection.c ****             }
+  79:Src/gesture_detection.c ****         }
+  80:Src/gesture_detection.c ****     }
+  81:Src/gesture_detection.c **** 
+  82:Src/gesture_detection.c ****     // Check left arm swipe (similar logic)
+  83:Src/gesture_detection.c ****     KeypointHistory_t *left_wrist = detector->history[KEYPOINT_LEFT_WRIST];
+  84:Src/gesture_detection.c ****     KeypointHistory_t *left_shoulder = detector->history[KEYPOINT_LEFT_SHOULDER];
+  85:Src/gesture_detection.c **** 
+  86:Src/gesture_detection.c ****     if (left_wrist[curr_idx].confidence > MIN_CONFIDENCE &&
+  87:Src/gesture_detection.c ****         left_shoulder[curr_idx].confidence > MIN_CONFIDENCE) {
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 6
+
+
+  88:Src/gesture_detection.c **** 
+  89:Src/gesture_detection.c ****         float32_t wrist_dx = left_wrist[curr_idx].x - left_wrist[prev_idx].x;
+  90:Src/gesture_detection.c ****         float32_t wrist_speed = Gesture_CalculateSpeed(left_wrist, curr_idx, 3);
+  91:Src/gesture_detection.c **** 
+  92:Src/gesture_detection.c ****         if (fabsf(wrist_dx) > 0.05f && wrist_speed > SWIPE_MIN_SPEED) {
+  93:Src/gesture_detection.c ****             float32_t arm_extension = Gesture_CalculateDistance(
+  94:Src/gesture_detection.c ****                 left_wrist[curr_idx].x, left_wrist[curr_idx].y,
+  95:Src/gesture_detection.c ****                 left_shoulder[curr_idx].x, left_shoulder[curr_idx].y
+  96:Src/gesture_detection.c ****             );
+  97:Src/gesture_detection.c **** 
+  98:Src/gesture_detection.c ****             if (arm_extension > 0.2f) {
+  99:Src/gesture_detection.c ****                 if (wrist_dx > 0) {
+ 100:Src/gesture_detection.c ****                     return GESTURE_LEFT_ARM_SWIPE_RIGHT;
+ 101:Src/gesture_detection.c ****                 } else {
+ 102:Src/gesture_detection.c ****                     return GESTURE_LEFT_ARM_SWIPE_LEFT;
+ 103:Src/gesture_detection.c ****                 }
+ 104:Src/gesture_detection.c ****             }
+ 105:Src/gesture_detection.c ****         }
+ 106:Src/gesture_detection.c ****     }
+ 107:Src/gesture_detection.c **** 
+ 108:Src/gesture_detection.c ****     return GESTURE_NONE;
+ 109:Src/gesture_detection.c **** }
+ 110:Src/gesture_detection.c **** 
+ 111:Src/gesture_detection.c **** static GestureType_t Detect_SwordGestures(GestureDetector_t *detector, spe_pp_outBuffer_t *keypoint
+ 112:Src/gesture_detection.c **** {
+ 113:Src/gesture_detection.c ****     uint8_t curr_idx = detector->history_index;
+ 114:Src/gesture_detection.c **** 
+ 115:Src/gesture_detection.c ****     KeypointHistory_t *right_wrist = detector->history[KEYPOINT_RIGHT_WRIST];
+ 116:Src/gesture_detection.c ****     KeypointHistory_t *right_shoulder = detector->history[KEYPOINT_RIGHT_SHOULDER];
+ 117:Src/gesture_detection.c ****     KeypointHistory_t *right_elbow = detector->history[KEYPOINT_RIGHT_ELBOW];
+ 118:Src/gesture_detection.c **** 
+ 119:Src/gesture_detection.c ****     if (right_wrist[curr_idx].confidence < MIN_CONFIDENCE ||
+ 120:Src/gesture_detection.c ****         right_shoulder[curr_idx].confidence < MIN_CONFIDENCE ||
+ 121:Src/gesture_detection.c ****         right_elbow[curr_idx].confidence < MIN_CONFIDENCE) {
+ 122:Src/gesture_detection.c ****         return GESTURE_NONE;
+ 123:Src/gesture_detection.c ****     }
+ 124:Src/gesture_detection.c **** 
+ 125:Src/gesture_detection.c ****     // Overhead strike: Check if hand moves from high to low rapidly
+ 126:Src/gesture_detection.c ****     if (curr_idx >= 5) { // Need some history
+ 127:Src/gesture_detection.c ****         uint8_t start_idx = (curr_idx - 5 + GESTURE_HISTORY_SIZE) % GESTURE_HISTORY_SIZE;
+ 128:Src/gesture_detection.c **** 
+ 129:Src/gesture_detection.c ****         float32_t start_y = right_wrist[start_idx].y;
+ 130:Src/gesture_detection.c ****         float32_t curr_y = right_wrist[curr_idx].y;
+ 131:Src/gesture_detection.c ****         float32_t vertical_movement = curr_y - start_y;
+ 132:Src/gesture_detection.c **** 
+ 133:Src/gesture_detection.c ****         // Check if hand started high and moved down quickly
+ 134:Src/gesture_detection.c ****         if (start_y < 0.3f && vertical_movement > 0.25f) { // Started high, moved down
+ 135:Src/gesture_detection.c ****             float32_t speed = Gesture_CalculateSpeed(right_wrist, curr_idx, 5);
+ 136:Src/gesture_detection.c ****             if (speed > SWIPE_MIN_SPEED * 1.5f) {
+ 137:Src/gesture_detection.c ****                 return GESTURE_SWORD_OVERHEAD_STRIKE;
+ 138:Src/gesture_detection.c ****             }
+ 139:Src/gesture_detection.c ****         }
+ 140:Src/gesture_detection.c ****     }
+ 141:Src/gesture_detection.c **** 
+ 142:Src/gesture_detection.c ****     // Side slash: Check for horizontal movement with extended arm
+ 143:Src/gesture_detection.c ****     if (curr_idx >= 3) {
+ 144:Src/gesture_detection.c ****         uint8_t start_idx = (curr_idx - 3 + GESTURE_HISTORY_SIZE) % GESTURE_HISTORY_SIZE;
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 7
+
+
+ 145:Src/gesture_detection.c **** 
+ 146:Src/gesture_detection.c ****         float32_t horizontal_movement = fabsf(right_wrist[curr_idx].x - right_wrist[start_idx].x);
+ 147:Src/gesture_detection.c ****         float32_t arm_extension = Gesture_CalculateDistance(
+ 148:Src/gesture_detection.c ****             right_wrist[curr_idx].x, right_wrist[curr_idx].y,
+ 149:Src/gesture_detection.c ****             right_shoulder[curr_idx].x, right_shoulder[curr_idx].y
+ 150:Src/gesture_detection.c ****         );
+ 151:Src/gesture_detection.c **** 
+ 152:Src/gesture_detection.c ****         if (horizontal_movement > 0.2f && arm_extension > 0.25f) {
+ 153:Src/gesture_detection.c ****             float32_t speed = Gesture_CalculateSpeed(right_wrist, curr_idx, 3);
+ 154:Src/gesture_detection.c ****             if (speed > SWIPE_MIN_SPEED) {
+ 155:Src/gesture_detection.c ****                 return GESTURE_SWORD_SIDE_SLASH;
+ 156:Src/gesture_detection.c ****             }
+ 157:Src/gesture_detection.c ****         }
+ 158:Src/gesture_detection.c ****     }
+ 159:Src/gesture_detection.c **** 
+ 160:Src/gesture_detection.c ****     return GESTURE_NONE;
+ 161:Src/gesture_detection.c **** }
+ 162:Src/gesture_detection.c **** 
+ 163:Src/gesture_detection.c **** GestureType_t Gesture_Detect(GestureDetector_t *detector, spe_pp_outBuffer_t *keypoints)
+ 164:Src/gesture_detection.c **** {
+ 185              		.loc 1 164 1 is_stmt 1 view -0
+ 186              		.cfi_startproc
+ 187              		@ args = 0, pretend = 0, frame = 16
+ 188              		@ frame_needed = 0, uses_anonymous_args = 0
+ 189              		.loc 1 164 1 is_stmt 0 view .LVU40
+ 190 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 191              		.cfi_def_cfa_offset 36
+ 192              		.cfi_offset 4, -36
+ 193              		.cfi_offset 5, -32
+ 194              		.cfi_offset 6, -28
+ 195              		.cfi_offset 7, -24
+ 196              		.cfi_offset 8, -20
+ 197              		.cfi_offset 9, -16
+ 198              		.cfi_offset 10, -12
+ 199              		.cfi_offset 11, -8
+ 200              		.cfi_offset 14, -4
+ 201 0004 2DED048B 		vpush.64	{d8, d9}
+ 202              		.cfi_def_cfa_offset 52
+ 203              		.cfi_offset 80, -52
+ 204              		.cfi_offset 81, -48
+ 205              		.cfi_offset 82, -44
+ 206              		.cfi_offset 83, -40
+ 207 0008 85B0     		sub	sp, sp, #20
+ 208              		.cfi_def_cfa_offset 72
+ 209              		.loc 1 164 1 view .LVU41
+ 210 000a 0446     		mov	r4, r0
+ 165:Src/gesture_detection.c ****     uint32_t current_time = HAL_GetTick();
+ 211              		.loc 1 165 5 is_stmt 1 view .LVU42
+ 164:Src/gesture_detection.c ****     uint32_t current_time = HAL_GetTick();
+ 212              		.loc 1 164 1 is_stmt 0 view .LVU43
+ 213 000c 0F46     		mov	r7, r1
+ 214              		.loc 1 165 29 view .LVU44
+ 215 000e FFF7FEFF 		bl	HAL_GetTick
+ 216              	.LVL16:
+ 217              		.loc 1 165 29 view .LVU45
+ 218 0012 4FF00D0E 		mov	lr, #13
+ 219 0016 0646     		mov	r6, r0
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 8
+
+
+ 220              	.LVL17:
+ 166:Src/gesture_detection.c **** 
+ 167:Src/gesture_detection.c ****     // Update history with current keypoints
+ 168:Src/gesture_detection.c ****     for (int i = 0; i < AI_POSE_PP_POSE_KEYPOINTS_NB; i++) {
+ 221              		.loc 1 168 5 is_stmt 1 view .LVU46
+ 222              	.LBB23:
+ 223              		.loc 1 168 10 view .LVU47
+ 224              		.loc 1 168 23 discriminator 1 view .LVU48
+ 225 0018 3946     		mov	r1, r7
+ 226 001a 4EF001E0 		dls	lr, lr
+ 169:Src/gesture_detection.c ****         detector->history[i][detector->history_index].x = keypoints[i].x_center;
+ 227              		.loc 1 169 38 is_stmt 0 view .LVU49
+ 228 001e 94F82058 		ldrb	r5, [r4, #2080]	@ zero_extendqisi2
+ 229 0022 04EB0513 		add	r3, r4, r5, lsl #4
+ 230              	.LVL18:
+ 231              	.L13:
+ 232              		.loc 1 169 9 is_stmt 1 view .LVU50
+ 233              		.loc 1 169 71 is_stmt 0 view .LVU51
+ 234 0026 0A68     		ldr	r2, [r1]	@ float
+ 168:Src/gesture_detection.c ****         detector->history[i][detector->history_index].x = keypoints[i].x_center;
+ 235              		.loc 1 168 23 discriminator 1 view .LVU52
+ 236 0028 A033     		adds	r3, r3, #160
+ 237              		.loc 1 169 57 view .LVU53
+ 238 002a 43F8A02C 		str	r2, [r3, #-160]	@ float
+ 170:Src/gesture_detection.c ****         detector->history[i][detector->history_index].y = keypoints[i].y_center;
+ 239              		.loc 1 170 9 is_stmt 1 view .LVU54
+ 240              		.loc 1 170 71 is_stmt 0 view .LVU55
+ 241 002e 4A68     		ldr	r2, [r1, #4]	@ float
+ 168:Src/gesture_detection.c ****         detector->history[i][detector->history_index].x = keypoints[i].x_center;
+ 242              		.loc 1 168 23 discriminator 1 view .LVU56
+ 243 0030 0C31     		adds	r1, r1, #12
+ 244              		.loc 1 170 57 view .LVU57
+ 245 0032 43F89C2C 		str	r2, [r3, #-156]	@ float
+ 171:Src/gesture_detection.c ****         detector->history[i][detector->history_index].confidence = keypoints[i].proba;
+ 246              		.loc 1 171 9 is_stmt 1 view .LVU58
+ 247              		.loc 1 171 80 is_stmt 0 view .LVU59
+ 248 0036 51F8042C 		ldr	r2, [r1, #-4]	@ float
+ 172:Src/gesture_detection.c ****         detector->history[i][detector->history_index].timestamp = current_time;
+ 249              		.loc 1 172 65 view .LVU60
+ 250 003a 43F8946C 		str	r6, [r3, #-148]
+ 171:Src/gesture_detection.c ****         detector->history[i][detector->history_index].confidence = keypoints[i].proba;
+ 251              		.loc 1 171 66 view .LVU61
+ 252 003e 43F8982C 		str	r2, [r3, #-152]	@ float
+ 253              		.loc 1 172 9 is_stmt 1 view .LVU62
+ 168:Src/gesture_detection.c ****         detector->history[i][detector->history_index].x = keypoints[i].x_center;
+ 254              		.loc 1 168 56 discriminator 3 view .LVU63
+ 168:Src/gesture_detection.c ****         detector->history[i][detector->history_index].x = keypoints[i].x_center;
+ 255              		.loc 1 168 23 discriminator 1 view .LVU64
+ 256 0042 0FF011C0 		le	lr, .L13
+ 168:Src/gesture_detection.c ****         detector->history[i][detector->history_index].x = keypoints[i].x_center;
+ 257              		.loc 1 168 23 is_stmt 0 discriminator 1 view .LVU65
+ 258              	.LBE23:
+ 173:Src/gesture_detection.c ****     }
+ 174:Src/gesture_detection.c **** 
+ 175:Src/gesture_detection.c ****     // Advance history index
+ 176:Src/gesture_detection.c ****     detector->history_index = (detector->history_index + 1) % GESTURE_HISTORY_SIZE;
+ 259              		.loc 1 176 5 is_stmt 1 view .LVU66
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 9
+
+
+ 260              		.loc 1 176 61 is_stmt 0 view .LVU67
+ 261 0046 0A23     		movs	r3, #10
+ 262              		.loc 1 176 56 view .LVU68
+ 263 0048 0135     		adds	r5, r5, #1
+ 264              		.loc 1 176 61 view .LVU69
+ 265 004a B5FBF3F2 		udiv	r2, r5, r3
+ 266 004e 03FB1255 		mls	r5, r3, r2, r5
+ 177:Src/gesture_detection.c **** 
+ 178:Src/gesture_detection.c ****     // Prevent detecting same gesture too quickly
+ 179:Src/gesture_detection.c ****     if (current_time - detector->last_gesture_time < 1000) { // 1 second cooldown
+ 267              		.loc 1 179 22 view .LVU70
+ 268 0052 D4F82428 		ldr	r2, [r4, #2084]
+ 176:Src/gesture_detection.c **** 
+ 269              		.loc 1 176 29 view .LVU71
+ 270 0056 5FFA85FA 		uxtb	r10, r5
+ 271              		.loc 1 179 22 view .LVU72
+ 272 005a B21A     		subs	r2, r6, r2
+ 273              		.loc 1 179 8 view .LVU73
+ 274 005c B2F57A7F 		cmp	r2, #1000
+ 176:Src/gesture_detection.c **** 
+ 275              		.loc 1 176 29 view .LVU74
+ 276 0060 84F820A8 		strb	r10, [r4, #2080]
+ 277              		.loc 1 179 5 is_stmt 1 view .LVU75
+ 278              		.loc 1 179 8 is_stmt 0 view .LVU76
+ 279 0064 05D2     		bcs	.L14
+ 280              	.LVL19:
+ 281              	.L30:
+ 180:Src/gesture_detection.c ****         return GESTURE_NONE;
+ 282              		.loc 1 180 16 view .LVU77
+ 283 0066 0020     		movs	r0, #0
+ 284              	.LVL20:
+ 285              	.L15:
+ 181:Src/gesture_detection.c ****     }
+ 182:Src/gesture_detection.c **** 
+ 183:Src/gesture_detection.c ****     // Try different gesture detection algorithms
+ 184:Src/gesture_detection.c ****     GestureType_t detected_gesture = GESTURE_NONE;
+ 185:Src/gesture_detection.c **** 
+ 186:Src/gesture_detection.c ****     // Check for arm swipes first
+ 187:Src/gesture_detection.c ****     detected_gesture = Detect_ArmSwipe(detector, keypoints);
+ 188:Src/gesture_detection.c ****     if (detected_gesture != GESTURE_NONE) {
+ 189:Src/gesture_detection.c ****         detector->last_detected_gesture = detected_gesture;
+ 190:Src/gesture_detection.c ****         detector->last_gesture_time = current_time;
+ 191:Src/gesture_detection.c ****         detector->current_display_gesture = detected_gesture;
+ 192:Src/gesture_detection.c ****         detector->gesture_display_timeout = current_time + GESTURE_DISPLAY_TIME;
+ 193:Src/gesture_detection.c ****         return detected_gesture;
+ 194:Src/gesture_detection.c ****     }
+ 195:Src/gesture_detection.c **** 
+ 196:Src/gesture_detection.c ****     // Check for sword gestures
+ 197:Src/gesture_detection.c ****     detected_gesture = Detect_SwordGestures(detector, keypoints);
+ 198:Src/gesture_detection.c ****     if (detected_gesture != GESTURE_NONE) {
+ 199:Src/gesture_detection.c ****         detector->last_detected_gesture = detected_gesture;
+ 200:Src/gesture_detection.c ****         detector->last_gesture_time = current_time;
+ 201:Src/gesture_detection.c ****         detector->current_display_gesture = detected_gesture;
+ 202:Src/gesture_detection.c ****         detector->gesture_display_timeout = current_time + GESTURE_DISPLAY_TIME;
+ 203:Src/gesture_detection.c ****         return detected_gesture;
+ 204:Src/gesture_detection.c ****     }
+ 205:Src/gesture_detection.c **** 
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 10
+
+
+ 206:Src/gesture_detection.c ****     return GESTURE_NONE;
+ 207:Src/gesture_detection.c **** }
+ 286              		.loc 1 207 1 view .LVU78
+ 287 0068 05B0     		add	sp, sp, #20
+ 288              		.cfi_remember_state
+ 289              		.cfi_def_cfa_offset 52
+ 290              		@ sp needed
+ 291 006a BDEC048B 		vldm	sp!, {d8-d9}
+ 292              		.cfi_restore 82
+ 293              		.cfi_restore 83
+ 294              		.cfi_restore 80
+ 295              		.cfi_restore 81
+ 296              		.cfi_def_cfa_offset 36
+ 297 006e BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 298              	.LVL21:
+ 299              	.L14:
+ 300              		.cfi_restore_state
+ 184:Src/gesture_detection.c **** 
+ 301              		.loc 1 184 5 is_stmt 1 view .LVU79
+ 187:Src/gesture_detection.c ****     if (detected_gesture != GESTURE_NONE) {
+ 302              		.loc 1 187 5 view .LVU80
+ 303              	.LBB24:
+ 304              	.LBI24:
+  48:Src/gesture_detection.c **** {
+ 305              		.loc 1 48 22 view .LVU81
+ 306              	.LBB25:
+  50:Src/gesture_detection.c ****     uint8_t prev_idx = (curr_idx - 1 + GESTURE_HISTORY_SIZE) % GESTURE_HISTORY_SIZE;
+ 307              		.loc 1 50 5 view .LVU82
+  51:Src/gesture_detection.c **** 
+ 308              		.loc 1 51 5 view .LVU83
+  54:Src/gesture_detection.c ****     KeypointHistory_t *right_shoulder = detector->history[KEYPOINT_RIGHT_SHOULDER];
+ 309              		.loc 1 54 24 is_stmt 0 view .LVU84
+ 310 0072 04F57077 		add	r7, r4, #960
+ 311              	.LVL22:
+  57:Src/gesture_detection.c ****         right_shoulder[curr_idx].confidence > MIN_CONFIDENCE) {
+ 312              		.loc 1 57 20 view .LVU85
+ 313 0076 07EB0519 		add	r9, r7, r5, lsl #4
+  57:Src/gesture_detection.c ****         right_shoulder[curr_idx].confidence > MIN_CONFIDENCE) {
+ 314              		.loc 1 57 30 view .LVU86
+ 315 007a 99ED029A 		vldr.32	s18, [r9, #8]
+  57:Src/gesture_detection.c ****         right_shoulder[curr_idx].confidence > MIN_CONFIDENCE) {
+ 316              		.loc 1 57 8 view .LVU87
+ 317 007e B6EE008A 		vmov.f32	s16, #5.0e-1
+ 318 0082 B4EEC89A 		vcmpe.f32	s18, s16
+  51:Src/gesture_detection.c **** 
+ 319              		.loc 1 51 38 view .LVU88
+ 320 0086 05F10902 		add	r2, r5, #9
+  51:Src/gesture_detection.c **** 
+ 321              		.loc 1 51 62 view .LVU89
+ 322 008a B2FBF3F1 		udiv	r1, r2, r3
+  57:Src/gesture_detection.c ****         right_shoulder[curr_idx].confidence > MIN_CONFIDENCE) {
+ 323              		.loc 1 57 8 view .LVU90
+ 324 008e F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+  51:Src/gesture_detection.c **** 
+ 325              		.loc 1 51 62 view .LVU91
+ 326 0092 03FB1123 		mls	r3, r3, r1, r2
+ 327 0096 0193     		str	r3, [sp, #4]
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 11
+
+
+ 328              	.LVL23:
+  54:Src/gesture_detection.c ****     KeypointHistory_t *right_shoulder = detector->history[KEYPOINT_RIGHT_SHOULDER];
+ 329              		.loc 1 54 5 is_stmt 1 view .LVU92
+  55:Src/gesture_detection.c **** 
+ 330              		.loc 1 55 5 view .LVU93
+  55:Src/gesture_detection.c **** 
+ 331              		.loc 1 55 24 is_stmt 0 view .LVU94
+ 332 0098 04F5A073 		add	r3, r4, #320
+ 333 009c 0293     		str	r3, [sp, #8]
+ 334              	.LVL24:
+  57:Src/gesture_detection.c ****         right_shoulder[curr_idx].confidence > MIN_CONFIDENCE) {
+ 335              		.loc 1 57 5 is_stmt 1 view .LVU95
+  57:Src/gesture_detection.c ****         right_shoulder[curr_idx].confidence > MIN_CONFIDENCE) {
+ 336              		.loc 1 57 20 is_stmt 0 view .LVU96
+ 337 009e 4FEA0518 		lsl	r8, r5, #4
+  57:Src/gesture_detection.c ****         right_shoulder[curr_idx].confidence > MIN_CONFIDENCE) {
+ 338              		.loc 1 57 8 view .LVU97
+ 339 00a2 47DD     		ble	.L16
+  58:Src/gesture_detection.c **** 
+ 340              		.loc 1 58 23 view .LVU98
+ 341 00a4 03EB080B 		add	fp, r3, r8
+  57:Src/gesture_detection.c ****         right_shoulder[curr_idx].confidence > MIN_CONFIDENCE) {
+ 342              		.loc 1 57 59 discriminator 1 view .LVU99
+ 343 00a8 DBED027A 		vldr.32	s15, [fp, #8]
+ 344 00ac F4EEC87A 		vcmpe.f32	s15, s16
+ 345 00b0 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 346 00b4 3EDD     		ble	.L16
+ 347              	.LBB26:
+  61:Src/gesture_detection.c ****         float32_t wrist_speed = Gesture_CalculateSpeed(right_wrist, curr_idx, 3);
+ 348              		.loc 1 61 9 is_stmt 1 view .LVU100
+  61:Src/gesture_detection.c ****         float32_t wrist_speed = Gesture_CalculateSpeed(right_wrist, curr_idx, 3);
+ 349              		.loc 1 61 77 is_stmt 0 view .LVU101
+ 350 00b6 019B     		ldr	r3, [sp, #4]
+ 351              	.LVL25:
+  61:Src/gesture_detection.c ****         float32_t wrist_speed = Gesture_CalculateSpeed(right_wrist, curr_idx, 3);
+ 352              		.loc 1 61 51 view .LVU102
+ 353 00b8 D9ED009A 		vldr.32	s19, [r9]
+  61:Src/gesture_detection.c ****         float32_t wrist_speed = Gesture_CalculateSpeed(right_wrist, curr_idx, 3);
+ 354              		.loc 1 61 77 view .LVU103
+ 355 00bc 07EB0313 		add	r3, r7, r3, lsl #4
+  61:Src/gesture_detection.c ****         float32_t wrist_speed = Gesture_CalculateSpeed(right_wrist, curr_idx, 3);
+ 356              		.loc 1 61 19 view .LVU104
+ 357 00c0 D3ED008A 		vldr.32	s17, [r3]
+ 358 00c4 79EEE88A 		vsub.f32	s17, s19, s17
+ 359              	.LVL26:
+  62:Src/gesture_detection.c **** 
+ 360              		.loc 1 62 9 is_stmt 1 view .LVU105
+  62:Src/gesture_detection.c **** 
+ 361              		.loc 1 62 33 is_stmt 0 view .LVU106
+ 362 00c8 0322     		movs	r2, #3
+ 363 00ca 5146     		mov	r1, r10
+ 364 00cc 3846     		mov	r0, r7
+ 365              	.LVL27:
+  62:Src/gesture_detection.c **** 
+ 366              		.loc 1 62 33 view .LVU107
+ 367 00ce FFF7FEFF 		bl	Gesture_CalculateSpeed
+ 368              	.LVL28:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 12
+
+
+  65:Src/gesture_detection.c ****             // Check if arm is extended (wrist far from shoulder)
+ 369              		.loc 1 65 9 is_stmt 1 view .LVU108
+  65:Src/gesture_detection.c ****             // Check if arm is extended (wrist far from shoulder)
+ 370              		.loc 1 65 13 is_stmt 0 view .LVU109
+ 371 00d2 B0EEE87A 		vabs.f32	s14, s17
+  65:Src/gesture_detection.c ****             // Check if arm is extended (wrist far from shoulder)
+ 372              		.loc 1 65 12 view .LVU110
+ 373 00d6 DFED7D7A 		vldr.32	s15, .L57
+ 374 00da B4EEE77A 		vcmpe.f32	s14, s15
+ 375 00de F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 376 00e2 27DD     		ble	.L16
+  65:Src/gesture_detection.c ****             // Check if arm is extended (wrist far from shoulder)
+ 377              		.loc 1 65 37 discriminator 1 view .LVU111
+ 378 00e4 B4EEE70A 		vcmpe.f32	s0, s15
+ 379 00e8 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 380 00ec 22DD     		ble	.L16
+ 381              	.LBB27:
+  67:Src/gesture_detection.c ****                 right_wrist[curr_idx].x, right_wrist[curr_idx].y,
+ 382              		.loc 1 67 13 is_stmt 1 view .LVU112
+  67:Src/gesture_detection.c ****                 right_wrist[curr_idx].x, right_wrist[curr_idx].y,
+ 383              		.loc 1 67 39 is_stmt 0 view .LVU113
+ 384 00ee DBED011A 		vldr.32	s3, [fp, #4]
+ 385 00f2 9BED001A 		vldr.32	s2, [fp]
+ 386 00f6 D9ED010A 		vldr.32	s1, [r9, #4]
+ 387 00fa B0EE690A 		vmov.f32	s0, s19
+ 388              	.LVL29:
+  67:Src/gesture_detection.c ****                 right_wrist[curr_idx].x, right_wrist[curr_idx].y,
+ 389              		.loc 1 67 39 view .LVU114
+ 390 00fe FFF7FEFF 		bl	Gesture_CalculateDistance
+ 391              	.LVL30:
+  72:Src/gesture_detection.c ****                 if (wrist_dx > 0) {
+ 392              		.loc 1 72 13 is_stmt 1 view .LVU115
+  72:Src/gesture_detection.c ****                 if (wrist_dx > 0) {
+ 393              		.loc 1 72 16 is_stmt 0 view .LVU116
+ 394 0102 DFED737A 		vldr.32	s15, .L57+4
+ 395 0106 B4EEE70A 		vcmpe.f32	s0, s15
+ 396 010a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 397 010e 11DD     		ble	.L16
+  73:Src/gesture_detection.c ****                     return GESTURE_RIGHT_ARM_SWIPE_RIGHT;
+ 398              		.loc 1 73 17 is_stmt 1 view .LVU117
+  76:Src/gesture_detection.c ****                 }
+ 399              		.loc 1 76 28 is_stmt 0 view .LVU118
+ 400 0110 F5EEC08A 		vcmpe.f32	s17, #0
+ 401 0114 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 402 0118 CCBF     		ite	gt
+ 403 011a 0220     		movgt	r0, #2
+ 404 011c 0120     		movle	r0, #1
+ 405              	.LVL31:
+ 406              	.L36:
+  76:Src/gesture_detection.c ****                 }
+ 407              		.loc 1 76 28 view .LVU119
+ 408              	.LBE27:
+ 409              	.LBE26:
+ 410              	.LBE25:
+ 411              	.LBE24:
+ 199:Src/gesture_detection.c ****         detector->last_gesture_time = current_time;
+ 412              		.loc 1 199 9 is_stmt 1 view .LVU120
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 13
+
+
+ 200:Src/gesture_detection.c ****         detector->current_display_gesture = detected_gesture;
+ 413              		.loc 1 200 37 is_stmt 0 view .LVU121
+ 414 011e C4F82468 		str	r6, [r4, #2084]
+ 202:Src/gesture_detection.c ****         return detected_gesture;
+ 415              		.loc 1 202 58 view .LVU122
+ 416 0122 06F5FA66 		add	r6, r6, #2000
+ 417              	.LVL32:
+ 199:Src/gesture_detection.c ****         detector->last_gesture_time = current_time;
+ 418              		.loc 1 199 41 view .LVU123
+ 419 0126 84F82108 		strb	r0, [r4, #2081]
+ 200:Src/gesture_detection.c ****         detector->current_display_gesture = detected_gesture;
+ 420              		.loc 1 200 9 is_stmt 1 view .LVU124
+ 201:Src/gesture_detection.c ****         detector->gesture_display_timeout = current_time + GESTURE_DISPLAY_TIME;
+ 421              		.loc 1 201 9 view .LVU125
+ 201:Src/gesture_detection.c ****         detector->gesture_display_timeout = current_time + GESTURE_DISPLAY_TIME;
+ 422              		.loc 1 201 43 is_stmt 0 view .LVU126
+ 423 012a 84F82808 		strb	r0, [r4, #2088]
+ 202:Src/gesture_detection.c ****         return detected_gesture;
+ 424              		.loc 1 202 9 is_stmt 1 view .LVU127
+ 202:Src/gesture_detection.c ****         return detected_gesture;
+ 425              		.loc 1 202 43 is_stmt 0 view .LVU128
+ 426 012e C4F82C68 		str	r6, [r4, #2092]
+ 203:Src/gesture_detection.c ****     }
+ 427              		.loc 1 203 9 is_stmt 1 view .LVU129
+ 203:Src/gesture_detection.c ****     }
+ 428              		.loc 1 203 16 is_stmt 0 view .LVU130
+ 429 0132 99E7     		b	.L15
+ 430              	.LVL33:
+ 431              	.L16:
+ 432              	.LBB34:
+ 433              	.LBB32:
+  83:Src/gesture_detection.c ****     KeypointHistory_t *left_shoulder = detector->history[KEYPOINT_LEFT_SHOULDER];
+ 434              		.loc 1 83 5 is_stmt 1 view .LVU131
+  83:Src/gesture_detection.c ****     KeypointHistory_t *left_shoulder = detector->history[KEYPOINT_LEFT_SHOULDER];
+ 435              		.loc 1 83 24 is_stmt 0 view .LVU132
+ 436 0134 04F54870 		add	r0, r4, #800
+ 437              	.LVL34:
+  84:Src/gesture_detection.c **** 
+ 438              		.loc 1 84 5 is_stmt 1 view .LVU133
+  86:Src/gesture_detection.c ****         left_shoulder[curr_idx].confidence > MIN_CONFIDENCE) {
+ 439              		.loc 1 86 5 view .LVU134
+  86:Src/gesture_detection.c ****         left_shoulder[curr_idx].confidence > MIN_CONFIDENCE) {
+ 440              		.loc 1 86 19 is_stmt 0 view .LVU135
+ 441 0138 00EB0803 		add	r3, r0, r8
+  86:Src/gesture_detection.c ****         left_shoulder[curr_idx].confidence > MIN_CONFIDENCE) {
+ 442              		.loc 1 86 8 view .LVU136
+ 443 013c D3ED027A 		vldr.32	s15, [r3, #8]
+ 444 0140 F4EEC87A 		vcmpe.f32	s15, s16
+ 445 0144 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 446 0148 3FDD     		ble	.L24
+  84:Src/gesture_detection.c **** 
+ 447              		.loc 1 84 24 view .LVU137
+ 448 014a 04F1A00B 		add	fp, r4, #160
+ 449              	.LVL35:
+  87:Src/gesture_detection.c **** 
+ 450              		.loc 1 87 22 view .LVU138
+ 451 014e C344     		add	fp, fp, r8
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 14
+
+
+ 452              	.LVL36:
+  86:Src/gesture_detection.c ****         left_shoulder[curr_idx].confidence > MIN_CONFIDENCE) {
+ 453              		.loc 1 86 58 discriminator 1 view .LVU139
+ 454 0150 DBED027A 		vldr.32	s15, [fp, #8]
+ 455 0154 F4EEC87A 		vcmpe.f32	s15, s16
+ 456 0158 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 457 015c 35DD     		ble	.L24
+ 458              	.LBB28:
+  89:Src/gesture_detection.c ****         float32_t wrist_speed = Gesture_CalculateSpeed(left_wrist, curr_idx, 3);
+ 459              		.loc 1 89 9 is_stmt 1 view .LVU140
+  89:Src/gesture_detection.c ****         float32_t wrist_speed = Gesture_CalculateSpeed(left_wrist, curr_idx, 3);
+ 460              		.loc 1 89 50 is_stmt 0 view .LVU141
+ 461 015e D3ED009A 		vldr.32	s19, [r3]
+ 462 0162 0393     		str	r3, [sp, #12]
+  89:Src/gesture_detection.c ****         float32_t wrist_speed = Gesture_CalculateSpeed(left_wrist, curr_idx, 3);
+ 463              		.loc 1 89 75 view .LVU142
+ 464 0164 019B     		ldr	r3, [sp, #4]
+  90:Src/gesture_detection.c **** 
+ 465              		.loc 1 90 33 view .LVU143
+ 466 0166 5146     		mov	r1, r10
+  89:Src/gesture_detection.c ****         float32_t wrist_speed = Gesture_CalculateSpeed(left_wrist, curr_idx, 3);
+ 467              		.loc 1 89 75 view .LVU144
+ 468 0168 00EB0312 		add	r2, r0, r3, lsl #4
+  89:Src/gesture_detection.c ****         float32_t wrist_speed = Gesture_CalculateSpeed(left_wrist, curr_idx, 3);
+ 469              		.loc 1 89 19 view .LVU145
+ 470 016c D2ED008A 		vldr.32	s17, [r2]
+ 471 0170 79EEE88A 		vsub.f32	s17, s19, s17
+ 472              	.LVL37:
+  90:Src/gesture_detection.c **** 
+ 473              		.loc 1 90 9 is_stmt 1 view .LVU146
+  90:Src/gesture_detection.c **** 
+ 474              		.loc 1 90 33 is_stmt 0 view .LVU147
+ 475 0174 0322     		movs	r2, #3
+ 476 0176 FFF7FEFF 		bl	Gesture_CalculateSpeed
+ 477              	.LVL38:
+  92:Src/gesture_detection.c ****             float32_t arm_extension = Gesture_CalculateDistance(
+ 478              		.loc 1 92 9 is_stmt 1 view .LVU148
+  92:Src/gesture_detection.c ****             float32_t arm_extension = Gesture_CalculateDistance(
+ 479              		.loc 1 92 13 is_stmt 0 view .LVU149
+ 480 017a B0EEE87A 		vabs.f32	s14, s17
+  92:Src/gesture_detection.c ****             float32_t arm_extension = Gesture_CalculateDistance(
+ 481              		.loc 1 92 12 view .LVU150
+ 482 017e DFED537A 		vldr.32	s15, .L57
+ 483 0182 B4EEE77A 		vcmpe.f32	s14, s15
+ 484 0186 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 485 018a 1EDD     		ble	.L24
+  92:Src/gesture_detection.c ****             float32_t arm_extension = Gesture_CalculateDistance(
+ 486              		.loc 1 92 37 discriminator 1 view .LVU151
+ 487 018c B4EEE70A 		vcmpe.f32	s0, s15
+ 488 0190 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 489 0194 039B     		ldr	r3, [sp, #12]
+ 490 0196 18DD     		ble	.L24
+ 491              	.LBB29:
+  93:Src/gesture_detection.c ****                 left_wrist[curr_idx].x, left_wrist[curr_idx].y,
+ 492              		.loc 1 93 13 is_stmt 1 view .LVU152
+  93:Src/gesture_detection.c ****                 left_wrist[curr_idx].x, left_wrist[curr_idx].y,
+ 493              		.loc 1 93 39 is_stmt 0 view .LVU153
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 15
+
+
+ 494 0198 DBED011A 		vldr.32	s3, [fp, #4]
+ 495 019c 9BED001A 		vldr.32	s2, [fp]
+ 496 01a0 D3ED010A 		vldr.32	s1, [r3, #4]
+ 497 01a4 B0EE690A 		vmov.f32	s0, s19
+ 498              	.LVL39:
+  93:Src/gesture_detection.c ****                 left_wrist[curr_idx].x, left_wrist[curr_idx].y,
+ 499              		.loc 1 93 39 view .LVU154
+ 500 01a8 FFF7FEFF 		bl	Gesture_CalculateDistance
+ 501              	.LVL40:
+  98:Src/gesture_detection.c ****                 if (wrist_dx > 0) {
+ 502              		.loc 1 98 13 is_stmt 1 view .LVU155
+  98:Src/gesture_detection.c ****                 if (wrist_dx > 0) {
+ 503              		.loc 1 98 16 is_stmt 0 view .LVU156
+ 504 01ac DFED487A 		vldr.32	s15, .L57+4
+ 505 01b0 B4EEE70A 		vcmpe.f32	s0, s15
+ 506 01b4 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 507 01b8 07DD     		ble	.L24
+  99:Src/gesture_detection.c ****                     return GESTURE_LEFT_ARM_SWIPE_RIGHT;
+ 508              		.loc 1 99 17 is_stmt 1 view .LVU157
+ 102:Src/gesture_detection.c ****                 }
+ 509              		.loc 1 102 28 is_stmt 0 view .LVU158
+ 510 01ba F5EEC08A 		vcmpe.f32	s17, #0
+ 511 01be F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 512 01c2 CCBF     		ite	gt
+ 513 01c4 0420     		movgt	r0, #4
+ 514 01c6 0320     		movle	r0, #3
+ 515              	.LVL41:
+ 102:Src/gesture_detection.c ****                 }
+ 516              		.loc 1 102 28 view .LVU159
+ 517              	.LBE29:
+ 518              	.LBE28:
+ 519              	.LBE32:
+ 520              	.LBE34:
+ 189:Src/gesture_detection.c ****         detector->last_gesture_time = current_time;
+ 521              		.loc 1 189 9 is_stmt 1 view .LVU160
+ 522              	.LBB35:
+ 523              	.LBB33:
+ 524              	.LBB31:
+ 525              	.LBB30:
+ 526 01c8 A9E7     		b	.L36
+ 527              	.LVL42:
+ 528              	.L24:
+ 189:Src/gesture_detection.c ****         detector->last_gesture_time = current_time;
+ 529              		.loc 1 189 9 is_stmt 0 view .LVU161
+ 530              	.LBE30:
+ 531              	.LBE31:
+ 532              	.LBE33:
+ 533              	.LBE35:
+ 197:Src/gesture_detection.c ****     if (detected_gesture != GESTURE_NONE) {
+ 534              		.loc 1 197 5 is_stmt 1 view .LVU162
+ 535              	.LBB36:
+ 536              	.LBI36:
+ 111:Src/gesture_detection.c **** {
+ 537              		.loc 1 111 22 view .LVU163
+ 538              	.LBB37:
+ 113:Src/gesture_detection.c **** 
+ 539              		.loc 1 113 5 view .LVU164
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 16
+
+
+ 115:Src/gesture_detection.c ****     KeypointHistory_t *right_shoulder = detector->history[KEYPOINT_RIGHT_SHOULDER];
+ 540              		.loc 1 115 5 view .LVU165
+ 116:Src/gesture_detection.c ****     KeypointHistory_t *right_elbow = detector->history[KEYPOINT_RIGHT_ELBOW];
+ 541              		.loc 1 116 5 view .LVU166
+ 117:Src/gesture_detection.c **** 
+ 542              		.loc 1 117 5 view .LVU167
+ 119:Src/gesture_detection.c ****         right_shoulder[curr_idx].confidence < MIN_CONFIDENCE ||
+ 543              		.loc 1 119 5 view .LVU168
+ 119:Src/gesture_detection.c ****         right_shoulder[curr_idx].confidence < MIN_CONFIDENCE ||
+ 544              		.loc 1 119 8 is_stmt 0 view .LVU169
+ 545 01ca B4EEC89A 		vcmpe.f32	s18, s16
+ 546 01ce F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 547 01d2 3FF548AF 		bmi	.L30
+ 120:Src/gesture_detection.c ****         right_elbow[curr_idx].confidence < MIN_CONFIDENCE) {
+ 548              		.loc 1 120 23 view .LVU170
+ 549 01d6 029B     		ldr	r3, [sp, #8]
+ 550 01d8 4344     		add	r3, r3, r8
+ 119:Src/gesture_detection.c ****         right_shoulder[curr_idx].confidence < MIN_CONFIDENCE ||
+ 551              		.loc 1 119 59 discriminator 1 view .LVU171
+ 552 01da D3ED027A 		vldr.32	s15, [r3, #8]
+ 553 01de F4EEC87A 		vcmpe.f32	s15, s16
+ 554 01e2 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 120:Src/gesture_detection.c ****         right_elbow[curr_idx].confidence < MIN_CONFIDENCE) {
+ 555              		.loc 1 120 23 view .LVU172
+ 556 01e6 9B46     		mov	fp, r3
+ 119:Src/gesture_detection.c ****         right_shoulder[curr_idx].confidence < MIN_CONFIDENCE ||
+ 557              		.loc 1 119 59 discriminator 1 view .LVU173
+ 558 01e8 3FF53DAF 		bmi	.L30
+ 121:Src/gesture_detection.c ****         return GESTURE_NONE;
+ 559              		.loc 1 121 30 view .LVU174
+ 560 01ec A044     		add	r8, r8, r4
+ 120:Src/gesture_detection.c ****         right_elbow[curr_idx].confidence < MIN_CONFIDENCE) {
+ 561              		.loc 1 120 62 view .LVU175
+ 562 01ee D8EDA27A 		vldr.32	s15, [r8, #648]
+ 563 01f2 F4EEC87A 		vcmpe.f32	s15, s16
+ 564 01f6 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 565 01fa 3FF534AF 		bmi	.L30
+ 126:Src/gesture_detection.c ****         uint8_t start_idx = (curr_idx - 5 + GESTURE_HISTORY_SIZE) % GESTURE_HISTORY_SIZE;
+ 566              		.loc 1 126 5 is_stmt 1 view .LVU176
+ 126:Src/gesture_detection.c ****         uint8_t start_idx = (curr_idx - 5 + GESTURE_HISTORY_SIZE) % GESTURE_HISTORY_SIZE;
+ 567              		.loc 1 126 8 is_stmt 0 view .LVU177
+ 568 01fe 042D     		cmp	r5, #4
+ 569 0200 60DD     		ble	.L31
+ 570              	.LBB38:
+ 127:Src/gesture_detection.c **** 
+ 571              		.loc 1 127 9 is_stmt 1 view .LVU178
+ 572              	.LVL43:
+ 129:Src/gesture_detection.c ****         float32_t curr_y = right_wrist[curr_idx].y;
+ 573              		.loc 1 129 9 view .LVU179
+ 127:Src/gesture_detection.c **** 
+ 574              		.loc 1 127 67 is_stmt 0 view .LVU180
+ 575 0202 0A22     		movs	r2, #10
+ 127:Src/gesture_detection.c **** 
+ 576              		.loc 1 127 43 view .LVU181
+ 577 0204 6B1D     		adds	r3, r5, #5
+ 127:Src/gesture_detection.c **** 
+ 578              		.loc 1 127 67 view .LVU182
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 17
+
+
+ 579 0206 B3FBF2F1 		udiv	r1, r3, r2
+ 580 020a 02FB1133 		mls	r3, r2, r1, r3
+ 129:Src/gesture_detection.c ****         float32_t curr_y = right_wrist[curr_idx].y;
+ 581              		.loc 1 129 19 view .LVU183
+ 582 020e 07EB0313 		add	r3, r7, r3, lsl #4
+ 583 0212 93ED017A 		vldr.32	s14, [r3, #4]
+ 584              	.LVL44:
+ 130:Src/gesture_detection.c ****         float32_t vertical_movement = curr_y - start_y;
+ 585              		.loc 1 130 9 is_stmt 1 view .LVU184
+ 134:Src/gesture_detection.c ****             float32_t speed = Gesture_CalculateSpeed(right_wrist, curr_idx, 5);
+ 586              		.loc 1 134 12 is_stmt 0 view .LVU185
+ 587 0216 DFED2F6A 		vldr.32	s13, .L57+8
+ 588 021a B4EEE67A 		vcmpe.f32	s14, s13
+ 589 021e F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 130:Src/gesture_detection.c ****         float32_t vertical_movement = curr_y - start_y;
+ 590              		.loc 1 130 19 view .LVU186
+ 591 0222 D9ED017A 		vldr.32	s15, [r9, #4]
+ 592              	.LVL45:
+ 131:Src/gesture_detection.c **** 
+ 593              		.loc 1 131 9 is_stmt 1 view .LVU187
+ 134:Src/gesture_detection.c ****             float32_t speed = Gesture_CalculateSpeed(right_wrist, curr_idx, 5);
+ 594              		.loc 1 134 9 view .LVU188
+ 134:Src/gesture_detection.c ****             float32_t speed = Gesture_CalculateSpeed(right_wrist, curr_idx, 5);
+ 595              		.loc 1 134 12 is_stmt 0 view .LVU189
+ 596 0226 36D4     		bmi	.L32
+ 597              	.LVL46:
+ 598              	.L34:
+ 134:Src/gesture_detection.c ****             float32_t speed = Gesture_CalculateSpeed(right_wrist, curr_idx, 5);
+ 599              		.loc 1 134 12 view .LVU190
+ 600              	.LBE38:
+ 601              	.LBB40:
+ 144:Src/gesture_detection.c **** 
+ 602              		.loc 1 144 9 is_stmt 1 view .LVU191
+ 146:Src/gesture_detection.c ****         float32_t arm_extension = Gesture_CalculateDistance(
+ 603              		.loc 1 146 9 view .LVU192
+ 144:Src/gesture_detection.c **** 
+ 604              		.loc 1 144 67 is_stmt 0 view .LVU193
+ 605 0228 0A23     		movs	r3, #10
+ 144:Src/gesture_detection.c **** 
+ 606              		.loc 1 144 43 view .LVU194
+ 607 022a 0735     		adds	r5, r5, #7
+ 608              	.LVL47:
+ 144:Src/gesture_detection.c **** 
+ 609              		.loc 1 144 67 view .LVU195
+ 610 022c B5FBF3F2 		udiv	r2, r5, r3
+ 611 0230 03FB1255 		mls	r5, r3, r2, r5
+ 612              	.LVL48:
+ 146:Src/gesture_detection.c ****         float32_t arm_extension = Gesture_CalculateDistance(
+ 613              		.loc 1 146 95 view .LVU196
+ 614 0234 07EB0515 		add	r5, r7, r5, lsl #4
+ 146:Src/gesture_detection.c ****         float32_t arm_extension = Gesture_CalculateDistance(
+ 615              		.loc 1 146 68 view .LVU197
+ 616 0238 99ED000A 		vldr.32	s0, [r9]
+ 146:Src/gesture_detection.c ****         float32_t arm_extension = Gesture_CalculateDistance(
+ 617              		.loc 1 146 71 view .LVU198
+ 618 023c 95ED008A 		vldr.32	s16, [r5]
+ 619 0240 30EE488A 		vsub.f32	s16, s0, s16
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 18
+
+
+ 147:Src/gesture_detection.c ****             right_wrist[curr_idx].x, right_wrist[curr_idx].y,
+ 620              		.loc 1 147 35 view .LVU199
+ 621 0244 DBED011A 		vldr.32	s3, [fp, #4]
+ 622 0248 9BED001A 		vldr.32	s2, [fp]
+ 623 024c D9ED010A 		vldr.32	s1, [r9, #4]
+ 624 0250 FFF7FEFF 		bl	Gesture_CalculateDistance
+ 625              	.LVL49:
+ 146:Src/gesture_detection.c ****         float32_t arm_extension = Gesture_CalculateDistance(
+ 626              		.loc 1 146 19 view .LVU200
+ 627 0254 B0EEC88A 		vabs.f32	s16, s16
+ 628              	.LVL50:
+ 147:Src/gesture_detection.c ****             right_wrist[curr_idx].x, right_wrist[curr_idx].y,
+ 629              		.loc 1 147 9 is_stmt 1 view .LVU201
+ 152:Src/gesture_detection.c ****             float32_t speed = Gesture_CalculateSpeed(right_wrist, curr_idx, 3);
+ 630              		.loc 1 152 9 view .LVU202
+ 152:Src/gesture_detection.c ****             float32_t speed = Gesture_CalculateSpeed(right_wrist, curr_idx, 3);
+ 631              		.loc 1 152 12 is_stmt 0 view .LVU203
+ 632 0258 DFED1D7A 		vldr.32	s15, .L57+4
+ 633 025c B4EEE78A 		vcmpe.f32	s16, s15
+ 634 0260 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 635 0264 7FF7FFAE 		ble	.L30
+ 152:Src/gesture_detection.c ****             float32_t speed = Gesture_CalculateSpeed(right_wrist, curr_idx, 3);
+ 636              		.loc 1 152 40 discriminator 1 view .LVU204
+ 637 0268 F5EE007A 		vmov.f32	s15, #2.5e-1
+ 638 026c B4EEE70A 		vcmpe.f32	s0, s15
+ 639 0270 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 640 0274 7FF7F7AE 		ble	.L30
+ 641              	.LBB41:
+ 153:Src/gesture_detection.c ****             if (speed > SWIPE_MIN_SPEED) {
+ 642              		.loc 1 153 13 is_stmt 1 view .LVU205
+ 153:Src/gesture_detection.c ****             if (speed > SWIPE_MIN_SPEED) {
+ 643              		.loc 1 153 31 is_stmt 0 view .LVU206
+ 644 0278 0322     		movs	r2, #3
+ 645 027a 5146     		mov	r1, r10
+ 646 027c 3846     		mov	r0, r7
+ 647 027e FFF7FEFF 		bl	Gesture_CalculateSpeed
+ 648              	.LVL51:
+ 154:Src/gesture_detection.c ****                 return GESTURE_SWORD_SIDE_SLASH;
+ 649              		.loc 1 154 13 is_stmt 1 view .LVU207
+ 154:Src/gesture_detection.c ****                 return GESTURE_SWORD_SIDE_SLASH;
+ 650              		.loc 1 154 16 is_stmt 0 view .LVU208
+ 651 0282 DFED127A 		vldr.32	s15, .L57
+ 652 0286 B4EEE70A 		vcmpe.f32	s0, s15
+ 653 028a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 654 028e 7FF7EAAE 		ble	.L30
+ 155:Src/gesture_detection.c ****             }
+ 655              		.loc 1 155 24 view .LVU209
+ 656 0292 0720     		movs	r0, #7
+ 657 0294 43E7     		b	.L36
+ 658              	.LVL52:
+ 659              	.L32:
+ 155:Src/gesture_detection.c ****             }
+ 660              		.loc 1 155 24 view .LVU210
+ 661              	.LBE41:
+ 662              	.LBE40:
+ 663              	.LBB42:
+ 131:Src/gesture_detection.c **** 
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 19
+
+
+ 664              		.loc 1 131 19 view .LVU211
+ 665 0296 77EEC77A 		vsub.f32	s15, s15, s14
+ 666              	.LVL53:
+ 134:Src/gesture_detection.c ****             float32_t speed = Gesture_CalculateSpeed(right_wrist, curr_idx, 5);
+ 667              		.loc 1 134 28 discriminator 1 view .LVU212
+ 668 029a B5EE007A 		vmov.f32	s14, #2.5e-1
+ 669              	.LVL54:
+ 134:Src/gesture_detection.c ****             float32_t speed = Gesture_CalculateSpeed(right_wrist, curr_idx, 5);
+ 670              		.loc 1 134 28 discriminator 1 view .LVU213
+ 671 029e F4EEC77A 		vcmpe.f32	s15, s14
+ 672 02a2 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 673 02a6 BFDD     		ble	.L34
+ 674              	.LBB39:
+ 135:Src/gesture_detection.c ****             if (speed > SWIPE_MIN_SPEED * 1.5f) {
+ 675              		.loc 1 135 13 is_stmt 1 view .LVU214
+ 135:Src/gesture_detection.c ****             if (speed > SWIPE_MIN_SPEED * 1.5f) {
+ 676              		.loc 1 135 31 is_stmt 0 view .LVU215
+ 677 02a8 0522     		movs	r2, #5
+ 678 02aa 5146     		mov	r1, r10
+ 679 02ac 3846     		mov	r0, r7
+ 680 02ae FFF7FEFF 		bl	Gesture_CalculateSpeed
+ 681              	.LVL55:
+ 136:Src/gesture_detection.c ****                 return GESTURE_SWORD_OVERHEAD_STRIKE;
+ 682              		.loc 1 136 13 is_stmt 1 view .LVU216
+ 136:Src/gesture_detection.c ****                 return GESTURE_SWORD_OVERHEAD_STRIKE;
+ 683              		.loc 1 136 16 is_stmt 0 view .LVU217
+ 684 02b2 DFED097A 		vldr.32	s15, .L57+12
+ 685 02b6 B4EEE70A 		vcmpe.f32	s0, s15
+ 686 02ba F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 687 02be B3DD     		ble	.L34
+ 137:Src/gesture_detection.c ****             }
+ 688              		.loc 1 137 24 view .LVU218
+ 689 02c0 0620     		movs	r0, #6
+ 690 02c2 2CE7     		b	.L36
+ 691              	.LVL56:
+ 692              	.L31:
+ 137:Src/gesture_detection.c ****             }
+ 693              		.loc 1 137 24 view .LVU219
+ 694              	.LBE39:
+ 695              	.LBE42:
+ 143:Src/gesture_detection.c ****         uint8_t start_idx = (curr_idx - 3 + GESTURE_HISTORY_SIZE) % GESTURE_HISTORY_SIZE;
+ 696              		.loc 1 143 5 is_stmt 1 view .LVU220
+ 143:Src/gesture_detection.c ****         uint8_t start_idx = (curr_idx - 3 + GESTURE_HISTORY_SIZE) % GESTURE_HISTORY_SIZE;
+ 697              		.loc 1 143 8 is_stmt 0 view .LVU221
+ 698 02c4 022D     		cmp	r5, #2
+ 699 02c6 7FF7CEAE 		ble	.L30
+ 700 02ca ADE7     		b	.L34
+ 701              	.L58:
+ 702              		.align	2
+ 703              	.L57:
+ 704 02cc CDCC4C3D 		.word	1028443341
+ 705 02d0 CDCC4C3E 		.word	1045220557
+ 706 02d4 9A99993E 		.word	1050253722
+ 707 02d8 9A99993D 		.word	1033476506
+ 708              	.LBE37:
+ 709              	.LBE36:
+ 710              		.cfi_endproc
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 20
+
+
+ 711              	.LFE3344:
+ 713              		.section	.rodata.Gesture_GetName.str1.1,"aMS",%progbits,1
+ 714              	.LC0:
+ 715 0000 4E6F2047 		.ascii	"No Gesture\000"
+ 715      65737475 
+ 715      726500
+ 716              		.section	.text.Gesture_GetName,"ax",%progbits
+ 717              		.align	1
+ 718              		.global	Gesture_GetName
+ 719              		.syntax unified
+ 720              		.thumb
+ 721              		.thumb_func
+ 723              	Gesture_GetName:
+ 724              	.LVL57:
+ 725              	.LFB3345:
+ 208:Src/gesture_detection.c **** 
+ 209:Src/gesture_detection.c **** const char* Gesture_GetName(GestureType_t gesture)
+ 210:Src/gesture_detection.c **** {
+ 726              		.loc 1 210 1 is_stmt 1 view -0
+ 727              		.cfi_startproc
+ 728              		@ args = 0, pretend = 0, frame = 0
+ 729              		@ frame_needed = 0, uses_anonymous_args = 0
+ 730              		@ link register save eliminated.
+ 211:Src/gesture_detection.c ****     switch (gesture) {
+ 731              		.loc 1 211 5 view .LVU223
+ 732 0000 0138     		subs	r0, r0, #1
+ 733              	.LVL58:
+ 734              		.loc 1 211 5 is_stmt 0 view .LVU224
+ 735 0002 C0B2     		uxtb	r0, r0
+ 736              	.LVL59:
+ 737              		.loc 1 211 5 view .LVU225
+ 738 0004 0628     		cmp	r0, #6
+ 739 0006 9ABF     		itte	ls
+ 740 0008 024B     		ldrls	r3, .L62
+ 741 000a 53F82000 		ldrls	r0, [r3, r0, lsl #2]
+ 210:Src/gesture_detection.c ****     switch (gesture) {
+ 742              		.loc 1 210 1 view .LVU226
+ 743 000e 0248     		ldrhi	r0, .L62+4
+ 212:Src/gesture_detection.c ****         case GESTURE_RIGHT_ARM_SWIPE_LEFT:   return "Right Arm Swipe Left";
+ 213:Src/gesture_detection.c ****         case GESTURE_RIGHT_ARM_SWIPE_RIGHT:  return "Right Arm Swipe Right";
+ 214:Src/gesture_detection.c ****         case GESTURE_LEFT_ARM_SWIPE_LEFT:    return "Left Arm Swipe Left";
+ 215:Src/gesture_detection.c ****         case GESTURE_LEFT_ARM_SWIPE_RIGHT:   return "Left Arm Swipe Right";
+ 216:Src/gesture_detection.c ****         case GESTURE_BOTH_ARMS_RAISED:       return "Both Arms Raised";
+ 217:Src/gesture_detection.c ****         case GESTURE_SWORD_OVERHEAD_STRIKE:  return "Sword Overhead Strike";
+ 218:Src/gesture_detection.c ****         case GESTURE_SWORD_SIDE_SLASH:       return "Sword Side Slash";
+ 219:Src/gesture_detection.c ****         default:                             return "No Gesture";
+ 220:Src/gesture_detection.c ****     }
+ 221:Src/gesture_detection.c **** }
+ 744              		.loc 1 221 1 view .LVU227
+ 745 0010 7047     		bx	lr
+ 746              	.L63:
+ 747 0012 00BF     		.align	2
+ 748              	.L62:
+ 749 0014 00000000 		.word	CSWTCH.10
+ 750 0018 00000000 		.word	.LC0
+ 751              		.cfi_endproc
+ 752              	.LFE3345:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 21
+
+
+ 754              		.section	.text.Gesture_GetCurrentDisplayGesture,"ax",%progbits
+ 755              		.align	1
+ 756              		.global	Gesture_GetCurrentDisplayGesture
+ 757              		.syntax unified
+ 758              		.thumb
+ 759              		.thumb_func
+ 761              	Gesture_GetCurrentDisplayGesture:
+ 762              	.LVL60:
+ 763              	.LFB3346:
+ 222:Src/gesture_detection.c **** 
+ 223:Src/gesture_detection.c **** GestureType_t Gesture_GetCurrentDisplayGesture(GestureDetector_t *detector)
+ 224:Src/gesture_detection.c **** {
+ 764              		.loc 1 224 1 is_stmt 1 view -0
+ 765              		.cfi_startproc
+ 766              		@ args = 0, pretend = 0, frame = 0
+ 767              		@ frame_needed = 0, uses_anonymous_args = 0
+ 225:Src/gesture_detection.c ****     uint32_t current_time = HAL_GetTick();
+ 768              		.loc 1 225 5 view .LVU229
+ 224:Src/gesture_detection.c ****     uint32_t current_time = HAL_GetTick();
+ 769              		.loc 1 224 1 is_stmt 0 view .LVU230
+ 770 0000 10B5     		push	{r4, lr}
+ 771              		.cfi_def_cfa_offset 8
+ 772              		.cfi_offset 4, -8
+ 773              		.cfi_offset 14, -4
+ 224:Src/gesture_detection.c ****     uint32_t current_time = HAL_GetTick();
+ 774              		.loc 1 224 1 view .LVU231
+ 775 0002 0446     		mov	r4, r0
+ 776              		.loc 1 225 29 view .LVU232
+ 777 0004 FFF7FEFF 		bl	HAL_GetTick
+ 778              	.LVL61:
+ 226:Src/gesture_detection.c **** 
+ 227:Src/gesture_detection.c ****     // Check if display timeout has expired
+ 228:Src/gesture_detection.c ****     if (current_time > detector->gesture_display_timeout) {
+ 779              		.loc 1 228 5 is_stmt 1 view .LVU233
+ 780              		.loc 1 228 8 is_stmt 0 view .LVU234
+ 781 0008 D4F82C38 		ldr	r3, [r4, #2092]
+ 782 000c 8342     		cmp	r3, r0
+ 229:Src/gesture_detection.c ****         detector->current_display_gesture = GESTURE_NONE;
+ 783              		.loc 1 229 9 is_stmt 1 view .LVU235
+ 784              		.loc 1 229 43 is_stmt 0 view .LVU236
+ 785 000e 3CBF     		itt	cc
+ 786 0010 0023     		movcc	r3, #0
+ 787 0012 84F82838 		strbcc	r3, [r4, #2088]
+ 230:Src/gesture_detection.c ****     }
+ 231:Src/gesture_detection.c **** 
+ 232:Src/gesture_detection.c ****     return detector->current_display_gesture;
+ 788              		.loc 1 232 5 is_stmt 1 view .LVU237
+ 233:Src/gesture_detection.c **** }
+ 789              		.loc 1 233 1 is_stmt 0 view .LVU238
+ 790 0016 94F82808 		ldrb	r0, [r4, #2088]	@ zero_extendqisi2
+ 791              	.LVL62:
+ 792              		.loc 1 233 1 view .LVU239
+ 793 001a 10BD     		pop	{r4, pc}
+ 794              		.loc 1 233 1 view .LVU240
+ 795              		.cfi_endproc
+ 796              	.LFE3346:
+ 798              		.section	.text.Gesture_GetKeypointDebugInfo,"ax",%progbits
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 22
+
+
+ 799              		.align	1
+ 800              		.global	Gesture_GetKeypointDebugInfo
+ 801              		.syntax unified
+ 802              		.thumb
+ 803              		.thumb_func
+ 805              	Gesture_GetKeypointDebugInfo:
+ 806              	.LVL63:
+ 807              	.LFB3347:
+ 234:Src/gesture_detection.c **** 
+ 235:Src/gesture_detection.c **** void Gesture_GetKeypointDebugInfo(GestureDetector_t *detector, uint8_t keypoint_idx,
+ 236:Src/gesture_detection.c ****                                   float32_t *current_x, float32_t *current_y,
+ 237:Src/gesture_detection.c ****                                   float32_t *current_confidence, float32_t *current_speed)
+ 238:Src/gesture_detection.c **** {
+ 808              		.loc 1 238 1 is_stmt 1 view -0
+ 809              		.cfi_startproc
+ 810              		@ args = 8, pretend = 0, frame = 0
+ 811              		@ frame_needed = 0, uses_anonymous_args = 0
+ 239:Src/gesture_detection.c ****     if (keypoint_idx >= AI_POSE_PP_POSE_KEYPOINTS_NB) {
+ 812              		.loc 1 239 5 view .LVU242
+ 238:Src/gesture_detection.c ****     if (keypoint_idx >= AI_POSE_PP_POSE_KEYPOINTS_NB) {
+ 813              		.loc 1 238 1 is_stmt 0 view .LVU243
+ 814 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 815              		.cfi_def_cfa_offset 24
+ 816              		.cfi_offset 3, -24
+ 817              		.cfi_offset 4, -20
+ 818              		.cfi_offset 5, -16
+ 819              		.cfi_offset 6, -12
+ 820              		.cfi_offset 7, -8
+ 821              		.cfi_offset 14, -4
+ 822              		.loc 1 239 8 view .LVU244
+ 823 0002 0C29     		cmp	r1, #12
+ 238:Src/gesture_detection.c ****     if (keypoint_idx >= AI_POSE_PP_POSE_KEYPOINTS_NB) {
+ 824              		.loc 1 238 1 view .LVU245
+ 825 0004 069E     		ldr	r6, [sp, #24]
+ 826              		.loc 1 239 8 view .LVU246
+ 827 0006 06D9     		bls	.L67
+ 240:Src/gesture_detection.c ****         *current_x = 0.0f;
+ 828              		.loc 1 240 9 is_stmt 1 view .LVU247
+ 829              		.loc 1 240 20 is_stmt 0 view .LVU248
+ 830 0008 0021     		movs	r1, #0
+ 831              	.LVL64:
+ 832              		.loc 1 240 20 view .LVU249
+ 833 000a 1160     		str	r1, [r2]	@ float
+ 241:Src/gesture_detection.c ****         *current_y = 0.0f;
+ 834              		.loc 1 241 9 is_stmt 1 view .LVU250
+ 835              		.loc 1 241 20 is_stmt 0 view .LVU251
+ 836 000c 1960     		str	r1, [r3]	@ float
+ 242:Src/gesture_detection.c ****         *current_confidence = 0.0f;
+ 837              		.loc 1 242 9 is_stmt 1 view .LVU252
+ 838              		.loc 1 242 29 is_stmt 0 view .LVU253
+ 839 000e 3160     		str	r1, [r6]	@ float
+ 243:Src/gesture_detection.c ****         *current_speed = 0.0f;
+ 840              		.loc 1 243 9 is_stmt 1 view .LVU254
+ 244:Src/gesture_detection.c ****         return;
+ 841              		.loc 1 244 9 view .LVU255
+ 842              	.LVL65:
+ 843              	.L68:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 23
+
+
+ 243:Src/gesture_detection.c ****         *current_speed = 0.0f;
+ 844              		.loc 1 243 24 is_stmt 0 view .LVU256
+ 845 0010 079B     		ldr	r3, [sp, #28]
+ 846 0012 1960     		str	r1, [r3]	@ float
+ 245:Src/gesture_detection.c ****     }
+ 246:Src/gesture_detection.c **** 
+ 247:Src/gesture_detection.c ****     // Get current index (last updated position)
+ 248:Src/gesture_detection.c ****     uint8_t curr_idx = (detector->history_index - 1 + GESTURE_HISTORY_SIZE) % GESTURE_HISTORY_SIZE;
+ 249:Src/gesture_detection.c **** 
+ 250:Src/gesture_detection.c ****     // Get current keypoint data
+ 251:Src/gesture_detection.c ****     *current_x = detector->history[keypoint_idx][curr_idx].x;
+ 252:Src/gesture_detection.c ****     *current_y = detector->history[keypoint_idx][curr_idx].y;
+ 253:Src/gesture_detection.c ****     *current_confidence = detector->history[keypoint_idx][curr_idx].confidence;
+ 254:Src/gesture_detection.c **** 
+ 255:Src/gesture_detection.c ****     // Calculate speed over last 3 frames
+ 256:Src/gesture_detection.c ****     *current_speed = Gesture_CalculateSpeed(detector->history[keypoint_idx], curr_idx, 3);
+ 257:Src/gesture_detection.c **** }
+ 847              		.loc 1 257 1 view .LVU257
+ 848 0014 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 849              	.LVL66:
+ 850              	.L67:
+ 248:Src/gesture_detection.c **** 
+ 851              		.loc 1 248 5 is_stmt 1 view .LVU258
+ 248:Src/gesture_detection.c **** 
+ 852              		.loc 1 248 77 is_stmt 0 view .LVU259
+ 853 0016 0A24     		movs	r4, #10
+ 248:Src/gesture_detection.c **** 
+ 854              		.loc 1 248 33 view .LVU260
+ 855 0018 90F82058 		ldrb	r5, [r0, #2080]	@ zero_extendqisi2
+ 248:Src/gesture_detection.c **** 
+ 856              		.loc 1 248 53 view .LVU261
+ 857 001c 0935     		adds	r5, r5, #9
+ 248:Src/gesture_detection.c **** 
+ 858              		.loc 1 248 77 view .LVU262
+ 859 001e B5FBF4F7 		udiv	r7, r5, r4
+ 860 0022 04FB1755 		mls	r5, r4, r7, r5
+ 861              	.LVL67:
+ 251:Src/gesture_detection.c ****     *current_y = detector->history[keypoint_idx][curr_idx].y;
+ 862              		.loc 1 251 5 is_stmt 1 view .LVU263
+ 251:Src/gesture_detection.c ****     *current_y = detector->history[keypoint_idx][curr_idx].y;
+ 863              		.loc 1 251 59 is_stmt 0 view .LVU264
+ 864 0026 04FB0154 		mla	r4, r4, r1, r5
+ 865 002a 00EB0414 		add	r4, r0, r4, lsl #4
+ 866 002e 2768     		ldr	r7, [r4]	@ float
+ 251:Src/gesture_detection.c ****     *current_y = detector->history[keypoint_idx][curr_idx].y;
+ 867              		.loc 1 251 16 view .LVU265
+ 868 0030 1760     		str	r7, [r2]	@ float
+ 252:Src/gesture_detection.c ****     *current_confidence = detector->history[keypoint_idx][curr_idx].confidence;
+ 869              		.loc 1 252 5 is_stmt 1 view .LVU266
+ 252:Src/gesture_detection.c ****     *current_confidence = detector->history[keypoint_idx][curr_idx].confidence;
+ 870              		.loc 1 252 59 is_stmt 0 view .LVU267
+ 871 0032 6268     		ldr	r2, [r4, #4]	@ float
+ 872              	.LVL68:
+ 252:Src/gesture_detection.c ****     *current_confidence = detector->history[keypoint_idx][curr_idx].confidence;
+ 873              		.loc 1 252 16 view .LVU268
+ 874 0034 1A60     		str	r2, [r3]	@ float
+ 253:Src/gesture_detection.c **** 
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 24
+
+
+ 875              		.loc 1 253 5 is_stmt 1 view .LVU269
+ 253:Src/gesture_detection.c **** 
+ 876              		.loc 1 253 68 is_stmt 0 view .LVU270
+ 877 0036 A368     		ldr	r3, [r4, #8]	@ float
+ 878              	.LVL69:
+ 256:Src/gesture_detection.c **** }
+ 879              		.loc 1 256 22 view .LVU271
+ 880 0038 0322     		movs	r2, #3
+ 253:Src/gesture_detection.c **** 
+ 881              		.loc 1 253 25 view .LVU272
+ 882 003a 3360     		str	r3, [r6]	@ float
+ 256:Src/gesture_detection.c **** }
+ 883              		.loc 1 256 5 is_stmt 1 view .LVU273
+ 256:Src/gesture_detection.c **** }
+ 884              		.loc 1 256 62 is_stmt 0 view .LVU274
+ 885 003c 01EB8103 		add	r3, r1, r1, lsl #2
+ 256:Src/gesture_detection.c **** }
+ 886              		.loc 1 256 22 view .LVU275
+ 887 0040 00EB4310 		add	r0, r0, r3, lsl #5
+ 888              	.LVL70:
+ 256:Src/gesture_detection.c **** }
+ 889              		.loc 1 256 22 view .LVU276
+ 890 0044 E9B2     		uxtb	r1, r5
+ 891              	.LVL71:
+ 256:Src/gesture_detection.c **** }
+ 892              		.loc 1 256 22 view .LVU277
+ 893 0046 FFF7FEFF 		bl	Gesture_CalculateSpeed
+ 894              	.LVL72:
+ 895 004a 10EE101A 		vmov	r1, s0
+ 896 004e DFE7     		b	.L68
+ 897              		.cfi_endproc
+ 898              	.LFE3347:
+ 900              		.section	.rodata.str1.1,"aMS",%progbits,1
+ 901              	.LC1:
+ 902 0000 52696768 		.ascii	"Right Arm Swipe Left\000"
+ 902      74204172 
+ 902      6D205377 
+ 902      69706520 
+ 902      4C656674 
+ 903              	.LC2:
+ 904 0015 52696768 		.ascii	"Right Arm Swipe Right\000"
+ 904      74204172 
+ 904      6D205377 
+ 904      69706520 
+ 904      52696768 
+ 905              	.LC3:
+ 906 002b 4C656674 		.ascii	"Left Arm Swipe Left\000"
+ 906      2041726D 
+ 906      20537769 
+ 906      7065204C 
+ 906      65667400 
+ 907              	.LC4:
+ 908 003f 4C656674 		.ascii	"Left Arm Swipe Right\000"
+ 908      2041726D 
+ 908      20537769 
+ 908      70652052 
+ 908      69676874 
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 25
+
+
+ 909              	.LC5:
+ 910 0054 426F7468 		.ascii	"Both Arms Raised\000"
+ 910      2041726D 
+ 910      73205261 
+ 910      69736564 
+ 910      00
+ 911              	.LC6:
+ 912 0065 53776F72 		.ascii	"Sword Overhead Strike\000"
+ 912      64204F76 
+ 912      65726865 
+ 912      61642053 
+ 912      7472696B 
+ 913              	.LC7:
+ 914 007b 53776F72 		.ascii	"Sword Side Slash\000"
+ 914      64205369 
+ 914      64652053 
+ 914      6C617368 
+ 914      00
+ 915              		.section	.rodata.CSWTCH.10,"a"
+ 916              		.align	2
+ 919              	CSWTCH.10:
+ 920 0000 00000000 		.word	.LC1
+ 921 0004 15000000 		.word	.LC2
+ 922 0008 2B000000 		.word	.LC3
+ 923 000c 3F000000 		.word	.LC4
+ 924 0010 54000000 		.word	.LC5
+ 925 0014 65000000 		.word	.LC6
+ 926 0018 7B000000 		.word	.LC7
+ 927              		.text
+ 928              	.Letext0:
+ 929              		.file 2 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 930              		.file 3 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 931              		.file 4 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 932              		.file 5 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 933              		.file 6 "../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Inc/spe_pp_output_if.h"
+ 934              		.file 7 "Inc/gesture_detection.h"
+ 935              		.file 8 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 936              		.file 9 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 937              		.file 10 "../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Inc/stm32n6xx_hal.h"
+ 938              		.file 11 "<built-in>"
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 26
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gesture_detection.c
+C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s:26     .text.Gesture_Init:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s:32     .text.Gesture_Init:00000000 Gesture_Init
+C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s:50     .text.Gesture_CalculateDistance:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s:56     .text.Gesture_CalculateDistance:00000000 Gesture_CalculateDistance
+C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s:85     .text.Gesture_CalculateSpeed:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s:91     .text.Gesture_CalculateSpeed:00000000 Gesture_CalculateSpeed
+C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s:170    .text.Gesture_CalculateSpeed:00000058 $d
+C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s:176    .text.Gesture_Detect:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s:182    .text.Gesture_Detect:00000000 Gesture_Detect
+C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s:704    .text.Gesture_Detect:000002cc $d
+C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s:717    .text.Gesture_GetName:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s:723    .text.Gesture_GetName:00000000 Gesture_GetName
+C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s:749    .text.Gesture_GetName:00000014 $d
+C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s:919    .rodata.CSWTCH.10:00000000 CSWTCH.10
+C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s:755    .text.Gesture_GetCurrentDisplayGesture:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s:761    .text.Gesture_GetCurrentDisplayGesture:00000000 Gesture_GetCurrentDisplayGesture
+C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s:799    .text.Gesture_GetKeypointDebugInfo:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s:805    .text.Gesture_GetKeypointDebugInfo:00000000 Gesture_GetKeypointDebugInfo
+C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s:916    .rodata.CSWTCH.10:00000000 $d
+                           .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
+                           .group:00000000 wm4._newlib_version.h.4.411db44ea2338a62eca2f0777f81481b
+                           .group:00000000 wm4.features.h.33.e0c9f337c65cb9f22ed5f23d082bc78b
+                           .group:00000000 wm4._default_types.h.15.247e5cd201eca3442cbf5404108c4935
+                           .group:00000000 wm4._intsup.h.10.48bafbb683905c4daa4565a85aeeb264
+                           .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+                           .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+                           .group:00000000 wm4.cmsis_gcc.h.26.7a5fd1a99dbedde687044a4433ab3e15
+                           .group:00000000 wm4.newlib.h.7.a37ffbe9e5aff74303f4e60b1cc1c01b
+                           .group:00000000 wm4.ieeefp.h.77.bd5feb87d9990dd328793ced294f6a87
+                           .group:00000000 wm4.config.h.224.10ee1ad185d877c6e334e6581faab44d
+                           .group:00000000 wm4._ansi.h.31.de524f58584151836e90d8620a16f8e8
+                           .group:00000000 wm4.stddef.h.39.0dc9006b34572d4d9cae4c8b422c4971
+                           .group:00000000 wm4.cdefs.h.49.70fc7af612f78ddcace70fdd90b5623b
+                           .group:00000000 wm4._types.h.20.dd0d04dca3800a0d2a6129b87f3adbb2
+                           .group:00000000 wm4.stddef.h.158.6f8e08a347b1cff664332fa350bfceb3
+                           .group:00000000 wm4._types.h.127.3bdfe3ff8ea2d0985b03d9cbe93480e3
+                           .group:00000000 wm4.reent.h.18.25503cdc8b7e55dd0d6ea7b3e5af7a03
+                           .group:00000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
+                           .group:00000000 wm4.reent.h.78.6b87466b04591b1f1cb88c14fdf2ba9e
+                           .group:00000000 wm4.string.h.15.dab3980bf35408a4c507182805e2de3a
+                           .group:00000000 wm4.stddef.h.158.eec8bf00b5213f43d095cb984c5f22e3
+                           .group:00000000 wm4.string.h.177.59a005921fa78485abc80a0267de5752
+                           .group:00000000 wm4.math.h.13.47cfc34cae8a1153323939c4d32cf7c2
+                           .group:00000000 wm4.float.h.29.0e9d9baf95ec39f9555dc80c6e28186b
+                           .group:00000000 wm4.syslimits.h.34.de5cbd310098bc5895998b6bde577ed2
+                           .group:00000000 wm4.limits.h.9.70fb0ada6f71b16202a66baaa6d8ea70
+                           .group:00000000 wm4.limits.h.60.56a1ae353e2028a24298ec6463b8b593
+                           .group:00000000 wm4.arm_math_types.h.94.a6c8422e2657ad4cd95bd8be69ba02aa
+                           .group:00000000 wm4.stdbool.h.29.c08aa3eec75cf5b9b5003883f43253f0
+                           .group:00000000 wm4.arm_mve.h.38.47b22bbd301ce82bc6dafd1a387f65a3
+                           .group:00000000 wm4.arm_math_types.h.559.cab78f278b684a3ea2271947c7aea680
+                           .group:00000000 wm4.arm_math_memory.h.28.fe8a81c6a9ac13061a5f748732089249
+                           .group:00000000 wm4.none.h.185.db055cca83e83f96d8d0bb450fbdf4bb
+                           .group:00000000 wm4.utils.h.27.57524573fe37b04009eecf3582a4c591
+                           .group:00000000 wm4.fast_math_functions.h.28.8eb7477260c1d6b62047c49a01c4cbaa
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 27
+
+
+                           .group:00000000 wm4.controller_functions.h.28.7bed7d7a726df2f65b8a3d89cff01247
+                           .group:00000000 wm4.filtering_functions.h.46.6cf1424fb1f86d5f9958d208b83340a1
+                           .group:00000000 wm4.app_config.h.24.e9b8ad8c27ec31b3b21644fa8513e998
+                           .group:00000000 wm4.spe_pp_output_if.h.11.7212d2990e83c8afeadfa97fa05d17c4
+                           .group:00000000 wm4.gesture_detection.h.10.280b7ba29b6242eb6f219c183fc92787
+                           .group:00000000 wm4.stm32n6xx_hal_conf.h.21.e6f895f5dec93fd886896ef3aa220611
+                           .group:00000000 wm4.arm_cmse.h.103.a0d15a79c4c9a67da8d5831704d7248e
+                           .group:00000000 wm4.stm32n6xx.h.34.80585dd08aa426c932f6311fdb7386da
+                           .group:00000000 wm4.stm32n657xx.h.26.acd272cb67318cc1a4791ce2f0720ca6
+                           .group:00000000 wm4.cmsis_version.h.32.0ac195c83bb4537824e6ad1c47474b79
+                           .group:00000000 wm4.core_cm55.h.68.832d5cf835639cc0d28219c3d2867330
+                           .group:00000000 wm4.core_cm55.h.196.52e437a270752da561676e507b35baeb
+                           .group:00000000 wm4.mpu_armv8.h.32.9d72426c8e2b47753456dcb84802c5b3
+                           .group:00000000 wm4.pmu_armv8.h.32.eaa95f88a71b29390b135fd81c071b6b
+                           .group:00000000 wm4.core_cm55.h.4411.860dad8650880893dd57b815844f7186
+                           .group:00000000 wm4.cachel1_armv7.h.32.abd77761a989e008b0c60891114a33c7
+                           .group:00000000 wm4.stm32n657xx.h.575.1c2a5e6bedffc6f9083dcc857bc6d09d
+                           .group:00000000 wm4.stm32n6xx.h.114.5cf793d8af485e14f110e3e24bde1aa5
+                           .group:00000000 wm4.stm32_hal_legacy.h.22.87fb12bf5a1a1e00fc134f22bc9aa8c4
+                           .group:00000000 wm4.stm32n6xx_hal_def.h.63.3a8f01490e8852464e9fcb69092e9c75
+                           .group:00000000 wm4.stm32n6xx_ll_bus.h.38.2366a295ee4cdb04833997d3787fcd2d
+                           .group:00000000 wm4.stm32n6xx_ll_rcc.h.21.002e22a16fd7f67dde6dce41e8ba9620
+                           .group:00000000 wm4.stm32n6xx_hal_rcc.h.194.1cb1283e40f9bebcd3fba2a9a961838e
+                           .group:00000000 wm4.stm32n6xx_hal_rcc_ex.h.21.79aa32178dfef625fbd20d362449acfa
+                           .group:00000000 wm4.stm32n6xx_hal_rcc.h.4359.3f0b7ad33826d95438602c9aebc08af9
+                           .group:00000000 wm4.stm32n6xx_hal_gpio.h.21.89d54af663b98eb8fc098192053f7eeb
+                           .group:00000000 wm4.stm32n6xx_hal_gpio_ex.h.22.4acb2e3511a98bb48b81cfc8e09fd59e
+                           .group:00000000 wm4.stm32n6xx_hal_rif.h.21.424d0bafb874a777dee3742a22e13037
+                           .group:00000000 wm4.stm32n6xx_hal_dma.h.21.61e48c5c2e8d25d22177834b232fe45c
+                           .group:00000000 wm4.stm32n6xx_hal_dma_ex.h.21.66e597beb090a165329d6ccf665e41bc
+                           .group:00000000 wm4.stm32n6xx_hal_dma.h.1020.87e2180c009560b617c1f8208140c950
+                           .group:00000000 wm4.stm32n6xx_hal_cortex.h.21.f493623cc58f9454ab4eae41e395c5cc
+                           .group:00000000 wm4.stm32n6xx_hal_bsec.h.21.61b309e67dd810e28897a01b1b21a97f
+                           .group:00000000 wm4.stm32n6xx_hal_dcmipp.h.21.f538bfd785c6469670251ac9bc7af55d
+                           .group:00000000 wm4.stm32n6xx_hal_dma2d.h.21.75c8d46cdbb72970123b3f34ae2043d7
+                           .group:00000000 wm4.stm32n6xx_hal_exti.h.21.fda87e715ea6b98239ec30171d1df594
+                           .group:00000000 wm4.stm32n6xx_hal_i2c.h.21.3f483626ff64c5bf027265bb2e1d1331
+                           .group:00000000 wm4.stm32n6xx_hal_i2c_ex.h.21.79e9196c22282cdaf6b4047893638c45
+                           .group:00000000 wm4.stm32n6xx_hal_i2c.h.741.1084702632703acc669e4282b3043372
+                           .group:00000000 wm4.stm32n6xx_hal_ltdc.h.21.ae1eb09930e7e550e48e418ac5849e4d
+                           .group:00000000 wm4.stm32n6xx_hal_ltdc.h.1002.b13ede7fc94ed5ad1c6768a157d2149a
+                           .group:00000000 wm4.stm32n6xx_hal_pwr.h.21.cdb73e4869c3fed3fc84f901ec0e5f0a
+                           .group:00000000 wm4.stm32n6xx_hal_pwr_ex.h.21.1a673224a58b0c1e5fad8eeda6514208
+                           .group:00000000 wm4.stm32n6xx_hal_ramcfg.h.21.a62dfbb4d2c14e9a8c634a215e37bd3d
+                           .group:00000000 wm4.stm32n6xx_hal_uart.h.21.230f549bfa0d5ebfd77bfb311b2aca15
+                           .group:00000000 wm4.stm32n6xx_hal_uart_ex.h.21.a0d5511e1d0703b7b5278c8f5472b96d
+                           .group:00000000 wm4.stm32n6xx_hal_xspi.h.21.e17898be2073b6b6b19faf30b4e304e9
+                           .group:00000000 wm4.stm32n6xx_hal_cacheaxi.h.21.7c3375b7903ec42376e4883320997f74
+                           .group:00000000 wm4.stm32n6xx_hal.h.81.5e59143eba07faca3e9aeaa5470826c8
+                           .group:00000000 wm4.lcd.h.21.98701c105e66fef2e089854e5bc0fe32
+                           .group:00000000 wm4.stm32_lcd.h.55.1a04e503950bf34ef3721d2ebb9542fc
+                           .group:00000000 wm4.main.h.30.caab52a0a8de64f9677f2eb568935933
+
+UNDEFINED SYMBOLS
+memset
+sqrtf
+HAL_GetTick
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3OXUQj.s 			page 28
+
+

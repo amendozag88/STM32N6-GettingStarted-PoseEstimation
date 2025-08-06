@@ -40,6 +40,8 @@
   #error "PostProcessing type not supported"
 #endif
 
+#include "gesture_detection.h"
+
 #define MAX_NUMBER_OUTPUT 5
 #define LCD_FG_WIDTH  SCREEN_WIDTH
 #define LCD_FG_HEIGHT SCREEN_HEIGHT
@@ -110,6 +112,7 @@ __attribute__ ((section (".psram_bss")))
 __attribute__ ((aligned (32)))
 uint8_t lcd_fg_buffer[2][LCD_FG_WIDTH * LCD_FG_HEIGHT * 2];
 static int lcd_fg_buffer_rd_idx;
+GestureDetector_t gesture_detector;
 
 static void SystemClock_Config(void);
 static void NPURam_enable(void);
@@ -145,6 +148,10 @@ int main(void)
 
   /*** Post Processing Init ***************************************************/
   app_postprocess_init(&pp_params);
+
+  /* Gesture detection Init */
+  // Initialize gesture detection
+  Gesture_Init(&gesture_detector);
 
   /*** Camera Init ************************************************************/
   CameraPipeline_Init(&lcd_bg_area.XSize, &lcd_bg_area.YSize, &pitch_nn);
@@ -194,6 +201,28 @@ int main(void)
 
     int32_t ret = app_postprocess_run((void **) nn_out, number_output, &pp_output, &pp_params);
     assert(ret == 0);
+
+    spe_pp_outBuffer_t *keypoints = ((spe_pp_out_t *) &pp_output)->pOutBuff;
+    GestureType_t detected_gesture = Gesture_Detect(&gesture_detector, keypoints);
+   // UTIL_LCDEx_PrintfAt(0, LINE(16), CENTER_MODE, "X: %f, Y: %f P:%f", x_coord,y_coord, confidence	  );
+
+    //Debug a keypoint:
+    float32_t wrist_x, wrist_y, wrist_conf, wrist_speed;
+    Gesture_GetKeypointDebugInfo(&gesture_detector, KEYPOINT_RIGHT_WRIST,
+                                 &wrist_x, &wrist_y, &wrist_conf, &wrist_speed);
+    if (wrist_speed >0.5)
+    {
+    	UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_CYAN);
+    }
+    else
+    {
+        UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_WHITE);
+    }
+
+    UTIL_LCDEx_PrintfAt(0, LINE(21), CENTER_MODE, "R Wrist: (%.2f,%.2f) C:%.2f Spd:%.3f",
+                        wrist_x, wrist_y, wrist_conf, wrist_speed);
+    //End of kepoint debug print
+
 
     Display_NetworkOutput(&pp_output, ts[1] - ts[0]);
     /* Discard nn_out region (used by pp_input and pp_outputs variables) to avoid Dcache evictions during nn inference */

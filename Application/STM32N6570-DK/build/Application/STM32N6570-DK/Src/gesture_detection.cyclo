@@ -1,0 +1,7 @@
+Src/gesture_detection.c:16:6:Gesture_Init	1
+Src/gesture_detection.c:24:11:Gesture_CalculateDistance	1
+Src/gesture_detection.c:31:11:Gesture_CalculateSpeed	3
+Src/gesture_detection.c:163:15:Gesture_Detect	24
+Src/gesture_detection.c:209:13:Gesture_GetName	2
+Src/gesture_detection.c:223:15:Gesture_GetCurrentDisplayGesture	2
+Src/gesture_detection.c:235:6:Gesture_GetKeypointDebugInfo	2

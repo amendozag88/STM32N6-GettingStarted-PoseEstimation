@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 1
 
 
    1              		.arch armv8.1-m.main
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
   23:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c **** #include "cmw_imx335.h"
   24:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c **** #include "cmw_camera.h"
   25:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c **** #include "imx335_reg.h"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 2
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 2
 
 
   26:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c **** #include "imx335.h"
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
   80:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   ret = IMX335_DeInit(&((CMW_IMX335_t *)io_ctx)->ctx_driver);
   81:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   if (ret)
   82:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 3
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 3
 
 
   83:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****     return CMW_ERROR_COMPONENT_FAILURE;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  137:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   }
  138:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c **** 
  139:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   return CMW_ERROR_NONE;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 4
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 4
 
 
  140:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c **** }
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  194:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   return IMX335_SetTestPattern(&((CMW_IMX335_t *)io_ctx)->ctx_driver, mode);
  195:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c **** }
  196:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 5
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 5
 
 
  197:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c **** static int32_t CMW_IMX335_Init(void *io_ctx, CMW_Sensor_Init_t *initSensor)
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  251:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   if (ret != ISP_OK)
  252:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   {
  253:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****       return CMW_ERROR_PERIPH_FAILURE;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 6
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 6
 
 
  254:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   }
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
   49              		.thumb_func
   51              	CMW_IMX335_SetWBRefMode:
   52              	.LVL1:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 7
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 7
 
 
   53              	.LFB3348:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  131:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c **** 
   98              		.loc 1 131 3 view .LVU13
  133:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   if (ret)
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 8
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 8
 
 
   99              		.loc 1 133 3 view .LVU14
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  144              	.LVL11:
   90:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c **** }
  145              		.loc 1 90 10 view .LVU26
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 9
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 9
 
 
  146              		.cfi_endproc
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  195              		.cfi_offset 14, -4
  165:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   if ((io_ctx ==  NULL) || (info == NULL))
  196              		.loc 1 165 1 view .LVU35
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 10
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 10
 
 
  197 0002 0B46     		mov	r3, r1
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  185:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   info->exposure_min = IMX335_EXPOSURE_MIN;
  233              		.loc 1 185 18 view .LVU54
  234 002a C3E90B02 		strd	r0, r2, [r3, #44]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 11
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 11
 
 
  186:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   info->exposure_max = IMX335_EXPOSURE_MAX;
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  161:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c **** }
  280              		.loc 1 161 10 view .LVU66
  281 0006 0830     		adds	r0, r0, #8
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 12
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 12
 
 
  282              	.LVL23:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  327 0010 2B68     		ldr	r3, [r5]
  328 0012 01AA     		add	r2, sp, #4
  329 0014 2360     		str	r3, [r4]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 13
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 13
 
 
  151:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****     if (framerate == available_imx335_fps[i])
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  371 0030 F2D1     		bne	.L19
  372              	.LBE7:
  156:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 14
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 14
 
 
  373              		.loc 1 156 1 is_stmt 0 view .LVU91
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  425              	CMW_IMX335_SetExposure:
  426              	.LVL35:
  427              	.LFB3347:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 15
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 15
 
 
   99:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   return IMX335_SetExposure(&((CMW_IMX335_t *)io_ctx)->ctx_driver, exposure);
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  476              	.LVL41:
  477              	.LFB3357:
  247:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c **** #ifndef ISP_MW_TUNING_TOOL_SUPPORT
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 16
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 16
 
 
  478              		.loc 1 247 1 is_stmt 1 view -0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  522              		.loc 1 74 3 view .LVU120
   72:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   int ret = CMW_ERROR_NONE;
  523              		.loc 1 72 1 is_stmt 0 view .LVU121
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 17
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 17
 
 
  524 0000 10B5     		push	{r4, lr}
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  567              		.thumb_func
  569              	CMW_IMX335_Start:
  570              	.LVL52:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 18
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 18
 
 
  571              	.LFB3356:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  610              		.loc 1 238 3 is_stmt 1 view .LVU148
  238:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   {
  611              		.loc 1 238 6 is_stmt 0 view .LVU149
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 19
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 19
 
 
  612 0024 50B9     		cbnz	r0, .L36
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  659              		.align	1
  660              		.syntax unified
  661              		.thumb
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 20
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 20
 
 
  662              		.thumb_func
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  706              	.L40:
  707              	.LBB13:
  708              	.LBB11:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 21
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 21
 
 
   36:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   {
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  746              		.loc 1 217 12 view .LVU185
  747 003a EBE7     		b	.L39
  748              		.cfi_endproc
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 22
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 22
 
 
  749              	.LFE3355:
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  795              		.loc 1 281 7 view .LVU195
  796 0016 00F13004 		add	r4, r0, #48
  797 001a 2046     		mov	r0, r4
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 23
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 23
 
 
  798              	.LVL75:
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  844              		.global	CMW_IMX335_Probe
  845              		.syntax unified
  846              		.thumb
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 24
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 24
 
 
  847              		.thumb_func
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  301:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   io_ctx->ctx_driver.IO.DeInit = io_ctx->DeInit;
  882              		.loc 1 301 32 is_stmt 0 view .LVU219
  883 0012 D0F8E830 		ldr	r3, [r0, #232]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 25
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 25
 
 
  884 0016 C360     		str	r3, [r0, #12]
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  265:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   io_ctx->Delay(100);
  925              		.loc 1 265 3 view .LVU233
  926 004a D4F8F430 		ldr	r3, [r4, #244]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 26
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 26
 
 
  927 004e 0120     		movs	r0, #1
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  322:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   }
  323:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c **** 
  324:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   memset(imx335_if, 0, sizeof(*imx335_if));
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 27
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 27
 
 
  325:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   imx335_if->Init = CMW_IMX335_Init;
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  321:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   }
  992              		.loc 1 321 11 view .LVU252
  993 0092 002B     		cmp	r3, #0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 28
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 28
 
 
  994 0094 08BF     		it	eq
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  331:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c ****   imx335_if->SetGain = CMW_IMX335_SetGain;
  1032              		.loc 1 331 21 is_stmt 0 view .LVU269
  1033 00c0 104B     		ldr	r3, .L54+24
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 29
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 29
 
 
  1034 00c2 EB61     		str	r3, [r5, #28]
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  1070 00e6 6B66     		str	r3, [r5, #100]
  341:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c **** }
  1071              		.loc 1 341 3 is_stmt 1 view .LVU288
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 30
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 30
 
 
  341:../../Middlewares/Camera_Middleware/sensors/cmw_imx335.c **** }
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  1128 0050 00000000 		.word	0
  1129 0054 00       		.byte	0
  1130 0055 000000   		.space	3
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 31
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 31
 
 
  1131 0058 00000000 		.word	0
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  1160 0128 00000000 		.word	0
  1161 012c 003B5808 		.word	140000000
  1162 0130 40CE8C0A 		.word	177000000
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 32
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 32
 
 
  1163 0134 00EF1C0D 		.word	220000000
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  1217 020c 00000000 		.word	0
  1218 0210 00000000 		.word	0
  1219 0214 00000000 		.word	0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 33
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 33
 
 
  1220 0218 00000000 		.word	0
@@ -1966,52 +1966,52 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 1
  1262              		.file 13 "../../Middlewares/Camera_Middleware/ISP_Library/isp/Inc/isp_api.h"
  1263              		.file 14 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltoo
  1264              		.file 15 "<built-in>"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 34
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 34
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 cmw_imx335.c
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:26     .text.CMW_IMX335_FrameEventCallback:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:31     .text.CMW_IMX335_FrameEventCallback:00000000 CMW_IMX335_FrameEventCallback
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:45     .text.CMW_IMX335_SetWBRefMode:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:51     .text.CMW_IMX335_SetWBRefMode:00000000 CMW_IMX335_SetWBRefMode
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:85     .text.CMW_IMX335_ListWBRefModes:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:91     .text.CMW_IMX335_ListWBRefModes:00000000 CMW_IMX335_ListWBRefModes
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:125    .text.CMW_IMX335_ReadID:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:130    .text.CMW_IMX335_ReadID:00000000 CMW_IMX335_ReadID
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:150    .text.CMW_IMX335_SetTestPattern:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:155    .text.CMW_IMX335_SetTestPattern:00000000 CMW_IMX335_SetTestPattern
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:178    .text.CMW_IMX335_GetSensorInfo:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:183    .text.CMW_IMX335_GetSensorInfo:00000000 CMW_IMX335_GetSensorInfo
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:254    .text.CMW_IMX335_GetSensorInfo:0000003c $d
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:260    .text.CMW_IMX335_SetMirrorFlip:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:265    .text.CMW_IMX335_SetMirrorFlip:00000000 CMW_IMX335_SetMirrorFlip
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:291    .text.CMW_IMX335_SetFramerate:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:296    .text.CMW_IMX335_SetFramerate:00000000 CMW_IMX335_SetFramerate
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:390    .text.CMW_IMX335_SetFramerate:0000003c $d
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:395    .text.CMW_IMX335_SetFrequency:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:400    .text.CMW_IMX335_SetFrequency:00000000 CMW_IMX335_SetFrequency
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:420    .text.CMW_IMX335_SetExposure:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:425    .text.CMW_IMX335_SetExposure:00000000 CMW_IMX335_SetExposure
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:445    .text.CMW_IMX335_SetGain:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:450    .text.CMW_IMX335_SetGain:00000000 CMW_IMX335_SetGain
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:470    .text.CMW_IMX335_Run:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:475    .text.CMW_IMX335_Run:00000000 CMW_IMX335_Run
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:509    .text.CMW_IMX335_DeInit:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:514    .text.CMW_IMX335_DeInit:00000000 CMW_IMX335_DeInit
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:564    .text.CMW_IMX335_Start:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:569    .text.CMW_IMX335_Start:00000000 CMW_IMX335_Start
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:654    .text.CMW_IMX335_Start:00000044 $d
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:1100   .rodata.ISP_IQParamCacheInit_IMX335:00000000 ISP_IQParamCacheInit_IMX335
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:659    .text.CMW_IMX335_Init:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:664    .text.CMW_IMX335_Init:00000000 CMW_IMX335_Init
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:752    .text.CMW_IMX335_VsyncEventCallback:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:757    .text.CMW_IMX335_VsyncEventCallback:00000000 CMW_IMX335_VsyncEventCallback
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:843    .text.CMW_IMX335_Probe:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:849    .text.CMW_IMX335_Probe:00000000 CMW_IMX335_Probe
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:1077   .text.CMW_IMX335_Probe:000000ec $d
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:1097   .rodata.ISP_IQParamCacheInit_IMX335:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:1241   .rodata:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:26     .text.CMW_IMX335_FrameEventCallback:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:31     .text.CMW_IMX335_FrameEventCallback:00000000 CMW_IMX335_FrameEventCallback
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:45     .text.CMW_IMX335_SetWBRefMode:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:51     .text.CMW_IMX335_SetWBRefMode:00000000 CMW_IMX335_SetWBRefMode
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:85     .text.CMW_IMX335_ListWBRefModes:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:91     .text.CMW_IMX335_ListWBRefModes:00000000 CMW_IMX335_ListWBRefModes
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:125    .text.CMW_IMX335_ReadID:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:130    .text.CMW_IMX335_ReadID:00000000 CMW_IMX335_ReadID
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:150    .text.CMW_IMX335_SetTestPattern:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:155    .text.CMW_IMX335_SetTestPattern:00000000 CMW_IMX335_SetTestPattern
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:178    .text.CMW_IMX335_GetSensorInfo:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:183    .text.CMW_IMX335_GetSensorInfo:00000000 CMW_IMX335_GetSensorInfo
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:254    .text.CMW_IMX335_GetSensorInfo:0000003c $d
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:260    .text.CMW_IMX335_SetMirrorFlip:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:265    .text.CMW_IMX335_SetMirrorFlip:00000000 CMW_IMX335_SetMirrorFlip
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:291    .text.CMW_IMX335_SetFramerate:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:296    .text.CMW_IMX335_SetFramerate:00000000 CMW_IMX335_SetFramerate
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:390    .text.CMW_IMX335_SetFramerate:0000003c $d
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:395    .text.CMW_IMX335_SetFrequency:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:400    .text.CMW_IMX335_SetFrequency:00000000 CMW_IMX335_SetFrequency
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:420    .text.CMW_IMX335_SetExposure:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:425    .text.CMW_IMX335_SetExposure:00000000 CMW_IMX335_SetExposure
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:445    .text.CMW_IMX335_SetGain:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:450    .text.CMW_IMX335_SetGain:00000000 CMW_IMX335_SetGain
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:470    .text.CMW_IMX335_Run:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:475    .text.CMW_IMX335_Run:00000000 CMW_IMX335_Run
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:509    .text.CMW_IMX335_DeInit:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:514    .text.CMW_IMX335_DeInit:00000000 CMW_IMX335_DeInit
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:564    .text.CMW_IMX335_Start:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:569    .text.CMW_IMX335_Start:00000000 CMW_IMX335_Start
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:654    .text.CMW_IMX335_Start:00000044 $d
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:1100   .rodata.ISP_IQParamCacheInit_IMX335:00000000 ISP_IQParamCacheInit_IMX335
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:659    .text.CMW_IMX335_Init:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:664    .text.CMW_IMX335_Init:00000000 CMW_IMX335_Init
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:752    .text.CMW_IMX335_VsyncEventCallback:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:757    .text.CMW_IMX335_VsyncEventCallback:00000000 CMW_IMX335_VsyncEventCallback
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:843    .text.CMW_IMX335_Probe:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:849    .text.CMW_IMX335_Probe:00000000 CMW_IMX335_Probe
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:1077   .text.CMW_IMX335_Probe:000000ec $d
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:1097   .rodata.ISP_IQParamCacheInit_IMX335:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s:1241   .rodata:00000000 $d
                            .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
                            .group:00000000 wm4._newlib_version.h.4.411db44ea2338a62eca2f0777f81481b
                            .group:00000000 wm4.newlib.h.27.a82728f74da661df333d09507bfef510
@@ -2026,7 +2026,7 @@ C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:1241   .rodata:00000000 $d
                            .group:00000000 wm4._default_types.h.6.959254cf5f09734ea7516c89e8bb21bd
                            .group:00000000 wm4.cdefs.h.49.70fc7af612f78ddcace70fdd90b5623b
                            .group:00000000 wm4._types.h.20.dd0d04dca3800a0d2a6129b87f3adbb2
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 35
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 35
 
 
                            .group:00000000 wm4.stddef.h.158.6f8e08a347b1cff664332fa350bfceb3
@@ -2086,7 +2086,7 @@ C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s:1241   .rodata:00000000 $d
                            .group:00000000 wm4.stm32n6xx_hal_i2c.h.741.1084702632703acc669e4282b3043372
                            .group:00000000 wm4.stm32n6xx_hal_ltdc.h.21.ae1eb09930e7e550e48e418ac5849e4d
                            .group:00000000 wm4.stm32n6xx_hal_ltdc.h.1002.b13ede7fc94ed5ad1c6768a157d2149a
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 36
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 36
 
 
                            .group:00000000 wm4.stm32n6xx_hal_pwr.h.21.cdb73e4869c3fed3fc84f901ec0e5f0a
@@ -2146,6 +2146,6 @@ ISP_GatherStatistics
 ISP_IncAncillaryFrameId
 IMX335_RegisterBusIO
 memset
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccUEz74w.s 			page 37
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccEvS3g6.s 			page 37
 
 
