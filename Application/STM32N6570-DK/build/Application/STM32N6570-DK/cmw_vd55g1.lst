@@ -1,0 +1,2191 @@
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 1
+
+
+   1              		.arch armv8.1-m.main
+   2              		.fpu fpv5-d16
+   3              		.arch_extension dsp
+   4              		.arch_extension fp
+   5              		.arch_extension fp.dp
+   6              		.arch_extension mve
+   7              		.arch_extension mve.fp
+   8              		.eabi_attribute 5, "cortex-m55"
+   9              		.eabi_attribute 28, 1
+  10              		.eabi_attribute 20, 1
+  11              		.eabi_attribute 21, 1
+  12              		.eabi_attribute 23, 3
+  13              		.eabi_attribute 24, 1
+  14              		.eabi_attribute 25, 1
+  15              		.eabi_attribute 26, 1
+  16              		.eabi_attribute 30, 4
+  17              		.eabi_attribute 34, 1
+  18              		.eabi_attribute 38, 1
+  19              		.eabi_attribute 18, 4
+  20              		.file	"cmw_vd55g1.c"
+  21              		.text
+  22              	.Ltext0:
+  23              		.cfi_sections	.debug_frame
+  24              		.file 1 "../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c"
+  25              		.section	.text.CMW_VD55G1_Read32,"ax",%progbits
+  26              		.align	1
+  27              		.syntax unified
+  28              		.thumb
+  29              		.thumb_func
+  31              	CMW_VD55G1_Read32:
+  32              	.LVL0:
+  33              	.LFB840:
+   1:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** /**
+   2:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   ******************************************************************************
+   3:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   * @file    cmw_vd55g1.c
+   4:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   * @author  MDG Application Team
+   5:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   ******************************************************************************
+   6:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   * @attention
+   7:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   *
+   8:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   * Copyright (c) 2024 STMicroelectronics.
+   9:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   * All rights reserved.
+  10:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   *
+  11:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  12:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   * in the root directory of this software component.
+  13:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  14:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   *
+  15:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   ******************************************************************************
+  16:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   */
+  17:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+  18:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** #include "cmw_vd55g1.h"
+  19:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+  20:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** #include <assert.h>
+  21:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** #include <stdlib.h>
+  22:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** #include <stdio.h>
+  23:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** #include <stddef.h>
+  24:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** #include <string.h>
+  25:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** #include "vd55g1.h"
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 2
+
+
+  26:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** #include "cmw_camera.h"
+  27:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+  28:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** #define VD55G1_CHIP_ID 0x53354731
+  29:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+  30:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** #define container_of(ptr, type, member) (type *) ((unsigned char *)ptr - offsetof(type,member))
+  31:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+  32:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** #define MIN(a, b)       ((a) < (b) ?  (a) : (b))
+  33:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+  34:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** #define VD55G1_REG_MODEL_ID                           0x0000
+  35:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+  36:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static int CMW_VD55G1_Read8(CMW_VD55G1_t *pObj, uint16_t addr, uint8_t *value)
+  37:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+  38:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return pObj->ReadReg(pObj->Address, addr, value, 1);
+  39:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+  40:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+  41:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static int CMW_VD55G1_Read16(CMW_VD55G1_t *pObj, uint16_t addr, uint16_t *value)
+  42:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+  43:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   uint8_t data[2];
+  44:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret;
+  45:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+  46:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   ret = pObj->ReadReg(pObj->Address, addr, data, 2);
+  47:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+  48:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return ret;
+  49:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+  50:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   *value = (data[1] << 8) | data[0];
+  51:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+  52:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return CMW_ERROR_NONE;
+  53:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+  54:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+  55:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static int CMW_VD55G1_Read32(CMW_VD55G1_t *pObj, uint16_t addr, uint32_t *value)
+  56:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+  34              		.loc 1 56 1 view -0
+  35              		.cfi_startproc
+  36              		@ args = 0, pretend = 0, frame = 8
+  37              		@ frame_needed = 0, uses_anonymous_args = 0
+  57:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   uint8_t data[4];
+  38              		.loc 1 57 3 view .LVU1
+  58:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret;
+  39              		.loc 1 58 3 view .LVU2
+  59:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+  60:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   ret = pObj->ReadReg(pObj->Address, addr, data, 4);
+  40              		.loc 1 60 3 view .LVU3
+  41              		.loc 1 60 9 is_stmt 0 view .LVU4
+  42 0000 0423     		movs	r3, #4
+  56:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   uint8_t data[4];
+  43              		.loc 1 56 1 view .LVU5
+  44 0002 37B5     		push	{r0, r1, r2, r4, r5, lr}
+  45              		.cfi_def_cfa_offset 24
+  46              		.cfi_offset 4, -12
+  47              		.cfi_offset 5, -8
+  48              		.cfi_offset 14, -4
+  56:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   uint8_t data[4];
+  49              		.loc 1 56 1 view .LVU6
+  50 0004 1446     		mov	r4, r2
+  51              		.loc 1 60 9 view .LVU7
+  52 0006 D0F88050 		ldr	r5, [r0, #128]
+  53 000a 0DEB0302 		add	r2, sp, r3
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 3
+
+
+  54              	.LVL1:
+  55              		.loc 1 60 9 view .LVU8
+  56 000e 0088     		ldrh	r0, [r0]
+  57              	.LVL2:
+  58              		.loc 1 60 9 view .LVU9
+  59 0010 A847     		blx	r5
+  60              	.LVL3:
+  61:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+  61              		.loc 1 61 3 is_stmt 1 view .LVU10
+  62              		.loc 1 61 6 is_stmt 0 view .LVU11
+  63 0012 08B9     		cbnz	r0, .L1
+  62:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return ret;
+  63:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+  64:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   *value = (data[3] << 24) | (data[2] << 16) | (data[1] << 8) | data[0];
+  64              		.loc 1 64 3 is_stmt 1 view .LVU12
+  65              		.loc 1 64 10 is_stmt 0 view .LVU13
+  66 0014 019B     		ldr	r3, [sp, #4]
+  67 0016 2360     		str	r3, [r4]
+  65:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+  66:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return 0;
+  68              		.loc 1 66 3 is_stmt 1 view .LVU14
+  69              	.L1:
+  67:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+  70              		.loc 1 67 1 is_stmt 0 view .LVU15
+  71 0018 03B0     		add	sp, sp, #12
+  72              		.cfi_def_cfa_offset 12
+  73              		@ sp needed
+  74 001a 30BD     		pop	{r4, r5, pc}
+  75              		.loc 1 67 1 view .LVU16
+  76              		.cfi_endproc
+  77              	.LFE840:
+  79              		.section	.text.VD55G1_ShutdownPin,"ax",%progbits
+  80              		.align	1
+  81              		.syntax unified
+  82              		.thumb
+  83              		.thumb_func
+  85              	VD55G1_ShutdownPin:
+  86              	.LVL4:
+  87              	.LFB844:
+  68:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+  69:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static int CMW_VD55G1_Write8(CMW_VD55G1_t *pObj, uint16_t addr, uint8_t value)
+  70:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+  71:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return pObj->WriteReg(pObj->Address, addr, &value, 1);
+  72:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+  73:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+  74:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static int CMW_VD55G1_Write16(CMW_VD55G1_t *pObj, uint16_t addr, uint16_t value)
+  75:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+  76:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return pObj->WriteReg(pObj->Address, addr, (uint8_t *) &value, 2);
+  77:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+  78:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+  79:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static int CMW_VD55G1_Write32(CMW_VD55G1_t *pObj, uint16_t addr, uint32_t value)
+  80:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+  81:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return pObj->WriteReg(pObj->Address, addr, (uint8_t *) &value, 4);
+  82:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+  83:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+  84:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static void VD55G1_ShutdownPin(struct VD55G1_Ctx *ctx, int value)
+  85:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 4
+
+
+  88              		.loc 1 85 1 is_stmt 1 view -0
+  89              		.cfi_startproc
+  90              		@ args = 0, pretend = 0, frame = 0
+  91              		@ frame_needed = 0, uses_anonymous_args = 0
+  92              		@ link register save eliminated.
+  86:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   CMW_VD55G1_t *p_ctx = container_of(ctx, CMW_VD55G1_t, ctx_driver);
+  93              		.loc 1 86 3 view .LVU18
+  87:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+  88:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   p_ctx->ShutdownPin(value);
+  94              		.loc 1 88 3 view .LVU19
+  95 0000 D0F88430 		ldr	r3, [r0, #132]
+  96 0004 0846     		mov	r0, r1
+  97              	.LVL5:
+  98              		.loc 1 88 3 is_stmt 0 view .LVU20
+  99 0006 1847     		bx	r3	@ indirect register sibling call
+ 100              	.LVL6:
+ 101              		.loc 1 88 3 view .LVU21
+ 102              		.cfi_endproc
+ 103              	.LFE844:
+ 105              		.section	.text.VD55G1_Read8,"ax",%progbits
+ 106              		.align	1
+ 107              		.syntax unified
+ 108              		.thumb
+ 109              		.thumb_func
+ 111              	VD55G1_Read8:
+ 112              	.LVL7:
+ 113              	.LFB845:
+  89:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+  90:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+  91:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static int VD55G1_Read8(struct VD55G1_Ctx *ctx, uint16_t addr, uint8_t *value)
+  92:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 114              		.loc 1 92 1 is_stmt 1 view -0
+ 115              		.cfi_startproc
+ 116              		@ args = 0, pretend = 0, frame = 0
+ 117              		@ frame_needed = 0, uses_anonymous_args = 0
+ 118              		@ link register save eliminated.
+  93:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   CMW_VD55G1_t *p_ctx = container_of(ctx, CMW_VD55G1_t, ctx_driver);
+ 119              		.loc 1 93 3 view .LVU23
+  94:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+  95:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return CMW_VD55G1_Read8(p_ctx, addr, value);
+ 120              		.loc 1 95 3 view .LVU24
+ 121              	.LBB6:
+ 122              	.LBI6:
+  36:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 123              		.loc 1 36 12 view .LVU25
+ 124              	.LBB7:
+  38:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 125              		.loc 1 38 3 view .LVU26
+ 126              	.LBE7:
+ 127              	.LBE6:
+  92:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   CMW_VD55G1_t *p_ctx = container_of(ctx, CMW_VD55G1_t, ctx_driver);
+ 128              		.loc 1 92 1 is_stmt 0 view .LVU27
+ 129 0000 10B4     		push	{r4}
+ 130              		.cfi_def_cfa_offset 4
+ 131              		.cfi_offset 4, -4
+ 132              	.LBB10:
+ 133              	.LBB8:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 5
+
+
+  38:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 134              		.loc 1 38 10 view .LVU28
+ 135 0002 846F     		ldr	r4, [r0, #120]
+ 136 0004 0123     		movs	r3, #1
+ 137 0006 A446     		mov	ip, r4
+ 138 0008 30F8080C 		ldrh	r0, [r0, #-8]
+ 139              	.LVL8:
+  38:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 140              		.loc 1 38 10 view .LVU29
+ 141              	.LBE8:
+ 142              	.LBE10:
+  96:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 143              		.loc 1 96 1 view .LVU30
+ 144 000c 5DF8044B 		ldr	r4, [sp], #4
+ 145              		.cfi_restore 4
+ 146              		.cfi_def_cfa_offset 0
+ 147              	.LBB11:
+ 148              	.LBB9:
+  38:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 149              		.loc 1 38 10 view .LVU31
+ 150 0010 6047     		bx	ip
+ 151              	.LVL9:
+  38:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 152              		.loc 1 38 10 view .LVU32
+ 153              	.LBE9:
+ 154              	.LBE11:
+ 155              		.cfi_endproc
+ 156              	.LFE845:
+ 158              		.section	.text.VD55G1_Read16,"ax",%progbits
+ 159              		.align	1
+ 160              		.syntax unified
+ 161              		.thumb
+ 162              		.thumb_func
+ 164              	VD55G1_Read16:
+ 165              	.LVL10:
+ 166              	.LFB846:
+  97:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+  98:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static int VD55G1_Read16(struct VD55G1_Ctx *ctx, uint16_t addr, uint16_t *value)
+  99:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 167              		.loc 1 99 1 is_stmt 1 view -0
+ 168              		.cfi_startproc
+ 169              		@ args = 0, pretend = 0, frame = 8
+ 170              		@ frame_needed = 0, uses_anonymous_args = 0
+ 100:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   CMW_VD55G1_t *p_ctx = container_of(ctx, CMW_VD55G1_t, ctx_driver);
+ 171              		.loc 1 100 3 view .LVU34
+ 101:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 102:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return CMW_VD55G1_Read16(p_ctx, addr, value);
+ 172              		.loc 1 102 3 view .LVU35
+  99:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   CMW_VD55G1_t *p_ctx = container_of(ctx, CMW_VD55G1_t, ctx_driver);
+ 173              		.loc 1 99 1 is_stmt 0 view .LVU36
+ 174 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
+ 175              		.cfi_def_cfa_offset 24
+ 176              		.cfi_offset 4, -12
+ 177              		.cfi_offset 5, -8
+ 178              		.cfi_offset 14, -4
+ 179              	.LBB14:
+ 180              	.LBB15:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 6
+
+
+  46:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 181              		.loc 1 46 9 view .LVU37
+ 182 0002 0223     		movs	r3, #2
+ 183              	.LBE15:
+ 184              	.LBE14:
+  99:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   CMW_VD55G1_t *p_ctx = container_of(ctx, CMW_VD55G1_t, ctx_driver);
+ 185              		.loc 1 99 1 view .LVU38
+ 186 0004 1446     		mov	r4, r2
+ 187              	.LVL11:
+ 188              	.LBB17:
+ 189              	.LBI14:
+  41:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 190              		.loc 1 41 12 is_stmt 1 view .LVU39
+ 191              	.LBB16:
+  43:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret;
+ 192              		.loc 1 43 3 view .LVU40
+  44:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 193              		.loc 1 44 3 view .LVU41
+  46:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 194              		.loc 1 46 3 view .LVU42
+  46:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 195              		.loc 1 46 9 is_stmt 0 view .LVU43
+ 196 0006 856F     		ldr	r5, [r0, #120]
+ 197 0008 01AA     		add	r2, sp, #4
+ 198              	.LVL12:
+  46:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 199              		.loc 1 46 9 view .LVU44
+ 200 000a 30F8080C 		ldrh	r0, [r0, #-8]
+ 201              	.LVL13:
+  46:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 202              		.loc 1 46 9 view .LVU45
+ 203 000e A847     		blx	r5
+ 204              	.LVL14:
+  47:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return ret;
+ 205              		.loc 1 47 3 is_stmt 1 view .LVU46
+  47:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return ret;
+ 206              		.loc 1 47 6 is_stmt 0 view .LVU47
+ 207 0010 10B9     		cbnz	r0, .L5
+  50:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 208              		.loc 1 50 3 is_stmt 1 view .LVU48
+  50:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 209              		.loc 1 50 10 is_stmt 0 view .LVU49
+ 210 0012 BDF80430 		ldrh	r3, [sp, #4]
+ 211 0016 2380     		strh	r3, [r4]	@ movhi
+  52:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 212              		.loc 1 52 3 is_stmt 1 view .LVU50
+ 213              	.LVL15:
+ 214              	.L5:
+  52:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 215              		.loc 1 52 3 is_stmt 0 view .LVU51
+ 216              	.LBE16:
+ 217              	.LBE17:
+ 103:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 218              		.loc 1 103 1 view .LVU52
+ 219 0018 03B0     		add	sp, sp, #12
+ 220              		.cfi_def_cfa_offset 12
+ 221              		@ sp needed
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 7
+
+
+ 222 001a 30BD     		pop	{r4, r5, pc}
+ 223              		.loc 1 103 1 view .LVU53
+ 224              		.cfi_endproc
+ 225              	.LFE846:
+ 227              		.section	.text.VD55G1_Read32,"ax",%progbits
+ 228              		.align	1
+ 229              		.syntax unified
+ 230              		.thumb
+ 231              		.thumb_func
+ 233              	VD55G1_Read32:
+ 234              	.LVL16:
+ 235              	.LFB847:
+ 104:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 105:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static int VD55G1_Read32(struct VD55G1_Ctx *ctx, uint16_t addr, uint32_t *value)
+ 106:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 236              		.loc 1 106 1 is_stmt 1 view -0
+ 237              		.cfi_startproc
+ 238              		@ args = 0, pretend = 0, frame = 0
+ 239              		@ frame_needed = 0, uses_anonymous_args = 0
+ 240              		@ link register save eliminated.
+ 107:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   CMW_VD55G1_t *p_ctx = container_of(ctx, CMW_VD55G1_t, ctx_driver);
+ 241              		.loc 1 107 3 view .LVU55
+ 108:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 109:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return CMW_VD55G1_Read32(p_ctx, addr, value);
+ 242              		.loc 1 109 3 view .LVU56
+ 243              		.loc 1 109 10 is_stmt 0 view .LVU57
+ 244 0000 0838     		subs	r0, r0, #8
+ 245              	.LVL17:
+ 246              		.loc 1 109 10 view .LVU58
+ 247 0002 FFF7FEBF 		b	CMW_VD55G1_Read32
+ 248              	.LVL18:
+ 249              		.loc 1 109 10 view .LVU59
+ 250              		.cfi_endproc
+ 251              	.LFE847:
+ 253              		.section	.text.VD55G1_Write8,"ax",%progbits
+ 254              		.align	1
+ 255              		.syntax unified
+ 256              		.thumb
+ 257              		.thumb_func
+ 259              	VD55G1_Write8:
+ 260              	.LVL19:
+ 261              	.LFB848:
+ 110:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 111:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 112:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static int VD55G1_Write8(struct VD55G1_Ctx *ctx, uint16_t addr, uint8_t value)
+ 113:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 262              		.loc 1 113 1 is_stmt 1 view -0
+ 263              		.cfi_startproc
+ 264              		@ args = 0, pretend = 0, frame = 8
+ 265              		@ frame_needed = 0, uses_anonymous_args = 0
+ 114:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   CMW_VD55G1_t *p_ctx = container_of(ctx, CMW_VD55G1_t, ctx_driver);
+ 266              		.loc 1 114 3 view .LVU61
+ 115:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 116:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return CMW_VD55G1_Write8(p_ctx, addr, value);
+ 267              		.loc 1 116 3 view .LVU62
+ 113:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   CMW_VD55G1_t *p_ctx = container_of(ctx, CMW_VD55G1_t, ctx_driver);
+ 268              		.loc 1 113 1 is_stmt 0 view .LVU63
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 8
+
+
+ 269 0000 13B5     		push	{r0, r1, r4, lr}
+ 270              		.cfi_def_cfa_offset 16
+ 271              		.cfi_offset 4, -8
+ 272              		.cfi_offset 14, -4
+ 273              	.LBB20:
+ 274              	.LBB21:
+  71:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 275              		.loc 1 71 10 view .LVU64
+ 276 0002 0123     		movs	r3, #1
+ 277 0004 446F     		ldr	r4, [r0, #116]
+ 278 0006 8DF80720 		strb	r2, [sp, #7]
+ 279              	.LVL20:
+  71:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 280              		.loc 1 71 10 view .LVU65
+ 281              	.LBE21:
+ 282              	.LBI20:
+  69:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 283              		.loc 1 69 12 is_stmt 1 view .LVU66
+ 284              	.LBB22:
+  71:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 285              		.loc 1 71 3 view .LVU67
+  71:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 286              		.loc 1 71 10 is_stmt 0 view .LVU68
+ 287 000a 30F8080C 		ldrh	r0, [r0, #-8]
+ 288              	.LVL21:
+  71:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 289              		.loc 1 71 10 view .LVU69
+ 290 000e 0DF10702 		add	r2, sp, #7
+ 291              	.LVL22:
+  71:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 292              		.loc 1 71 10 view .LVU70
+ 293 0012 A047     		blx	r4
+ 294              	.LVL23:
+  71:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 295              		.loc 1 71 10 view .LVU71
+ 296              	.LBE22:
+ 297              	.LBE20:
+ 117:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 298              		.loc 1 117 1 view .LVU72
+ 299 0014 02B0     		add	sp, sp, #8
+ 300              		.cfi_def_cfa_offset 8
+ 301              		@ sp needed
+ 302 0016 10BD     		pop	{r4, pc}
+ 303              		.cfi_endproc
+ 304              	.LFE848:
+ 306              		.section	.text.VD55G1_Write16,"ax",%progbits
+ 307              		.align	1
+ 308              		.syntax unified
+ 309              		.thumb
+ 310              		.thumb_func
+ 312              	VD55G1_Write16:
+ 313              	.LVL24:
+ 314              	.LFB849:
+ 118:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 119:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static int VD55G1_Write16(struct VD55G1_Ctx *ctx, uint16_t addr, uint16_t value)
+ 120:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 315              		.loc 1 120 1 is_stmt 1 view -0
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 9
+
+
+ 316              		.cfi_startproc
+ 317              		@ args = 0, pretend = 0, frame = 8
+ 318              		@ frame_needed = 0, uses_anonymous_args = 0
+ 121:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   CMW_VD55G1_t *p_ctx = container_of(ctx, CMW_VD55G1_t, ctx_driver);
+ 319              		.loc 1 121 3 view .LVU74
+ 122:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 123:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return CMW_VD55G1_Write16(p_ctx, addr, value);
+ 320              		.loc 1 123 3 view .LVU75
+ 120:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   CMW_VD55G1_t *p_ctx = container_of(ctx, CMW_VD55G1_t, ctx_driver);
+ 321              		.loc 1 120 1 is_stmt 0 view .LVU76
+ 322 0000 13B5     		push	{r0, r1, r4, lr}
+ 323              		.cfi_def_cfa_offset 16
+ 324              		.cfi_offset 4, -8
+ 325              		.cfi_offset 14, -4
+ 326              	.LBB25:
+ 327              	.LBB26:
+  76:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 328              		.loc 1 76 10 view .LVU77
+ 329 0002 0223     		movs	r3, #2
+ 330 0004 446F     		ldr	r4, [r0, #116]
+ 331 0006 ADF80620 		strh	r2, [sp, #6]	@ movhi
+ 332              	.LVL25:
+  76:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 333              		.loc 1 76 10 view .LVU78
+ 334              	.LBE26:
+ 335              	.LBI25:
+  74:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 336              		.loc 1 74 12 is_stmt 1 view .LVU79
+ 337              	.LBB27:
+  76:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 338              		.loc 1 76 3 view .LVU80
+  76:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 339              		.loc 1 76 10 is_stmt 0 view .LVU81
+ 340 000a 30F8080C 		ldrh	r0, [r0, #-8]
+ 341              	.LVL26:
+  76:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 342              		.loc 1 76 10 view .LVU82
+ 343 000e 0DF10602 		add	r2, sp, #6
+ 344              	.LVL27:
+  76:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 345              		.loc 1 76 10 view .LVU83
+ 346 0012 A047     		blx	r4
+ 347              	.LVL28:
+  76:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 348              		.loc 1 76 10 view .LVU84
+ 349              	.LBE27:
+ 350              	.LBE25:
+ 124:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 351              		.loc 1 124 1 view .LVU85
+ 352 0014 02B0     		add	sp, sp, #8
+ 353              		.cfi_def_cfa_offset 8
+ 354              		@ sp needed
+ 355 0016 10BD     		pop	{r4, pc}
+ 356              		.cfi_endproc
+ 357              	.LFE849:
+ 359              		.section	.text.VD55G1_Write32,"ax",%progbits
+ 360              		.align	1
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 10
+
+
+ 361              		.syntax unified
+ 362              		.thumb
+ 363              		.thumb_func
+ 365              	VD55G1_Write32:
+ 366              	.LVL29:
+ 367              	.LFB850:
+ 125:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 126:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static int VD55G1_Write32(struct VD55G1_Ctx *ctx, uint16_t addr, uint32_t value)
+ 127:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 368              		.loc 1 127 1 is_stmt 1 view -0
+ 369              		.cfi_startproc
+ 370              		@ args = 0, pretend = 0, frame = 8
+ 371              		@ frame_needed = 0, uses_anonymous_args = 0
+ 128:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   CMW_VD55G1_t *p_ctx = container_of(ctx, CMW_VD55G1_t, ctx_driver);
+ 372              		.loc 1 128 3 view .LVU87
+ 129:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 130:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return CMW_VD55G1_Write32(p_ctx, addr, value);
+ 373              		.loc 1 130 3 view .LVU88
+ 374              	.LBB30:
+ 375              	.LBB31:
+  81:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 376              		.loc 1 81 10 is_stmt 0 view .LVU89
+ 377 0000 0423     		movs	r3, #4
+ 378              	.LBE31:
+ 379              	.LBE30:
+ 127:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   CMW_VD55G1_t *p_ctx = container_of(ctx, CMW_VD55G1_t, ctx_driver);
+ 380              		.loc 1 127 1 view .LVU90
+ 381 0002 13B5     		push	{r0, r1, r4, lr}
+ 382              		.cfi_def_cfa_offset 16
+ 383              		.cfi_offset 4, -8
+ 384              		.cfi_offset 14, -4
+ 385              	.LBB34:
+ 386              	.LBB32:
+  81:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 387              		.loc 1 81 10 view .LVU91
+ 388 0004 446F     		ldr	r4, [r0, #116]
+ 389 0006 0192     		str	r2, [sp, #4]
+ 390              	.LVL30:
+  81:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 391              		.loc 1 81 10 view .LVU92
+ 392              	.LBE32:
+ 393              	.LBI30:
+  79:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 394              		.loc 1 79 12 is_stmt 1 view .LVU93
+ 395              	.LBB33:
+  81:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 396              		.loc 1 81 3 view .LVU94
+  81:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 397              		.loc 1 81 10 is_stmt 0 view .LVU95
+ 398 0008 30F8080C 		ldrh	r0, [r0, #-8]
+ 399              	.LVL31:
+  81:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 400              		.loc 1 81 10 view .LVU96
+ 401 000c 0DEB0302 		add	r2, sp, r3
+ 402              	.LVL32:
+  81:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 403              		.loc 1 81 10 view .LVU97
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 11
+
+
+ 404 0010 A047     		blx	r4
+ 405              	.LVL33:
+  81:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 406              		.loc 1 81 10 view .LVU98
+ 407              	.LBE33:
+ 408              	.LBE34:
+ 131:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 409              		.loc 1 131 1 view .LVU99
+ 410 0012 02B0     		add	sp, sp, #8
+ 411              		.cfi_def_cfa_offset 8
+ 412              		@ sp needed
+ 413 0014 10BD     		pop	{r4, pc}
+ 414              		.cfi_endproc
+ 415              	.LFE850:
+ 417              		.section	.text.VD55G1_WriteArray,"ax",%progbits
+ 418              		.align	1
+ 419              		.syntax unified
+ 420              		.thumb
+ 421              		.thumb_func
+ 423              	VD55G1_WriteArray:
+ 424              	.LVL34:
+ 425              	.LFB851:
+ 132:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 133:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static int VD55G1_WriteArray(struct VD55G1_Ctx *ctx, uint16_t addr, uint8_t *data, int data_len)
+ 134:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 426              		.loc 1 134 1 is_stmt 1 view -0
+ 427              		.cfi_startproc
+ 428              		@ args = 0, pretend = 0, frame = 0
+ 429              		@ frame_needed = 0, uses_anonymous_args = 0
+ 430              		.loc 1 134 1 is_stmt 0 view .LVU101
+ 431 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
+ 432              		.cfi_def_cfa_offset 32
+ 433              		.cfi_offset 4, -32
+ 434              		.cfi_offset 5, -28
+ 435              		.cfi_offset 6, -24
+ 436              		.cfi_offset 7, -20
+ 437              		.cfi_offset 8, -16
+ 438              		.cfi_offset 9, -12
+ 439              		.cfi_offset 10, -8
+ 440              		.cfi_offset 14, -4
+ 441 0004 8046     		mov	r8, r0
+ 442 0006 0D46     		mov	r5, r1
+ 443 0008 1646     		mov	r6, r2
+ 444 000a 1C46     		mov	r4, r3
+ 135:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   CMW_VD55G1_t *p_ctx = container_of(ctx, CMW_VD55G1_t, ctx_driver);
+ 445              		.loc 1 135 3 is_stmt 1 view .LVU102
+ 446              	.LVL35:
+ 136:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   const unsigned int chunk_size = 128;
+ 447              		.loc 1 136 3 view .LVU103
+ 137:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   uint16_t sz;
+ 448              		.loc 1 137 3 view .LVU104
+ 138:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret;
+ 449              		.loc 1 138 3 view .LVU105
+ 139:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 140:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   while (data_len) {
+ 450              		.loc 1 140 3 view .LVU106
+ 451              	.L12:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 12
+
+
+ 452              		.loc 1 140 10 view .LVU107
+ 453 000c 14B9     		cbnz	r4, .L14
+ 141:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     sz = MIN(data_len, chunk_size);
+ 142:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     ret = p_ctx->WriteReg(p_ctx->Address, addr, data, sz);
+ 143:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     if (ret)
+ 144:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       return ret;
+ 145:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     data_len -= sz;
+ 146:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     addr += sz;
+ 147:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     data += sz;
+ 148:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 149:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 150:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return 0;
+ 454              		.loc 1 150 10 is_stmt 0 view .LVU108
+ 455 000e 2046     		mov	r0, r4
+ 456              	.L11:
+ 151:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 457              		.loc 1 151 1 view .LVU109
+ 458 0010 BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 459              	.LVL36:
+ 460              	.L14:
+ 141:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     sz = MIN(data_len, chunk_size);
+ 461              		.loc 1 141 5 is_stmt 1 view .LVU110
+ 141:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     sz = MIN(data_len, chunk_size);
+ 462              		.loc 1 141 10 is_stmt 0 view .LVU111
+ 463 0014 802C     		cmp	r4, #128
+ 464 0016 A146     		mov	r9, r4
+ 465 0018 28BF     		it	cs
+ 466 001a 4FF08009 		movcs	r9, #128
+ 141:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     sz = MIN(data_len, chunk_size);
+ 467              		.loc 1 141 8 view .LVU112
+ 468 001e 1FFA89FA 		uxth	r10, r9
+ 469              	.LVL37:
+ 142:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     if (ret)
+ 470              		.loc 1 142 5 is_stmt 1 view .LVU113
+ 142:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     if (ret)
+ 471              		.loc 1 142 11 is_stmt 0 view .LVU114
+ 472 0022 5346     		mov	r3, r10
+ 473 0024 3246     		mov	r2, r6
+ 474 0026 2946     		mov	r1, r5
+ 475 0028 D8F87470 		ldr	r7, [r8, #116]
+ 476 002c 38F8080C 		ldrh	r0, [r8, #-8]
+ 477 0030 B847     		blx	r7
+ 478              	.LVL38:
+ 143:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       return ret;
+ 479              		.loc 1 143 5 is_stmt 1 view .LVU115
+ 143:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       return ret;
+ 480              		.loc 1 143 8 is_stmt 0 view .LVU116
+ 481 0032 0028     		cmp	r0, #0
+ 482 0034 ECD1     		bne	.L11
+ 145:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     addr += sz;
+ 483              		.loc 1 145 5 is_stmt 1 view .LVU117
+ 146:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     data += sz;
+ 484              		.loc 1 146 10 is_stmt 0 view .LVU118
+ 485 0036 AA44     		add	r10, r10, r5
+ 486              	.LVL39:
+ 145:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     addr += sz;
+ 487              		.loc 1 145 14 view .LVU119
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 13
+
+
+ 488 0038 A4EB0904 		sub	r4, r4, r9
+ 489              	.LVL40:
+ 146:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     data += sz;
+ 490              		.loc 1 146 5 is_stmt 1 view .LVU120
+ 146:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     data += sz;
+ 491              		.loc 1 146 10 is_stmt 0 view .LVU121
+ 492 003c 1FFA8AF5 		uxth	r5, r10
+ 493              	.LVL41:
+ 147:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 494              		.loc 1 147 5 is_stmt 1 view .LVU122
+ 147:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 495              		.loc 1 147 10 is_stmt 0 view .LVU123
+ 496 0040 4E44     		add	r6, r6, r9
+ 497              	.LVL42:
+ 147:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 498              		.loc 1 147 10 view .LVU124
+ 499 0042 E3E7     		b	.L12
+ 500              		.cfi_endproc
+ 501              	.LFE851:
+ 503              		.section	.text.VD55G1_Delay,"ax",%progbits
+ 504              		.align	1
+ 505              		.syntax unified
+ 506              		.thumb
+ 507              		.thumb_func
+ 509              	VD55G1_Delay:
+ 510              	.LVL43:
+ 511              	.LFB852:
+ 152:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 153:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static void VD55G1_Delay(struct VD55G1_Ctx *ctx, uint32_t delay_in_ms)
+ 154:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 512              		.loc 1 154 1 is_stmt 1 view -0
+ 513              		.cfi_startproc
+ 514              		@ args = 0, pretend = 0, frame = 0
+ 515              		@ frame_needed = 0, uses_anonymous_args = 0
+ 516              		@ link register save eliminated.
+ 155:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   CMW_VD55G1_t *p_ctx = container_of(ctx, CMW_VD55G1_t, ctx_driver);
+ 517              		.loc 1 155 3 view .LVU126
+ 156:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 157:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   p_ctx->Delay(delay_in_ms);
+ 518              		.loc 1 157 3 view .LVU127
+ 519 0000 D0F88030 		ldr	r3, [r0, #128]
+ 520 0004 0846     		mov	r0, r1
+ 521              	.LVL44:
+ 522              		.loc 1 157 3 is_stmt 0 view .LVU128
+ 523 0006 1847     		bx	r3	@ indirect register sibling call
+ 524              	.LVL45:
+ 525              		.loc 1 157 3 view .LVU129
+ 526              		.cfi_endproc
+ 527              	.LFE852:
+ 529              		.section	.text.VD55G1_Log,"ax",%progbits
+ 530              		.align	1
+ 531              		.syntax unified
+ 532              		.thumb
+ 533              		.thumb_func
+ 535              	VD55G1_Log:
+ 536              	.LVL46:
+ 537              	.LFB853:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 14
+
+
+ 158:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 159:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 160:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static void VD55G1_Log(struct VD55G1_Ctx *ctx, int lvl, const char *format, va_list ap)
+ 161:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 538              		.loc 1 161 1 is_stmt 1 view -0
+ 539              		.cfi_startproc
+ 540              		@ args = 0, pretend = 0, frame = 0
+ 541              		@ frame_needed = 0, uses_anonymous_args = 0
+ 542              		@ link register save eliminated.
+ 162:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** #if 0
+ 163:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   const int current_lvl = VD55G1_LVL_DBG(0);
+ 164:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 165:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (lvl > current_lvl)
+ 166:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return ;
+ 167:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 168:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   vprintf(format, ap);
+ 169:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** #endif
+ 170:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 543              		.loc 1 170 1 view .LVU131
+ 544 0000 7047     		bx	lr
+ 545              		.cfi_endproc
+ 546              	.LFE853:
+ 548              		.section	.text.CMW_VD55G1_GetSensorInfo,"ax",%progbits
+ 549              		.align	1
+ 550              		.syntax unified
+ 551              		.thumb
+ 552              		.thumb_func
+ 554              	CMW_VD55G1_GetSensorInfo:
+ 555              	.LVL47:
+ 556              	.LFB854:
+ 171:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 172:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** /**
+ 173:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   * @brief  Get the sensor info
+ 174:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   * @param  pObj  pointer to component object
+ 175:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   * @param  pInfo pointer to sensor info structure
+ 176:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   * @retval Component status
+ 177:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   */
+ 178:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static int32_t CMW_VD55G1_GetSensorInfo(void *io_ctx, ISP_SensorInfoTypeDef *info)
+ 179:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 557              		.loc 1 179 1 view -0
+ 558              		.cfi_startproc
+ 559              		@ args = 0, pretend = 0, frame = 0
+ 560              		@ frame_needed = 0, uses_anonymous_args = 0
+ 561              		@ link register save eliminated.
+ 180:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if ((io_ctx ==  NULL) || (info == NULL))
+ 562              		.loc 1 180 3 view .LVU133
+ 563              		.loc 1 180 6 is_stmt 0 view .LVU134
+ 564 0000 40B1     		cbz	r0, .L20
+ 565              		.loc 1 180 25 discriminator 1 view .LVU135
+ 566 0002 39B1     		cbz	r1, .L20
+ 181:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 182:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return CMW_ERROR_WRONG_PARAM;
+ 183:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 184:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 185:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   /* Return the default full resolution */
+ 186:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   info->width = VD55G1_MAX_WIDTH;
+ 567              		.loc 1 186 3 is_stmt 1 view .LVU136
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 15
+
+
+ 187:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   info->height = VD55G1_MAX_HEIGHT;
+ 568              		.loc 1 187 16 is_stmt 0 view .LVU137
+ 569 0004 4FF44972 		mov	r2, #804
+ 570 0008 4FF43073 		mov	r3, #704
+ 188:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 189:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return CMW_ERROR_NONE;
+ 571              		.loc 1 189 10 view .LVU138
+ 572 000c 0020     		movs	r0, #0
+ 573              	.LVL48:
+ 187:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   info->height = VD55G1_MAX_HEIGHT;
+ 574              		.loc 1 187 16 view .LVU139
+ 575 000e C1E90923 		strd	r2, r3, [r1, #36]
+ 576              		.loc 1 189 3 is_stmt 1 view .LVU140
+ 577              		.loc 1 189 10 is_stmt 0 view .LVU141
+ 578 0012 7047     		bx	lr
+ 579              	.LVL49:
+ 580              	.L20:
+ 182:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 581              		.loc 1 182 12 view .LVU142
+ 582 0014 6FF00100 		mvn	r0, #1
+ 583              	.LVL50:
+ 190:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 584              		.loc 1 190 1 view .LVU143
+ 585 0018 7047     		bx	lr
+ 586              		.cfi_endproc
+ 587              	.LFE854:
+ 589              		.section	.text.CMW_VD55G1_MirrorFlipConfig,"ax",%progbits
+ 590              		.align	1
+ 591              		.syntax unified
+ 592              		.thumb
+ 593              		.thumb_func
+ 595              	CMW_VD55G1_MirrorFlipConfig:
+ 596              	.LVL51:
+ 597              	.LFB861:
+ 191:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 192:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static int CMW_VD55G1_GetResType(uint32_t width, uint32_t height, VD55G1_Res_t *res)
+ 193:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 194:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (width == 320 && height == 240)
+ 195:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 196:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     *res = VD55G1_RES_QVGA_320_240;
+ 197:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 198:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   else if (width == 640 && height == 480)
+ 199:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 200:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     *res = VD55G1_RES_VGA_640_480;
+ 201:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 202:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   else if (width == 800 && height == 600)
+ 203:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 204:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     *res = VD55G1_RES_SXGA_800_600;
+ 205:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 206:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   else if (width == 804 && height == 704)
+ 207:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 208:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       *res = VD55G1_RES_FULL_804_704;
+ 209:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 210:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   else
+ 211:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 212:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return CMW_ERROR_WRONG_PARAM;
+ 213:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 16
+
+
+ 214:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return 0;
+ 215:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 216:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 217:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static VD55G1_MirrorFlip_t CMW_VD55G1_getMirrorFlipConfig(int32_t Config)
+ 218:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 219:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   VD55G1_MirrorFlip_t ret;
+ 220:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 221:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   switch (Config)
+ 222:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 223:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     case CMW_MIRRORFLIP_NONE:
+ 224:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       ret = VD55G1_MIRROR_FLIP_NONE;
+ 225:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       break;
+ 226:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     case CMW_MIRRORFLIP_FLIP:
+ 227:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       ret = VD55G1_FLIP;
+ 228:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       break;
+ 229:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     case CMW_MIRRORFLIP_MIRROR:
+ 230:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       ret = VD55G1_MIRROR;
+ 231:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       break;
+ 232:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     case CMW_MIRRORFLIP_FLIP_MIRROR:
+ 233:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     default:
+ 234:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       ret = VD55G1_MIRROR_FLIP;
+ 235:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       break;
+ 236:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 237:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 238:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return ret;
+ 239:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 240:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 241:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static int32_t CMW_VD55G1_Init(void *io_ctx, CMW_Sensor_Init_t *initSensor)
+ 242:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 243:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   VD55G1_Config_t config = { 0 };
+ 244:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret;
+ 245:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int i;
+ 246:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 247:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (((CMW_VD55G1_t *)io_ctx)->IsInitialized)
+ 248:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 249:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return CMW_ERROR_NONE;
+ 250:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 251:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 252:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   config.frame_rate = initSensor->fps;
+ 253:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   ret = CMW_VD55G1_GetResType(initSensor->width, initSensor->height, &config.resolution);
+ 254:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 255:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 256:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return CMW_ERROR_WRONG_PARAM;
+ 257:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 258:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 259:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   config.ext_clock_freq_in_hz = ((CMW_VD55G1_t *)io_ctx)->ClockInHz;
+ 260:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   config.flip_mirror_mode = CMW_VD55G1_getMirrorFlipConfig(initSensor->mirrorFlip);
+ 261:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   config.patgen = VD55G1_PATGEN_DISABLE;
+ 262:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   config.flicker = VD55G1_FLICKER_FREE_NONE;
+ 263:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   config.out_itf.data_rate_in_mps = VD55G1_DEFAULT_DATARATE;
+ 264:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   config.out_itf.clock_lane_swap_enable = 1;
+ 265:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   config.out_itf.data_lane_swap_enable = 1;
+ 266:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   config.awu.is_enable = 0;
+ 267:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   for (i = 0; i < VD55G1_GPIO_NB; i++)
+ 268:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 269:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     config.gpio_ctrl[i] = VD55G1_GPIO_GPIO_IN;
+ 270:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 17
+
+
+ 271:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 272:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   ret = VD55G1_Init(&((CMW_VD55G1_t *)io_ctx)->ctx_driver, &config);
+ 273:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 274:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 275:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return CMW_ERROR_PERIPH_FAILURE;
+ 276:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 277:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 278:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   ((CMW_VD55G1_t *)io_ctx)->IsInitialized = 1;
+ 279:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return CMW_ERROR_NONE;
+ 280:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 281:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 282:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static int32_t CMW_VD55G1_Start(void *io_ctx)
+ 283:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 284:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret = CMW_ERROR_NONE;
+ 285:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   ret = VD55G1_Start(&((CMW_VD55G1_t *)io_ctx)->ctx_driver);
+ 286:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret) {
+ 287:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     VD55G1_DeInit(&((CMW_VD55G1_t *)io_ctx)->ctx_driver);
+ 288:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return CMW_ERROR_PERIPH_FAILURE;
+ 289:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 290:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return CMW_ERROR_NONE;
+ 291:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 292:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 293:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static int32_t CMW_VD55G1_Stop(void *io_ctx)
+ 294:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 295:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret = CMW_ERROR_NONE;
+ 296:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 297:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   ret = VD55G1_Stop(&((CMW_VD55G1_t *)io_ctx)->ctx_driver);
+ 298:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 299:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 300:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return CMW_ERROR_PERIPH_FAILURE;
+ 301:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 302:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return CMW_ERROR_NONE;
+ 303:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 304:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 305:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static int32_t CMW_VD55G1_DeInit(void *io_ctx)
+ 306:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 307:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret = CMW_ERROR_NONE;
+ 308:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 309:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   ret = VD55G1_Stop(&((CMW_VD55G1_t *)io_ctx)->ctx_driver);
+ 310:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 311:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 312:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return CMW_ERROR_PERIPH_FAILURE;
+ 313:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 314:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 315:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   ret = VD55G1_DeInit(&((CMW_VD55G1_t *)io_ctx)->ctx_driver);
+ 316:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 317:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 318:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return CMW_ERROR_PERIPH_FAILURE;
+ 319:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 320:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 321:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   ((CMW_VD55G1_t *)io_ctx)->IsInitialized = 0;
+ 322:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return CMW_ERROR_NONE;
+ 323:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 324:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 325:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static int32_t CMW_VD55G1_MirrorFlipConfig(void *io_ctx, uint32_t Config)
+ 326:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 598              		.loc 1 326 1 is_stmt 1 view -0
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 18
+
+
+ 599              		.cfi_startproc
+ 600              		@ args = 0, pretend = 0, frame = 0
+ 601              		@ frame_needed = 0, uses_anonymous_args = 0
+ 602              		@ link register save eliminated.
+ 327:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int32_t ret = CMW_ERROR_NONE;
+ 603              		.loc 1 327 3 view .LVU145
+ 328:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 329:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   switch (Config) {
+ 604              		.loc 1 329 3 view .LVU146
+ 605 0000 0329     		cmp	r1, #3
+ 606 0002 0DD8     		bhi	.L22
+ 607 0004 DFE801F0 		tbb	[pc, r1]
+ 608              	.L24:
+ 609 0008 02       		.byte	(.L27-.L24)/2
+ 610 0009 06       		.byte	(.L26-.L24)/2
+ 611 000a 08       		.byte	(.L25-.L24)/2
+ 612 000b 0A       		.byte	(.L23-.L24)/2
+ 613              		.p2align 1
+ 614              	.L27:
+ 330:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     case CMW_MIRRORFLIP_NONE:
+ 331:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       ret = VD55G1_SetFlipMirrorMode(&((CMW_VD55G1_t *)io_ctx)->ctx_driver, VD55G1_MIRROR_FLIP_NONE
+ 615              		.loc 1 331 7 view .LVU147
+ 616              		.loc 1 331 13 is_stmt 0 view .LVU148
+ 617 000c 0021     		movs	r1, #0
+ 618              	.LVL52:
+ 619              	.L28:
+ 332:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       break;
+ 333:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     case CMW_MIRRORFLIP_FLIP:
+ 334:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       ret = VD55G1_SetFlipMirrorMode(&((CMW_VD55G1_t *)io_ctx)->ctx_driver, VD55G1_FLIP);
+ 335:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       break;
+ 336:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     case CMW_MIRRORFLIP_MIRROR:
+ 337:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       ret = VD55G1_SetFlipMirrorMode(&((CMW_VD55G1_t *)io_ctx)->ctx_driver, VD55G1_MIRROR);
+ 338:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       break;
+ 339:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     case CMW_MIRRORFLIP_FLIP_MIRROR:
+ 340:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       ret = VD55G1_SetFlipMirrorMode(&((CMW_VD55G1_t *)io_ctx)->ctx_driver, VD55G1_MIRROR_FLIP);
+ 620              		.loc 1 340 13 view .LVU149
+ 621 000e 0830     		adds	r0, r0, #8
+ 622              	.LVL53:
+ 623              		.loc 1 340 13 view .LVU150
+ 624 0010 FFF7FEBF 		b	VD55G1_SetFlipMirrorMode
+ 625              	.LVL54:
+ 626              	.L26:
+ 334:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       break;
+ 627              		.loc 1 334 7 is_stmt 1 view .LVU151
+ 334:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       break;
+ 628              		.loc 1 334 13 is_stmt 0 view .LVU152
+ 629 0014 0121     		movs	r1, #1
+ 630              	.LVL55:
+ 334:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       break;
+ 631              		.loc 1 334 13 view .LVU153
+ 632 0016 FAE7     		b	.L28
+ 633              	.LVL56:
+ 634              	.L25:
+ 337:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       break;
+ 635              		.loc 1 337 7 is_stmt 1 view .LVU154
+ 337:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       break;
+ 636              		.loc 1 337 13 is_stmt 0 view .LVU155
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 19
+
+
+ 637 0018 0221     		movs	r1, #2
+ 638              	.LVL57:
+ 337:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       break;
+ 639              		.loc 1 337 13 view .LVU156
+ 640 001a F8E7     		b	.L28
+ 641              	.LVL58:
+ 642              	.L23:
+ 643              		.loc 1 340 7 is_stmt 1 view .LVU157
+ 644              		.loc 1 340 13 is_stmt 0 view .LVU158
+ 645 001c 0321     		movs	r1, #3
+ 646              	.LVL59:
+ 647              		.loc 1 340 13 view .LVU159
+ 648 001e F6E7     		b	.L28
+ 649              	.LVL60:
+ 650              	.L22:
+ 341:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       break;
+ 342:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     default:
+ 343:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****       ret = CMW_ERROR_PERIPH_FAILURE;
+ 344:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 345:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 346:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return ret;
+ 651              		.loc 1 346 3 is_stmt 1 view .LVU160
+ 347:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 652              		.loc 1 347 1 is_stmt 0 view .LVU161
+ 653 0020 6FF00300 		mvn	r0, #3
+ 654              	.LVL61:
+ 655              		.loc 1 347 1 view .LVU162
+ 656 0024 7047     		bx	lr
+ 657              		.cfi_endproc
+ 658              	.LFE861:
+ 660              		.section	.text.CMW_VD55G1_Stop,"ax",%progbits
+ 661              		.align	1
+ 662              		.syntax unified
+ 663              		.thumb
+ 664              		.thumb_func
+ 666              	CMW_VD55G1_Stop:
+ 667              	.LVL62:
+ 668              	.LFB859:
+ 294:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret = CMW_ERROR_NONE;
+ 669              		.loc 1 294 1 is_stmt 1 view -0
+ 670              		.cfi_startproc
+ 671              		@ args = 0, pretend = 0, frame = 0
+ 672              		@ frame_needed = 0, uses_anonymous_args = 0
+ 295:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 673              		.loc 1 295 3 view .LVU164
+ 297:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 674              		.loc 1 297 3 view .LVU165
+ 294:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret = CMW_ERROR_NONE;
+ 675              		.loc 1 294 1 is_stmt 0 view .LVU166
+ 676 0000 08B5     		push	{r3, lr}
+ 677              		.cfi_def_cfa_offset 8
+ 678              		.cfi_offset 3, -8
+ 679              		.cfi_offset 14, -4
+ 297:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 680              		.loc 1 297 9 view .LVU167
+ 681 0002 0830     		adds	r0, r0, #8
+ 682              	.LVL63:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 20
+
+
+ 297:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 683              		.loc 1 297 9 view .LVU168
+ 684 0004 FFF7FEFF 		bl	VD55G1_Stop
+ 685              	.LVL64:
+ 298:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 686              		.loc 1 298 3 is_stmt 1 view .LVU169
+ 300:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 687              		.loc 1 300 12 is_stmt 0 view .LVU170
+ 688 0008 0028     		cmp	r0, #0
+ 303:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 689              		.loc 1 303 1 view .LVU171
+ 690 000a 18BF     		it	ne
+ 691 000c 6FF00300 		mvnne	r0, #3
+ 692              	.LVL65:
+ 303:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 693              		.loc 1 303 1 view .LVU172
+ 694 0010 08BD     		pop	{r3, pc}
+ 695              		.cfi_endproc
+ 696              	.LFE859:
+ 698              		.section	.text.CMW_VD55G1_Start,"ax",%progbits
+ 699              		.align	1
+ 700              		.syntax unified
+ 701              		.thumb
+ 702              		.thumb_func
+ 704              	CMW_VD55G1_Start:
+ 705              	.LVL66:
+ 706              	.LFB858:
+ 283:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret = CMW_ERROR_NONE;
+ 707              		.loc 1 283 1 is_stmt 1 view -0
+ 708              		.cfi_startproc
+ 709              		@ args = 0, pretend = 0, frame = 0
+ 710              		@ frame_needed = 0, uses_anonymous_args = 0
+ 284:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   ret = VD55G1_Start(&((CMW_VD55G1_t *)io_ctx)->ctx_driver);
+ 711              		.loc 1 284 3 view .LVU174
+ 285:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret) {
+ 712              		.loc 1 285 3 view .LVU175
+ 283:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret = CMW_ERROR_NONE;
+ 713              		.loc 1 283 1 is_stmt 0 view .LVU176
+ 714 0000 10B5     		push	{r4, lr}
+ 715              		.cfi_def_cfa_offset 8
+ 716              		.cfi_offset 4, -8
+ 717              		.cfi_offset 14, -4
+ 285:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret) {
+ 718              		.loc 1 285 9 view .LVU177
+ 719 0002 00F10804 		add	r4, r0, #8
+ 720 0006 2046     		mov	r0, r4
+ 721              	.LVL67:
+ 285:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret) {
+ 722              		.loc 1 285 9 view .LVU178
+ 723 0008 FFF7FEFF 		bl	VD55G1_Start
+ 724              	.LVL68:
+ 286:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     VD55G1_DeInit(&((CMW_VD55G1_t *)io_ctx)->ctx_driver);
+ 725              		.loc 1 286 3 is_stmt 1 view .LVU179
+ 286:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     VD55G1_DeInit(&((CMW_VD55G1_t *)io_ctx)->ctx_driver);
+ 726              		.loc 1 286 6 is_stmt 0 view .LVU180
+ 727 000c 20B1     		cbz	r0, .L32
+ 287:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return CMW_ERROR_PERIPH_FAILURE;
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 21
+
+
+ 728              		.loc 1 287 5 is_stmt 1 view .LVU181
+ 729 000e 2046     		mov	r0, r4
+ 730              	.LVL69:
+ 287:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return CMW_ERROR_PERIPH_FAILURE;
+ 731              		.loc 1 287 5 is_stmt 0 view .LVU182
+ 732 0010 FFF7FEFF 		bl	VD55G1_DeInit
+ 733              	.LVL70:
+ 288:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 734              		.loc 1 288 5 is_stmt 1 view .LVU183
+ 288:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 735              		.loc 1 288 12 is_stmt 0 view .LVU184
+ 736 0014 6FF00300 		mvn	r0, #3
+ 737              	.L32:
+ 291:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 738              		.loc 1 291 1 view .LVU185
+ 739 0018 10BD     		pop	{r4, pc}
+ 291:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 740              		.loc 1 291 1 view .LVU186
+ 741              		.cfi_endproc
+ 742              	.LFE858:
+ 744              		.section	.text.CMW_VD55G1_DeInit,"ax",%progbits
+ 745              		.align	1
+ 746              		.syntax unified
+ 747              		.thumb
+ 748              		.thumb_func
+ 750              	CMW_VD55G1_DeInit:
+ 751              	.LVL71:
+ 752              	.LFB860:
+ 306:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret = CMW_ERROR_NONE;
+ 753              		.loc 1 306 1 is_stmt 1 view -0
+ 754              		.cfi_startproc
+ 755              		@ args = 0, pretend = 0, frame = 0
+ 756              		@ frame_needed = 0, uses_anonymous_args = 0
+ 307:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 757              		.loc 1 307 3 view .LVU188
+ 309:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 758              		.loc 1 309 3 view .LVU189
+ 306:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret = CMW_ERROR_NONE;
+ 759              		.loc 1 306 1 is_stmt 0 view .LVU190
+ 760 0000 38B5     		push	{r3, r4, r5, lr}
+ 761              		.cfi_def_cfa_offset 16
+ 762              		.cfi_offset 3, -16
+ 763              		.cfi_offset 4, -12
+ 764              		.cfi_offset 5, -8
+ 765              		.cfi_offset 14, -4
+ 309:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 766              		.loc 1 309 9 view .LVU191
+ 767 0002 00F10805 		add	r5, r0, #8
+ 306:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret = CMW_ERROR_NONE;
+ 768              		.loc 1 306 1 view .LVU192
+ 769 0006 0446     		mov	r4, r0
+ 309:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 770              		.loc 1 309 9 view .LVU193
+ 771 0008 2846     		mov	r0, r5
+ 772              	.LVL72:
+ 309:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 773              		.loc 1 309 9 view .LVU194
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 22
+
+
+ 774 000a FFF7FEFF 		bl	VD55G1_Stop
+ 775              	.LVL73:
+ 310:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 776              		.loc 1 310 3 is_stmt 1 view .LVU195
+ 310:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 777              		.loc 1 310 6 is_stmt 0 view .LVU196
+ 778 000e 10B1     		cbz	r0, .L38
+ 779              	.L40:
+ 312:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 780              		.loc 1 312 12 view .LVU197
+ 781 0010 6FF00300 		mvn	r0, #3
+ 782              	.LVL74:
+ 783              	.L37:
+ 323:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 784              		.loc 1 323 1 view .LVU198
+ 785 0014 38BD     		pop	{r3, r4, r5, pc}
+ 786              	.LVL75:
+ 787              	.L38:
+ 315:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 788              		.loc 1 315 3 is_stmt 1 view .LVU199
+ 315:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 789              		.loc 1 315 9 is_stmt 0 view .LVU200
+ 790 0016 2846     		mov	r0, r5
+ 791              	.LVL76:
+ 315:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 792              		.loc 1 315 9 view .LVU201
+ 793 0018 FFF7FEFF 		bl	VD55G1_DeInit
+ 794              	.LVL77:
+ 316:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 795              		.loc 1 316 3 is_stmt 1 view .LVU202
+ 316:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 796              		.loc 1 316 6 is_stmt 0 view .LVU203
+ 797 001c 0028     		cmp	r0, #0
+ 798 001e F7D1     		bne	.L40
+ 321:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return CMW_ERROR_NONE;
+ 799              		.loc 1 321 3 is_stmt 1 view .LVU204
+ 321:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return CMW_ERROR_NONE;
+ 800              		.loc 1 321 43 is_stmt 0 view .LVU205
+ 801 0020 84F87000 		strb	r0, [r4, #112]
+ 322:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 802              		.loc 1 322 3 is_stmt 1 view .LVU206
+ 322:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 803              		.loc 1 322 10 is_stmt 0 view .LVU207
+ 804 0024 F6E7     		b	.L37
+ 805              		.cfi_endproc
+ 806              	.LFE860:
+ 808              		.section	.text.CMW_VD55G1_Init,"ax",%progbits
+ 809              		.align	1
+ 810              		.syntax unified
+ 811              		.thumb
+ 812              		.thumb_func
+ 814              	CMW_VD55G1_Init:
+ 815              	.LVL78:
+ 816              	.LFB857:
+ 242:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   VD55G1_Config_t config = { 0 };
+ 817              		.loc 1 242 1 is_stmt 1 view -0
+ 818              		.cfi_startproc
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 23
+
+
+ 819              		@ args = 0, pretend = 0, frame = 56
+ 820              		@ frame_needed = 0, uses_anonymous_args = 0
+ 243:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret;
+ 821              		.loc 1 243 3 view .LVU209
+ 242:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   VD55G1_Config_t config = { 0 };
+ 822              		.loc 1 242 1 is_stmt 0 view .LVU210
+ 823 0000 30B5     		push	{r4, r5, lr}
+ 824              		.cfi_def_cfa_offset 12
+ 825              		.cfi_offset 4, -12
+ 826              		.cfi_offset 5, -8
+ 827              		.cfi_offset 14, -4
+ 828 0002 0446     		mov	r4, r0
+ 829 0004 8FB0     		sub	sp, sp, #60
+ 830              		.cfi_def_cfa_offset 72
+ 242:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   VD55G1_Config_t config = { 0 };
+ 831              		.loc 1 242 1 view .LVU211
+ 832 0006 0D46     		mov	r5, r1
+ 243:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret;
+ 833              		.loc 1 243 19 view .LVU212
+ 834 0008 3422     		movs	r2, #52
+ 835 000a 0021     		movs	r1, #0
+ 836              	.LVL79:
+ 243:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret;
+ 837              		.loc 1 243 19 view .LVU213
+ 838 000c 01A8     		add	r0, sp, #4
+ 839              	.LVL80:
+ 243:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret;
+ 840              		.loc 1 243 19 view .LVU214
+ 841 000e FFF7FEFF 		bl	memset
+ 842              	.LVL81:
+ 244:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int i;
+ 843              		.loc 1 244 3 is_stmt 1 view .LVU215
+ 245:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 844              		.loc 1 245 3 view .LVU216
+ 247:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 845              		.loc 1 247 3 view .LVU217
+ 247:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 846              		.loc 1 247 6 is_stmt 0 view .LVU218
+ 847 0012 94F87030 		ldrb	r3, [r4, #112]	@ zero_extendqisi2
+ 848 0016 63BB     		cbnz	r3, .L42
+ 252:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   ret = CMW_VD55G1_GetResType(initSensor->width, initSensor->height, &config.resolution);
+ 849              		.loc 1 252 3 is_stmt 1 view .LVU219
+ 252:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   ret = CMW_VD55G1_GetResType(initSensor->width, initSensor->height, &config.resolution);
+ 850              		.loc 1 252 21 is_stmt 0 view .LVU220
+ 851 0018 AB68     		ldr	r3, [r5, #8]
+ 852 001a 0393     		str	r3, [sp, #12]
+ 253:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 853              		.loc 1 253 3 is_stmt 1 view .LVU221
+ 253:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 854              		.loc 1 253 9 is_stmt 0 view .LVU222
+ 855 001c D5E90023 		ldrd	r2, r3, [r5]
+ 856              	.LVL82:
+ 857              	.LBB39:
+ 858              	.LBI39:
+ 192:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 859              		.loc 1 192 12 is_stmt 1 view .LVU223
+ 860              	.LBB40:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 24
+
+
+ 194:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 861              		.loc 1 194 3 view .LVU224
+ 194:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 862              		.loc 1 194 6 is_stmt 0 view .LVU225
+ 863 0020 B2F5A07F 		cmp	r2, #320
+ 864 0024 04D1     		bne	.L43
+ 194:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 865              		.loc 1 194 20 discriminator 1 view .LVU226
+ 866 0026 F02B     		cmp	r3, #240
+ 867 0028 0BD0     		beq	.L44
+ 868              	.L51:
+ 869              	.LBE40:
+ 870              	.LBE39:
+ 256:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 871              		.loc 1 256 12 view .LVU227
+ 872 002a 6FF00100 		mvn	r0, #1
+ 873 002e 21E0     		b	.L41
+ 874              	.L43:
+ 875              	.LBB43:
+ 876              	.LBB41:
+ 198:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 877              		.loc 1 198 8 is_stmt 1 view .LVU228
+ 198:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 878              		.loc 1 198 11 is_stmt 0 view .LVU229
+ 879 0030 B2F5207F 		cmp	r2, #640
+ 880 0034 20D1     		bne	.L46
+ 198:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 881              		.loc 1 198 25 discriminator 1 view .LVU230
+ 882 0036 B3F5F07F 		cmp	r3, #480
+ 883 003a F6D1     		bne	.L51
+ 200:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 884              		.loc 1 200 5 is_stmt 1 view .LVU231
+ 200:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 885              		.loc 1 200 10 is_stmt 0 view .LVU232
+ 886 003c 0123     		movs	r3, #1
+ 887              	.LVL83:
+ 888              	.L56:
+ 208:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 889              		.loc 1 208 12 view .LVU233
+ 890 003e 8DF80830 		strb	r3, [sp, #8]
+ 891              	.LVL84:
+ 208:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 892              		.loc 1 208 12 view .LVU234
+ 893              	.LBE41:
+ 894              	.LBE43:
+ 254:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 895              		.loc 1 254 3 is_stmt 1 view .LVU235
+ 896              	.L44:
+ 259:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   config.flip_mirror_mode = CMW_VD55G1_getMirrorFlipConfig(initSensor->mirrorFlip);
+ 897              		.loc 1 259 3 view .LVU236
+ 259:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   config.flip_mirror_mode = CMW_VD55G1_getMirrorFlipConfig(initSensor->mirrorFlip);
+ 898              		.loc 1 259 31 is_stmt 0 view .LVU237
+ 899 0042 6368     		ldr	r3, [r4, #4]
+ 272:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 900              		.loc 1 272 9 view .LVU238
+ 901 0044 01A9     		add	r1, sp, #4
+ 259:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   config.flip_mirror_mode = CMW_VD55G1_getMirrorFlipConfig(initSensor->mirrorFlip);
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 25
+
+
+ 902              		.loc 1 259 31 view .LVU239
+ 903 0046 0193     		str	r3, [sp, #4]
+ 260:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   config.patgen = VD55G1_PATGEN_DISABLE;
+ 904              		.loc 1 260 3 is_stmt 1 view .LVU240
+ 905              	.LVL85:
+ 906              	.LBB44:
+ 907              	.LBI44:
+ 217:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 908              		.loc 1 217 28 view .LVU241
+ 909              	.LBB45:
+ 219:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 910              		.loc 1 219 3 view .LVU242
+ 221:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 911              		.loc 1 221 3 view .LVU243
+ 238:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 912              		.loc 1 238 3 view .LVU244
+ 238:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 913              		.loc 1 238 3 is_stmt 0 view .LVU245
+ 914              	.LBE45:
+ 915              	.LBE44:
+ 260:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   config.patgen = VD55G1_PATGEN_DISABLE;
+ 916              		.loc 1 260 27 discriminator 1 view .LVU246
+ 917 0048 2B69     		ldr	r3, [r5, #16]
+ 264:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   config.out_itf.data_lane_swap_enable = 1;
+ 918              		.loc 1 264 41 view .LVU247
+ 919 004a 0125     		movs	r5, #1
+ 920              	.LVL86:
+ 260:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   config.patgen = VD55G1_PATGEN_DISABLE;
+ 921              		.loc 1 260 27 discriminator 1 view .LVU248
+ 922 004c 032B     		cmp	r3, #3
+ 923 004e 28BF     		it	cs
+ 924 0050 0323     		movcs	r3, #3
+ 925 0052 8DF81030 		strb	r3, [sp, #16]
+ 261:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   config.flicker = VD55G1_FLICKER_FREE_NONE;
+ 926              		.loc 1 261 3 is_stmt 1 view .LVU249
+ 262:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   config.out_itf.data_rate_in_mps = VD55G1_DEFAULT_DATARATE;
+ 927              		.loc 1 262 3 view .LVU250
+ 263:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   config.out_itf.clock_lane_swap_enable = 1;
+ 928              		.loc 1 263 3 view .LVU251
+ 264:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   config.out_itf.data_lane_swap_enable = 1;
+ 929              		.loc 1 264 41 is_stmt 0 view .LVU252
+ 930 0056 124B     		ldr	r3, .L57
+ 272:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 931              		.loc 1 272 9 view .LVU253
+ 932 0058 04F10800 		add	r0, r4, #8
+ 264:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   config.out_itf.data_lane_swap_enable = 1;
+ 933              		.loc 1 264 41 view .LVU254
+ 934 005c CDE90535 		strd	r3, r5, [sp, #20]
+ 265:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   config.awu.is_enable = 0;
+ 935              		.loc 1 265 3 is_stmt 1 view .LVU255
+ 269:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 936              		.loc 1 269 25 is_stmt 0 view .LVU256
+ 937 0060 4FF00133 		mov	r3, #16843009
+ 265:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   config.awu.is_enable = 0;
+ 938              		.loc 1 265 40 view .LVU257
+ 939 0064 0795     		str	r5, [sp, #28]
+ 266:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   for (i = 0; i < VD55G1_GPIO_NB; i++)
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 26
+
+
+ 940              		.loc 1 266 3 is_stmt 1 view .LVU258
+ 267:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 941              		.loc 1 267 3 view .LVU259
+ 942              	.LVL87:
+ 267:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 943              		.loc 1 267 17 discriminator 1 view .LVU260
+ 269:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 944              		.loc 1 269 5 view .LVU261
+ 267:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 945              		.loc 1 267 36 discriminator 3 view .LVU262
+ 267:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 946              		.loc 1 267 17 discriminator 1 view .LVU263
+ 269:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 947              		.loc 1 269 5 view .LVU264
+ 267:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 948              		.loc 1 267 36 discriminator 3 view .LVU265
+ 267:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 949              		.loc 1 267 17 discriminator 1 view .LVU266
+ 269:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 950              		.loc 1 269 5 view .LVU267
+ 267:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 951              		.loc 1 267 36 discriminator 3 view .LVU268
+ 267:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 952              		.loc 1 267 17 discriminator 1 view .LVU269
+ 269:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 953              		.loc 1 269 5 view .LVU270
+ 269:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 954              		.loc 1 269 25 is_stmt 0 view .LVU271
+ 955 0066 0D93     		str	r3, [sp, #52]
+ 267:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 956              		.loc 1 267 36 is_stmt 1 discriminator 3 view .LVU272
+ 957              	.LVL88:
+ 267:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 958              		.loc 1 267 17 discriminator 1 view .LVU273
+ 272:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 959              		.loc 1 272 3 view .LVU274
+ 272:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 960              		.loc 1 272 9 is_stmt 0 view .LVU275
+ 961 0068 FFF7FEFF 		bl	VD55G1_Init
+ 962              	.LVL89:
+ 273:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 963              		.loc 1 273 3 is_stmt 1 view .LVU276
+ 273:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 964              		.loc 1 273 6 is_stmt 0 view .LVU277
+ 965 006c A0B9     		cbnz	r0, .L52
+ 278:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return CMW_ERROR_NONE;
+ 966              		.loc 1 278 3 is_stmt 1 view .LVU278
+ 278:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return CMW_ERROR_NONE;
+ 967              		.loc 1 278 43 is_stmt 0 view .LVU279
+ 968 006e 84F87050 		strb	r5, [r4, #112]
+ 279:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 969              		.loc 1 279 3 is_stmt 1 view .LVU280
+ 970              	.LVL90:
+ 971              	.L42:
+ 249:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 972              		.loc 1 249 12 is_stmt 0 view .LVU281
+ 973 0072 0020     		movs	r0, #0
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 27
+
+
+ 974              	.L41:
+ 280:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 975              		.loc 1 280 1 view .LVU282
+ 976 0074 0FB0     		add	sp, sp, #60
+ 977              		.cfi_remember_state
+ 978              		.cfi_def_cfa_offset 12
+ 979              		@ sp needed
+ 980 0076 30BD     		pop	{r4, r5, pc}
+ 981              	.LVL91:
+ 982              	.L46:
+ 983              		.cfi_restore_state
+ 984              	.LBB46:
+ 985              	.LBB42:
+ 202:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 986              		.loc 1 202 8 is_stmt 1 view .LVU283
+ 202:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 987              		.loc 1 202 11 is_stmt 0 view .LVU284
+ 988 0078 B2F5487F 		cmp	r2, #800
+ 989 007c 04D1     		bne	.L47
+ 202:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 990              		.loc 1 202 25 discriminator 1 view .LVU285
+ 991 007e B3F5167F 		cmp	r3, #600
+ 992 0082 D2D1     		bne	.L51
+ 204:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 993              		.loc 1 204 5 is_stmt 1 view .LVU286
+ 204:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 994              		.loc 1 204 10 is_stmt 0 view .LVU287
+ 995 0084 0223     		movs	r3, #2
+ 996              	.LVL92:
+ 204:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 997              		.loc 1 204 10 view .LVU288
+ 998 0086 DAE7     		b	.L56
+ 999              	.LVL93:
+ 1000              	.L47:
+ 206:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 1001              		.loc 1 206 8 is_stmt 1 view .LVU289
+ 206:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 1002              		.loc 1 206 11 is_stmt 0 view .LVU290
+ 1003 0088 B2F5497F 		cmp	r2, #804
+ 1004 008c CDD1     		bne	.L51
+ 206:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 1005              		.loc 1 206 25 discriminator 1 view .LVU291
+ 1006 008e B3F5307F 		cmp	r3, #704
+ 1007 0092 CAD1     		bne	.L51
+ 208:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 1008              		.loc 1 208 7 is_stmt 1 view .LVU292
+ 208:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 1009              		.loc 1 208 12 is_stmt 0 view .LVU293
+ 1010 0094 0323     		movs	r3, #3
+ 1011              	.LVL94:
+ 208:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 1012              		.loc 1 208 12 view .LVU294
+ 1013 0096 D2E7     		b	.L56
+ 1014              	.LVL95:
+ 1015              	.L52:
+ 208:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 1016              		.loc 1 208 12 view .LVU295
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 28
+
+
+ 1017              	.LBE42:
+ 1018              	.LBE46:
+ 275:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 1019              		.loc 1 275 12 view .LVU296
+ 1020 0098 6FF00300 		mvn	r0, #3
+ 1021              	.LVL96:
+ 275:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 1022              		.loc 1 275 12 view .LVU297
+ 1023 009c EAE7     		b	.L41
+ 1024              	.L58:
+ 1025 009e 00BF     		.align	2
+ 1026              	.L57:
+ 1027 00a0 0011EC2F 		.word	804000000
+ 1028              		.cfi_endproc
+ 1029              	.LFE857:
+ 1031              		.section	.text.CMW_VD55G1_Probe,"ax",%progbits
+ 1032              		.align	1
+ 1033              		.global	CMW_VD55G1_Probe
+ 1034              		.syntax unified
+ 1035              		.thumb
+ 1036              		.thumb_func
+ 1038              	CMW_VD55G1_Probe:
+ 1039              	.LVL97:
+ 1040              	.LFB865:
+ 348:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 349:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static int32_t VD55G1_RegisterBusIO(CMW_VD55G1_t *io_ctx)
+ 350:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 351:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret;
+ 352:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 353:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (!io_ctx)
+ 354:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return CMW_ERROR_COMPONENT_FAILURE;
+ 355:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 356:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (!io_ctx->Init)
+ 357:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return CMW_ERROR_COMPONENT_FAILURE;
+ 358:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 359:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   ret = io_ctx->Init();
+ 360:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 361:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return ret;
+ 362:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 363:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 364:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static int32_t VD55G1_ReadID(CMW_VD55G1_t *io_ctx, uint32_t *Id)
+ 365:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 366:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   uint32_t reg32;
+ 367:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int32_t ret;
+ 368:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 369:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   ret = CMW_VD55G1_Read32(io_ctx, VD55G1_REG_MODEL_ID, &reg32);
+ 370:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 371:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return ret;
+ 372:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 373:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   *Id = reg32;
+ 374:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 375:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return CMW_ERROR_NONE;
+ 376:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 377:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 378:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** static void CMW_VD55G1_PowerOn(CMW_VD55G1_t *io_ctx)
+ 379:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 380:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   /* Camera sensor Power-On sequence */
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 29
+
+
+ 381:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   /* Assert the camera  NRST pins */
+ 382:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   io_ctx->ShutdownPin(0);  /* Disable MB1723 2V8 signal  */
+ 383:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   io_ctx->Delay(200); /* NRST signals asserted during 200ms */
+ 384:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   /* De-assert the camera STANDBY pin (active high) */
+ 385:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   io_ctx->ShutdownPin(1);  /* Disable MB1723 2V8 signal  */
+ 386:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   io_ctx->Delay(20); /* NRST de-asserted during 20ms */
+ 387:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 388:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 389:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** int CMW_VD55G1_Probe(CMW_VD55G1_t *io_ctx, CMW_Sensor_if_t *vd55g1_if)
+ 390:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 1041              		.loc 1 390 1 is_stmt 1 view -0
+ 1042              		.cfi_startproc
+ 1043              		@ args = 0, pretend = 0, frame = 8
+ 1044              		@ frame_needed = 0, uses_anonymous_args = 0
+ 391:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret = CMW_ERROR_NONE;
+ 1045              		.loc 1 391 3 view .LVU299
+ 392:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   uint32_t id;
+ 1046              		.loc 1 392 3 view .LVU300
+ 393:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 394:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   io_ctx->ctx_driver.shutdown_pin = VD55G1_ShutdownPin;
+ 1047              		.loc 1 394 3 view .LVU301
+ 390:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret = CMW_ERROR_NONE;
+ 1048              		.loc 1 390 1 is_stmt 0 view .LVU302
+ 1049 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
+ 1050              		.cfi_def_cfa_offset 24
+ 1051              		.cfi_offset 4, -12
+ 1052              		.cfi_offset 5, -8
+ 1053              		.cfi_offset 14, -4
+ 390:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret = CMW_ERROR_NONE;
+ 1054              		.loc 1 390 1 view .LVU303
+ 1055 0002 0446     		mov	r4, r0
+ 1056              		.loc 1 394 35 view .LVU304
+ 1057 0004 264B     		ldr	r3, .L66
+ 390:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int ret = CMW_ERROR_NONE;
+ 1058              		.loc 1 390 1 view .LVU305
+ 1059 0006 0D46     		mov	r5, r1
+ 1060              		.loc 1 394 35 view .LVU306
+ 1061 0008 8360     		str	r3, [r0, #8]
+ 395:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   io_ctx->ctx_driver.read8 = VD55G1_Read8;
+ 1062              		.loc 1 395 3 is_stmt 1 view .LVU307
+ 1063              		.loc 1 395 28 is_stmt 0 view .LVU308
+ 1064 000a 264B     		ldr	r3, .L66+4
+ 1065 000c C360     		str	r3, [r0, #12]
+ 396:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   io_ctx->ctx_driver.read16 = VD55G1_Read16;
+ 1066              		.loc 1 396 3 is_stmt 1 view .LVU309
+ 1067              		.loc 1 396 29 is_stmt 0 view .LVU310
+ 1068 000e 264B     		ldr	r3, .L66+8
+ 1069 0010 0361     		str	r3, [r0, #16]
+ 397:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   io_ctx->ctx_driver.read32 = VD55G1_Read32;
+ 1070              		.loc 1 397 3 is_stmt 1 view .LVU311
+ 1071              		.loc 1 397 29 is_stmt 0 view .LVU312
+ 1072 0012 264B     		ldr	r3, .L66+12
+ 1073 0014 4361     		str	r3, [r0, #20]
+ 398:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   io_ctx->ctx_driver.write8 = VD55G1_Write8;
+ 1074              		.loc 1 398 3 is_stmt 1 view .LVU313
+ 1075              		.loc 1 398 29 is_stmt 0 view .LVU314
+ 1076 0016 264B     		ldr	r3, .L66+16
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 30
+
+
+ 1077 0018 8361     		str	r3, [r0, #24]
+ 399:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   io_ctx->ctx_driver.write16 = VD55G1_Write16;
+ 1078              		.loc 1 399 3 is_stmt 1 view .LVU315
+ 1079              		.loc 1 399 30 is_stmt 0 view .LVU316
+ 1080 001a 264B     		ldr	r3, .L66+20
+ 1081 001c C361     		str	r3, [r0, #28]
+ 400:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   io_ctx->ctx_driver.write32 = VD55G1_Write32;
+ 1082              		.loc 1 400 3 is_stmt 1 view .LVU317
+ 1083              		.loc 1 400 30 is_stmt 0 view .LVU318
+ 1084 001e 264B     		ldr	r3, .L66+24
+ 1085 0020 0362     		str	r3, [r0, #32]
+ 401:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   io_ctx->ctx_driver.write_array = VD55G1_WriteArray;
+ 1086              		.loc 1 401 3 is_stmt 1 view .LVU319
+ 1087              		.loc 1 401 34 is_stmt 0 view .LVU320
+ 1088 0022 264B     		ldr	r3, .L66+28
+ 1089 0024 4362     		str	r3, [r0, #36]
+ 402:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   io_ctx->ctx_driver.delay = VD55G1_Delay;
+ 1090              		.loc 1 402 3 is_stmt 1 view .LVU321
+ 1091              		.loc 1 402 28 is_stmt 0 view .LVU322
+ 1092 0026 264B     		ldr	r3, .L66+32
+ 1093 0028 8362     		str	r3, [r0, #40]
+ 403:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   io_ctx->ctx_driver.log = VD55G1_Log;
+ 1094              		.loc 1 403 3 is_stmt 1 view .LVU323
+ 1095              		.loc 1 403 26 is_stmt 0 view .LVU324
+ 1096 002a 264B     		ldr	r3, .L66+36
+ 1097 002c C362     		str	r3, [r0, #44]
+ 404:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 405:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   CMW_VD55G1_PowerOn(io_ctx);
+ 1098              		.loc 1 405 3 is_stmt 1 view .LVU325
+ 1099              	.LVL98:
+ 1100              	.LBB53:
+ 1101              	.LBI53:
+ 378:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 1102              		.loc 1 378 13 view .LVU326
+ 1103              	.LBB54:
+ 382:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   io_ctx->Delay(200); /* NRST signals asserted during 200ms */
+ 1104              		.loc 1 382 3 view .LVU327
+ 1105 002e D0F88C30 		ldr	r3, [r0, #140]
+ 1106 0032 0020     		movs	r0, #0
+ 1107              	.LVL99:
+ 382:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   io_ctx->Delay(200); /* NRST signals asserted during 200ms */
+ 1108              		.loc 1 382 3 is_stmt 0 view .LVU328
+ 1109 0034 9847     		blx	r3
+ 1110              	.LVL100:
+ 383:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   /* De-assert the camera STANDBY pin (active high) */
+ 1111              		.loc 1 383 3 is_stmt 1 view .LVU329
+ 1112 0036 C820     		movs	r0, #200
+ 1113 0038 D4F88830 		ldr	r3, [r4, #136]
+ 1114 003c 9847     		blx	r3
+ 1115              	.LVL101:
+ 385:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   io_ctx->Delay(20); /* NRST de-asserted during 20ms */
+ 1116              		.loc 1 385 3 view .LVU330
+ 1117 003e 0120     		movs	r0, #1
+ 1118 0040 D4F88C30 		ldr	r3, [r4, #140]
+ 1119 0044 9847     		blx	r3
+ 1120              	.LVL102:
+ 386:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 31
+
+
+ 1121              		.loc 1 386 3 view .LVU331
+ 1122 0046 D4F88830 		ldr	r3, [r4, #136]
+ 1123 004a 1420     		movs	r0, #20
+ 1124 004c 9847     		blx	r3
+ 1125              	.LVL103:
+ 386:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 1126              		.loc 1 386 3 is_stmt 0 view .LVU332
+ 1127              	.LBE54:
+ 1128              	.LBE53:
+ 406:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 407:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   ret = VD55G1_RegisterBusIO(io_ctx);
+ 1129              		.loc 1 407 3 is_stmt 1 view .LVU333
+ 1130              	.LBB55:
+ 1131              	.LBI55:
+ 349:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 1132              		.loc 1 349 16 view .LVU334
+ 1133              	.LBB56:
+ 351:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 1134              		.loc 1 351 3 view .LVU335
+ 353:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return CMW_ERROR_COMPONENT_FAILURE;
+ 1135              		.loc 1 353 3 view .LVU336
+ 356:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return CMW_ERROR_COMPONENT_FAILURE;
+ 1136              		.loc 1 356 3 view .LVU337
+ 356:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return CMW_ERROR_COMPONENT_FAILURE;
+ 1137              		.loc 1 356 14 is_stmt 0 view .LVU338
+ 1138 004e 636F     		ldr	r3, [r4, #116]
+ 356:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return CMW_ERROR_COMPONENT_FAILURE;
+ 1139              		.loc 1 356 6 view .LVU339
+ 1140 0050 23B9     		cbnz	r3, .L60
+ 1141              	.LVL104:
+ 1142              	.L65:
+ 356:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return CMW_ERROR_COMPONENT_FAILURE;
+ 1143              		.loc 1 356 6 view .LVU340
+ 1144              	.LBE56:
+ 1145              	.LBE55:
+ 408:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret != CMW_ERROR_NONE)
+ 409:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 410:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return CMW_ERROR_COMPONENT_FAILURE;
+ 1146              		.loc 1 410 12 view .LVU341
+ 1147 0052 6FF00404 		mvn	r4, #4
+ 1148              	.L59:
+ 411:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 412:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 413:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   ret = VD55G1_ReadID(io_ctx, &id);
+ 414:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret != CMW_ERROR_NONE)
+ 415:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 416:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return CMW_ERROR_COMPONENT_FAILURE;
+ 417:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 418:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (id != VD55G1_CHIP_ID)
+ 419:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 420:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return CMW_ERROR_COMPONENT_FAILURE;
+ 421:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   }
+ 422:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 423:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   memset(vd55g1_if, 0, sizeof(*vd55g1_if));
+ 424:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   vd55g1_if->Init = CMW_VD55G1_Init;
+ 425:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   vd55g1_if->DeInit = CMW_VD55G1_DeInit;
+ 426:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   vd55g1_if->Start = CMW_VD55G1_Start;
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 32
+
+
+ 427:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   vd55g1_if->Stop = CMW_VD55G1_Stop;
+ 428:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   vd55g1_if->SetMirrorFlip = CMW_VD55G1_MirrorFlipConfig;
+ 429:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   vd55g1_if->GetSensorInfo = CMW_VD55G1_GetSensorInfo;
+ 430:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return ret;
+ 431:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 1149              		.loc 1 431 1 view .LVU342
+ 1150 0056 2046     		mov	r0, r4
+ 1151 0058 03B0     		add	sp, sp, #12
+ 1152              		.cfi_remember_state
+ 1153              		.cfi_def_cfa_offset 12
+ 1154              		@ sp needed
+ 1155 005a 30BD     		pop	{r4, r5, pc}
+ 1156              	.LVL105:
+ 1157              	.L60:
+ 1158              		.cfi_restore_state
+ 1159              	.LBB58:
+ 1160              	.LBB57:
+ 359:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 1161              		.loc 1 359 3 is_stmt 1 view .LVU343
+ 359:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 1162              		.loc 1 359 9 is_stmt 0 view .LVU344
+ 1163 005c 9847     		blx	r3
+ 1164              	.LVL106:
+ 361:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 1165              		.loc 1 361 3 is_stmt 1 view .LVU345
+ 361:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 1166              		.loc 1 361 3 is_stmt 0 view .LVU346
+ 1167              	.LBE57:
+ 1168              	.LBE58:
+ 408:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 1169              		.loc 1 408 3 is_stmt 1 view .LVU347
+ 408:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 1170              		.loc 1 408 6 is_stmt 0 view .LVU348
+ 1171 005e 0146     		mov	r1, r0
+ 1172 0060 0028     		cmp	r0, #0
+ 1173 0062 F6D1     		bne	.L65
+ 413:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret != CMW_ERROR_NONE)
+ 1174              		.loc 1 413 3 is_stmt 1 view .LVU349
+ 1175              	.LVL107:
+ 1176              	.LBB59:
+ 1177              	.LBI59:
+ 364:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** {
+ 1178              		.loc 1 364 16 view .LVU350
+ 1179              	.LBB60:
+ 366:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   int32_t ret;
+ 1180              		.loc 1 366 3 view .LVU351
+ 367:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 1181              		.loc 1 367 3 view .LVU352
+ 369:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 1182              		.loc 1 369 3 view .LVU353
+ 369:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 1183              		.loc 1 369 9 is_stmt 0 view .LVU354
+ 1184 0064 2046     		mov	r0, r4
+ 1185              	.LVL108:
+ 369:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   if (ret)
+ 1186              		.loc 1 369 9 view .LVU355
+ 1187 0066 01AA     		add	r2, sp, #4
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 33
+
+
+ 1188 0068 FFF7FEFF 		bl	CMW_VD55G1_Read32
+ 1189              	.LVL109:
+ 370:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return ret;
+ 1190              		.loc 1 370 3 is_stmt 1 view .LVU356
+ 370:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return ret;
+ 1191              		.loc 1 370 6 is_stmt 0 view .LVU357
+ 1192 006c 0446     		mov	r4, r0
+ 1193              	.LVL110:
+ 370:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****     return ret;
+ 1194              		.loc 1 370 6 view .LVU358
+ 1195 006e 0028     		cmp	r0, #0
+ 1196 0070 EFD1     		bne	.L65
+ 373:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** 
+ 1197              		.loc 1 373 3 is_stmt 1 view .LVU359
+ 1198              	.LVL111:
+ 375:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 1199              		.loc 1 375 3 view .LVU360
+ 375:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 1200              		.loc 1 375 3 is_stmt 0 view .LVU361
+ 1201              	.LBE60:
+ 1202              	.LBE59:
+ 414:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 1203              		.loc 1 414 3 is_stmt 1 view .LVU362
+ 418:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 1204              		.loc 1 418 3 view .LVU363
+ 418:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   {
+ 1205              		.loc 1 418 6 is_stmt 0 view .LVU364
+ 1206 0072 019A     		ldr	r2, [sp, #4]
+ 1207 0074 144B     		ldr	r3, .L66+40
+ 1208 0076 9A42     		cmp	r2, r3
+ 1209 0078 EBD1     		bne	.L65
+ 423:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   vd55g1_if->Init = CMW_VD55G1_Init;
+ 1210              		.loc 1 423 3 is_stmt 1 view .LVU365
+ 1211 007a 0146     		mov	r1, r0
+ 1212 007c 5C22     		movs	r2, #92
+ 1213 007e 05F10C00 		add	r0, r5, #12
+ 1214 0082 FFF7FEFF 		bl	memset
+ 1215              	.LVL112:
+ 424:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   vd55g1_if->DeInit = CMW_VD55G1_DeInit;
+ 1216              		.loc 1 424 3 view .LVU366
+ 424:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   vd55g1_if->DeInit = CMW_VD55G1_DeInit;
+ 1217              		.loc 1 424 19 is_stmt 0 view .LVU367
+ 1218 0086 114B     		ldr	r3, .L66+44
+ 1219 0088 2B60     		str	r3, [r5]
+ 425:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   vd55g1_if->Start = CMW_VD55G1_Start;
+ 1220              		.loc 1 425 3 is_stmt 1 view .LVU368
+ 425:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   vd55g1_if->Start = CMW_VD55G1_Start;
+ 1221              		.loc 1 425 21 is_stmt 0 view .LVU369
+ 1222 008a 114B     		ldr	r3, .L66+48
+ 1223 008c 6B60     		str	r3, [r5, #4]
+ 426:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   vd55g1_if->Stop = CMW_VD55G1_Stop;
+ 1224              		.loc 1 426 3 is_stmt 1 view .LVU370
+ 426:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   vd55g1_if->Stop = CMW_VD55G1_Stop;
+ 1225              		.loc 1 426 20 is_stmt 0 view .LVU371
+ 1226 008e 114B     		ldr	r3, .L66+52
+ 1227 0090 AB60     		str	r3, [r5, #8]
+ 427:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   vd55g1_if->SetMirrorFlip = CMW_VD55G1_MirrorFlipConfig;
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 34
+
+
+ 1228              		.loc 1 427 3 is_stmt 1 view .LVU372
+ 427:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   vd55g1_if->SetMirrorFlip = CMW_VD55G1_MirrorFlipConfig;
+ 1229              		.loc 1 427 19 is_stmt 0 view .LVU373
+ 1230 0092 114B     		ldr	r3, .L66+56
+ 1231 0094 AB61     		str	r3, [r5, #24]
+ 428:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   vd55g1_if->GetSensorInfo = CMW_VD55G1_GetSensorInfo;
+ 1232              		.loc 1 428 3 is_stmt 1 view .LVU374
+ 428:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   vd55g1_if->GetSensorInfo = CMW_VD55G1_GetSensorInfo;
+ 1233              		.loc 1 428 28 is_stmt 0 view .LVU375
+ 1234 0096 114B     		ldr	r3, .L66+60
+ 1235 0098 EB62     		str	r3, [r5, #44]
+ 429:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return ret;
+ 1236              		.loc 1 429 3 is_stmt 1 view .LVU376
+ 429:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c ****   return ret;
+ 1237              		.loc 1 429 28 is_stmt 0 view .LVU377
+ 1238 009a 114B     		ldr	r3, .L66+64
+ 1239 009c 2B66     		str	r3, [r5, #96]
+ 430:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 1240              		.loc 1 430 3 is_stmt 1 view .LVU378
+ 1241              	.LVL113:
+ 430:../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.c **** }
+ 1242              		.loc 1 430 10 is_stmt 0 view .LVU379
+ 1243 009e DAE7     		b	.L59
+ 1244              	.L67:
+ 1245              		.align	2
+ 1246              	.L66:
+ 1247 00a0 00000000 		.word	VD55G1_ShutdownPin
+ 1248 00a4 00000000 		.word	VD55G1_Read8
+ 1249 00a8 00000000 		.word	VD55G1_Read16
+ 1250 00ac 00000000 		.word	VD55G1_Read32
+ 1251 00b0 00000000 		.word	VD55G1_Write8
+ 1252 00b4 00000000 		.word	VD55G1_Write16
+ 1253 00b8 00000000 		.word	VD55G1_Write32
+ 1254 00bc 00000000 		.word	VD55G1_WriteArray
+ 1255 00c0 00000000 		.word	VD55G1_Delay
+ 1256 00c4 00000000 		.word	VD55G1_Log
+ 1257 00c8 31473553 		.word	1396000561
+ 1258 00cc 00000000 		.word	CMW_VD55G1_Init
+ 1259 00d0 00000000 		.word	CMW_VD55G1_DeInit
+ 1260 00d4 00000000 		.word	CMW_VD55G1_Start
+ 1261 00d8 00000000 		.word	CMW_VD55G1_Stop
+ 1262 00dc 00000000 		.word	CMW_VD55G1_MirrorFlipConfig
+ 1263 00e0 00000000 		.word	CMW_VD55G1_GetSensorInfo
+ 1264              		.cfi_endproc
+ 1265              	.LFE865:
+ 1267              		.text
+ 1268              	.Letext0:
+ 1269              		.file 2 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 1270              		.file 3 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 1271              		.file 4 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 1272              		.file 5 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 1273              		.file 6 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 1274              		.file 7 "../../Middlewares/Camera_Middleware/ISP_Library/isp/Inc/isp_core.h"
+ 1275              		.file 8 "../../Middlewares/Camera_Middleware/sensors/cmw_sensors_if.h"
+ 1276              		.file 9 "../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.h"
+ 1277              		.file 10 "../../Middlewares/Camera_Middleware/sensors/cmw_vd55g1.h"
+ 1278              		.file 11 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltoo
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 35
+
+
+ 1279              		.file 12 "<built-in>"
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 36
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 cmw_vd55g1.c
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:26     .text.CMW_VD55G1_Read32:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:31     .text.CMW_VD55G1_Read32:00000000 CMW_VD55G1_Read32
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:80     .text.VD55G1_ShutdownPin:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:85     .text.VD55G1_ShutdownPin:00000000 VD55G1_ShutdownPin
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:106    .text.VD55G1_Read8:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:111    .text.VD55G1_Read8:00000000 VD55G1_Read8
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:159    .text.VD55G1_Read16:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:164    .text.VD55G1_Read16:00000000 VD55G1_Read16
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:228    .text.VD55G1_Read32:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:233    .text.VD55G1_Read32:00000000 VD55G1_Read32
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:254    .text.VD55G1_Write8:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:259    .text.VD55G1_Write8:00000000 VD55G1_Write8
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:307    .text.VD55G1_Write16:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:312    .text.VD55G1_Write16:00000000 VD55G1_Write16
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:360    .text.VD55G1_Write32:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:365    .text.VD55G1_Write32:00000000 VD55G1_Write32
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:418    .text.VD55G1_WriteArray:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:423    .text.VD55G1_WriteArray:00000000 VD55G1_WriteArray
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:504    .text.VD55G1_Delay:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:509    .text.VD55G1_Delay:00000000 VD55G1_Delay
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:530    .text.VD55G1_Log:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:535    .text.VD55G1_Log:00000000 VD55G1_Log
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:549    .text.CMW_VD55G1_GetSensorInfo:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:554    .text.CMW_VD55G1_GetSensorInfo:00000000 CMW_VD55G1_GetSensorInfo
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:590    .text.CMW_VD55G1_MirrorFlipConfig:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:595    .text.CMW_VD55G1_MirrorFlipConfig:00000000 CMW_VD55G1_MirrorFlipConfig
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:609    .text.CMW_VD55G1_MirrorFlipConfig:00000008 $d
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:613    .text.CMW_VD55G1_MirrorFlipConfig:0000000c $t
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:661    .text.CMW_VD55G1_Stop:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:666    .text.CMW_VD55G1_Stop:00000000 CMW_VD55G1_Stop
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:699    .text.CMW_VD55G1_Start:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:704    .text.CMW_VD55G1_Start:00000000 CMW_VD55G1_Start
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:745    .text.CMW_VD55G1_DeInit:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:750    .text.CMW_VD55G1_DeInit:00000000 CMW_VD55G1_DeInit
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:809    .text.CMW_VD55G1_Init:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:814    .text.CMW_VD55G1_Init:00000000 CMW_VD55G1_Init
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:1027   .text.CMW_VD55G1_Init:000000a0 $d
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:1032   .text.CMW_VD55G1_Probe:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:1038   .text.CMW_VD55G1_Probe:00000000 CMW_VD55G1_Probe
+C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s:1247   .text.CMW_VD55G1_Probe:000000a0 $d
+                           .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
+                           .group:00000000 wm4._newlib_version.h.4.411db44ea2338a62eca2f0777f81481b
+                           .group:00000000 wm4.features.h.33.e0c9f337c65cb9f22ed5f23d082bc78b
+                           .group:00000000 wm4._default_types.h.15.247e5cd201eca3442cbf5404108c4935
+                           .group:00000000 wm4._intsup.h.10.48bafbb683905c4daa4565a85aeeb264
+                           .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+                           .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+                           .group:00000000 wm4.isp_conf.h.21.f38432dbfef47e2ce2a64e60ef6a2d79
+                           .group:00000000 wm4.stm32n6xx_hal_conf.h.21.e6f895f5dec93fd886896ef3aa220611
+                           .group:00000000 wm4.stddef.h.39.0dc9006b34572d4d9cae4c8b422c4971
+                           .group:00000000 wm4.arm_cmse.h.103.a0d15a79c4c9a67da8d5831704d7248e
+                           .group:00000000 wm4.stm32n6xx.h.34.80585dd08aa426c932f6311fdb7386da
+                           .group:00000000 wm4.stm32n657xx.h.26.acd272cb67318cc1a4791ce2f0720ca6
+                           .group:00000000 wm4.cmsis_version.h.32.0ac195c83bb4537824e6ad1c47474b79
+                           .group:00000000 wm4.core_cm55.h.68.832d5cf835639cc0d28219c3d2867330
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 37
+
+
+                           .group:00000000 wm4.cmsis_gcc.h.26.7a5fd1a99dbedde687044a4433ab3e15
+                           .group:00000000 wm4.core_cm55.h.196.52e437a270752da561676e507b35baeb
+                           .group:00000000 wm4.mpu_armv8.h.32.9d72426c8e2b47753456dcb84802c5b3
+                           .group:00000000 wm4.pmu_armv8.h.32.eaa95f88a71b29390b135fd81c071b6b
+                           .group:00000000 wm4.core_cm55.h.4411.860dad8650880893dd57b815844f7186
+                           .group:00000000 wm4.cachel1_armv7.h.32.abd77761a989e008b0c60891114a33c7
+                           .group:00000000 wm4.stm32n657xx.h.575.1c2a5e6bedffc6f9083dcc857bc6d09d
+                           .group:00000000 wm4.stm32n6xx.h.114.5cf793d8af485e14f110e3e24bde1aa5
+                           .group:00000000 wm4.stm32_hal_legacy.h.22.87fb12bf5a1a1e00fc134f22bc9aa8c4
+                           .group:00000000 wm4.newlib.h.7.a37ffbe9e5aff74303f4e60b1cc1c01b
+                           .group:00000000 wm4.ieeefp.h.77.bd5feb87d9990dd328793ced294f6a87
+                           .group:00000000 wm4.config.h.224.10ee1ad185d877c6e334e6581faab44d
+                           .group:00000000 wm4._ansi.h.31.de524f58584151836e90d8620a16f8e8
+                           .group:00000000 wm4.cdefs.h.49.70fc7af612f78ddcace70fdd90b5623b
+                           .group:00000000 wm4._types.h.20.dd0d04dca3800a0d2a6129b87f3adbb2
+                           .group:00000000 wm4.stddef.h.158.6f8e08a347b1cff664332fa350bfceb3
+                           .group:00000000 wm4._types.h.127.3bdfe3ff8ea2d0985b03d9cbe93480e3
+                           .group:00000000 wm4.reent.h.18.25503cdc8b7e55dd0d6ea7b3e5af7a03
+                           .group:00000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
+                           .group:00000000 wm4.reent.h.78.6b87466b04591b1f1cb88c14fdf2ba9e
+                           .group:00000000 wm4.math.h.13.47cfc34cae8a1153323939c4d32cf7c2
+                           .group:00000000 wm4.stm32n6xx_hal_def.h.63.3a8f01490e8852464e9fcb69092e9c75
+                           .group:00000000 wm4.stm32n6xx_ll_bus.h.38.2366a295ee4cdb04833997d3787fcd2d
+                           .group:00000000 wm4.stm32n6xx_ll_rcc.h.21.002e22a16fd7f67dde6dce41e8ba9620
+                           .group:00000000 wm4.stm32n6xx_hal_rcc.h.194.1cb1283e40f9bebcd3fba2a9a961838e
+                           .group:00000000 wm4.stm32n6xx_hal_rcc_ex.h.21.79aa32178dfef625fbd20d362449acfa
+                           .group:00000000 wm4.stm32n6xx_hal_rcc.h.4359.3f0b7ad33826d95438602c9aebc08af9
+                           .group:00000000 wm4.stm32n6xx_hal_gpio.h.21.89d54af663b98eb8fc098192053f7eeb
+                           .group:00000000 wm4.stm32n6xx_hal_gpio_ex.h.22.4acb2e3511a98bb48b81cfc8e09fd59e
+                           .group:00000000 wm4.stm32n6xx_hal_rif.h.21.424d0bafb874a777dee3742a22e13037
+                           .group:00000000 wm4.stm32n6xx_hal_dma.h.21.61e48c5c2e8d25d22177834b232fe45c
+                           .group:00000000 wm4.stm32n6xx_hal_dma_ex.h.21.66e597beb090a165329d6ccf665e41bc
+                           .group:00000000 wm4.stm32n6xx_hal_dma.h.1020.87e2180c009560b617c1f8208140c950
+                           .group:00000000 wm4.stm32n6xx_hal_cortex.h.21.f493623cc58f9454ab4eae41e395c5cc
+                           .group:00000000 wm4.stm32n6xx_hal_bsec.h.21.61b309e67dd810e28897a01b1b21a97f
+                           .group:00000000 wm4.stm32n6xx_hal_dcmipp.h.21.f538bfd785c6469670251ac9bc7af55d
+                           .group:00000000 wm4.stm32n6xx_hal_dma2d.h.21.75c8d46cdbb72970123b3f34ae2043d7
+                           .group:00000000 wm4.stm32n6xx_hal_exti.h.21.fda87e715ea6b98239ec30171d1df594
+                           .group:00000000 wm4.stm32n6xx_hal_i2c.h.21.3f483626ff64c5bf027265bb2e1d1331
+                           .group:00000000 wm4.stm32n6xx_hal_i2c_ex.h.21.79e9196c22282cdaf6b4047893638c45
+                           .group:00000000 wm4.stm32n6xx_hal_i2c.h.741.1084702632703acc669e4282b3043372
+                           .group:00000000 wm4.stm32n6xx_hal_ltdc.h.21.ae1eb09930e7e550e48e418ac5849e4d
+                           .group:00000000 wm4.stm32n6xx_hal_ltdc.h.1002.b13ede7fc94ed5ad1c6768a157d2149a
+                           .group:00000000 wm4.stm32n6xx_hal_pwr.h.21.cdb73e4869c3fed3fc84f901ec0e5f0a
+                           .group:00000000 wm4.stm32n6xx_hal_pwr_ex.h.21.1a673224a58b0c1e5fad8eeda6514208
+                           .group:00000000 wm4.stm32n6xx_hal_ramcfg.h.21.a62dfbb4d2c14e9a8c634a215e37bd3d
+                           .group:00000000 wm4.stm32n6xx_hal_uart.h.21.230f549bfa0d5ebfd77bfb311b2aca15
+                           .group:00000000 wm4.stm32n6xx_hal_uart_ex.h.21.a0d5511e1d0703b7b5278c8f5472b96d
+                           .group:00000000 wm4.stm32n6xx_hal_xspi.h.21.e17898be2073b6b6b19faf30b4e304e9
+                           .group:00000000 wm4.stm32n6xx_hal_cacheaxi.h.21.7c3375b7903ec42376e4883320997f74
+                           .group:00000000 wm4.stm32n6xx_hal.h.81.5e59143eba07faca3e9aeaa5470826c8
+                           .group:00000000 wm4.stdio.h.27.3fc80220048df77954e38daec3bb9670
+                           .group:00000000 wm4.stddef.h.158.eec8bf00b5213f43d095cb984c5f22e3
+                           .group:00000000 wm4.stdarg.h.34.3a23a216c0c293b3d2ea2e89281481e6
+                           .group:00000000 wm4.stdio.h.47.dc31ec4674d7bcb103c9f08809549f45
+                           .group:00000000 wm4.stdio.h.2.4aa87247282eca6c8f36f9de33d8df1a
+                           .group:00000000 wm4.stdio.h.87.a1e20d2651f9bfb66e51bfbe849db00a
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccKBRiXU.s 			page 38
+
+
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.alloca.h.8.dfc0c703c47ec3e69746825b17d9e66d
+                           .group:00000000 wm4.stdlib.h.56.f4862cfbf4363a1db01842d5bdf72c18
+                           .group:00000000 wm4.string.h.8.c4b8571ce60dff2817f43fec8b86aecd
+                           .group:00000000 wm4.string.h.177.59a005921fa78485abc80a0267de5752
+                           .group:00000000 wm4.stdbool.h.29.c08aa3eec75cf5b9b5003883f43253f0
+                           .group:00000000 wm4.isp_core.h.109.be5387f515355b6edcb70af2607f9a68
+                           .group:00000000 wm4.cmw_errno.h.21.91021ac9b2627a1ce6b8517d105715d1
+                           .group:00000000 wm4.stdarg.h.31.7f63356e624ebff93a920b53ed006e12
+                           .group:00000000 wm4.vd55g1.h.28.399862f279bbaa0f9cc1926ebad80864
+                           .group:00000000 wm4.assert.h.11.db24e541f16414db224bf986d21017e2
+                           .group:00000000 wm4.stm32n6570_discovery_conf.h.21.f52c8202689527a3dc0d9c6cba9c0416
+                           .group:00000000 wm4.stm32n6570_discovery_errno.h.22.80e523b09444a11ebe4b6e24ae914f0e
+                           .group:00000000 wm4.stm32n6570_discovery_bus.h.62.3b5b2c6837f7adeb489604fa214cd371
+                           .group:00000000 wm4.cmw_camera_conf.h.44.f5b7142add155602b098cc3d0e29cc86
+                           .group:00000000 wm4.cmw_camera.h.33.b34cbb506ffb5bbc0bae0cee9fc48966
+
+UNDEFINED SYMBOLS
+VD55G1_SetFlipMirrorMode
+VD55G1_Stop
+VD55G1_Start
+VD55G1_DeInit
+memset
+VD55G1_Init

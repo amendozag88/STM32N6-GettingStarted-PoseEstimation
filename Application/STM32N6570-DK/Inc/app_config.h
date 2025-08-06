@@ -52,6 +52,6 @@
 
 /* Display */
 #define WELCOME_MSG_1         "st_movenet_lightning_heatmaps_192_int8_pc.tflite"
-#define WELCOME_MSG_2         "Model Running in STM32 MCU internal memory"
+#define WELCOME_MSG_2         "STM EDGE AI contest entry Antonio Mendoza"
 
 #endif

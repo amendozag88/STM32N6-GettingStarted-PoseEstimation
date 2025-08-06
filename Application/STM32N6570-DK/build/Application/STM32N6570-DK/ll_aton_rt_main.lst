@@ -1,0 +1,361 @@
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccumMv9f.s 			page 1
+
+
+   1              		.arch armv8.1-m.main
+   2              		.fpu fpv5-d16
+   3              		.arch_extension dsp
+   4              		.arch_extension fp
+   5              		.arch_extension fp.dp
+   6              		.arch_extension mve
+   7              		.arch_extension mve.fp
+   8              		.eabi_attribute 5, "cortex-m55"
+   9              		.eabi_attribute 28, 1
+  10              		.eabi_attribute 20, 1
+  11              		.eabi_attribute 21, 1
+  12              		.eabi_attribute 23, 3
+  13              		.eabi_attribute 24, 1
+  14              		.eabi_attribute 25, 1
+  15              		.eabi_attribute 26, 1
+  16              		.eabi_attribute 30, 4
+  17              		.eabi_attribute 34, 1
+  18              		.eabi_attribute 38, 1
+  19              		.eabi_attribute 18, 4
+  20              		.file	"ll_aton_rt_main.c"
+  21              		.text
+  22              	.Ltext0:
+  23              		.cfi_sections	.debug_frame
+  24              		.file 1 "../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c"
+  25              		.section	.rodata.LL_ATON_RT_Main.str1.1,"aMS",%progbits,1
+  26              	.LC0:
+  27 0000 6E657477 		.ascii	"network_instance != ((void *)0)\000"
+  27      6F726B5F 
+  27      696E7374 
+  27      616E6365 
+  27      20213D20 
+  28              	.LC1:
+  29 0020 2E2E2F2E 		.ascii	"../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt"
+  29      2E2F4D69 
+  29      64646C65 
+  29      77617265 
+  29      732F4149 
+  30 0053 5F6D6169 		.ascii	"_main.c\000"
+  30      6E2E6300 
+  31              	.LC2:
+  32 005b 6E657477 		.ascii	"network_instance->network != ((void *)0)\000"
+  32      6F726B5F 
+  32      696E7374 
+  32      616E6365 
+  32      2D3E6E65 
+  33              		.section	.text.LL_ATON_RT_Main,"ax",%progbits
+  34              		.align	1
+  35              		.global	LL_ATON_RT_Main
+  36              		.syntax unified
+  37              		.thumb
+  38              		.thumb_func
+  40              	LL_ATON_RT_Main:
+  41              	.LVL0:
+  42              	.LFB4832:
+   1:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c **** /**
+   2:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  ******************************************************************************
+   3:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  * @file    ll_aton_rt_main.c
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccumMv9f.s 			page 2
+
+
+   4:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  * @author  SRA Artificial Intelligence & Embedded Architectures
+   5:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  * @brief   Template `main()` function (named `LL_ATON_RT_Main()`) for
+   6:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  *          Cube.AI/ATON integration in a RTOS-less application.
+   7:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  * @note    This file is intended to be just a template and is limited to run the
+   8:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  *          ATON LL runtime with a single network instance for a single inference!
+   9:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  *          Please, generate your own embodiment of this file and customize it
+  10:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  *          so to fit the needs of your application.
+  11:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  ******************************************************************************
+  12:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  * @attention
+  13:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  *
+  14:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  * Copyright (c) 2024 STMicroelectronics.
+  15:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  * All rights reserved.
+  16:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  *
+  17:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  * This software is licensed under terms that can be found in the LICENSE file
+  18:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  * in the root directory of this software component.
+  19:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  * If no LICENSE file comes with this software, it is provided AS-IS.
+  20:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  *
+  21:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  ******************************************************************************
+  22:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  */
+  23:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c **** 
+  24:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c **** #include "ll_aton_runtime.h"
+  25:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c **** #include "ll_aton_util.h"
+  26:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c **** 
+  27:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c **** /*** Main Template ***/
+  28:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c **** 
+  29:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c **** /**
+  30:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  * @brief Template for synchronously executing a single inference of a single network instance (e.g
+  31:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  * @param network_instance pointer to the network instance representing the network and execution i
+  32:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  *                         The instance object MUST have already set a valid link to a network inte
+  33:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  *                         The user may declare/instantiate such an object by using either macro
+  34:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  *                          `LL_ATON_DECLARE_NAMED_NN_INSTANCE_AND_INTERFACE()` to create both the 
+  35:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  *                         and the network interface, or macros
+  36:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  *                         `LL_ATON_DECLARE_NAMED_NN_INTERFACE()` & `LL_ATON_DECLARE_NAMED_NN_INSTA
+  37:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  *                         create/instantiate the objects separately.
+  38:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  */
+  39:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c **** void LL_ATON_RT_Main(NN_Instance_TypeDef *network_instance)
+  40:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c **** {
+  43              		.loc 1 40 1 view -0
+  44              		.cfi_startproc
+  45              		@ args = 0, pretend = 0, frame = 0
+  46              		@ frame_needed = 0, uses_anonymous_args = 0
+  41:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****   LL_ATON_RT_RetValues_t ll_aton_rt_ret;
+  47              		.loc 1 41 3 view .LVU1
+  42:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c **** 
+  43:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****   /*** Start of user initialization code ***/
+  44:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c **** 
+  45:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****   /*** End of user initialization code ***/
+  46:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c **** 
+  47:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****   LL_ATON_ASSERT(network_instance != NULL);
+  48              		.loc 1 47 3 view .LVU2
+  40:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****   LL_ATON_RT_RetValues_t ll_aton_rt_ret;
+  49              		.loc 1 40 1 is_stmt 0 view .LVU3
+  50 0000 10B5     		push	{r4, lr}
+  51              		.cfi_def_cfa_offset 8
+  52              		.cfi_offset 4, -8
+  53              		.cfi_offset 14, -4
+  54              		.loc 1 47 3 view .LVU4
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccumMv9f.s 			page 3
+
+
+  55 0002 0446     		mov	r4, r0
+  56 0004 28B9     		cbnz	r0, .L2
+  57              		.loc 1 47 3 discriminator 1 view .LVU5
+  58 0006 2F21     		movs	r1, #47
+  59 0008 0F4B     		ldr	r3, .L9
+  60 000a 104A     		ldr	r2, .L9+4
+  61              	.L8:
+  48:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****   LL_ATON_ASSERT(network_instance->network != NULL);
+  62              		.loc 1 48 3 discriminator 1 view .LVU6
+  63 000c 1048     		ldr	r0, .L9+8
+  64              	.LVL1:
+  65              		.loc 1 48 3 discriminator 1 view .LVU7
+  66 000e FFF7FEFF 		bl	__assert_func
+  67              	.LVL2:
+  68              	.L2:
+  69              		.loc 1 48 3 is_stmt 1 view .LVU8
+  70 0012 0368     		ldr	r3, [r0]
+  71 0014 1BB9     		cbnz	r3, .L3
+  72              		.loc 1 48 3 is_stmt 0 discriminator 1 view .LVU9
+  73 0016 3021     		movs	r1, #48
+  74 0018 0E4B     		ldr	r3, .L9+12
+  75 001a 0C4A     		ldr	r2, .L9+4
+  76 001c F6E7     		b	.L8
+  77              	.L3:
+  49:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****   LL_ATON_RT_RuntimeInit();                  // Initialize runtime
+  78              		.loc 1 49 3 is_stmt 1 view .LVU10
+  79 001e FFF7FEFF 		bl	LL_ATON_RT_RuntimeInit
+  80              	.LVL3:
+  50:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****   LL_ATON_RT_Init_Network(network_instance); // Initialize passed network instance object
+  81              		.loc 1 50 3 view .LVU11
+  82 0022 2046     		mov	r0, r4
+  83 0024 FFF7FEFF 		bl	LL_ATON_RT_Init_Network
+  84              	.LVL4:
+  85              	.L7:
+  51:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c **** 
+  52:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****   do
+  86              		.loc 1 52 3 view .LVU12
+  53:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****   {
+  54:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****     /* Execute first/next step of Cube.AI/ATON runtime */
+  55:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****     ll_aton_rt_ret = LL_ATON_RT_RunEpochBlock(network_instance);
+  87              		.loc 1 55 5 view .LVU13
+  88              		.loc 1 55 22 is_stmt 0 view .LVU14
+  89 0028 2046     		mov	r0, r4
+  90 002a FFF7FEFF 		bl	LL_ATON_RT_RunEpochBlock
+  91              	.LVL5:
+  56:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c **** 
+  57:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****     /*** Start of user event handling code ***/
+  58:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c **** 
+  59:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****     /*** End of user event handling code ***/
+  60:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c **** 
+  61:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****     /* Wait for next event */
+  62:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****     if (ll_aton_rt_ret == LL_ATON_RT_WFE)
+  92              		.loc 1 62 5 is_stmt 1 view .LVU15
+  93              		.loc 1 62 8 is_stmt 0 view .LVU16
+  94 002e 0128     		cmp	r0, #1
+  95 0030 01D1     		bne	.L4
+  63:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****     { /*** subject to change to fit also user code requirements ***/
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccumMv9f.s 			page 4
+
+
+  64:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****       LL_ATON_OSAL_WFE();
+  96              		.loc 1 64 7 is_stmt 1 view .LVU17
+  97              		.syntax unified
+  98              	@ 64 "../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c" 1
+  99 0032 20BF     		wfe
+ 100              	@ 0 "" 2
+  65:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****     }
+  66:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****   } while (ll_aton_rt_ret != LL_ATON_RT_DONE); /*** subject to change to fit also user code require
+ 101              		.loc 1 66 27 view .LVU18
+ 102              		.thumb
+ 103              		.syntax unified
+ 104 0034 F8E7     		b	.L7
+ 105              	.L4:
+ 106              		.loc 1 66 27 view .LVU19
+ 107 0036 0228     		cmp	r0, #2
+ 108 0038 F6D1     		bne	.L7
+  67:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c **** 
+  68:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****   LL_ATON_RT_DeInit_Network(network_instance); // De-initialize the network instance object
+ 109              		.loc 1 68 3 view .LVU20
+ 110 003a 2046     		mov	r0, r4
+ 111              	.LVL6:
+ 112              		.loc 1 68 3 is_stmt 0 view .LVU21
+ 113 003c FFF7FEFF 		bl	LL_ATON_RT_DeInit_Network
+ 114              	.LVL7:
+  69:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****   LL_ATON_RT_RuntimeDeInit();                  // De-initialize runtime
+ 115              		.loc 1 69 3 is_stmt 1 view .LVU22
+  70:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c **** 
+  71:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****   /*** Start of user de-initialization code ***/
+  72:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c **** 
+  73:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****   /*** End of user de-initialization code ***/
+  74:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c **** }
+ 116              		.loc 1 74 1 is_stmt 0 view .LVU23
+ 117 0040 BDE81040 		pop	{r4, lr}
+ 118              		.cfi_restore 14
+ 119              		.cfi_restore 4
+ 120              		.cfi_def_cfa_offset 0
+ 121              	.LVL8:
+  69:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****   LL_ATON_RT_RuntimeDeInit();                  // De-initialize runtime
+ 122              		.loc 1 69 3 view .LVU24
+ 123 0044 FFF7FEBF 		b	LL_ATON_RT_RuntimeDeInit
+ 124              	.LVL9:
+ 125              	.L10:
+ 126              		.align	2
+ 127              	.L9:
+ 128 0048 00000000 		.word	.LC0
+ 129 004c 00000000 		.word	__func__.0
+ 130 0050 20000000 		.word	.LC1
+ 131 0054 5B000000 		.word	.LC2
+ 132              		.cfi_endproc
+ 133              	.LFE4832:
+ 135              		.section	.rodata.__func__.0,"a"
+ 138              	__func__.0:
+ 139 0000 4C4C5F41 		.ascii	"LL_ATON_RT_Main\000"
+ 139      544F4E5F 
+ 139      52545F4D 
+ 139      61696E00 
+ 140              		.text
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccumMv9f.s 			page 5
+
+
+ 141              	.Letext0:
+ 142              		.file 2 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 143              		.file 3 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 144              		.file 4 "../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_NN_interface.h"
+ 145              		.file 5 "../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_runtime.h"
+ 146              		.file 6 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccumMv9f.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ll_aton_rt_main.c
+C:\Users\Antonio\AppData\Local\Temp\ccumMv9f.s:34     .text.LL_ATON_RT_Main:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccumMv9f.s:40     .text.LL_ATON_RT_Main:00000000 LL_ATON_RT_Main
+C:\Users\Antonio\AppData\Local\Temp\ccumMv9f.s:128    .text.LL_ATON_RT_Main:00000048 $d
+C:\Users\Antonio\AppData\Local\Temp\ccumMv9f.s:138    .rodata.__func__.0:00000000 __func__.0
+                           .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
+                           .group:00000000 wm4._newlib_version.h.4.411db44ea2338a62eca2f0777f81481b
+                           .group:00000000 wm4.newlib.h.27.a82728f74da661df333d09507bfef510
+                           .group:00000000 wm4.ieeefp.h.77.bd5feb87d9990dd328793ced294f6a87
+                           .group:00000000 wm4.features.h.22.9dfb1293666eb4caf24cccb81c86a551
+                           .group:00000000 wm4.config.h.224.10ee1ad185d877c6e334e6581faab44d
+                           .group:00000000 wm4._ansi.h.31.de524f58584151836e90d8620a16f8e8
+                           .group:00000000 wm4.assert.h.11.db24e541f16414db224bf986d21017e2
+                           .group:00000000 wm4._default_types.h.6.959254cf5f09734ea7516c89e8bb21bd
+                           .group:00000000 wm4._intsup.h.10.48bafbb683905c4daa4565a85aeeb264
+                           .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+                           .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+                           .group:00000000 wm4.stdio.h.27.3fc80220048df77954e38daec3bb9670
+                           .group:00000000 wm4.stddef.h.185.cbb642e1ccd385e8aa504b15cb7fb086
+                           .group:00000000 wm4.cdefs.h.49.70fc7af612f78ddcace70fdd90b5623b
+                           .group:00000000 wm4.stddef.h.39.6817658cc6bc4c7c8354d2009e4a5777
+                           .group:00000000 wm4.stdarg.h.34.3a23a216c0c293b3d2ea2e89281481e6
+                           .group:00000000 wm4._types.h.20.dd0d04dca3800a0d2a6129b87f3adbb2
+                           .group:00000000 wm4.stddef.h.158.6f8e08a347b1cff664332fa350bfceb3
+                           .group:00000000 wm4._types.h.127.3bdfe3ff8ea2d0985b03d9cbe93480e3
+                           .group:00000000 wm4.reent.h.18.25503cdc8b7e55dd0d6ea7b3e5af7a03
+                           .group:00000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
+                           .group:00000000 wm4.reent.h.78.6b87466b04591b1f1cb88c14fdf2ba9e
+                           .group:00000000 wm4.stdio.h.67.0cf8a9c281ab0b348aef5c02e7e48825
+                           .group:00000000 wm4.stdio.h.2.4aa87247282eca6c8f36f9de33d8df1a
+                           .group:00000000 wm4.stdio.h.87.a1e20d2651f9bfb66e51bfbe849db00a
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.stddef.h.158.eec8bf00b5213f43d095cb984c5f22e3
+                           .group:00000000 wm4.alloca.h.8.dfc0c703c47ec3e69746825b17d9e66d
+                           .group:00000000 wm4.stdlib.h.56.f4862cfbf4363a1db01842d5bdf72c18
+                           .group:00000000 wm4.ll_aton_config.h.20.79eb8be0291ee9086e6be08969d61846
+                           .group:00000000 wm4.assert.h.11.d99a111e320bc5106fc4046225782672
+                           .group:00000000 wm4.stdbool.h.29.c08aa3eec75cf5b9b5003883f43253f0
+                           .group:00000000 wm4.ll_aton_attributes.h.20.26d469460cb32db5740effdc8cc403f3
+                           .group:00000000 wm4.errno.h.2.ba016d646105af6cad23be83630b6a3f
+                           .group:00000000 wm4.errno.h.9.ae5ea2b0ff9ea6e39e585807e35200d3
+                           .group:00000000 wm4.ll_aton_util.h.34.a290753adbb2447ca7ee3415db495399
+                           .group:00000000 wm4.ll_aton_NN_interface.h.391.60880269f073611ab8a2cfeebdea17d5
+                           .group:00000000 wm4.ll_aton_osal.h.20.db6912f3379b6bd6fb65d7a2b7fdbb53
+                           .group:00000000 wm4.ll_aton_platform.h.20.06ded592ee586a6abb6019a90ebd54df
+                           .group:00000000 wm4.stm32n6xx_hal_conf.h.21.e6f895f5dec93fd886896ef3aa220611
+                           .group:00000000 wm4.arm_cmse.h.103.a0d15a79c4c9a67da8d5831704d7248e
+                           .group:00000000 wm4.stm32n6xx.h.34.80585dd08aa426c932f6311fdb7386da
+                           .group:00000000 wm4.stm32n657xx.h.26.acd272cb67318cc1a4791ce2f0720ca6
+                           .group:00000000 wm4.cmsis_version.h.32.0ac195c83bb4537824e6ad1c47474b79
+                           .group:00000000 wm4.core_cm55.h.68.832d5cf835639cc0d28219c3d2867330
+                           .group:00000000 wm4.cmsis_gcc.h.26.7a5fd1a99dbedde687044a4433ab3e15
+                           .group:00000000 wm4.core_cm55.h.196.52e437a270752da561676e507b35baeb
+                           .group:00000000 wm4.mpu_armv8.h.32.9d72426c8e2b47753456dcb84802c5b3
+                           .group:00000000 wm4.pmu_armv8.h.32.eaa95f88a71b29390b135fd81c071b6b
+                           .group:00000000 wm4.core_cm55.h.4411.860dad8650880893dd57b815844f7186
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccumMv9f.s 			page 7
+
+
+                           .group:00000000 wm4.cachel1_armv7.h.32.abd77761a989e008b0c60891114a33c7
+                           .group:00000000 wm4.stm32n657xx.h.575.1c2a5e6bedffc6f9083dcc857bc6d09d
+                           .group:00000000 wm4.stm32n6xx.h.114.5cf793d8af485e14f110e3e24bde1aa5
+                           .group:00000000 wm4.stm32_hal_legacy.h.22.87fb12bf5a1a1e00fc134f22bc9aa8c4
+                           .group:00000000 wm4.math.h.13.47cfc34cae8a1153323939c4d32cf7c2
+                           .group:00000000 wm4.stm32n6xx_hal_def.h.63.2cbbf1954826c09c874c4e06e42e8b71
+                           .group:00000000 wm4.stm32n6xx_ll_bus.h.38.2366a295ee4cdb04833997d3787fcd2d
+                           .group:00000000 wm4.stm32n6xx_ll_rcc.h.21.002e22a16fd7f67dde6dce41e8ba9620
+                           .group:00000000 wm4.stm32n6xx_hal_rcc.h.194.1cb1283e40f9bebcd3fba2a9a961838e
+                           .group:00000000 wm4.stm32n6xx_hal_rcc_ex.h.21.79aa32178dfef625fbd20d362449acfa
+                           .group:00000000 wm4.stm32n6xx_hal_rcc.h.4359.3f0b7ad33826d95438602c9aebc08af9
+                           .group:00000000 wm4.stm32n6xx_hal_gpio.h.21.89d54af663b98eb8fc098192053f7eeb
+                           .group:00000000 wm4.stm32n6xx_hal_gpio_ex.h.22.4acb2e3511a98bb48b81cfc8e09fd59e
+                           .group:00000000 wm4.stm32n6xx_hal_rif.h.21.424d0bafb874a777dee3742a22e13037
+                           .group:00000000 wm4.stm32n6xx_hal_dma.h.21.61e48c5c2e8d25d22177834b232fe45c
+                           .group:00000000 wm4.stm32n6xx_hal_dma_ex.h.21.66e597beb090a165329d6ccf665e41bc
+                           .group:00000000 wm4.stm32n6xx_hal_dma.h.1020.87e2180c009560b617c1f8208140c950
+                           .group:00000000 wm4.stm32n6xx_hal_cortex.h.21.f493623cc58f9454ab4eae41e395c5cc
+                           .group:00000000 wm4.stm32n6xx_hal_bsec.h.21.61b309e67dd810e28897a01b1b21a97f
+                           .group:00000000 wm4.stm32n6xx_hal_dcmipp.h.21.f538bfd785c6469670251ac9bc7af55d
+                           .group:00000000 wm4.stm32n6xx_hal_dma2d.h.21.75c8d46cdbb72970123b3f34ae2043d7
+                           .group:00000000 wm4.stm32n6xx_hal_exti.h.21.fda87e715ea6b98239ec30171d1df594
+                           .group:00000000 wm4.stm32n6xx_hal_i2c.h.21.3f483626ff64c5bf027265bb2e1d1331
+                           .group:00000000 wm4.stm32n6xx_hal_i2c_ex.h.21.79e9196c22282cdaf6b4047893638c45
+                           .group:00000000 wm4.stm32n6xx_hal_i2c.h.741.1084702632703acc669e4282b3043372
+                           .group:00000000 wm4.stm32n6xx_hal_ltdc.h.21.ae1eb09930e7e550e48e418ac5849e4d
+                           .group:00000000 wm4.stm32n6xx_hal_ltdc.h.1002.b13ede7fc94ed5ad1c6768a157d2149a
+                           .group:00000000 wm4.stm32n6xx_hal_pwr.h.21.cdb73e4869c3fed3fc84f901ec0e5f0a
+                           .group:00000000 wm4.stm32n6xx_hal_pwr_ex.h.21.1a673224a58b0c1e5fad8eeda6514208
+                           .group:00000000 wm4.stm32n6xx_hal_ramcfg.h.21.a62dfbb4d2c14e9a8c634a215e37bd3d
+                           .group:00000000 wm4.stm32n6xx_hal_uart.h.21.230f549bfa0d5ebfd77bfb311b2aca15
+                           .group:00000000 wm4.stm32n6xx_hal_uart_ex.h.21.a0d5511e1d0703b7b5278c8f5472b96d
+                           .group:00000000 wm4.stm32n6xx_hal_xspi.h.21.e17898be2073b6b6b19faf30b4e304e9
+                           .group:00000000 wm4.stm32n6xx_hal_cacheaxi.h.21.7c3375b7903ec42376e4883320997f74
+                           .group:00000000 wm4.stm32n6xx_hal.h.81.5e59143eba07faca3e9aeaa5470826c8
+                           .group:00000000 wm4.ll_aton_platform.h.288.664a74b8c5792a861b3d52bd39f4a693
+                           .group:00000000 wm4.string.h.8.c4b8571ce60dff2817f43fec8b86aecd
+                           .group:00000000 wm4.string.h.177.59a005921fa78485abc80a0267de5752
+                           .group:00000000 wm4.ATON.h.37.dcee5f05b79f32d0e17b499095b5b6b7
+                           .group:00000000 wm4.ll_aton_rcompat.h.22.1535a015a52fd365f115f7d75d780d81
+                           .group:00000000 wm4.ll_aton_platform.h.383.f09ccd502bb682b863f991d963ee7462
+
+UNDEFINED SYMBOLS
+__assert_func
+LL_ATON_RT_RuntimeInit
+LL_ATON_RT_Init_Network
+LL_ATON_RT_RunEpochBlock
+LL_ATON_RT_DeInit_Network
+LL_ATON_RT_RuntimeDeInit

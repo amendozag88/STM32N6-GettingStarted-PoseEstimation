@@ -1,0 +1,2614 @@
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 1
+
+
+   1              		.arch armv8.1-m.main
+   2              		.fpu fpv5-d16
+   3              		.arch_extension dsp
+   4              		.arch_extension fp
+   5              		.arch_extension fp.dp
+   6              		.arch_extension mve
+   7              		.arch_extension mve.fp
+   8              		.eabi_attribute 5, "cortex-m55"
+   9              		.eabi_attribute 28, 1
+  10              		.eabi_attribute 20, 1
+  11              		.eabi_attribute 21, 1
+  12              		.eabi_attribute 23, 3
+  13              		.eabi_attribute 24, 1
+  14              		.eabi_attribute 25, 1
+  15              		.eabi_attribute 26, 1
+  16              		.eabi_attribute 30, 4
+  17              		.eabi_attribute 34, 1
+  18              		.eabi_attribute 38, 1
+  19              		.eabi_attribute 18, 4
+  20              		.file	"isp_core.c"
+  21              		.text
+  22              	.Ltext0:
+  23              		.cfi_sections	.debug_frame
+  24              		.file 1 "../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c"
+  25              		.section	.rodata.ISP_Init.str1.1,"aMS",%progbits,1
+  26              	.LC0:
+  27 0000 494E464F 		.ascii	"INFO: GetSensorInfo helper function is not implemen"
+  27      3A204765 
+  27      7453656E 
+  27      736F7249 
+  27      6E666F20 
+  28 0033 7465640D 		.ascii	"ted\015\000"
+  28      00
+  29              	.LC1:
+  30 0038 494E464F 		.ascii	"INFO: SetSensorGain helper function is not implemen"
+  30      3A205365 
+  30      7453656E 
+  30      736F7247 
+  30      61696E20 
+  31 006b 7465640D 		.ascii	"ted\015\000"
+  31      00
+  32              	.LC2:
+  33 0070 494E464F 		.ascii	"INFO: GetSensorGain helper function is not implemen"
+  33      3A204765 
+  33      7453656E 
+  33      736F7247 
+  33      61696E20 
+  34 00a3 7465640D 		.ascii	"ted\015\000"
+  34      00
+  35              	.LC3:
+  36 00a8 494E464F 		.ascii	"INFO: SetSensorExposure helper function is not impl"
+  36      3A205365 
+  36      7453656E 
+  36      736F7245 
+  36      78706F73 
+  37 00db 656D656E 		.ascii	"emented\015\000"
+  37      7465640D 
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 2
+
+
+  37      00
+  38              	.LC4:
+  39 00e4 494E464F 		.ascii	"INFO: GetSensorExposure helper function is not impl"
+  39      3A204765 
+  39      7453656E 
+  39      736F7245 
+  39      78706F73 
+  40 0117 656D656E 		.ascii	"emented\015\000"
+  40      7465640D 
+  40      00
+  41              	.LC5:
+  42 0120 4552524F 		.ascii	"ERROR: No possible decimation factor to target ISP "
+  42      523A204E 
+  42      6F20706F 
+  42      73736962 
+  42      6C652064 
+  43 0153 52415720 		.ascii	"RAW width constraint\015\000"
+  43      77696474 
+  43      6820636F 
+  43      6E737472 
+  43      61696E74 
+  44              		.section	.text.ISP_Init,"ax",%progbits
+  45              		.align	1
+  46              		.global	ISP_Init
+  47              		.syntax unified
+  48              		.thumb
+  49              		.thumb_func
+  51              	ISP_Init:
+  52              	.LVL0:
+  53              	.LFB838:
+   1:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
+   2:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****  ******************************************************************************
+   3:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****  * @file    isp_core.c
+   4:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****  * @author  AIS Application Team
+   5:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****  * @brief   API and CORE parts of the ISP middleware
+   6:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****  ******************************************************************************
+   7:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****  * @attention
+   8:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****  *
+   9:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****  * Copyright (c) 2023 STMicroelectronics.
+  10:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****  * All rights reserved.
+  11:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****  *
+  12:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****  * This software is licensed under terms that can be found in the LICENSE file
+  13:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****  * in the root directory of this software component.
+  14:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****  * If no LICENSE file comes with this software, it is provided AS-IS.
+  15:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****  *
+  16:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****  ******************************************************************************
+  17:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****  */
+  18:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+  19:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /* Includes ------------------------------------------------------------------*/
+  20:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** #include "isp_core.h"
+  21:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** #include "isp_api.h"
+  22:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** #include "isp_services.h"
+  23:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** #include "isp_algo.h"
+  24:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** #ifdef ISP_MW_TUNING_TOOL_SUPPORT
+  25:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** #include "isp_tool_com.h"
+  26:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** #include "isp_cmd_parser.h"
+  27:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** #endif
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 3
+
+
+  28:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** #include <math.h>
+  29:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+  30:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /* Private types -------------------------------------------------------------*/
+  31:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /* Private constants ---------------------------------------------------------*/
+  32:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /* Private macro -------------------------------------------------------------*/
+  33:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /* Private function prototypes -----------------------------------------------*/
+  34:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /* Private variables ---------------------------------------------------------*/
+  35:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /* Private functions ---------------------------------------------------------*/
+  36:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+  37:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /* Exported functions --------------------------------------------------------*/
+  38:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
+  39:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_Init
+  40:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Initializes the ISP device
+  41:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
+  42:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hDcmipp: HAL DCMIPP device handle
+  43:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  CameraInstance: BSP camera instance
+  44:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  pAppliHelpers: pointer to application helpers. The application helpers are used
+  45:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         by the ISP to interact with the application. get/set sensor exp/gain/ and get sensor in
+  46:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         while the other helpers are optional and can be set to NULL
+  47:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  ISP_IQParamCacheInit: pointer to ISP sensors specific params.
+  48:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         If NULL, then the statistic area IQ static parameter is used.
+  49:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval ISP status
+  50:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
+  51:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** ISP_StatusTypeDef ISP_Init(ISP_HandleTypeDef *hIsp,
+  52:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****                            void *hDcmipp,
+  53:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****                            uint32_t CameraInstance,
+  54:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****                            ISP_AppliHelpersTypeDef *pAppliHelpers,
+  55:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****                            const ISP_IQParamTypeDef *ISP_IQParamCacheInit)
+  56:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** {
+  54              		.loc 1 56 1 view -0
+  55              		.cfi_startproc
+  56              		@ args = 4, pretend = 0, frame = 8
+  57              		@ frame_needed = 0, uses_anonymous_args = 0
+  57:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_StatusTypeDef ret;
+  58              		.loc 1 57 3 view .LVU1
+  58:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+  59:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if ((hIsp == NULL) || (hDcmipp == NULL) || (pAppliHelpers == NULL))
+  59              		.loc 1 59 3 view .LVU2
+  56:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_StatusTypeDef ret;
+  60              		.loc 1 56 1 is_stmt 0 view .LVU3
+  61 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
+  62              		.cfi_def_cfa_offset 32
+  63              		.cfi_offset 4, -20
+  64              		.cfi_offset 5, -16
+  65              		.cfi_offset 6, -12
+  66              		.cfi_offset 7, -8
+  67              		.cfi_offset 14, -4
+  56:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_StatusTypeDef ret;
+  68              		.loc 1 56 1 view .LVU4
+  69 0002 0E46     		mov	r6, r1
+  70 0004 1746     		mov	r7, r2
+  71 0006 1C46     		mov	r4, r3
+  72              		.loc 1 59 6 view .LVU5
+  73 0008 0546     		mov	r5, r0
+  74 000a 0028     		cmp	r0, #0
+  75 000c 66D0     		beq	.L13
+  76              		.loc 1 59 22 discriminator 1 view .LVU6
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 4
+
+
+  77 000e 0029     		cmp	r1, #0
+  78 0010 64D0     		beq	.L13
+  79              		.loc 1 59 43 discriminator 2 view .LVU7
+  80 0012 002B     		cmp	r3, #0
+  81 0014 62D0     		beq	.L13
+  60:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+  61:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     return ISP_ERR_EINVAL;
+  62:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+  63:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+  64:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   memset(hIsp, 0, sizeof(*hIsp));
+  82              		.loc 1 64 3 is_stmt 1 view .LVU8
+  83 0016 8022     		movs	r2, #128
+  84              	.LVL1:
+  85              		.loc 1 64 3 is_stmt 0 view .LVU9
+  86 0018 0021     		movs	r1, #0
+  87              	.LVL2:
+  88              		.loc 1 64 3 view .LVU10
+  89 001a 0830     		adds	r0, r0, #8
+  90              	.LVL3:
+  91              		.loc 1 64 3 view .LVU11
+  92 001c FFF7FEFF 		bl	memset
+  93              	.LVL4:
+  65:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+  66:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** #ifdef ISP_MW_TUNING_TOOL_SUPPORT
+  67:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_ToolCom_Init();
+  68:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** #endif
+  69:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+  70:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   hIsp->hDcmipp = hDcmipp;
+  94              		.loc 1 70 3 is_stmt 1 view .LVU12
+  71:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   hIsp->cameraInstance = CameraInstance;
+  72:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   hIsp->MainPipe_FrameCount = 0;
+  73:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   hIsp->AncillaryPipe_FrameCount = 0;
+  74:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   hIsp->DumpPipe_FrameCount = 0;
+  75:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+  76:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   hIsp->appliHelpers = *pAppliHelpers;
+  95              		.loc 1 76 22 is_stmt 0 view .LVU13
+  96 0020 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
+  97              	.LVL5:
+  71:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   hIsp->cameraInstance = CameraInstance;
+  98              		.loc 1 71 24 view .LVU14
+  99 0022 C5E90067 		strd	r6, r7, [r5]
+  72:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   hIsp->AncillaryPipe_FrameCount = 0;
+ 100              		.loc 1 72 3 is_stmt 1 view .LVU15
+  73:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   hIsp->DumpPipe_FrameCount = 0;
+ 101              		.loc 1 73 3 view .LVU16
+  74:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 102              		.loc 1 74 3 view .LVU17
+ 103              		.loc 1 76 3 view .LVU18
+ 104              		.loc 1 76 22 is_stmt 0 view .LVU19
+ 105 0026 05F11C06 		add	r6, r5, #28
+ 106              	.LVL6:
+ 107              		.loc 1 76 22 view .LVU20
+ 108 002a 0FC6     		stmia	r6!, {r0, r1, r2, r3}
+ 109 002c 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
+ 110              	.LVL7:
+ 111              		.loc 1 76 22 view .LVU21
+ 112 002e 0FC6     		stmia	r6!, {r0, r1, r2, r3}
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 5
+
+
+ 113 0030 2368     		ldr	r3, [r4]
+ 114 0032 3360     		str	r3, [r6]
+  77:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   /* Appli CB is mandatory for the sensor get/set exp/gain function */
+  78:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (hIsp->appliHelpers.GetSensorInfo == NULL)
+ 115              		.loc 1 78 3 is_stmt 1 view .LVU22
+ 116              		.loc 1 78 6 is_stmt 0 view .LVU23
+ 117 0034 AB6A     		ldr	r3, [r5, #40]
+ 118 0036 33B9     		cbnz	r3, .L3
+  79:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+  80:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****      printf("INFO: GetSensorInfo helper function is not implemented\r\n");
+ 119              		.loc 1 80 6 is_stmt 1 view .LVU24
+ 120 0038 2948     		ldr	r0, .L19
+ 121              	.L18:
+  81:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****      return ISP_ERR_APP_HELPER_UNDEFINED;
+  82:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****    }
+  83:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (hIsp->appliHelpers.SetSensorGain == NULL)
+  84:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+  85:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****       printf("INFO: SetSensorGain helper function is not implemented\r\n");
+  86:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****       return ISP_ERR_APP_HELPER_UNDEFINED;
+  87:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+  88:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (hIsp->appliHelpers.GetSensorGain == NULL)
+  89:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+  90:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****      printf("INFO: GetSensorGain helper function is not implemented\r\n");
+ 122              		.loc 1 90 6 is_stmt 0 view .LVU25
+ 123 003a FFF7FEFF 		bl	puts
+ 124              	.LVL8:
+  91:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****      return ISP_ERR_APP_HELPER_UNDEFINED;
+ 125              		.loc 1 91 6 is_stmt 1 view .LVU26
+  81:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****      return ISP_ERR_APP_HELPER_UNDEFINED;
+ 126              		.loc 1 81 13 is_stmt 0 view .LVU27
+ 127 003e B424     		movs	r4, #180
+ 128              	.LVL9:
+ 129              	.L2:
+  92:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****    }
+  93:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (hIsp->appliHelpers.SetSensorExposure == NULL)
+  94:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+  95:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****       printf("INFO: SetSensorExposure helper function is not implemented\r\n");
+  96:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****       return ISP_ERR_APP_HELPER_UNDEFINED;
+  97:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+  98:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (hIsp->appliHelpers.GetSensorExposure == NULL)
+  99:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 100:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****      printf("INFO: GetSensorExposure helper function is not implemented\r\n");
+ 101:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****      return ISP_ERR_APP_HELPER_UNDEFINED;
+ 102:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****    }
+ 103:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 104:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   /* Initialize IQ param (read from non volatile memory) */
+ 105:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ret = ISP_SVC_IQParam_Init(hIsp, ISP_IQParamCacheInit);
+ 106:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 107:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 108:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     return ret;
+ 109:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 110:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 111:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   /* Set decimation configuration */
+ 112:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   /* Get Sensor Info */
+ 113:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ret = ISP_SVC_Sensor_GetInfo(hIsp, &hIsp->sensorInfo);
+ 114:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 115:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 6
+
+
+ 116:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     return ret;
+ 117:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 118:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   /* Compute the ISP decimation value according to the sensor resolution and the maximum ISP resolu
+ 119:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   /* It is mandatory to ensure that RAW frame size does not exceed 2688 width prior to demosaicing 
+ 120:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_DecimationTypeDef decimation;
+ 121:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if ((hIsp->sensorInfo.width / ISP_DECIM_FACTOR_1) < ISP_RAW_MAX_WIDTH)
+ 122:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 123:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     decimation.factor = ISP_DECIM_FACTOR_1;
+ 124:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 125:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   else if ((hIsp->sensorInfo.width  / ISP_DECIM_FACTOR_2) < ISP_RAW_MAX_WIDTH)
+ 126:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 127:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     decimation.factor = ISP_DECIM_FACTOR_2;
+ 128:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 129:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   else if ((hIsp->sensorInfo.width  / ISP_DECIM_FACTOR_4) < ISP_RAW_MAX_WIDTH)
+ 130:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 131:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     decimation.factor = ISP_DECIM_FACTOR_4;
+ 132:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 133:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   else if ((hIsp->sensorInfo.width  / ISP_DECIM_FACTOR_8) < ISP_RAW_MAX_WIDTH)
+ 134:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 135:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     decimation.factor = ISP_DECIM_FACTOR_8;
+ 136:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 137:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   else
+ 138:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 139:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     printf("ERROR: No possible decimation factor to target ISP RAW width constraint\r\n");
+ 140:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     return ISP_ERR_DECIMATION_EINVAL;
+ 141:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 142:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ret = ISP_SVC_ISP_SetDecimation(hIsp, &decimation);
+ 143:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 144:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 145:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     return ret;
+ 146:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 147:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 148:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   /* Initialize algorithms */
+ 149:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ret = ISP_Algo_Init(hIsp);
+ 150:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 151:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 152:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     return ret;
+ 153:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 154:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 155:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   /* Initialize the statistic engine */
+ 156:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_SVC_Stats_Init(hIsp);
+ 157:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 158:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   return ISP_OK;
+ 159:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 130              		.loc 1 159 1 view .LVU28
+ 131 0040 2046     		mov	r0, r4
+ 132 0042 03B0     		add	sp, sp, #12
+ 133              		.cfi_remember_state
+ 134              		.cfi_def_cfa_offset 20
+ 135              		@ sp needed
+ 136 0044 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 137              	.LVL10:
+ 138              	.L3:
+ 139              		.cfi_restore_state
+  83:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 140              		.loc 1 83 3 is_stmt 1 view .LVU29
+  83:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 7
+
+
+ 141              		.loc 1 83 6 is_stmt 0 view .LVU30
+ 142 0046 EB6A     		ldr	r3, [r5, #44]
+ 143 0048 0BB9     		cbnz	r3, .L5
+  85:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****       return ISP_ERR_APP_HELPER_UNDEFINED;
+ 144              		.loc 1 85 7 is_stmt 1 view .LVU31
+ 145 004a 2648     		ldr	r0, .L19+4
+ 146 004c F5E7     		b	.L18
+ 147              	.L5:
+  88:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 148              		.loc 1 88 3 view .LVU32
+  88:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 149              		.loc 1 88 6 is_stmt 0 view .LVU33
+ 150 004e 2B6B     		ldr	r3, [r5, #48]
+ 151 0050 0BB9     		cbnz	r3, .L6
+  90:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****      return ISP_ERR_APP_HELPER_UNDEFINED;
+ 152              		.loc 1 90 6 is_stmt 1 view .LVU34
+ 153 0052 2548     		ldr	r0, .L19+8
+ 154 0054 F1E7     		b	.L18
+ 155              	.L6:
+  93:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 156              		.loc 1 93 3 view .LVU35
+  93:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 157              		.loc 1 93 6 is_stmt 0 view .LVU36
+ 158 0056 6B6B     		ldr	r3, [r5, #52]
+ 159 0058 0BB9     		cbnz	r3, .L7
+  95:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****       return ISP_ERR_APP_HELPER_UNDEFINED;
+ 160              		.loc 1 95 7 is_stmt 1 view .LVU37
+ 161 005a 2448     		ldr	r0, .L19+12
+ 162 005c EDE7     		b	.L18
+ 163              	.L7:
+  98:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 164              		.loc 1 98 3 view .LVU38
+  98:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 165              		.loc 1 98 6 is_stmt 0 view .LVU39
+ 166 005e AB6B     		ldr	r3, [r5, #56]
+ 167 0060 0BB9     		cbnz	r3, .L8
+ 100:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****      return ISP_ERR_APP_HELPER_UNDEFINED;
+ 168              		.loc 1 100 6 is_stmt 1 view .LVU40
+ 169 0062 2348     		ldr	r0, .L19+16
+ 170 0064 E9E7     		b	.L18
+ 171              	.L8:
+ 105:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 172              		.loc 1 105 3 view .LVU41
+ 105:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 173              		.loc 1 105 9 is_stmt 0 view .LVU42
+ 174 0066 2846     		mov	r0, r5
+ 175 0068 0899     		ldr	r1, [sp, #32]
+ 176 006a FFF7FEFF 		bl	ISP_SVC_IQParam_Init
+ 177              	.LVL11:
+ 106:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 178              		.loc 1 106 3 is_stmt 1 view .LVU43
+ 106:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 179              		.loc 1 106 6 is_stmt 0 view .LVU44
+ 180 006e 0446     		mov	r4, r0
+ 181 0070 0028     		cmp	r0, #0
+ 182 0072 E5D1     		bne	.L2
+ 113:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 8
+
+
+ 183              		.loc 1 113 3 is_stmt 1 view .LVU45
+ 113:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 184              		.loc 1 113 9 is_stmt 0 view .LVU46
+ 185 0074 2846     		mov	r0, r5
+ 186              	.LVL12:
+ 113:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 187              		.loc 1 113 9 view .LVU47
+ 188 0076 05F14C01 		add	r1, r5, #76
+ 189 007a FFF7FEFF 		bl	ISP_SVC_Sensor_GetInfo
+ 190              	.LVL13:
+ 114:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 191              		.loc 1 114 3 is_stmt 1 view .LVU48
+ 114:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 192              		.loc 1 114 6 is_stmt 0 view .LVU49
+ 193 007e 0446     		mov	r4, r0
+ 194 0080 0028     		cmp	r0, #0
+ 195 0082 DDD1     		bne	.L2
+ 120:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if ((hIsp->sensorInfo.width / ISP_DECIM_FACTOR_1) < ISP_RAW_MAX_WIDTH)
+ 196              		.loc 1 120 3 is_stmt 1 view .LVU50
+ 121:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 197              		.loc 1 121 3 view .LVU51
+ 121:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 198              		.loc 1 121 24 is_stmt 0 view .LVU52
+ 199 0084 2A6F     		ldr	r2, [r5, #112]
+ 121:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 200              		.loc 1 121 6 view .LVU53
+ 201 0086 B2F5286F 		cmp	r2, #2688
+ 202 008a 0FD3     		bcc	.L14
+ 125:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 203              		.loc 1 125 8 is_stmt 1 view .LVU54
+ 125:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 204              		.loc 1 125 11 is_stmt 0 view .LVU55
+ 205 008c B2F5A85F 		cmp	r2, #5376
+ 206 0090 20D3     		bcc	.L15
+ 129:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 207              		.loc 1 129 8 is_stmt 1 view .LVU56
+ 129:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 208              		.loc 1 129 11 is_stmt 0 view .LVU57
+ 209 0092 B2F5285F 		cmp	r2, #10752
+ 210 0096 1FD3     		bcc	.L16
+ 133:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 211              		.loc 1 133 8 is_stmt 1 view .LVU58
+ 133:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 212              		.loc 1 133 11 is_stmt 0 view .LVU59
+ 213 0098 B2F5A84F 		cmp	r2, #21504
+ 214 009c 4FF00803 		mov	r3, #8
+ 215 00a0 05D3     		bcc	.L9
+ 139:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     return ISP_ERR_DECIMATION_EINVAL;
+ 216              		.loc 1 139 5 is_stmt 1 view .LVU60
+ 217 00a2 1448     		ldr	r0, .L19+20
+ 218              	.LVL14:
+ 139:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     return ISP_ERR_DECIMATION_EINVAL;
+ 219              		.loc 1 139 5 is_stmt 0 view .LVU61
+ 220 00a4 FFF7FEFF 		bl	puts
+ 221              	.LVL15:
+ 140:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 222              		.loc 1 140 5 is_stmt 1 view .LVU62
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 9
+
+
+ 140:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 223              		.loc 1 140 12 is_stmt 0 view .LVU63
+ 224 00a8 1E24     		movs	r4, #30
+ 225              	.LVL16:
+ 140:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 226              		.loc 1 140 12 view .LVU64
+ 227 00aa C9E7     		b	.L2
+ 228              	.LVL17:
+ 229              	.L14:
+ 140:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 230              		.loc 1 140 12 view .LVU65
+ 231 00ac 0123     		movs	r3, #1
+ 232              	.L9:
+ 142:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 233              		.loc 1 142 9 view .LVU66
+ 234 00ae 2846     		mov	r0, r5
+ 235              	.LVL18:
+ 142:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 236              		.loc 1 142 9 view .LVU67
+ 237 00b0 01A9     		add	r1, sp, #4
+ 123:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 238              		.loc 1 123 23 view .LVU68
+ 239 00b2 8DF80430 		strb	r3, [sp, #4]
+ 142:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 240              		.loc 1 142 3 is_stmt 1 view .LVU69
+ 142:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 241              		.loc 1 142 9 is_stmt 0 view .LVU70
+ 242 00b6 FFF7FEFF 		bl	ISP_SVC_ISP_SetDecimation
+ 243              	.LVL19:
+ 143:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 244              		.loc 1 143 3 is_stmt 1 view .LVU71
+ 143:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 245              		.loc 1 143 6 is_stmt 0 view .LVU72
+ 246 00ba 0446     		mov	r4, r0
+ 247 00bc 0028     		cmp	r0, #0
+ 248 00be BFD1     		bne	.L2
+ 149:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 249              		.loc 1 149 3 is_stmt 1 view .LVU73
+ 149:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 250              		.loc 1 149 9 is_stmt 0 view .LVU74
+ 251 00c0 2846     		mov	r0, r5
+ 252              	.LVL20:
+ 149:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 253              		.loc 1 149 9 view .LVU75
+ 254 00c2 FFF7FEFF 		bl	ISP_Algo_Init
+ 255              	.LVL21:
+ 150:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 256              		.loc 1 150 3 is_stmt 1 view .LVU76
+ 150:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 257              		.loc 1 150 6 is_stmt 0 view .LVU77
+ 258 00c6 0446     		mov	r4, r0
+ 259 00c8 0028     		cmp	r0, #0
+ 260 00ca B9D1     		bne	.L2
+ 156:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 261              		.loc 1 156 3 is_stmt 1 view .LVU78
+ 262 00cc 2846     		mov	r0, r5
+ 263              	.LVL22:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 10
+
+
+ 156:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 264              		.loc 1 156 3 is_stmt 0 view .LVU79
+ 265 00ce FFF7FEFF 		bl	ISP_SVC_Stats_Init
+ 266              	.LVL23:
+ 158:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 267              		.loc 1 158 3 is_stmt 1 view .LVU80
+ 158:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 268              		.loc 1 158 10 is_stmt 0 view .LVU81
+ 269 00d2 B5E7     		b	.L2
+ 270              	.LVL24:
+ 271              	.L15:
+ 158:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 272              		.loc 1 158 10 view .LVU82
+ 273 00d4 0223     		movs	r3, #2
+ 274 00d6 EAE7     		b	.L9
+ 275              	.L16:
+ 276 00d8 0423     		movs	r3, #4
+ 277 00da E8E7     		b	.L9
+ 278              	.LVL25:
+ 279              	.L13:
+  61:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 280              		.loc 1 61 12 view .LVU83
+ 281 00dc 0124     		movs	r4, #1
+ 282 00de AFE7     		b	.L2
+ 283              	.L20:
+ 284              		.align	2
+ 285              	.L19:
+ 286 00e0 00000000 		.word	.LC0
+ 287 00e4 38000000 		.word	.LC1
+ 288 00e8 70000000 		.word	.LC2
+ 289 00ec A8000000 		.word	.LC3
+ 290 00f0 E4000000 		.word	.LC4
+ 291 00f4 20010000 		.word	.LC5
+ 292              		.cfi_endproc
+ 293              	.LFE838:
+ 295              		.section	.text.ISP_DeInit,"ax",%progbits
+ 296              		.align	1
+ 297              		.global	ISP_DeInit
+ 298              		.syntax unified
+ 299              		.thumb
+ 300              		.thumb_func
+ 302              	ISP_DeInit:
+ 303              	.LVL26:
+ 304              	.LFB839:
+ 160:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 161:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
+ 162:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_DeInit
+ 163:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Deinitializes the ISP device
+ 164:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
+ 165:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval ISP status
+ 166:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
+ 167:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** ISP_StatusTypeDef ISP_DeInit(ISP_HandleTypeDef *hIsp)
+ 168:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** {
+ 305              		.loc 1 168 1 is_stmt 1 view -0
+ 306              		.cfi_startproc
+ 307              		@ args = 0, pretend = 0, frame = 0
+ 308              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 11
+
+
+ 169:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_StatusTypeDef ret;
+ 309              		.loc 1 169 3 view .LVU85
+ 170:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 171:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (hIsp == NULL)
+ 310              		.loc 1 171 3 view .LVU86
+ 168:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_StatusTypeDef ret;
+ 311              		.loc 1 168 1 is_stmt 0 view .LVU87
+ 312 0000 38B5     		push	{r3, r4, r5, lr}
+ 313              		.cfi_def_cfa_offset 16
+ 314              		.cfi_offset 3, -16
+ 315              		.cfi_offset 4, -12
+ 316              		.cfi_offset 5, -8
+ 317              		.cfi_offset 14, -4
+ 318              		.loc 1 171 6 view .LVU88
+ 319 0002 0546     		mov	r5, r0
+ 320 0004 50B1     		cbz	r0, .L25
+ 172:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 173:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     return ISP_ERR_EINVAL;
+ 174:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 175:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 176:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   /* DeInitialize algorithms */
+ 177:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ret = ISP_Algo_DeInit(hIsp);
+ 321              		.loc 1 177 3 is_stmt 1 view .LVU89
+ 322              		.loc 1 177 9 is_stmt 0 view .LVU90
+ 323 0006 FFF7FEFF 		bl	ISP_Algo_DeInit
+ 324              	.LVL27:
+ 178:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 325              		.loc 1 178 3 is_stmt 1 view .LVU91
+ 326              		.loc 1 178 6 is_stmt 0 view .LVU92
+ 327 000a 0446     		mov	r4, r0
+ 328 000c 20B9     		cbnz	r0, .L22
+ 179:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 180:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     return ret;
+ 181:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 182:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 183:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   /* Re-initialized the hIsp structure */
+ 184:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   memset(hIsp, 0, sizeof(*hIsp));
+ 329              		.loc 1 184 3 is_stmt 1 view .LVU93
+ 330 000e 0146     		mov	r1, r0
+ 331 0010 8822     		movs	r2, #136
+ 332 0012 2846     		mov	r0, r5
+ 333              	.LVL28:
+ 334              		.loc 1 184 3 is_stmt 0 view .LVU94
+ 335 0014 FFF7FEFF 		bl	memset
+ 336              	.LVL29:
+ 185:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 186:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   return ISP_OK;
+ 337              		.loc 1 186 3 is_stmt 1 view .LVU95
+ 338              	.L22:
+ 187:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 339              		.loc 1 187 1 is_stmt 0 view .LVU96
+ 340 0018 2046     		mov	r0, r4
+ 341 001a 38BD     		pop	{r3, r4, r5, pc}
+ 342              	.LVL30:
+ 343              	.L25:
+ 173:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 344              		.loc 1 173 12 view .LVU97
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 12
+
+
+ 345 001c 0124     		movs	r4, #1
+ 346 001e FBE7     		b	.L22
+ 347              		.cfi_endproc
+ 348              	.LFE839:
+ 350              		.section	.text.ISP_Start,"ax",%progbits
+ 351              		.align	1
+ 352              		.global	ISP_Start
+ 353              		.syntax unified
+ 354              		.thumb
+ 355              		.thumb_func
+ 357              	ISP_Start:
+ 358              	.LVL31:
+ 359              	.LFB840:
+ 188:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 189:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
+ 190:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_Start
+ 191:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Configures the ISP device
+ 192:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
+ 193:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval ISP status
+ 194:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
+ 195:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** ISP_StatusTypeDef ISP_Start(ISP_HandleTypeDef *hIsp)
+ 196:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** {
+ 360              		.loc 1 196 1 is_stmt 1 view -0
+ 361              		.cfi_startproc
+ 362              		@ args = 0, pretend = 0, frame = 8
+ 363              		@ frame_needed = 0, uses_anonymous_args = 0
+ 197:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_IQParamTypeDef *IQParamConfig;
+ 364              		.loc 1 197 3 view .LVU99
+ 198:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_StatusTypeDef ret;
+ 365              		.loc 1 198 3 view .LVU100
+ 199:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 200:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (hIsp == NULL)
+ 366              		.loc 1 200 3 view .LVU101
+ 196:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_IQParamTypeDef *IQParamConfig;
+ 367              		.loc 1 196 1 is_stmt 0 view .LVU102
+ 368 0000 67B5     		push	{r0, r1, r2, r5, r6, lr}
+ 369              		.cfi_def_cfa_offset 24
+ 370              		.cfi_offset 5, -12
+ 371              		.cfi_offset 6, -8
+ 372              		.cfi_offset 14, -4
+ 373              		.loc 1 200 6 view .LVU103
+ 374 0002 0546     		mov	r5, r0
+ 375 0004 0028     		cmp	r0, #0
+ 376 0006 00F09580 		beq	.L45
+ 201:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 202:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     return ISP_ERR_EINVAL;
+ 203:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 204:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 205:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ret = ISP_SVC_Misc_IsDCMIPPReady(hIsp);
+ 377              		.loc 1 205 3 is_stmt 1 view .LVU104
+ 378              		.loc 1 205 9 is_stmt 0 view .LVU105
+ 379 000a FFF7FEFF 		bl	ISP_SVC_Misc_IsDCMIPPReady
+ 380              	.LVL32:
+ 206:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 381              		.loc 1 206 3 is_stmt 1 view .LVU106
+ 382              		.loc 1 206 6 is_stmt 0 view .LVU107
+ 383 000e 0028     		cmp	r0, #0
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 13
+
+
+ 384 0010 49D1     		bne	.L27
+ 207:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 208:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     return ret;
+ 209:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 210:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 211:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   /* Get IQ Param config */
+ 212:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   IQParamConfig = ISP_SVC_IQParam_Get(hIsp);
+ 385              		.loc 1 212 3 is_stmt 1 view .LVU108
+ 386              		.loc 1 212 19 is_stmt 0 view .LVU109
+ 387 0012 2846     		mov	r0, r5
+ 388              	.LVL33:
+ 389              		.loc 1 212 19 view .LVU110
+ 390 0014 FFF7FEFF 		bl	ISP_SVC_IQParam_Get
+ 391              	.LVL34:
+ 392 0018 0646     		mov	r6, r0
+ 393              	.LVL35:
+ 213:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 214:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   /* Set static configurations */
+ 215:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ret = ISP_SVC_ISP_SetDemosaicing(hIsp, &IQParamConfig->demosaicing);
+ 394              		.loc 1 215 3 is_stmt 1 view .LVU111
+ 395              		.loc 1 215 9 is_stmt 0 view .LVU112
+ 396 001a 00F10C01 		add	r1, r0, #12
+ 397 001e 2846     		mov	r0, r5
+ 398              	.LVL36:
+ 399              		.loc 1 215 9 view .LVU113
+ 400 0020 FFF7FEFF 		bl	ISP_SVC_ISP_SetDemosaicing
+ 401              	.LVL37:
+ 216:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 402              		.loc 1 216 3 is_stmt 1 view .LVU114
+ 403              		.loc 1 216 6 is_stmt 0 view .LVU115
+ 404 0024 0028     		cmp	r0, #0
+ 405 0026 3ED1     		bne	.L27
+ 217:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 218:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     return ret;
+ 219:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 220:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 221:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ret = ISP_SVC_ISP_SetStatRemoval(hIsp, &IQParamConfig->statRemoval);
+ 406              		.loc 1 221 3 is_stmt 1 view .LVU116
+ 407              		.loc 1 221 9 is_stmt 0 view .LVU117
+ 408 0028 3146     		mov	r1, r6
+ 409 002a 2846     		mov	r0, r5
+ 410              	.LVL38:
+ 411              		.loc 1 221 9 view .LVU118
+ 412 002c FFF7FEFF 		bl	ISP_SVC_ISP_SetStatRemoval
+ 413              	.LVL39:
+ 222:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 414              		.loc 1 222 3 is_stmt 1 view .LVU119
+ 415              		.loc 1 222 6 is_stmt 0 view .LVU120
+ 416 0030 0028     		cmp	r0, #0
+ 417 0032 38D1     		bne	.L27
+ 223:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 224:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     return ret;
+ 225:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 226:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 227:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ret = ISP_SVC_ISP_SetContrast(hIsp, &IQParamConfig->contrast);
+ 418              		.loc 1 227 3 is_stmt 1 view .LVU121
+ 419              		.loc 1 227 9 is_stmt 0 view .LVU122
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 14
+
+
+ 420 0034 2846     		mov	r0, r5
+ 421              	.LVL40:
+ 422              		.loc 1 227 9 view .LVU123
+ 423 0036 06F11401 		add	r1, r6, #20
+ 424 003a FFF7FEFF 		bl	ISP_SVC_ISP_SetContrast
+ 425              	.LVL41:
+ 228:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 426              		.loc 1 228 3 is_stmt 1 view .LVU124
+ 427              		.loc 1 228 6 is_stmt 0 view .LVU125
+ 428 003e 90BB     		cbnz	r0, .L27
+ 229:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 230:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     return ret;
+ 231:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 232:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 233:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   /* Set optional static configurations */
+ 234:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if ((IQParamConfig->sensorGainStatic.gain != 0) && (!IQParamConfig->AECAlgo.enable))
+ 429              		.loc 1 234 3 is_stmt 1 view .LVU126
+ 430              		.loc 1 234 6 is_stmt 0 view .LVU127
+ 431 0040 F36C     		ldr	r3, [r6, #76]
+ 432 0042 2BBB     		cbnz	r3, .L28
+ 433              	.L31:
+ 235:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 236:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ret = ISP_SVC_Sensor_SetGain(hIsp, &IQParamConfig->sensorGainStatic);
+ 237:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 238:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 239:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****       return ret;
+ 240:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     }
+ 241:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 242:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 243:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if ((IQParamConfig->sensorExposureStatic.exposure != 0) && (!IQParamConfig->AECAlgo.enable))
+ 434              		.loc 1 243 3 is_stmt 1 view .LVU128
+ 435              		.loc 1 243 6 is_stmt 0 view .LVU129
+ 436 0044 336D     		ldr	r3, [r6, #80]
+ 437 0046 83BB     		cbnz	r3, .L29
+ 438              	.L30:
+ 244:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 245:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ret = ISP_SVC_Sensor_SetExposure(hIsp, &IQParamConfig->sensorExposureStatic);
+ 246:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 247:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 248:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****       return ret;
+ 249:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     }
+ 250:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 251:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 252:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (IQParamConfig->badPixelStatic.enable != 0)
+ 439              		.loc 1 252 3 is_stmt 1 view .LVU130
+ 440              		.loc 1 252 6 is_stmt 0 view .LVU131
+ 441 0048 96F85C30 		ldrb	r3, [r6, #92]	@ zero_extendqisi2
+ 442 004c 2BB1     		cbz	r3, .L33
+ 253:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 254:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ret = ISP_SVC_ISP_SetBadPixel(hIsp, &IQParamConfig->badPixelStatic);
+ 443              		.loc 1 254 5 is_stmt 1 view .LVU132
+ 444              		.loc 1 254 11 is_stmt 0 view .LVU133
+ 445 004e 2846     		mov	r0, r5
+ 446              	.LVL42:
+ 447              		.loc 1 254 11 view .LVU134
+ 448 0050 06F15C01 		add	r1, r6, #92
+ 449 0054 FFF7FEFF 		bl	ISP_SVC_ISP_SetBadPixel
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 15
+
+
+ 450              	.LVL43:
+ 255:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 451              		.loc 1 255 5 is_stmt 1 view .LVU135
+ 452              		.loc 1 255 8 is_stmt 0 view .LVU136
+ 453 0058 28BB     		cbnz	r0, .L27
+ 454              	.L33:
+ 256:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 257:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****       return ret;
+ 258:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     }
+ 259:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 260:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 261:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (IQParamConfig->blackLevelStatic.enable != 0)
+ 455              		.loc 1 261 3 is_stmt 1 view .LVU137
+ 456              		.loc 1 261 6 is_stmt 0 view .LVU138
+ 457 005a 96F86430 		ldrb	r3, [r6, #100]	@ zero_extendqisi2
+ 458 005e 2BB1     		cbz	r3, .L35
+ 262:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 263:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ret = ISP_SVC_ISP_SetBlackLevel(hIsp, &IQParamConfig->blackLevelStatic);
+ 459              		.loc 1 263 5 is_stmt 1 view .LVU139
+ 460              		.loc 1 263 11 is_stmt 0 view .LVU140
+ 461 0060 2846     		mov	r0, r5
+ 462              	.LVL44:
+ 463              		.loc 1 263 11 view .LVU141
+ 464 0062 06F16401 		add	r1, r6, #100
+ 465 0066 FFF7FEFF 		bl	ISP_SVC_ISP_SetBlackLevel
+ 466              	.LVL45:
+ 264:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 467              		.loc 1 264 5 is_stmt 1 view .LVU142
+ 468              		.loc 1 264 8 is_stmt 0 view .LVU143
+ 469 006a E0B9     		cbnz	r0, .L27
+ 470              	.L35:
+ 265:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 266:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****       return ret;
+ 267:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     }
+ 268:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 269:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 270:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if ((IQParamConfig->ispGainStatic.enable != 0) && (!IQParamConfig->AWBAlgo.enable))
+ 471              		.loc 1 270 3 is_stmt 1 view .LVU144
+ 472              		.loc 1 270 6 is_stmt 0 view .LVU145
+ 473 006c 96F81C32 		ldrb	r3, [r6, #540]	@ zero_extendqisi2
+ 474 0070 3BBB     		cbnz	r3, .L36
+ 475              	.L37:
+ 271:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 272:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ret = ISP_SVC_ISP_SetGain(hIsp, &IQParamConfig->ispGainStatic);
+ 273:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 274:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 275:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****       return ret;
+ 276:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     }
+ 277:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 278:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 279:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if ((IQParamConfig->colorConvStatic.enable != 0) && (!IQParamConfig->AWBAlgo.enable))
+ 476              		.loc 1 279 3 is_stmt 1 view .LVU146
+ 477              		.loc 1 279 6 is_stmt 0 view .LVU147
+ 478 0072 96F82C32 		ldrb	r3, [r6, #556]	@ zero_extendqisi2
+ 479 0076 002B     		cmp	r3, #0
+ 480 0078 2FD1     		bne	.L38
+ 481              	.L39:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 16
+
+
+ 280:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 281:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ret = ISP_SVC_ISP_SetColorConv(hIsp, &IQParamConfig->colorConvStatic);
+ 282:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 283:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 284:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****       return ret;
+ 285:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     }
+ 286:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 287:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 288:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   /* Configure statistic area if not already configured by ISP_SetStatArea() */
+ 289:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if ((hIsp->statArea.XSize == 0) || (hIsp->statArea.YSize == 0))
+ 482              		.loc 1 289 3 is_stmt 1 view .LVU148
+ 483              		.loc 1 289 6 is_stmt 0 view .LVU149
+ 484 007a 2B69     		ldr	r3, [r5, #16]
+ 485 007c 002B     		cmp	r3, #0
+ 486 007e 38D1     		bne	.L52
+ 487              	.L40:
+ 290:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 291:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     /* Configure statistic area from IQ params */
+ 292:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ret = ISP_SVC_ISP_SetStatArea(hIsp, &IQParamConfig->statAreaStatic);
+ 488              		.loc 1 292 5 is_stmt 1 view .LVU150
+ 489              		.loc 1 292 11 is_stmt 0 view .LVU151
+ 490 0080 2846     		mov	r0, r5
+ 491              	.LVL46:
+ 492              		.loc 1 292 11 view .LVU152
+ 493 0082 06F13C01 		add	r1, r6, #60
+ 494 0086 FFF7FEFF 		bl	ISP_SVC_ISP_SetStatArea
+ 495              	.LVL47:
+ 293:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 496              		.loc 1 293 5 is_stmt 1 view .LVU153
+ 497              		.loc 1 293 8 is_stmt 0 view .LVU154
+ 498 008a 0028     		cmp	r0, #0
+ 499 008c 34D0     		beq	.L43
+ 500 008e 0AE0     		b	.L27
+ 501              	.L28:
+ 234:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 502              		.loc 1 234 51 discriminator 1 view .LVU155
+ 503 0090 96F86830 		ldrb	r3, [r6, #104]	@ zero_extendqisi2
+ 504 0094 002B     		cmp	r3, #0
+ 505 0096 D5D1     		bne	.L31
+ 236:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 506              		.loc 1 236 5 is_stmt 1 view .LVU156
+ 236:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 507              		.loc 1 236 11 is_stmt 0 view .LVU157
+ 508 0098 2846     		mov	r0, r5
+ 509              	.LVL48:
+ 236:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 510              		.loc 1 236 11 view .LVU158
+ 511 009a 06F14C01 		add	r1, r6, #76
+ 512 009e FFF7FEFF 		bl	ISP_SVC_Sensor_SetGain
+ 513              	.LVL49:
+ 237:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 514              		.loc 1 237 5 is_stmt 1 view .LVU159
+ 237:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 515              		.loc 1 237 8 is_stmt 0 view .LVU160
+ 516 00a2 0028     		cmp	r0, #0
+ 517 00a4 CED0     		beq	.L31
+ 518              	.LVL50:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 17
+
+
+ 519              	.L27:
+ 294:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 295:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****       return ret;
+ 296:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     }
+ 297:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 298:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 299:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ret = ISP_SVC_ISP_SetGamma(hIsp, &IQParamConfig->gamma);
+ 300:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 301:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 302:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     return ret;
+ 303:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 304:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 305:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   /* Initialize the exposure target based on the selected exposure compensation */
+ 306:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   IQParamConfig->AECAlgo.exposureTarget = (uint32_t) (ISP_IDEAL_TARGET_EXPOSURE * pow(2, (float)IQP
+ 307:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 308:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   return ISP_OK;
+ 309:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 520              		.loc 1 309 1 view .LVU161
+ 521 00a6 03B0     		add	sp, sp, #12
+ 522              		.cfi_remember_state
+ 523              		.cfi_def_cfa_offset 12
+ 524              		@ sp needed
+ 525 00a8 60BD     		pop	{r5, r6, pc}
+ 526              	.LVL51:
+ 527              	.L29:
+ 528              		.cfi_restore_state
+ 243:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 529              		.loc 1 243 59 discriminator 1 view .LVU162
+ 530 00aa 96F86830 		ldrb	r3, [r6, #104]	@ zero_extendqisi2
+ 531 00ae 002B     		cmp	r3, #0
+ 532 00b0 CAD1     		bne	.L30
+ 245:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 533              		.loc 1 245 5 is_stmt 1 view .LVU163
+ 245:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 534              		.loc 1 245 11 is_stmt 0 view .LVU164
+ 535 00b2 2846     		mov	r0, r5
+ 536              	.LVL52:
+ 245:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 537              		.loc 1 245 11 view .LVU165
+ 538 00b4 06F15001 		add	r1, r6, #80
+ 539 00b8 FFF7FEFF 		bl	ISP_SVC_Sensor_SetExposure
+ 540              	.LVL53:
+ 246:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 541              		.loc 1 246 5 is_stmt 1 view .LVU166
+ 246:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 542              		.loc 1 246 8 is_stmt 0 view .LVU167
+ 543 00bc 0028     		cmp	r0, #0
+ 544 00be C3D0     		beq	.L30
+ 545 00c0 F1E7     		b	.L27
+ 546              	.L36:
+ 270:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 547              		.loc 1 270 50 discriminator 1 view .LVU168
+ 548 00c2 96F87430 		ldrb	r3, [r6, #116]	@ zero_extendqisi2
+ 549 00c6 002B     		cmp	r3, #0
+ 550 00c8 D3D1     		bne	.L37
+ 272:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 551              		.loc 1 272 5 is_stmt 1 view .LVU169
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 18
+
+
+ 272:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 552              		.loc 1 272 11 is_stmt 0 view .LVU170
+ 553 00ca 2846     		mov	r0, r5
+ 554              	.LVL54:
+ 272:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 555              		.loc 1 272 11 view .LVU171
+ 556 00cc 06F50771 		add	r1, r6, #540
+ 557 00d0 FFF7FEFF 		bl	ISP_SVC_ISP_SetGain
+ 558              	.LVL55:
+ 273:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 559              		.loc 1 273 5 is_stmt 1 view .LVU172
+ 273:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 560              		.loc 1 273 8 is_stmt 0 view .LVU173
+ 561 00d4 0028     		cmp	r0, #0
+ 562 00d6 CCD0     		beq	.L37
+ 563 00d8 E5E7     		b	.L27
+ 564              	.L38:
+ 279:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 565              		.loc 1 279 52 discriminator 1 view .LVU174
+ 566 00da 96F87430 		ldrb	r3, [r6, #116]	@ zero_extendqisi2
+ 567 00de 002B     		cmp	r3, #0
+ 568 00e0 CBD1     		bne	.L39
+ 281:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 569              		.loc 1 281 5 is_stmt 1 view .LVU175
+ 281:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 570              		.loc 1 281 11 is_stmt 0 view .LVU176
+ 571 00e2 2846     		mov	r0, r5
+ 572              	.LVL56:
+ 281:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 573              		.loc 1 281 11 view .LVU177
+ 574 00e4 06F50B71 		add	r1, r6, #556
+ 575 00e8 FFF7FEFF 		bl	ISP_SVC_ISP_SetColorConv
+ 576              	.LVL57:
+ 282:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 577              		.loc 1 282 5 is_stmt 1 view .LVU178
+ 282:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 578              		.loc 1 282 8 is_stmt 0 view .LVU179
+ 579 00ec 0028     		cmp	r0, #0
+ 580 00ee C4D0     		beq	.L39
+ 581 00f0 D9E7     		b	.L27
+ 582              	.L52:
+ 289:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 583              		.loc 1 289 35 discriminator 1 view .LVU180
+ 584 00f2 6B69     		ldr	r3, [r5, #20]
+ 585 00f4 002B     		cmp	r3, #0
+ 586 00f6 C3D0     		beq	.L40
+ 587              	.L43:
+ 299:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 588              		.loc 1 299 3 is_stmt 1 view .LVU181
+ 299:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 589              		.loc 1 299 9 is_stmt 0 view .LVU182
+ 590 00f8 2846     		mov	r0, r5
+ 591              	.LVL58:
+ 299:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
+ 592              		.loc 1 299 9 view .LVU183
+ 593 00fa 06F51571 		add	r1, r6, #596
+ 594 00fe FFF7FEFF 		bl	ISP_SVC_ISP_SetGamma
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 19
+
+
+ 595              	.LVL59:
+ 300:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 596              		.loc 1 300 3 is_stmt 1 view .LVU184
+ 300:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 597              		.loc 1 300 6 is_stmt 0 view .LVU185
+ 598 0102 0028     		cmp	r0, #0
+ 599 0104 CFD1     		bne	.L27
+ 306:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 600              		.loc 1 306 90 view .LVU186
+ 601 0106 96F96930 		ldrsb	r3, [r6, #105]
+ 306:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 602              		.loc 1 306 83 view .LVU187
+ 603 010a B0EE000B 		vmov.f64	d0, #2.0e+0
+ 306:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 604              		.loc 1 306 90 view .LVU188
+ 605 010e 01EE103A 		vmov	s2, r3	@ int
+ 306:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 606              		.loc 1 306 141 view .LVU189
+ 607 0112 BAEEEF1A 		vcvt.f32.s32	s2, s2, #1
+ 306:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 608              		.loc 1 306 83 view .LVU190
+ 609 0116 B7EEC11A 		vcvt.f64.f32	d1, s2
+ 610 011a 0190     		str	r0, [sp, #4]
+ 306:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 611              		.loc 1 306 3 is_stmt 1 view .LVU191
+ 306:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 612              		.loc 1 306 83 is_stmt 0 view .LVU192
+ 613 011c FFF7FEFF 		bl	pow
+ 614              	.LVL60:
+ 306:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 615              		.loc 1 306 81 discriminator 1 view .LVU193
+ 616 0120 9FED057B 		vldr.64	d7, .L53
+ 617 0124 20EE070B 		vmul.f64	d0, d0, d7
+ 306:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 618              		.loc 1 306 43 discriminator 1 view .LVU194
+ 619 0128 BCEEC00B 		vcvt.u32.f64	s0, d0
+ 308:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 620              		.loc 1 308 10 view .LVU195
+ 621 012c 0198     		ldr	r0, [sp, #4]
+ 306:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 622              		.loc 1 306 43 discriminator 1 view .LVU196
+ 623 012e 86ED1B0A 		vstr.32	s0, [r6, #108]	@ int
+ 308:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 624              		.loc 1 308 3 is_stmt 1 view .LVU197
+ 308:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 625              		.loc 1 308 10 is_stmt 0 view .LVU198
+ 626 0132 B8E7     		b	.L27
+ 627              	.LVL61:
+ 628              	.L45:
+ 202:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 629              		.loc 1 202 12 view .LVU199
+ 630 0134 0120     		movs	r0, #1
+ 631              	.LVL62:
+ 202:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 632              		.loc 1 202 12 view .LVU200
+ 633 0136 B6E7     		b	.L27
+ 634              	.L54:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 20
+
+
+ 635              		.align	3
+ 636              	.L53:
+ 637 0138 00000000 		.word	0
+ 638 013c 00004C40 		.word	1078722560
+ 639              		.cfi_endproc
+ 640              	.LFE840:
+ 642              		.section	.text.ISP_BackgroundProcess,"ax",%progbits
+ 643              		.align	1
+ 644              		.global	ISP_BackgroundProcess
+ 645              		.syntax unified
+ 646              		.thumb
+ 647              		.thumb_func
+ 649              	ISP_BackgroundProcess:
+ 650              	.LVL63:
+ 651              	.LFB841:
+ 310:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 311:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
+ 312:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_BackgroundProcess
+ 313:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Run the background process of the ISP device
+ 314:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
+ 315:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval ISP status
+ 316:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
+ 317:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** ISP_StatusTypeDef ISP_BackgroundProcess(ISP_HandleTypeDef *hIsp)
+ 318:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** {
+ 652              		.loc 1 318 1 is_stmt 1 view -0
+ 653              		.cfi_startproc
+ 654              		@ args = 0, pretend = 0, frame = 0
+ 655              		@ frame_needed = 0, uses_anonymous_args = 0
+ 319:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_StatusTypeDef retAlgo, retStats;
+ 656              		.loc 1 319 3 view .LVU202
+ 320:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** #ifdef ISP_MW_TUNING_TOOL_SUPPORT
+ 321:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_StatusTypeDef retCmdParser = ISP_OK;
+ 322:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   uint8_t *cmd;
+ 323:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** #endif
+ 324:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 325:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (hIsp == NULL)
+ 657              		.loc 1 325 3 view .LVU203
+ 318:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_StatusTypeDef retAlgo, retStats;
+ 658              		.loc 1 318 1 is_stmt 0 view .LVU204
+ 659 0000 38B5     		push	{r3, r4, r5, lr}
+ 660              		.cfi_def_cfa_offset 16
+ 661              		.cfi_offset 3, -16
+ 662              		.cfi_offset 4, -12
+ 663              		.cfi_offset 5, -8
+ 664              		.cfi_offset 14, -4
+ 665              		.loc 1 325 6 view .LVU205
+ 666 0002 0546     		mov	r5, r0
+ 667 0004 50B1     		cbz	r0, .L57
+ 326:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 327:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     return ISP_ERR_EINVAL;
+ 328:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 329:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 330:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** #ifdef ISP_MW_TUNING_TOOL_SUPPORT
+ 331:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ISP_ToolCom_CheckCommandReceived(&cmd) > 0)
+ 332:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 333:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     retCmdParser = ISP_CmdParser_ProcessCommand(hIsp, cmd);
+ 334:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 21
+
+
+ 335:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** #endif
+ 336:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 337:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   /* Check if a statistics gathering cycle has been completed to call the statistic callbacks */
+ 338:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   retStats = ISP_SVC_Stats_ProcessCallbacks(hIsp);
+ 668              		.loc 1 338 3 is_stmt 1 view .LVU206
+ 669              		.loc 1 338 14 is_stmt 0 view .LVU207
+ 670 0006 FFF7FEFF 		bl	ISP_SVC_Stats_ProcessCallbacks
+ 671              	.LVL64:
+ 672              		.loc 1 338 14 view .LVU208
+ 673 000a 0446     		mov	r4, r0
+ 674              	.LVL65:
+ 339:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 340:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   /* Process the algorithms */
+ 341:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   retAlgo = ISP_Algo_Process(hIsp);
+ 675              		.loc 1 341 3 is_stmt 1 view .LVU209
+ 676              		.loc 1 341 13 is_stmt 0 view .LVU210
+ 677 000c 2846     		mov	r0, r5
+ 678 000e FFF7FEFF 		bl	ISP_Algo_Process
+ 679              	.LVL66:
+ 342:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 343:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** #ifdef ISP_MW_TUNING_TOOL_SUPPORT
+ 344:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (retCmdParser != ISP_OK)
+ 345:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 346:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     return retCmdParser;
+ 347:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 348:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** #endif
+ 349:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (retStats != ISP_OK)
+ 680              		.loc 1 349 3 is_stmt 1 view .LVU211
+ 350:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 351:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     return retStats;
+ 352:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 353:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   else if (retAlgo != ISP_OK)
+ 354:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 355:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     return retAlgo;
+ 356:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 357:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 358:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   return ISP_OK;
+ 681              		.loc 1 358 10 is_stmt 0 view .LVU212
+ 682 0012 002C     		cmp	r4, #0
+ 683 0014 08BF     		it	eq
+ 684 0016 0446     		moveq	r4, r0
+ 685              	.LVL67:
+ 686              	.L56:
+ 359:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 687              		.loc 1 359 1 view .LVU213
+ 688 0018 2046     		mov	r0, r4
+ 689 001a 38BD     		pop	{r3, r4, r5, pc}
+ 690              	.LVL68:
+ 691              	.L57:
+ 327:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 692              		.loc 1 327 12 view .LVU214
+ 693 001c 0124     		movs	r4, #1
+ 694 001e FBE7     		b	.L56
+ 695              		.cfi_endproc
+ 696              	.LFE841:
+ 698              		.section	.text.ISP_SetExposureTarget,"ax",%progbits
+ 699              		.align	1
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 22
+
+
+ 700              		.global	ISP_SetExposureTarget
+ 701              		.syntax unified
+ 702              		.thumb
+ 703              		.thumb_func
+ 705              	ISP_SetExposureTarget:
+ 706              	.LVL69:
+ 707              	.LFB842:
+ 360:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 361:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
+ 362:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_SetExposureTarget
+ 363:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Update the exposure target used by the AEC algorithm
+ 364:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
+ 365:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  ExposureTarget: Exposure target
+ 366:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval Operation status
+ 367:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
+ 368:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** ISP_StatusTypeDef ISP_SetExposureTarget(ISP_HandleTypeDef *hIsp, ISP_ExposureCompTypeDef ExposureCo
+ 369:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** {
+ 708              		.loc 1 369 1 is_stmt 1 view -0
+ 709              		.cfi_startproc
+ 710              		@ args = 0, pretend = 0, frame = 0
+ 711              		@ frame_needed = 0, uses_anonymous_args = 0
+ 370:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_IQParamTypeDef *IQParamConfig;
+ 712              		.loc 1 370 3 view .LVU216
+ 371:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 372:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   IQParamConfig = ISP_SVC_IQParam_Get(hIsp);
+ 713              		.loc 1 372 3 view .LVU217
+ 369:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_IQParamTypeDef *IQParamConfig;
+ 714              		.loc 1 369 1 is_stmt 0 view .LVU218
+ 715 0000 38B5     		push	{r3, r4, r5, lr}
+ 716              		.cfi_def_cfa_offset 16
+ 717              		.cfi_offset 3, -16
+ 718              		.cfi_offset 4, -12
+ 719              		.cfi_offset 5, -8
+ 720              		.cfi_offset 14, -4
+ 369:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_IQParamTypeDef *IQParamConfig;
+ 721              		.loc 1 369 1 view .LVU219
+ 722 0002 0C46     		mov	r4, r1
+ 723              		.loc 1 372 19 view .LVU220
+ 724 0004 FFF7FEFF 		bl	ISP_SVC_IQParam_Get
+ 725              	.LVL70:
+ 373:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   IQParamConfig->AECAlgo.exposureCompensation = ExposureCompensation;
+ 374:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   IQParamConfig->AECAlgo.exposureTarget = (uint32_t) (ISP_IDEAL_TARGET_EXPOSURE * pow(2, (float)Exp
+ 726              		.loc 1 374 118 view .LVU221
+ 727 0008 01EE104A 		vmov	s2, r4	@ int
+ 728 000c BAEEEF1A 		vcvt.f32.s32	s2, s2, #1
+ 373:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   IQParamConfig->AECAlgo.exposureCompensation = ExposureCompensation;
+ 729              		.loc 1 373 47 view .LVU222
+ 730 0010 80F86940 		strb	r4, [r0, #105]
+ 731              		.loc 1 374 83 view .LVU223
+ 732 0014 B7EEC11A 		vcvt.f64.f32	d1, s2
+ 733 0018 B0EE000B 		vmov.f64	d0, #2.0e+0
+ 372:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   IQParamConfig->AECAlgo.exposureCompensation = ExposureCompensation;
+ 734              		.loc 1 372 19 view .LVU224
+ 735 001c 0546     		mov	r5, r0
+ 736              	.LVL71:
+ 373:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   IQParamConfig->AECAlgo.exposureCompensation = ExposureCompensation;
+ 737              		.loc 1 373 3 is_stmt 1 view .LVU225
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 23
+
+
+ 738              		.loc 1 374 3 view .LVU226
+ 739              		.loc 1 374 83 is_stmt 0 view .LVU227
+ 740 001e FFF7FEFF 		bl	pow
+ 741              	.LVL72:
+ 742              		.loc 1 374 81 discriminator 1 view .LVU228
+ 743 0022 9FED057B 		vldr.64	d7, .L59
+ 744 0026 20EE070B 		vmul.f64	d0, d0, d7
+ 745              		.loc 1 374 43 discriminator 1 view .LVU229
+ 746 002a BCEEC00B 		vcvt.u32.f64	s0, d0
+ 375:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 376:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   return ISP_OK;
+ 377:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 747              		.loc 1 377 1 view .LVU230
+ 748 002e 0020     		movs	r0, #0
+ 374:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 749              		.loc 1 374 43 discriminator 1 view .LVU231
+ 750 0030 85ED1B0A 		vstr.32	s0, [r5, #108]	@ int
+ 376:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 751              		.loc 1 376 3 is_stmt 1 view .LVU232
+ 752              		.loc 1 377 1 is_stmt 0 view .LVU233
+ 753 0034 38BD     		pop	{r3, r4, r5, pc}
+ 754              	.LVL73:
+ 755              	.L60:
+ 756              		.loc 1 377 1 view .LVU234
+ 757 0036 00BF     		.align	3
+ 758              	.L59:
+ 759 0038 00000000 		.word	0
+ 760 003c 00004C40 		.word	1078722560
+ 761              		.cfi_endproc
+ 762              	.LFE842:
+ 764              		.section	.text.ISP_GetExposureTarget,"ax",%progbits
+ 765              		.align	1
+ 766              		.global	ISP_GetExposureTarget
+ 767              		.syntax unified
+ 768              		.thumb
+ 769              		.thumb_func
+ 771              	ISP_GetExposureTarget:
+ 772              	.LVL74:
+ 773              	.LFB843:
+ 378:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 379:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
+ 380:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_GetExposureTarget
+ 381:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Get the exposure target used by the AEC algorithm
+ 382:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
+ 383:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  pExposureTarget: Pointer to exposure target
+ 384:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval Operation status
+ 385:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
+ 386:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** ISP_StatusTypeDef ISP_GetExposureTarget(ISP_HandleTypeDef *hIsp, ISP_ExposureCompTypeDef *pExposure
+ 387:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** {
+ 774              		.loc 1 387 1 is_stmt 1 view -0
+ 775              		.cfi_startproc
+ 776              		@ args = 0, pretend = 0, frame = 0
+ 777              		@ frame_needed = 0, uses_anonymous_args = 0
+ 388:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_IQParamTypeDef *IQParamConfig;
+ 778              		.loc 1 388 3 view .LVU236
+ 389:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 390:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   IQParamConfig = ISP_SVC_IQParam_Get(hIsp);
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 24
+
+
+ 779              		.loc 1 390 3 view .LVU237
+ 387:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_IQParamTypeDef *IQParamConfig;
+ 780              		.loc 1 387 1 is_stmt 0 view .LVU238
+ 781 0000 38B5     		push	{r3, r4, r5, lr}
+ 782              		.cfi_def_cfa_offset 16
+ 783              		.cfi_offset 3, -16
+ 784              		.cfi_offset 4, -12
+ 785              		.cfi_offset 5, -8
+ 786              		.cfi_offset 14, -4
+ 387:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_IQParamTypeDef *IQParamConfig;
+ 787              		.loc 1 387 1 view .LVU239
+ 788 0002 0C46     		mov	r4, r1
+ 789 0004 1546     		mov	r5, r2
+ 790              		.loc 1 390 19 view .LVU240
+ 791 0006 FFF7FEFF 		bl	ISP_SVC_IQParam_Get
+ 792              	.LVL75:
+ 391:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *pExposureTarget = IQParamConfig->AECAlgo.exposureTarget;
+ 793              		.loc 1 391 3 is_stmt 1 view .LVU241
+ 794              		.loc 1 391 44 is_stmt 0 view .LVU242
+ 795 000a C36E     		ldr	r3, [r0, #108]
+ 796              		.loc 1 391 20 view .LVU243
+ 797 000c 2B60     		str	r3, [r5]
+ 392:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *pExposureCompensation = IQParamConfig->AECAlgo.exposureCompensation;
+ 798              		.loc 1 392 3 is_stmt 1 view .LVU244
+ 799              		.loc 1 392 50 is_stmt 0 view .LVU245
+ 800 000e 90F96930 		ldrsb	r3, [r0, #105]
+ 393:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 394:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   return ISP_OK;
+ 395:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 801              		.loc 1 395 1 view .LVU246
+ 802 0012 0020     		movs	r0, #0
+ 803              	.LVL76:
+ 392:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *pExposureCompensation = IQParamConfig->AECAlgo.exposureCompensation;
+ 804              		.loc 1 392 26 view .LVU247
+ 805 0014 2370     		strb	r3, [r4]
+ 394:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 806              		.loc 1 394 3 is_stmt 1 view .LVU248
+ 807              		.loc 1 395 1 is_stmt 0 view .LVU249
+ 808 0016 38BD     		pop	{r3, r4, r5, pc}
+ 809              		.loc 1 395 1 view .LVU250
+ 810              		.cfi_endproc
+ 811              	.LFE843:
+ 813              		.section	.text.ISP_SetAECState,"ax",%progbits
+ 814              		.align	1
+ 815              		.global	ISP_SetAECState
+ 816              		.syntax unified
+ 817              		.thumb
+ 818              		.thumb_func
+ 820              	ISP_SetAECState:
+ 821              	.LVL77:
+ 822              	.LFB844:
+ 396:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 397:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
+ 398:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_SetAECState
+ 399:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Set AEC algorithm state
+ 400:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
+ 401:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  enable: AEC algorithm state ('true' if algo is running, 'false' if algo is stopped)
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 25
+
+
+ 402:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval Operation status
+ 403:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
+ 404:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** ISP_StatusTypeDef ISP_SetAECState(ISP_HandleTypeDef *hIsp, uint8_t enable)
+ 405:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** {
+ 823              		.loc 1 405 1 is_stmt 1 view -0
+ 824              		.cfi_startproc
+ 825              		@ args = 0, pretend = 0, frame = 0
+ 826              		@ frame_needed = 0, uses_anonymous_args = 0
+ 406:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_IQParamTypeDef *IQParamConfig;
+ 827              		.loc 1 406 3 view .LVU252
+ 407:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 408:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   IQParamConfig = ISP_SVC_IQParam_Get(hIsp);
+ 828              		.loc 1 408 3 view .LVU253
+ 405:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_IQParamTypeDef *IQParamConfig;
+ 829              		.loc 1 405 1 is_stmt 0 view .LVU254
+ 830 0000 10B5     		push	{r4, lr}
+ 831              		.cfi_def_cfa_offset 8
+ 832              		.cfi_offset 4, -8
+ 833              		.cfi_offset 14, -4
+ 405:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_IQParamTypeDef *IQParamConfig;
+ 834              		.loc 1 405 1 view .LVU255
+ 835 0002 0C46     		mov	r4, r1
+ 836              		.loc 1 408 19 view .LVU256
+ 837 0004 FFF7FEFF 		bl	ISP_SVC_IQParam_Get
+ 838              	.LVL78:
+ 409:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   IQParamConfig->AECAlgo.enable = enable;
+ 839              		.loc 1 409 3 is_stmt 1 view .LVU257
+ 840              		.loc 1 409 33 is_stmt 0 view .LVU258
+ 841 0008 80F86840 		strb	r4, [r0, #104]
+ 410:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 411:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   return ISP_OK;
+ 842              		.loc 1 411 3 is_stmt 1 view .LVU259
+ 412:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 843              		.loc 1 412 1 is_stmt 0 view .LVU260
+ 844 000c 0020     		movs	r0, #0
+ 845              	.LVL79:
+ 846              		.loc 1 412 1 view .LVU261
+ 847 000e 10BD     		pop	{r4, pc}
+ 848              		.loc 1 412 1 view .LVU262
+ 849              		.cfi_endproc
+ 850              	.LFE844:
+ 852              		.section	.text.ISP_GetAECState,"ax",%progbits
+ 853              		.align	1
+ 854              		.global	ISP_GetAECState
+ 855              		.syntax unified
+ 856              		.thumb
+ 857              		.thumb_func
+ 859              	ISP_GetAECState:
+ 860              	.LVL80:
+ 861              	.LFB845:
+ 413:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 414:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
+ 415:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_GetAECState
+ 416:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Get AEC algorithm state
+ 417:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
+ 418:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  pEnable: AEC algorithm pointer to current state ('true' if algo is running, 'false' if 
+ 419:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval Operation status
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 26
+
+
+ 420:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
+ 421:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** ISP_StatusTypeDef ISP_GetAECState(ISP_HandleTypeDef *hIsp, uint8_t *pEnable)
+ 422:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** {
+ 862              		.loc 1 422 1 is_stmt 1 view -0
+ 863              		.cfi_startproc
+ 864              		@ args = 0, pretend = 0, frame = 0
+ 865              		@ frame_needed = 0, uses_anonymous_args = 0
+ 423:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_IQParamTypeDef *IQParamConfig;
+ 866              		.loc 1 423 3 view .LVU264
+ 424:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 425:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   IQParamConfig = ISP_SVC_IQParam_Get(hIsp);
+ 867              		.loc 1 425 3 view .LVU265
+ 422:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_IQParamTypeDef *IQParamConfig;
+ 868              		.loc 1 422 1 is_stmt 0 view .LVU266
+ 869 0000 10B5     		push	{r4, lr}
+ 870              		.cfi_def_cfa_offset 8
+ 871              		.cfi_offset 4, -8
+ 872              		.cfi_offset 14, -4
+ 422:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_IQParamTypeDef *IQParamConfig;
+ 873              		.loc 1 422 1 view .LVU267
+ 874 0002 0C46     		mov	r4, r1
+ 875              		.loc 1 425 19 view .LVU268
+ 876 0004 FFF7FEFF 		bl	ISP_SVC_IQParam_Get
+ 877              	.LVL81:
+ 426:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *pEnable = IQParamConfig->AECAlgo.enable;
+ 878              		.loc 1 426 3 is_stmt 1 view .LVU269
+ 879              		.loc 1 426 36 is_stmt 0 view .LVU270
+ 880 0008 90F86830 		ldrb	r3, [r0, #104]	@ zero_extendqisi2
+ 427:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 428:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   return ISP_OK;
+ 429:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 881              		.loc 1 429 1 view .LVU271
+ 882 000c 0020     		movs	r0, #0
+ 883              	.LVL82:
+ 426:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *pEnable = IQParamConfig->AECAlgo.enable;
+ 884              		.loc 1 426 12 view .LVU272
+ 885 000e 2370     		strb	r3, [r4]
+ 428:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 886              		.loc 1 428 3 is_stmt 1 view .LVU273
+ 887              		.loc 1 429 1 is_stmt 0 view .LVU274
+ 888 0010 10BD     		pop	{r4, pc}
+ 889              		.loc 1 429 1 view .LVU275
+ 890              		.cfi_endproc
+ 891              	.LFE845:
+ 893              		.section	.text.ISP_ListWBRefModes,"ax",%progbits
+ 894              		.align	1
+ 895              		.global	ISP_ListWBRefModes
+ 896              		.syntax unified
+ 897              		.thumb
+ 898              		.thumb_func
+ 900              	ISP_ListWBRefModes:
+ 901              	.LVL83:
+ 902              	.LFB846:
+ 430:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 431:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
+ 432:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_ListWBRefModes
+ 433:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         List the reference modes (color temperature) that define a white balance configuration
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 27
+
+
+ 434:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
+ 435:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  RefColorTemp: Array of reference color temperatures
+ 436:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval Operation status
+ 437:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
+ 438:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** ISP_StatusTypeDef ISP_ListWBRefModes(ISP_HandleTypeDef *hIsp, uint32_t RefColorTemp[])
+ 439:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** {
+ 903              		.loc 1 439 1 is_stmt 1 view -0
+ 904              		.cfi_startproc
+ 905              		@ args = 0, pretend = 0, frame = 0
+ 906              		@ frame_needed = 0, uses_anonymous_args = 0
+ 440:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_IQParamTypeDef *IQParamConfig;
+ 907              		.loc 1 440 3 view .LVU277
+ 441:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 442:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   IQParamConfig = ISP_SVC_IQParam_Get(hIsp);
+ 908              		.loc 1 442 3 view .LVU278
+ 439:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_IQParamTypeDef *IQParamConfig;
+ 909              		.loc 1 439 1 is_stmt 0 view .LVU279
+ 910 0000 10B5     		push	{r4, lr}
+ 911              		.cfi_def_cfa_offset 8
+ 912              		.cfi_offset 4, -8
+ 913              		.cfi_offset 14, -4
+ 439:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_IQParamTypeDef *IQParamConfig;
+ 914              		.loc 1 439 1 view .LVU280
+ 915 0002 0C46     		mov	r4, r1
+ 916              		.loc 1 442 19 view .LVU281
+ 917 0004 FFF7FEFF 		bl	ISP_SVC_IQParam_Get
+ 918              	.LVL84:
+ 443:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 444:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   memcpy(RefColorTemp, IQParamConfig->AWBAlgo.referenceColorTemp, sizeof(IQParamConfig->AWBAlgo.ref
+ 919              		.loc 1 444 3 is_stmt 1 view .LVU282
+ 920 0008 4FF0050E 		mov	lr, #5
+ 921 000c 2146     		mov	r1, r4
+ 922 000e 4EF001E0 		dls	lr, lr
+ 923 0012 00F58C70 		add	r0, r0, #280
+ 924              	.LVL85:
+ 925              	.L65:
+ 926              		.loc 1 444 3 is_stmt 0 view .LVU283
+ 927 0016 50F8043B 		ldr	r3, [r0], #4	@ unaligned
+ 928 001a 41F8043B 		str	r3, [r1], #4	@ unaligned
+ 929 001e 0FF007C0 		le	lr, .L65
+ 445:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 446:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   return ISP_OK;
+ 930              		.loc 1 446 3 is_stmt 1 view .LVU284
+ 447:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 931              		.loc 1 447 1 is_stmt 0 view .LVU285
+ 932 0022 0020     		movs	r0, #0
+ 933 0024 10BD     		pop	{r4, pc}
+ 934              		.loc 1 447 1 view .LVU286
+ 935              		.cfi_endproc
+ 936              	.LFE846:
+ 938              		.section	.text.ISP_SetWBRefMode,"ax",%progbits
+ 939              		.align	1
+ 940              		.global	ISP_SetWBRefMode
+ 941              		.syntax unified
+ 942              		.thumb
+ 943              		.thumb_func
+ 945              	ISP_SetWBRefMode:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 28
+
+
+ 946              	.LVL86:
+ 947              	.LFB847:
+ 448:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 449:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
+ 450:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_SetWBRefMode
+ 451:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Set the reference mode that define a white balance configuration.
+ 452:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Can be a manual mode specified by a color temperature, or 'Automatic' relying on the AW
+ 453:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
+ 454:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  Automatic: 'true' if the AWB automatic mode is requested
+ 455:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  RefColorTemp: Reference color temperature (manual mode). Not significant if Automatic i
+ 456:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval Operation status
+ 457:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
+ 458:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** ISP_StatusTypeDef ISP_SetWBRefMode(ISP_HandleTypeDef *hIsp, uint8_t Automatic, uint32_t RefColorTem
+ 459:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** {
+ 948              		.loc 1 459 1 is_stmt 1 view -0
+ 949              		.cfi_startproc
+ 950              		@ args = 0, pretend = 0, frame = 56
+ 951              		@ frame_needed = 0, uses_anonymous_args = 0
+ 460:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_ISPGainTypeDef ISPGain;
+ 952              		.loc 1 460 3 view .LVU288
+ 461:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_ColorConvTypeDef ColorConv;
+ 953              		.loc 1 461 3 view .LVU289
+ 462:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_IQParamTypeDef *IQParamConfig;
+ 954              		.loc 1 462 3 view .LVU290
+ 463:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_StatusTypeDef ret;
+ 955              		.loc 1 463 3 view .LVU291
+ 464:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   uint32_t index;
+ 956              		.loc 1 464 3 view .LVU292
+ 465:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 466:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   IQParamConfig = ISP_SVC_IQParam_Get(hIsp);
+ 957              		.loc 1 466 3 view .LVU293
+ 459:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_ISPGainTypeDef ISPGain;
+ 958              		.loc 1 459 1 is_stmt 0 view .LVU294
+ 959 0000 70B5     		push	{r4, r5, r6, lr}
+ 960              		.cfi_def_cfa_offset 16
+ 961              		.cfi_offset 4, -16
+ 962              		.cfi_offset 5, -12
+ 963              		.cfi_offset 6, -8
+ 964              		.cfi_offset 14, -4
+ 965 0002 0E46     		mov	r6, r1
+ 966 0004 8EB0     		sub	sp, sp, #56
+ 967              		.cfi_def_cfa_offset 72
+ 459:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_ISPGainTypeDef ISPGain;
+ 968              		.loc 1 459 1 view .LVU295
+ 969 0006 0446     		mov	r4, r0
+ 970 0008 1546     		mov	r5, r2
+ 971              		.loc 1 466 19 view .LVU296
+ 972 000a FFF7FEFF 		bl	ISP_SVC_IQParam_Get
+ 973              	.LVL87:
+ 467:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 468:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (Automatic)
+ 974              		.loc 1 468 3 is_stmt 1 view .LVU297
+ 975              		.loc 1 468 6 is_stmt 0 view .LVU298
+ 976 000e 2EB1     		cbz	r6, .L68
+ 469:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 470:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     /* Start the AWB algorithm */
+ 471:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     IQParamConfig->AWBAlgo.enable = 1;
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 29
+
+
+ 977              		.loc 1 471 5 is_stmt 1 view .LVU299
+ 978              		.loc 1 471 35 is_stmt 0 view .LVU300
+ 979 0010 0123     		movs	r3, #1
+ 980 0012 80F87430 		strb	r3, [r0, #116]
+ 472:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 473:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   else
+ 474:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 475:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     /* Check the validity of RefColorTemp */
+ 476:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     for (index = 0; index < ISP_AWB_COLORTEMP_REF; index++)
+ 477:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 478:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****       if (IQParamConfig->AWBAlgo.referenceColorTemp[index] == RefColorTemp)
+ 479:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****         break;
+ 480:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     }
+ 481:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 482:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (index >= ISP_AWB_COLORTEMP_REF)
+ 483:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 484:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****       /* Unknown reference color temperature */
+ 485:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****       return ISP_ERR_WB_COLORTEMP;
+ 486:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     }
+ 487:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 488:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     /* Stop the AWB algorithm */
+ 489:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     IQParamConfig->AWBAlgo.enable = 0;
+ 490:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 491:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     /* Apply ISP RGB gains and Color Conversion */
+ 492:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ISPGain.enable = 1;
+ 493:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ISPGain.ispGainR = IQParamConfig->AWBAlgo.ispGainR[index];
+ 494:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ISPGain.ispGainG = IQParamConfig->AWBAlgo.ispGainG[index];
+ 495:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ISPGain.ispGainB = IQParamConfig->AWBAlgo.ispGainB[index];
+ 496:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ColorConv.enable = 1;
+ 497:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     memcpy(ColorConv.coeff, IQParamConfig->AWBAlgo.coeff[index], sizeof(ColorConv.coeff));
+ 498:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 499:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ret = ISP_SVC_ISP_SetGain(hIsp, &ISPGain);
+ 500:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 501:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 502:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****       return ret;
+ 503:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     }
+ 504:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 505:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ret = ISP_SVC_ISP_SetColorConv(hIsp, &ColorConv);
+ 506:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 507:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 508:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****       return ret;
+ 509:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     }
+ 510:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 511:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     /* Store the selected mode */
+ 512:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ret = ISP_SVC_Misc_SetWBRefMode(hIsp, RefColorTemp);
+ 513:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 514:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 515:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****       return ret;
+ 516:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     }
+ 517:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 518:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 519:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   return ISP_OK;
+ 981              		.loc 1 519 10 view .LVU301
+ 982 0016 0020     		movs	r0, #0
+ 983              	.LVL88:
+ 984              	.L74:
+ 520:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 30
+
+
+ 985              		.loc 1 520 1 view .LVU302
+ 986 0018 0EB0     		add	sp, sp, #56
+ 987              		.cfi_remember_state
+ 988              		.cfi_def_cfa_offset 16
+ 989              		@ sp needed
+ 990 001a 70BD     		pop	{r4, r5, r6, pc}
+ 991              	.LVL89:
+ 992              	.L68:
+ 993              		.cfi_restore_state
+ 476:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 994              		.loc 1 476 16 view .LVU303
+ 995 001c 3146     		mov	r1, r6
+ 996 001e 0523     		movs	r3, #5
+ 997 0020 00F58A72 		add	r2, r0, #276
+ 998              	.L71:
+ 999              	.LVL90:
+ 478:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****         break;
+ 1000              		.loc 1 478 7 is_stmt 1 view .LVU304
+ 478:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****         break;
+ 1001              		.loc 1 478 10 is_stmt 0 view .LVU305
+ 1002 0024 52F8046F 		ldr	r6, [r2, #4]!
+ 1003 0028 AE42     		cmp	r6, r5
+ 1004 002a 05D0     		beq	.L70
+ 476:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 1005              		.loc 1 476 57 is_stmt 1 discriminator 2 view .LVU306
+ 476:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 1006              		.loc 1 476 27 is_stmt 0 discriminator 1 view .LVU307
+ 1007 002c 013B     		subs	r3, r3, #1
+ 476:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 1008              		.loc 1 476 57 discriminator 2 view .LVU308
+ 1009 002e 01F10101 		add	r1, r1, #1
+ 1010              	.LVL91:
+ 476:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 1011              		.loc 1 476 27 is_stmt 1 discriminator 1 view .LVU309
+ 1012 0032 F7D1     		bne	.L71
+ 485:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     }
+ 1013              		.loc 1 485 14 is_stmt 0 view .LVU310
+ 1014 0034 9620     		movs	r0, #150
+ 1015              	.LVL92:
+ 485:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     }
+ 1016              		.loc 1 485 14 view .LVU311
+ 1017 0036 EFE7     		b	.L74
+ 1018              	.LVL93:
+ 1019              	.L70:
+ 482:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 1020              		.loc 1 482 5 is_stmt 1 view .LVU312
+ 489:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 1021              		.loc 1 489 5 view .LVU313
+ 489:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 1022              		.loc 1 489 35 is_stmt 0 view .LVU314
+ 1023 0038 0023     		movs	r3, #0
+ 497:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 1024              		.loc 1 497 5 view .LVU315
+ 1025 003a 4FF0040E 		mov	lr, #4
+ 489:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 1026              		.loc 1 489 35 view .LVU316
+ 1027 003e 80F87430 		strb	r3, [r0, #116]
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 31
+
+
+ 492:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ISPGain.ispGainR = IQParamConfig->AWBAlgo.ispGainR[index];
+ 1028              		.loc 1 492 5 is_stmt 1 view .LVU317
+ 1029 0042 00EB8103 		add	r3, r0, r1, lsl #2
+ 493:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ISPGain.ispGainG = IQParamConfig->AWBAlgo.ispGainG[index];
+ 1030              		.loc 1 493 22 is_stmt 0 view .LVU318
+ 1031 0046 D3F82C61 		ldr	r6, [r3, #300]
+ 492:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ISPGain.ispGainR = IQParamConfig->AWBAlgo.ispGainR[index];
+ 1032              		.loc 1 492 20 view .LVU319
+ 1033 004a 0122     		movs	r2, #1
+ 493:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ISPGain.ispGainG = IQParamConfig->AWBAlgo.ispGainG[index];
+ 1034              		.loc 1 493 22 view .LVU320
+ 1035 004c 0196     		str	r6, [sp, #4]
+ 494:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ISPGain.ispGainB = IQParamConfig->AWBAlgo.ispGainB[index];
+ 1036              		.loc 1 494 22 view .LVU321
+ 1037 004e D3F84061 		ldr	r6, [r3, #320]
+ 495:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ColorConv.enable = 1;
+ 1038              		.loc 1 495 22 view .LVU322
+ 1039 0052 D3F85431 		ldr	r3, [r3, #340]
+ 497:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 1040              		.loc 1 497 5 view .LVU323
+ 1041 0056 4EF001E0 		dls	lr, lr
+ 495:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ColorConv.enable = 1;
+ 1042              		.loc 1 495 22 view .LVU324
+ 1043 005a 0393     		str	r3, [sp, #12]
+ 497:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 1044              		.loc 1 497 57 view .LVU325
+ 1045 005c 2423     		movs	r3, #36
+ 1046 005e 03FB0103 		mla	r3, r3, r1, r0
+ 492:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ISPGain.ispGainR = IQParamConfig->AWBAlgo.ispGainR[index];
+ 1047              		.loc 1 492 20 view .LVU326
+ 1048 0062 8DF80020 		strb	r2, [sp]
+ 493:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ISPGain.ispGainG = IQParamConfig->AWBAlgo.ispGainG[index];
+ 1049              		.loc 1 493 5 is_stmt 1 view .LVU327
+ 494:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ISPGain.ispGainB = IQParamConfig->AWBAlgo.ispGainB[index];
+ 1050              		.loc 1 494 5 view .LVU328
+ 496:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     memcpy(ColorConv.coeff, IQParamConfig->AWBAlgo.coeff[index], sizeof(ColorConv.coeff));
+ 1051              		.loc 1 496 22 is_stmt 0 view .LVU329
+ 1052 0066 8DF81020 		strb	r2, [sp, #16]
+ 494:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ISPGain.ispGainB = IQParamConfig->AWBAlgo.ispGainB[index];
+ 1053              		.loc 1 494 22 view .LVU330
+ 1054 006a 0296     		str	r6, [sp, #8]
+ 495:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ColorConv.enable = 1;
+ 1055              		.loc 1 495 5 is_stmt 1 view .LVU331
+ 496:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     memcpy(ColorConv.coeff, IQParamConfig->AWBAlgo.coeff[index], sizeof(ColorConv.coeff));
+ 1056              		.loc 1 496 5 view .LVU332
+ 497:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 1057              		.loc 1 497 5 view .LVU333
+ 497:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 1058              		.loc 1 497 57 is_stmt 0 view .LVU334
+ 1059 006c 03F5B473 		add	r3, r3, #360
+ 497:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 1060              		.loc 1 497 5 view .LVU335
+ 1061 0070 05AA     		add	r2, sp, #20
+ 1062              	.LVL94:
+ 1063              	.L72:
+ 497:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 1064              		.loc 1 497 5 view .LVU336
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 32
+
+
+ 1065 0072 1646     		mov	r6, r2
+ 1066 0074 1868     		ldr	r0, [r3]	@ unaligned
+ 1067 0076 5968     		ldr	r1, [r3, #4]	@ unaligned
+ 1068 0078 0833     		adds	r3, r3, #8
+ 1069 007a 03C6     		stmia	r6!, {r0, r1}
+ 1070 007c 3246     		mov	r2, r6
+ 1071 007e 0FF009C0 		le	lr, .L72
+ 1072 0082 1868     		ldr	r0, [r3]	@ unaligned
+ 499:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 1073              		.loc 1 499 11 view .LVU337
+ 1074 0084 6946     		mov	r1, sp
+ 497:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 1075              		.loc 1 497 5 view .LVU338
+ 1076 0086 3060     		str	r0, [r6]
+ 499:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 1077              		.loc 1 499 5 is_stmt 1 view .LVU339
+ 499:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 1078              		.loc 1 499 11 is_stmt 0 view .LVU340
+ 1079 0088 2046     		mov	r0, r4
+ 1080 008a FFF7FEFF 		bl	ISP_SVC_ISP_SetGain
+ 1081              	.LVL95:
+ 500:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 1082              		.loc 1 500 5 is_stmt 1 view .LVU341
+ 500:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 1083              		.loc 1 500 8 is_stmt 0 view .LVU342
+ 1084 008e 0028     		cmp	r0, #0
+ 1085 0090 C2D1     		bne	.L74
+ 505:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 1086              		.loc 1 505 5 is_stmt 1 view .LVU343
+ 505:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 1087              		.loc 1 505 11 is_stmt 0 view .LVU344
+ 1088 0092 2046     		mov	r0, r4
+ 1089              	.LVL96:
+ 505:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 1090              		.loc 1 505 11 view .LVU345
+ 1091 0094 04A9     		add	r1, sp, #16
+ 1092 0096 FFF7FEFF 		bl	ISP_SVC_ISP_SetColorConv
+ 1093              	.LVL97:
+ 506:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 1094              		.loc 1 506 5 is_stmt 1 view .LVU346
+ 506:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 1095              		.loc 1 506 8 is_stmt 0 view .LVU347
+ 1096 009a 0028     		cmp	r0, #0
+ 1097 009c BCD1     		bne	.L74
+ 512:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 1098              		.loc 1 512 5 is_stmt 1 view .LVU348
+ 512:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 1099              		.loc 1 512 11 is_stmt 0 view .LVU349
+ 1100 009e 2946     		mov	r1, r5
+ 1101 00a0 2046     		mov	r0, r4
+ 1102              	.LVL98:
+ 512:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
+ 1103              		.loc 1 512 11 view .LVU350
+ 1104 00a2 FFF7FEFF 		bl	ISP_SVC_Misc_SetWBRefMode
+ 1105              	.LVL99:
+ 513:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
+ 1106              		.loc 1 513 5 is_stmt 1 view .LVU351
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 33
+
+
+ 1107 00a6 B7E7     		b	.L74
+ 1108              		.cfi_endproc
+ 1109              	.LFE847:
+ 1111              		.section	.text.ISP_GetWBRefMode,"ax",%progbits
+ 1112              		.align	1
+ 1113              		.global	ISP_GetWBRefMode
+ 1114              		.syntax unified
+ 1115              		.thumb
+ 1116              		.thumb_func
+ 1118              	ISP_GetWBRefMode:
+ 1119              	.LVL100:
+ 1120              	.LFB848:
+ 521:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 522:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
+ 523:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_GetWBRefMode
+ 524:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Get the reference mode that define a white balance configuration.
+ 525:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Can be a manual mode specified by a color temperature, or 'Automatic' relying on the AW
+ 526:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
+ 527:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  pAutomatic: Pointer to the mode. 'true' means that AWB automatic mode is running.
+ 528:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  pRefColorTemp: Pointer to reference color temperature (manual mode). Not significant if
+ 529:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval Operation status
+ 530:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
+ 531:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** ISP_StatusTypeDef ISP_GetWBRefMode(ISP_HandleTypeDef *hIsp, uint8_t *pAutomatic, uint32_t *pRefColo
+ 532:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** {
+ 1121              		.loc 1 532 1 view -0
+ 1122              		.cfi_startproc
+ 1123              		@ args = 0, pretend = 0, frame = 0
+ 1124              		@ frame_needed = 0, uses_anonymous_args = 0
+ 533:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_IQParamTypeDef *IQParamConfig;
+ 1125              		.loc 1 533 3 view .LVU353
+ 534:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 535:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   IQParamConfig = ISP_SVC_IQParam_Get(hIsp);
+ 1126              		.loc 1 535 3 view .LVU354
+ 532:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_IQParamTypeDef *IQParamConfig;
+ 1127              		.loc 1 532 1 is_stmt 0 view .LVU355
+ 1128 0000 70B5     		push	{r4, r5, r6, lr}
+ 1129              		.cfi_def_cfa_offset 16
+ 1130              		.cfi_offset 4, -16
+ 1131              		.cfi_offset 5, -12
+ 1132              		.cfi_offset 6, -8
+ 1133              		.cfi_offset 14, -4
+ 532:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_IQParamTypeDef *IQParamConfig;
+ 1134              		.loc 1 532 1 view .LVU356
+ 1135 0002 0E46     		mov	r6, r1
+ 1136 0004 0446     		mov	r4, r0
+ 1137 0006 1546     		mov	r5, r2
+ 1138              		.loc 1 535 19 view .LVU357
+ 1139 0008 FFF7FEFF 		bl	ISP_SVC_IQParam_Get
+ 1140              	.LVL101:
+ 536:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *pAutomatic = IQParamConfig->AWBAlgo.enable;
+ 1141              		.loc 1 536 3 is_stmt 1 view .LVU358
+ 1142              		.loc 1 536 39 is_stmt 0 view .LVU359
+ 1143 000c 90F87430 		ldrb	r3, [r0, #116]	@ zero_extendqisi2
+ 1144              		.loc 1 536 15 view .LVU360
+ 1145 0010 3370     		strb	r3, [r6]
+ 537:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 538:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (!*pAutomatic)
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 34
+
+
+ 1146              		.loc 1 538 3 is_stmt 1 view .LVU361
+ 1147              		.loc 1 538 6 is_stmt 0 view .LVU362
+ 1148 0012 1BB9     		cbnz	r3, .L79
+ 539:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ISP_SVC_Misc_GetWBRefMode(hIsp, pRefColorTemp);
+ 1149              		.loc 1 539 5 is_stmt 1 view .LVU363
+ 1150 0014 2946     		mov	r1, r5
+ 1151 0016 2046     		mov	r0, r4
+ 1152              	.LVL102:
+ 1153              		.loc 1 539 5 is_stmt 0 view .LVU364
+ 1154 0018 FFF7FEFF 		bl	ISP_SVC_Misc_GetWBRefMode
+ 1155              	.LVL103:
+ 1156              	.L79:
+ 540:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 541:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   return ISP_OK;
+ 1157              		.loc 1 541 3 is_stmt 1 view .LVU365
+ 542:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 1158              		.loc 1 542 1 is_stmt 0 view .LVU366
+ 1159 001c 0020     		movs	r0, #0
+ 1160 001e 70BD     		pop	{r4, r5, r6, pc}
+ 1161              		.loc 1 542 1 view .LVU367
+ 1162              		.cfi_endproc
+ 1163              	.LFE848:
+ 1165              		.section	.text.ISP_GetDecimationFactor,"ax",%progbits
+ 1166              		.align	1
+ 1167              		.global	ISP_GetDecimationFactor
+ 1168              		.syntax unified
+ 1169              		.thumb
+ 1170              		.thumb_func
+ 1172              	ISP_GetDecimationFactor:
+ 1173              	.LVL104:
+ 1174              	.LFB849:
+ 543:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 544:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
+ 545:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_GetDecimationFactor
+ 546:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Get the decimation factor applied in the ISP pipeline.
+ 547:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         This decimation factor ensures that RAW frame size does not exceed 2688 width prior to 
+ 548:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
+ 549:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  pDecimation: Pointer to the decimation factor
+ 550:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval Operation status
+ 551:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
+ 552:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** ISP_StatusTypeDef ISP_GetDecimationFactor(ISP_HandleTypeDef *hIsp, ISP_DecimationTypeDef *pDecimati
+ 553:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** {
+ 1175              		.loc 1 553 1 is_stmt 1 view -0
+ 1176              		.cfi_startproc
+ 1177              		@ args = 0, pretend = 0, frame = 0
+ 1178              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1179              		@ link register save eliminated.
+ 554:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   return ISP_SVC_ISP_GetDecimation(hIsp, pDecimation);
+ 1180              		.loc 1 554 3 view .LVU369
+ 1181              		.loc 1 554 10 is_stmt 0 view .LVU370
+ 1182 0000 FFF7FEBF 		b	ISP_SVC_ISP_GetDecimation
+ 1183              	.LVL105:
+ 1184              		.loc 1 554 10 view .LVU371
+ 1185              		.cfi_endproc
+ 1186              	.LFE849:
+ 1188              		.section	.text.ISP_SetStatArea,"ax",%progbits
+ 1189              		.align	1
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 35
+
+
+ 1190              		.global	ISP_SetStatArea
+ 1191              		.syntax unified
+ 1192              		.thumb
+ 1193              		.thumb_func
+ 1195              	ISP_SetStatArea:
+ 1196              	.LVL106:
+ 1197              	.LFB850:
+ 555:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 556:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 557:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
+ 558:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_SetStatArea
+ 559:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Set statistic area (position and size) defined by the user
+ 560:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
+ 561:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  pStatArea: Pointer to the statistic area
+ 562:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval Operation status
+ 563:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
+ 564:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** ISP_StatusTypeDef ISP_SetStatArea(ISP_HandleTypeDef *hIsp, ISP_StatAreaTypeDef *pStatArea)
+ 565:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** {
+ 1198              		.loc 1 565 1 is_stmt 1 view -0
+ 1199              		.cfi_startproc
+ 1200              		@ args = 0, pretend = 0, frame = 0
+ 1201              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1202              		@ link register save eliminated.
+ 566:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   return ISP_SVC_ISP_SetStatArea(hIsp, pStatArea);
+ 1203              		.loc 1 566 3 view .LVU373
+ 1204              		.loc 1 566 10 is_stmt 0 view .LVU374
+ 1205 0000 FFF7FEBF 		b	ISP_SVC_ISP_SetStatArea
+ 1206              	.LVL107:
+ 1207              		.loc 1 566 10 view .LVU375
+ 1208              		.cfi_endproc
+ 1209              	.LFE850:
+ 1211              		.section	.text.ISP_GetStatArea,"ax",%progbits
+ 1212              		.align	1
+ 1213              		.global	ISP_GetStatArea
+ 1214              		.syntax unified
+ 1215              		.thumb
+ 1216              		.thumb_func
+ 1218              	ISP_GetStatArea:
+ 1219              	.LVL108:
+ 1220              	.LFB851:
+ 567:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 568:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 569:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
+ 570:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_GetStatArea
+ 571:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Get current statistic area
+ 572:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
+ 573:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  pStatArea: Pointer to the statistic area
+ 574:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval Operation status
+ 575:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
+ 576:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** ISP_StatusTypeDef ISP_GetStatArea(ISP_HandleTypeDef *hIsp, ISP_StatAreaTypeDef *pStatArea)
+ 577:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** {
+ 1221              		.loc 1 577 1 is_stmt 1 view -0
+ 1222              		.cfi_startproc
+ 1223              		@ args = 0, pretend = 0, frame = 0
+ 1224              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1225              		@ link register save eliminated.
+ 578:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   return ISP_SVC_ISP_GetStatArea(hIsp, pStatArea);
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 36
+
+
+ 1226              		.loc 1 578 3 view .LVU377
+ 1227              		.loc 1 578 10 is_stmt 0 view .LVU378
+ 1228 0000 FFF7FEBF 		b	ISP_SVC_ISP_GetStatArea
+ 1229              	.LVL109:
+ 1230              		.loc 1 578 10 view .LVU379
+ 1231              		.cfi_endproc
+ 1232              	.LFE851:
+ 1234              		.section	.text.ISP_GatherStatistics,"ax",%progbits
+ 1235              		.align	1
+ 1236              		.global	ISP_GatherStatistics
+ 1237              		.syntax unified
+ 1238              		.thumb
+ 1239              		.thumb_func
+ 1241              	ISP_GatherStatistics:
+ 1242              	.LVL110:
+ 1243              	.LFB852:
+ 579:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 580:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 581:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
+ 582:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_GatherStatistics
+ 583:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Gather statistics
+ 584:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
+ 585:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval None
+ 586:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
+ 587:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** void ISP_GatherStatistics(ISP_HandleTypeDef *hIsp)
+ 588:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** {
+ 1244              		.loc 1 588 1 is_stmt 1 view -0
+ 1245              		.cfi_startproc
+ 1246              		@ args = 0, pretend = 0, frame = 0
+ 1247              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1248              		@ link register save eliminated.
+ 589:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_SVC_Stats_Gather(hIsp);
+ 1249              		.loc 1 589 3 view .LVU381
+ 1250 0000 FFF7FEBF 		b	ISP_SVC_Stats_Gather
+ 1251              	.LVL111:
+ 1252              		.loc 1 589 3 is_stmt 0 view .LVU382
+ 1253              		.cfi_endproc
+ 1254              	.LFE852:
+ 1256              		.section	.text.ISP_IncMainFrameId,"ax",%progbits
+ 1257              		.align	1
+ 1258              		.global	ISP_IncMainFrameId
+ 1259              		.syntax unified
+ 1260              		.thumb
+ 1261              		.thumb_func
+ 1263              	ISP_IncMainFrameId:
+ 1264              	.LVL112:
+ 1265              	.LFB853:
+ 590:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 591:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 592:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
+ 593:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_IncMainFrameId
+ 594:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Increment the frame ID of the frame output on the main pipe
+ 595:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
+ 596:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval None
+ 597:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
+ 598:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** void ISP_IncMainFrameId(ISP_HandleTypeDef *hIsp)
+ 599:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** {
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 37
+
+
+ 1266              		.loc 1 599 1 is_stmt 1 view -0
+ 1267              		.cfi_startproc
+ 1268              		@ args = 0, pretend = 0, frame = 0
+ 1269              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1270              		@ link register save eliminated.
+ 600:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_SVC_Misc_IncMainFrameId(hIsp);
+ 1271              		.loc 1 600 3 view .LVU384
+ 1272 0000 FFF7FEBF 		b	ISP_SVC_Misc_IncMainFrameId
+ 1273              	.LVL113:
+ 1274              		.loc 1 600 3 is_stmt 0 view .LVU385
+ 1275              		.cfi_endproc
+ 1276              	.LFE853:
+ 1278              		.section	.text.ISP_GetMainFrameId,"ax",%progbits
+ 1279              		.align	1
+ 1280              		.global	ISP_GetMainFrameId
+ 1281              		.syntax unified
+ 1282              		.thumb
+ 1283              		.thumb_func
+ 1285              	ISP_GetMainFrameId:
+ 1286              	.LVL114:
+ 1287              	.LFB854:
+ 601:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 602:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 603:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
+ 604:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_GetMainFrameId
+ 605:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Return the frame ID of the last frame output on the main pipe
+ 606:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
+ 607:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval Id of the last frame output on the main pipe
+ 608:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
+ 609:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** uint32_t ISP_GetMainFrameId(ISP_HandleTypeDef *hIsp)
+ 610:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** {
+ 1288              		.loc 1 610 1 is_stmt 1 view -0
+ 1289              		.cfi_startproc
+ 1290              		@ args = 0, pretend = 0, frame = 0
+ 1291              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1292              		@ link register save eliminated.
+ 611:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   return ISP_SVC_Misc_GetMainFrameId(hIsp);
+ 1293              		.loc 1 611 3 view .LVU387
+ 1294              		.loc 1 611 10 is_stmt 0 view .LVU388
+ 1295 0000 FFF7FEBF 		b	ISP_SVC_Misc_GetMainFrameId
+ 1296              	.LVL115:
+ 1297              		.loc 1 611 10 view .LVU389
+ 1298              		.cfi_endproc
+ 1299              	.LFE854:
+ 1301              		.section	.text.ISP_IncAncillaryFrameId,"ax",%progbits
+ 1302              		.align	1
+ 1303              		.global	ISP_IncAncillaryFrameId
+ 1304              		.syntax unified
+ 1305              		.thumb
+ 1306              		.thumb_func
+ 1308              	ISP_IncAncillaryFrameId:
+ 1309              	.LVL116:
+ 1310              	.LFB855:
+ 612:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 613:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 614:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
+ 615:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_IncAncillaryFrameId
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 38
+
+
+ 616:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Increment the frame ID of the frame output on the ancillary pipe
+ 617:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
+ 618:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval None
+ 619:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
+ 620:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** void ISP_IncAncillaryFrameId(ISP_HandleTypeDef *hIsp)
+ 621:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** {
+ 1311              		.loc 1 621 1 is_stmt 1 view -0
+ 1312              		.cfi_startproc
+ 1313              		@ args = 0, pretend = 0, frame = 0
+ 1314              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1315              		@ link register save eliminated.
+ 622:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 	ISP_SVC_Misc_IncAncillaryFrameId(hIsp);
+ 1316              		.loc 1 622 2 view .LVU391
+ 1317 0000 FFF7FEBF 		b	ISP_SVC_Misc_IncAncillaryFrameId
+ 1318              	.LVL117:
+ 1319              		.loc 1 622 2 is_stmt 0 view .LVU392
+ 1320              		.cfi_endproc
+ 1321              	.LFE855:
+ 1323              		.section	.text.ISP_GetAncillaryFrameId,"ax",%progbits
+ 1324              		.align	1
+ 1325              		.global	ISP_GetAncillaryFrameId
+ 1326              		.syntax unified
+ 1327              		.thumb
+ 1328              		.thumb_func
+ 1330              	ISP_GetAncillaryFrameId:
+ 1331              	.LVL118:
+ 1332              	.LFB856:
+ 623:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 624:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 625:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
+ 626:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_GetAncillaryFrameId
+ 627:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Return the frame ID of the last frame output on the ancillary pipe
+ 628:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
+ 629:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval Id of the last frame output on the ancillary pipe
+ 630:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
+ 631:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** uint32_t ISP_GetAncillaryFrameId(ISP_HandleTypeDef *hIsp)
+ 632:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** {
+ 1333              		.loc 1 632 1 is_stmt 1 view -0
+ 1334              		.cfi_startproc
+ 1335              		@ args = 0, pretend = 0, frame = 0
+ 1336              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1337              		@ link register save eliminated.
+ 633:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   return ISP_SVC_Misc_GetAncillaryFrameId(hIsp);
+ 1338              		.loc 1 633 3 view .LVU394
+ 1339              		.loc 1 633 10 is_stmt 0 view .LVU395
+ 1340 0000 FFF7FEBF 		b	ISP_SVC_Misc_GetAncillaryFrameId
+ 1341              	.LVL119:
+ 1342              		.loc 1 633 10 view .LVU396
+ 1343              		.cfi_endproc
+ 1344              	.LFE856:
+ 1346              		.section	.text.ISP_IncDumpFrameId,"ax",%progbits
+ 1347              		.align	1
+ 1348              		.global	ISP_IncDumpFrameId
+ 1349              		.syntax unified
+ 1350              		.thumb
+ 1351              		.thumb_func
+ 1353              	ISP_IncDumpFrameId:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 39
+
+
+ 1354              	.LVL120:
+ 1355              	.LFB857:
+ 634:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 635:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 636:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
+ 637:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_IncDumpFrameId
+ 638:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Increment the frame ID of the frame output on the dump pipe
+ 639:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
+ 640:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval None
+ 641:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
+ 642:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** void ISP_IncDumpFrameId(ISP_HandleTypeDef *hIsp)
+ 643:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** {
+ 1356              		.loc 1 643 1 is_stmt 1 view -0
+ 1357              		.cfi_startproc
+ 1358              		@ args = 0, pretend = 0, frame = 0
+ 1359              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1360              		@ link register save eliminated.
+ 644:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_SVC_Misc_IncDumpFrameId(hIsp);
+ 1361              		.loc 1 644 3 view .LVU398
+ 1362 0000 FFF7FEBF 		b	ISP_SVC_Misc_IncDumpFrameId
+ 1363              	.LVL121:
+ 1364              		.loc 1 644 3 is_stmt 0 view .LVU399
+ 1365              		.cfi_endproc
+ 1366              	.LFE857:
+ 1368              		.section	.text.ISP_GetDumpFrameId,"ax",%progbits
+ 1369              		.align	1
+ 1370              		.global	ISP_GetDumpFrameId
+ 1371              		.syntax unified
+ 1372              		.thumb
+ 1373              		.thumb_func
+ 1375              	ISP_GetDumpFrameId:
+ 1376              	.LVL122:
+ 1377              	.LFB858:
+ 645:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 646:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 647:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
+ 648:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_GetDumpFrameId
+ 649:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Return the frame ID of the last frame output on the dump pipe
+ 650:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
+ 651:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval Id of the last frame output on the dump pipe
+ 652:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
+ 653:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** uint32_t ISP_GetDumpFrameId(ISP_HandleTypeDef *hIsp)
+ 654:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** {
+ 1378              		.loc 1 654 1 is_stmt 1 view -0
+ 1379              		.cfi_startproc
+ 1380              		@ args = 0, pretend = 0, frame = 0
+ 1381              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1382              		@ link register save eliminated.
+ 655:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   return ISP_SVC_Misc_GetDumpFrameId(hIsp);
+ 1383              		.loc 1 655 3 view .LVU401
+ 1384              		.loc 1 655 10 is_stmt 0 view .LVU402
+ 1385 0000 FFF7FEBF 		b	ISP_SVC_Misc_GetDumpFrameId
+ 1386              	.LVL123:
+ 1387              		.loc 1 655 10 view .LVU403
+ 1388              		.cfi_endproc
+ 1389              	.LFE858:
+ 1391              		.section	.rodata.ISP_OutputMeta.str1.1,"aMS",%progbits,1
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 40
+
+
+ 1392              	.LC6:
+ 1393 0000 4D657461 		.ascii	"Meta[%ld]: L = %d, TG = %ld, G = %ld, E = %ld, CT ="
+ 1393      5B256C64 
+ 1393      5D3A204C 
+ 1393      203D2025 
+ 1393      642C2054 
+ 1394 0033 20256C64 		.ascii	" %ld\015\012\000"
+ 1394      0D0A00
+ 1395              		.section	.text.ISP_OutputMeta,"ax",%progbits
+ 1396              		.align	1
+ 1397              		.global	ISP_OutputMeta
+ 1398              		.syntax unified
+ 1399              		.thumb
+ 1400              		.thumb_func
+ 1402              	ISP_OutputMeta:
+ 1403              	.LVL124:
+ 1404              	.LFB859:
+ 656:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 657:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 658:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
+ 659:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_OutputMeta
+ 660:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Print out ISP Meta data for test or debug purpose
+ 661:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
+ 662:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval None
+ 663:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
+ 664:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** void ISP_OutputMeta(ISP_HandleTypeDef *hIsp)
+ 665:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** {
+ 1405              		.loc 1 665 1 is_stmt 1 view -0
+ 1406              		.cfi_startproc
+ 1407              		@ args = 0, pretend = 0, frame = 0
+ 1408              		@ frame_needed = 0, uses_anonymous_args = 0
+ 666:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   extern ISP_MetaTypeDef Meta;
+ 1409              		.loc 1 666 3 view .LVU405
+ 667:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
+ 668:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (Meta.outputEnable)
+ 1410              		.loc 1 668 3 view .LVU406
+ 665:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   extern ISP_MetaTypeDef Meta;
+ 1411              		.loc 1 665 1 is_stmt 0 view .LVU407
+ 1412 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 1413              		.cfi_def_cfa_offset 24
+ 1414              		.cfi_offset 14, -4
+ 1415              		.loc 1 668 11 view .LVU408
+ 1416 0002 094A     		ldr	r2, .L95
+ 1417              		.loc 1 668 6 view .LVU409
+ 1418 0004 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 1419 0006 5BB1     		cbz	r3, .L90
+ 669:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
+ 670:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     printf("Meta[%ld]: L = %d, TG = %ld, G = %ld, E = %ld, CT = %ld\r\n", hIsp->MainPipe_FrameCount
+ 1420              		.loc 1 670 5 is_stmt 1 view .LVU410
+ 1421 0008 1369     		ldr	r3, [r2, #16]
+ 1422 000a 0293     		str	r3, [sp, #8]
+ 1423 000c D368     		ldr	r3, [r2, #12]
+ 1424 000e 0193     		str	r3, [sp, #4]
+ 1425 0010 9368     		ldr	r3, [r2, #8]
+ 1426 0012 0093     		str	r3, [sp]
+ 1427 0014 5368     		ldr	r3, [r2, #4]
+ 1428 0016 016C     		ldr	r1, [r0, #64]
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 41
+
+
+ 1429 0018 5278     		ldrb	r2, [r2, #1]	@ zero_extendqisi2
+ 1430 001a 0448     		ldr	r0, .L95+4
+ 1431              	.LVL125:
+ 1432              		.loc 1 670 5 is_stmt 0 view .LVU411
+ 1433 001c FFF7FEFF 		bl	printf
+ 1434              	.LVL126:
+ 1435              	.L90:
+ 671:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
+ 672:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
+ 1436              		.loc 1 672 1 view .LVU412
+ 1437 0020 05B0     		add	sp, sp, #20
+ 1438              		.cfi_def_cfa_offset 4
+ 1439              		@ sp needed
+ 1440 0022 5DF804FB 		ldr	pc, [sp], #4
+ 1441              	.L96:
+ 1442 0026 00BF     		.align	2
+ 1443              	.L95:
+ 1444 0028 00000000 		.word	Meta
+ 1445 002c 00000000 		.word	.LC6
+ 1446              		.cfi_endproc
+ 1447              	.LFE859:
+ 1449              		.text
+ 1450              	.Letext0:
+ 1451              		.file 2 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 1452              		.file 3 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 1453              		.file 4 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 1454              		.file 5 "../../Middlewares/Camera_Middleware/ISP_Library/isp/Inc/isp_core.h"
+ 1455              		.file 6 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 1456              		.file 7 "../../Middlewares/Camera_Middleware/ISP_Library/isp/Inc/isp_services.h"
+ 1457              		.file 8 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 1458              		.file 9 "../../Middlewares/Camera_Middleware/ISP_Library/isp/Inc/isp_algo.h"
+ 1459              		.file 10 "<built-in>"
+ 1460              		.file 11 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltoo
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 42
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 isp_core.c
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:45     .text.ISP_Init:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:51     .text.ISP_Init:00000000 ISP_Init
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:286    .text.ISP_Init:000000e0 $d
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:296    .text.ISP_DeInit:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:302    .text.ISP_DeInit:00000000 ISP_DeInit
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:351    .text.ISP_Start:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:357    .text.ISP_Start:00000000 ISP_Start
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:637    .text.ISP_Start:00000138 $d
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:643    .text.ISP_BackgroundProcess:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:649    .text.ISP_BackgroundProcess:00000000 ISP_BackgroundProcess
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:699    .text.ISP_SetExposureTarget:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:705    .text.ISP_SetExposureTarget:00000000 ISP_SetExposureTarget
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:759    .text.ISP_SetExposureTarget:00000038 $d
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:765    .text.ISP_GetExposureTarget:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:771    .text.ISP_GetExposureTarget:00000000 ISP_GetExposureTarget
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:814    .text.ISP_SetAECState:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:820    .text.ISP_SetAECState:00000000 ISP_SetAECState
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:853    .text.ISP_GetAECState:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:859    .text.ISP_GetAECState:00000000 ISP_GetAECState
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:894    .text.ISP_ListWBRefModes:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:900    .text.ISP_ListWBRefModes:00000000 ISP_ListWBRefModes
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:939    .text.ISP_SetWBRefMode:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:945    .text.ISP_SetWBRefMode:00000000 ISP_SetWBRefMode
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1112   .text.ISP_GetWBRefMode:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1118   .text.ISP_GetWBRefMode:00000000 ISP_GetWBRefMode
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1166   .text.ISP_GetDecimationFactor:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1172   .text.ISP_GetDecimationFactor:00000000 ISP_GetDecimationFactor
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1189   .text.ISP_SetStatArea:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1195   .text.ISP_SetStatArea:00000000 ISP_SetStatArea
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1212   .text.ISP_GetStatArea:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1218   .text.ISP_GetStatArea:00000000 ISP_GetStatArea
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1235   .text.ISP_GatherStatistics:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1241   .text.ISP_GatherStatistics:00000000 ISP_GatherStatistics
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1257   .text.ISP_IncMainFrameId:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1263   .text.ISP_IncMainFrameId:00000000 ISP_IncMainFrameId
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1279   .text.ISP_GetMainFrameId:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1285   .text.ISP_GetMainFrameId:00000000 ISP_GetMainFrameId
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1302   .text.ISP_IncAncillaryFrameId:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1308   .text.ISP_IncAncillaryFrameId:00000000 ISP_IncAncillaryFrameId
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1324   .text.ISP_GetAncillaryFrameId:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1330   .text.ISP_GetAncillaryFrameId:00000000 ISP_GetAncillaryFrameId
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1347   .text.ISP_IncDumpFrameId:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1353   .text.ISP_IncDumpFrameId:00000000 ISP_IncDumpFrameId
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1369   .text.ISP_GetDumpFrameId:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1375   .text.ISP_GetDumpFrameId:00000000 ISP_GetDumpFrameId
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1396   .text.ISP_OutputMeta:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1402   .text.ISP_OutputMeta:00000000 ISP_OutputMeta
+C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s:1444   .text.ISP_OutputMeta:00000028 $d
+                           .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
+                           .group:00000000 wm4.isp_conf.h.21.f38432dbfef47e2ce2a64e60ef6a2d79
+                           .group:00000000 wm4.stm32n6xx_hal_conf.h.21.e6f895f5dec93fd886896ef3aa220611
+                           .group:00000000 wm4.stddef.h.39.0dc9006b34572d4d9cae4c8b422c4971
+                           .group:00000000 wm4.arm_cmse.h.103.a0d15a79c4c9a67da8d5831704d7248e
+                           .group:00000000 wm4.stm32n6xx.h.34.80585dd08aa426c932f6311fdb7386da
+                           .group:00000000 wm4.stm32n657xx.h.26.acd272cb67318cc1a4791ce2f0720ca6
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 43
+
+
+                           .group:00000000 wm4._newlib_version.h.4.411db44ea2338a62eca2f0777f81481b
+                           .group:00000000 wm4.features.h.33.e0c9f337c65cb9f22ed5f23d082bc78b
+                           .group:00000000 wm4._default_types.h.15.247e5cd201eca3442cbf5404108c4935
+                           .group:00000000 wm4._intsup.h.10.48bafbb683905c4daa4565a85aeeb264
+                           .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+                           .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+                           .group:00000000 wm4.cmsis_version.h.32.0ac195c83bb4537824e6ad1c47474b79
+                           .group:00000000 wm4.core_cm55.h.68.832d5cf835639cc0d28219c3d2867330
+                           .group:00000000 wm4.cmsis_gcc.h.26.7a5fd1a99dbedde687044a4433ab3e15
+                           .group:00000000 wm4.core_cm55.h.196.52e437a270752da561676e507b35baeb
+                           .group:00000000 wm4.mpu_armv8.h.32.9d72426c8e2b47753456dcb84802c5b3
+                           .group:00000000 wm4.pmu_armv8.h.32.eaa95f88a71b29390b135fd81c071b6b
+                           .group:00000000 wm4.core_cm55.h.4411.860dad8650880893dd57b815844f7186
+                           .group:00000000 wm4.cachel1_armv7.h.32.abd77761a989e008b0c60891114a33c7
+                           .group:00000000 wm4.stm32n657xx.h.575.1c2a5e6bedffc6f9083dcc857bc6d09d
+                           .group:00000000 wm4.stm32n6xx.h.114.5cf793d8af485e14f110e3e24bde1aa5
+                           .group:00000000 wm4.stm32_hal_legacy.h.22.87fb12bf5a1a1e00fc134f22bc9aa8c4
+                           .group:00000000 wm4.newlib.h.7.a37ffbe9e5aff74303f4e60b1cc1c01b
+                           .group:00000000 wm4.ieeefp.h.77.bd5feb87d9990dd328793ced294f6a87
+                           .group:00000000 wm4.config.h.224.10ee1ad185d877c6e334e6581faab44d
+                           .group:00000000 wm4._ansi.h.31.de524f58584151836e90d8620a16f8e8
+                           .group:00000000 wm4.cdefs.h.49.70fc7af612f78ddcace70fdd90b5623b
+                           .group:00000000 wm4._types.h.20.dd0d04dca3800a0d2a6129b87f3adbb2
+                           .group:00000000 wm4.stddef.h.158.6f8e08a347b1cff664332fa350bfceb3
+                           .group:00000000 wm4._types.h.127.3bdfe3ff8ea2d0985b03d9cbe93480e3
+                           .group:00000000 wm4.reent.h.18.25503cdc8b7e55dd0d6ea7b3e5af7a03
+                           .group:00000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
+                           .group:00000000 wm4.reent.h.78.6b87466b04591b1f1cb88c14fdf2ba9e
+                           .group:00000000 wm4.math.h.13.47cfc34cae8a1153323939c4d32cf7c2
+                           .group:00000000 wm4.stm32n6xx_hal_def.h.63.3a8f01490e8852464e9fcb69092e9c75
+                           .group:00000000 wm4.stm32n6xx_ll_bus.h.38.2366a295ee4cdb04833997d3787fcd2d
+                           .group:00000000 wm4.stm32n6xx_ll_rcc.h.21.002e22a16fd7f67dde6dce41e8ba9620
+                           .group:00000000 wm4.stm32n6xx_hal_rcc.h.194.1cb1283e40f9bebcd3fba2a9a961838e
+                           .group:00000000 wm4.stm32n6xx_hal_rcc_ex.h.21.79aa32178dfef625fbd20d362449acfa
+                           .group:00000000 wm4.stm32n6xx_hal_rcc.h.4359.3f0b7ad33826d95438602c9aebc08af9
+                           .group:00000000 wm4.stm32n6xx_hal_gpio.h.21.89d54af663b98eb8fc098192053f7eeb
+                           .group:00000000 wm4.stm32n6xx_hal_gpio_ex.h.22.4acb2e3511a98bb48b81cfc8e09fd59e
+                           .group:00000000 wm4.stm32n6xx_hal_rif.h.21.424d0bafb874a777dee3742a22e13037
+                           .group:00000000 wm4.stm32n6xx_hal_dma.h.21.61e48c5c2e8d25d22177834b232fe45c
+                           .group:00000000 wm4.stm32n6xx_hal_dma_ex.h.21.66e597beb090a165329d6ccf665e41bc
+                           .group:00000000 wm4.stm32n6xx_hal_dma.h.1020.87e2180c009560b617c1f8208140c950
+                           .group:00000000 wm4.stm32n6xx_hal_cortex.h.21.f493623cc58f9454ab4eae41e395c5cc
+                           .group:00000000 wm4.stm32n6xx_hal_bsec.h.21.61b309e67dd810e28897a01b1b21a97f
+                           .group:00000000 wm4.stm32n6xx_hal_dcmipp.h.21.f538bfd785c6469670251ac9bc7af55d
+                           .group:00000000 wm4.stm32n6xx_hal_dma2d.h.21.75c8d46cdbb72970123b3f34ae2043d7
+                           .group:00000000 wm4.stm32n6xx_hal_exti.h.21.fda87e715ea6b98239ec30171d1df594
+                           .group:00000000 wm4.stm32n6xx_hal_i2c.h.21.3f483626ff64c5bf027265bb2e1d1331
+                           .group:00000000 wm4.stm32n6xx_hal_i2c_ex.h.21.79e9196c22282cdaf6b4047893638c45
+                           .group:00000000 wm4.stm32n6xx_hal_i2c.h.741.1084702632703acc669e4282b3043372
+                           .group:00000000 wm4.stm32n6xx_hal_ltdc.h.21.ae1eb09930e7e550e48e418ac5849e4d
+                           .group:00000000 wm4.stm32n6xx_hal_ltdc.h.1002.b13ede7fc94ed5ad1c6768a157d2149a
+                           .group:00000000 wm4.stm32n6xx_hal_pwr.h.21.cdb73e4869c3fed3fc84f901ec0e5f0a
+                           .group:00000000 wm4.stm32n6xx_hal_pwr_ex.h.21.1a673224a58b0c1e5fad8eeda6514208
+                           .group:00000000 wm4.stm32n6xx_hal_ramcfg.h.21.a62dfbb4d2c14e9a8c634a215e37bd3d
+                           .group:00000000 wm4.stm32n6xx_hal_uart.h.21.230f549bfa0d5ebfd77bfb311b2aca15
+                           .group:00000000 wm4.stm32n6xx_hal_uart_ex.h.21.a0d5511e1d0703b7b5278c8f5472b96d
+                           .group:00000000 wm4.stm32n6xx_hal_xspi.h.21.e17898be2073b6b6b19faf30b4e304e9
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccPnh0DO.s 			page 44
+
+
+                           .group:00000000 wm4.stm32n6xx_hal_cacheaxi.h.21.7c3375b7903ec42376e4883320997f74
+                           .group:00000000 wm4.stm32n6xx_hal.h.81.5e59143eba07faca3e9aeaa5470826c8
+                           .group:00000000 wm4.stdio.h.27.3fc80220048df77954e38daec3bb9670
+                           .group:00000000 wm4.stddef.h.158.eec8bf00b5213f43d095cb984c5f22e3
+                           .group:00000000 wm4.stdarg.h.34.3a23a216c0c293b3d2ea2e89281481e6
+                           .group:00000000 wm4.stdio.h.47.dc31ec4674d7bcb103c9f08809549f45
+                           .group:00000000 wm4.stdio.h.2.4aa87247282eca6c8f36f9de33d8df1a
+                           .group:00000000 wm4.stdio.h.87.a1e20d2651f9bfb66e51bfbe849db00a
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.alloca.h.8.dfc0c703c47ec3e69746825b17d9e66d
+                           .group:00000000 wm4.stdlib.h.56.f4862cfbf4363a1db01842d5bdf72c18
+                           .group:00000000 wm4.string.h.8.c4b8571ce60dff2817f43fec8b86aecd
+                           .group:00000000 wm4.string.h.177.59a005921fa78485abc80a0267de5752
+                           .group:00000000 wm4.stdbool.h.29.c08aa3eec75cf5b9b5003883f43253f0
+                           .group:00000000 wm4.isp_core.h.109.be5387f515355b6edcb70af2607f9a68
+                           .group:00000000 wm4.isp_services.h.21.f6afe252b91009bd496824308ceeaa74
+
+UNDEFINED SYMBOLS
+memset
+puts
+ISP_SVC_IQParam_Init
+ISP_SVC_Sensor_GetInfo
+ISP_SVC_ISP_SetDecimation
+ISP_Algo_Init
+ISP_SVC_Stats_Init
+ISP_Algo_DeInit
+ISP_SVC_Misc_IsDCMIPPReady
+ISP_SVC_IQParam_Get
+ISP_SVC_ISP_SetDemosaicing
+ISP_SVC_ISP_SetStatRemoval
+ISP_SVC_ISP_SetContrast
+ISP_SVC_ISP_SetBadPixel
+ISP_SVC_ISP_SetBlackLevel
+ISP_SVC_ISP_SetStatArea
+ISP_SVC_Sensor_SetGain
+ISP_SVC_Sensor_SetExposure
+ISP_SVC_ISP_SetGain
+ISP_SVC_ISP_SetColorConv
+ISP_SVC_ISP_SetGamma
+pow
+ISP_SVC_Stats_ProcessCallbacks
+ISP_Algo_Process
+ISP_SVC_Misc_SetWBRefMode
+ISP_SVC_Misc_GetWBRefMode
+ISP_SVC_ISP_GetDecimation
+ISP_SVC_ISP_GetStatArea
+ISP_SVC_Stats_Gather
+ISP_SVC_Misc_IncMainFrameId
+ISP_SVC_Misc_GetMainFrameId
+ISP_SVC_Misc_IncAncillaryFrameId
+ISP_SVC_Misc_GetAncillaryFrameId
+ISP_SVC_Misc_IncDumpFrameId
+ISP_SVC_Misc_GetDumpFrameId
+printf
+Meta

@@ -1,0 +1,1268 @@
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s 			page 1
+
+
+   1              		.arch armv8.1-m.main
+   2              		.fpu fpv5-d16
+   3              		.arch_extension dsp
+   4              		.arch_extension fp
+   5              		.arch_extension fp.dp
+   6              		.arch_extension mve
+   7              		.arch_extension mve.fp
+   8              		.eabi_attribute 5, "cortex-m55"
+   9              		.eabi_attribute 28, 1
+  10              		.eabi_attribute 20, 1
+  11              		.eabi_attribute 21, 1
+  12              		.eabi_attribute 23, 3
+  13              		.eabi_attribute 24, 1
+  14              		.eabi_attribute 25, 1
+  15              		.eabi_attribute 26, 1
+  16              		.eabi_attribute 30, 4
+  17              		.eabi_attribute 34, 1
+  18              		.eabi_attribute 38, 1
+  19              		.eabi_attribute 18, 4
+  20              		.file	"vision_models_pp.c"
+  21              		.text
+  22              	.Ltext0:
+  23              		.cfi_sections	.debug_frame
+  24              		.file 1 "../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c"
+  25              		.section	.text.vision_models_sigmoid_f,"ax",%progbits
+  26              		.align	1
+  27              		.global	vision_models_sigmoid_f
+  28              		.syntax unified
+  29              		.thumb
+  30              		.thumb_func
+  32              	vision_models_sigmoid_f:
+  33              	.LVL0:
+  34              	.LFB2645:
+   1:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** /*---------------------------------------------------------------------------------------------
+   2:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****  * Copyright (c) 2023 STMicroelectronics.
+   3:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****  * All rights reserved.
+   4:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****  *
+   5:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****  * This software is licensed under terms that can be found in the LICENSE file in
+   6:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****  * the root directory of this software component.
+   7:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****  * If no LICENSE file comes with this software, it is provided AS-IS.
+   8:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****  *--------------------------------------------------------------------------------------------*/
+   9:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** 
+  10:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** #include "vision_models_pp.h"
+  11:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** 
+  12:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** 
+  13:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** 
+  14:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** float32_t vision_models_sigmoid_f(float32_t x)
+  15:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** {
+  35              		.loc 1 15 1 view -0
+  36              		.cfi_startproc
+  37              		@ args = 0, pretend = 0, frame = 0
+  38              		@ frame_needed = 0, uses_anonymous_args = 0
+  16:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   return (1.0f / (1.0f + expf(-x)));
+  39              		.loc 1 16 3 view .LVU1
+  15:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   return (1.0f / (1.0f + expf(-x)));
+  40              		.loc 1 15 1 is_stmt 0 view .LVU2
+  41 0000 08B5     		push	{r3, lr}
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s 			page 2
+
+
+  42              		.cfi_def_cfa_offset 8
+  43              		.cfi_offset 3, -8
+  44              		.cfi_offset 14, -4
+  45              		.loc 1 16 26 view .LVU3
+  46 0002 B1EE400A 		vneg.f32	s0, s0
+  47              	.LVL1:
+  48              		.loc 1 16 26 view .LVU4
+  49 0006 FFF7FEFF 		bl	expf
+  50              	.LVL2:
+  51              		.loc 1 16 24 discriminator 1 view .LVU5
+  52 000a F7EE007A 		vmov.f32	s15, #1.0e+0
+  53 000e 30EE270A 		vadd.f32	s0, s0, s15
+  17:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** }
+  54              		.loc 1 17 1 view .LVU6
+  55 0012 87EE800A 		vdiv.f32	s0, s15, s0
+  56 0016 08BD     		pop	{r3, pc}
+  57              		.cfi_endproc
+  58              	.LFE2645:
+  60              		.section	.text.vision_models_softmax_f,"ax",%progbits
+  61              		.align	1
+  62              		.global	vision_models_softmax_f
+  63              		.syntax unified
+  64              		.thumb
+  65              		.thumb_func
+  67              	vision_models_softmax_f:
+  68              	.LVL3:
+  69              	.LFB2646:
+  18:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** 
+  19:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** 
+  20:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** void vision_models_softmax_f(float32_t *input_x, float32_t *output_x, int32_t len_x, float32_t *tmp
+  21:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** {
+  70              		.loc 1 21 1 is_stmt 1 view -0
+  71              		.cfi_startproc
+  72              		@ args = 0, pretend = 0, frame = 0
+  73              		@ frame_needed = 0, uses_anonymous_args = 0
+  22:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t sum = 0;
+  74              		.loc 1 22 3 view .LVU8
+  23:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** 
+  24:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   for (int32_t i = 0; i < len_x; ++i)
+  75              		.loc 1 24 3 view .LVU9
+  76              	.LBB2:
+  77              		.loc 1 24 8 view .LVU10
+  78              		.loc 1 24 8 is_stmt 0 view .LVU11
+  79              	.LBE2:
+  21:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t sum = 0;
+  80              		.loc 1 21 1 view .LVU12
+  81 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
+  82              		.cfi_def_cfa_offset 32
+  83              		.cfi_offset 4, -32
+  84              		.cfi_offset 5, -28
+  85              		.cfi_offset 6, -24
+  86              		.cfi_offset 7, -20
+  87              		.cfi_offset 8, -16
+  88              		.cfi_offset 9, -12
+  89              		.cfi_offset 10, -8
+  90              		.cfi_offset 14, -4
+  91 0004 0F46     		mov	r7, r1
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s 			page 3
+
+
+  92 0006 2DED028B 		vpush.64	{d8}
+  93              		.cfi_def_cfa_offset 40
+  94              		.cfi_offset 80, -40
+  95              		.cfi_offset 81, -36
+  21:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t sum = 0;
+  96              		.loc 1 21 1 view .LVU13
+  97 000a 1446     		mov	r4, r2
+  98 000c 1D46     		mov	r5, r3
+  99 000e 0646     		mov	r6, r0
+ 100 0010 9846     		mov	r8, r3
+ 101              	.LBB3:
+ 102              		.loc 1 24 3 view .LVU14
+ 103 0012 9A46     		mov	r10, r3
+ 104              		.loc 1 24 16 view .LVU15
+ 105 0014 4FF00009 		mov	r9, #0
+ 106              	.LBE3:
+  22:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t sum = 0;
+ 107              		.loc 1 22 13 view .LVU16
+ 108 0018 9FED148A 		vldr.32	s16, .L8
+ 109              	.LVL4:
+ 110              	.L3:
+ 111              	.LBB4:
+ 112              		.loc 1 24 25 is_stmt 1 discriminator 1 view .LVU17
+ 113 001c A145     		cmp	r9, r4
+ 114 001e 13DB     		blt	.L4
+ 115              	.LBE4:
+  25:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   {
+  26:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****     tmp_x[i] = expf(input_x[i]);
+  27:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****     sum = sum + tmp_x[i];
+  28:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   }
+  29:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   sum = 1.0f / sum;
+ 116              		.loc 1 29 3 view .LVU18
+ 117              		.loc 1 29 7 is_stmt 0 view .LVU19
+ 118 0020 F7EE007A 		vmov.f32	s15, #1.0e+0
+ 119 0024 002C     		cmp	r4, #0
+ 120 0026 04F10102 		add	r2, r4, #1
+ 121 002a 87EE887A 		vdiv.f32	s14, s15, s16
+ 122              	.LVL5:
+  30:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   for (int32_t i = 0; i < len_x; ++i)
+ 123              		.loc 1 30 3 is_stmt 1 view .LVU20
+ 124              	.LBB5:
+ 125              		.loc 1 30 8 view .LVU21
+ 126              		.loc 1 30 8 is_stmt 0 view .LVU22
+ 127 002e B8BF     		it	lt
+ 128 0030 0122     		movlt	r2, #1
+ 129              	.LVL6:
+ 130              	.L5:
+ 131              		.loc 1 30 25 is_stmt 1 discriminator 1 view .LVU23
+ 132 0032 013A     		subs	r2, r2, #1
+ 133 0034 13D1     		bne	.L6
+ 134              	.LBE5:
+  31:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   {
+  32:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****     tmp_x[i] *= sum;
+  33:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   }
+  34:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   memcpy(output_x, tmp_x, len_x * sizeof(float32_t));
+ 135              		.loc 1 34 3 view .LVU24
+  35:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** }
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s 			page 4
+
+
+ 136              		.loc 1 35 1 is_stmt 0 view .LVU25
+ 137 0036 BDEC028B 		vldm	sp!, {d8}
+ 138              		.cfi_remember_state
+ 139              		.cfi_restore 80
+ 140              		.cfi_restore 81
+ 141              		.cfi_def_cfa_offset 32
+  34:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** }
+ 142              		.loc 1 34 3 view .LVU26
+ 143 003a 2946     		mov	r1, r5
+ 144 003c 3846     		mov	r0, r7
+ 145 003e A200     		lsls	r2, r4, #2
+ 146              		.loc 1 35 1 view .LVU27
+ 147 0040 BDE8F047 		pop	{r4, r5, r6, r7, r8, r9, r10, lr}
+ 148              		.cfi_restore 14
+ 149              		.cfi_restore 10
+ 150              		.cfi_restore 9
+ 151              		.cfi_restore 8
+ 152              		.cfi_restore 7
+ 153              		.cfi_restore 6
+ 154              		.cfi_restore 5
+ 155              		.cfi_restore 4
+ 156              		.cfi_def_cfa_offset 0
+ 157              	.LVL7:
+  34:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** }
+ 158              		.loc 1 34 3 view .LVU28
+ 159 0044 FFF7FEBF 		b	memcpy
+ 160              	.LVL8:
+ 161              	.L4:
+ 162              		.cfi_restore_state
+ 163              	.LBB6:
+  26:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****     sum = sum + tmp_x[i];
+ 164              		.loc 1 26 5 is_stmt 1 view .LVU29
+  26:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****     sum = sum + tmp_x[i];
+ 165              		.loc 1 26 16 is_stmt 0 view .LVU30
+ 166 0048 B6EC010A 		vldmia.32	r6!, {s0}
+ 167 004c FFF7FEFF 		bl	expf
+ 168              	.LVL9:
+  24:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   {
+ 169              		.loc 1 24 34 discriminator 3 view .LVU31
+ 170 0050 09F10109 		add	r9, r9, #1
+ 171              	.LVL10:
+  26:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****     sum = sum + tmp_x[i];
+ 172              		.loc 1 26 14 discriminator 1 view .LVU32
+ 173 0054 AAEC010A 		vstmia.32	r10!, {s0}
+  27:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   }
+ 174              		.loc 1 27 5 is_stmt 1 view .LVU33
+  27:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   }
+ 175              		.loc 1 27 9 is_stmt 0 view .LVU34
+ 176 0058 38EE008A 		vadd.f32	s16, s16, s0
+ 177              	.LVL11:
+  24:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   {
+ 178              		.loc 1 24 34 is_stmt 1 discriminator 3 view .LVU35
+  24:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   {
+ 179              		.loc 1 24 34 is_stmt 0 discriminator 3 view .LVU36
+ 180 005c DEE7     		b	.L3
+ 181              	.LVL12:
+ 182              	.L6:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s 			page 5
+
+
+  24:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   {
+ 183              		.loc 1 24 34 discriminator 3 view .LVU37
+ 184              	.LBE6:
+ 185              	.LBB7:
+  32:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   }
+ 186              		.loc 1 32 5 is_stmt 1 view .LVU38
+  32:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   }
+ 187              		.loc 1 32 10 is_stmt 0 view .LVU39
+ 188 005e D8ED007A 		vldr.32	s15, [r8]
+  32:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   }
+ 189              		.loc 1 32 14 view .LVU40
+ 190 0062 67EE877A 		vmul.f32	s15, s15, s14
+ 191 0066 E8EC017A 		vstmia.32	r8!, {s15}
+  30:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   {
+ 192              		.loc 1 30 34 is_stmt 1 discriminator 3 view .LVU41
+ 193 006a E2E7     		b	.L5
+ 194              	.L9:
+ 195              		.align	2
+ 196              	.L8:
+ 197 006c 00000000 		.word	0
+ 198              	.LBE7:
+ 199              		.cfi_endproc
+ 200              	.LFE2646:
+ 202              		.section	.text.overlap,"ax",%progbits
+ 203              		.align	1
+ 204              		.global	overlap
+ 205              		.syntax unified
+ 206              		.thumb
+ 207              		.thumb_func
+ 209              	overlap:
+ 210              	.LVL13:
+ 211              	.LFB2647:
+  36:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** 
+  37:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** 
+  38:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** //***************iou ********
+  39:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** //inline
+  40:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** float32_t overlap(float32_t x1, float32_t w1, float32_t x2, float32_t w2)
+  41:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** {
+ 212              		.loc 1 41 1 view -0
+ 213              		.cfi_startproc
+ 214              		@ args = 0, pretend = 0, frame = 0
+ 215              		@ frame_needed = 0, uses_anonymous_args = 0
+ 216              		@ link register save eliminated.
+  42:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t l1 = x1 - w1 / 2;
+ 217              		.loc 1 42 3 view .LVU43
+ 218              		.loc 1 42 26 is_stmt 0 view .LVU44
+ 219 0000 F6EE007A 		vmov.f32	s15, #5.0e-1
+ 220 0004 60EEA70A 		vmul.f32	s1, s1, s15
+ 221              	.LVL14:
+  43:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t l2 = x2 - w2 / 2;
+ 222              		.loc 1 43 26 view .LVU45
+ 223 0008 61EEA71A 		vmul.f32	s3, s3, s15
+ 224              	.LVL15:
+  42:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t l1 = x1 - w1 / 2;
+ 225              		.loc 1 42 13 view .LVU46
+ 226 000c 30EE607A 		vsub.f32	s14, s0, s1
+ 227              	.LVL16:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s 			page 6
+
+
+ 228              		.loc 1 43 3 is_stmt 1 view .LVU47
+ 229              		.loc 1 43 13 is_stmt 0 view .LVU48
+ 230 0010 71EE617A 		vsub.f32	s15, s2, s3
+ 231              	.LVL17:
+  44:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t left = l1 > l2 ? l1 : l2;
+ 232              		.loc 1 44 3 is_stmt 1 view .LVU49
+  45:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t r1 = x1 + w1 / 2;
+ 233              		.loc 1 45 13 is_stmt 0 view .LVU50
+ 234 0014 70EE800A 		vadd.f32	s1, s1, s0
+  44:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t left = l1 > l2 ? l1 : l2;
+ 235              		.loc 1 44 33 discriminator 1 view .LVU51
+ 236 0018 B4EE677A 		vcmp.f32	s14, s15
+  46:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t r2 = x2 + w2 / 2;
+ 237              		.loc 1 46 13 view .LVU52
+ 238 001c 31EE811A 		vadd.f32	s2, s3, s2
+ 239              	.LVL18:
+  44:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t left = l1 > l2 ? l1 : l2;
+ 240              		.loc 1 44 33 discriminator 1 view .LVU53
+ 241 0020 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+  47:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t right = r1 < r2 ? r1 : r2;
+ 242              		.loc 1 47 34 discriminator 1 view .LVU54
+ 243 0024 F4EE410A 		vcmp.f32	s1, s2
+  44:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t r1 = x1 + w1 / 2;
+ 244              		.loc 1 44 33 discriminator 1 view .LVU55
+ 245 0028 77FE277A 		vselgt.f32	s15, s14, s15
+ 246              	.LVL19:
+  45:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t r2 = x2 + w2 / 2;
+ 247              		.loc 1 45 3 is_stmt 1 view .LVU56
+  46:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t right = r1 < r2 ? r1 : r2;
+ 248              		.loc 1 46 3 view .LVU57
+ 249              		.loc 1 47 3 view .LVU58
+ 250              		.loc 1 47 34 is_stmt 0 discriminator 1 view .LVU59
+ 251 002c F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 252 0030 48BF     		it	mi
+ 253 0032 B0EE601A 		vmovmi.f32	s2, s1
+ 254              	.LVL20:
+  48:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   return (right - left);
+ 255              		.loc 1 48 3 is_stmt 1 view .LVU60
+  49:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** }
+ 256              		.loc 1 49 1 is_stmt 0 view .LVU61
+ 257 0036 31EE670A 		vsub.f32	s0, s2, s15
+ 258              	.LVL21:
+ 259              		.loc 1 49 1 view .LVU62
+ 260 003a 7047     		bx	lr
+ 261              		.cfi_endproc
+ 262              	.LFE2647:
+ 264              		.section	.text.box_intersection,"ax",%progbits
+ 265              		.align	1
+ 266              		.global	box_intersection
+ 267              		.syntax unified
+ 268              		.thumb
+ 269              		.thumb_func
+ 271              	box_intersection:
+ 272              	.LVL22:
+ 273              	.LFB2648:
+  50:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** 
+  51:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** //inline
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s 			page 7
+
+
+  52:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** float32_t box_intersection(float32_t *a, float32_t *b)
+  53:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** {
+ 274              		.loc 1 53 1 is_stmt 1 view -0
+ 275              		.cfi_startproc
+ 276              		@ args = 0, pretend = 0, frame = 0
+ 277              		@ frame_needed = 0, uses_anonymous_args = 0
+  54:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t w = overlap(a[0], a[2], b[0], b[2]);
+ 278              		.loc 1 54 3 view .LVU64
+ 279              		.loc 1 54 17 is_stmt 0 view .LVU65
+ 280 0000 D1ED021A 		vldr.32	s3, [r1, #8]
+ 281 0004 91ED001A 		vldr.32	s2, [r1]
+ 282 0008 D0ED020A 		vldr.32	s1, [r0, #8]
+ 283 000c 90ED000A 		vldr.32	s0, [r0]
+  53:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t w = overlap(a[0], a[2], b[0], b[2]);
+ 284              		.loc 1 53 1 view .LVU66
+ 285 0010 08B5     		push	{r3, lr}
+ 286              		.cfi_def_cfa_offset 8
+ 287              		.cfi_offset 3, -8
+ 288              		.cfi_offset 14, -4
+ 289              		.loc 1 54 17 view .LVU67
+ 290 0012 FFF7FEFF 		bl	overlap
+ 291              	.LVL23:
+  55:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t h = overlap(a[1], a[3], b[1], b[3]);
+  56:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   if (w < 0 || h < 0) return 0;
+ 292              		.loc 1 56 6 view .LVU68
+ 293 0016 B5EEC00A 		vcmpe.f32	s0, #0
+ 294 001a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+  54:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t h = overlap(a[1], a[3], b[1], b[3]);
+ 295              		.loc 1 54 17 view .LVU69
+ 296 001e F0EE406A 		vmov.f32	s13, s0
+ 297              	.LVL24:
+  55:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t h = overlap(a[1], a[3], b[1], b[3]);
+ 298              		.loc 1 55 3 is_stmt 1 view .LVU70
+ 299              		.loc 1 56 3 view .LVU71
+ 300              		.loc 1 56 6 is_stmt 0 view .LVU72
+ 301 0022 11D4     		bmi	.L20
+  55:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t h = overlap(a[1], a[3], b[1], b[3]);
+ 302              		.loc 1 55 17 view .LVU73
+ 303 0024 D1ED031A 		vldr.32	s3, [r1, #12]
+ 304 0028 91ED011A 		vldr.32	s2, [r1, #4]
+ 305 002c D0ED030A 		vldr.32	s1, [r0, #12]
+ 306 0030 90ED010A 		vldr.32	s0, [r0, #4]
+ 307              	.LVL25:
+  55:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t h = overlap(a[1], a[3], b[1], b[3]);
+ 308              		.loc 1 55 17 view .LVU74
+ 309 0034 FFF7FEFF 		bl	overlap
+ 310              	.LVL26:
+ 311              		.loc 1 56 13 discriminator 2 view .LVU75
+ 312 0038 B5EEC00A 		vcmpe.f32	s0, #0
+ 313 003c F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 314 0040 02D4     		bmi	.L20
+  57:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t area = w * h;
+ 315              		.loc 1 57 3 is_stmt 1 view .LVU76
+ 316              		.loc 1 57 13 is_stmt 0 view .LVU77
+ 317 0042 26EE800A 		vmul.f32	s0, s13, s0
+ 318              	.LVL27:
+  58:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   return (area);
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s 			page 8
+
+
+ 319              		.loc 1 58 3 is_stmt 1 view .LVU78
+ 320              	.L17:
+  59:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** }
+ 321              		.loc 1 59 1 is_stmt 0 view .LVU79
+ 322 0046 08BD     		pop	{r3, pc}
+ 323              	.L20:
+  56:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t area = w * h;
+ 324              		.loc 1 56 30 discriminator 3 view .LVU80
+ 325 0048 9FED010A 		vldr.32	s0, .L21
+ 326 004c FBE7     		b	.L17
+ 327              	.L22:
+ 328 004e 00BF     		.align	2
+ 329              	.L21:
+ 330 0050 00000000 		.word	0
+ 331              		.cfi_endproc
+ 332              	.LFE2648:
+ 334              		.section	.text.box_union,"ax",%progbits
+ 335              		.align	1
+ 336              		.global	box_union
+ 337              		.syntax unified
+ 338              		.thumb
+ 339              		.thumb_func
+ 341              	box_union:
+ 342              	.LVL28:
+ 343              	.LFB2649:
+  60:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** 
+  61:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** //inline
+  62:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** float32_t box_union(float32_t *a, float32_t *b)
+  63:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** {
+ 344              		.loc 1 63 1 is_stmt 1 view -0
+ 345              		.cfi_startproc
+ 346              		@ args = 0, pretend = 0, frame = 0
+ 347              		@ frame_needed = 0, uses_anonymous_args = 0
+  64:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t i = box_intersection(a, b);
+ 348              		.loc 1 64 3 view .LVU82
+  63:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t i = box_intersection(a, b);
+ 349              		.loc 1 63 1 is_stmt 0 view .LVU83
+ 350 0000 10B5     		push	{r4, lr}
+ 351              		.cfi_def_cfa_offset 8
+ 352              		.cfi_offset 4, -8
+ 353              		.cfi_offset 14, -4
+ 354              		.loc 1 64 17 view .LVU84
+ 355 0002 FFF7FEFF 		bl	box_intersection
+ 356              	.LVL29:
+  65:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t u = a[2] * a[3] + b[2] * b[3] - i;
+ 357              		.loc 1 65 3 is_stmt 1 view .LVU85
+ 358              		.loc 1 65 36 is_stmt 0 view .LVU86
+ 359 0006 91ED037A 		vldr.32	s14, [r1, #12]
+ 360 000a D1ED027A 		vldr.32	s15, [r1, #8]
+ 361              		.loc 1 65 29 view .LVU87
+ 362 000e D0ED026A 		vldr.32	s13, [r0, #8]
+ 363              		.loc 1 65 36 view .LVU88
+ 364 0012 67EE877A 		vmul.f32	s15, s15, s14
+ 365              		.loc 1 65 29 view .LVU89
+ 366 0016 90ED037A 		vldr.32	s14, [r0, #12]
+ 367 001a E6EE877A 		vfma.f32	s15, s13, s14
+ 368              	.LVL30:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s 			page 9
+
+
+  66:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   return (u);
+ 369              		.loc 1 66 3 is_stmt 1 view .LVU90
+  67:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** }
+ 370              		.loc 1 67 1 is_stmt 0 view .LVU91
+ 371 001e 37EEC00A 		vsub.f32	s0, s15, s0
+ 372              	.LVL31:
+ 373              		.loc 1 67 1 view .LVU92
+ 374 0022 10BD     		pop	{r4, pc}
+ 375              		.cfi_endproc
+ 376              	.LFE2649:
+ 378              		.section	.text.vision_models_box_iou,"ax",%progbits
+ 379              		.align	1
+ 380              		.global	vision_models_box_iou
+ 381              		.syntax unified
+ 382              		.thumb
+ 383              		.thumb_func
+ 385              	vision_models_box_iou:
+ 386              	.LVL32:
+ 387              	.LFB2650:
+  68:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** 
+  69:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** 
+  70:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** float32_t vision_models_box_iou(float32_t *a, float32_t *b)
+  71:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** {
+ 388              		.loc 1 71 1 is_stmt 1 view -0
+ 389              		.cfi_startproc
+ 390              		@ args = 0, pretend = 0, frame = 0
+ 391              		@ frame_needed = 0, uses_anonymous_args = 0
+  72:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t I = box_intersection(a, b);
+ 392              		.loc 1 72 3 view .LVU94
+  71:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t I = box_intersection(a, b);
+ 393              		.loc 1 71 1 is_stmt 0 view .LVU95
+ 394 0000 08B5     		push	{r3, lr}
+ 395              		.cfi_def_cfa_offset 8
+ 396              		.cfi_offset 3, -8
+ 397              		.cfi_offset 14, -4
+ 398              		.loc 1 72 17 view .LVU96
+ 399 0002 FFF7FEFF 		bl	box_intersection
+ 400              	.LVL33:
+  73:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t U = box_union(a, b);
+  74:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****  if (I == 0 || U == 0)
+ 401              		.loc 1 74 5 view .LVU97
+ 402 0006 B5EE400A 		vcmp.f32	s0, #0
+ 403 000a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+  72:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t U = box_union(a, b);
+ 404              		.loc 1 72 17 view .LVU98
+ 405 000e B0EE406A 		vmov.f32	s12, s0
+ 406              	.LVL34:
+  73:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t U = box_union(a, b);
+ 407              		.loc 1 73 3 is_stmt 1 view .LVU99
+ 408              		.loc 1 74 2 view .LVU100
+ 409              		.loc 1 74 5 is_stmt 0 view .LVU101
+ 410 0012 0BD0     		beq	.L27
+  73:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t U = box_union(a, b);
+ 411              		.loc 1 73 17 view .LVU102
+ 412 0014 FFF7FEFF 		bl	box_union
+ 413              	.LVL35:
+ 414              		.loc 1 74 13 discriminator 1 view .LVU103
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s 			page 10
+
+
+ 415 0018 B5EE400A 		vcmp.f32	s0, #0
+ 416 001c F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+  73:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t U = box_union(a, b);
+ 417              		.loc 1 73 17 view .LVU104
+ 418 0020 F0EE407A 		vmov.f32	s15, s0
+ 419              		.loc 1 74 13 discriminator 1 view .LVU105
+ 420 0024 02D0     		beq	.L27
+  75:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   {
+  76:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****     return 0;
+  77:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   }
+  78:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   return (I / U);
+ 421              		.loc 1 78 3 is_stmt 1 view .LVU106
+ 422              		.loc 1 78 13 is_stmt 0 view .LVU107
+ 423 0026 86EE270A 		vdiv.f32	s0, s12, s15
+ 424              	.L24:
+  79:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** }
+ 425              		.loc 1 79 1 view .LVU108
+ 426 002a 08BD     		pop	{r3, pc}
+ 427              	.L27:
+  76:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   }
+ 428              		.loc 1 76 12 view .LVU109
+ 429 002c 9FED010A 		vldr.32	s0, .L28
+ 430 0030 FBE7     		b	.L24
+ 431              	.L29:
+ 432 0032 00BF     		.align	2
+ 433              	.L28:
+ 434 0034 00000000 		.word	0
+ 435              		.cfi_endproc
+ 436              	.LFE2650:
+ 438              		.section	.text.twice_overlap_int,"ax",%progbits
+ 439              		.align	1
+ 440              		.global	twice_overlap_int
+ 441              		.syntax unified
+ 442              		.thumb
+ 443              		.thumb_func
+ 445              	twice_overlap_int:
+ 446              	.LVL36:
+ 447              	.LFB2651:
+  80:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** 
+  81:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** int32_t twice_overlap_int(int32_t x1, int32_t w1, int32_t x2, int32_t w2)
+  82:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** {
+ 448              		.loc 1 82 1 is_stmt 1 view -0
+ 449              		.cfi_startproc
+ 450              		@ args = 0, pretend = 0, frame = 0
+ 451              		@ frame_needed = 0, uses_anonymous_args = 0
+  83:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t l1 = x1 * 2 - w1 ;
+ 452              		.loc 1 83 3 view .LVU111
+  84:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t l2 = x2 * 2 - w2;
+ 453              		.loc 1 84 3 view .LVU112
+  85:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t left = l1 > l2 ? l1 : l2;
+ 454              		.loc 1 85 3 view .LVU113
+  86:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t r1 = x1 * 2 + w1;
+ 455              		.loc 1 86 3 view .LVU114
+  87:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t r2 = x2 * 2 + w2;
+ 456              		.loc 1 87 3 view .LVU115
+  88:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t right = r1 < r2 ? r1 : r2;
+ 457              		.loc 1 88 3 view .LVU116
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s 			page 11
+
+
+  89:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   return (right - left);
+ 458              		.loc 1 89 3 view .LVU117
+  82:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t l1 = x1 * 2 - w1 ;
+ 459              		.loc 1 82 1 is_stmt 0 view .LVU118
+ 460 0000 30B5     		push	{r4, r5, lr}
+ 461              		.cfi_def_cfa_offset 12
+ 462              		.cfi_offset 4, -12
+ 463              		.cfi_offset 5, -8
+ 464              		.cfi_offset 14, -4
+  86:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t r2 = x2 * 2 + w2;
+ 465              		.loc 1 86 11 view .LVU119
+ 466 0002 01EB4005 		add	r5, r1, r0, lsl #1
+ 467              	.LVL37:
+  87:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t right = r1 < r2 ? r1 : r2;
+ 468              		.loc 1 87 11 view .LVU120
+ 469 0006 03EB4204 		add	r4, r3, r2, lsl #1
+ 470              	.LVL38:
+  83:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t l2 = x2 * 2 - w2;
+ 471              		.loc 1 83 11 view .LVU121
+ 472 000a C1EB4000 		rsb	r0, r1, r0, lsl #1
+ 473              	.LVL39:
+  84:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t left = l1 > l2 ? l1 : l2;
+ 474              		.loc 1 84 11 view .LVU122
+ 475 000e C3EB4203 		rsb	r3, r3, r2, lsl #1
+ 476              	.LVL40:
+  85:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t r1 = x1 * 2 + w1;
+ 477              		.loc 1 85 11 view .LVU123
+ 478 0012 9842     		cmp	r0, r3
+ 479 0014 B8BF     		it	lt
+ 480 0016 1846     		movlt	r0, r3
+ 481              	.LVL41:
+  90:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** }
+ 482              		.loc 1 90 1 view .LVU124
+ 483 0018 A542     		cmp	r5, r4
+ 484 001a D4BF     		ite	le
+ 485 001c C0EB0500 		rsble	r0, r0, r5
+ 486 0020 C0EB0400 		rsbgt	r0, r0, r4
+ 487 0024 30BD     		pop	{r4, r5, pc}
+ 488              		.loc 1 90 1 view .LVU125
+ 489              		.cfi_endproc
+ 490              	.LFE2651:
+ 492              		.section	.text.box_intersection_is8,"ax",%progbits
+ 493              		.align	1
+ 494              		.global	box_intersection_is8
+ 495              		.syntax unified
+ 496              		.thumb
+ 497              		.thumb_func
+ 499              	box_intersection_is8:
+ 500              	.LVL42:
+ 501              	.LFB2652:
+  91:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** 
+  92:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** //inline
+  93:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** int32_t box_intersection_is8(int32_t *a, int32_t *b)
+  94:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** {
+ 502              		.loc 1 94 1 is_stmt 1 view -0
+ 503              		.cfi_startproc
+ 504              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s 			page 12
+
+
+ 505              		@ frame_needed = 0, uses_anonymous_args = 0
+  95:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t w = twice_overlap_int(a[0], a[2], b[0], b[2]);
+ 506              		.loc 1 95 3 view .LVU127
+  94:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t w = twice_overlap_int(a[0], a[2], b[0], b[2]);
+ 507              		.loc 1 94 1 is_stmt 0 view .LVU128
+ 508 0000 70B5     		push	{r4, r5, r6, lr}
+ 509              		.cfi_def_cfa_offset 16
+ 510              		.cfi_offset 4, -16
+ 511              		.cfi_offset 5, -12
+ 512              		.cfi_offset 6, -8
+ 513              		.cfi_offset 14, -4
+ 514              		.loc 1 95 15 view .LVU129
+ 515 0002 8B68     		ldr	r3, [r1, #8]
+ 516 0004 0A68     		ldr	r2, [r1]
+  94:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t w = twice_overlap_int(a[0], a[2], b[0], b[2]);
+ 517              		.loc 1 94 1 view .LVU130
+ 518 0006 0546     		mov	r5, r0
+ 519 0008 0E46     		mov	r6, r1
+ 520              		.loc 1 95 15 view .LVU131
+ 521 000a 8168     		ldr	r1, [r0, #8]
+ 522              	.LVL43:
+ 523              		.loc 1 95 15 view .LVU132
+ 524 000c 0068     		ldr	r0, [r0]
+ 525              	.LVL44:
+ 526              		.loc 1 95 15 view .LVU133
+ 527 000e FFF7FEFF 		bl	twice_overlap_int
+ 528              	.LVL45:
+  96:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t h = twice_overlap_int(a[1], a[3], b[1], b[3]);
+ 529              		.loc 1 96 3 is_stmt 1 view .LVU134
+  97:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   if (w < 0 || h < 0) return 0;
+ 530              		.loc 1 97 3 view .LVU135
+ 531              		.loc 1 97 6 is_stmt 0 view .LVU136
+ 532 0012 041E     		subs	r4, r0, #0
+ 533 0014 0BDB     		blt	.L33
+  96:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t h = twice_overlap_int(a[1], a[3], b[1], b[3]);
+ 534              		.loc 1 96 15 view .LVU137
+ 535 0016 F368     		ldr	r3, [r6, #12]
+ 536 0018 7268     		ldr	r2, [r6, #4]
+ 537 001a E968     		ldr	r1, [r5, #12]
+ 538 001c 6868     		ldr	r0, [r5, #4]
+ 539              	.LVL46:
+  96:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t h = twice_overlap_int(a[1], a[3], b[1], b[3]);
+ 540              		.loc 1 96 15 view .LVU138
+ 541 001e FFF7FEFF 		bl	twice_overlap_int
+ 542              	.LVL47:
+  98:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t area = w * h;
+ 543              		.loc 1 98 11 view .LVU139
+ 544 0022 4443     		muls	r4, r0, r4
+ 545              	.LVL48:
+ 546              		.loc 1 98 11 view .LVU140
+ 547 0024 0028     		cmp	r0, #0
+ 548 0026 ACBF     		ite	ge
+ 549 0028 2046     		movge	r0, r4
+ 550 002a 0020     		movlt	r0, #0
+ 551              	.L31:
+  99:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   return (area);
+ 100:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** }
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s 			page 13
+
+
+ 552              		.loc 1 100 1 view .LVU141
+ 553 002c 70BD     		pop	{r4, r5, r6, pc}
+ 554              	.LVL49:
+ 555              	.L33:
+  97:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t area = w * h;
+ 556              		.loc 1 97 30 discriminator 3 view .LVU142
+ 557 002e 0020     		movs	r0, #0
+ 558              	.LVL50:
+  97:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t area = w * h;
+ 559              		.loc 1 97 30 discriminator 3 view .LVU143
+ 560 0030 FCE7     		b	.L31
+ 561              		.cfi_endproc
+ 562              	.LFE2652:
+ 564              		.section	.text.box_union_is8,"ax",%progbits
+ 565              		.align	1
+ 566              		.global	box_union_is8
+ 567              		.syntax unified
+ 568              		.thumb
+ 569              		.thumb_func
+ 571              	box_union_is8:
+ 572              	.LVL51:
+ 573              	.LFB2653:
+ 101:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** 
+ 102:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** //inline
+ 103:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** int32_t box_union_is8(int32_t *a, int32_t *b)
+ 104:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** {
+ 574              		.loc 1 104 1 is_stmt 1 view -0
+ 575              		.cfi_startproc
+ 576              		@ args = 0, pretend = 0, frame = 0
+ 577              		@ frame_needed = 0, uses_anonymous_args = 0
+ 105:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t i = box_intersection_is8(a, b);
+ 578              		.loc 1 105 3 view .LVU145
+ 104:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t i = box_intersection_is8(a, b);
+ 579              		.loc 1 104 1 is_stmt 0 view .LVU146
+ 580 0000 38B5     		push	{r3, r4, r5, lr}
+ 581              		.cfi_def_cfa_offset 16
+ 582              		.cfi_offset 3, -16
+ 583              		.cfi_offset 4, -12
+ 584              		.cfi_offset 5, -8
+ 585              		.cfi_offset 14, -4
+ 104:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t i = box_intersection_is8(a, b);
+ 586              		.loc 1 104 1 view .LVU147
+ 587 0002 0C46     		mov	r4, r1
+ 588 0004 0546     		mov	r5, r0
+ 589              		.loc 1 105 15 view .LVU148
+ 590 0006 FFF7FEFF 		bl	box_intersection_is8
+ 591              	.LVL52:
+ 106:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t u = 4* (a[2] * a[3] + b[2] * b[3]) - i;
+ 592              		.loc 1 106 3 is_stmt 1 view .LVU149
+ 107:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   return (u);
+ 593              		.loc 1 107 3 view .LVU150
+ 106:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t u = 4* (a[2] * a[3] + b[2] * b[3]) - i;
+ 594              		.loc 1 106 38 is_stmt 0 view .LVU151
+ 595 000a D4E90234 		ldrd	r3, r4, [r4, #8]
+ 596              	.LVL53:
+ 106:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t u = 4* (a[2] * a[3] + b[2] * b[3]) - i;
+ 597              		.loc 1 106 24 view .LVU152
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s 			page 14
+
+
+ 598 000e D5E90221 		ldrd	r2, r1, [r5, #8]
+ 106:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t u = 4* (a[2] * a[3] + b[2] * b[3]) - i;
+ 599              		.loc 1 106 38 view .LVU153
+ 600 0012 6343     		muls	r3, r4, r3
+ 106:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t u = 4* (a[2] * a[3] + b[2] * b[3]) - i;
+ 601              		.loc 1 106 31 view .LVU154
+ 602 0014 01FB0233 		mla	r3, r1, r2, r3
+ 108:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** }
+ 603              		.loc 1 108 1 view .LVU155
+ 604 0018 C0EB8300 		rsb	r0, r0, r3, lsl #2
+ 605              	.LVL54:
+ 606              		.loc 1 108 1 view .LVU156
+ 607 001c 38BD     		pop	{r3, r4, r5, pc}
+ 608              		.loc 1 108 1 view .LVU157
+ 609              		.cfi_endproc
+ 610              	.LFE2653:
+ 612              		.section	.text.vision_models_box_iou_is8,"ax",%progbits
+ 613              		.align	1
+ 614              		.global	vision_models_box_iou_is8
+ 615              		.syntax unified
+ 616              		.thumb
+ 617              		.thumb_func
+ 619              	vision_models_box_iou_is8:
+ 620              	.LVL55:
+ 621              	.LFB2654:
+ 109:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** 
+ 110:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** 
+ 111:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** float32_t vision_models_box_iou_is8(int8_t *a, int8_t *b, int8_t zp)
+ 112:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** {
+ 622              		.loc 1 112 1 is_stmt 1 view -0
+ 623              		.cfi_startproc
+ 624              		@ args = 0, pretend = 0, frame = 32
+ 625              		@ frame_needed = 0, uses_anonymous_args = 0
+ 113:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t a_z[4] = {a[0]-zp, a[1]-zp, a[2]-zp, a[3]-zp};
+ 626              		.loc 1 113 3 view .LVU159
+ 112:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t a_z[4] = {a[0]-zp, a[1]-zp, a[2]-zp, a[3]-zp};
+ 627              		.loc 1 112 1 is_stmt 0 view .LVU160
+ 628 0000 10B5     		push	{r4, lr}
+ 629              		.cfi_def_cfa_offset 8
+ 630              		.cfi_offset 4, -8
+ 631              		.cfi_offset 14, -4
+ 632              		.loc 1 113 22 view .LVU161
+ 633 0002 90F90030 		ldrsb	r3, [r0]
+ 112:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t a_z[4] = {a[0]-zp, a[1]-zp, a[2]-zp, a[3]-zp};
+ 634              		.loc 1 112 1 view .LVU162
+ 635 0006 88B0     		sub	sp, sp, #32
+ 636              		.cfi_def_cfa_offset 40
+ 637              		.loc 1 113 25 view .LVU163
+ 638 0008 9B1A     		subs	r3, r3, r2
+ 639              		.loc 1 113 11 view .LVU164
+ 640 000a 0093     		str	r3, [sp]
+ 641              		.loc 1 113 31 view .LVU165
+ 642 000c 90F90130 		ldrsb	r3, [r0, #1]
+ 643              		.loc 1 113 34 view .LVU166
+ 644 0010 9B1A     		subs	r3, r3, r2
+ 645              		.loc 1 113 11 view .LVU167
+ 646 0012 0193     		str	r3, [sp, #4]
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s 			page 15
+
+
+ 647              		.loc 1 113 40 view .LVU168
+ 648 0014 90F90230 		ldrsb	r3, [r0, #2]
+ 649              		.loc 1 113 43 view .LVU169
+ 650 0018 9B1A     		subs	r3, r3, r2
+ 651              		.loc 1 113 11 view .LVU170
+ 652 001a 0293     		str	r3, [sp, #8]
+ 653              		.loc 1 113 49 view .LVU171
+ 654 001c 90F90330 		ldrsb	r3, [r0, #3]
+ 114:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t b_z[4] = {b[0]-zp, b[1]-zp, b[2]-zp, b[3]-zp};
+ 115:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t I = box_intersection_is8(a_z, b_z);
+ 655              		.loc 1 115 15 view .LVU172
+ 656 0020 6846     		mov	r0, sp
+ 657              	.LVL56:
+ 113:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t b_z[4] = {b[0]-zp, b[1]-zp, b[2]-zp, b[3]-zp};
+ 658              		.loc 1 113 52 view .LVU173
+ 659 0022 9B1A     		subs	r3, r3, r2
+ 113:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t b_z[4] = {b[0]-zp, b[1]-zp, b[2]-zp, b[3]-zp};
+ 660              		.loc 1 113 11 view .LVU174
+ 661 0024 0393     		str	r3, [sp, #12]
+ 114:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t b_z[4] = {b[0]-zp, b[1]-zp, b[2]-zp, b[3]-zp};
+ 662              		.loc 1 114 3 is_stmt 1 view .LVU175
+ 114:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t b_z[4] = {b[0]-zp, b[1]-zp, b[2]-zp, b[3]-zp};
+ 663              		.loc 1 114 22 is_stmt 0 view .LVU176
+ 664 0026 91F90030 		ldrsb	r3, [r1]
+ 114:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t b_z[4] = {b[0]-zp, b[1]-zp, b[2]-zp, b[3]-zp};
+ 665              		.loc 1 114 25 view .LVU177
+ 666 002a 9B1A     		subs	r3, r3, r2
+ 114:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t b_z[4] = {b[0]-zp, b[1]-zp, b[2]-zp, b[3]-zp};
+ 667              		.loc 1 114 11 view .LVU178
+ 668 002c 0493     		str	r3, [sp, #16]
+ 114:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t b_z[4] = {b[0]-zp, b[1]-zp, b[2]-zp, b[3]-zp};
+ 669              		.loc 1 114 31 view .LVU179
+ 670 002e 91F90130 		ldrsb	r3, [r1, #1]
+ 114:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t b_z[4] = {b[0]-zp, b[1]-zp, b[2]-zp, b[3]-zp};
+ 671              		.loc 1 114 34 view .LVU180
+ 672 0032 9B1A     		subs	r3, r3, r2
+ 114:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t b_z[4] = {b[0]-zp, b[1]-zp, b[2]-zp, b[3]-zp};
+ 673              		.loc 1 114 11 view .LVU181
+ 674 0034 0593     		str	r3, [sp, #20]
+ 114:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t b_z[4] = {b[0]-zp, b[1]-zp, b[2]-zp, b[3]-zp};
+ 675              		.loc 1 114 40 view .LVU182
+ 676 0036 91F90230 		ldrsb	r3, [r1, #2]
+ 114:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t b_z[4] = {b[0]-zp, b[1]-zp, b[2]-zp, b[3]-zp};
+ 677              		.loc 1 114 43 view .LVU183
+ 678 003a 9B1A     		subs	r3, r3, r2
+ 114:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t b_z[4] = {b[0]-zp, b[1]-zp, b[2]-zp, b[3]-zp};
+ 679              		.loc 1 114 11 view .LVU184
+ 680 003c 0693     		str	r3, [sp, #24]
+ 114:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t b_z[4] = {b[0]-zp, b[1]-zp, b[2]-zp, b[3]-zp};
+ 681              		.loc 1 114 49 view .LVU185
+ 682 003e 91F90330 		ldrsb	r3, [r1, #3]
+ 683              		.loc 1 115 15 view .LVU186
+ 684 0042 04A9     		add	r1, sp, #16
+ 685              	.LVL57:
+ 114:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t b_z[4] = {b[0]-zp, b[1]-zp, b[2]-zp, b[3]-zp};
+ 686              		.loc 1 114 52 view .LVU187
+ 687 0044 9B1A     		subs	r3, r3, r2
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s 			page 16
+
+
+ 114:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t b_z[4] = {b[0]-zp, b[1]-zp, b[2]-zp, b[3]-zp};
+ 688              		.loc 1 114 11 view .LVU188
+ 689 0046 0793     		str	r3, [sp, #28]
+ 690              		.loc 1 115 3 is_stmt 1 view .LVU189
+ 691              		.loc 1 115 15 is_stmt 0 view .LVU190
+ 692 0048 FFF7FEFF 		bl	box_intersection_is8
+ 693              	.LVL58:
+ 694              		.loc 1 115 15 view .LVU191
+ 695 004c 0446     		mov	r4, r0
+ 696              	.LVL59:
+ 116:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t U = box_union_is8(a_z, b_z);
+ 697              		.loc 1 116 3 is_stmt 1 view .LVU192
+ 698              		.loc 1 116 15 is_stmt 0 view .LVU193
+ 699 004e 04A9     		add	r1, sp, #16
+ 700 0050 6846     		mov	r0, sp
+ 701              	.LVL60:
+ 702              		.loc 1 116 15 view .LVU194
+ 703 0052 FFF7FEFF 		bl	box_union_is8
+ 704              	.LVL61:
+ 117:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   if (I == 0 || U == 0)
+ 705              		.loc 1 117 3 is_stmt 1 view .LVU195
+ 706              		.loc 1 117 6 is_stmt 0 view .LVU196
+ 707 0056 64B1     		cbz	r4, .L39
+ 708              		.loc 1 117 14 discriminator 1 view .LVU197
+ 709 0058 58B1     		cbz	r0, .L39
+ 118:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   {
+ 119:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****     return 0;
+ 120:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   }
+ 121:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   float32_t ret = ((float32_t)I / (float32_t)U);
+ 710              		.loc 1 121 3 is_stmt 1 view .LVU198
+ 711              		.loc 1 121 20 is_stmt 0 view .LVU199
+ 712 005a 07EE904A 		vmov	s15, r4	@ int
+ 713 005e B8EEE77A 		vcvt.f32.s32	s14, s15
+ 714              		.loc 1 121 35 view .LVU200
+ 715 0062 07EE900A 		vmov	s15, r0	@ int
+ 716 0066 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 717              		.loc 1 121 13 view .LVU201
+ 718 006a 87EE270A 		vdiv.f32	s0, s14, s15
+ 719              	.LVL62:
+ 122:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   return ret;
+ 720              		.loc 1 122 3 is_stmt 1 view .LVU202
+ 721              	.L36:
+ 123:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** }
+ 722              		.loc 1 123 1 is_stmt 0 view .LVU203
+ 723 006e 08B0     		add	sp, sp, #32
+ 724              		.cfi_remember_state
+ 725              		.cfi_def_cfa_offset 8
+ 726              		@ sp needed
+ 727 0070 10BD     		pop	{r4, pc}
+ 728              	.LVL63:
+ 729              	.L39:
+ 730              		.cfi_restore_state
+ 119:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   }
+ 731              		.loc 1 119 12 view .LVU204
+ 732 0072 9FED010A 		vldr.32	s0, .L40
+ 733 0076 FAE7     		b	.L36
+ 734              	.L41:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s 			page 17
+
+
+ 735              		.align	2
+ 736              	.L40:
+ 737 0078 00000000 		.word	0
+ 738              		.cfi_endproc
+ 739              	.LFE2654:
+ 741              		.section	.text.transpose_flattened_2D,"ax",%progbits
+ 742              		.align	1
+ 743              		.global	transpose_flattened_2D
+ 744              		.syntax unified
+ 745              		.thumb
+ 746              		.thumb_func
+ 748              	transpose_flattened_2D:
+ 749              	.LVL64:
+ 750              	.LFB2655:
+ 124:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** void transpose_flattened_2D(float32_t *arr, int32_t rows, int32_t cols, float32_t *tmp_x)
+ 125:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** {
+ 751              		.loc 1 125 1 is_stmt 1 view -0
+ 752              		.cfi_startproc
+ 753              		@ args = 0, pretend = 0, frame = 0
+ 754              		@ frame_needed = 0, uses_anonymous_args = 0
+ 126:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t i, j, k;
+ 755              		.loc 1 126 3 view .LVU206
+ 127:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t len_r_c = rows * cols;
+ 756              		.loc 1 127 3 view .LVU207
+ 125:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   int32_t i, j, k;
+ 757              		.loc 1 125 1 is_stmt 0 view .LVU208
+ 758 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 759              		.cfi_def_cfa_offset 24
+ 760              		.cfi_offset 4, -24
+ 761              		.cfi_offset 5, -20
+ 762              		.cfi_offset 6, -16
+ 763              		.cfi_offset 7, -12
+ 764              		.cfi_offset 8, -8
+ 765              		.cfi_offset 14, -4
+ 766              		.loc 1 127 11 view .LVU209
+ 767 0004 02FB01F5 		mul	r5, r2, r1
+ 768              	.LVL65:
+ 128:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** 
+ 129:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   for (i = 0; i < len_r_c; i++)
+ 769              		.loc 1 129 3 is_stmt 1 view .LVU210
+ 770              		.loc 1 129 3 is_stmt 0 view .LVU211
+ 771 0008 002D     		cmp	r5, #0
+ 772 000a 05F10104 		add	r4, r5, #1
+ 773 000e 1F46     		mov	r7, r3
+ 774 0010 0646     		mov	r6, r0
+ 775 0012 B8BF     		it	lt
+ 776 0014 0124     		movlt	r4, #1
+ 777              	.LVL66:
+ 778              	.L43:
+ 779              		.loc 1 129 17 is_stmt 1 discriminator 1 view .LVU212
+ 780 0016 013C     		subs	r4, r4, #1
+ 781 0018 0FD1     		bne	.L44
+ 782 001a 0025     		movs	r5, #0
+ 130:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   {
+ 131:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****     tmp_x[i] = arr[i];
+ 132:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   }
+ 133:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** 
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s 			page 18
+
+
+ 134:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   for (i = 0; i < cols; i++)
+ 783              		.loc 1 134 10 is_stmt 0 view .LVU213
+ 784 001c 2E46     		mov	r6, r5
+ 785 001e 4FEA820E 		lsl	lr, r2, #2
+ 786              	.L45:
+ 787              	.LVL67:
+ 788              		.loc 1 134 17 is_stmt 1 discriminator 1 view .LVU214
+ 789 0022 9642     		cmp	r6, r2
+ 790 0024 18DA     		bge	.L42
+ 791 0026 0029     		cmp	r1, #0
+ 792 0028 01F10104 		add	r4, r1, #1
+ 793 002c 03EB8607 		add	r7, r3, r6, lsl #2
+ 794 0030 B8BF     		it	lt
+ 795 0032 0124     		movlt	r4, #1
+ 796 0034 00EB850C 		add	ip, r0, r5, lsl #2
+ 797 0038 09E0     		b	.L48
+ 798              	.LVL68:
+ 799              	.L44:
+ 131:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   }
+ 800              		.loc 1 131 5 view .LVU215
+ 131:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   }
+ 801              		.loc 1 131 19 is_stmt 0 view .LVU216
+ 802 003a 56F8045B 		ldr	r5, [r6], #4	@ float
+ 131:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   }
+ 803              		.loc 1 131 14 view .LVU217
+ 804 003e 47F8045B 		str	r5, [r7], #4	@ float
+ 129:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   {
+ 805              		.loc 1 129 29 is_stmt 1 discriminator 3 view .LVU218
+ 806 0042 E8E7     		b	.L43
+ 807              	.LVL69:
+ 808              	.L46:
+ 135:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   {
+ 136:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****     for (j = 0; j < rows; j++)
+ 137:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****     {
+ 138:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****       k = i * rows + j;
+ 809              		.loc 1 138 7 view .LVU219
+ 139:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****       arr[k] = tmp_x[j * cols + i];
+ 810              		.loc 1 139 7 view .LVU220
+ 811              		.loc 1 139 21 is_stmt 0 view .LVU221
+ 812 0044 D7F80080 		ldr	r8, [r7]	@ float
+ 813 0048 7744     		add	r7, r7, lr
+ 814              		.loc 1 139 14 view .LVU222
+ 815 004a 4CF8048B 		str	r8, [ip], #4	@ float
+ 136:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****     {
+ 816              		.loc 1 136 28 is_stmt 1 discriminator 3 view .LVU223
+ 817              	.L48:
+ 136:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****     {
+ 818              		.loc 1 136 19 discriminator 1 view .LVU224
+ 819 004e 013C     		subs	r4, r4, #1
+ 820 0050 F8D1     		bne	.L46
+ 134:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   {
+ 821              		.loc 1 134 26 discriminator 2 view .LVU225
+ 822 0052 0136     		adds	r6, r6, #1
+ 823              	.LVL70:
+ 134:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   {
+ 824              		.loc 1 134 26 is_stmt 0 discriminator 2 view .LVU226
+ 825 0054 0D44     		add	r5, r5, r1
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s 			page 19
+
+
+ 826 0056 E4E7     		b	.L45
+ 827              	.L42:
+ 140:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****     }
+ 141:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   }
+ 142:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** }
+ 828              		.loc 1 142 1 view .LVU227
+ 829 0058 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 830              		.loc 1 142 1 view .LVU228
+ 831              		.cfi_endproc
+ 832              	.LFE2655:
+ 834              		.section	.text.dequantize,"ax",%progbits
+ 835              		.align	1
+ 836              		.global	dequantize
+ 837              		.syntax unified
+ 838              		.thumb
+ 839              		.thumb_func
+ 841              	dequantize:
+ 842              	.LVL71:
+ 843              	.LFB2656:
+ 143:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** 
+ 144:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** 
+ 145:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** void dequantize(int32_t* arr, float32_t* tmp, int32_t n, int32_t zero_point, float32_t scale)
+ 146:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** {
+ 844              		.loc 1 146 1 is_stmt 1 view -0
+ 845              		.cfi_startproc
+ 846              		@ args = 0, pretend = 0, frame = 0
+ 847              		@ frame_needed = 0, uses_anonymous_args = 0
+ 147:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   for (int32_t i = 0; i < n; i++)
+ 848              		.loc 1 147 3 view .LVU230
+ 849              	.LBB8:
+ 850              		.loc 1 147 8 view .LVU231
+ 851              		.loc 1 147 8 is_stmt 0 view .LVU232
+ 852              	.LBE8:
+ 146:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   for (int32_t i = 0; i < n; i++)
+ 853              		.loc 1 146 1 view .LVU233
+ 854 0000 30B5     		push	{r4, r5, lr}
+ 855              		.cfi_def_cfa_offset 12
+ 856              		.cfi_offset 4, -12
+ 857              		.cfi_offset 5, -8
+ 858              		.cfi_offset 14, -4
+ 859              	.LBB9:
+ 860              		.loc 1 147 16 view .LVU234
+ 861 0002 0025     		movs	r5, #0
+ 862 0004 AA42     		cmp	r2, r5
+ 863 0006 02F10104 		add	r4, r2, #1
+ 864 000a B8BF     		it	lt
+ 865 000c 0124     		movlt	r4, #1
+ 866              	.LVL72:
+ 867              	.L52:
+ 868              		.loc 1 147 25 is_stmt 1 discriminator 1 view .LVU235
+ 869 000e 013C     		subs	r4, r4, #1
+ 870 0010 00D1     		bne	.L53
+ 871              	.LBE9:
+ 148:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   {
+ 149:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****     tmp[i] = (float32_t)(arr[i] - zero_point) * scale;
+ 150:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   }
+ 151:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c **** }
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s 			page 20
+
+
+ 872              		.loc 1 151 1 is_stmt 0 view .LVU236
+ 873 0012 30BD     		pop	{r4, r5, pc}
+ 874              	.LVL73:
+ 875              	.L53:
+ 876              	.LBB10:
+ 149:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   }
+ 877              		.loc 1 149 5 is_stmt 1 view .LVU237
+ 149:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   }
+ 878              		.loc 1 149 33 is_stmt 0 view .LVU238
+ 879 0014 50F82520 		ldr	r2, [r0, r5, lsl #2]
+ 147:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   {
+ 880              		.loc 1 147 31 discriminator 3 view .LVU239
+ 881 0018 0135     		adds	r5, r5, #1
+ 882              	.LVL74:
+ 149:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   }
+ 883              		.loc 1 149 33 view .LVU240
+ 884 001a D21A     		subs	r2, r2, r3
+ 885 001c 07EE902A 		vmov	s15, r2	@ int
+ 149:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   }
+ 886              		.loc 1 149 14 view .LVU241
+ 887 0020 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 149:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   }
+ 888              		.loc 1 149 47 view .LVU242
+ 889 0024 67EE807A 		vmul.f32	s15, s15, s0
+ 149:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   }
+ 890              		.loc 1 149 12 view .LVU243
+ 891 0028 E1EC017A 		vstmia.32	r1!, {s15}
+ 147:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   {
+ 892              		.loc 1 147 31 is_stmt 1 discriminator 3 view .LVU244
+ 893              	.LVL75:
+ 147:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.c ****   {
+ 894              		.loc 1 147 31 is_stmt 0 discriminator 3 view .LVU245
+ 895 002c EFE7     		b	.L52
+ 896              	.LBE10:
+ 897              		.cfi_endproc
+ 898              	.LFE2656:
+ 900              		.text
+ 901              	.Letext0:
+ 902              		.file 2 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 903              		.file 3 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 904              		.file 4 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 905              		.file 5 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 906              		.file 6 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 907              		.file 7 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 908              		.file 8 "<built-in>"
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s 			page 21
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 vision_models_pp.c
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:26     .text.vision_models_sigmoid_f:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:32     .text.vision_models_sigmoid_f:00000000 vision_models_sigmoid_f
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:61     .text.vision_models_softmax_f:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:67     .text.vision_models_softmax_f:00000000 vision_models_softmax_f
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:197    .text.vision_models_softmax_f:0000006c $d
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:203    .text.overlap:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:209    .text.overlap:00000000 overlap
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:265    .text.box_intersection:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:271    .text.box_intersection:00000000 box_intersection
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:330    .text.box_intersection:00000050 $d
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:335    .text.box_union:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:341    .text.box_union:00000000 box_union
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:379    .text.vision_models_box_iou:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:385    .text.vision_models_box_iou:00000000 vision_models_box_iou
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:434    .text.vision_models_box_iou:00000034 $d
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:439    .text.twice_overlap_int:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:445    .text.twice_overlap_int:00000000 twice_overlap_int
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:493    .text.box_intersection_is8:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:499    .text.box_intersection_is8:00000000 box_intersection_is8
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:565    .text.box_union_is8:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:571    .text.box_union_is8:00000000 box_union_is8
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:613    .text.vision_models_box_iou_is8:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:619    .text.vision_models_box_iou_is8:00000000 vision_models_box_iou_is8
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:737    .text.vision_models_box_iou_is8:00000078 $d
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:742    .text.transpose_flattened_2D:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:748    .text.transpose_flattened_2D:00000000 transpose_flattened_2D
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:835    .text.dequantize:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s:841    .text.dequantize:00000000 dequantize
+                           .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
+                           .group:00000000 wm4.vision_models_pp.h.11.7ec557b595f01374518e44eaad6f267b
+                           .group:00000000 wm4._newlib_version.h.4.411db44ea2338a62eca2f0777f81481b
+                           .group:00000000 wm4.features.h.33.e0c9f337c65cb9f22ed5f23d082bc78b
+                           .group:00000000 wm4._default_types.h.15.247e5cd201eca3442cbf5404108c4935
+                           .group:00000000 wm4._intsup.h.10.48bafbb683905c4daa4565a85aeeb264
+                           .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+                           .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+                           .group:00000000 wm4.cmsis_gcc.h.26.7a5fd1a99dbedde687044a4433ab3e15
+                           .group:00000000 wm4.newlib.h.7.a37ffbe9e5aff74303f4e60b1cc1c01b
+                           .group:00000000 wm4.ieeefp.h.77.bd5feb87d9990dd328793ced294f6a87
+                           .group:00000000 wm4.config.h.224.10ee1ad185d877c6e334e6581faab44d
+                           .group:00000000 wm4._ansi.h.31.de524f58584151836e90d8620a16f8e8
+                           .group:00000000 wm4.stddef.h.39.0dc9006b34572d4d9cae4c8b422c4971
+                           .group:00000000 wm4.cdefs.h.49.70fc7af612f78ddcace70fdd90b5623b
+                           .group:00000000 wm4._types.h.20.dd0d04dca3800a0d2a6129b87f3adbb2
+                           .group:00000000 wm4.stddef.h.158.6f8e08a347b1cff664332fa350bfceb3
+                           .group:00000000 wm4._types.h.127.3bdfe3ff8ea2d0985b03d9cbe93480e3
+                           .group:00000000 wm4.reent.h.18.25503cdc8b7e55dd0d6ea7b3e5af7a03
+                           .group:00000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
+                           .group:00000000 wm4.reent.h.78.6b87466b04591b1f1cb88c14fdf2ba9e
+                           .group:00000000 wm4.string.h.15.dab3980bf35408a4c507182805e2de3a
+                           .group:00000000 wm4.stddef.h.158.eec8bf00b5213f43d095cb984c5f22e3
+                           .group:00000000 wm4.string.h.177.59a005921fa78485abc80a0267de5752
+                           .group:00000000 wm4.math.h.13.47cfc34cae8a1153323939c4d32cf7c2
+                           .group:00000000 wm4.float.h.29.0e9d9baf95ec39f9555dc80c6e28186b
+                           .group:00000000 wm4.syslimits.h.34.de5cbd310098bc5895998b6bde577ed2
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIlLuhS.s 			page 22
+
+
+                           .group:00000000 wm4.limits.h.9.70fb0ada6f71b16202a66baaa6d8ea70
+                           .group:00000000 wm4.limits.h.60.56a1ae353e2028a24298ec6463b8b593
+                           .group:00000000 wm4.arm_math_types.h.94.a6c8422e2657ad4cd95bd8be69ba02aa
+                           .group:00000000 wm4.stdbool.h.29.c08aa3eec75cf5b9b5003883f43253f0
+                           .group:00000000 wm4.arm_mve.h.38.47b22bbd301ce82bc6dafd1a387f65a3
+                           .group:00000000 wm4.arm_math_types.h.559.cab78f278b684a3ea2271947c7aea680
+                           .group:00000000 wm4.arm_math_memory.h.28.fe8a81c6a9ac13061a5f748732089249
+                           .group:00000000 wm4.none.h.185.db055cca83e83f96d8d0bb450fbdf4bb
+                           .group:00000000 wm4.utils.h.27.57524573fe37b04009eecf3582a4c591
+                           .group:00000000 wm4.fast_math_functions.h.28.8eb7477260c1d6b62047c49a01c4cbaa
+                           .group:00000000 wm4.controller_functions.h.28.7bed7d7a726df2f65b8a3d89cff01247
+                           .group:00000000 wm4.filtering_functions.h.46.6cf1424fb1f86d5f9958d208b83340a1
+                           .group:00000000 wm4.vision_models_pp.h.29.68b0eb621901bdf3443aea73a540360c
+
+UNDEFINED SYMBOLS
+expf
+memcpy

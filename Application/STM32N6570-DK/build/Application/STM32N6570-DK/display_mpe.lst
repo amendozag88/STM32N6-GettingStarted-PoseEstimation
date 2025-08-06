@@ -1,0 +1,1039 @@
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s 			page 1
+
+
+   1              		.arch armv8.1-m.main
+   2              		.fpu fpv5-d16
+   3              		.arch_extension dsp
+   4              		.arch_extension fp
+   5              		.arch_extension fp.dp
+   6              		.arch_extension mve
+   7              		.arch_extension mve.fp
+   8              		.eabi_attribute 5, "cortex-m55"
+   9              		.eabi_attribute 28, 1
+  10              		.eabi_attribute 20, 1
+  11              		.eabi_attribute 21, 1
+  12              		.eabi_attribute 23, 3
+  13              		.eabi_attribute 24, 1
+  14              		.eabi_attribute 25, 1
+  15              		.eabi_attribute 26, 1
+  16              		.eabi_attribute 30, 4
+  17              		.eabi_attribute 34, 1
+  18              		.eabi_attribute 38, 1
+  19              		.eabi_attribute 18, 4
+  20              		.file	"display_mpe.c"
+  21              		.text
+  22              	.Ltext0:
+  23              		.cfi_sections	.debug_frame
+  24              		.file 1 "Src/display_mpe.c"
+  25              		.section	.text.Display_mpe_InitFunctions,"ax",%progbits
+  26              		.align	1
+  27              		.global	Display_mpe_InitFunctions
+  28              		.syntax unified
+  29              		.thumb
+  30              		.thumb_func
+  32              	Display_mpe_InitFunctions:
+  33              	.LVL0:
+  34              	.LFB3341:
+   1:Src/display_mpe.c ****  /**
+   2:Src/display_mpe.c ****  ******************************************************************************
+   3:Src/display_mpe.c ****  * @file    display_mpe.c
+   4:Src/display_mpe.c ****  * @author  GPM Application Team
+   5:Src/display_mpe.c ****  *
+   6:Src/display_mpe.c ****  ******************************************************************************
+   7:Src/display_mpe.c ****  * @attention
+   8:Src/display_mpe.c ****  *
+   9:Src/display_mpe.c ****  * Copyright (c) 2024 STMicroelectronics.
+  10:Src/display_mpe.c ****  * All rights reserved.
+  11:Src/display_mpe.c ****  *
+  12:Src/display_mpe.c ****  * This software is licensed under terms that can be found in the LICENSE file
+  13:Src/display_mpe.c ****  * in the root directory of this software component.
+  14:Src/display_mpe.c ****  * If no LICENSE file comes with this software, it is provided AS-IS.
+  15:Src/display_mpe.c ****  *
+  16:Src/display_mpe.c ****  ******************************************************************************
+  17:Src/display_mpe.c ****  */
+  18:Src/display_mpe.c **** 
+  19:Src/display_mpe.c **** #include "display_mpe.h"
+  20:Src/display_mpe.c **** #include "app_config.h"
+  21:Src/display_mpe.c **** #include "main.h"
+  22:Src/display_mpe.c **** #include "display_keypoints_17.h"
+  23:Src/display_mpe.c **** #include "utils.h"
+  24:Src/display_mpe.c **** #include <assert.h>
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s 			page 2
+
+
+  25:Src/display_mpe.c **** #include <stdlib.h>
+  26:Src/display_mpe.c **** #include <stdint.h>
+  27:Src/display_mpe.c **** 
+  28:Src/display_mpe.c **** #define NUMBER_COLORS 10
+  29:Src/display_mpe.c **** const uint32_t colors[NUMBER_COLORS] = {
+  30:Src/display_mpe.c ****   UTIL_LCD_COLOR_GREEN,
+  31:Src/display_mpe.c ****   UTIL_LCD_COLOR_RED,
+  32:Src/display_mpe.c ****   UTIL_LCD_COLOR_CYAN,
+  33:Src/display_mpe.c ****   UTIL_LCD_COLOR_MAGENTA,
+  34:Src/display_mpe.c ****   UTIL_LCD_COLOR_YELLOW,
+  35:Src/display_mpe.c ****   UTIL_LCD_COLOR_GRAY,
+  36:Src/display_mpe.c ****   UTIL_LCD_COLOR_BLACK,
+  37:Src/display_mpe.c ****   UTIL_LCD_COLOR_BROWN,
+  38:Src/display_mpe.c ****   UTIL_LCD_COLOR_BLUE,
+  39:Src/display_mpe.c ****   UTIL_LCD_COLOR_ORANGE
+  40:Src/display_mpe.c **** };
+  41:Src/display_mpe.c **** 
+  42:Src/display_mpe.c **** static int (*clamp_point)(int *x, int *y);
+  43:Src/display_mpe.c **** static void (*convert_length)(float32_t wi, float32_t hi, int *wo, int *ho);
+  44:Src/display_mpe.c **** static void (*convert_point)(float32_t xi, float32_t yi, int *xo, int *yo);
+  45:Src/display_mpe.c **** static void (*Display_binding_line)(int x0, int y0, int x1, int y1, uint32_t color);
+  46:Src/display_mpe.c **** 
+  47:Src/display_mpe.c **** static void Display_keypoint(mpe_pp_keyPoints_t *key, uint32_t color)
+  48:Src/display_mpe.c **** {
+  49:Src/display_mpe.c ****   int is_clamp;
+  50:Src/display_mpe.c ****   int xc, yc;
+  51:Src/display_mpe.c ****   int x, y;
+  52:Src/display_mpe.c **** 
+  53:Src/display_mpe.c ****   if (key->conf < AI_POSE_PP_CONF_THRESHOLD)
+  54:Src/display_mpe.c ****     return ;
+  55:Src/display_mpe.c **** 
+  56:Src/display_mpe.c ****   convert_point(key->x, key->y, &x, &y);
+  57:Src/display_mpe.c ****   xc = x - CIRCLE_RADIUS / 2;
+  58:Src/display_mpe.c ****   yc = y - CIRCLE_RADIUS / 2;
+  59:Src/display_mpe.c ****   is_clamp = clamp_point(&xc, &yc);
+  60:Src/display_mpe.c ****   xc = x + CIRCLE_RADIUS / 2;
+  61:Src/display_mpe.c ****   yc = y + CIRCLE_RADIUS / 2;
+  62:Src/display_mpe.c ****   is_clamp |= clamp_point(&xc, &yc);
+  63:Src/display_mpe.c **** 
+  64:Src/display_mpe.c ****   if (is_clamp)
+  65:Src/display_mpe.c ****     return ;
+  66:Src/display_mpe.c **** 
+  67:Src/display_mpe.c ****   UTIL_LCD_FillCircle(x, y, CIRCLE_RADIUS, color);
+  68:Src/display_mpe.c **** }
+  69:Src/display_mpe.c **** 
+  70:Src/display_mpe.c **** static void Display_binding(mpe_pp_keyPoints_t *from, mpe_pp_keyPoints_t *to, uint32_t color)
+  71:Src/display_mpe.c **** {
+  72:Src/display_mpe.c ****   int is_clamp;
+  73:Src/display_mpe.c ****   int x0, y0;
+  74:Src/display_mpe.c ****   int x1, y1;
+  75:Src/display_mpe.c ****   int i;
+  76:Src/display_mpe.c **** 
+  77:Src/display_mpe.c ****   assert(BINDING_WIDTH % 2 == 1);
+  78:Src/display_mpe.c **** 
+  79:Src/display_mpe.c ****   if (from->conf < AI_POSE_PP_CONF_THRESHOLD)
+  80:Src/display_mpe.c ****     return ;
+  81:Src/display_mpe.c ****   if (to->conf < AI_POSE_PP_CONF_THRESHOLD)
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s 			page 3
+
+
+  82:Src/display_mpe.c ****     return ;
+  83:Src/display_mpe.c **** 
+  84:Src/display_mpe.c ****   convert_point(from->x, from->y, &x0, &y0);
+  85:Src/display_mpe.c ****   is_clamp = clamp_point(&x0, &y0);
+  86:Src/display_mpe.c ****   if (is_clamp)
+  87:Src/display_mpe.c ****     return ;
+  88:Src/display_mpe.c **** 
+  89:Src/display_mpe.c ****   convert_point(to->x, to->y, &x1, &y1);
+  90:Src/display_mpe.c ****   is_clamp = clamp_point(&x1, &y1);
+  91:Src/display_mpe.c ****   if (is_clamp)
+  92:Src/display_mpe.c ****     return ;
+  93:Src/display_mpe.c **** 
+  94:Src/display_mpe.c ****   UTIL_LCD_DrawLine(x0, y0, x1, y1, color);
+  95:Src/display_mpe.c ****   for (i = 1; i <= (BINDING_WIDTH - 1) / 2; i++) {
+  96:Src/display_mpe.c ****     if (abs(y1 - y0) > abs(x1 - x0)) {
+  97:Src/display_mpe.c ****       Display_binding_line(x0 + i, y0, x1 + i , y1, color);
+  98:Src/display_mpe.c ****       Display_binding_line(x0 - i, y0, x1 - i , y1, color);
+  99:Src/display_mpe.c ****     } else {
+ 100:Src/display_mpe.c ****       Display_binding_line(x0, y0 + i, x1 , y1 + i, color);
+ 101:Src/display_mpe.c ****       Display_binding_line(x0, y0 - i, x1 , y1 - i, color);
+ 102:Src/display_mpe.c ****     }
+ 103:Src/display_mpe.c ****   }
+ 104:Src/display_mpe.c **** }
+ 105:Src/display_mpe.c **** 
+ 106:Src/display_mpe.c **** void Display_mpe_InitFunctions(int clamp_point_init(int *x, int *y),
+ 107:Src/display_mpe.c ****                                void convert_length_init(float32_t wi, float32_t hi, int *wo, int *h
+ 108:Src/display_mpe.c ****                                void convert_point_init(float32_t xi, float32_t yi, int *xo, int *yo
+ 109:Src/display_mpe.c ****                                void Display_binding_line_init(int x0, int y0, int x1, int y1, uint3
+ 110:Src/display_mpe.c **** {
+  35              		.loc 1 110 1 view -0
+  36              		.cfi_startproc
+  37              		@ args = 0, pretend = 0, frame = 0
+  38              		@ frame_needed = 0, uses_anonymous_args = 0
+ 111:Src/display_mpe.c ****   clamp_point = clamp_point_init;
+  39              		.loc 1 111 3 view .LVU1
+ 110:Src/display_mpe.c ****   clamp_point = clamp_point_init;
+  40              		.loc 1 110 1 is_stmt 0 view .LVU2
+  41 0000 10B5     		push	{r4, lr}
+  42              		.cfi_def_cfa_offset 8
+  43              		.cfi_offset 4, -8
+  44              		.cfi_offset 14, -4
+  45              		.loc 1 111 15 view .LVU3
+  46 0002 044C     		ldr	r4, .L2
+  47 0004 2060     		str	r0, [r4]
+ 112:Src/display_mpe.c ****   convert_length = convert_length_init;
+  48              		.loc 1 112 3 is_stmt 1 view .LVU4
+  49              		.loc 1 112 18 is_stmt 0 view .LVU5
+  50 0006 0448     		ldr	r0, .L2+4
+  51              	.LVL1:
+  52              		.loc 1 112 18 view .LVU6
+  53 0008 0160     		str	r1, [r0]
+ 113:Src/display_mpe.c ****   convert_point = convert_point_init;
+  54              		.loc 1 113 3 is_stmt 1 view .LVU7
+  55              		.loc 1 113 17 is_stmt 0 view .LVU8
+  56 000a 0449     		ldr	r1, .L2+8
+  57              	.LVL2:
+  58              		.loc 1 113 17 view .LVU9
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s 			page 4
+
+
+  59 000c 0A60     		str	r2, [r1]
+ 114:Src/display_mpe.c ****   Display_binding_line = Display_binding_line_init;
+  60              		.loc 1 114 3 is_stmt 1 view .LVU10
+  61              		.loc 1 114 24 is_stmt 0 view .LVU11
+  62 000e 044A     		ldr	r2, .L2+12
+  63              	.LVL3:
+  64              		.loc 1 114 24 view .LVU12
+  65 0010 1360     		str	r3, [r2]
+ 115:Src/display_mpe.c **** }
+  66              		.loc 1 115 1 view .LVU13
+  67 0012 10BD     		pop	{r4, pc}
+  68              	.L3:
+  69              		.loc 1 115 1 view .LVU14
+  70              		.align	2
+  71              	.L2:
+  72 0014 00000000 		.word	clamp_point
+  73 0018 00000000 		.word	convert_length
+  74 001c 00000000 		.word	convert_point
+  75 0020 00000000 		.word	Display_binding_line
+  76              		.cfi_endproc
+  77              	.LFE3341:
+  79              		.section	.text.Display_mpe_Detection,"ax",%progbits
+  80              		.align	1
+  81              		.global	Display_mpe_Detection
+  82              		.syntax unified
+  83              		.thumb
+  84              		.thumb_func
+  86              	Display_mpe_Detection:
+  87              	.LVL4:
+  88              	.LFB3342:
+ 116:Src/display_mpe.c **** 
+ 117:Src/display_mpe.c **** void Display_mpe_Detection(mpe_pp_outBuffer_t *detect)
+ 118:Src/display_mpe.c **** {
+  89              		.loc 1 118 1 is_stmt 1 view -0
+  90              		.cfi_startproc
+  91              		@ args = 0, pretend = 0, frame = 48
+  92              		@ frame_needed = 0, uses_anonymous_args = 0
+ 119:Src/display_mpe.c ****   int xc, yc;
+  93              		.loc 1 119 3 view .LVU16
+ 120:Src/display_mpe.c ****   int x0, y0;
+  94              		.loc 1 120 3 view .LVU17
+ 121:Src/display_mpe.c ****   int x1, y1;
+  95              		.loc 1 121 3 view .LVU18
+ 122:Src/display_mpe.c ****   int w, h;
+  96              		.loc 1 122 3 view .LVU19
+ 123:Src/display_mpe.c ****   int i;
+  97              		.loc 1 123 3 view .LVU20
+ 124:Src/display_mpe.c **** 
+ 125:Src/display_mpe.c ****   convert_point(detect->x_center, detect->y_center, &xc, &yc);
+  98              		.loc 1 125 3 view .LVU21
+ 118:Src/display_mpe.c ****   int xc, yc;
+  99              		.loc 1 118 1 is_stmt 0 view .LVU22
+ 100 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 101              		.cfi_def_cfa_offset 36
+ 102              		.cfi_offset 4, -36
+ 103              		.cfi_offset 5, -32
+ 104              		.cfi_offset 6, -28
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s 			page 5
+
+
+ 105              		.cfi_offset 7, -24
+ 106              		.cfi_offset 8, -20
+ 107              		.cfi_offset 9, -16
+ 108              		.cfi_offset 10, -12
+ 109              		.cfi_offset 11, -8
+ 110              		.cfi_offset 14, -4
+ 111 0004 2DED028B 		vpush.64	{d8}
+ 112              		.cfi_def_cfa_offset 44
+ 113              		.cfi_offset 80, -44
+ 114              		.cfi_offset 81, -40
+ 115 0008 0446     		mov	r4, r0
+ 116              		.loc 1 125 3 view .LVU23
+ 117 000a DFF80892 		ldr	r9, .L16+20
+ 118:Src/display_mpe.c ****   int xc, yc;
+ 118              		.loc 1 118 1 view .LVU24
+ 119 000e 8FB0     		sub	sp, sp, #60
+ 120              		.cfi_def_cfa_offset 104
+ 121              		.loc 1 125 3 view .LVU25
+ 122 0010 D4ED010A 		vldr.32	s1, [r4, #4]
+ 123 0014 94ED000A 		vldr.32	s0, [r4]
+ 124 0018 D9F80030 		ldr	r3, [r9]
+ 125 001c 03A9     		add	r1, sp, #12
+ 126 001e 02A8     		add	r0, sp, #8
+ 127              	.LVL5:
+ 128              		.loc 1 125 3 view .LVU26
+ 129 0020 9847     		blx	r3
+ 130              	.LVL6:
+ 126:Src/display_mpe.c ****   convert_length(detect->width, detect->height, &w, &h);
+ 131              		.loc 1 126 3 is_stmt 1 view .LVU27
+ 132 0022 774B     		ldr	r3, .L16
+ 133 0024 D4ED030A 		vldr.32	s1, [r4, #12]
+ 134 0028 94ED020A 		vldr.32	s0, [r4, #8]
+ 135 002c 1B68     		ldr	r3, [r3]
+ 136 002e 09A9     		add	r1, sp, #36
+ 137 0030 08A8     		add	r0, sp, #32
+ 138 0032 9847     		blx	r3
+ 139              	.LVL7:
+ 127:Src/display_mpe.c ****   x0 = xc - (w + 1) / 2;
+ 140              		.loc 1 127 3 view .LVU28
+ 141              		.loc 1 127 16 is_stmt 0 view .LVU29
+ 142 0034 089A     		ldr	r2, [sp, #32]
+ 143              		.loc 1 127 11 view .LVU30
+ 144 0036 0298     		ldr	r0, [sp, #8]
+ 145              		.loc 1 127 16 view .LVU31
+ 146 0038 0132     		adds	r2, r2, #1
+ 147              		.loc 1 127 21 view .LVU32
+ 148 003a 02EBD272 		add	r2, r2, r2, lsr #31
+ 149 003e 5210     		asrs	r2, r2, #1
+ 150 0040 5242     		rsbs	r2, r2, #0
+ 151              		.loc 1 127 11 view .LVU33
+ 152 0042 1318     		adds	r3, r2, r0
+ 153              		.loc 1 127 6 view .LVU34
+ 154 0044 0493     		str	r3, [sp, #16]
+ 128:Src/display_mpe.c ****   y0 = yc - (h + 1) / 2;
+ 155              		.loc 1 128 3 is_stmt 1 view .LVU35
+ 156              		.loc 1 128 16 is_stmt 0 view .LVU36
+ 157 0046 099B     		ldr	r3, [sp, #36]
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s 			page 6
+
+
+ 158              		.loc 1 128 11 view .LVU37
+ 159 0048 0399     		ldr	r1, [sp, #12]
+ 160              		.loc 1 128 16 view .LVU38
+ 161 004a 0133     		adds	r3, r3, #1
+ 162              		.loc 1 128 21 view .LVU39
+ 163 004c 03EBD373 		add	r3, r3, r3, lsr #31
+ 164 0050 5B10     		asrs	r3, r3, #1
+ 165 0052 5B42     		rsbs	r3, r3, #0
+ 166              		.loc 1 128 11 view .LVU40
+ 167 0054 5D18     		adds	r5, r3, r1
+ 168              		.loc 1 128 6 view .LVU41
+ 169 0056 0595     		str	r5, [sp, #20]
+ 129:Src/display_mpe.c ****   x1 = xc + (w + 1) / 2;
+ 170              		.loc 1 129 3 is_stmt 1 view .LVU42
+ 130:Src/display_mpe.c ****   y1 = yc + (h + 1) / 2;
+ 131:Src/display_mpe.c ****   clamp_point(&x0, &y0);
+ 171              		.loc 1 131 3 is_stmt 0 view .LVU43
+ 172 0058 6A4D     		ldr	r5, .L16+4
+ 129:Src/display_mpe.c ****   x1 = xc + (w + 1) / 2;
+ 173              		.loc 1 129 6 view .LVU44
+ 174 005a 801A     		subs	r0, r0, r2
+ 130:Src/display_mpe.c ****   y1 = yc + (h + 1) / 2;
+ 175              		.loc 1 130 6 view .LVU45
+ 176 005c C91A     		subs	r1, r1, r3
+ 129:Src/display_mpe.c ****   x1 = xc + (w + 1) / 2;
+ 177              		.loc 1 129 6 view .LVU46
+ 178 005e 0690     		str	r0, [sp, #24]
+ 130:Src/display_mpe.c ****   y1 = yc + (h + 1) / 2;
+ 179              		.loc 1 130 3 is_stmt 1 view .LVU47
+ 180              		.loc 1 131 3 is_stmt 0 view .LVU48
+ 181 0060 2B68     		ldr	r3, [r5]
+ 130:Src/display_mpe.c ****   y1 = yc + (h + 1) / 2;
+ 182              		.loc 1 130 6 view .LVU49
+ 183 0062 0791     		str	r1, [sp, #28]
+ 184              		.loc 1 131 3 is_stmt 1 view .LVU50
+ 185 0064 04A8     		add	r0, sp, #16
+ 186 0066 05A9     		add	r1, sp, #20
+ 187 0068 9847     		blx	r3
+ 188              	.LVL8:
+ 132:Src/display_mpe.c ****   clamp_point(&x1, &y1);
+ 189              		.loc 1 132 3 view .LVU51
+ 190 006a 2B68     		ldr	r3, [r5]
+ 191 006c 07A9     		add	r1, sp, #28
+ 192 006e 06A8     		add	r0, sp, #24
+ 193 0070 9847     		blx	r3
+ 194              	.LVL9:
+ 133:Src/display_mpe.c **** 
+ 134:Src/display_mpe.c ****   UTIL_LCD_DrawRect(x0, y0, x1 - x0, y1 - y0, colors[detect->class_index % NUMBER_COLORS]);
+ 195              		.loc 1 134 3 view .LVU52
+ 196 0072 DDE90401 		ldrd	r0, r1, [sp, #16]
+ 197              		.loc 1 134 74 is_stmt 0 view .LVU53
+ 198 0076 0A22     		movs	r2, #10
+ 199 0078 6369     		ldr	r3, [r4, #20]
+ 135:Src/display_mpe.c **** 
+ 136:Src/display_mpe.c ****   for (i = 0; i < ARRAY_NB(bindings); i++)
+ 200              		.loc 1 136 10 view .LVU54
+ 201 007a 4FF0000B 		mov	fp, #0
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s 			page 7
+
+
+ 134:Src/display_mpe.c **** 
+ 202              		.loc 1 134 74 view .LVU55
+ 203 007e 93FBF2F6 		sdiv	r6, r3, r2
+ 204 0082 02FB1633 		mls	r3, r2, r6, r3
+ 134:Src/display_mpe.c **** 
+ 205              		.loc 1 134 3 view .LVU56
+ 206 0086 604A     		ldr	r2, .L16+8
+ 207              	.LBB6:
+ 208              	.LBB7:
+  79:Src/display_mpe.c ****     return ;
+ 209              		.loc 1 79 6 view .LVU57
+ 210 0088 B6EE008A 		vmov.f32	s16, #5.0e-1
+ 211              	.LBE7:
+ 212              	.LBE6:
+ 134:Src/display_mpe.c **** 
+ 213              		.loc 1 134 3 view .LVU58
+ 214 008c 52F82330 		ldr	r3, [r2, r3, lsl #2]
+ 215 0090 069A     		ldr	r2, [sp, #24]
+ 216 0092 0093     		str	r3, [sp]
+ 217 0094 079B     		ldr	r3, [sp, #28]
+ 218 0096 121A     		subs	r2, r2, r0
+ 219 0098 5B1A     		subs	r3, r3, r1
+ 220 009a FFF7FEFF 		bl	UTIL_LCD_DrawRect
+ 221              	.LVL10:
+ 222              		.loc 1 136 3 is_stmt 1 view .LVU59
+ 223              		.loc 1 136 17 discriminator 1 view .LVU60
+ 224 009e 5B4E     		ldr	r6, .L16+12
+ 225 00a0 DFF874A1 		ldr	r10, .L16+24
+ 226              	.LVL11:
+ 227              	.L8:
+ 137:Src/display_mpe.c ****     Display_binding(&detect->pKeyPoints[bindings[i][0]], &detect->pKeyPoints[bindings[i][1]], bindi
+ 228              		.loc 1 137 5 view .LVU61
+ 229              		.loc 1 137 40 is_stmt 0 view .LVU62
+ 230 00a4 0C23     		movs	r3, #12
+ 231              		.loc 1 137 106 view .LVU63
+ 232 00a6 D6E90118 		ldrd	r1, r8, [r6, #4]
+ 233              		.loc 1 137 28 view .LVU64
+ 234 00aa A769     		ldr	r7, [r4, #24]
+ 235              		.loc 1 137 40 view .LVU65
+ 236 00ac 3268     		ldr	r2, [r6]
+ 237              		.loc 1 137 5 view .LVU66
+ 238 00ae 03FB0272 		mla	r2, r3, r2, r7
+ 239              	.LVL12:
+ 240              	.LBB11:
+ 241              	.LBI6:
+  70:Src/display_mpe.c **** {
+ 242              		.loc 1 70 13 is_stmt 1 view .LVU67
+ 243              	.LBB8:
+  72:Src/display_mpe.c ****   int x0, y0;
+ 244              		.loc 1 72 3 view .LVU68
+  73:Src/display_mpe.c ****   int x1, y1;
+ 245              		.loc 1 73 3 view .LVU69
+  74:Src/display_mpe.c ****   int i;
+ 246              		.loc 1 74 3 view .LVU70
+  75:Src/display_mpe.c **** 
+ 247              		.loc 1 75 3 view .LVU71
+  77:Src/display_mpe.c **** 
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s 			page 8
+
+
+ 248              		.loc 1 77 3 view .LVU72
+  79:Src/display_mpe.c ****     return ;
+ 249              		.loc 1 79 3 view .LVU73
+  79:Src/display_mpe.c ****     return ;
+ 250              		.loc 1 79 6 is_stmt 0 view .LVU74
+ 251 00b2 D2ED027A 		vldr.32	s15, [r2, #8]
+ 252 00b6 F4EEC87A 		vcmpe.f32	s15, s16
+ 253 00ba F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 254 00be 4ED4     		bmi	.L7
+ 255              	.LBE8:
+ 256              	.LBE11:
+ 257              		.loc 1 137 5 view .LVU75
+ 258 00c0 03FB0177 		mla	r7, r3, r1, r7
+ 259              	.LBB12:
+ 260              	.LBB9:
+  81:Src/display_mpe.c ****     return ;
+ 261              		.loc 1 81 3 is_stmt 1 view .LVU76
+  81:Src/display_mpe.c ****     return ;
+ 262              		.loc 1 81 6 is_stmt 0 view .LVU77
+ 263 00c4 D7ED027A 		vldr.32	s15, [r7, #8]
+ 264 00c8 F4EEC87A 		vcmpe.f32	s15, s16
+ 265 00cc F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 266 00d0 45D4     		bmi	.L7
+  84:Src/display_mpe.c ****   is_clamp = clamp_point(&x0, &y0);
+ 267              		.loc 1 84 3 is_stmt 1 view .LVU78
+ 268 00d2 D9F80030 		ldr	r3, [r9]
+ 269 00d6 0BA9     		add	r1, sp, #44
+ 270 00d8 0AA8     		add	r0, sp, #40
+ 271 00da D2ED010A 		vldr.32	s1, [r2, #4]
+ 272 00de 92ED000A 		vldr.32	s0, [r2]
+ 273 00e2 9847     		blx	r3
+ 274              	.LVL13:
+  85:Src/display_mpe.c ****   if (is_clamp)
+ 275              		.loc 1 85 3 view .LVU79
+  85:Src/display_mpe.c ****   if (is_clamp)
+ 276              		.loc 1 85 14 is_stmt 0 view .LVU80
+ 277 00e4 2B68     		ldr	r3, [r5]
+ 278 00e6 0BA9     		add	r1, sp, #44
+ 279 00e8 0AA8     		add	r0, sp, #40
+ 280 00ea 9847     		blx	r3
+ 281              	.LVL14:
+  86:Src/display_mpe.c ****     return ;
+ 282              		.loc 1 86 3 is_stmt 1 view .LVU81
+  86:Src/display_mpe.c ****     return ;
+ 283              		.loc 1 86 6 is_stmt 0 view .LVU82
+ 284 00ec 0028     		cmp	r0, #0
+ 285 00ee 36D1     		bne	.L7
+  89:Src/display_mpe.c ****   is_clamp = clamp_point(&x1, &y1);
+ 286              		.loc 1 89 3 is_stmt 1 view .LVU83
+ 287 00f0 D9F80030 		ldr	r3, [r9]
+ 288 00f4 0DA9     		add	r1, sp, #52
+ 289 00f6 0CA8     		add	r0, sp, #48
+ 290              	.LVL15:
+  89:Src/display_mpe.c ****   is_clamp = clamp_point(&x1, &y1);
+ 291              		.loc 1 89 3 is_stmt 0 view .LVU84
+ 292 00f8 D7ED010A 		vldr.32	s1, [r7, #4]
+ 293 00fc 97ED000A 		vldr.32	s0, [r7]
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s 			page 9
+
+
+ 294 0100 9847     		blx	r3
+ 295              	.LVL16:
+  90:Src/display_mpe.c ****   if (is_clamp)
+ 296              		.loc 1 90 3 is_stmt 1 view .LVU85
+  90:Src/display_mpe.c ****   if (is_clamp)
+ 297              		.loc 1 90 14 is_stmt 0 view .LVU86
+ 298 0102 2B68     		ldr	r3, [r5]
+ 299 0104 0DA9     		add	r1, sp, #52
+ 300 0106 0CA8     		add	r0, sp, #48
+ 301 0108 9847     		blx	r3
+ 302              	.LVL17:
+  91:Src/display_mpe.c ****     return ;
+ 303              		.loc 1 91 3 is_stmt 1 view .LVU87
+  91:Src/display_mpe.c ****     return ;
+ 304              		.loc 1 91 6 is_stmt 0 view .LVU88
+ 305 010a 40BB     		cbnz	r0, .L7
+  94:Src/display_mpe.c ****   for (i = 1; i <= (BINDING_WIDTH - 1) / 2; i++) {
+ 306              		.loc 1 94 3 is_stmt 1 view .LVU89
+ 307 010c DDE90A01 		ldrd	r0, r1, [sp, #40]
+ 308              	.LVL18:
+  94:Src/display_mpe.c ****   for (i = 1; i <= (BINDING_WIDTH - 1) / 2; i++) {
+ 309              		.loc 1 94 3 is_stmt 0 view .LVU90
+ 310 0110 DDE90C23 		ldrd	r2, r3, [sp, #48]
+ 311 0114 CDF80080 		str	r8, [sp]
+ 312 0118 FFF7FEFF 		bl	UTIL_LCD_DrawLine
+ 313              	.LVL19:
+  95:Src/display_mpe.c ****     if (abs(y1 - y0) > abs(x1 - x0)) {
+ 314              		.loc 1 95 3 is_stmt 1 view .LVU91
+  95:Src/display_mpe.c ****     if (abs(y1 - y0) > abs(x1 - x0)) {
+ 315              		.loc 1 95 17 discriminator 1 view .LVU92
+  96:Src/display_mpe.c ****       Display_binding_line(x0 + i, y0, x1 + i , y1, color);
+ 316              		.loc 1 96 5 view .LVU93
+  96:Src/display_mpe.c ****       Display_binding_line(x0 + i, y0, x1 + i , y1, color);
+ 317              		.loc 1 96 31 is_stmt 0 view .LVU94
+ 318 011c 0AA8     		add	r0, sp, #40
+ 319 011e 0FC8     		ldm	r0, {r0, r1, r2, r3}
+  96:Src/display_mpe.c ****       Display_binding_line(x0 + i, y0, x1 + i , y1, color);
+ 320              		.loc 1 96 16 view .LVU95
+ 321 0120 A3EB010C 		sub	ip, r3, r1
+  96:Src/display_mpe.c ****       Display_binding_line(x0 + i, y0, x1 + i , y1, color);
+ 322              		.loc 1 96 31 view .LVU96
+ 323 0124 171A     		subs	r7, r2, r0
+  96:Src/display_mpe.c ****       Display_binding_line(x0 + i, y0, x1 + i , y1, color);
+ 324              		.loc 1 96 9 view .LVU97
+ 325 0126 BCF1000F 		cmp	ip, #0
+ 326 012a B8BF     		it	lt
+ 327 012c CCF1000C 		rsblt	ip, ip, #0
+  96:Src/display_mpe.c ****       Display_binding_line(x0 + i, y0, x1 + i , y1, color);
+ 328              		.loc 1 96 24 view .LVU98
+ 329 0130 002F     		cmp	r7, #0
+ 330 0132 B8BF     		it	lt
+ 331 0134 7F42     		rsblt	r7, r7, #0
+  97:Src/display_mpe.c ****       Display_binding_line(x0 - i, y0, x1 - i , y1, color);
+ 332              		.loc 1 97 7 view .LVU99
+ 333 0136 CDF80080 		str	r8, [sp]
+  96:Src/display_mpe.c ****       Display_binding_line(x0 + i, y0, x1 + i , y1, color);
+ 334              		.loc 1 96 8 view .LVU100
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s 			page 10
+
+
+ 335 013a BC45     		cmp	ip, r7
+  97:Src/display_mpe.c ****       Display_binding_line(x0 - i, y0, x1 - i , y1, color);
+ 336              		.loc 1 97 7 view .LVU101
+ 337 013c DAF80070 		ldr	r7, [r10]
+  96:Src/display_mpe.c ****       Display_binding_line(x0 + i, y0, x1 + i , y1, color);
+ 338              		.loc 1 96 8 view .LVU102
+ 339 0140 50DD     		ble	.L6
+  97:Src/display_mpe.c ****       Display_binding_line(x0 - i, y0, x1 - i , y1, color);
+ 340              		.loc 1 97 7 is_stmt 1 view .LVU103
+ 341 0142 0132     		adds	r2, r2, #1
+ 342 0144 0130     		adds	r0, r0, #1
+ 343 0146 B847     		blx	r7
+ 344              	.LVL20:
+  98:Src/display_mpe.c ****     } else {
+ 345              		.loc 1 98 7 view .LVU104
+ 346 0148 DDE90C23 		ldrd	r2, r3, [sp, #48]
+ 347 014c DDE90A01 		ldrd	r0, r1, [sp, #40]
+ 348 0150 CDF80080 		str	r8, [sp]
+ 349 0154 DAF80070 		ldr	r7, [r10]
+ 350 0158 013A     		subs	r2, r2, #1
+ 351 015a 0138     		subs	r0, r0, #1
+ 352              	.L15:
+ 101:Src/display_mpe.c ****     }
+ 353              		.loc 1 101 7 is_stmt 0 view .LVU105
+ 354 015c B847     		blx	r7
+ 355              	.LVL21:
+ 356              	.L7:
+  95:Src/display_mpe.c ****     if (abs(y1 - y0) > abs(x1 - x0)) {
+ 357              		.loc 1 95 17 is_stmt 1 discriminator 1 view .LVU106
+  95:Src/display_mpe.c ****     if (abs(y1 - y0) > abs(x1 - x0)) {
+ 358              		.loc 1 95 17 is_stmt 0 discriminator 1 view .LVU107
+ 359              	.LBE9:
+ 360              	.LBE12:
+ 136:Src/display_mpe.c ****     Display_binding(&detect->pKeyPoints[bindings[i][0]], &detect->pKeyPoints[bindings[i][1]], bindi
+ 361              		.loc 1 136 40 is_stmt 1 discriminator 3 view .LVU108
+ 362 015e 0BF1010B 		add	fp, fp, #1
+ 363              	.LVL22:
+ 136:Src/display_mpe.c ****     Display_binding(&detect->pKeyPoints[bindings[i][0]], &detect->pKeyPoints[bindings[i][1]], bindi
+ 364              		.loc 1 136 17 discriminator 1 view .LVU109
+ 365 0162 BBF1130F 		cmp	fp, #19
+ 366 0166 06F10C06 		add	r6, r6, #12
+ 367 016a 9BD1     		bne	.L8
+ 368 016c 0026     		movs	r6, #0
+ 369 016e 284F     		ldr	r7, .L16+16
+ 370              	.LVL23:
+ 371              	.L12:
+ 138:Src/display_mpe.c ****   for (i = 0; i < AI_POSE_PP_POSE_KEYPOINTS_NB; i++)
+ 139:Src/display_mpe.c ****     Display_keypoint(&detect->pKeyPoints[i], kp_color[i]);
+ 372              		.loc 1 139 5 view .LVU110
+ 373 0170 A269     		ldr	r2, [r4, #24]
+ 374              		.loc 1 139 54 is_stmt 0 view .LVU111
+ 375 0172 57F8048B 		ldr	r8, [r7], #4
+ 376              		.loc 1 139 5 view .LVU112
+ 377 0176 3244     		add	r2, r2, r6
+ 378              	.LVL24:
+ 379              	.LBB13:
+ 380              	.LBI13:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s 			page 11
+
+
+  47:Src/display_mpe.c **** {
+ 381              		.loc 1 47 13 is_stmt 1 view .LVU113
+ 382              	.LBB14:
+  49:Src/display_mpe.c ****   int xc, yc;
+ 383              		.loc 1 49 3 view .LVU114
+  50:Src/display_mpe.c ****   int x, y;
+ 384              		.loc 1 50 3 view .LVU115
+  51:Src/display_mpe.c **** 
+ 385              		.loc 1 51 3 view .LVU116
+  53:Src/display_mpe.c ****     return ;
+ 386              		.loc 1 53 3 view .LVU117
+  53:Src/display_mpe.c ****     return ;
+ 387              		.loc 1 53 6 is_stmt 0 view .LVU118
+ 388 0178 D2ED027A 		vldr.32	s15, [r2, #8]
+ 389 017c F4EEC87A 		vcmpe.f32	s15, s16
+ 390 0180 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 391 0184 26D4     		bmi	.L11
+  56:Src/display_mpe.c ****   xc = x - CIRCLE_RADIUS / 2;
+ 392              		.loc 1 56 3 is_stmt 1 view .LVU119
+ 393 0186 D2ED010A 		vldr.32	s1, [r2, #4]
+ 394 018a 92ED000A 		vldr.32	s0, [r2]
+ 395 018e D9F80030 		ldr	r3, [r9]
+ 396 0192 0DA9     		add	r1, sp, #52
+ 397 0194 0CA8     		add	r0, sp, #48
+ 398 0196 9847     		blx	r3
+ 399              	.LVL25:
+  57:Src/display_mpe.c ****   yc = y - CIRCLE_RADIUS / 2;
+ 400              		.loc 1 57 3 view .LVU120
+  57:Src/display_mpe.c ****   yc = y - CIRCLE_RADIUS / 2;
+ 401              		.loc 1 57 10 is_stmt 0 view .LVU121
+ 402 0198 0C9B     		ldr	r3, [sp, #48]
+  59:Src/display_mpe.c ****   xc = x + CIRCLE_RADIUS / 2;
+ 403              		.loc 1 59 14 view .LVU122
+ 404 019a 0BA9     		add	r1, sp, #44
+  57:Src/display_mpe.c ****   yc = y - CIRCLE_RADIUS / 2;
+ 405              		.loc 1 57 10 view .LVU123
+ 406 019c 023B     		subs	r3, r3, #2
+  57:Src/display_mpe.c ****   yc = y - CIRCLE_RADIUS / 2;
+ 407              		.loc 1 57 6 view .LVU124
+ 408 019e 0A93     		str	r3, [sp, #40]
+  58:Src/display_mpe.c ****   is_clamp = clamp_point(&xc, &yc);
+ 409              		.loc 1 58 3 is_stmt 1 view .LVU125
+  58:Src/display_mpe.c ****   is_clamp = clamp_point(&xc, &yc);
+ 410              		.loc 1 58 10 is_stmt 0 view .LVU126
+ 411 01a0 0D9B     		ldr	r3, [sp, #52]
+  59:Src/display_mpe.c ****   xc = x + CIRCLE_RADIUS / 2;
+ 412              		.loc 1 59 14 view .LVU127
+ 413 01a2 0AA8     		add	r0, sp, #40
+  58:Src/display_mpe.c ****   is_clamp = clamp_point(&xc, &yc);
+ 414              		.loc 1 58 10 view .LVU128
+ 415 01a4 023B     		subs	r3, r3, #2
+  58:Src/display_mpe.c ****   is_clamp = clamp_point(&xc, &yc);
+ 416              		.loc 1 58 6 view .LVU129
+ 417 01a6 0B93     		str	r3, [sp, #44]
+  59:Src/display_mpe.c ****   xc = x + CIRCLE_RADIUS / 2;
+ 418              		.loc 1 59 3 is_stmt 1 view .LVU130
+  59:Src/display_mpe.c ****   xc = x + CIRCLE_RADIUS / 2;
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s 			page 12
+
+
+ 419              		.loc 1 59 14 is_stmt 0 view .LVU131
+ 420 01a8 2B68     		ldr	r3, [r5]
+ 421 01aa 9847     		blx	r3
+ 422              	.LVL26:
+  60:Src/display_mpe.c ****   yc = y + CIRCLE_RADIUS / 2;
+ 423              		.loc 1 60 10 view .LVU132
+ 424 01ac 0C9B     		ldr	r3, [sp, #48]
+  59:Src/display_mpe.c ****   xc = x + CIRCLE_RADIUS / 2;
+ 425              		.loc 1 59 14 view .LVU133
+ 426 01ae 8246     		mov	r10, r0
+ 427              	.LVL27:
+  60:Src/display_mpe.c ****   yc = y + CIRCLE_RADIUS / 2;
+ 428              		.loc 1 60 3 is_stmt 1 view .LVU134
+  60:Src/display_mpe.c ****   yc = y + CIRCLE_RADIUS / 2;
+ 429              		.loc 1 60 10 is_stmt 0 view .LVU135
+ 430 01b0 0233     		adds	r3, r3, #2
+  60:Src/display_mpe.c ****   yc = y + CIRCLE_RADIUS / 2;
+ 431              		.loc 1 60 6 view .LVU136
+ 432 01b2 0A93     		str	r3, [sp, #40]
+  61:Src/display_mpe.c ****   is_clamp |= clamp_point(&xc, &yc);
+ 433              		.loc 1 61 3 is_stmt 1 view .LVU137
+  61:Src/display_mpe.c ****   is_clamp |= clamp_point(&xc, &yc);
+ 434              		.loc 1 61 10 is_stmt 0 view .LVU138
+ 435 01b4 0D9B     		ldr	r3, [sp, #52]
+  62:Src/display_mpe.c **** 
+ 436              		.loc 1 62 15 view .LVU139
+ 437 01b6 0BA9     		add	r1, sp, #44
+  61:Src/display_mpe.c ****   is_clamp |= clamp_point(&xc, &yc);
+ 438              		.loc 1 61 10 view .LVU140
+ 439 01b8 0233     		adds	r3, r3, #2
+  61:Src/display_mpe.c ****   is_clamp |= clamp_point(&xc, &yc);
+ 440              		.loc 1 61 6 view .LVU141
+ 441 01ba 0B93     		str	r3, [sp, #44]
+  62:Src/display_mpe.c **** 
+ 442              		.loc 1 62 3 is_stmt 1 view .LVU142
+  62:Src/display_mpe.c **** 
+ 443              		.loc 1 62 15 is_stmt 0 view .LVU143
+ 444 01bc 0AA8     		add	r0, sp, #40
+ 445              	.LVL28:
+  62:Src/display_mpe.c **** 
+ 446              		.loc 1 62 15 view .LVU144
+ 447 01be 2B68     		ldr	r3, [r5]
+ 448 01c0 9847     		blx	r3
+ 449              	.LVL29:
+  64:Src/display_mpe.c ****     return ;
+ 450              		.loc 1 64 3 is_stmt 1 view .LVU145
+  64:Src/display_mpe.c ****     return ;
+ 451              		.loc 1 64 6 is_stmt 0 view .LVU146
+ 452 01c2 5AEA0000 		orrs	r0, r10, r0
+ 453              	.LVL30:
+  64:Src/display_mpe.c ****     return ;
+ 454              		.loc 1 64 6 view .LVU147
+ 455 01c6 05D1     		bne	.L11
+  67:Src/display_mpe.c **** }
+ 456              		.loc 1 67 3 is_stmt 1 view .LVU148
+ 457 01c8 DDE90C01 		ldrd	r0, r1, [sp, #48]
+ 458 01cc 4346     		mov	r3, r8
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s 			page 13
+
+
+ 459 01ce 0522     		movs	r2, #5
+ 460 01d0 FFF7FEFF 		bl	UTIL_LCD_FillCircle
+ 461              	.LVL31:
+ 462              	.L11:
+  67:Src/display_mpe.c **** }
+ 463              		.loc 1 67 3 is_stmt 0 view .LVU149
+ 464              	.LBE14:
+ 465              	.LBE13:
+ 138:Src/display_mpe.c ****     Display_keypoint(&detect->pKeyPoints[i], kp_color[i]);
+ 466              		.loc 1 138 50 is_stmt 1 discriminator 3 view .LVU150
+ 138:Src/display_mpe.c ****     Display_keypoint(&detect->pKeyPoints[i], kp_color[i]);
+ 467              		.loc 1 138 17 discriminator 1 view .LVU151
+ 468 01d4 0C36     		adds	r6, r6, #12
+ 469 01d6 9C2E     		cmp	r6, #156
+ 470 01d8 CAD1     		bne	.L12
+ 140:Src/display_mpe.c **** }
+ 471              		.loc 1 140 1 is_stmt 0 view .LVU152
+ 472 01da 0FB0     		add	sp, sp, #60
+ 473              		.cfi_remember_state
+ 474              		.cfi_def_cfa_offset 44
+ 475              		@ sp needed
+ 476 01dc BDEC028B 		vldm	sp!, {d8}
+ 477              		.cfi_restore 80
+ 478              		.cfi_restore 81
+ 479              		.cfi_def_cfa_offset 36
+ 480 01e0 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 481              	.LVL32:
+ 482              	.L6:
+ 483              		.cfi_restore_state
+ 484              	.LBB15:
+ 485              	.LBB10:
+ 100:Src/display_mpe.c ****       Display_binding_line(x0, y0 - i, x1 , y1 - i, color);
+ 486              		.loc 1 100 7 is_stmt 1 view .LVU153
+ 487 01e4 0133     		adds	r3, r3, #1
+ 488 01e6 0131     		adds	r1, r1, #1
+ 489 01e8 B847     		blx	r7
+ 490              	.LVL33:
+ 101:Src/display_mpe.c ****     }
+ 491              		.loc 1 101 7 view .LVU154
+ 492 01ea DDE90B12 		ldrd	r1, r2, [sp, #44]
+ 493 01ee 0D9B     		ldr	r3, [sp, #52]
+ 494 01f0 CDF80080 		str	r8, [sp]
+ 495 01f4 DAF80070 		ldr	r7, [r10]
+ 496 01f8 0A98     		ldr	r0, [sp, #40]
+ 497 01fa 013B     		subs	r3, r3, #1
+ 498 01fc 0139     		subs	r1, r1, #1
+ 499 01fe ADE7     		b	.L15
+ 500              	.L17:
+ 501              		.align	2
+ 502              	.L16:
+ 503 0200 00000000 		.word	convert_length
+ 504 0204 00000000 		.word	clamp_point
+ 505 0208 00000000 		.word	colors
+ 506 020c 00000000 		.word	bindings
+ 507 0210 00000000 		.word	kp_color
+ 508 0214 00000000 		.word	convert_point
+ 509 0218 00000000 		.word	Display_binding_line
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s 			page 14
+
+
+ 510              	.LBE10:
+ 511              	.LBE15:
+ 512              		.cfi_endproc
+ 513              	.LFE3342:
+ 515              		.section	.bss.Display_binding_line,"aw",%nobits
+ 516              		.align	2
+ 519              	Display_binding_line:
+ 520 0000 00000000 		.space	4
+ 521              		.section	.bss.convert_point,"aw",%nobits
+ 522              		.align	2
+ 525              	convert_point:
+ 526 0000 00000000 		.space	4
+ 527              		.section	.bss.convert_length,"aw",%nobits
+ 528              		.align	2
+ 531              	convert_length:
+ 532 0000 00000000 		.space	4
+ 533              		.section	.bss.clamp_point,"aw",%nobits
+ 534              		.align	2
+ 537              	clamp_point:
+ 538 0000 00000000 		.space	4
+ 539              		.global	colors
+ 540              		.section	.rodata.colors,"a"
+ 541              		.align	2
+ 544              	colors:
+ 545 0000 00FF00FF 		.word	-16711936
+ 546 0004 0000FFFF 		.word	-65536
+ 547 0008 FFFF00FF 		.word	-16711681
+ 548 000c FF00FFFF 		.word	-65281
+ 549 0010 00FFFFFF 		.word	-256
+ 550 0014 808080FF 		.word	-8355712
+ 551 0018 000000FF 		.word	-16777216
+ 552 001c 2A2AA5FF 		.word	-5952982
+ 553 0020 FF0000FF 		.word	-16776961
+ 554 0024 00A5FFFF 		.word	-23296
+ 555              		.section	.rodata.kp_color,"a"
+ 556              		.align	2
+ 559              	kp_color:
+ 560 0000 00FF00FF 		.word	-16711936
+ 561 0004 00FF00FF 		.word	-16711936
+ 562 0008 00FF00FF 		.word	-16711936
+ 563 000c 00FF00FF 		.word	-16711936
+ 564 0010 00FF00FF 		.word	-16711936
+ 565 0014 FF0000FF 		.word	-16776961
+ 566 0018 FF0000FF 		.word	-16776961
+ 567 001c FF0000FF 		.word	-16776961
+ 568 0020 FF0000FF 		.word	-16776961
+ 569 0024 FF0000FF 		.word	-16776961
+ 570 0028 FF0000FF 		.word	-16776961
+ 571 002c FF00FFFF 		.word	-65281
+ 572 0030 FF00FFFF 		.word	-65281
+ 573 0034 00A5FFFF 		.word	-23296
+ 574 0038 00A5FFFF 		.word	-23296
+ 575 003c 00A5FFFF 		.word	-23296
+ 576 0040 00A5FFFF 		.word	-23296
+ 577              		.section	.rodata.bindings,"a"
+ 578              		.align	2
+ 581              	bindings:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s 			page 15
+
+
+ 582 0000 0F000000 		.word	15
+ 583 0004 0D000000 		.word	13
+ 584 0008 00A5FFFF 		.word	-23296
+ 585 000c 0D000000 		.word	13
+ 586 0010 0B000000 		.word	11
+ 587 0014 00A5FFFF 		.word	-23296
+ 588 0018 10000000 		.word	16
+ 589 001c 0E000000 		.word	14
+ 590 0020 00A5FFFF 		.word	-23296
+ 591 0024 0E000000 		.word	14
+ 592 0028 0C000000 		.word	12
+ 593 002c 00A5FFFF 		.word	-23296
+ 594 0030 0B000000 		.word	11
+ 595 0034 0C000000 		.word	12
+ 596 0038 FF00FFFF 		.word	-65281
+ 597 003c 05000000 		.word	5
+ 598 0040 0B000000 		.word	11
+ 599 0044 FF00FFFF 		.word	-65281
+ 600 0048 06000000 		.word	6
+ 601 004c 0C000000 		.word	12
+ 602 0050 FF00FFFF 		.word	-65281
+ 603 0054 05000000 		.word	5
+ 604 0058 06000000 		.word	6
+ 605 005c FF0000FF 		.word	-16776961
+ 606 0060 05000000 		.word	5
+ 607 0064 07000000 		.word	7
+ 608 0068 FF0000FF 		.word	-16776961
+ 609 006c 06000000 		.word	6
+ 610 0070 08000000 		.word	8
+ 611 0074 FF0000FF 		.word	-16776961
+ 612 0078 07000000 		.word	7
+ 613 007c 09000000 		.word	9
+ 614 0080 FF0000FF 		.word	-16776961
+ 615 0084 08000000 		.word	8
+ 616 0088 0A000000 		.word	10
+ 617 008c FF0000FF 		.word	-16776961
+ 618 0090 01000000 		.word	1
+ 619 0094 02000000 		.word	2
+ 620 0098 00FF00FF 		.word	-16711936
+ 621 009c 00000000 		.word	0
+ 622 00a0 01000000 		.word	1
+ 623 00a4 00FF00FF 		.word	-16711936
+ 624 00a8 00000000 		.word	0
+ 625 00ac 02000000 		.word	2
+ 626 00b0 00FF00FF 		.word	-16711936
+ 627 00b4 01000000 		.word	1
+ 628 00b8 03000000 		.word	3
+ 629 00bc 00FF00FF 		.word	-16711936
+ 630 00c0 02000000 		.word	2
+ 631 00c4 04000000 		.word	4
+ 632 00c8 00FF00FF 		.word	-16711936
+ 633 00cc 03000000 		.word	3
+ 634 00d0 05000000 		.word	5
+ 635 00d4 00FF00FF 		.word	-16711936
+ 636 00d8 04000000 		.word	4
+ 637 00dc 06000000 		.word	6
+ 638 00e0 00FF00FF 		.word	-16711936
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s 			page 16
+
+
+ 639              		.text
+ 640              	.Letext0:
+ 641              		.file 2 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 642              		.file 3 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 643              		.file 4 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 644              		.file 5 "../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Inc/mpe_pp_output_if.h"
+ 645              		.file 6 "Inc/display_keypoints_17.h"
+ 646              		.file 7 "../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.h"
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s 			page 17
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 display_mpe.c
+C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s:26     .text.Display_mpe_InitFunctions:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s:32     .text.Display_mpe_InitFunctions:00000000 Display_mpe_InitFunctions
+C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s:72     .text.Display_mpe_InitFunctions:00000014 $d
+C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s:537    .bss.clamp_point:00000000 clamp_point
+C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s:531    .bss.convert_length:00000000 convert_length
+C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s:525    .bss.convert_point:00000000 convert_point
+C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s:519    .bss.Display_binding_line:00000000 Display_binding_line
+C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s:80     .text.Display_mpe_Detection:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s:86     .text.Display_mpe_Detection:00000000 Display_mpe_Detection
+C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s:503    .text.Display_mpe_Detection:00000200 $d
+C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s:544    .rodata.colors:00000000 colors
+C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s:581    .rodata.bindings:00000000 bindings
+C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s:559    .rodata.kp_color:00000000 kp_color
+C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s:516    .bss.Display_binding_line:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s:522    .bss.convert_point:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s:528    .bss.convert_length:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s:534    .bss.clamp_point:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s:541    .rodata.colors:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s:556    .rodata.kp_color:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s:578    .rodata.bindings:00000000 $d
+                           .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
+                           .group:00000000 wm4.mpe_pp_output_if.h.11.db0dd5ceb87072354c56b51e8f9b2a0d
+                           .group:00000000 wm4._newlib_version.h.4.411db44ea2338a62eca2f0777f81481b
+                           .group:00000000 wm4.features.h.33.e0c9f337c65cb9f22ed5f23d082bc78b
+                           .group:00000000 wm4._default_types.h.15.247e5cd201eca3442cbf5404108c4935
+                           .group:00000000 wm4._intsup.h.10.48bafbb683905c4daa4565a85aeeb264
+                           .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+                           .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+                           .group:00000000 wm4.cmsis_gcc.h.26.7a5fd1a99dbedde687044a4433ab3e15
+                           .group:00000000 wm4.newlib.h.7.a37ffbe9e5aff74303f4e60b1cc1c01b
+                           .group:00000000 wm4.ieeefp.h.77.bd5feb87d9990dd328793ced294f6a87
+                           .group:00000000 wm4.config.h.224.10ee1ad185d877c6e334e6581faab44d
+                           .group:00000000 wm4._ansi.h.31.de524f58584151836e90d8620a16f8e8
+                           .group:00000000 wm4.stddef.h.39.0dc9006b34572d4d9cae4c8b422c4971
+                           .group:00000000 wm4.cdefs.h.49.70fc7af612f78ddcace70fdd90b5623b
+                           .group:00000000 wm4._types.h.20.dd0d04dca3800a0d2a6129b87f3adbb2
+                           .group:00000000 wm4.stddef.h.158.6f8e08a347b1cff664332fa350bfceb3
+                           .group:00000000 wm4._types.h.127.3bdfe3ff8ea2d0985b03d9cbe93480e3
+                           .group:00000000 wm4.reent.h.18.25503cdc8b7e55dd0d6ea7b3e5af7a03
+                           .group:00000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
+                           .group:00000000 wm4.reent.h.78.6b87466b04591b1f1cb88c14fdf2ba9e
+                           .group:00000000 wm4.string.h.15.dab3980bf35408a4c507182805e2de3a
+                           .group:00000000 wm4.stddef.h.158.eec8bf00b5213f43d095cb984c5f22e3
+                           .group:00000000 wm4.string.h.177.59a005921fa78485abc80a0267de5752
+                           .group:00000000 wm4.math.h.13.47cfc34cae8a1153323939c4d32cf7c2
+                           .group:00000000 wm4.float.h.29.0e9d9baf95ec39f9555dc80c6e28186b
+                           .group:00000000 wm4.syslimits.h.34.de5cbd310098bc5895998b6bde577ed2
+                           .group:00000000 wm4.limits.h.9.70fb0ada6f71b16202a66baaa6d8ea70
+                           .group:00000000 wm4.limits.h.60.56a1ae353e2028a24298ec6463b8b593
+                           .group:00000000 wm4.arm_math_types.h.94.a6c8422e2657ad4cd95bd8be69ba02aa
+                           .group:00000000 wm4.stdbool.h.29.c08aa3eec75cf5b9b5003883f43253f0
+                           .group:00000000 wm4.arm_mve.h.38.47b22bbd301ce82bc6dafd1a387f65a3
+                           .group:00000000 wm4.arm_math_types.h.559.cab78f278b684a3ea2271947c7aea680
+                           .group:00000000 wm4.arm_math_memory.h.28.fe8a81c6a9ac13061a5f748732089249
+                           .group:00000000 wm4.none.h.185.db055cca83e83f96d8d0bb450fbdf4bb
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s 			page 18
+
+
+                           .group:00000000 wm4.utils.h.27.57524573fe37b04009eecf3582a4c591
+                           .group:00000000 wm4.fast_math_functions.h.28.8eb7477260c1d6b62047c49a01c4cbaa
+                           .group:00000000 wm4.controller_functions.h.28.7bed7d7a726df2f65b8a3d89cff01247
+                           .group:00000000 wm4.filtering_functions.h.46.6cf1424fb1f86d5f9958d208b83340a1
+                           .group:00000000 wm4.app_config.h.20.61424149ecd1a4cefcbf5206f0c11dcb
+                           .group:00000000 wm4.stm32n6xx_hal_conf.h.21.e6f895f5dec93fd886896ef3aa220611
+                           .group:00000000 wm4.arm_cmse.h.103.a0d15a79c4c9a67da8d5831704d7248e
+                           .group:00000000 wm4.stm32n6xx.h.34.80585dd08aa426c932f6311fdb7386da
+                           .group:00000000 wm4.stm32n657xx.h.26.acd272cb67318cc1a4791ce2f0720ca6
+                           .group:00000000 wm4.cmsis_version.h.32.0ac195c83bb4537824e6ad1c47474b79
+                           .group:00000000 wm4.core_cm55.h.68.832d5cf835639cc0d28219c3d2867330
+                           .group:00000000 wm4.core_cm55.h.196.52e437a270752da561676e507b35baeb
+                           .group:00000000 wm4.mpu_armv8.h.32.9d72426c8e2b47753456dcb84802c5b3
+                           .group:00000000 wm4.pmu_armv8.h.32.eaa95f88a71b29390b135fd81c071b6b
+                           .group:00000000 wm4.core_cm55.h.4411.860dad8650880893dd57b815844f7186
+                           .group:00000000 wm4.cachel1_armv7.h.32.abd77761a989e008b0c60891114a33c7
+                           .group:00000000 wm4.stm32n657xx.h.575.1c2a5e6bedffc6f9083dcc857bc6d09d
+                           .group:00000000 wm4.stm32n6xx.h.114.5cf793d8af485e14f110e3e24bde1aa5
+                           .group:00000000 wm4.stm32_hal_legacy.h.22.87fb12bf5a1a1e00fc134f22bc9aa8c4
+                           .group:00000000 wm4.stm32n6xx_hal_def.h.63.3a8f01490e8852464e9fcb69092e9c75
+                           .group:00000000 wm4.stm32n6xx_ll_bus.h.38.2366a295ee4cdb04833997d3787fcd2d
+                           .group:00000000 wm4.stm32n6xx_ll_rcc.h.21.002e22a16fd7f67dde6dce41e8ba9620
+                           .group:00000000 wm4.stm32n6xx_hal_rcc.h.194.1cb1283e40f9bebcd3fba2a9a961838e
+                           .group:00000000 wm4.stm32n6xx_hal_rcc_ex.h.21.79aa32178dfef625fbd20d362449acfa
+                           .group:00000000 wm4.stm32n6xx_hal_rcc.h.4359.3f0b7ad33826d95438602c9aebc08af9
+                           .group:00000000 wm4.stm32n6xx_hal_gpio.h.21.89d54af663b98eb8fc098192053f7eeb
+                           .group:00000000 wm4.stm32n6xx_hal_gpio_ex.h.22.4acb2e3511a98bb48b81cfc8e09fd59e
+                           .group:00000000 wm4.stm32n6xx_hal_rif.h.21.424d0bafb874a777dee3742a22e13037
+                           .group:00000000 wm4.stm32n6xx_hal_dma.h.21.61e48c5c2e8d25d22177834b232fe45c
+                           .group:00000000 wm4.stm32n6xx_hal_dma_ex.h.21.66e597beb090a165329d6ccf665e41bc
+                           .group:00000000 wm4.stm32n6xx_hal_dma.h.1020.87e2180c009560b617c1f8208140c950
+                           .group:00000000 wm4.stm32n6xx_hal_cortex.h.21.f493623cc58f9454ab4eae41e395c5cc
+                           .group:00000000 wm4.stm32n6xx_hal_bsec.h.21.61b309e67dd810e28897a01b1b21a97f
+                           .group:00000000 wm4.stm32n6xx_hal_dcmipp.h.21.f538bfd785c6469670251ac9bc7af55d
+                           .group:00000000 wm4.stm32n6xx_hal_dma2d.h.21.75c8d46cdbb72970123b3f34ae2043d7
+                           .group:00000000 wm4.stm32n6xx_hal_exti.h.21.fda87e715ea6b98239ec30171d1df594
+                           .group:00000000 wm4.stm32n6xx_hal_i2c.h.21.3f483626ff64c5bf027265bb2e1d1331
+                           .group:00000000 wm4.stm32n6xx_hal_i2c_ex.h.21.79e9196c22282cdaf6b4047893638c45
+                           .group:00000000 wm4.stm32n6xx_hal_i2c.h.741.1084702632703acc669e4282b3043372
+                           .group:00000000 wm4.stm32n6xx_hal_ltdc.h.21.ae1eb09930e7e550e48e418ac5849e4d
+                           .group:00000000 wm4.stm32n6xx_hal_ltdc.h.1002.b13ede7fc94ed5ad1c6768a157d2149a
+                           .group:00000000 wm4.stm32n6xx_hal_pwr.h.21.cdb73e4869c3fed3fc84f901ec0e5f0a
+                           .group:00000000 wm4.stm32n6xx_hal_pwr_ex.h.21.1a673224a58b0c1e5fad8eeda6514208
+                           .group:00000000 wm4.stm32n6xx_hal_ramcfg.h.21.a62dfbb4d2c14e9a8c634a215e37bd3d
+                           .group:00000000 wm4.stm32n6xx_hal_uart.h.21.230f549bfa0d5ebfd77bfb311b2aca15
+                           .group:00000000 wm4.stm32n6xx_hal_uart_ex.h.21.a0d5511e1d0703b7b5278c8f5472b96d
+                           .group:00000000 wm4.stm32n6xx_hal_xspi.h.21.e17898be2073b6b6b19faf30b4e304e9
+                           .group:00000000 wm4.stm32n6xx_hal_cacheaxi.h.21.7c3375b7903ec42376e4883320997f74
+                           .group:00000000 wm4.stm32n6xx_hal.h.81.5e59143eba07faca3e9aeaa5470826c8
+                           .group:00000000 wm4.lcd.h.21.98701c105e66fef2e089854e5bc0fe32
+                           .group:00000000 wm4.stm32_lcd.h.55.1a04e503950bf34ef3721d2ebb9542fc
+                           .group:00000000 wm4.main.h.30.caab52a0a8de64f9677f2eb568935933
+                           .group:00000000 wm4.utils.h.20.a122c519940ea111a25b4d1f17b5f8d3
+                           .group:00000000 wm4.assert.h.11.db24e541f16414db224bf986d21017e2
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.alloca.h.8.dfc0c703c47ec3e69746825b17d9e66d
+                           .group:00000000 wm4.stdlib.h.56.f4862cfbf4363a1db01842d5bdf72c18
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmpkyxk.s 			page 19
+
+
+
+UNDEFINED SYMBOLS
+UTIL_LCD_DrawRect
+UTIL_LCD_DrawLine
+UTIL_LCD_FillCircle

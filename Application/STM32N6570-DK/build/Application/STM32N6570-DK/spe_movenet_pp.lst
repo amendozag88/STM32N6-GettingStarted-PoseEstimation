@@ -1,0 +1,418 @@
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc4Ip4VN.s 			page 1
+
+
+   1              		.arch armv8.1-m.main
+   2              		.fpu fpv5-d16
+   3              		.arch_extension dsp
+   4              		.arch_extension fp
+   5              		.arch_extension fp.dp
+   6              		.arch_extension mve
+   7              		.arch_extension mve.fp
+   8              		.eabi_attribute 5, "cortex-m55"
+   9              		.eabi_attribute 28, 1
+  10              		.eabi_attribute 20, 1
+  11              		.eabi_attribute 21, 1
+  12              		.eabi_attribute 23, 3
+  13              		.eabi_attribute 24, 1
+  14              		.eabi_attribute 25, 1
+  15              		.eabi_attribute 26, 1
+  16              		.eabi_attribute 30, 4
+  17              		.eabi_attribute 34, 1
+  18              		.eabi_attribute 38, 1
+  19              		.eabi_attribute 18, 4
+  20              		.file	"spe_movenet_pp.c"
+  21              		.text
+  22              	.Ltext0:
+  23              		.cfi_sections	.debug_frame
+  24              		.file 1 "../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c"
+  25              		.section	.text.movenet_heatmap_max,"ax",%progbits
+  26              		.align	1
+  27              		.global	movenet_heatmap_max
+  28              		.syntax unified
+  29              		.thumb
+  30              		.thumb_func
+  32              	movenet_heatmap_max:
+  33              	.LVL0:
+  34              	.LFB2645:
+   1:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** /*---------------------------------------------------------------------------------------------
+   2:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** #  * Copyright (c) 2023 STMicroelectronics.
+   3:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** #  * All rights reserved.
+   4:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** #  *
+   5:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** #  * This software is licensed under terms that can be found in the LICENSE file in
+   6:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** #  * the root directory of this software component.
+   7:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** #  * If no LICENSE file comes with this software, it is provided AS-IS.
+   8:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** #  *--------------------------------------------------------------------------------------------*/
+   9:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** 
+  10:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** #include "spe_movenet_pp_loc.h"
+  11:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** #include "spe_movenet_pp_if.h"
+  12:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** #include "vision_models_pp.h"
+  13:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** 
+  14:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** 
+  15:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** 
+  16:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** int32_t movenet_heatmap_max(spe_movenet_pp_in_t *pInput,
+  17:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****                             spe_pp_out_t *pOutput,
+  18:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****                             spe_movenet_pp_static_param_t *pInput_static_param)
+  19:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** {
+  35              		.loc 1 19 1 view -0
+  36              		.cfi_startproc
+  37              		@ args = 0, pretend = 0, frame = 8
+  38              		@ frame_needed = 0, uses_anonymous_args = 0
+  20:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   uint32_t i;
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc4Ip4VN.s 			page 2
+
+
+  39              		.loc 1 20 3 view .LVU1
+  21:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   float32_t x_center;
+  40              		.loc 1 21 3 view .LVU2
+  22:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   float32_t y_center;
+  41              		.loc 1 22 3 view .LVU3
+  23:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   float32_t proba;
+  42              		.loc 1 23 3 view .LVU4
+  24:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   uint32_t index;
+  43              		.loc 1 24 3 view .LVU5
+  25:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   uint32_t width = pInput_static_param->heatmap_width;
+  44              		.loc 1 25 3 view .LVU6
+  19:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   uint32_t i;
+  45              		.loc 1 19 1 is_stmt 0 view .LVU7
+  46 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+  47              		.cfi_def_cfa_offset 36
+  48              		.cfi_offset 4, -36
+  49              		.cfi_offset 5, -32
+  50              		.cfi_offset 6, -28
+  51              		.cfi_offset 7, -24
+  52              		.cfi_offset 8, -20
+  53              		.cfi_offset 9, -16
+  54              		.cfi_offset 10, -12
+  55              		.cfi_offset 11, -8
+  56              		.cfi_offset 14, -4
+  57 0004 2DED028B 		vpush.64	{d8}
+  58              		.cfi_def_cfa_offset 44
+  59              		.cfi_offset 80, -44
+  60              		.cfi_offset 81, -40
+  61              		.loc 1 25 12 view .LVU8
+  62 0008 92ED008A 		vldr.32	s16, [r2]	@ int
+  63              	.LVL1:
+  26:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   uint32_t height = pInput_static_param->heatmap_height;
+  64              		.loc 1 26 3 is_stmt 1 view .LVU9
+  27:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   float32_t *pInputKp = pInput->inBuff;
+  28:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** 
+  29:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   for (i = 0; i < pInput_static_param->nb_keypoints; i++)
+  30:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   {
+  31:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** 
+  32:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     pInputKp = &(pInput->inBuff[i]);
+  33:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     vision_models_maxi_tr_if32ou32((float32_t *) pInputKp,
+  65              		.loc 1 33 5 is_stmt 0 view .LVU10
+  66 000c 18EE103A 		vmov	r3, s16	@ int
+  19:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   uint32_t i;
+  67              		.loc 1 19 1 view .LVU11
+  68 0010 0746     		mov	r7, r0
+  69 0012 8846     		mov	r8, r1
+  70 0014 1546     		mov	r5, r2
+  29:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   {
+  71              		.loc 1 29 10 view .LVU12
+  72 0016 0024     		movs	r4, #0
+  34:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****                                    (uint32_t) width * height,
+  35:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****                                    pInput_static_param->nb_keypoints,
+  36:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****                                    (float32_t *) &proba,
+  37:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****                                    (uint32_t *) &index);
+  38:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** 
+  39:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     /* This is not cartesian referential, to be aligned with Python code */
+  40:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     y_center = ((index % height + 0.5f) / height);
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc4Ip4VN.s 			page 3
+
+
+  41:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     x_center = ((index / height + 0.5f) / width);
+  42:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** 
+  43:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     /* Coordinates inversion for the application code that uses cartesian referential */
+  44:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     pOutput->pOutBuff[i].x_center = y_center;
+  73              		.loc 1 44 22 view .LVU13
+  74 0018 4FF00C0A 		mov	r10, #12
+  26:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   float32_t *pInputKp = pInput->inBuff;
+  75              		.loc 1 26 12 view .LVU14
+  76 001c 5668     		ldr	r6, [r2, #4]
+  77              	.LVL2:
+  27:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** 
+  78              		.loc 1 27 3 is_stmt 1 view .LVU15
+  29:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   {
+  79              		.loc 1 29 3 view .LVU16
+  19:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   uint32_t i;
+  80              		.loc 1 19 1 is_stmt 0 view .LVU17
+  81 001e 85B0     		sub	sp, sp, #20
+  82              		.cfi_def_cfa_offset 64
+  33:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****                                    (uint32_t) width * height,
+  83              		.loc 1 33 5 view .LVU18
+  84 0020 06FB03FB 		mul	fp, r6, r3
+  85 0024 0DF10C09 		add	r9, sp, #12
+  86              	.LVL3:
+  87              	.L2:
+  29:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   {
+  88              		.loc 1 29 17 is_stmt 1 discriminator 1 view .LVU19
+  29:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   {
+  89              		.loc 1 29 38 is_stmt 0 discriminator 1 view .LVU20
+  90 0028 AA68     		ldr	r2, [r5, #8]
+  29:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   {
+  91              		.loc 1 29 17 discriminator 1 view .LVU21
+  92 002a A242     		cmp	r2, r4
+  93 002c 05D8     		bhi	.L3
+  45:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     pOutput->pOutBuff[i].y_center = x_center;
+  46:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     pOutput->pOutBuff[i].proba = proba;
+  47:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   }
+  48:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** 
+  49:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   return (AI_SPE_POSTPROCESS_ERROR_NO);
+  94              		.loc 1 49 3 is_stmt 1 view .LVU22
+  50:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** }
+  95              		.loc 1 50 1 is_stmt 0 view .LVU23
+  96 002e 0020     		movs	r0, #0
+  97 0030 05B0     		add	sp, sp, #20
+  98              		.cfi_remember_state
+  99              		.cfi_def_cfa_offset 44
+ 100              		@ sp needed
+ 101 0032 BDEC028B 		vldm	sp!, {d8}
+ 102              		.cfi_restore 80
+ 103              		.cfi_restore 81
+ 104              		.cfi_def_cfa_offset 36
+ 105              	.LVL4:
+ 106              		.loc 1 50 1 view .LVU24
+ 107 0036 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 108              	.LVL5:
+ 109              	.L3:
+ 110              		.cfi_restore_state
+  32:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     vision_models_maxi_tr_if32ou32((float32_t *) pInputKp,
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc4Ip4VN.s 			page 4
+
+
+ 111              		.loc 1 32 5 is_stmt 1 view .LVU25
+  33:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****                                    (uint32_t) width * height,
+ 112              		.loc 1 33 5 view .LVU26
+  32:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     vision_models_maxi_tr_if32ou32((float32_t *) pInputKp,
+ 113              		.loc 1 32 14 is_stmt 0 view .LVU27
+ 114 003a 3868     		ldr	r0, [r7]
+  33:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****                                    (uint32_t) width * height,
+ 115              		.loc 1 33 5 view .LVU28
+ 116 003c 5946     		mov	r1, fp
+ 117 003e 02AB     		add	r3, sp, #8
+ 118 0040 00EB8400 		add	r0, r0, r4, lsl #2
+ 119              	.LVL6:
+  33:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****                                    (uint32_t) width * height,
+ 120              		.loc 1 33 5 view .LVU29
+ 121 0044 CDF80090 		str	r9, [sp]
+ 122 0048 FFF7FEFF 		bl	vision_models_maxi_tr_if32ou32
+ 123              	.LVL7:
+  40:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     x_center = ((index / height + 0.5f) / width);
+ 124              		.loc 1 40 5 is_stmt 1 view .LVU30
+  40:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     x_center = ((index / height + 0.5f) / width);
+ 125              		.loc 1 40 24 is_stmt 0 view .LVU31
+ 126 004c 039B     		ldr	r3, [sp, #12]
+ 127              	.LVL8:
+  41:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** 
+ 128              		.loc 1 41 5 is_stmt 1 view .LVU32
+  44:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     pOutput->pOutBuff[i].y_center = x_center;
+ 129              		.loc 1 44 5 view .LVU33
+  40:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     x_center = ((index / height + 0.5f) / width);
+ 130              		.loc 1 40 33 is_stmt 0 view .LVU34
+ 131 004e B6EE007A 		vmov.f32	s14, #5.0e-1
+  40:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     x_center = ((index / height + 0.5f) / width);
+ 132              		.loc 1 40 24 view .LVU35
+ 133 0052 B3FBF6F2 		udiv	r2, r3, r6
+ 134 0056 06FB1233 		mls	r3, r6, r2, r3
+ 135              	.LVL9:
+  40:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     x_center = ((index / height + 0.5f) / width);
+ 136              		.loc 1 40 24 view .LVU36
+ 137 005a 07EE903A 		vmov	s15, r3	@ int
+  40:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     x_center = ((index / height + 0.5f) / width);
+ 138              		.loc 1 40 41 view .LVU37
+ 139 005e 06EE906A 		vmov	s13, r6	@ int
+  40:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     x_center = ((index / height + 0.5f) / width);
+ 140              		.loc 1 40 33 view .LVU38
+ 141 0062 F8EE677A 		vcvt.f32.u32	s15, s15
+  40:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     x_center = ((index / height + 0.5f) / width);
+ 142              		.loc 1 40 41 view .LVU39
+ 143 0066 B8EE666A 		vcvt.f32.u32	s12, s13
+  40:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     x_center = ((index / height + 0.5f) / width);
+ 144              		.loc 1 40 33 view .LVU40
+ 145 006a 77EE877A 		vadd.f32	s15, s15, s14
+  40:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     x_center = ((index / height + 0.5f) / width);
+ 146              		.loc 1 40 14 view .LVU41
+ 147 006e C7EE866A 		vdiv.f32	s13, s15, s12
+  41:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** 
+ 148              		.loc 1 41 33 view .LVU42
+ 149 0072 07EE902A 		vmov	s15, r2	@ int
+ 150 0076 F8EE677A 		vcvt.f32.u32	s15, s15
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc4Ip4VN.s 			page 5
+
+
+  44:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     pOutput->pOutBuff[i].y_center = x_center;
+ 151              		.loc 1 44 22 view .LVU43
+ 152 007a D8F80010 		ldr	r1, [r8]
+  41:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** 
+ 153              		.loc 1 41 33 view .LVU44
+ 154 007e 77EE877A 		vadd.f32	s15, s15, s14
+  44:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     pOutput->pOutBuff[i].y_center = x_center;
+ 155              		.loc 1 44 22 view .LVU45
+ 156 0082 0AFB0411 		mla	r1, r10, r4, r1
+  44:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     pOutput->pOutBuff[i].y_center = x_center;
+ 157              		.loc 1 44 35 view .LVU46
+ 158 0086 C1ED006A 		vstr.32	s13, [r1]
+  45:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     pOutput->pOutBuff[i].proba = proba;
+ 159              		.loc 1 45 5 is_stmt 1 view .LVU47
+  41:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** 
+ 160              		.loc 1 41 41 is_stmt 0 view .LVU48
+ 161 008a F8EE486A 		vcvt.f32.u32	s13, s16
+  41:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** 
+ 162              		.loc 1 41 14 view .LVU49
+ 163 008e 87EEA67A 		vdiv.f32	s14, s15, s13
+ 164              	.LVL10:
+  46:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   }
+ 165              		.loc 1 46 32 view .LVU50
+ 166 0092 029B     		ldr	r3, [sp, #8]	@ float
+  45:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     pOutput->pOutBuff[i].proba = proba;
+ 167              		.loc 1 45 35 view .LVU51
+ 168 0094 81ED017A 		vstr.32	s14, [r1, #4]
+  46:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   }
+ 169              		.loc 1 46 5 is_stmt 1 view .LVU52
+  46:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   }
+ 170              		.loc 1 46 32 is_stmt 0 view .LVU53
+ 171 0098 8B60     		str	r3, [r1, #8]	@ float
+  29:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   {
+ 172              		.loc 1 29 55 is_stmt 1 discriminator 3 view .LVU54
+ 173 009a 0134     		adds	r4, r4, #1
+ 174              	.LVL11:
+  29:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   {
+ 175              		.loc 1 29 55 is_stmt 0 discriminator 3 view .LVU55
+ 176 009c C4E7     		b	.L2
+ 177              		.cfi_endproc
+ 178              	.LFE2645:
+ 180              		.section	.text.spe_movenet_pp_reset,"ax",%progbits
+ 181              		.align	1
+ 182              		.global	spe_movenet_pp_reset
+ 183              		.syntax unified
+ 184              		.thumb
+ 185              		.thumb_func
+ 187              	spe_movenet_pp_reset:
+ 188              	.LVL12:
+ 189              	.LFB2646:
+  51:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** 
+  52:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** 
+  53:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** /* ----------------------       Exported routines      ---------------------- */
+  54:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** 
+  55:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** int32_t spe_movenet_pp_reset(spe_movenet_pp_static_param_t *pInput_static_param)
+  56:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** {
+ 190              		.loc 1 56 1 is_stmt 1 view -0
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc4Ip4VN.s 			page 6
+
+
+ 191              		.cfi_startproc
+ 192              		@ args = 0, pretend = 0, frame = 0
+ 193              		@ frame_needed = 0, uses_anonymous_args = 0
+ 194              		@ link register save eliminated.
+  57:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   /* Initializations */
+  58:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****   // pInput_static_param->... no initialization
+  59:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** 
+  60:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** 	return (AI_SPE_POSTPROCESS_ERROR_NO);
+ 195              		.loc 1 60 2 view .LVU57
+  61:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** }
+ 196              		.loc 1 61 1 is_stmt 0 view .LVU58
+ 197 0000 0020     		movs	r0, #0
+ 198              	.LVL13:
+ 199              		.loc 1 61 1 view .LVU59
+ 200 0002 7047     		bx	lr
+ 201              		.cfi_endproc
+ 202              	.LFE2646:
+ 204              		.section	.text.spe_movenet_pp_process,"ax",%progbits
+ 205              		.align	1
+ 206              		.global	spe_movenet_pp_process
+ 207              		.syntax unified
+ 208              		.thumb
+ 209              		.thumb_func
+ 211              	spe_movenet_pp_process:
+ 212              	.LVL14:
+ 213              	.LFB2647:
+  62:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** 
+  63:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** 
+  64:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** int32_t spe_movenet_pp_process(spe_movenet_pp_in_t *pInput,
+  65:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****                                      spe_pp_out_t *pOutput,
+  66:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****                                      spe_movenet_pp_static_param_t *pInput_static_param)
+  67:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** {
+ 214              		.loc 1 67 1 is_stmt 1 view -0
+ 215              		.cfi_startproc
+ 216              		@ args = 0, pretend = 0, frame = 0
+ 217              		@ frame_needed = 0, uses_anonymous_args = 0
+ 218              		@ link register save eliminated.
+  68:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     int32_t error   = AI_SPE_POSTPROCESS_ERROR_NO;
+ 219              		.loc 1 68 5 view .LVU61
+  69:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c **** 
+  70:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****      /* Extracts max value and indexes of each heatmap */
+  71:../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/spe_movenet_pp.c ****     error = movenet_heatmap_max(pInput,
+ 220              		.loc 1 71 5 view .LVU62
+ 221              		.loc 1 71 13 is_stmt 0 view .LVU63
+ 222 0000 FFF7FEBF 		b	movenet_heatmap_max
+ 223              	.LVL15:
+ 224              		.loc 1 71 13 view .LVU64
+ 225              		.cfi_endproc
+ 226              	.LFE2647:
+ 228              		.text
+ 229              	.Letext0:
+ 230              		.file 2 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 231              		.file 3 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 232              		.file 4 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 233              		.file 5 "../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Inc/spe_pp_output_if.h"
+ 234              		.file 6 "../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Inc/spe_movenet_pp_if.h"
+ 235              		.file 7 "../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Src/vision_models_pp.h"
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc4Ip4VN.s 			page 7
+
+
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc4Ip4VN.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 spe_movenet_pp.c
+C:\Users\Antonio\AppData\Local\Temp\cc4Ip4VN.s:26     .text.movenet_heatmap_max:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cc4Ip4VN.s:32     .text.movenet_heatmap_max:00000000 movenet_heatmap_max
+C:\Users\Antonio\AppData\Local\Temp\cc4Ip4VN.s:181    .text.spe_movenet_pp_reset:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cc4Ip4VN.s:187    .text.spe_movenet_pp_reset:00000000 spe_movenet_pp_reset
+C:\Users\Antonio\AppData\Local\Temp\cc4Ip4VN.s:205    .text.spe_movenet_pp_process:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cc4Ip4VN.s:211    .text.spe_movenet_pp_process:00000000 spe_movenet_pp_process
+                           .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
+                           .group:00000000 wm4._newlib_version.h.4.411db44ea2338a62eca2f0777f81481b
+                           .group:00000000 wm4.features.h.33.e0c9f337c65cb9f22ed5f23d082bc78b
+                           .group:00000000 wm4._default_types.h.15.247e5cd201eca3442cbf5404108c4935
+                           .group:00000000 wm4._intsup.h.10.48bafbb683905c4daa4565a85aeeb264
+                           .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+                           .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+                           .group:00000000 wm4.cmsis_gcc.h.26.7a5fd1a99dbedde687044a4433ab3e15
+                           .group:00000000 wm4.newlib.h.7.a37ffbe9e5aff74303f4e60b1cc1c01b
+                           .group:00000000 wm4.ieeefp.h.77.bd5feb87d9990dd328793ced294f6a87
+                           .group:00000000 wm4.config.h.224.10ee1ad185d877c6e334e6581faab44d
+                           .group:00000000 wm4._ansi.h.31.de524f58584151836e90d8620a16f8e8
+                           .group:00000000 wm4.stddef.h.39.0dc9006b34572d4d9cae4c8b422c4971
+                           .group:00000000 wm4.cdefs.h.49.70fc7af612f78ddcace70fdd90b5623b
+                           .group:00000000 wm4._types.h.20.dd0d04dca3800a0d2a6129b87f3adbb2
+                           .group:00000000 wm4.stddef.h.158.6f8e08a347b1cff664332fa350bfceb3
+                           .group:00000000 wm4._types.h.127.3bdfe3ff8ea2d0985b03d9cbe93480e3
+                           .group:00000000 wm4.reent.h.18.25503cdc8b7e55dd0d6ea7b3e5af7a03
+                           .group:00000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
+                           .group:00000000 wm4.reent.h.78.6b87466b04591b1f1cb88c14fdf2ba9e
+                           .group:00000000 wm4.string.h.15.dab3980bf35408a4c507182805e2de3a
+                           .group:00000000 wm4.stddef.h.158.eec8bf00b5213f43d095cb984c5f22e3
+                           .group:00000000 wm4.string.h.177.59a005921fa78485abc80a0267de5752
+                           .group:00000000 wm4.math.h.13.47cfc34cae8a1153323939c4d32cf7c2
+                           .group:00000000 wm4.float.h.29.0e9d9baf95ec39f9555dc80c6e28186b
+                           .group:00000000 wm4.syslimits.h.34.de5cbd310098bc5895998b6bde577ed2
+                           .group:00000000 wm4.limits.h.9.70fb0ada6f71b16202a66baaa6d8ea70
+                           .group:00000000 wm4.limits.h.60.56a1ae353e2028a24298ec6463b8b593
+                           .group:00000000 wm4.arm_math_types.h.94.a6c8422e2657ad4cd95bd8be69ba02aa
+                           .group:00000000 wm4.stdbool.h.29.c08aa3eec75cf5b9b5003883f43253f0
+                           .group:00000000 wm4.arm_mve.h.38.47b22bbd301ce82bc6dafd1a387f65a3
+                           .group:00000000 wm4.arm_math_types.h.559.cab78f278b684a3ea2271947c7aea680
+                           .group:00000000 wm4.arm_math_memory.h.28.fe8a81c6a9ac13061a5f748732089249
+                           .group:00000000 wm4.none.h.185.db055cca83e83f96d8d0bb450fbdf4bb
+                           .group:00000000 wm4.utils.h.27.57524573fe37b04009eecf3582a4c591
+                           .group:00000000 wm4.fast_math_functions.h.28.8eb7477260c1d6b62047c49a01c4cbaa
+                           .group:00000000 wm4.controller_functions.h.28.7bed7d7a726df2f65b8a3d89cff01247
+                           .group:00000000 wm4.filtering_functions.h.46.6cf1424fb1f86d5f9958d208b83340a1
+                           .group:00000000 wm4.spe_movenet_pp_loc.h.23.32690bbab24b32502d8bb70406d810bf
+                           .group:00000000 wm4.spe_pp_output_if.h.11.7212d2990e83c8afeadfa97fa05d17c4
+                           .group:00000000 wm4.vision_models_pp.h.11.86a32eed956cb08ad4a46e77c460350c
+
+UNDEFINED SYMBOLS
+vision_models_maxi_tr_if32ou32

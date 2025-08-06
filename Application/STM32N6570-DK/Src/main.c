@@ -434,9 +434,15 @@ static void Display_NetworkOutput(void *p_postprocess, uint32_t inference_ms)
   Display_spe_Detection(roi);
 #endif
   UTIL_LCD_SetBackColor(0x40000000);
-  UTIL_LCDEx_PrintfAt(0, LINE(20), CENTER_MODE, "Inference: %ums", inference_ms);
-  UTIL_LCD_SetBackColor(0);
+  UTIL_LCDEx_PrintfAt(0, LINE(19), CENTER_MODE, "Inference: %ums", inference_ms);
+  UTIL_LCDEx_PrintfAt(0, LINE(18), CENTER_MODE, "STM32 Edge AI Contest");
+  float32_t  x_coord=roi[0].x_center;
+  float32_t  y_coord=roi[0].y_center;
+  float32_t confidence = roi[0].proba;
 
+  UTIL_LCDEx_PrintfAt(0, LINE(20), CENTER_MODE, "X: %f, Y: %f P:%f", x_coord,y_coord, confidence	  );
+
+  UTIL_LCD_SetBackColor(0);
   Display_WelcomeScreen();
 
   SCB_CleanDCache_by_Addr(lcd_fg_buffer[lcd_fg_buffer_rd_idx], LCD_FG_FRAMEBUFFER_SIZE);

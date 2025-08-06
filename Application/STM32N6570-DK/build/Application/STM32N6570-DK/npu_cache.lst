@@ -1,0 +1,440 @@
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s 			page 1
+
+
+   1              		.arch armv8.1-m.main
+   2              		.fpu fpv5-d16
+   3              		.arch_extension dsp
+   4              		.arch_extension fp
+   5              		.arch_extension fp.dp
+   6              		.arch_extension mve
+   7              		.arch_extension mve.fp
+   8              		.eabi_attribute 5, "cortex-m55"
+   9              		.eabi_attribute 28, 1
+  10              		.eabi_attribute 20, 1
+  11              		.eabi_attribute 21, 1
+  12              		.eabi_attribute 23, 3
+  13              		.eabi_attribute 24, 1
+  14              		.eabi_attribute 25, 1
+  15              		.eabi_attribute 26, 1
+  16              		.eabi_attribute 30, 4
+  17              		.eabi_attribute 34, 1
+  18              		.eabi_attribute 38, 1
+  19              		.eabi_attribute 18, 4
+  20              		.file	"npu_cache.c"
+  21              		.text
+  22              	.Ltext0:
+  23              		.cfi_sections	.debug_frame
+  24              		.file 1 "../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c"
+  25              		.section	.text.npu_cache_init,"ax",%progbits
+  26              		.align	1
+  27              		.global	npu_cache_init
+  28              		.syntax unified
+  29              		.thumb
+  30              		.thumb_func
+  32              	npu_cache_init:
+  33              	.LFB835:
+   1:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** /**
+   2:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   ******************************************************************************
+   3:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   * @file    npu_cache.c
+   4:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   * @brief   Implementation of NPU-cache-handling functions (CACHEAXI)
+   5:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   ******************************************************************************
+   6:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   * @attention
+   7:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   *
+   8:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   * Copyright (c) 2024 STMicroelectronics.
+   9:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   * All rights reserved.
+  10:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   *
+  11:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  12:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   * in the root directory of this software component.
+  13:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  14:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   *
+  15:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   ******************************************************************************
+  16:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   */
+  17:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** 
+  18:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** #include "npu_cache.h"
+  19:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** #include "stm32n6xx_hal_cacheaxi.h"
+  20:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** 
+  21:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** static CACHEAXI_HandleTypeDef hcacheaxi_s;
+  22:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** 
+  23:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** void npu_cache_init(void)
+  24:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** {
+  34              		.loc 1 24 1 view -0
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s 			page 2
+
+
+  35              		.cfi_startproc
+  36              		@ args = 0, pretend = 0, frame = 0
+  37              		@ frame_needed = 0, uses_anonymous_args = 0
+  38              		@ link register save eliminated.
+  25:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   hcacheaxi_s.Instance = CACHEAXI;
+  39              		.loc 1 25 3 view .LVU1
+  40              		.loc 1 25 24 is_stmt 0 view .LVU2
+  41 0000 0248     		ldr	r0, .L2
+  42 0002 034B     		ldr	r3, .L2+4
+  43 0004 0360     		str	r3, [r0]
+  26:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   HAL_CACHEAXI_Init(&hcacheaxi_s);      // Side effect: cacheaxi should be enabled (but one should 
+  44              		.loc 1 26 3 is_stmt 1 view .LVU3
+  45 0006 FFF7FEBF 		b	HAL_CACHEAXI_Init
+  46              	.LVL0:
+  47              	.L3:
+  48 000a 00BF     		.align	2
+  49              	.L2:
+  50 000c 00000000 		.word	hcacheaxi_s
+  51 0010 00FC0D58 		.word	1477311488
+  52              		.cfi_endproc
+  53              	.LFE835:
+  55              		.section	.text.npu_cache_enable,"ax",%progbits
+  56              		.align	1
+  57              		.global	npu_cache_enable
+  58              		.syntax unified
+  59              		.thumb
+  60              		.thumb_func
+  62              	npu_cache_enable:
+  63              	.LFB836:
+  27:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** }
+  28:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** 
+  29:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** void npu_cache_enable(void)
+  30:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** {
+  64              		.loc 1 30 1 view -0
+  65              		.cfi_startproc
+  66              		@ args = 0, pretend = 0, frame = 0
+  67              		@ frame_needed = 0, uses_anonymous_args = 0
+  68 0000 10B5     		push	{r4, lr}
+  69              		.cfi_def_cfa_offset 8
+  70              		.cfi_offset 4, -8
+  71              		.cfi_offset 14, -4
+  31:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   HAL_StatusTypeDef status;
+  32:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   // Enable is wrapped in a loop because most of times, the first call returns
+  33:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   //    HAL_BUSY, resulting in a cache not enabled.
+  34:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   do
+  35:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   {
+  36:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****     status = HAL_CACHEAXI_Enable(&hcacheaxi_s);
+  72              		.loc 1 36 14 is_stmt 0 view .LVU5
+  73 0002 034C     		ldr	r4, .L8
+  74              	.L5:
+  31:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   HAL_StatusTypeDef status;
+  75              		.loc 1 31 3 is_stmt 1 view .LVU6
+  34:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   {
+  76              		.loc 1 34 3 view .LVU7
+  77              		.loc 1 36 5 view .LVU8
+  78              		.loc 1 36 14 is_stmt 0 view .LVU9
+  79 0004 2046     		mov	r0, r4
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s 			page 3
+
+
+  80 0006 FFF7FEFF 		bl	HAL_CACHEAXI_Enable
+  81              	.LVL1:
+  37:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   } while (status == HAL_BUSY);
+  82              		.loc 1 37 19 is_stmt 1 discriminator 1 view .LVU10
+  83 000a 0228     		cmp	r0, #2
+  84 000c FAD0     		beq	.L5
+  38:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** }
+  85              		.loc 1 38 1 is_stmt 0 view .LVU11
+  86 000e 10BD     		pop	{r4, pc}
+  87              	.L9:
+  88              		.align	2
+  89              	.L8:
+  90 0010 00000000 		.word	hcacheaxi_s
+  91              		.cfi_endproc
+  92              	.LFE836:
+  94              		.section	.text.npu_cache_disable,"ax",%progbits
+  95              		.align	1
+  96              		.global	npu_cache_disable
+  97              		.syntax unified
+  98              		.thumb
+  99              		.thumb_func
+ 101              	npu_cache_disable:
+ 102              	.LFB837:
+  39:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** 
+  40:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** void npu_cache_disable(void)
+  41:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** {
+ 103              		.loc 1 41 1 is_stmt 1 view -0
+ 104              		.cfi_startproc
+ 105              		@ args = 0, pretend = 0, frame = 0
+ 106              		@ frame_needed = 0, uses_anonymous_args = 0
+ 107 0000 10B5     		push	{r4, lr}
+ 108              		.cfi_def_cfa_offset 8
+ 109              		.cfi_offset 4, -8
+ 110              		.cfi_offset 14, -4
+  42:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   HAL_StatusTypeDef status;
+  43:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   do
+  44:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   {
+  45:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****     status = HAL_CACHEAXI_Disable(&hcacheaxi_s);
+ 111              		.loc 1 45 14 is_stmt 0 view .LVU13
+ 112 0002 034C     		ldr	r4, .L14
+ 113              	.L11:
+  42:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   HAL_StatusTypeDef status;
+ 114              		.loc 1 42 3 is_stmt 1 view .LVU14
+  43:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   {
+ 115              		.loc 1 43 3 view .LVU15
+ 116              		.loc 1 45 5 view .LVU16
+ 117              		.loc 1 45 14 is_stmt 0 view .LVU17
+ 118 0004 2046     		mov	r0, r4
+ 119 0006 FFF7FEFF 		bl	HAL_CACHEAXI_Disable
+ 120              	.LVL2:
+  46:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   } while (status == HAL_BUSY);
+ 121              		.loc 1 46 19 is_stmt 1 discriminator 1 view .LVU18
+ 122 000a 0228     		cmp	r0, #2
+ 123 000c FAD0     		beq	.L11
+  47:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** }
+ 124              		.loc 1 47 1 is_stmt 0 view .LVU19
+ 125 000e 10BD     		pop	{r4, pc}
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s 			page 4
+
+
+ 126              	.L15:
+ 127              		.align	2
+ 128              	.L14:
+ 129 0010 00000000 		.word	hcacheaxi_s
+ 130              		.cfi_endproc
+ 131              	.LFE837:
+ 133              		.section	.text.npu_cache_invalidate,"ax",%progbits
+ 134              		.align	1
+ 135              		.global	npu_cache_invalidate
+ 136              		.syntax unified
+ 137              		.thumb
+ 138              		.thumb_func
+ 140              	npu_cache_invalidate:
+ 141              	.LFB838:
+  48:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** 
+  49:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** void npu_cache_invalidate(void)
+  50:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** {
+ 142              		.loc 1 50 1 is_stmt 1 view -0
+ 143              		.cfi_startproc
+ 144              		@ args = 0, pretend = 0, frame = 0
+ 145              		@ frame_needed = 0, uses_anonymous_args = 0
+ 146              		@ link register save eliminated.
+  51:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   HAL_CACHEAXI_Invalidate(&hcacheaxi_s);
+ 147              		.loc 1 51 3 view .LVU21
+ 148 0000 0148     		ldr	r0, .L17
+ 149 0002 FFF7FEBF 		b	HAL_CACHEAXI_Invalidate
+ 150              	.LVL3:
+ 151              	.L18:
+ 152 0006 00BF     		.align	2
+ 153              	.L17:
+ 154 0008 00000000 		.word	hcacheaxi_s
+ 155              		.cfi_endproc
+ 156              	.LFE838:
+ 158              		.section	.text.npu_cache_clean_range,"ax",%progbits
+ 159              		.align	1
+ 160              		.global	npu_cache_clean_range
+ 161              		.syntax unified
+ 162              		.thumb
+ 163              		.thumb_func
+ 165              	npu_cache_clean_range:
+ 166              	.LVL4:
+ 167              	.LFB839:
+  52:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** }
+  53:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** 
+  54:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** void npu_cache_clean_range(uint32_t start_addr, uint32_t end_addr)
+  55:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** {
+ 168              		.loc 1 55 1 view -0
+ 169              		.cfi_startproc
+ 170              		@ args = 0, pretend = 0, frame = 0
+ 171              		@ frame_needed = 0, uses_anonymous_args = 0
+ 172              		@ link register save eliminated.
+  56:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   HAL_CACHEAXI_CleanByAddr(&hcacheaxi_s, (uint32_t*)start_addr, end_addr-start_addr);
+ 173              		.loc 1 56 3 view .LVU23
+ 174 0000 0A1A     		subs	r2, r1, r0
+ 175 0002 0146     		mov	r1, r0
+ 176              	.LVL5:
+ 177              		.loc 1 56 3 is_stmt 0 view .LVU24
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s 			page 5
+
+
+ 178 0004 0148     		ldr	r0, .L20
+ 179              	.LVL6:
+ 180              		.loc 1 56 3 view .LVU25
+ 181 0006 FFF7FEBF 		b	HAL_CACHEAXI_CleanByAddr
+ 182              	.LVL7:
+ 183              	.L21:
+ 184              		.loc 1 56 3 view .LVU26
+ 185 000a 00BF     		.align	2
+ 186              	.L20:
+ 187 000c 00000000 		.word	hcacheaxi_s
+ 188              		.cfi_endproc
+ 189              	.LFE839:
+ 191              		.section	.text.npu_cache_clean_invalidate_range,"ax",%progbits
+ 192              		.align	1
+ 193              		.global	npu_cache_clean_invalidate_range
+ 194              		.syntax unified
+ 195              		.thumb
+ 196              		.thumb_func
+ 198              	npu_cache_clean_invalidate_range:
+ 199              	.LVL8:
+ 200              	.LFB840:
+  57:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** }
+  58:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** 
+  59:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** void npu_cache_clean_invalidate_range(uint32_t start_addr, uint32_t end_addr)
+  60:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** {
+ 201              		.loc 1 60 1 is_stmt 1 view -0
+ 202              		.cfi_startproc
+ 203              		@ args = 0, pretend = 0, frame = 0
+ 204              		@ frame_needed = 0, uses_anonymous_args = 0
+ 205              		@ link register save eliminated.
+  61:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   HAL_CACHEAXI_CleanInvalidByAddr(&hcacheaxi_s, (uint32_t*)start_addr, end_addr-start_addr);
+ 206              		.loc 1 61 3 view .LVU28
+ 207 0000 0A1A     		subs	r2, r1, r0
+ 208 0002 0146     		mov	r1, r0
+ 209              	.LVL9:
+ 210              		.loc 1 61 3 is_stmt 0 view .LVU29
+ 211 0004 0148     		ldr	r0, .L23
+ 212              	.LVL10:
+ 213              		.loc 1 61 3 view .LVU30
+ 214 0006 FFF7FEBF 		b	HAL_CACHEAXI_CleanInvalidByAddr
+ 215              	.LVL11:
+ 216              	.L24:
+ 217              		.loc 1 61 3 view .LVU31
+ 218 000a 00BF     		.align	2
+ 219              	.L23:
+ 220 000c 00000000 		.word	hcacheaxi_s
+ 221              		.cfi_endproc
+ 222              	.LFE840:
+ 224              		.section	.text.NPU_CACHE_IRQHandler,"ax",%progbits
+ 225              		.align	1
+ 226              		.global	NPU_CACHE_IRQHandler
+ 227              		.syntax unified
+ 228              		.thumb
+ 229              		.thumb_func
+ 231              	NPU_CACHE_IRQHandler:
+ 232              	.LFB841:
+  62:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** }
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s 			page 6
+
+
+  63:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** 
+  64:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** void NPU_CACHE_IRQHandler(void)
+  65:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** {
+ 233              		.loc 1 65 1 is_stmt 1 view -0
+ 234              		.cfi_startproc
+ 235              		@ args = 0, pretend = 0, frame = 0
+ 236              		@ frame_needed = 0, uses_anonymous_args = 0
+ 237              		@ link register save eliminated.
+  66:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   __NOP();
+ 238              		.loc 1 66 3 view .LVU33
+ 239              		.syntax unified
+ 240              	@ 66 "../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c" 1
+ 241 0000 00BF     		nop
+ 242              	@ 0 "" 2
+  67:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** }
+ 243              		.loc 1 67 1 is_stmt 0 view .LVU34
+ 244              		.thumb
+ 245              		.syntax unified
+ 246 0002 7047     		bx	lr
+ 247              		.cfi_endproc
+ 248              	.LFE841:
+ 250              		.section	.bss.hcacheaxi_s,"aw",%nobits
+ 251              		.align	2
+ 254              	hcacheaxi_s:
+ 255 0000 00000000 		.space	12
+ 255      00000000 
+ 255      00000000 
+ 256              		.text
+ 257              	.Letext0:
+ 258              		.file 2 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 259              		.file 3 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 260              		.file 4 "../../STM32Cube_FW_N6/Drivers/CMSIS/Device/ST/STM32N6xx/Include/stm32n657xx.h"
+ 261              		.file 5 "../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Inc/stm32n6xx_hal_def.h"
+ 262              		.file 6 "../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Inc/stm32n6xx_hal_cacheaxi.h"
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 npu_cache.c
+C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s:26     .text.npu_cache_init:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s:32     .text.npu_cache_init:00000000 npu_cache_init
+C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s:50     .text.npu_cache_init:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s:254    .bss.hcacheaxi_s:00000000 hcacheaxi_s
+C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s:56     .text.npu_cache_enable:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s:62     .text.npu_cache_enable:00000000 npu_cache_enable
+C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s:90     .text.npu_cache_enable:00000010 $d
+C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s:95     .text.npu_cache_disable:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s:101    .text.npu_cache_disable:00000000 npu_cache_disable
+C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s:129    .text.npu_cache_disable:00000010 $d
+C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s:134    .text.npu_cache_invalidate:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s:140    .text.npu_cache_invalidate:00000000 npu_cache_invalidate
+C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s:154    .text.npu_cache_invalidate:00000008 $d
+C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s:159    .text.npu_cache_clean_range:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s:165    .text.npu_cache_clean_range:00000000 npu_cache_clean_range
+C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s:187    .text.npu_cache_clean_range:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s:192    .text.npu_cache_clean_invalidate_range:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s:198    .text.npu_cache_clean_invalidate_range:00000000 npu_cache_clean_invalidate_range
+C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s:220    .text.npu_cache_clean_invalidate_range:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s:225    .text.NPU_CACHE_IRQHandler:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s:231    .text.NPU_CACHE_IRQHandler:00000000 NPU_CACHE_IRQHandler
+C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s:251    .bss.hcacheaxi_s:00000000 $d
+                           .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
+                           .group:00000000 wm4.stm32n6xx_hal_conf.h.21.e6f895f5dec93fd886896ef3aa220611
+                           .group:00000000 wm4.stddef.h.39.0dc9006b34572d4d9cae4c8b422c4971
+                           .group:00000000 wm4.arm_cmse.h.103.a0d15a79c4c9a67da8d5831704d7248e
+                           .group:00000000 wm4.stm32n6xx.h.34.80585dd08aa426c932f6311fdb7386da
+                           .group:00000000 wm4.stm32n657xx.h.26.acd272cb67318cc1a4791ce2f0720ca6
+                           .group:00000000 wm4._newlib_version.h.4.411db44ea2338a62eca2f0777f81481b
+                           .group:00000000 wm4.features.h.33.e0c9f337c65cb9f22ed5f23d082bc78b
+                           .group:00000000 wm4._default_types.h.15.247e5cd201eca3442cbf5404108c4935
+                           .group:00000000 wm4._intsup.h.10.48bafbb683905c4daa4565a85aeeb264
+                           .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+                           .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+                           .group:00000000 wm4.cmsis_version.h.32.0ac195c83bb4537824e6ad1c47474b79
+                           .group:00000000 wm4.core_cm55.h.68.832d5cf835639cc0d28219c3d2867330
+                           .group:00000000 wm4.cmsis_gcc.h.26.7a5fd1a99dbedde687044a4433ab3e15
+                           .group:00000000 wm4.core_cm55.h.196.52e437a270752da561676e507b35baeb
+                           .group:00000000 wm4.mpu_armv8.h.32.9d72426c8e2b47753456dcb84802c5b3
+                           .group:00000000 wm4.pmu_armv8.h.32.eaa95f88a71b29390b135fd81c071b6b
+                           .group:00000000 wm4.core_cm55.h.4411.860dad8650880893dd57b815844f7186
+                           .group:00000000 wm4.cachel1_armv7.h.32.abd77761a989e008b0c60891114a33c7
+                           .group:00000000 wm4.stm32n657xx.h.575.1c2a5e6bedffc6f9083dcc857bc6d09d
+                           .group:00000000 wm4.stm32n6xx.h.114.5cf793d8af485e14f110e3e24bde1aa5
+                           .group:00000000 wm4.stm32_hal_legacy.h.22.87fb12bf5a1a1e00fc134f22bc9aa8c4
+                           .group:00000000 wm4.newlib.h.7.a37ffbe9e5aff74303f4e60b1cc1c01b
+                           .group:00000000 wm4.ieeefp.h.77.bd5feb87d9990dd328793ced294f6a87
+                           .group:00000000 wm4.config.h.224.10ee1ad185d877c6e334e6581faab44d
+                           .group:00000000 wm4._ansi.h.31.de524f58584151836e90d8620a16f8e8
+                           .group:00000000 wm4.cdefs.h.49.70fc7af612f78ddcace70fdd90b5623b
+                           .group:00000000 wm4._types.h.20.dd0d04dca3800a0d2a6129b87f3adbb2
+                           .group:00000000 wm4.stddef.h.158.6f8e08a347b1cff664332fa350bfceb3
+                           .group:00000000 wm4._types.h.127.3bdfe3ff8ea2d0985b03d9cbe93480e3
+                           .group:00000000 wm4.reent.h.18.25503cdc8b7e55dd0d6ea7b3e5af7a03
+                           .group:00000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cct3ZSNl.s 			page 8
+
+
+                           .group:00000000 wm4.reent.h.78.6b87466b04591b1f1cb88c14fdf2ba9e
+                           .group:00000000 wm4.math.h.13.47cfc34cae8a1153323939c4d32cf7c2
+                           .group:00000000 wm4.stm32n6xx_hal_def.h.63.3a8f01490e8852464e9fcb69092e9c75
+                           .group:00000000 wm4.stm32n6xx_ll_bus.h.38.2366a295ee4cdb04833997d3787fcd2d
+                           .group:00000000 wm4.stm32n6xx_ll_rcc.h.21.002e22a16fd7f67dde6dce41e8ba9620
+                           .group:00000000 wm4.stm32n6xx_hal_rcc.h.194.1cb1283e40f9bebcd3fba2a9a961838e
+                           .group:00000000 wm4.stm32n6xx_hal_rcc_ex.h.21.79aa32178dfef625fbd20d362449acfa
+                           .group:00000000 wm4.stm32n6xx_hal_rcc.h.4359.3f0b7ad33826d95438602c9aebc08af9
+                           .group:00000000 wm4.stm32n6xx_hal_gpio.h.21.89d54af663b98eb8fc098192053f7eeb
+                           .group:00000000 wm4.stm32n6xx_hal_gpio_ex.h.22.4acb2e3511a98bb48b81cfc8e09fd59e
+                           .group:00000000 wm4.stm32n6xx_hal_rif.h.21.424d0bafb874a777dee3742a22e13037
+                           .group:00000000 wm4.stm32n6xx_hal_dma.h.21.61e48c5c2e8d25d22177834b232fe45c
+                           .group:00000000 wm4.stm32n6xx_hal_dma_ex.h.21.66e597beb090a165329d6ccf665e41bc
+                           .group:00000000 wm4.stm32n6xx_hal_dma.h.1020.87e2180c009560b617c1f8208140c950
+                           .group:00000000 wm4.stm32n6xx_hal_cortex.h.21.f493623cc58f9454ab4eae41e395c5cc
+                           .group:00000000 wm4.stm32n6xx_hal_bsec.h.21.61b309e67dd810e28897a01b1b21a97f
+                           .group:00000000 wm4.stm32n6xx_hal_dcmipp.h.21.f538bfd785c6469670251ac9bc7af55d
+                           .group:00000000 wm4.stm32n6xx_hal_dma2d.h.21.75c8d46cdbb72970123b3f34ae2043d7
+                           .group:00000000 wm4.stm32n6xx_hal_exti.h.21.fda87e715ea6b98239ec30171d1df594
+                           .group:00000000 wm4.stm32n6xx_hal_i2c.h.21.3f483626ff64c5bf027265bb2e1d1331
+                           .group:00000000 wm4.stm32n6xx_hal_i2c_ex.h.21.79e9196c22282cdaf6b4047893638c45
+                           .group:00000000 wm4.stm32n6xx_hal_i2c.h.741.1084702632703acc669e4282b3043372
+                           .group:00000000 wm4.stm32n6xx_hal_ltdc.h.21.ae1eb09930e7e550e48e418ac5849e4d
+                           .group:00000000 wm4.stm32n6xx_hal_ltdc.h.1002.b13ede7fc94ed5ad1c6768a157d2149a
+                           .group:00000000 wm4.stm32n6xx_hal_pwr.h.21.cdb73e4869c3fed3fc84f901ec0e5f0a
+                           .group:00000000 wm4.stm32n6xx_hal_pwr_ex.h.21.1a673224a58b0c1e5fad8eeda6514208
+                           .group:00000000 wm4.stm32n6xx_hal_ramcfg.h.21.a62dfbb4d2c14e9a8c634a215e37bd3d
+                           .group:00000000 wm4.stm32n6xx_hal_uart.h.21.230f549bfa0d5ebfd77bfb311b2aca15
+                           .group:00000000 wm4.stm32n6xx_hal_uart_ex.h.21.a0d5511e1d0703b7b5278c8f5472b96d
+                           .group:00000000 wm4.stm32n6xx_hal_xspi.h.21.e17898be2073b6b6b19faf30b4e304e9
+                           .group:00000000 wm4.stm32n6xx_hal_cacheaxi.h.21.7c3375b7903ec42376e4883320997f74
+                           .group:00000000 wm4.stm32n6xx_hal.h.81.5e59143eba07faca3e9aeaa5470826c8
+
+UNDEFINED SYMBOLS
+HAL_CACHEAXI_Init
+HAL_CACHEAXI_Enable
+HAL_CACHEAXI_Disable
+HAL_CACHEAXI_Invalidate
+HAL_CACHEAXI_CleanByAddr
+HAL_CACHEAXI_CleanInvalidByAddr
