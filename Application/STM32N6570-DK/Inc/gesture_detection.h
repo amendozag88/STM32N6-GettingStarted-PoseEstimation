@@ -6,7 +6,7 @@
 #include "app_config.h"
 #include "display_spe.h"
 
-// Keypoint indices for MoveNet (adjust based on your model)
+// Keypoint indices for MoveNet
 #define KEYPOINT_NOSE           0
 #define KEYPOINT_LEFT_SHOULDER  1
 #define KEYPOINT_RIGHT_SHOULDER 2
@@ -22,12 +22,12 @@
 #define KEYPOINT_RIGHT_ANKLE    12
 
 // Gesture detection parameters
-#define GESTURE_HISTORY_SIZE    10
-#define MIN_CONFIDENCE          0.5f
-#define SWIPE_MIN_DISTANCE      0.3f   // Minimum distance for swipe (normalized)
-#define SWIPE_MIN_SPEED         0.05f  // Minimum speed for swipe
+#define GESTURE_HISTORY_SIZE    40
+#define MIN_CONFIDENCE          0.45f
+#define SWIPE_MIN_DISTANCE      0.5f   // Minimum distance for swipe (normalized)
+#define SWIPE_MIN_SPEED         0.5f  // Minimum speed for swipe
 #define SWIPE_MAX_FRAMES        8      // Maximum frames for swipe gesture
-#define GESTURE_DISPLAY_TIME    2000   // How long to display gesture (ms)
+#define GESTURE_DISPLAY_TIME    1500   // How long to display gesture (ms)
 
 typedef enum {
     GESTURE_NONE = 0,

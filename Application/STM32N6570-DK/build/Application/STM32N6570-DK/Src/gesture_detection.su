@@ -1,7 +1,8 @@
 Src/gesture_detection.c:16:6:Gesture_Init	0	static
 Src/gesture_detection.c:24:11:Gesture_CalculateDistance	0	static
 Src/gesture_detection.c:31:11:Gesture_CalculateSpeed	16	static
-Src/gesture_detection.c:163:15:Gesture_Detect	72	static
-Src/gesture_detection.c:209:13:Gesture_GetName	0	static
-Src/gesture_detection.c:223:15:Gesture_GetCurrentDisplayGesture	8	static
-Src/gesture_detection.c:235:6:Gesture_GetKeypointDebugInfo	24	static
+Src/gesture_detection.c:173:15:Gesture_Detect	72	static
+Src/gesture_detection.c:224:13:Gesture_GetName	0	static
+Src/gesture_detection.c:238:15:Gesture_GetCurrentDisplayGesture	8	static
+Src/gesture_detection.c:250:6:Gesture_GetKeypointDebugInfo	24	static
+Src/gesture_detection.c:275:6:Gesture_GetPastKeypointDebugInfo	24	static

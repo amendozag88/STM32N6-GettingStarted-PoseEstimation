@@ -208,8 +208,12 @@ int main(void)
 
     //Debug a keypoint:
     float32_t wrist_x, wrist_y, wrist_conf, wrist_speed;
+    float32_t wrist_x2, wrist_y2, wrist_conf2, wrist_speed2;
+
     Gesture_GetKeypointDebugInfo(&gesture_detector, KEYPOINT_RIGHT_WRIST,
                                  &wrist_x, &wrist_y, &wrist_conf, &wrist_speed);
+    Gesture_GetPastKeypointDebugInfo(&gesture_detector, KEYPOINT_RIGHT_WRIST,
+            &wrist_x2, &wrist_y2, &wrist_conf2, &wrist_speed2, 5);
     if (wrist_speed >0.5)
     {
     	UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_CYAN);
@@ -219,8 +223,10 @@ int main(void)
         UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_WHITE);
     }
 
-    UTIL_LCDEx_PrintfAt(0, LINE(21), CENTER_MODE, "R Wrist: (%.2f,%.2f) C:%.2f Spd:%.3f",
+    UTIL_LCDEx_PrintfAt(0, LINE(17), CENTER_MODE, "R Wrist: (%.2f,%.2f) C:%.2f Spd:%.3f",
                         wrist_x, wrist_y, wrist_conf, wrist_speed);
+    UTIL_LCDEx_PrintfAt(0, LINE(18), CENTER_MODE, "RW Past: (%.2f,%.2f) C:%.2f Spd:%.3f",
+                        wrist_x2, wrist_y2, wrist_conf2, wrist_speed2);
     //End of kepoint debug print
 
 
@@ -462,14 +468,33 @@ static void Display_NetworkOutput(void *p_postprocess, uint32_t inference_ms)
 #elif POSTPROCESS_TYPE == POSTPROCESS_SPE_MOVENET_UF
   Display_spe_Detection(roi);
 #endif
+
+  // *** GESTURE DISPLAY AND DEBUGGING ***
+  GestureType_t current_gesture = Gesture_GetCurrentDisplayGesture(&gesture_detector);
+  // To save the current gesture
+
   UTIL_LCD_SetBackColor(0x40000000);
   UTIL_LCDEx_PrintfAt(0, LINE(19), CENTER_MODE, "Inference: %ums", inference_ms);
-  UTIL_LCDEx_PrintfAt(0, LINE(18), CENTER_MODE, "STM32 Edge AI Contest");
+  //UTIL_LCDEx_PrintfAt(0, LINE(18), CENTER_MODE, "STM32 Edge AI Contest");
+
+  // Gesture detection result
+   if (current_gesture != GESTURE_NONE) {
+     UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_YELLOW); // Highlight detected gesture
+     UTIL_LCDEx_PrintfAt(0, LINE(16), CENTER_MODE, "GESTURE: %s", Gesture_GetName(current_gesture));
+     UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_WHITE);  // Reset to white
+   } else {
+     UTIL_LCDEx_PrintfAt(0, LINE(16), CENTER_MODE, "Gesture: %s", Gesture_GetName(current_gesture));
+   }
+
+  //Debug the head postiion
   float32_t  x_coord=roi[0].x_center;
   float32_t  y_coord=roi[0].y_center;
   float32_t confidence = roi[0].proba;
-
   UTIL_LCDEx_PrintfAt(0, LINE(20), CENTER_MODE, "X: %f, Y: %f P:%f", x_coord,y_coord, confidence	  );
+  //Check if gesture_detector is being updated correctly
+  UTIL_LCDEx_PrintfAt(0, LINE(20), CENTER_MODE, "X: %f, Y: %f P:%f", x_coord,y_coord, confidence	  );
+
+  //End of debug head position
 
   UTIL_LCD_SetBackColor(0);
   Display_WelcomeScreen();

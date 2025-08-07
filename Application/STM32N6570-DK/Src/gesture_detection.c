@@ -48,60 +48,71 @@ float32_t Gesture_CalculateSpeed(KeypointHistory_t *history, uint8_t current_idx
 static GestureType_t Detect_ArmSwipe(GestureDetector_t *detector, spe_pp_outBuffer_t *keypoints)
 {
     uint8_t curr_idx = detector->history_index;
-    uint8_t prev_idx = (curr_idx - 1 + GESTURE_HISTORY_SIZE) % GESTURE_HISTORY_SIZE;
+    uint8_t prev_idx = (curr_idx - 4 + GESTURE_HISTORY_SIZE) % GESTURE_HISTORY_SIZE;
 
-    // Check right arm swipe
+    /***** Right now I am deactivating the right arm swipe, so that is not confounded with the sword gestures */
+    /*
+    	// Check right arm swipe
     KeypointHistory_t *right_wrist = detector->history[KEYPOINT_RIGHT_WRIST];
     KeypointHistory_t *right_shoulder = detector->history[KEYPOINT_RIGHT_SHOULDER];
 
-    if (right_wrist[curr_idx].confidence > MIN_CONFIDENCE &&
-        right_shoulder[curr_idx].confidence > MIN_CONFIDENCE) {
+    if (right_wrist[curr_idx].confidence > MIN_CONFIDENCE
+    		//&& right_shoulder[curr_idx].confidence > MIN_CONFIDENCE
+		) {
 
         // Calculate horizontal movement of wrist
         float32_t wrist_dx = right_wrist[curr_idx].x - right_wrist[prev_idx].x;
         float32_t wrist_speed = Gesture_CalculateSpeed(right_wrist, curr_idx, 3);
+        float32_t current_x_pos= right_wrist[curr_idx].x;
+		float32_t prev_x_pos = right_wrist[prev_idx].x;
+//	  UTIL_LCD_SetBackColor(0x40000000);
+//        UTIL_LCDEx_PrintfAt(0, LINE(13), CENTER_MODE, "curr_x %.3f, prev_x: %.3f", current_x_pos, prev_x_pos);
+//        UTIL_LCDEx_PrintfAt(0, LINE(14), CENTER_MODE, "n_dx: %.3f, n_sp: %.3f", wrist_dx, wrist_speed);
+//        UTIL_LCD_SetBackColor(0);
 
         // Check if wrist is moving significantly horizontally
         if (fabsf(wrist_dx) > 0.05f && wrist_speed > SWIPE_MIN_SPEED) {
             // Check if arm is extended (wrist far from shoulder)
-            float32_t arm_extension = Gesture_CalculateDistance(
-                right_wrist[curr_idx].x, right_wrist[curr_idx].y,
-                right_shoulder[curr_idx].x, right_shoulder[curr_idx].y
-            );
+        //    float32_t arm_extension = Gesture_CalculateDistance(
+        //        right_wrist[curr_idx].x, right_wrist[curr_idx].y,
+       //         right_shoulder[curr_idx].x, right_shoulder[curr_idx].y
+       //     );
 
-            if (arm_extension > 0.2f) { // Arm is extended
+        //    if (arm_extension > 0.2f) { // Arm is extended
                 if (wrist_dx > 0) {
                     return GESTURE_RIGHT_ARM_SWIPE_RIGHT;
                 } else {
                     return GESTURE_RIGHT_ARM_SWIPE_LEFT;
                 }
-            }
+            //}
         }
     }
+    */
 
     // Check left arm swipe (similar logic)
     KeypointHistory_t *left_wrist = detector->history[KEYPOINT_LEFT_WRIST];
     KeypointHistory_t *left_shoulder = detector->history[KEYPOINT_LEFT_SHOULDER];
 
-    if (left_wrist[curr_idx].confidence > MIN_CONFIDENCE &&
-        left_shoulder[curr_idx].confidence > MIN_CONFIDENCE) {
+    if (left_wrist[curr_idx].confidence > MIN_CONFIDENCE
+    	//	&&  left_shoulder[curr_idx].confidence > MIN_CONFIDENCE
+			) {
 
         float32_t wrist_dx = left_wrist[curr_idx].x - left_wrist[prev_idx].x;
         float32_t wrist_speed = Gesture_CalculateSpeed(left_wrist, curr_idx, 3);
-
+        UTIL_LCDEx_PrintfAt(0, LINE(15), CENTER_MODE, "idx:%d/%d,w_dx: %.3f, w_sp: %.3f", prev_idx, curr_idx, wrist_dx, wrist_speed);
         if (fabsf(wrist_dx) > 0.05f && wrist_speed > SWIPE_MIN_SPEED) {
-            float32_t arm_extension = Gesture_CalculateDistance(
-                left_wrist[curr_idx].x, left_wrist[curr_idx].y,
-                left_shoulder[curr_idx].x, left_shoulder[curr_idx].y
-            );
+        //    float32_t arm_extension = Gesture_CalculateDistance(
+         //       left_wrist[curr_idx].x, left_wrist[curr_idx].y,
+        //        left_shoulder[curr_idx].x, left_shoulder[curr_idx].y
+        //    );
 
-            if (arm_extension > 0.2f) {
+        //    if (arm_extension > 0.2f) {
                 if (wrist_dx > 0) {
                     return GESTURE_LEFT_ARM_SWIPE_RIGHT;
                 } else {
                     return GESTURE_LEFT_ARM_SWIPE_LEFT;
                 }
-            }
+          //  }
         }
     }
 
@@ -115,6 +126,7 @@ static GestureType_t Detect_SwordGestures(GestureDetector_t *detector, spe_pp_ou
     KeypointHistory_t *right_wrist = detector->history[KEYPOINT_RIGHT_WRIST];
     KeypointHistory_t *right_shoulder = detector->history[KEYPOINT_RIGHT_SHOULDER];
     KeypointHistory_t *right_elbow = detector->history[KEYPOINT_RIGHT_ELBOW];
+    KeypointHistory_t *nose = detector->history[KEYPOINT_NOSE];
 
     if (right_wrist[curr_idx].confidence < MIN_CONFIDENCE ||
         right_shoulder[curr_idx].confidence < MIN_CONFIDENCE ||
@@ -123,15 +135,16 @@ static GestureType_t Detect_SwordGestures(GestureDetector_t *detector, spe_pp_ou
     }
 
     // Overhead strike: Check if hand moves from high to low rapidly
-    if (curr_idx >= 5) { // Need some history
-        uint8_t start_idx = (curr_idx - 5 + GESTURE_HISTORY_SIZE) % GESTURE_HISTORY_SIZE;
+    if (curr_idx >= 12) { // Need some history
+        uint8_t start_idx = (curr_idx - 12 + GESTURE_HISTORY_SIZE) % GESTURE_HISTORY_SIZE;
 
         float32_t start_y = right_wrist[start_idx].y;
         float32_t curr_y = right_wrist[curr_idx].y;
         float32_t vertical_movement = curr_y - start_y;
+        float32_t start_nose = nose[start_idx].y;
 
-        // Check if hand started high and moved down quickly
-        if (start_y < 0.3f && vertical_movement > 0.25f) { // Started high, moved down
+        // Check if hand started anove the nose and moved down quickly
+        if (start_y < start_nose && vertical_movement > 0.25f) { // Started high, moved down
             float32_t speed = Gesture_CalculateSpeed(right_wrist, curr_idx, 5);
             if (speed > SWIPE_MIN_SPEED * 1.5f) {
                 return GESTURE_SWORD_OVERHEAD_STRIKE;
@@ -140,8 +153,8 @@ static GestureType_t Detect_SwordGestures(GestureDetector_t *detector, spe_pp_ou
     }
 
     // Side slash: Check for horizontal movement with extended arm
-    if (curr_idx >= 3) {
-        uint8_t start_idx = (curr_idx - 3 + GESTURE_HISTORY_SIZE) % GESTURE_HISTORY_SIZE;
+    if (curr_idx >= 12) {
+        uint8_t start_idx = (curr_idx - 12 + GESTURE_HISTORY_SIZE) % GESTURE_HISTORY_SIZE;
 
         float32_t horizontal_movement = fabsf(right_wrist[curr_idx].x - right_wrist[start_idx].x);
         float32_t arm_extension = Gesture_CalculateDistance(
@@ -164,6 +177,10 @@ GestureType_t Gesture_Detect(GestureDetector_t *detector, spe_pp_outBuffer_t *ke
 {
     uint32_t current_time = HAL_GetTick();
 
+    // Advance history index
+    detector->history_index = (detector->history_index + 1) % GESTURE_HISTORY_SIZE;
+
+
     // Update history with current keypoints
     for (int i = 0; i < AI_POSE_PP_POSE_KEYPOINTS_NB; i++) {
         detector->history[i][detector->history_index].x = keypoints[i].x_center;
@@ -172,8 +189,7 @@ GestureType_t Gesture_Detect(GestureDetector_t *detector, spe_pp_outBuffer_t *ke
         detector->history[i][detector->history_index].timestamp = current_time;
     }
 
-    // Advance history index
-    detector->history_index = (detector->history_index + 1) % GESTURE_HISTORY_SIZE;
+
 
     // Prevent detecting same gesture too quickly
     if (current_time - detector->last_gesture_time < 1000) { // 1 second cooldown
@@ -182,16 +198,6 @@ GestureType_t Gesture_Detect(GestureDetector_t *detector, spe_pp_outBuffer_t *ke
 
     // Try different gesture detection algorithms
     GestureType_t detected_gesture = GESTURE_NONE;
-
-    // Check for arm swipes first
-    detected_gesture = Detect_ArmSwipe(detector, keypoints);
-    if (detected_gesture != GESTURE_NONE) {
-        detector->last_detected_gesture = detected_gesture;
-        detector->last_gesture_time = current_time;
-        detector->current_display_gesture = detected_gesture;
-        detector->gesture_display_timeout = current_time + GESTURE_DISPLAY_TIME;
-        return detected_gesture;
-    }
 
     // Check for sword gestures
     detected_gesture = Detect_SwordGestures(detector, keypoints);
@@ -202,6 +208,18 @@ GestureType_t Gesture_Detect(GestureDetector_t *detector, spe_pp_outBuffer_t *ke
         detector->gesture_display_timeout = current_time + GESTURE_DISPLAY_TIME;
         return detected_gesture;
     }
+
+    // Check for arm swipes
+    detected_gesture = Detect_ArmSwipe(detector, keypoints);
+    if (detected_gesture != GESTURE_NONE) {
+        detector->last_detected_gesture = detected_gesture;
+        detector->last_gesture_time = current_time;
+        detector->current_display_gesture = detected_gesture;
+        detector->gesture_display_timeout = current_time + GESTURE_DISPLAY_TIME;
+        return detected_gesture;
+    }
+
+
 
     return GESTURE_NONE;
 }
@@ -245,7 +263,7 @@ void Gesture_GetKeypointDebugInfo(GestureDetector_t *detector, uint8_t keypoint_
     }
 
     // Get current index (last updated position)
-    uint8_t curr_idx = (detector->history_index - 1 + GESTURE_HISTORY_SIZE) % GESTURE_HISTORY_SIZE;
+    uint8_t curr_idx = (detector->history_index + GESTURE_HISTORY_SIZE) % GESTURE_HISTORY_SIZE;
 
     // Get current keypoint data
     *current_x = detector->history[keypoint_idx][curr_idx].x;
@@ -255,3 +273,29 @@ void Gesture_GetKeypointDebugInfo(GestureDetector_t *detector, uint8_t keypoint_
     // Calculate speed over last 3 frames
     *current_speed = Gesture_CalculateSpeed(detector->history[keypoint_idx], curr_idx, 3);
 }
+
+
+void Gesture_GetPastKeypointDebugInfo(GestureDetector_t *detector, uint8_t keypoint_idx,
+                                  float32_t *current_x, float32_t *current_y,
+                                  float32_t *current_confidence, float32_t *current_speed, uint8_t past_keypoint_offset)
+{
+    if (keypoint_idx >= AI_POSE_PP_POSE_KEYPOINTS_NB) {
+        *current_x = 0.0f;
+        *current_y = 0.0f;
+        *current_confidence = 0.0f;
+        *current_speed = 0.0f;
+        return;
+    }
+
+    // Get past index (using past_keypoint_offset)
+    uint8_t read_idx = (detector->history_index - past_keypoint_offset+ GESTURE_HISTORY_SIZE) % GESTURE_HISTORY_SIZE;
+
+    // Get that keypoint's data
+    *current_x = detector->history[keypoint_idx][read_idx].x;
+    *current_y = detector->history[keypoint_idx][read_idx].y;
+    *current_confidence = detector->history[keypoint_idx][read_idx].confidence;
+
+    // Calculate speed over last 3 frames
+    *current_speed = Gesture_CalculateSpeed(detector->history[keypoint_idx], read_idx, 3);
+}
+
