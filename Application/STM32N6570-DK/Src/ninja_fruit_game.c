@@ -40,6 +40,7 @@ void NinjaGame_Init(NinjaGame_t *game)
 
     game->spawn_rate_multiplier = 1.0f;
     game->level = 1;
+    game->mode = NINJA_MODE_SLICE;
 }
 
 void NinjaGame_Update(NinjaGame_t *game, GestureDetector_t *gesture_detector, spe_pp_outBuffer_t *keypoints)
@@ -80,40 +81,43 @@ void NinjaGame_Update(NinjaGame_t *game, GestureDetector_t *gesture_detector, sp
     // Update existing fruits
     UpdateFruits(game);
 
-    // Check for slicing gestures
-    GestureType_t detected_gesture = Gesture_GetCurrentDisplayGesture(gesture_detector);
+    if (game->mode == NINJA_MODE_SLICE) {
+            // Check for slicing gestures
+            GestureType_t detected_gesture = Gesture_GetCurrentDisplayGesture(gesture_detector);
 
-    if (detected_gesture == GESTURE_LEFT_ARM_SWIPE_LEFT ||
-        detected_gesture == GESTURE_LEFT_ARM_SWIPE_RIGHT ||
-        detected_gesture == GESTURE_RIGHT_ARM_SWIPE_LEFT ||
-        detected_gesture == GESTURE_RIGHT_ARM_SWIPE_RIGHT ||
-        detected_gesture == GESTURE_SWORD_OVERHEAD_STRIKE ||
-        detected_gesture == GESTURE_SWORD_SIDE_SLASH) {
+            if (detected_gesture == GESTURE_LEFT_ARM_SWIPE_LEFT ||
+                detected_gesture == GESTURE_LEFT_ARM_SWIPE_RIGHT ||
+                detected_gesture == GESTURE_RIGHT_ARM_SWIPE_LEFT ||
+                detected_gesture == GESTURE_RIGHT_ARM_SWIPE_RIGHT ||
+                detected_gesture == GESTURE_SWORD_OVERHEAD_STRIKE ||
+                detected_gesture == GESTURE_SWORD_SIDE_SLASH) {
 
-        // Create swipe trajectory from wrist movement
-        SwipeTrajectory_t swipe = {0};
+                // Create swipe trajectory from wrist movement
+                SwipeTrajectory_t swipe = {0};
 
-        // Get current wrist position
-        if (detected_gesture == GESTURE_LEFT_ARM_SWIPE_LEFT || detected_gesture == GESTURE_LEFT_ARM_SWIPE_RIGHT) {
-            swipe.end_x = keypoints[KEYPOINT_LEFT_WRIST].x_center;
-            swipe.end_y = keypoints[KEYPOINT_LEFT_WRIST].y_center;
-        } else {
-            swipe.end_x = keypoints[KEYPOINT_RIGHT_WRIST].x_center;
-            swipe.end_y = keypoints[KEYPOINT_RIGHT_WRIST].y_center;
+                // Get current wrist position
+                if (detected_gesture == GESTURE_LEFT_ARM_SWIPE_LEFT || detected_gesture == GESTURE_LEFT_ARM_SWIPE_RIGHT) {
+                    swipe.end_x = keypoints[KEYPOINT_LEFT_WRIST].x_center;
+                    swipe.end_y = keypoints[KEYPOINT_LEFT_WRIST].y_center;
+                } else {
+                    swipe.end_x = keypoints[KEYPOINT_RIGHT_WRIST].x_center;
+                    swipe.end_y = keypoints[KEYPOINT_RIGHT_WRIST].y_center;
+                }
+                // Estimate start position based on gesture direction
+                           float32_t dx = (detected_gesture == GESTURE_LEFT_ARM_SWIPE_RIGHT ||
+                                          detected_gesture == GESTURE_RIGHT_ARM_SWIPE_RIGHT) ? -0.2f : 0.2f;
+                           float32_t dy = (detected_gesture == GESTURE_SWORD_OVERHEAD_STRIKE) ? -0.3f: 0.0f;
+		      swipe.start_x = swipe.end_x + dx;
+			  swipe.start_y = swipe.end_y + dy;
+			  swipe.timestamp = current_time;
+			  swipe.active = 1;
+			  CheckSlices(game, &swipe);
+        }
+    	} else {
+            // Pop mode: check if wrists are inside fruit circles
+            CheckBubblePops(game, keypoints);
         }
 
-        // Estimate start position based on gesture direction
-        float32_t dx = (detected_gesture == GESTURE_LEFT_ARM_SWIPE_RIGHT ||
-                       detected_gesture == GESTURE_RIGHT_ARM_SWIPE_RIGHT) ? -0.2f : 0.2f;
-        float32_t dy = (detected_gesture == GESTURE_SWORD_OVERHEAD_STRIKE) ? -0.3f : 0.0f;
-
-        swipe.start_x = swipe.end_x + dx;
-        swipe.start_y = swipe.end_y + dy;
-        swipe.timestamp = current_time;
-        swipe.active = 1;
-
-        CheckSlices(game, &swipe);
-    }
 
     // Check game over condition
     if (game->missed_count >= MAX_MISSED_FRUITS) {
@@ -212,6 +216,46 @@ static void CheckSlices(NinjaGame_t *game, SwipeTrajectory_t *swipe)
         }
     }
 }
+
+static void CheckBubblePops(NinjaGame_t *game, spe_pp_outBuffer_t *keypoints)
+{
+    float32_t lx = keypoints[KEYPOINT_LEFT_WRIST].x_center;
+    float32_t ly = keypoints[KEYPOINT_LEFT_WRIST].y_center;
+    float32_t rx = keypoints[KEYPOINT_RIGHT_WRIST].x_center;
+    float32_t ry = keypoints[KEYPOINT_RIGHT_WRIST].y_center;
+    float32_t radius = FRUIT_SIZE / 2.0f / 800.0f;
+    float32_t radius_sq = radius * radius;
+
+    for (int i = 0; i < MAX_FRUITS; i++) {
+        Fruit_t *fruit = &game->fruits[i];
+
+        if (fruit->state == FRUIT_STATE_FALLING) {
+            float32_t dx = lx - fruit->x;
+            float32_t dy = ly - fruit->y;
+            float32_t dist_left_sq = dx * dx + dy * dy;
+
+            dx = rx - fruit->x;
+            dy = ry - fruit->y;
+            float32_t dist_right_sq = dx * dx + dy * dy;
+
+            if (dist_left_sq <= radius_sq || dist_right_sq <= radius_sq) {
+                fruit->state = FRUIT_STATE_SLICED;
+                fruit->slice_time = HAL_GetTick();
+                fruit->slice_direction = 0;
+
+                uint32_t base_score = 10;
+                switch (fruit->type) {
+                    case FRUIT_APPLE: base_score = 10; break;
+                    case FRUIT_ORANGE: base_score = 15; break;
+                    case FRUIT_BANANA: base_score = 20; break;
+                    case FRUIT_STRAWBERRY: base_score = 25; break;
+                }
+                game->score += base_score * game->level;
+            }
+        }
+    }
+}
+
 
 static uint8_t LineIntersectsCircle(float32_t x1, float32_t y1, float32_t x2, float32_t y2,
                                    float32_t cx, float32_t cy, float32_t radius)
@@ -354,4 +398,9 @@ void NinjaGame_Reset(NinjaGame_t *game)
     game->game_start_time = HAL_GetTick();
 
     // Could store high score for display
+}
+
+void NinjaGame_SetMode(NinjaGame_t *game, NinjaGameMode_t mode)
+{
+    game->mode = mode;
 }

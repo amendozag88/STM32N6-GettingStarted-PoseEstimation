@@ -1,7 +1,7 @@
 /**
  ******************************************************************************
  * @file    gesture_detection.c
- * @author  Your Name
+ * @author  Antonio Mendoza
  * @brief   Gesture detection implementation
  ******************************************************************************
  */

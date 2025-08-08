@@ -157,7 +157,7 @@ int main(void)
   Gesture_Init(&gesture_detector);
   //Initialize ninja fruit game
   NinjaGame_Init(&ninja_game);
-
+  NinjaGame_SetMode(&ninja_game, NINJA_MODE_POP);
   /*** Camera Init ************************************************************/
   CameraPipeline_Init(&lcd_bg_area.XSize, &lcd_bg_area.YSize, &pitch_nn);
 
