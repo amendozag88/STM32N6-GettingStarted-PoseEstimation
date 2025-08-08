@@ -127,7 +127,8 @@ build/Application/STM32N6570-DK/Src/main.o: Src/main.c \
  ../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rcompat.h \
  Inc/app_camerapipeline.h Inc/main.h Inc/app_config.h Inc/crop_img.h \
  Inc/stlogo.h Inc/utils.h Inc/display_spe.h Inc/gesture_detection.h \
- Inc/app_config.h Inc/display_spe.h
+ Inc/app_config.h Inc/display_spe.h Inc/ninja_fruit_game.h Inc/main.h \
+ Inc/gesture_detection.h
 ../../Middlewares/Camera_Middleware/cmw_camera.h:
 ../../Middlewares/Camera_Middleware/cmw_errno.h:
 Inc/cmw_camera_conf.h:
@@ -266,3 +267,6 @@ Inc/display_spe.h:
 Inc/gesture_detection.h:
 Inc/app_config.h:
 Inc/display_spe.h:
+Inc/ninja_fruit_game.h:
+Inc/main.h:
+Inc/gesture_detection.h:

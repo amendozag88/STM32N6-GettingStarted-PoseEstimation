@@ -94,6 +94,7 @@ C_SOURCES += ../../Middlewares/AI_Runtime/Npu/ll_aton/ll_sw_integer.c
 C_SOURCES += ../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_lib.c
 C_SOURCES += ../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_lib_sw_operators.c
 C_SOURCES += Src/gesture_detection.c 
+C_SOURCES += Src/ninja_fruit_game.c 
 
 # ASM sources
 ASM_SOURCES += ../../STM32Cube_FW_N6/Drivers/CMSIS/Device/ST/STM32N6xx/Source/Templates/gcc/startup_stm32n657xx_fsbl.s

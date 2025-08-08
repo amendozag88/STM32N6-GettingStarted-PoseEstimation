@@ -1,0 +1,2545 @@
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 1
+
+
+   1              		.arch armv8.1-m.main
+   2              		.fpu fpv5-d16
+   3              		.arch_extension dsp
+   4              		.arch_extension fp
+   5              		.arch_extension fp.dp
+   6              		.arch_extension mve
+   7              		.arch_extension mve.fp
+   8              		.eabi_attribute 5, "cortex-m55"
+   9              		.eabi_attribute 28, 1
+  10              		.eabi_attribute 20, 1
+  11              		.eabi_attribute 21, 1
+  12              		.eabi_attribute 23, 3
+  13              		.eabi_attribute 24, 1
+  14              		.eabi_attribute 25, 1
+  15              		.eabi_attribute 26, 1
+  16              		.eabi_attribute 30, 4
+  17              		.eabi_attribute 34, 1
+  18              		.eabi_attribute 38, 1
+  19              		.eabi_attribute 18, 4
+  20              		.file	"ninja_fruit_game.c"
+  21              		.text
+  22              	.Ltext0:
+  23              		.cfi_sections	.debug_frame
+  24              		.file 1 "Src/ninja_fruit_game.c"
+  25              		.section	.text.NinjaGame_Init,"ax",%progbits
+  26              		.align	1
+  27              		.global	NinjaGame_Init
+  28              		.syntax unified
+  29              		.thumb
+  30              		.thumb_func
+  32              	NinjaGame_Init:
+  33              	.LVL0:
+  34              	.LFB3339:
+   1:Src/ninja_fruit_game.c **** 
+   2:Src/ninja_fruit_game.c **** /**
+   3:Src/ninja_fruit_game.c ****  ******************************************************************************
+   4:Src/ninja_fruit_game.c ****  * @file    ninja_fruit_game.c
+   5:Src/ninja_fruit_game.c ****  * @author  Antonio Mendoza
+   6:Src/ninja_fruit_game.c ****  * @brief   Ninja Fruit Game Implementation
+   7:Src/ninja_fruit_game.c ****  ******************************************************************************
+   8:Src/ninja_fruit_game.c ****  */
+   9:Src/ninja_fruit_game.c **** 
+  10:Src/ninja_fruit_game.c **** #include "ninja_fruit_game.h"
+  11:Src/ninja_fruit_game.c **** #include "utils.h"
+  12:Src/ninja_fruit_game.c **** #include <stdlib.h>
+  13:Src/ninja_fruit_game.c **** #include <math.h>
+  14:Src/ninja_fruit_game.c **** 
+  15:Src/ninja_fruit_game.c **** 
+  16:Src/ninja_fruit_game.c **** #define SCREEN_WIDTH 800
+  17:Src/ninja_fruit_game.c **** #define SCREEN_HEIGHT 480
+  18:Src/ninja_fruit_game.c **** 
+  19:Src/ninja_fruit_game.c **** // Fruit colors
+  20:Src/ninja_fruit_game.c **** static const uint32_t fruit_colors[FRUIT_TYPES_COUNT] = {
+  21:Src/ninja_fruit_game.c ****     UTIL_LCD_COLOR_RED,     // Apple
+  22:Src/ninja_fruit_game.c ****     UTIL_LCD_COLOR_ORANGE,  // Orange
+  23:Src/ninja_fruit_game.c ****     UTIL_LCD_COLOR_YELLOW,  // Banana
+  24:Src/ninja_fruit_game.c ****     0xFFFF8080              // Strawberry (pink)
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 2
+
+
+  25:Src/ninja_fruit_game.c **** };
+  26:Src/ninja_fruit_game.c **** 
+  27:Src/ninja_fruit_game.c **** // Fruit names for display
+  28:Src/ninja_fruit_game.c **** static const char* fruit_names[FRUIT_TYPES_COUNT] = {
+  29:Src/ninja_fruit_game.c ****     "Apple", "Orange", "Banana", "Berry"
+  30:Src/ninja_fruit_game.c **** };
+  31:Src/ninja_fruit_game.c **** 
+  32:Src/ninja_fruit_game.c **** void NinjaGame_Init(NinjaGame_t *game)
+  33:Src/ninja_fruit_game.c **** {
+  35              		.loc 1 33 1 view -0
+  36              		.cfi_startproc
+  37              		@ args = 0, pretend = 0, frame = 0
+  38              		@ frame_needed = 0, uses_anonymous_args = 0
+  34:Src/ninja_fruit_game.c ****     memset(game, 0, sizeof(NinjaGame_t));
+  39              		.loc 1 34 5 view .LVU1
+  33:Src/ninja_fruit_game.c ****     memset(game, 0, sizeof(NinjaGame_t));
+  40              		.loc 1 33 1 is_stmt 0 view .LVU2
+  41 0000 10B5     		push	{r4, lr}
+  42              		.cfi_def_cfa_offset 8
+  43              		.cfi_offset 4, -8
+  44              		.cfi_offset 14, -4
+  45              		.loc 1 34 5 view .LVU3
+  46 0002 4FF48E72 		mov	r2, #284
+  47 0006 0021     		movs	r1, #0
+  33:Src/ninja_fruit_game.c ****     memset(game, 0, sizeof(NinjaGame_t));
+  48              		.loc 1 33 1 view .LVU4
+  49 0008 0446     		mov	r4, r0
+  50              		.loc 1 34 5 view .LVU5
+  51 000a FFF7FEFF 		bl	memset
+  52              	.LVL1:
+  35:Src/ninja_fruit_game.c **** 
+  36:Src/ninja_fruit_game.c ****     // Initialize all fruits as inactive
+  37:Src/ninja_fruit_game.c ****     for (int i = 0; i < MAX_FRUITS; i++) {
+  53              		.loc 1 37 5 is_stmt 1 view .LVU6
+  54              	.LBB2:
+  55              		.loc 1 37 10 view .LVU7
+  56              		.loc 1 37 23 discriminator 1 view .LVU8
+  38:Src/ninja_fruit_game.c ****         game->fruits[i].state = FRUIT_STATE_INACTIVE;
+  57              		.loc 1 38 9 view .LVU9
+  58              		.loc 1 38 31 is_stmt 0 view .LVU10
+  59 000e 0323     		movs	r3, #3
+  60 0010 6374     		strb	r3, [r4, #17]
+  37:Src/ninja_fruit_game.c ****         game->fruits[i].state = FRUIT_STATE_INACTIVE;
+  61              		.loc 1 37 38 is_stmt 1 discriminator 3 view .LVU11
+  62              	.LVL2:
+  37:Src/ninja_fruit_game.c ****         game->fruits[i].state = FRUIT_STATE_INACTIVE;
+  63              		.loc 1 37 23 discriminator 1 view .LVU12
+  64              		.loc 1 38 9 view .LVU13
+  65              		.loc 1 38 31 is_stmt 0 view .LVU14
+  66 0012 84F83130 		strb	r3, [r4, #49]
+  37:Src/ninja_fruit_game.c ****         game->fruits[i].state = FRUIT_STATE_INACTIVE;
+  67              		.loc 1 37 38 is_stmt 1 discriminator 3 view .LVU15
+  68              	.LVL3:
+  37:Src/ninja_fruit_game.c ****         game->fruits[i].state = FRUIT_STATE_INACTIVE;
+  69              		.loc 1 37 23 discriminator 1 view .LVU16
+  70              		.loc 1 38 9 view .LVU17
+  71              		.loc 1 38 31 is_stmt 0 view .LVU18
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 3
+
+
+  72 0016 84F85130 		strb	r3, [r4, #81]
+  37:Src/ninja_fruit_game.c ****         game->fruits[i].state = FRUIT_STATE_INACTIVE;
+  73              		.loc 1 37 38 is_stmt 1 discriminator 3 view .LVU19
+  74              	.LVL4:
+  37:Src/ninja_fruit_game.c ****         game->fruits[i].state = FRUIT_STATE_INACTIVE;
+  75              		.loc 1 37 23 discriminator 1 view .LVU20
+  76              		.loc 1 38 9 view .LVU21
+  77              		.loc 1 38 31 is_stmt 0 view .LVU22
+  78 001a 84F87130 		strb	r3, [r4, #113]
+  37:Src/ninja_fruit_game.c ****         game->fruits[i].state = FRUIT_STATE_INACTIVE;
+  79              		.loc 1 37 38 is_stmt 1 discriminator 3 view .LVU23
+  80              	.LVL5:
+  37:Src/ninja_fruit_game.c ****         game->fruits[i].state = FRUIT_STATE_INACTIVE;
+  81              		.loc 1 37 23 discriminator 1 view .LVU24
+  82              		.loc 1 38 9 view .LVU25
+  83              		.loc 1 38 31 is_stmt 0 view .LVU26
+  84 001e 84F89130 		strb	r3, [r4, #145]
+  37:Src/ninja_fruit_game.c ****         game->fruits[i].state = FRUIT_STATE_INACTIVE;
+  85              		.loc 1 37 38 is_stmt 1 discriminator 3 view .LVU27
+  86              	.LVL6:
+  37:Src/ninja_fruit_game.c ****         game->fruits[i].state = FRUIT_STATE_INACTIVE;
+  87              		.loc 1 37 23 discriminator 1 view .LVU28
+  88              		.loc 1 38 9 view .LVU29
+  89              		.loc 1 38 31 is_stmt 0 view .LVU30
+  90 0022 84F8B130 		strb	r3, [r4, #177]
+  37:Src/ninja_fruit_game.c ****         game->fruits[i].state = FRUIT_STATE_INACTIVE;
+  91              		.loc 1 37 38 is_stmt 1 discriminator 3 view .LVU31
+  92              	.LVL7:
+  37:Src/ninja_fruit_game.c ****         game->fruits[i].state = FRUIT_STATE_INACTIVE;
+  93              		.loc 1 37 23 discriminator 1 view .LVU32
+  94              		.loc 1 38 9 view .LVU33
+  95              		.loc 1 38 31 is_stmt 0 view .LVU34
+  96 0026 84F8D130 		strb	r3, [r4, #209]
+  37:Src/ninja_fruit_game.c ****         game->fruits[i].state = FRUIT_STATE_INACTIVE;
+  97              		.loc 1 37 38 is_stmt 1 discriminator 3 view .LVU35
+  98              	.LVL8:
+  37:Src/ninja_fruit_game.c ****         game->fruits[i].state = FRUIT_STATE_INACTIVE;
+  99              		.loc 1 37 23 discriminator 1 view .LVU36
+ 100              		.loc 1 38 9 view .LVU37
+ 101              		.loc 1 38 31 is_stmt 0 view .LVU38
+ 102 002a 84F8F130 		strb	r3, [r4, #241]
+  37:Src/ninja_fruit_game.c ****         game->fruits[i].state = FRUIT_STATE_INACTIVE;
+ 103              		.loc 1 37 38 is_stmt 1 discriminator 3 view .LVU39
+ 104              	.LVL9:
+  37:Src/ninja_fruit_game.c ****         game->fruits[i].state = FRUIT_STATE_INACTIVE;
+ 105              		.loc 1 37 23 discriminator 1 view .LVU40
+ 106              	.LBE2:
+  39:Src/ninja_fruit_game.c ****     }
+  40:Src/ninja_fruit_game.c **** 
+  41:Src/ninja_fruit_game.c ****     game->spawn_rate_multiplier = 1.0f;
+ 107              		.loc 1 41 5 view .LVU41
+ 108              		.loc 1 41 33 is_stmt 0 view .LVU42
+ 109 002e 4FF07E53 		mov	r3, #1065353216
+ 110 0032 C4F81831 		str	r3, [r4, #280]	@ float
+  42:Src/ninja_fruit_game.c ****     game->level = 1;
+ 111              		.loc 1 42 5 is_stmt 1 view .LVU43
+ 112              		.loc 1 42 17 is_stmt 0 view .LVU44
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 4
+
+
+ 113 0036 0123     		movs	r3, #1
+ 114 0038 C4F81431 		str	r3, [r4, #276]
+  43:Src/ninja_fruit_game.c **** }
+ 115              		.loc 1 43 1 view .LVU45
+ 116 003c 10BD     		pop	{r4, pc}
+ 117              		.loc 1 43 1 view .LVU46
+ 118              		.cfi_endproc
+ 119              	.LFE3339:
+ 121              		.section	.rodata.NinjaGame_Render.str1.1,"aMS",%progbits,1
+ 122              	.LC0:
+ 123 0000 4E494E4A 		.ascii	"NINJA FRUIT SLICER\000"
+ 123      41204652 
+ 123      55495420 
+ 123      534C4943 
+ 123      455200
+ 124              	.LC1:
+ 125 0013 4D616B65 		.ascii	"Make any gesture to start!\000"
+ 125      20616E79 
+ 125      20676573 
+ 125      74757265 
+ 125      20746F20 
+ 126              	.LC2:
+ 127 002e 536C6963 		.ascii	"Slice fruits with arm swipes\000"
+ 127      65206672 
+ 127      75697473 
+ 127      20776974 
+ 127      68206172 
+ 128              	.LC3:
+ 129 004b 446F6E27 		.ascii	"Don't let %d fruits fall!\000"
+ 129      74206C65 
+ 129      74202564 
+ 129      20667275 
+ 129      69747320 
+ 130              	.LC4:
+ 131 0065 47414D45 		.ascii	"GAME OVER!\000"
+ 131      204F5645 
+ 131      522100
+ 132              	.LC5:
+ 133 0070 46696E61 		.ascii	"Final Score: %lu\000"
+ 133      6C205363 
+ 133      6F72653A 
+ 133      20256C75 
+ 133      00
+ 134              	.LC6:
+ 135 0081 4C657665 		.ascii	"Level Reached: %lu\000"
+ 135      6C205265 
+ 135      61636865 
+ 135      643A2025 
+ 135      6C7500
+ 136              	.LC7:
+ 137 0094 4D616B65 		.ascii	"Make any gesture to restart\000"
+ 137      20616E79 
+ 137      20676573 
+ 137      74757265 
+ 137      20746F20 
+ 138              	.LC8:
+ 139 00b0 53636F72 		.ascii	"Score: %lu\000"
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 5
+
+
+ 139      653A2025 
+ 139      6C7500
+ 140              	.LC9:
+ 141 00bb 4C657665 		.ascii	"Level: %lu\000"
+ 141      6C3A2025 
+ 141      6C7500
+ 142              	.LC10:
+ 143 00c6 4D697373 		.ascii	"Missed: %lu/%d\000"
+ 143      65643A20 
+ 143      256C752F 
+ 143      256400
+ 144              	.LC11:
+ 145 00d5 54696D65 		.ascii	"Time: %lus\000"
+ 145      3A20256C 
+ 145      757300
+ 146              		.section	.text.NinjaGame_Render,"ax",%progbits
+ 147              		.align	1
+ 148              		.global	NinjaGame_Render
+ 149              		.syntax unified
+ 150              		.thumb
+ 151              		.thumb_func
+ 153              	NinjaGame_Render:
+ 154              	.LVL10:
+ 155              	.LFB3345:
+  44:Src/ninja_fruit_game.c **** 
+  45:Src/ninja_fruit_game.c **** void NinjaGame_Update(NinjaGame_t *game, GestureDetector_t *gesture_detector, spe_pp_outBuffer_t *k
+  46:Src/ninja_fruit_game.c **** {
+  47:Src/ninja_fruit_game.c ****     uint32_t current_time = HAL_GetTick();
+  48:Src/ninja_fruit_game.c **** 
+  49:Src/ninja_fruit_game.c ****     // Start game on first gesture detection
+  50:Src/ninja_fruit_game.c ****     if (!game->game_started && !game->game_over) {
+  51:Src/ninja_fruit_game.c ****         GestureType_t current_gesture = Gesture_GetCurrentDisplayGesture(gesture_detector);
+  52:Src/ninja_fruit_game.c ****         if (current_gesture != GESTURE_NONE) {
+  53:Src/ninja_fruit_game.c ****             game->game_started = 1;
+  54:Src/ninja_fruit_game.c ****             game->game_start_time = current_time;
+  55:Src/ninja_fruit_game.c ****         }
+  56:Src/ninja_fruit_game.c ****         return;
+  57:Src/ninja_fruit_game.c ****     }
+  58:Src/ninja_fruit_game.c **** 
+  59:Src/ninja_fruit_game.c ****     if (game->game_over) {
+  60:Src/ninja_fruit_game.c ****         // Check for restart gesture
+  61:Src/ninja_fruit_game.c ****         GestureType_t current_gesture = Gesture_GetCurrentDisplayGesture(gesture_detector);
+  62:Src/ninja_fruit_game.c ****         if (current_gesture != GESTURE_NONE) {
+  63:Src/ninja_fruit_game.c ****             NinjaGame_Reset(game);
+  64:Src/ninja_fruit_game.c ****         }
+  65:Src/ninja_fruit_game.c ****         return;
+  66:Src/ninja_fruit_game.c ****     }
+  67:Src/ninja_fruit_game.c **** 
+  68:Src/ninja_fruit_game.c ****     // Update difficulty based on time played
+  69:Src/ninja_fruit_game.c ****     uint32_t game_time = current_time - game->game_start_time;
+  70:Src/ninja_fruit_game.c ****     game->level = (game_time / 30000) + 1; // Increase level every 30 seconds
+  71:Src/ninja_fruit_game.c ****     game->spawn_rate_multiplier = 1.0f + (game->level - 1) * 0.3f;
+  72:Src/ninja_fruit_game.c **** 
+  73:Src/ninja_fruit_game.c ****     // Spawn new fruits
+  74:Src/ninja_fruit_game.c ****     uint32_t spawn_interval = FRUIT_SPAWN_INTERVAL / game->spawn_rate_multiplier;
+  75:Src/ninja_fruit_game.c ****     if (current_time - game->last_spawn_time > spawn_interval) {
+  76:Src/ninja_fruit_game.c ****         SpawnFruit(game);
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 6
+
+
+  77:Src/ninja_fruit_game.c ****         game->last_spawn_time = current_time;
+  78:Src/ninja_fruit_game.c ****     }
+  79:Src/ninja_fruit_game.c **** 
+  80:Src/ninja_fruit_game.c ****     // Update existing fruits
+  81:Src/ninja_fruit_game.c ****     UpdateFruits(game);
+  82:Src/ninja_fruit_game.c **** 
+  83:Src/ninja_fruit_game.c ****     // Check for slicing gestures
+  84:Src/ninja_fruit_game.c ****     GestureType_t detected_gesture = Gesture_GetCurrentDisplayGesture(gesture_detector);
+  85:Src/ninja_fruit_game.c **** 
+  86:Src/ninja_fruit_game.c ****     if (detected_gesture == GESTURE_LEFT_ARM_SWIPE_LEFT ||
+  87:Src/ninja_fruit_game.c ****         detected_gesture == GESTURE_LEFT_ARM_SWIPE_RIGHT ||
+  88:Src/ninja_fruit_game.c ****         detected_gesture == GESTURE_RIGHT_ARM_SWIPE_LEFT ||
+  89:Src/ninja_fruit_game.c ****         detected_gesture == GESTURE_RIGHT_ARM_SWIPE_RIGHT ||
+  90:Src/ninja_fruit_game.c ****         detected_gesture == GESTURE_SWORD_OVERHEAD_STRIKE ||
+  91:Src/ninja_fruit_game.c ****         detected_gesture == GESTURE_SWORD_SIDE_SLASH) {
+  92:Src/ninja_fruit_game.c **** 
+  93:Src/ninja_fruit_game.c ****         // Create swipe trajectory from wrist movement
+  94:Src/ninja_fruit_game.c ****         SwipeTrajectory_t swipe = {0};
+  95:Src/ninja_fruit_game.c **** 
+  96:Src/ninja_fruit_game.c ****         // Get current wrist position
+  97:Src/ninja_fruit_game.c ****         if (detected_gesture == GESTURE_LEFT_ARM_SWIPE_LEFT || detected_gesture == GESTURE_LEFT_ARM
+  98:Src/ninja_fruit_game.c ****             swipe.end_x = keypoints[KEYPOINT_LEFT_WRIST].x_center;
+  99:Src/ninja_fruit_game.c ****             swipe.end_y = keypoints[KEYPOINT_LEFT_WRIST].y_center;
+ 100:Src/ninja_fruit_game.c ****         } else {
+ 101:Src/ninja_fruit_game.c ****             swipe.end_x = keypoints[KEYPOINT_RIGHT_WRIST].x_center;
+ 102:Src/ninja_fruit_game.c ****             swipe.end_y = keypoints[KEYPOINT_RIGHT_WRIST].y_center;
+ 103:Src/ninja_fruit_game.c ****         }
+ 104:Src/ninja_fruit_game.c **** 
+ 105:Src/ninja_fruit_game.c ****         // Estimate start position based on gesture direction
+ 106:Src/ninja_fruit_game.c ****         float32_t dx = (detected_gesture == GESTURE_LEFT_ARM_SWIPE_RIGHT ||
+ 107:Src/ninja_fruit_game.c ****                        detected_gesture == GESTURE_RIGHT_ARM_SWIPE_RIGHT) ? -0.2f : 0.2f;
+ 108:Src/ninja_fruit_game.c ****         float32_t dy = (detected_gesture == GESTURE_SWORD_OVERHEAD_STRIKE) ? -0.3f : 0.0f;
+ 109:Src/ninja_fruit_game.c **** 
+ 110:Src/ninja_fruit_game.c ****         swipe.start_x = swipe.end_x + dx;
+ 111:Src/ninja_fruit_game.c ****         swipe.start_y = swipe.end_y + dy;
+ 112:Src/ninja_fruit_game.c ****         swipe.timestamp = current_time;
+ 113:Src/ninja_fruit_game.c ****         swipe.active = 1;
+ 114:Src/ninja_fruit_game.c **** 
+ 115:Src/ninja_fruit_game.c ****         CheckSlices(game, &swipe);
+ 116:Src/ninja_fruit_game.c ****     }
+ 117:Src/ninja_fruit_game.c **** 
+ 118:Src/ninja_fruit_game.c ****     // Check game over condition
+ 119:Src/ninja_fruit_game.c ****     if (game->missed_count >= MAX_MISSED_FRUITS) {
+ 120:Src/ninja_fruit_game.c ****         game->game_over = 1;
+ 121:Src/ninja_fruit_game.c ****     }
+ 122:Src/ninja_fruit_game.c **** }
+ 123:Src/ninja_fruit_game.c **** 
+ 124:Src/ninja_fruit_game.c **** static void SpawnFruit(NinjaGame_t *game)
+ 125:Src/ninja_fruit_game.c **** {
+ 126:Src/ninja_fruit_game.c ****     // Find inactive fruit slot
+ 127:Src/ninja_fruit_game.c ****     for (int i = 0; i < MAX_FRUITS; i++) {
+ 128:Src/ninja_fruit_game.c ****         if (game->fruits[i].state == FRUIT_STATE_INACTIVE) {
+ 129:Src/ninja_fruit_game.c ****             Fruit_t *fruit = &game->fruits[i];
+ 130:Src/ninja_fruit_game.c **** 
+ 131:Src/ninja_fruit_game.c ****             // Random spawn position at top of screen
+ 132:Src/ninja_fruit_game.c ****             fruit->x = 0.25f + (rand() % 500) / 1000.0f; // Random X between 0.1 and 0.9
+ 133:Src/ninja_fruit_game.c ****             fruit->y = 0.02 + (FRUIT_SIZE/2)/SCREEN_HEIGHT;
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 7
+
+
+ 134:Src/ninja_fruit_game.c **** 
+ 135:Src/ninja_fruit_game.c ****             // Random horizontal drift
+ 136:Src/ninja_fruit_game.c ****             fruit->velocity_x = ((rand() % 100) - 50) / 10000.0f; // Small horizontal movement
+ 137:Src/ninja_fruit_game.c ****             fruit->velocity_y = FRUIT_FALL_SPEED + ((rand() % 50) / 1000.0f); // Random fall speed 
+ 138:Src/ninja_fruit_game.c **** 
+ 139:Src/ninja_fruit_game.c ****             // Random fruit type
+ 140:Src/ninja_fruit_game.c ****             fruit->type = rand() % FRUIT_TYPES_COUNT;
+ 141:Src/ninja_fruit_game.c ****             fruit->state = FRUIT_STATE_FALLING;
+ 142:Src/ninja_fruit_game.c ****             fruit->spawn_time = HAL_GetTick();
+ 143:Src/ninja_fruit_game.c **** 
+ 144:Src/ninja_fruit_game.c ****             break;
+ 145:Src/ninja_fruit_game.c ****         }
+ 146:Src/ninja_fruit_game.c ****     }
+ 147:Src/ninja_fruit_game.c **** }
+ 148:Src/ninja_fruit_game.c **** 
+ 149:Src/ninja_fruit_game.c **** static void UpdateFruits(NinjaGame_t *game)
+ 150:Src/ninja_fruit_game.c **** {
+ 151:Src/ninja_fruit_game.c ****     uint32_t current_time = HAL_GetTick();
+ 152:Src/ninja_fruit_game.c ****     float32_t dt = 0.016f; // Assuming ~60fps update rate
+ 153:Src/ninja_fruit_game.c **** 
+ 154:Src/ninja_fruit_game.c ****     for (int i = 0; i < MAX_FRUITS; i++) {
+ 155:Src/ninja_fruit_game.c ****         Fruit_t *fruit = &game->fruits[i];
+ 156:Src/ninja_fruit_game.c **** 
+ 157:Src/ninja_fruit_game.c ****         if (fruit->state == FRUIT_STATE_FALLING) {
+ 158:Src/ninja_fruit_game.c ****             // Update position
+ 159:Src/ninja_fruit_game.c ****             fruit->y += fruit->velocity_y * dt;
+ 160:Src/ninja_fruit_game.c ****             fruit->x += fruit->velocity_x * dt;
+ 161:Src/ninja_fruit_game.c **** 
+ 162:Src/ninja_fruit_game.c ****             // Check if fruit fell off screen
+ 163:Src/ninja_fruit_game.c ****             if (fruit->y > (0.98- (FRUIT_SIZE/2)/SCREEN_HEIGHT)) {
+ 164:Src/ninja_fruit_game.c ****                 fruit->state = FRUIT_STATE_MISSED;
+ 165:Src/ninja_fruit_game.c ****                 game->missed_count++;
+ 166:Src/ninja_fruit_game.c ****             }
+ 167:Src/ninja_fruit_game.c ****         }
+ 168:Src/ninja_fruit_game.c ****         else if (fruit->state == FRUIT_STATE_SLICED) {
+ 169:Src/ninja_fruit_game.c ****             // Remove sliced fruits after animation time
+ 170:Src/ninja_fruit_game.c ****             if (current_time - fruit->slice_time > SLICE_ANIMATION_TIME) {
+ 171:Src/ninja_fruit_game.c ****                 fruit->state = FRUIT_STATE_INACTIVE;
+ 172:Src/ninja_fruit_game.c ****             }
+ 173:Src/ninja_fruit_game.c ****         }
+ 174:Src/ninja_fruit_game.c ****         else if (fruit->state == FRUIT_STATE_MISSED) {
+ 175:Src/ninja_fruit_game.c ****             // Remove missed fruits immediately
+ 176:Src/ninja_fruit_game.c ****             fruit->state = FRUIT_STATE_INACTIVE;
+ 177:Src/ninja_fruit_game.c ****         }
+ 178:Src/ninja_fruit_game.c ****     }
+ 179:Src/ninja_fruit_game.c **** }
+ 180:Src/ninja_fruit_game.c **** 
+ 181:Src/ninja_fruit_game.c **** static void CheckSlices(NinjaGame_t *game, SwipeTrajectory_t *swipe)
+ 182:Src/ninja_fruit_game.c **** {
+ 183:Src/ninja_fruit_game.c ****     if (!swipe->active) return;
+ 184:Src/ninja_fruit_game.c **** 
+ 185:Src/ninja_fruit_game.c ****     for (int i = 0; i < MAX_FRUITS; i++) {
+ 186:Src/ninja_fruit_game.c ****         Fruit_t *fruit = &game->fruits[i];
+ 187:Src/ninja_fruit_game.c **** 
+ 188:Src/ninja_fruit_game.c ****         if (fruit->state == FRUIT_STATE_FALLING) {
+ 189:Src/ninja_fruit_game.c ****             // Check if swipe line intersects with fruit circle
+ 190:Src/ninja_fruit_game.c ****             float32_t radius = FRUIT_SIZE / 2.0f / 800.0f; // Normalized radius
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 8
+
+
+ 191:Src/ninja_fruit_game.c **** 
+ 192:Src/ninja_fruit_game.c ****             if (LineIntersectsCircle(swipe->start_x, swipe->start_y,
+ 193:Src/ninja_fruit_game.c ****                                    swipe->end_x, swipe->end_y,
+ 194:Src/ninja_fruit_game.c ****                                    fruit->x, fruit->y, radius)) {
+ 195:Src/ninja_fruit_game.c **** 
+ 196:Src/ninja_fruit_game.c ****                 // Fruit sliced!
+ 197:Src/ninja_fruit_game.c ****                 fruit->state = FRUIT_STATE_SLICED;
+ 198:Src/ninja_fruit_game.c ****                 fruit->slice_time = HAL_GetTick();
+ 199:Src/ninja_fruit_game.c ****                 fruit->slice_direction = (swipe->end_x > swipe->start_x) ? 1 : 0;
+ 200:Src/ninja_fruit_game.c **** 
+ 201:Src/ninja_fruit_game.c ****                 // Increase score based on fruit type and level
+ 202:Src/ninja_fruit_game.c ****                 uint32_t base_score = 10;
+ 203:Src/ninja_fruit_game.c ****                 switch (fruit->type) {
+ 204:Src/ninja_fruit_game.c ****                     case FRUIT_APPLE: base_score = 10; break;
+ 205:Src/ninja_fruit_game.c ****                     case FRUIT_ORANGE: base_score = 15; break;
+ 206:Src/ninja_fruit_game.c ****                     case FRUIT_BANANA: base_score = 20; break;
+ 207:Src/ninja_fruit_game.c ****                     case FRUIT_STRAWBERRY: base_score = 25; break;
+ 208:Src/ninja_fruit_game.c ****                 }
+ 209:Src/ninja_fruit_game.c **** 
+ 210:Src/ninja_fruit_game.c ****                 game->score += base_score * game->level;
+ 211:Src/ninja_fruit_game.c ****             }
+ 212:Src/ninja_fruit_game.c ****         }
+ 213:Src/ninja_fruit_game.c ****     }
+ 214:Src/ninja_fruit_game.c **** }
+ 215:Src/ninja_fruit_game.c **** 
+ 216:Src/ninja_fruit_game.c **** static uint8_t LineIntersectsCircle(float32_t x1, float32_t y1, float32_t x2, float32_t y2,
+ 217:Src/ninja_fruit_game.c ****                                    float32_t cx, float32_t cy, float32_t radius)
+ 218:Src/ninja_fruit_game.c **** {
+ 219:Src/ninja_fruit_game.c ****     // Calculate distance from circle center to line segment
+ 220:Src/ninja_fruit_game.c ****     float32_t dx = x2 - x1;
+ 221:Src/ninja_fruit_game.c ****     float32_t dy = y2 - y1;
+ 222:Src/ninja_fruit_game.c ****     float32_t length = sqrtf(dx*dx + dy*dy);
+ 223:Src/ninja_fruit_game.c **** 
+ 224:Src/ninja_fruit_game.c ****     if (length < 0.001f) return 0; // Degenerate line
+ 225:Src/ninja_fruit_game.c **** 
+ 226:Src/ninja_fruit_game.c ****     // Normalize direction vector
+ 227:Src/ninja_fruit_game.c ****     dx /= length;
+ 228:Src/ninja_fruit_game.c ****     dy /= length;
+ 229:Src/ninja_fruit_game.c **** 
+ 230:Src/ninja_fruit_game.c ****     // Vector from line start to circle center
+ 231:Src/ninja_fruit_game.c ****     float32_t fx = cx - x1;
+ 232:Src/ninja_fruit_game.c ****     float32_t fy = cy - y1;
+ 233:Src/ninja_fruit_game.c **** 
+ 234:Src/ninja_fruit_game.c ****     // Project circle center onto line
+ 235:Src/ninja_fruit_game.c ****     float32_t t = fx * dx + fy * dy;
+ 236:Src/ninja_fruit_game.c **** 
+ 237:Src/ninja_fruit_game.c ****     // Clamp to line segment
+ 238:Src/ninja_fruit_game.c ****     if (t < 0) t = 0;
+ 239:Src/ninja_fruit_game.c ****     if (t > length) t = length;
+ 240:Src/ninja_fruit_game.c **** 
+ 241:Src/ninja_fruit_game.c ****     // Find closest point on line segment
+ 242:Src/ninja_fruit_game.c ****     float32_t closest_x = x1 + t * dx;
+ 243:Src/ninja_fruit_game.c ****     float32_t closest_y = y1 + t * dy;
+ 244:Src/ninja_fruit_game.c **** 
+ 245:Src/ninja_fruit_game.c ****     // Check distance to circle
+ 246:Src/ninja_fruit_game.c ****     float32_t dist_sq = (cx - closest_x) * (cx - closest_x) + (cy - closest_y) * (cy - closest_y);
+ 247:Src/ninja_fruit_game.c **** 
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 9
+
+
+ 248:Src/ninja_fruit_game.c ****     return dist_sq <= (radius * radius);
+ 249:Src/ninja_fruit_game.c **** }
+ 250:Src/ninja_fruit_game.c **** 
+ 251:Src/ninja_fruit_game.c **** void NinjaGame_Render(NinjaGame_t *game)
+ 252:Src/ninja_fruit_game.c **** {
+ 156              		.loc 1 252 1 is_stmt 1 view -0
+ 157              		.cfi_startproc
+ 158              		@ args = 0, pretend = 0, frame = 8
+ 159              		@ frame_needed = 0, uses_anonymous_args = 0
+ 253:Src/ninja_fruit_game.c ****     uint32_t screen_width = SCREEN_WIDTH;
+ 160              		.loc 1 253 5 view .LVU48
+ 254:Src/ninja_fruit_game.c ****     uint32_t screen_height = SCREEN_HEIGHT;
+ 161              		.loc 1 254 5 view .LVU49
+ 255:Src/ninja_fruit_game.c **** 
+ 256:Src/ninja_fruit_game.c ****     if (!game->game_started && !game->game_over) {
+ 162              		.loc 1 256 5 view .LVU50
+ 252:Src/ninja_fruit_game.c ****     uint32_t screen_width = SCREEN_WIDTH;
+ 163              		.loc 1 252 1 is_stmt 0 view .LVU51
+ 164 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 165              		.cfi_def_cfa_offset 24
+ 166              		.cfi_offset 4, -24
+ 167              		.cfi_offset 5, -20
+ 168              		.cfi_offset 6, -16
+ 169              		.cfi_offset 7, -12
+ 170              		.cfi_offset 8, -8
+ 171              		.cfi_offset 14, -4
+ 172 0004 2DED088B 		vpush.64	{d8, d9, d10, d11}
+ 173              		.cfi_def_cfa_offset 56
+ 174              		.cfi_offset 80, -56
+ 175              		.cfi_offset 81, -52
+ 176              		.cfi_offset 82, -48
+ 177              		.cfi_offset 83, -44
+ 178              		.cfi_offset 84, -40
+ 179              		.cfi_offset 85, -36
+ 180              		.cfi_offset 86, -32
+ 181              		.cfi_offset 87, -28
+ 182              		.loc 1 256 8 view .LVU52
+ 183 0008 B0F80C51 		ldrh	r5, [r0, #268]
+ 252:Src/ninja_fruit_game.c ****     uint32_t screen_width = SCREEN_WIDTH;
+ 184              		.loc 1 252 1 view .LVU53
+ 185 000c 0446     		mov	r4, r0
+ 186 000e 84B0     		sub	sp, sp, #16
+ 187              		.cfi_def_cfa_offset 72
+ 188              		.loc 1 256 8 view .LVU54
+ 189 0010 6DBB     		cbnz	r5, .L3
+ 190              	.LBB12:
+ 257:Src/ninja_fruit_game.c ****         // Show start screen
+ 258:Src/ninja_fruit_game.c ****         UTIL_LCD_SetBackColor(0x40000000);
+ 191              		.loc 1 258 9 is_stmt 1 view .LVU55
+ 192 0012 4FF08040 		mov	r0, #1073741824
+ 193              	.LVL11:
+ 194              		.loc 1 258 9 is_stmt 0 view .LVU56
+ 195 0016 FFF7FEFF 		bl	UTIL_LCD_SetBackColor
+ 196              	.LVL12:
+ 259:Src/ninja_fruit_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(8), CENTER_MODE, "NINJA FRUIT SLICER");
+ 197              		.loc 1 259 9 is_stmt 1 view .LVU57
+ 198              		.loc 1 259 32 is_stmt 0 view .LVU58
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 10
+
+
+ 199 001a FFF7FEFF 		bl	UTIL_LCD_GetFont
+ 200              	.LVL13:
+ 201              		.loc 1 259 32 discriminator 1 view .LVU59
+ 202 001e C188     		ldrh	r1, [r0, #6]
+ 203              		.loc 1 259 9 discriminator 1 view .LVU60
+ 204 0020 0122     		movs	r2, #1
+ 205 0022 984B     		ldr	r3, .L18
+ 206 0024 C900     		lsls	r1, r1, #3
+ 207 0026 2846     		mov	r0, r5
+ 208 0028 FFF7FEFF 		bl	UTIL_LCDEx_PrintfAt
+ 209              	.LVL14:
+ 260:Src/ninja_fruit_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(10), CENTER_MODE, "Make any gesture to start!");
+ 210              		.loc 1 260 9 is_stmt 1 view .LVU61
+ 211              		.loc 1 260 32 is_stmt 0 view .LVU62
+ 212 002c FFF7FEFF 		bl	UTIL_LCD_GetFont
+ 213              	.LVL15:
+ 214              		.loc 1 260 32 discriminator 1 view .LVU63
+ 215 0030 C188     		ldrh	r1, [r0, #6]
+ 216              		.loc 1 260 9 discriminator 1 view .LVU64
+ 217 0032 0A20     		movs	r0, #10
+ 218 0034 0122     		movs	r2, #1
+ 219 0036 4143     		muls	r1, r0, r1
+ 220 0038 934B     		ldr	r3, .L18+4
+ 221 003a 2846     		mov	r0, r5
+ 222 003c FFF7FEFF 		bl	UTIL_LCDEx_PrintfAt
+ 223              	.LVL16:
+ 261:Src/ninja_fruit_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(12), CENTER_MODE, "Slice fruits with arm swipes");
+ 224              		.loc 1 261 9 is_stmt 1 view .LVU65
+ 225              		.loc 1 261 32 is_stmt 0 view .LVU66
+ 226 0040 FFF7FEFF 		bl	UTIL_LCD_GetFont
+ 227              	.LVL17:
+ 228              		.loc 1 261 32 discriminator 1 view .LVU67
+ 229 0044 C188     		ldrh	r1, [r0, #6]
+ 230              		.loc 1 261 9 discriminator 1 view .LVU68
+ 231 0046 0C20     		movs	r0, #12
+ 232 0048 0122     		movs	r2, #1
+ 233 004a 4143     		muls	r1, r0, r1
+ 234 004c 8F4B     		ldr	r3, .L18+8
+ 235 004e 2846     		mov	r0, r5
+ 236 0050 FFF7FEFF 		bl	UTIL_LCDEx_PrintfAt
+ 237              	.LVL18:
+ 262:Src/ninja_fruit_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(13), CENTER_MODE, "Don't let %d fruits fall!", MAX_MISSED_FRUIT
+ 238              		.loc 1 262 9 is_stmt 1 view .LVU69
+ 239              		.loc 1 262 32 is_stmt 0 view .LVU70
+ 240 0054 FFF7FEFF 		bl	UTIL_LCD_GetFont
+ 241              	.LVL19:
+ 242              		.loc 1 262 32 discriminator 1 view .LVU71
+ 243 0058 C188     		ldrh	r1, [r0, #6]
+ 244              		.loc 1 262 9 discriminator 1 view .LVU72
+ 245 005a 0D20     		movs	r0, #13
+ 246 005c 0523     		movs	r3, #5
+ 247 005e 4143     		muls	r1, r0, r1
+ 248 0060 0122     		movs	r2, #1
+ 249 0062 2846     		mov	r0, r5
+ 250 0064 0093     		str	r3, [sp]
+ 251 0066 8A4B     		ldr	r3, .L18+12
+ 252              	.LVL20:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 11
+
+
+ 253              	.L16:
+ 254              		.loc 1 262 9 discriminator 1 view .LVU73
+ 255              	.LBE12:
+ 256              	.LBB13:
+ 257              	.LBB14:
+ 263:Src/ninja_fruit_game.c ****         UTIL_LCD_SetBackColor(0);
+ 264:Src/ninja_fruit_game.c ****         return;
+ 265:Src/ninja_fruit_game.c ****     }
+ 266:Src/ninja_fruit_game.c **** 
+ 267:Src/ninja_fruit_game.c ****     if (game->game_over) {
+ 268:Src/ninja_fruit_game.c ****         // Show game over screen
+ 269:Src/ninja_fruit_game.c ****         UTIL_LCD_SetBackColor(0x40FF0000);
+ 270:Src/ninja_fruit_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(8), CENTER_MODE, "GAME OVER!");
+ 271:Src/ninja_fruit_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(10), CENTER_MODE, "Final Score: %lu", game->score);
+ 272:Src/ninja_fruit_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(11), CENTER_MODE, "Level Reached: %lu", game->level);
+ 273:Src/ninja_fruit_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(13), CENTER_MODE, "Make any gesture to restart");
+ 274:Src/ninja_fruit_game.c ****         UTIL_LCD_SetBackColor(0);
+ 275:Src/ninja_fruit_game.c ****         return;
+ 276:Src/ninja_fruit_game.c ****     }
+ 277:Src/ninja_fruit_game.c **** 
+ 278:Src/ninja_fruit_game.c ****     // Render fruits
+ 279:Src/ninja_fruit_game.c ****     for (int i = 0; i < MAX_FRUITS; i++) {
+ 280:Src/ninja_fruit_game.c ****         if (game->fruits[i].state != FRUIT_STATE_INACTIVE) {
+ 281:Src/ninja_fruit_game.c ****             RenderFruit(&game->fruits[i], screen_width, screen_height);
+ 282:Src/ninja_fruit_game.c ****         }
+ 283:Src/ninja_fruit_game.c ****     }
+ 284:Src/ninja_fruit_game.c **** 
+ 285:Src/ninja_fruit_game.c ****     // Render UI
+ 286:Src/ninja_fruit_game.c ****     RenderUI(game);
+ 287:Src/ninja_fruit_game.c **** }
+ 288:Src/ninja_fruit_game.c **** 
+ 289:Src/ninja_fruit_game.c **** static void RenderFruit(Fruit_t *fruit, uint32_t screen_width, uint32_t screen_height)
+ 290:Src/ninja_fruit_game.c **** {
+ 291:Src/ninja_fruit_game.c ****     // Convert normalized coordinates to screen coordinates
+ 292:Src/ninja_fruit_game.c ****     int screen_x = (int)(fruit->x * screen_width);
+ 293:Src/ninja_fruit_game.c ****     int screen_y = (int)(fruit->y * screen_height);
+ 294:Src/ninja_fruit_game.c **** 
+ 295:Src/ninja_fruit_game.c ****     uint32_t color = fruit_colors[fruit->type];
+ 296:Src/ninja_fruit_game.c **** 
+ 297:Src/ninja_fruit_game.c ****     if (fruit->state == FRUIT_STATE_FALLING) {
+ 298:Src/ninja_fruit_game.c ****         // Draw whole fruit
+ 299:Src/ninja_fruit_game.c ****         UTIL_LCD_FillCircle(screen_x, screen_y, FRUIT_SIZE/2, color);
+ 300:Src/ninja_fruit_game.c **** 
+ 301:Src/ninja_fruit_game.c ****         // Add highlight for 3D effect
+ 302:Src/ninja_fruit_game.c ****         UTIL_LCD_FillCircle(screen_x - FRUIT_SIZE/6, screen_y - FRUIT_SIZE/6, FRUIT_SIZE/8,
+ 303:Src/ninja_fruit_game.c ****                            UTIL_LCD_COLOR_WHITE);
+ 304:Src/ninja_fruit_game.c ****     }
+ 305:Src/ninja_fruit_game.c ****     else if (fruit->state == FRUIT_STATE_SLICED) {
+ 306:Src/ninja_fruit_game.c ****         // Draw sliced fruit halves
+ 307:Src/ninja_fruit_game.c ****         uint32_t elapsed = HAL_GetTick() - fruit->slice_time;
+ 308:Src/ninja_fruit_game.c ****         float32_t separation = (elapsed / (float32_t)SLICE_ANIMATION_TIME) * FRUIT_SIZE;
+ 309:Src/ninja_fruit_game.c **** 
+ 310:Src/ninja_fruit_game.c ****         if (fruit->slice_direction) {
+ 311:Src/ninja_fruit_game.c ****             // Right slice - left half moves left, right half moves right
+ 312:Src/ninja_fruit_game.c ****             UTIL_LCD_FillCircle(screen_x - separation/2, screen_y + separation/4, FRUIT_SIZE/3, col
+ 313:Src/ninja_fruit_game.c ****             UTIL_LCD_FillCircle(screen_x + separation/2, screen_y + separation/4, FRUIT_SIZE/3, col
+ 314:Src/ninja_fruit_game.c ****         } else {
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 12
+
+
+ 315:Src/ninja_fruit_game.c ****             // Left slice
+ 316:Src/ninja_fruit_game.c ****             UTIL_LCD_FillCircle(screen_x + separation/2, screen_y + separation/4, FRUIT_SIZE/3, col
+ 317:Src/ninja_fruit_game.c ****             UTIL_LCD_FillCircle(screen_x - separation/2, screen_y + separation/4, FRUIT_SIZE/3, col
+ 318:Src/ninja_fruit_game.c ****         }
+ 319:Src/ninja_fruit_game.c ****     }
+ 320:Src/ninja_fruit_game.c **** }
+ 321:Src/ninja_fruit_game.c **** 
+ 322:Src/ninja_fruit_game.c **** static void RenderUI(NinjaGame_t *game)
+ 323:Src/ninja_fruit_game.c **** {
+ 324:Src/ninja_fruit_game.c ****     UTIL_LCD_SetBackColor(0x40000000);
+ 325:Src/ninja_fruit_game.c **** 
+ 326:Src/ninja_fruit_game.c ****     // Score
+ 327:Src/ninja_fruit_game.c ****     UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_WHITE);
+ 328:Src/ninja_fruit_game.c ****     UTIL_LCDEx_PrintfAt(0, LINE(1), LEFT_MODE, "Score: %lu", game->score);
+ 329:Src/ninja_fruit_game.c **** 
+ 330:Src/ninja_fruit_game.c ****     // Level
+ 331:Src/ninja_fruit_game.c ****     UTIL_LCDEx_PrintfAt(0, LINE(2), LEFT_MODE, "Level: %lu", game->level);
+ 332:Src/ninja_fruit_game.c **** 
+ 333:Src/ninja_fruit_game.c ****     // Missed fruits
+ 334:Src/ninja_fruit_game.c ****     if (game->missed_count > MAX_MISSED_FRUITS / 2) {
+ 335:Src/ninja_fruit_game.c ****         UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_RED);
+ 336:Src/ninja_fruit_game.c ****     }
+ 337:Src/ninja_fruit_game.c ****     UTIL_LCDEx_PrintfAt(0, LINE(3), LEFT_MODE, "Missed: %lu/%d", game->missed_count, MAX_MISSED_FRU
+ 338:Src/ninja_fruit_game.c ****     UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_WHITE);
+ 339:Src/ninja_fruit_game.c **** 
+ 340:Src/ninja_fruit_game.c ****     // Game time
+ 341:Src/ninja_fruit_game.c ****     uint32_t game_time = (HAL_GetTick() - game->game_start_time) / 1000;
+ 342:Src/ninja_fruit_game.c ****     UTIL_LCDEx_PrintfAt(600, LINE(1), LEFT_MODE, "Time: %lus", game_time);
+ 258              		.loc 1 342 5 discriminator 1 view .LVU74
+ 259 0068 FFF7FEFF 		bl	UTIL_LCDEx_PrintfAt
+ 260              	.LVL21:
+ 261 006c 33E0     		b	.L17
+ 262              	.LVL22:
+ 263              	.L3:
+ 264              		.loc 1 342 5 discriminator 1 view .LVU75
+ 265              	.LBE14:
+ 266              	.LBE13:
+ 267:Src/ninja_fruit_game.c ****         // Show game over screen
+ 267              		.loc 1 267 5 is_stmt 1 view .LVU76
+ 267:Src/ninja_fruit_game.c ****         // Show game over screen
+ 268              		.loc 1 267 8 is_stmt 0 view .LVU77
+ 269 006e 90F80C31 		ldrb	r3, [r0, #268]	@ zero_extendqisi2
+ 270 0072 002B     		cmp	r3, #0
+ 271 0074 37D0     		beq	.L4
+ 272              	.LBB18:
+ 269:Src/ninja_fruit_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(8), CENTER_MODE, "GAME OVER!");
+ 273              		.loc 1 269 9 is_stmt 1 view .LVU78
+ 274 0076 8748     		ldr	r0, .L18+16
+ 275              	.LVL23:
+ 269:Src/ninja_fruit_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(8), CENTER_MODE, "GAME OVER!");
+ 276              		.loc 1 269 9 is_stmt 0 view .LVU79
+ 277 0078 FFF7FEFF 		bl	UTIL_LCD_SetBackColor
+ 278              	.LVL24:
+ 270:Src/ninja_fruit_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(10), CENTER_MODE, "Final Score: %lu", game->score);
+ 279              		.loc 1 270 9 is_stmt 1 view .LVU80
+ 270:Src/ninja_fruit_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(10), CENTER_MODE, "Final Score: %lu", game->score);
+ 280              		.loc 1 270 32 is_stmt 0 view .LVU81
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 13
+
+
+ 281 007c FFF7FEFF 		bl	UTIL_LCD_GetFont
+ 282              	.LVL25:
+ 270:Src/ninja_fruit_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(10), CENTER_MODE, "Final Score: %lu", game->score);
+ 283              		.loc 1 270 32 discriminator 1 view .LVU82
+ 284 0080 C188     		ldrh	r1, [r0, #6]
+ 270:Src/ninja_fruit_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(10), CENTER_MODE, "Final Score: %lu", game->score);
+ 285              		.loc 1 270 9 discriminator 1 view .LVU83
+ 286 0082 0122     		movs	r2, #1
+ 287 0084 844B     		ldr	r3, .L18+20
+ 288 0086 C900     		lsls	r1, r1, #3
+ 289 0088 0020     		movs	r0, #0
+ 290 008a FFF7FEFF 		bl	UTIL_LCDEx_PrintfAt
+ 291              	.LVL26:
+ 271:Src/ninja_fruit_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(11), CENTER_MODE, "Level Reached: %lu", game->level);
+ 292              		.loc 1 271 9 is_stmt 1 view .LVU84
+ 271:Src/ninja_fruit_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(11), CENTER_MODE, "Level Reached: %lu", game->level);
+ 293              		.loc 1 271 32 is_stmt 0 view .LVU85
+ 294 008e FFF7FEFF 		bl	UTIL_LCD_GetFont
+ 295              	.LVL27:
+ 271:Src/ninja_fruit_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(11), CENTER_MODE, "Level Reached: %lu", game->level);
+ 296              		.loc 1 271 32 discriminator 1 view .LVU86
+ 297 0092 C188     		ldrh	r1, [r0, #6]
+ 271:Src/ninja_fruit_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(11), CENTER_MODE, "Level Reached: %lu", game->level);
+ 298              		.loc 1 271 9 discriminator 1 view .LVU87
+ 299 0094 0A20     		movs	r0, #10
+ 300 0096 D4F80031 		ldr	r3, [r4, #256]
+ 301 009a 4143     		muls	r1, r0, r1
+ 302 009c 0122     		movs	r2, #1
+ 303 009e 0093     		str	r3, [sp]
+ 304 00a0 0020     		movs	r0, #0
+ 305 00a2 7E4B     		ldr	r3, .L18+24
+ 306 00a4 FFF7FEFF 		bl	UTIL_LCDEx_PrintfAt
+ 307              	.LVL28:
+ 272:Src/ninja_fruit_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(13), CENTER_MODE, "Make any gesture to restart");
+ 308              		.loc 1 272 9 is_stmt 1 view .LVU88
+ 272:Src/ninja_fruit_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(13), CENTER_MODE, "Make any gesture to restart");
+ 309              		.loc 1 272 32 is_stmt 0 view .LVU89
+ 310 00a8 FFF7FEFF 		bl	UTIL_LCD_GetFont
+ 311              	.LVL29:
+ 272:Src/ninja_fruit_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(13), CENTER_MODE, "Make any gesture to restart");
+ 312              		.loc 1 272 32 discriminator 1 view .LVU90
+ 313 00ac C188     		ldrh	r1, [r0, #6]
+ 272:Src/ninja_fruit_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(13), CENTER_MODE, "Make any gesture to restart");
+ 314              		.loc 1 272 9 discriminator 1 view .LVU91
+ 315 00ae 0B20     		movs	r0, #11
+ 316 00b0 D4F81431 		ldr	r3, [r4, #276]
+ 317 00b4 4143     		muls	r1, r0, r1
+ 318 00b6 0122     		movs	r2, #1
+ 319 00b8 0093     		str	r3, [sp]
+ 320 00ba 0020     		movs	r0, #0
+ 321 00bc 784B     		ldr	r3, .L18+28
+ 322 00be FFF7FEFF 		bl	UTIL_LCDEx_PrintfAt
+ 323              	.LVL30:
+ 273:Src/ninja_fruit_game.c ****         UTIL_LCD_SetBackColor(0);
+ 324              		.loc 1 273 9 is_stmt 1 view .LVU92
+ 273:Src/ninja_fruit_game.c ****         UTIL_LCD_SetBackColor(0);
+ 325              		.loc 1 273 32 is_stmt 0 view .LVU93
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 14
+
+
+ 326 00c2 FFF7FEFF 		bl	UTIL_LCD_GetFont
+ 327              	.LVL31:
+ 273:Src/ninja_fruit_game.c ****         UTIL_LCD_SetBackColor(0);
+ 328              		.loc 1 273 32 discriminator 1 view .LVU94
+ 329 00c6 C188     		ldrh	r1, [r0, #6]
+ 273:Src/ninja_fruit_game.c ****         UTIL_LCD_SetBackColor(0);
+ 330              		.loc 1 273 9 discriminator 1 view .LVU95
+ 331 00c8 0D20     		movs	r0, #13
+ 332 00ca 0122     		movs	r2, #1
+ 333 00cc 4143     		muls	r1, r0, r1
+ 334 00ce 754B     		ldr	r3, .L18+32
+ 335 00d0 0020     		movs	r0, #0
+ 336 00d2 FFF7FEFF 		bl	UTIL_LCDEx_PrintfAt
+ 337              	.LVL32:
+ 274:Src/ninja_fruit_game.c ****         return;
+ 338              		.loc 1 274 9 is_stmt 1 view .LVU96
+ 339              	.L17:
+ 274:Src/ninja_fruit_game.c ****         return;
+ 340              		.loc 1 274 9 is_stmt 0 view .LVU97
+ 341              	.LBE18:
+ 342              	.LBB19:
+ 343              	.LBB15:
+ 343:Src/ninja_fruit_game.c **** 
+ 344:Src/ninja_fruit_game.c ****     UTIL_LCD_SetBackColor(0);
+ 344              		.loc 1 344 5 is_stmt 1 view .LVU98
+ 345 00d6 0020     		movs	r0, #0
+ 346              	.LBE15:
+ 347              	.LBE19:
+ 287:Src/ninja_fruit_game.c **** 
+ 348              		.loc 1 287 1 is_stmt 0 view .LVU99
+ 349 00d8 04B0     		add	sp, sp, #16
+ 350              		.cfi_remember_state
+ 351              		.cfi_def_cfa_offset 56
+ 352              		@ sp needed
+ 353 00da BDEC088B 		vldm	sp!, {d8-d11}
+ 354              		.cfi_restore 86
+ 355              		.cfi_restore 87
+ 356              		.cfi_restore 84
+ 357              		.cfi_restore 85
+ 358              		.cfi_restore 82
+ 359              		.cfi_restore 83
+ 360              		.cfi_restore 80
+ 361              		.cfi_restore 81
+ 362              		.cfi_def_cfa_offset 24
+ 363 00de BDE8F041 		pop	{r4, r5, r6, r7, r8, lr}
+ 364              		.cfi_restore 14
+ 365              		.cfi_restore 8
+ 366              		.cfi_restore 7
+ 367              		.cfi_restore 6
+ 368              		.cfi_restore 5
+ 369              		.cfi_restore 4
+ 370              		.cfi_def_cfa_offset 0
+ 371              	.LBB20:
+ 372              	.LBB16:
+ 373              		.loc 1 344 5 view .LVU100
+ 374 00e2 FFF7FEBF 		b	UTIL_LCD_SetBackColor
+ 375              	.LVL33:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 15
+
+
+ 376              	.L4:
+ 377              		.cfi_restore_state
+ 378              		.loc 1 344 5 view .LVU101
+ 379 00e6 0546     		mov	r5, r0
+ 380              	.LBE16:
+ 381              	.LBE20:
+ 382              	.LBB21:
+ 383              	.LBB22:
+ 384              	.LBB23:
+ 292:Src/ninja_fruit_game.c ****     int screen_y = (int)(fruit->y * screen_height);
+ 385              		.loc 1 292 35 view .LVU102
+ 386 00e8 9FED6F9A 		vldr.32	s18, .L18+36
+ 293:Src/ninja_fruit_game.c **** 
+ 387              		.loc 1 293 35 view .LVU103
+ 388 00ec DFED6F9A 		vldr.32	s19, .L18+40
+ 295:Src/ninja_fruit_game.c **** 
+ 389              		.loc 1 295 14 view .LVU104
+ 390 00f0 DFF8D481 		ldr	r8, .L18+68
+ 391 00f4 00F58077 		add	r7, r0, #256
+ 392              	.LVL34:
+ 393              	.L8:
+ 295:Src/ninja_fruit_game.c **** 
+ 394              		.loc 1 295 14 view .LVU105
+ 395              	.LBE23:
+ 396              	.LBE22:
+ 280:Src/ninja_fruit_game.c ****             RenderFruit(&game->fruits[i], screen_width, screen_height);
+ 397              		.loc 1 280 9 is_stmt 1 view .LVU106
+ 280:Src/ninja_fruit_game.c ****             RenderFruit(&game->fruits[i], screen_width, screen_height);
+ 398              		.loc 1 280 28 is_stmt 0 view .LVU107
+ 399 00f8 6B7C     		ldrb	r3, [r5, #17]	@ zero_extendqisi2
+ 280:Src/ninja_fruit_game.c ****             RenderFruit(&game->fruits[i], screen_width, screen_height);
+ 400              		.loc 1 280 12 view .LVU108
+ 401 00fa 032B     		cmp	r3, #3
+ 402 00fc 23D0     		beq	.L5
+ 281:Src/ninja_fruit_game.c ****         }
+ 403              		.loc 1 281 13 is_stmt 1 view .LVU109
+ 404              	.LVL35:
+ 405              	.LBB28:
+ 406              	.LBI22:
+ 289:Src/ninja_fruit_game.c **** {
+ 407              		.loc 1 289 13 view .LVU110
+ 408              	.LBB26:
+ 292:Src/ninja_fruit_game.c ****     int screen_y = (int)(fruit->y * screen_height);
+ 409              		.loc 1 292 5 view .LVU111
+ 292:Src/ninja_fruit_game.c ****     int screen_y = (int)(fruit->y * screen_height);
+ 410              		.loc 1 292 35 is_stmt 0 view .LVU112
+ 411 00fe D5ED008A 		vldr.32	s17, [r5]
+ 293:Src/ninja_fruit_game.c **** 
+ 412              		.loc 1 293 35 view .LVU113
+ 413 0102 95ED018A 		vldr.32	s16, [r5, #4]
+ 292:Src/ninja_fruit_game.c ****     int screen_y = (int)(fruit->y * screen_height);
+ 414              		.loc 1 292 35 view .LVU114
+ 415 0106 68EE898A 		vmul.f32	s17, s17, s18
+ 293:Src/ninja_fruit_game.c **** 
+ 416              		.loc 1 293 35 view .LVU115
+ 417 010a 28EE298A 		vmul.f32	s16, s16, s19
+ 295:Src/ninja_fruit_game.c **** 
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 16
+
+
+ 418              		.loc 1 295 40 view .LVU116
+ 419 010e 2A7C     		ldrb	r2, [r5, #16]	@ zero_extendqisi2
+ 292:Src/ninja_fruit_game.c ****     int screen_y = (int)(fruit->y * screen_height);
+ 420              		.loc 1 292 9 view .LVU117
+ 421 0110 FDEEE88A 		vcvt.s32.f32	s17, s17
+ 422              	.LVL36:
+ 293:Src/ninja_fruit_game.c **** 
+ 423              		.loc 1 293 5 is_stmt 1 view .LVU118
+ 293:Src/ninja_fruit_game.c **** 
+ 424              		.loc 1 293 9 is_stmt 0 view .LVU119
+ 425 0114 BDEEC88A 		vcvt.s32.f32	s16, s16
+ 426              	.LVL37:
+ 295:Src/ninja_fruit_game.c **** 
+ 427              		.loc 1 295 5 is_stmt 1 view .LVU120
+ 295:Src/ninja_fruit_game.c **** 
+ 428              		.loc 1 295 14 is_stmt 0 view .LVU121
+ 429 0118 58F82260 		ldr	r6, [r8, r2, lsl #2]
+ 430              	.LVL38:
+ 297:Src/ninja_fruit_game.c ****         // Draw whole fruit
+ 431              		.loc 1 297 5 is_stmt 1 view .LVU122
+ 297:Src/ninja_fruit_game.c ****         // Draw whole fruit
+ 432              		.loc 1 297 8 is_stmt 0 view .LVU123
+ 433 011c 002B     		cmp	r3, #0
+ 434 011e 60D1     		bne	.L6
+ 299:Src/ninja_fruit_game.c **** 
+ 435              		.loc 1 299 9 is_stmt 1 view .LVU124
+ 436 0120 3346     		mov	r3, r6
+ 437 0122 0F22     		movs	r2, #15
+ 438 0124 18EE101A 		vmov	r1, s16	@ int
+ 439 0128 18EE900A 		vmov	r0, s17	@ int
+ 440 012c FFF7FEFF 		bl	UTIL_LCD_FillCircle
+ 441              	.LVL39:
+ 302:Src/ninja_fruit_game.c ****                            UTIL_LCD_COLOR_WHITE);
+ 442              		.loc 1 302 9 view .LVU125
+ 443 0130 18EE101A 		vmov	r1, s16	@ int
+ 444 0134 18EE900A 		vmov	r0, s17	@ int
+ 445 0138 4FF0FF33 		mov	r3, #-1
+ 446 013c 0322     		movs	r2, #3
+ 447 013e 0539     		subs	r1, r1, #5
+ 448 0140 0538     		subs	r0, r0, #5
+ 449              	.LVL40:
+ 450              	.L14:
+ 451              	.LBB24:
+ 317:Src/ninja_fruit_game.c ****         }
+ 452              		.loc 1 317 13 is_stmt 0 view .LVU126
+ 453 0142 FFF7FEFF 		bl	UTIL_LCD_FillCircle
+ 454              	.LVL41:
+ 455              	.L5:
+ 317:Src/ninja_fruit_game.c ****         }
+ 456              		.loc 1 317 13 view .LVU127
+ 457              	.LBE24:
+ 458              	.LBE26:
+ 459              	.LBE28:
+ 279:Src/ninja_fruit_game.c ****         if (game->fruits[i].state != FRUIT_STATE_INACTIVE) {
+ 460              		.loc 1 279 38 is_stmt 1 discriminator 2 view .LVU128
+ 279:Src/ninja_fruit_game.c ****         if (game->fruits[i].state != FRUIT_STATE_INACTIVE) {
+ 461              		.loc 1 279 23 discriminator 1 view .LVU129
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 17
+
+
+ 462 0146 2035     		adds	r5, r5, #32
+ 463 0148 BD42     		cmp	r5, r7
+ 464 014a D5D1     		bne	.L8
+ 465              	.LBE21:
+ 286:Src/ninja_fruit_game.c **** }
+ 466              		.loc 1 286 5 view .LVU130
+ 467              	.LVL42:
+ 468              	.LBB30:
+ 469              	.LBI13:
+ 322:Src/ninja_fruit_game.c **** {
+ 470              		.loc 1 322 13 view .LVU131
+ 471              	.LBB17:
+ 324:Src/ninja_fruit_game.c **** 
+ 472              		.loc 1 324 5 view .LVU132
+ 473 014c 4FF08040 		mov	r0, #1073741824
+ 474 0150 FFF7FEFF 		bl	UTIL_LCD_SetBackColor
+ 475              	.LVL43:
+ 327:Src/ninja_fruit_game.c ****     UTIL_LCDEx_PrintfAt(0, LINE(1), LEFT_MODE, "Score: %lu", game->score);
+ 476              		.loc 1 327 5 view .LVU133
+ 477 0154 4FF0FF30 		mov	r0, #-1
+ 478 0158 FFF7FEFF 		bl	UTIL_LCD_SetTextColor
+ 479              	.LVL44:
+ 328:Src/ninja_fruit_game.c **** 
+ 480              		.loc 1 328 5 view .LVU134
+ 328:Src/ninja_fruit_game.c **** 
+ 481              		.loc 1 328 28 is_stmt 0 view .LVU135
+ 482 015c FFF7FEFF 		bl	UTIL_LCD_GetFont
+ 483              	.LVL45:
+ 328:Src/ninja_fruit_game.c **** 
+ 484              		.loc 1 328 5 discriminator 1 view .LVU136
+ 485 0160 D4F80031 		ldr	r3, [r4, #256]
+ 486 0164 C188     		ldrh	r1, [r0, #6]
+ 487 0166 0322     		movs	r2, #3
+ 488 0168 0093     		str	r3, [sp]
+ 489 016a 0020     		movs	r0, #0
+ 490 016c 504B     		ldr	r3, .L18+44
+ 491 016e FFF7FEFF 		bl	UTIL_LCDEx_PrintfAt
+ 492              	.LVL46:
+ 331:Src/ninja_fruit_game.c **** 
+ 493              		.loc 1 331 5 is_stmt 1 view .LVU137
+ 331:Src/ninja_fruit_game.c **** 
+ 494              		.loc 1 331 28 is_stmt 0 view .LVU138
+ 495 0172 FFF7FEFF 		bl	UTIL_LCD_GetFont
+ 496              	.LVL47:
+ 331:Src/ninja_fruit_game.c **** 
+ 497              		.loc 1 331 5 discriminator 1 view .LVU139
+ 498 0176 D4F81431 		ldr	r3, [r4, #276]
+ 331:Src/ninja_fruit_game.c **** 
+ 499              		.loc 1 331 28 discriminator 1 view .LVU140
+ 500 017a C188     		ldrh	r1, [r0, #6]
+ 331:Src/ninja_fruit_game.c **** 
+ 501              		.loc 1 331 5 discriminator 1 view .LVU141
+ 502 017c 0322     		movs	r2, #3
+ 503 017e 0093     		str	r3, [sp]
+ 504 0180 0020     		movs	r0, #0
+ 505 0182 4C4B     		ldr	r3, .L18+48
+ 506 0184 4900     		lsls	r1, r1, #1
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 18
+
+
+ 507 0186 FFF7FEFF 		bl	UTIL_LCDEx_PrintfAt
+ 508              	.LVL48:
+ 334:Src/ninja_fruit_game.c ****         UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_RED);
+ 509              		.loc 1 334 5 is_stmt 1 view .LVU142
+ 334:Src/ninja_fruit_game.c ****         UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_RED);
+ 510              		.loc 1 334 8 is_stmt 0 view .LVU143
+ 511 018a D4F80431 		ldr	r3, [r4, #260]
+ 512 018e 022B     		cmp	r3, #2
+ 513 0190 02D9     		bls	.L9
+ 335:Src/ninja_fruit_game.c ****     }
+ 514              		.loc 1 335 9 is_stmt 1 view .LVU144
+ 515 0192 4948     		ldr	r0, .L18+52
+ 516 0194 FFF7FEFF 		bl	UTIL_LCD_SetTextColor
+ 517              	.LVL49:
+ 518              	.L9:
+ 337:Src/ninja_fruit_game.c ****     UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_WHITE);
+ 519              		.loc 1 337 5 view .LVU145
+ 337:Src/ninja_fruit_game.c ****     UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_WHITE);
+ 520              		.loc 1 337 28 is_stmt 0 view .LVU146
+ 521 0198 FFF7FEFF 		bl	UTIL_LCD_GetFont
+ 522              	.LVL50:
+ 337:Src/ninja_fruit_game.c ****     UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_WHITE);
+ 523              		.loc 1 337 5 discriminator 1 view .LVU147
+ 524 019c 0523     		movs	r3, #5
+ 337:Src/ninja_fruit_game.c ****     UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_WHITE);
+ 525              		.loc 1 337 28 discriminator 1 view .LVU148
+ 526 019e C188     		ldrh	r1, [r0, #6]
+ 337:Src/ninja_fruit_game.c ****     UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_WHITE);
+ 527              		.loc 1 337 5 discriminator 1 view .LVU149
+ 528 01a0 0193     		str	r3, [sp, #4]
+ 529 01a2 D4F80431 		ldr	r3, [r4, #260]
+ 530 01a6 0322     		movs	r2, #3
+ 531 01a8 01EB4101 		add	r1, r1, r1, lsl #1
+ 532 01ac 0093     		str	r3, [sp]
+ 533 01ae 0020     		movs	r0, #0
+ 534 01b0 424B     		ldr	r3, .L18+56
+ 535 01b2 FFF7FEFF 		bl	UTIL_LCDEx_PrintfAt
+ 536              	.LVL51:
+ 338:Src/ninja_fruit_game.c **** 
+ 537              		.loc 1 338 5 is_stmt 1 view .LVU150
+ 538 01b6 4FF0FF30 		mov	r0, #-1
+ 539 01ba FFF7FEFF 		bl	UTIL_LCD_SetTextColor
+ 540              	.LVL52:
+ 341:Src/ninja_fruit_game.c ****     UTIL_LCDEx_PrintfAt(600, LINE(1), LEFT_MODE, "Time: %lus", game_time);
+ 541              		.loc 1 341 5 view .LVU151
+ 341:Src/ninja_fruit_game.c ****     UTIL_LCDEx_PrintfAt(600, LINE(1), LEFT_MODE, "Time: %lus", game_time);
+ 542              		.loc 1 341 27 is_stmt 0 view .LVU152
+ 543 01be FFF7FEFF 		bl	HAL_GetTick
+ 544              	.LVL53:
+ 341:Src/ninja_fruit_game.c ****     UTIL_LCDEx_PrintfAt(600, LINE(1), LEFT_MODE, "Time: %lus", game_time);
+ 545              		.loc 1 341 14 discriminator 1 view .LVU153
+ 546 01c2 4FF47A73 		mov	r3, #1000
+ 341:Src/ninja_fruit_game.c ****     UTIL_LCDEx_PrintfAt(600, LINE(1), LEFT_MODE, "Time: %lus", game_time);
+ 547              		.loc 1 341 41 discriminator 1 view .LVU154
+ 548 01c6 D4F81041 		ldr	r4, [r4, #272]
+ 549              	.LVL54:
+ 341:Src/ninja_fruit_game.c ****     UTIL_LCDEx_PrintfAt(600, LINE(1), LEFT_MODE, "Time: %lus", game_time);
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 19
+
+
+ 550              		.loc 1 341 41 discriminator 1 view .LVU155
+ 551 01ca 041B     		subs	r4, r0, r4
+ 341:Src/ninja_fruit_game.c ****     UTIL_LCDEx_PrintfAt(600, LINE(1), LEFT_MODE, "Time: %lus", game_time);
+ 552              		.loc 1 341 14 discriminator 1 view .LVU156
+ 553 01cc B4FBF3F4 		udiv	r4, r4, r3
+ 554              	.LVL55:
+ 342:Src/ninja_fruit_game.c **** 
+ 555              		.loc 1 342 5 is_stmt 1 view .LVU157
+ 342:Src/ninja_fruit_game.c **** 
+ 556              		.loc 1 342 30 is_stmt 0 view .LVU158
+ 557 01d0 FFF7FEFF 		bl	UTIL_LCD_GetFont
+ 558              	.LVL56:
+ 342:Src/ninja_fruit_game.c **** 
+ 559              		.loc 1 342 5 discriminator 1 view .LVU159
+ 560 01d4 0322     		movs	r2, #3
+ 561 01d6 C188     		ldrh	r1, [r0, #6]
+ 562 01d8 394B     		ldr	r3, .L18+60
+ 563 01da 4FF41670 		mov	r0, #600
+ 564 01de 0094     		str	r4, [sp]
+ 565 01e0 42E7     		b	.L16
+ 566              	.LVL57:
+ 567              	.L6:
+ 342:Src/ninja_fruit_game.c **** 
+ 568              		.loc 1 342 5 discriminator 1 view .LVU160
+ 569              	.LBE17:
+ 570              	.LBE30:
+ 571              	.LBB31:
+ 572              	.LBB29:
+ 573              	.LBB27:
+ 305:Src/ninja_fruit_game.c ****         // Draw sliced fruit halves
+ 574              		.loc 1 305 10 is_stmt 1 view .LVU161
+ 305:Src/ninja_fruit_game.c ****         // Draw sliced fruit halves
+ 575              		.loc 1 305 13 is_stmt 0 view .LVU162
+ 576 01e2 012B     		cmp	r3, #1
+ 577 01e4 AFD1     		bne	.L5
+ 578              	.LBB25:
+ 307:Src/ninja_fruit_game.c ****         float32_t separation = (elapsed / (float32_t)SLICE_ANIMATION_TIME) * FRUIT_SIZE;
+ 579              		.loc 1 307 9 is_stmt 1 view .LVU163
+ 307:Src/ninja_fruit_game.c ****         float32_t separation = (elapsed / (float32_t)SLICE_ANIMATION_TIME) * FRUIT_SIZE;
+ 580              		.loc 1 307 28 is_stmt 0 view .LVU164
+ 581 01e6 FFF7FEFF 		bl	HAL_GetTick
+ 582              	.LVL58:
+ 308:Src/ninja_fruit_game.c **** 
+ 583              		.loc 1 308 9 is_stmt 1 view .LVU165
+ 307:Src/ninja_fruit_game.c ****         float32_t separation = (elapsed / (float32_t)SLICE_ANIMATION_TIME) * FRUIT_SIZE;
+ 584              		.loc 1 307 18 is_stmt 0 discriminator 1 view .LVU166
+ 585 01ea AB69     		ldr	r3, [r5, #24]
+ 308:Src/ninja_fruit_game.c **** 
+ 586              		.loc 1 308 41 view .LVU167
+ 587 01ec 9FED357A 		vldr.32	s14, .L18+64
+ 307:Src/ninja_fruit_game.c ****         float32_t separation = (elapsed / (float32_t)SLICE_ANIMATION_TIME) * FRUIT_SIZE;
+ 588              		.loc 1 307 18 discriminator 1 view .LVU168
+ 589 01f0 C01A     		subs	r0, r0, r3
+ 590              	.LVL59:
+ 308:Src/ninja_fruit_game.c **** 
+ 591              		.loc 1 308 41 view .LVU169
+ 592 01f2 07EE900A 		vmov	s15, r0	@ int
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 20
+
+
+ 593 01f6 F8EE677A 		vcvt.f32.u32	s15, s15
+ 594 01fa 87EE87AA 		vdiv.f32	s20, s15, s14
+ 308:Src/ninja_fruit_game.c **** 
+ 595              		.loc 1 308 19 view .LVU170
+ 596 01fe F3EE0E7A 		vmov.f32	s15, #3.0e+1
+ 597 0202 F8EEE88A 		vcvt.f32.s32	s17, s17
+ 598              	.LVL60:
+ 308:Src/ninja_fruit_game.c **** 
+ 599              		.loc 1 308 19 view .LVU171
+ 600 0206 2AEE27AA 		vmul.f32	s20, s20, s15
+ 601              	.LVL61:
+ 310:Src/ninja_fruit_game.c ****             // Right slice - left half moves left, right half moves right
+ 602              		.loc 1 310 9 is_stmt 1 view .LVU172
+ 310:Src/ninja_fruit_game.c ****             // Right slice - left half moves left, right half moves right
+ 603              		.loc 1 310 12 is_stmt 0 view .LVU173
+ 604 020a 2B7F     		ldrb	r3, [r5, #28]	@ zero_extendqisi2
+ 605 020c B1EE4ABA 		vneg.f32	s22, s20
+ 606 0210 F6EE00AA 		vmov.f32	s21, #5.0e-1
+ 607 0214 B8EEC88A 		vcvt.f32.s32	s16, s16
+ 608              	.LVL62:
+ 310:Src/ninja_fruit_game.c ****             // Right slice - left half moves left, right half moves right
+ 609              		.loc 1 310 12 view .LVU174
+ 610 0218 F5EE007A 		vmov.f32	s15, #2.5e-1
+ 312:Src/ninja_fruit_game.c ****             UTIL_LCD_FillCircle(screen_x + separation/2, screen_y + separation/4, FRUIT_SIZE/3, col
+ 611              		.loc 1 312 42 view .LVU175
+ 612 021c B0EE687A 		vmov.f32	s14, s17
+ 310:Src/ninja_fruit_game.c ****             // Right slice - left half moves left, right half moves right
+ 613              		.loc 1 310 12 view .LVU176
+ 614 0220 DBB1     		cbz	r3, .L7
+ 312:Src/ninja_fruit_game.c ****             UTIL_LCD_FillCircle(screen_x + separation/2, screen_y + separation/4, FRUIT_SIZE/3, col
+ 615              		.loc 1 312 13 is_stmt 1 view .LVU177
+ 312:Src/ninja_fruit_game.c ****             UTIL_LCD_FillCircle(screen_x + separation/2, screen_y + separation/4, FRUIT_SIZE/3, col
+ 616              		.loc 1 312 67 is_stmt 0 view .LVU178
+ 617 0222 AAEE278A 		vfma.f32	s16, s20, s15
+ 312:Src/ninja_fruit_game.c ****             UTIL_LCD_FillCircle(screen_x + separation/2, screen_y + separation/4, FRUIT_SIZE/3, col
+ 618              		.loc 1 312 42 view .LVU179
+ 619 0226 ABEE2A7A 		vfma.f32	s14, s22, s21
+ 312:Src/ninja_fruit_game.c ****             UTIL_LCD_FillCircle(screen_x + separation/2, screen_y + separation/4, FRUIT_SIZE/3, col
+ 620              		.loc 1 312 13 view .LVU180
+ 621 022a FCEEC87A 		vcvt.u32.f32	s15, s16
+ 622 022e 17EE901A 		vmov	r1, s15	@ int
+ 623 0232 CDED037A 		vstr.32	s15, [sp, #12]	@ int
+ 624 0236 FCEEC77A 		vcvt.u32.f32	s15, s14
+ 625 023a 3346     		mov	r3, r6
+ 626 023c 0A22     		movs	r2, #10
+ 627 023e 17EE900A 		vmov	r0, s15	@ int
+ 628              	.LVL63:
+ 312:Src/ninja_fruit_game.c ****             UTIL_LCD_FillCircle(screen_x + separation/2, screen_y + separation/4, FRUIT_SIZE/3, col
+ 629              		.loc 1 312 13 view .LVU181
+ 630 0242 FFF7FEFF 		bl	UTIL_LCD_FillCircle
+ 631              	.LVL64:
+ 313:Src/ninja_fruit_game.c ****         } else {
+ 632              		.loc 1 313 13 is_stmt 1 view .LVU182
+ 313:Src/ninja_fruit_game.c ****         } else {
+ 633              		.loc 1 313 42 is_stmt 0 view .LVU183
+ 634 0246 EAEE2A8A 		vfma.f32	s17, s20, s21
+ 635              	.L15:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 21
+
+
+ 317:Src/ninja_fruit_game.c ****         }
+ 636              		.loc 1 317 13 view .LVU184
+ 637 024a FCEEE87A 		vcvt.u32.f32	s15, s17
+ 638 024e 3346     		mov	r3, r6
+ 639 0250 0A22     		movs	r2, #10
+ 640 0252 17EE900A 		vmov	r0, s15	@ int
+ 641 0256 0399     		ldr	r1, [sp, #12]
+ 642 0258 73E7     		b	.L14
+ 643              	.LVL65:
+ 644              	.L7:
+ 316:Src/ninja_fruit_game.c ****             UTIL_LCD_FillCircle(screen_x - separation/2, screen_y + separation/4, FRUIT_SIZE/3, col
+ 645              		.loc 1 316 13 is_stmt 1 view .LVU185
+ 316:Src/ninja_fruit_game.c ****             UTIL_LCD_FillCircle(screen_x - separation/2, screen_y + separation/4, FRUIT_SIZE/3, col
+ 646              		.loc 1 316 67 is_stmt 0 view .LVU186
+ 647 025a AAEE278A 		vfma.f32	s16, s20, s15
+ 316:Src/ninja_fruit_game.c ****             UTIL_LCD_FillCircle(screen_x - separation/2, screen_y + separation/4, FRUIT_SIZE/3, col
+ 648              		.loc 1 316 42 view .LVU187
+ 649 025e AAEE2A7A 		vfma.f32	s14, s20, s21
+ 316:Src/ninja_fruit_game.c ****             UTIL_LCD_FillCircle(screen_x - separation/2, screen_y + separation/4, FRUIT_SIZE/3, col
+ 650              		.loc 1 316 13 view .LVU188
+ 651 0262 FCEEC87A 		vcvt.u32.f32	s15, s16
+ 652 0266 17EE901A 		vmov	r1, s15	@ int
+ 653 026a CDED037A 		vstr.32	s15, [sp, #12]	@ int
+ 654 026e FCEEC77A 		vcvt.u32.f32	s15, s14
+ 655 0272 3346     		mov	r3, r6
+ 656 0274 0A22     		movs	r2, #10
+ 657 0276 17EE900A 		vmov	r0, s15	@ int
+ 658              	.LVL66:
+ 316:Src/ninja_fruit_game.c ****             UTIL_LCD_FillCircle(screen_x - separation/2, screen_y + separation/4, FRUIT_SIZE/3, col
+ 659              		.loc 1 316 13 view .LVU189
+ 660 027a FFF7FEFF 		bl	UTIL_LCD_FillCircle
+ 661              	.LVL67:
+ 317:Src/ninja_fruit_game.c ****         }
+ 662              		.loc 1 317 13 is_stmt 1 view .LVU190
+ 317:Src/ninja_fruit_game.c ****         }
+ 663              		.loc 1 317 42 is_stmt 0 view .LVU191
+ 664 027e EBEE2A8A 		vfma.f32	s17, s22, s21
+ 665 0282 E2E7     		b	.L15
+ 666              	.L19:
+ 667              		.align	2
+ 668              	.L18:
+ 669 0284 00000000 		.word	.LC0
+ 670 0288 13000000 		.word	.LC1
+ 671 028c 2E000000 		.word	.LC2
+ 672 0290 4B000000 		.word	.LC3
+ 673 0294 0000FF40 		.word	1090453504
+ 674 0298 65000000 		.word	.LC4
+ 675 029c 70000000 		.word	.LC5
+ 676 02a0 81000000 		.word	.LC6
+ 677 02a4 94000000 		.word	.LC7
+ 678 02a8 00004844 		.word	1145569280
+ 679 02ac 0000F043 		.word	1139802112
+ 680 02b0 B0000000 		.word	.LC8
+ 681 02b4 BB000000 		.word	.LC9
+ 682 02b8 0000FFFF 		.word	-65536
+ 683 02bc C6000000 		.word	.LC10
+ 684 02c0 D5000000 		.word	.LC11
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 22
+
+
+ 685 02c4 0000FA43 		.word	1140457472
+ 686 02c8 00000000 		.word	fruit_colors
+ 687              	.LBE25:
+ 688              	.LBE27:
+ 689              	.LBE29:
+ 690              	.LBE31:
+ 691              		.cfi_endproc
+ 692              	.LFE3345:
+ 694              		.section	.text.NinjaGame_Reset,"ax",%progbits
+ 695              		.align	1
+ 696              		.global	NinjaGame_Reset
+ 697              		.syntax unified
+ 698              		.thumb
+ 699              		.thumb_func
+ 701              	NinjaGame_Reset:
+ 702              	.LVL68:
+ 703              	.LFB3348:
+ 345:Src/ninja_fruit_game.c **** }
+ 346:Src/ninja_fruit_game.c **** 
+ 347:Src/ninja_fruit_game.c **** void NinjaGame_Reset(NinjaGame_t *game)
+ 348:Src/ninja_fruit_game.c **** {
+ 704              		.loc 1 348 1 is_stmt 1 view -0
+ 705              		.cfi_startproc
+ 706              		@ args = 0, pretend = 0, frame = 0
+ 707              		@ frame_needed = 0, uses_anonymous_args = 0
+ 349:Src/ninja_fruit_game.c ****     // Reset game state but keep high score for comparison
+ 350:Src/ninja_fruit_game.c ****     uint32_t high_score = (game->score > 0) ? game->score : 0;
+ 708              		.loc 1 350 5 view .LVU193
+ 348:Src/ninja_fruit_game.c ****     // Reset game state but keep high score for comparison
+ 709              		.loc 1 348 1 is_stmt 0 view .LVU194
+ 710 0000 10B5     		push	{r4, lr}
+ 711              		.cfi_def_cfa_offset 8
+ 712              		.cfi_offset 4, -8
+ 713              		.cfi_offset 14, -4
+ 348:Src/ninja_fruit_game.c ****     // Reset game state but keep high score for comparison
+ 714              		.loc 1 348 1 view .LVU195
+ 715 0002 0446     		mov	r4, r0
+ 716              	.LVL69:
+ 351:Src/ninja_fruit_game.c **** 
+ 352:Src/ninja_fruit_game.c ****     NinjaGame_Init(game);
+ 717              		.loc 1 352 5 is_stmt 1 view .LVU196
+ 718 0004 FFF7FEFF 		bl	NinjaGame_Init
+ 719              	.LVL70:
+ 353:Src/ninja_fruit_game.c ****     game->game_started = 1;
+ 720              		.loc 1 353 5 view .LVU197
+ 721              		.loc 1 353 24 is_stmt 0 view .LVU198
+ 722 0008 0123     		movs	r3, #1
+ 723 000a 84F80D31 		strb	r3, [r4, #269]
+ 354:Src/ninja_fruit_game.c ****     game->game_start_time = HAL_GetTick();
+ 724              		.loc 1 354 5 is_stmt 1 view .LVU199
+ 725              		.loc 1 354 29 is_stmt 0 view .LVU200
+ 726 000e FFF7FEFF 		bl	HAL_GetTick
+ 727              	.LVL71:
+ 728              		.loc 1 354 27 discriminator 1 view .LVU201
+ 729 0012 C4F81001 		str	r0, [r4, #272]
+ 355:Src/ninja_fruit_game.c **** 
+ 356:Src/ninja_fruit_game.c ****     // Could store high score for display
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 23
+
+
+ 357:Src/ninja_fruit_game.c **** }
+ 730              		.loc 1 357 1 view .LVU202
+ 731 0016 10BD     		pop	{r4, pc}
+ 732              		.loc 1 357 1 view .LVU203
+ 733              		.cfi_endproc
+ 734              	.LFE3348:
+ 736              		.section	.text.NinjaGame_Update,"ax",%progbits
+ 737              		.align	1
+ 738              		.global	NinjaGame_Update
+ 739              		.syntax unified
+ 740              		.thumb
+ 741              		.thumb_func
+ 743              	NinjaGame_Update:
+ 744              	.LVL72:
+ 745              	.LFB3340:
+  46:Src/ninja_fruit_game.c ****     uint32_t current_time = HAL_GetTick();
+ 746              		.loc 1 46 1 is_stmt 1 view -0
+ 747              		.cfi_startproc
+ 748              		@ args = 0, pretend = 0, frame = 0
+ 749              		@ frame_needed = 0, uses_anonymous_args = 0
+  47:Src/ninja_fruit_game.c **** 
+ 750              		.loc 1 47 5 view .LVU205
+  46:Src/ninja_fruit_game.c ****     uint32_t current_time = HAL_GetTick();
+ 751              		.loc 1 46 1 is_stmt 0 view .LVU206
+ 752 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 753              		.cfi_def_cfa_offset 24
+ 754              		.cfi_offset 4, -24
+ 755              		.cfi_offset 5, -20
+ 756              		.cfi_offset 6, -16
+ 757              		.cfi_offset 7, -12
+ 758              		.cfi_offset 8, -8
+ 759              		.cfi_offset 14, -4
+ 760 0004 0446     		mov	r4, r0
+ 761 0006 2DED0A8B 		vpush.64	{d8, d9, d10, d11, d12}
+ 762              		.cfi_def_cfa_offset 64
+ 763              		.cfi_offset 80, -64
+ 764              		.cfi_offset 81, -60
+ 765              		.cfi_offset 82, -56
+ 766              		.cfi_offset 83, -52
+ 767              		.cfi_offset 84, -48
+ 768              		.cfi_offset 85, -44
+ 769              		.cfi_offset 86, -40
+ 770              		.cfi_offset 87, -36
+ 771              		.cfi_offset 88, -32
+ 772              		.cfi_offset 89, -28
+  46:Src/ninja_fruit_game.c ****     uint32_t current_time = HAL_GetTick();
+ 773              		.loc 1 46 1 view .LVU207
+ 774 000a 8846     		mov	r8, r1
+ 775 000c 1746     		mov	r7, r2
+  47:Src/ninja_fruit_game.c **** 
+ 776              		.loc 1 47 29 view .LVU208
+ 777 000e FFF7FEFF 		bl	HAL_GetTick
+ 778              	.LVL73:
+  50:Src/ninja_fruit_game.c ****         GestureType_t current_gesture = Gesture_GetCurrentDisplayGesture(gesture_detector);
+ 779              		.loc 1 50 8 view .LVU209
+ 780 0012 B4F80C31 		ldrh	r3, [r4, #268]
+  47:Src/ninja_fruit_game.c **** 
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 24
+
+
+ 781              		.loc 1 47 29 view .LVU210
+ 782 0016 0646     		mov	r6, r0
+ 783              	.LVL74:
+  50:Src/ninja_fruit_game.c ****         GestureType_t current_gesture = Gesture_GetCurrentDisplayGesture(gesture_detector);
+ 784              		.loc 1 50 5 is_stmt 1 view .LVU211
+  50:Src/ninja_fruit_game.c ****         GestureType_t current_gesture = Gesture_GetCurrentDisplayGesture(gesture_detector);
+ 785              		.loc 1 50 8 is_stmt 0 view .LVU212
+ 786 0018 6BB9     		cbnz	r3, .L22
+ 787              	.LBB55:
+  51:Src/ninja_fruit_game.c ****         if (current_gesture != GESTURE_NONE) {
+ 788              		.loc 1 51 9 is_stmt 1 view .LVU213
+  51:Src/ninja_fruit_game.c ****         if (current_gesture != GESTURE_NONE) {
+ 789              		.loc 1 51 41 is_stmt 0 view .LVU214
+ 790 001a 4046     		mov	r0, r8
+ 791              	.LVL75:
+  51:Src/ninja_fruit_game.c ****         if (current_gesture != GESTURE_NONE) {
+ 792              		.loc 1 51 41 view .LVU215
+ 793 001c FFF7FEFF 		bl	Gesture_GetCurrentDisplayGesture
+ 794              	.LVL76:
+  52:Src/ninja_fruit_game.c ****             game->game_started = 1;
+ 795              		.loc 1 52 9 is_stmt 1 view .LVU216
+  52:Src/ninja_fruit_game.c ****             game->game_started = 1;
+ 796              		.loc 1 52 12 is_stmt 0 view .LVU217
+ 797 0020 C0B2     		uxtb	r0, r0
+  52:Src/ninja_fruit_game.c ****             game->game_started = 1;
+ 798              		.loc 1 52 12 view .LVU218
+ 799 0022 20B1     		cbz	r0, .L21
+  53:Src/ninja_fruit_game.c ****             game->game_start_time = current_time;
+ 800              		.loc 1 53 13 is_stmt 1 view .LVU219
+  53:Src/ninja_fruit_game.c ****             game->game_start_time = current_time;
+ 801              		.loc 1 53 32 is_stmt 0 view .LVU220
+ 802 0024 0123     		movs	r3, #1
+  54:Src/ninja_fruit_game.c ****         }
+ 803              		.loc 1 54 35 view .LVU221
+ 804 0026 C4F81061 		str	r6, [r4, #272]
+  53:Src/ninja_fruit_game.c ****             game->game_start_time = current_time;
+ 805              		.loc 1 53 32 view .LVU222
+ 806 002a 84F80D31 		strb	r3, [r4, #269]
+  54:Src/ninja_fruit_game.c ****         }
+ 807              		.loc 1 54 13 is_stmt 1 view .LVU223
+ 808              	.LVL77:
+ 809              	.L21:
+  54:Src/ninja_fruit_game.c ****         }
+ 810              		.loc 1 54 13 is_stmt 0 view .LVU224
+ 811              	.LBE55:
+ 122:Src/ninja_fruit_game.c **** 
+ 812              		.loc 1 122 1 view .LVU225
+ 813 002e BDEC0A8B 		vldm	sp!, {d8-d12}
+ 814              		.cfi_remember_state
+ 815              		.cfi_restore 88
+ 816              		.cfi_restore 89
+ 817              		.cfi_restore 86
+ 818              		.cfi_restore 87
+ 819              		.cfi_restore 84
+ 820              		.cfi_restore 85
+ 821              		.cfi_restore 82
+ 822              		.cfi_restore 83
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 25
+
+
+ 823              		.cfi_restore 80
+ 824              		.cfi_restore 81
+ 825              		.cfi_def_cfa_offset 24
+ 826 0032 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 827              	.LVL78:
+ 828              	.L22:
+ 829              		.cfi_restore_state
+  59:Src/ninja_fruit_game.c ****         // Check for restart gesture
+ 830              		.loc 1 59 5 is_stmt 1 view .LVU226
+  59:Src/ninja_fruit_game.c ****         // Check for restart gesture
+ 831              		.loc 1 59 8 is_stmt 0 view .LVU227
+ 832 0036 94F80C21 		ldrb	r2, [r4, #268]	@ zero_extendqisi2
+ 833 003a 62B1     		cbz	r2, .L25
+ 834              	.LBB56:
+  61:Src/ninja_fruit_game.c ****         if (current_gesture != GESTURE_NONE) {
+ 835              		.loc 1 61 9 is_stmt 1 view .LVU228
+  61:Src/ninja_fruit_game.c ****         if (current_gesture != GESTURE_NONE) {
+ 836              		.loc 1 61 41 is_stmt 0 view .LVU229
+ 837 003c 4046     		mov	r0, r8
+ 838              	.LVL79:
+  61:Src/ninja_fruit_game.c ****         if (current_gesture != GESTURE_NONE) {
+ 839              		.loc 1 61 41 view .LVU230
+ 840 003e FFF7FEFF 		bl	Gesture_GetCurrentDisplayGesture
+ 841              	.LVL80:
+  62:Src/ninja_fruit_game.c ****             NinjaGame_Reset(game);
+ 842              		.loc 1 62 9 is_stmt 1 view .LVU231
+  62:Src/ninja_fruit_game.c ****             NinjaGame_Reset(game);
+ 843              		.loc 1 62 12 is_stmt 0 view .LVU232
+ 844 0042 C0B2     		uxtb	r0, r0
+  62:Src/ninja_fruit_game.c ****             NinjaGame_Reset(game);
+ 845              		.loc 1 62 12 view .LVU233
+ 846 0044 0028     		cmp	r0, #0
+ 847 0046 F2D0     		beq	.L21
+  63:Src/ninja_fruit_game.c ****         }
+ 848              		.loc 1 63 13 is_stmt 1 view .LVU234
+ 849              	.LBE56:
+ 122:Src/ninja_fruit_game.c **** 
+ 850              		.loc 1 122 1 is_stmt 0 view .LVU235
+ 851 0048 BDEC0A8B 		vldm	sp!, {d8-d12}
+ 852              		.cfi_remember_state
+ 853              		.cfi_restore 88
+ 854              		.cfi_restore 89
+ 855              		.cfi_restore 86
+ 856              		.cfi_restore 87
+ 857              		.cfi_restore 84
+ 858              		.cfi_restore 85
+ 859              		.cfi_restore 82
+ 860              		.cfi_restore 83
+ 861              		.cfi_restore 80
+ 862              		.cfi_restore 81
+ 863              		.cfi_def_cfa_offset 24
+ 864              	.LBB57:
+  63:Src/ninja_fruit_game.c ****         }
+ 865              		.loc 1 63 13 view .LVU236
+ 866 004c 2046     		mov	r0, r4
+ 867              	.LVL81:
+  63:Src/ninja_fruit_game.c ****         }
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 26
+
+
+ 868              		.loc 1 63 13 view .LVU237
+ 869              	.LBE57:
+ 122:Src/ninja_fruit_game.c **** 
+ 870              		.loc 1 122 1 view .LVU238
+ 871 004e BDE8F041 		pop	{r4, r5, r6, r7, r8, lr}
+ 872              		.cfi_restore 14
+ 873              		.cfi_restore 8
+ 874              		.cfi_restore 7
+ 875              		.cfi_restore 6
+ 876              		.cfi_restore 5
+ 877              		.cfi_restore 4
+ 878              		.cfi_def_cfa_offset 0
+ 879              	.LVL82:
+ 880              	.LBB58:
+  63:Src/ninja_fruit_game.c ****         }
+ 881              		.loc 1 63 13 view .LVU239
+ 882 0052 FFF7FEBF 		b	NinjaGame_Reset
+ 883              	.LVL83:
+ 884              	.L25:
+ 885              		.cfi_restore_state
+  63:Src/ninja_fruit_game.c ****         }
+ 886              		.loc 1 63 13 view .LVU240
+ 887              	.LBE58:
+  69:Src/ninja_fruit_game.c ****     game->level = (game_time / 30000) + 1; // Increase level every 30 seconds
+ 888              		.loc 1 69 5 is_stmt 1 view .LVU241
+  70:Src/ninja_fruit_game.c ****     game->spawn_rate_multiplier = 1.0f + (game->level - 1) * 0.3f;
+ 889              		.loc 1 70 5 view .LVU242
+  70:Src/ninja_fruit_game.c ****     game->spawn_rate_multiplier = 1.0f + (game->level - 1) * 0.3f;
+ 890              		.loc 1 70 30 is_stmt 0 view .LVU243
+ 891 0056 47F23051 		movw	r1, #30000
+  69:Src/ninja_fruit_game.c ****     game->level = (game_time / 30000) + 1; // Increase level every 30 seconds
+ 892              		.loc 1 69 14 view .LVU244
+ 893 005a D4F81031 		ldr	r3, [r4, #272]
+  71:Src/ninja_fruit_game.c **** 
+ 894              		.loc 1 71 40 view .LVU245
+ 895 005e DFEDB26A 		vldr.32	s13, .L63+8
+  69:Src/ninja_fruit_game.c ****     game->level = (game_time / 30000) + 1; // Increase level every 30 seconds
+ 896              		.loc 1 69 14 view .LVU246
+ 897 0062 C31A     		subs	r3, r0, r3
+ 898              	.LVL84:
+  70:Src/ninja_fruit_game.c ****     game->spawn_rate_multiplier = 1.0f + (game->level - 1) * 0.3f;
+ 899              		.loc 1 70 30 view .LVU247
+ 900 0064 B3FBF1F3 		udiv	r3, r3, r1
+ 901              	.LVL85:
+  71:Src/ninja_fruit_game.c **** 
+ 902              		.loc 1 71 60 view .LVU248
+ 903 0068 07EE903A 		vmov	s15, r3	@ int
+  71:Src/ninja_fruit_game.c **** 
+ 904              		.loc 1 71 40 view .LVU249
+ 905 006c B7EE007A 		vmov.f32	s14, #1.0e+0
+  71:Src/ninja_fruit_game.c **** 
+ 906              		.loc 1 71 60 view .LVU250
+ 907 0070 F8EEE77A 		vcvt.f32.s32	s15, s15
+  71:Src/ninja_fruit_game.c **** 
+ 908              		.loc 1 71 40 view .LVU251
+ 909 0074 A7EEA67A 		vfma.f32	s14, s15, s13
+  74:Src/ninja_fruit_game.c ****     if (current_time - game->last_spawn_time > spawn_interval) {
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 27
+
+
+ 910              		.loc 1 74 52 view .LVU252
+ 911 0078 DFEDAC6A 		vldr.32	s13, .L63+12
+ 912 007c C6EE877A 		vdiv.f32	s15, s13, s14
+  74:Src/ninja_fruit_game.c ****     if (current_time - game->last_spawn_time > spawn_interval) {
+ 913              		.loc 1 74 14 view .LVU253
+ 914 0080 FCEEE77A 		vcvt.u32.f32	s15, s15
+  70:Src/ninja_fruit_game.c ****     game->spawn_rate_multiplier = 1.0f + (game->level - 1) * 0.3f;
+ 915              		.loc 1 70 39 view .LVU254
+ 916 0084 591C     		adds	r1, r3, #1
+  70:Src/ninja_fruit_game.c ****     game->spawn_rate_multiplier = 1.0f + (game->level - 1) * 0.3f;
+ 917              		.loc 1 70 17 view .LVU255
+ 918 0086 C4F81411 		str	r1, [r4, #276]
+  71:Src/ninja_fruit_game.c **** 
+ 919              		.loc 1 71 5 is_stmt 1 view .LVU256
+  75:Src/ninja_fruit_game.c ****         SpawnFruit(game);
+ 920              		.loc 1 75 8 is_stmt 0 view .LVU257
+ 921 008a 17EE901A 		vmov	r1, s15	@ int
+  75:Src/ninja_fruit_game.c ****         SpawnFruit(game);
+ 922              		.loc 1 75 22 view .LVU258
+ 923 008e D4F80831 		ldr	r3, [r4, #264]
+  71:Src/ninja_fruit_game.c **** 
+ 924              		.loc 1 71 33 view .LVU259
+ 925 0092 84ED467A 		vstr.32	s14, [r4, #280]
+  74:Src/ninja_fruit_game.c ****     if (current_time - game->last_spawn_time > spawn_interval) {
+ 926              		.loc 1 74 5 is_stmt 1 view .LVU260
+ 927              	.LVL86:
+  75:Src/ninja_fruit_game.c ****         SpawnFruit(game);
+ 928              		.loc 1 75 5 view .LVU261
+  75:Src/ninja_fruit_game.c ****         SpawnFruit(game);
+ 929              		.loc 1 75 22 is_stmt 0 view .LVU262
+ 930 0096 C31A     		subs	r3, r0, r3
+  75:Src/ninja_fruit_game.c ****         SpawnFruit(game);
+ 931              		.loc 1 75 8 view .LVU263
+ 932 0098 8B42     		cmp	r3, r1
+ 933 009a 57D9     		bls	.L27
+ 934              	.LBB59:
+ 935              	.LBB60:
+ 127:Src/ninja_fruit_game.c ****         if (game->fruits[i].state == FRUIT_STATE_INACTIVE) {
+ 936              		.loc 1 127 14 view .LVU264
+ 937 009c 1346     		mov	r3, r2
+ 128:Src/ninja_fruit_game.c ****             Fruit_t *fruit = &game->fruits[i];
+ 938              		.loc 1 128 28 view .LVU265
+ 939 009e 0822     		movs	r2, #8
+ 940 00a0 04F11101 		add	r1, r4, #17
+ 941              	.LVL87:
+ 942              	.L30:
+ 128:Src/ninja_fruit_game.c ****             Fruit_t *fruit = &game->fruits[i];
+ 943              		.loc 1 128 9 is_stmt 1 view .LVU266
+ 944 00a4 5D01     		lsls	r5, r3, #5
+ 128:Src/ninja_fruit_game.c ****             Fruit_t *fruit = &game->fruits[i];
+ 945              		.loc 1 128 12 is_stmt 0 view .LVU267
+ 946 00a6 485D     		ldrb	r0, [r1, r5]	@ zero_extendqisi2
+ 947 00a8 0328     		cmp	r0, #3
+ 948 00aa 40F09A80 		bne	.L28
+ 949              	.LBB61:
+ 129:Src/ninja_fruit_game.c **** 
+ 950              		.loc 1 129 13 is_stmt 1 view .LVU268
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 28
+
+
+ 951              	.LVL88:
+ 132:Src/ninja_fruit_game.c ****             fruit->y = 0.02 + (FRUIT_SIZE/2)/SCREEN_HEIGHT;
+ 952              		.loc 1 132 13 view .LVU269
+ 132:Src/ninja_fruit_game.c ****             fruit->y = 0.02 + (FRUIT_SIZE/2)/SCREEN_HEIGHT;
+ 953              		.loc 1 132 33 is_stmt 0 view .LVU270
+ 954 00ae FFF7FEFF 		bl	rand
+ 955              	.LVL89:
+ 132:Src/ninja_fruit_game.c ****             fruit->y = 0.02 + (FRUIT_SIZE/2)/SCREEN_HEIGHT;
+ 956              		.loc 1 132 40 discriminator 1 view .LVU271
+ 957 00b2 4FF4FA73 		mov	r3, #500
+ 958 00b6 90FBF3F2 		sdiv	r2, r0, r3
+ 959 00ba 02FB1300 		mls	r0, r2, r3, r0
+ 132:Src/ninja_fruit_game.c ****             fruit->y = 0.02 + (FRUIT_SIZE/2)/SCREEN_HEIGHT;
+ 960              		.loc 1 132 47 discriminator 1 view .LVU272
+ 961 00be 07EE900A 		vmov	s15, r0	@ int
+ 962 00c2 9FED9B8A 		vldr.32	s16, .L63+16
+ 963 00c6 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 964 00ca 87EE887A 		vdiv.f32	s14, s15, s16
+ 132:Src/ninja_fruit_game.c ****             fruit->y = 0.02 + (FRUIT_SIZE/2)/SCREEN_HEIGHT;
+ 965              		.loc 1 132 30 discriminator 1 view .LVU273
+ 966 00ce F5EE007A 		vmov.f32	s15, #2.5e-1
+ 967 00d2 77EE277A 		vadd.f32	s15, s14, s15
+ 133:Src/ninja_fruit_game.c **** 
+ 968              		.loc 1 133 22 view .LVU274
+ 969 00d6 974B     		ldr	r3, .L63+20
+ 970 00d8 2544     		add	r5, r5, r4
+ 132:Src/ninja_fruit_game.c ****             fruit->y = 0.02 + (FRUIT_SIZE/2)/SCREEN_HEIGHT;
+ 971              		.loc 1 132 22 discriminator 1 view .LVU275
+ 972 00da C5ED007A 		vstr.32	s15, [r5]
+ 133:Src/ninja_fruit_game.c **** 
+ 973              		.loc 1 133 13 is_stmt 1 view .LVU276
+ 133:Src/ninja_fruit_game.c **** 
+ 974              		.loc 1 133 22 is_stmt 0 view .LVU277
+ 975 00de 6B60     		str	r3, [r5, #4]	@ float
+ 136:Src/ninja_fruit_game.c ****             fruit->velocity_y = FRUIT_FALL_SPEED + ((rand() % 50) / 1000.0f); // Random fall speed 
+ 976              		.loc 1 136 13 is_stmt 1 view .LVU278
+ 136:Src/ninja_fruit_game.c ****             fruit->velocity_y = FRUIT_FALL_SPEED + ((rand() % 50) / 1000.0f); // Random fall speed 
+ 977              		.loc 1 136 35 is_stmt 0 view .LVU279
+ 978 00e0 FFF7FEFF 		bl	rand
+ 979              	.LVL90:
+ 136:Src/ninja_fruit_game.c ****             fruit->velocity_y = FRUIT_FALL_SPEED + ((rand() % 50) / 1000.0f); // Random fall speed 
+ 980              		.loc 1 136 42 discriminator 1 view .LVU280
+ 981 00e4 6423     		movs	r3, #100
+ 982 00e6 90FBF3F2 		sdiv	r2, r0, r3
+ 983 00ea 02FB1303 		mls	r3, r2, r3, r0
+ 136:Src/ninja_fruit_game.c ****             fruit->velocity_y = FRUIT_FALL_SPEED + ((rand() % 50) / 1000.0f); // Random fall speed 
+ 984              		.loc 1 136 49 discriminator 1 view .LVU281
+ 985 00ee 323B     		subs	r3, r3, #50
+ 136:Src/ninja_fruit_game.c ****             fruit->velocity_y = FRUIT_FALL_SPEED + ((rand() % 50) / 1000.0f); // Random fall speed 
+ 986              		.loc 1 136 55 discriminator 1 view .LVU282
+ 987 00f0 07EE903A 		vmov	s15, r3	@ int
+ 988 00f4 DFED906A 		vldr.32	s13, .L63+24
+ 989 00f8 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 990 00fc 87EEA67A 		vdiv.f32	s14, s15, s13
+ 136:Src/ninja_fruit_game.c ****             fruit->velocity_y = FRUIT_FALL_SPEED + ((rand() % 50) / 1000.0f); // Random fall speed 
+ 991              		.loc 1 136 31 discriminator 1 view .LVU283
+ 992 0100 85ED037A 		vstr.32	s14, [r5, #12]
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 29
+
+
+ 137:Src/ninja_fruit_game.c **** 
+ 993              		.loc 1 137 13 is_stmt 1 view .LVU284
+ 137:Src/ninja_fruit_game.c **** 
+ 994              		.loc 1 137 54 is_stmt 0 view .LVU285
+ 995 0104 FFF7FEFF 		bl	rand
+ 996              	.LVL91:
+ 137:Src/ninja_fruit_game.c **** 
+ 997              		.loc 1 137 61 discriminator 1 view .LVU286
+ 998 0108 3223     		movs	r3, #50
+ 999 010a 90FBF3F2 		sdiv	r2, r0, r3
+ 1000 010e 02FB1300 		mls	r0, r2, r3, r0
+ 137:Src/ninja_fruit_game.c **** 
+ 1001              		.loc 1 137 67 discriminator 1 view .LVU287
+ 1002 0112 07EE900A 		vmov	s15, r0	@ int
+ 1003 0116 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 1004 011a 87EE887A 		vdiv.f32	s14, s15, s16
+ 137:Src/ninja_fruit_game.c **** 
+ 1005              		.loc 1 137 50 discriminator 1 view .LVU288
+ 1006 011e DFED877A 		vldr.32	s15, .L63+28
+ 1007 0122 77EE277A 		vadd.f32	s15, s14, s15
+ 137:Src/ninja_fruit_game.c **** 
+ 1008              		.loc 1 137 31 discriminator 1 view .LVU289
+ 1009 0126 C5ED027A 		vstr.32	s15, [r5, #8]
+ 140:Src/ninja_fruit_game.c ****             fruit->state = FRUIT_STATE_FALLING;
+ 1010              		.loc 1 140 13 is_stmt 1 view .LVU290
+ 140:Src/ninja_fruit_game.c ****             fruit->state = FRUIT_STATE_FALLING;
+ 1011              		.loc 1 140 27 is_stmt 0 view .LVU291
+ 1012 012a FFF7FEFF 		bl	rand
+ 1013              	.LVL92:
+ 140:Src/ninja_fruit_game.c ****             fruit->state = FRUIT_STATE_FALLING;
+ 1014              		.loc 1 140 34 discriminator 1 view .LVU292
+ 1015 012e 4242     		rsbs	r2, r0, #0
+ 1016 0130 00F00303 		and	r3, r0, #3
+ 1017 0134 02F00302 		and	r2, r2, #3
+ 1018 0138 53EA42B3 		csneg	r3, r3, r2, mi
+ 1019 013c 2B74     		strb	r3, [r5, #16]
+ 141:Src/ninja_fruit_game.c ****             fruit->spawn_time = HAL_GetTick();
+ 1020              		.loc 1 141 13 is_stmt 1 view .LVU293
+ 141:Src/ninja_fruit_game.c ****             fruit->spawn_time = HAL_GetTick();
+ 1021              		.loc 1 141 26 is_stmt 0 view .LVU294
+ 1022 013e 0023     		movs	r3, #0
+ 1023 0140 6B74     		strb	r3, [r5, #17]
+ 142:Src/ninja_fruit_game.c **** 
+ 1024              		.loc 1 142 13 is_stmt 1 view .LVU295
+ 142:Src/ninja_fruit_game.c **** 
+ 1025              		.loc 1 142 33 is_stmt 0 view .LVU296
+ 1026 0142 FFF7FEFF 		bl	HAL_GetTick
+ 1027              	.LVL93:
+ 142:Src/ninja_fruit_game.c **** 
+ 1028              		.loc 1 142 31 discriminator 1 view .LVU297
+ 1029 0146 6861     		str	r0, [r5, #20]
+ 144:Src/ninja_fruit_game.c ****         }
+ 1030              		.loc 1 144 13 is_stmt 1 view .LVU298
+ 1031              	.LVL94:
+ 1032              	.L29:
+ 144:Src/ninja_fruit_game.c ****         }
+ 1033              		.loc 1 144 13 is_stmt 0 view .LVU299
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 30
+
+
+ 1034              	.LBE61:
+ 1035              	.LBE60:
+ 1036              	.LBE59:
+  77:Src/ninja_fruit_game.c ****     }
+ 1037              		.loc 1 77 9 is_stmt 1 view .LVU300
+  77:Src/ninja_fruit_game.c ****     }
+ 1038              		.loc 1 77 31 is_stmt 0 view .LVU301
+ 1039 0148 C4F80861 		str	r6, [r4, #264]
+ 1040              	.L27:
+  81:Src/ninja_fruit_game.c **** 
+ 1041              		.loc 1 81 5 is_stmt 1 view .LVU302
+ 1042              	.LVL95:
+ 1043              	.LBB63:
+ 1044              	.LBI63:
+ 149:Src/ninja_fruit_game.c **** {
+ 1045              		.loc 1 149 13 view .LVU303
+ 1046              	.LBB64:
+ 151:Src/ninja_fruit_game.c ****     float32_t dt = 0.016f; // Assuming ~60fps update rate
+ 1047              		.loc 1 151 5 view .LVU304
+ 151:Src/ninja_fruit_game.c ****     float32_t dt = 0.016f; // Assuming ~60fps update rate
+ 1048              		.loc 1 151 29 is_stmt 0 view .LVU305
+ 1049 014c FFF7FEFF 		bl	HAL_GetTick
+ 1050              	.LVL96:
+ 152:Src/ninja_fruit_game.c **** 
+ 1051              		.loc 1 152 5 is_stmt 1 view .LVU306
+ 154:Src/ninja_fruit_game.c ****         Fruit_t *fruit = &game->fruits[i];
+ 1052              		.loc 1 154 5 view .LVU307
+ 1053              	.LBB65:
+ 154:Src/ninja_fruit_game.c ****         Fruit_t *fruit = &game->fruits[i];
+ 1054              		.loc 1 154 10 view .LVU308
+ 154:Src/ninja_fruit_game.c ****         Fruit_t *fruit = &game->fruits[i];
+ 1055              		.loc 1 154 23 discriminator 1 view .LVU309
+ 1056 0150 2546     		mov	r5, r4
+ 1057              	.LBE65:
+ 151:Src/ninja_fruit_game.c ****     float32_t dt = 0.016f; // Assuming ~60fps update rate
+ 1058              		.loc 1 151 29 is_stmt 0 view .LVU310
+ 1059 0152 2346     		mov	r3, r4
+ 1060              	.LBB68:
+ 1061              	.LBB66:
+ 159:Src/ninja_fruit_game.c ****             fruit->x += fruit->velocity_x * dt;
+ 1062              		.loc 1 159 22 view .LVU311
+ 1063 0154 DFED7A6A 		vldr.32	s13, .L63+32
+ 163:Src/ninja_fruit_game.c ****                 fruit->state = FRUIT_STATE_MISSED;
+ 1064              		.loc 1 163 16 view .LVU312
+ 1065 0158 9FED715B 		vldr.64	d5, .L63
+ 164:Src/ninja_fruit_game.c ****                 game->missed_count++;
+ 1066              		.loc 1 164 30 view .LVU313
+ 1067 015c 4FF0020C 		mov	ip, #2
+ 1068 0160 0822     		movs	r2, #8
+ 1069 0162 04F58076 		add	r6, r4, #256
+ 1070              	.LVL97:
+ 1071              	.L36:
+ 155:Src/ninja_fruit_game.c **** 
+ 1072              		.loc 1 155 9 is_stmt 1 view .LVU314
+ 157:Src/ninja_fruit_game.c ****             // Update position
+ 1073              		.loc 1 157 9 view .LVU315
+ 157:Src/ninja_fruit_game.c ****             // Update position
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 31
+
+
+ 1074              		.loc 1 157 18 is_stmt 0 view .LVU316
+ 1075 0166 597C     		ldrb	r1, [r3, #17]	@ zero_extendqisi2
+ 157:Src/ninja_fruit_game.c ****             // Update position
+ 1076              		.loc 1 157 12 view .LVU317
+ 1077 0168 0029     		cmp	r1, #0
+ 1078 016a 40D1     		bne	.L31
+ 159:Src/ninja_fruit_game.c ****             fruit->x += fruit->velocity_x * dt;
+ 1079              		.loc 1 159 13 is_stmt 1 view .LVU318
+ 159:Src/ninja_fruit_game.c ****             fruit->x += fruit->velocity_x * dt;
+ 1080              		.loc 1 159 22 is_stmt 0 view .LVU319
+ 1081 016c D3ED027A 		vldr.32	s15, [r3, #8]
+ 1082 0170 93ED017A 		vldr.32	s14, [r3, #4]
+ 160:Src/ninja_fruit_game.c **** 
+ 1083              		.loc 1 160 22 view .LVU320
+ 1084 0174 93ED036A 		vldr.32	s12, [r3, #12]
+ 159:Src/ninja_fruit_game.c ****             fruit->x += fruit->velocity_x * dt;
+ 1085              		.loc 1 159 22 view .LVU321
+ 1086 0178 A7EEA67A 		vfma.f32	s14, s15, s13
+ 160:Src/ninja_fruit_game.c **** 
+ 1087              		.loc 1 160 22 view .LVU322
+ 1088 017c D3ED007A 		vldr.32	s15, [r3]
+ 1089 0180 E6EE267A 		vfma.f32	s15, s12, s13
+ 159:Src/ninja_fruit_game.c ****             fruit->x += fruit->velocity_x * dt;
+ 1090              		.loc 1 159 22 view .LVU323
+ 1091 0184 83ED017A 		vstr.32	s14, [r3, #4]
+ 160:Src/ninja_fruit_game.c **** 
+ 1092              		.loc 1 160 13 is_stmt 1 view .LVU324
+ 160:Src/ninja_fruit_game.c **** 
+ 1093              		.loc 1 160 22 is_stmt 0 view .LVU325
+ 1094 0188 C3ED007A 		vstr.32	s15, [r3]
+ 163:Src/ninja_fruit_game.c ****                 fruit->state = FRUIT_STATE_MISSED;
+ 1095              		.loc 1 163 13 is_stmt 1 view .LVU326
+ 163:Src/ninja_fruit_game.c ****                 fruit->state = FRUIT_STATE_MISSED;
+ 1096              		.loc 1 163 22 is_stmt 0 view .LVU327
+ 1097 018c B7EEC77A 		vcvt.f64.f32	d7, s14
+ 163:Src/ninja_fruit_game.c ****                 fruit->state = FRUIT_STATE_MISSED;
+ 1098              		.loc 1 163 16 view .LVU328
+ 1099 0190 B4EEC57B 		vcmpe.f64	d7, d5
+ 1100 0194 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1101 0198 06DD     		ble	.L33
+ 164:Src/ninja_fruit_game.c ****                 game->missed_count++;
+ 1102              		.loc 1 164 17 is_stmt 1 view .LVU329
+ 164:Src/ninja_fruit_game.c ****                 game->missed_count++;
+ 1103              		.loc 1 164 30 is_stmt 0 view .LVU330
+ 1104 019a 83F811C0 		strb	ip, [r3, #17]
+ 165:Src/ninja_fruit_game.c ****             }
+ 1105              		.loc 1 165 17 is_stmt 1 view .LVU331
+ 165:Src/ninja_fruit_game.c ****             }
+ 1106              		.loc 1 165 35 is_stmt 0 view .LVU332
+ 1107 019e D4F80411 		ldr	r1, [r4, #260]
+ 1108 01a2 0131     		adds	r1, r1, #1
+ 1109 01a4 C4F80411 		str	r1, [r4, #260]
+ 1110              	.L33:
+ 165:Src/ninja_fruit_game.c ****             }
+ 1111              		.loc 1 165 35 view .LVU333
+ 1112              	.LBE66:
+ 154:Src/ninja_fruit_game.c ****         Fruit_t *fruit = &game->fruits[i];
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 32
+
+
+ 1113              		.loc 1 154 38 is_stmt 1 discriminator 2 view .LVU334
+ 154:Src/ninja_fruit_game.c ****         Fruit_t *fruit = &game->fruits[i];
+ 1114              		.loc 1 154 23 discriminator 1 view .LVU335
+ 1115 01a8 013A     		subs	r2, r2, #1
+ 1116 01aa 03F12003 		add	r3, r3, #32
+ 1117 01ae DAD1     		bne	.L36
+ 1118              	.LVL98:
+ 154:Src/ninja_fruit_game.c ****         Fruit_t *fruit = &game->fruits[i];
+ 1119              		.loc 1 154 23 is_stmt 0 discriminator 1 view .LVU336
+ 1120              	.LBE68:
+ 1121              	.LBE64:
+ 1122              	.LBE63:
+  84:Src/ninja_fruit_game.c **** 
+ 1123              		.loc 1 84 5 is_stmt 1 view .LVU337
+  84:Src/ninja_fruit_game.c **** 
+ 1124              		.loc 1 84 38 is_stmt 0 view .LVU338
+ 1125 01b0 4046     		mov	r0, r8
+ 1126 01b2 FFF7FEFF 		bl	Gesture_GetCurrentDisplayGesture
+ 1127              	.LVL99:
+  84:Src/ninja_fruit_game.c **** 
+ 1128              		.loc 1 84 19 discriminator 1 view .LVU339
+ 1129 01b6 C0B2     		uxtb	r0, r0
+ 1130              	.LVL100:
+  86:Src/ninja_fruit_game.c ****         detected_gesture == GESTURE_LEFT_ARM_SWIPE_RIGHT ||
+ 1131              		.loc 1 86 5 is_stmt 1 view .LVU340
+  86:Src/ninja_fruit_game.c ****         detected_gesture == GESTURE_LEFT_ARM_SWIPE_RIGHT ||
+ 1132              		.loc 1 86 8 is_stmt 0 view .LVU341
+ 1133 01b8 C31E     		subs	r3, r0, #3
+ 1134 01ba 012B     		cmp	r3, #1
+ 1135 01bc 24D9     		bls	.L37
+  87:Src/ninja_fruit_game.c ****         detected_gesture == GESTURE_RIGHT_ARM_SWIPE_LEFT ||
+ 1136              		.loc 1 87 58 view .LVU342
+ 1137 01be 431E     		subs	r3, r0, #1
+ 1138 01c0 012B     		cmp	r3, #1
+ 1139 01c2 03D9     		bls	.L38
+  89:Src/ninja_fruit_game.c ****         detected_gesture == GESTURE_SWORD_OVERHEAD_STRIKE ||
+ 1140              		.loc 1 89 59 view .LVU343
+ 1141 01c4 831F     		subs	r3, r0, #6
+ 1142 01c6 012B     		cmp	r3, #1
+ 1143 01c8 00F29980 		bhi	.L39
+ 1144              	.L38:
+ 1145              	.LBB71:
+  94:Src/ninja_fruit_game.c **** 
+ 1146              		.loc 1 94 9 is_stmt 1 view .LVU344
+  97:Src/ninja_fruit_game.c ****             swipe.end_x = keypoints[KEYPOINT_LEFT_WRIST].x_center;
+ 1147              		.loc 1 97 9 view .LVU345
+ 101:Src/ninja_fruit_game.c ****             swipe.end_y = keypoints[KEYPOINT_RIGHT_WRIST].y_center;
+ 1148              		.loc 1 101 13 view .LVU346
+ 1149 01cc 0628     		cmp	r0, #6
+ 101:Src/ninja_fruit_game.c ****             swipe.end_y = keypoints[KEYPOINT_RIGHT_WRIST].y_center;
+ 1150              		.loc 1 101 58 is_stmt 0 view .LVU347
+ 1151 01ce 97ED12AA 		vldr.32	s20, [r7, #72]
+ 1152              	.LVL101:
+ 102:Src/ninja_fruit_game.c ****         }
+ 1153              		.loc 1 102 13 is_stmt 1 view .LVU348
+ 102:Src/ninja_fruit_game.c ****         }
+ 1154              		.loc 1 102 58 is_stmt 0 view .LVU349
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 33
+
+
+ 1155 01d2 D7ED13BA 		vldr.32	s23, [r7, #76]
+ 1156              	.LVL102:
+ 106:Src/ninja_fruit_game.c ****                        detected_gesture == GESTURE_RIGHT_ARM_SWIPE_RIGHT) ? -0.2f : 0.2f;
+ 1157              		.loc 1 106 9 is_stmt 1 view .LVU350
+ 106:Src/ninja_fruit_game.c ****                        detected_gesture == GESTURE_RIGHT_ARM_SWIPE_RIGHT) ? -0.2f : 0.2f;
+ 1158              		.loc 1 106 9 is_stmt 0 view .LVU351
+ 1159 01d6 1DD1     		bne	.L41
+ 102:Src/ninja_fruit_game.c ****         }
+ 1160              		.loc 1 102 58 view .LVU352
+ 1161 01d8 9FED5A8A 		vldr.32	s16, .L63+36
+ 1162 01dc 9FED5A9A 		vldr.32	s18, .L63+40
+ 1163 01e0 21E0     		b	.L40
+ 1164              	.LVL103:
+ 1165              	.L28:
+ 102:Src/ninja_fruit_game.c ****         }
+ 1166              		.loc 1 102 58 view .LVU353
+ 1167              	.LBE71:
+ 1168              	.LBB90:
+ 1169              	.LBB62:
+ 127:Src/ninja_fruit_game.c ****         if (game->fruits[i].state == FRUIT_STATE_INACTIVE) {
+ 1170              		.loc 1 127 38 is_stmt 1 discriminator 2 view .LVU354
+ 127:Src/ninja_fruit_game.c ****         if (game->fruits[i].state == FRUIT_STATE_INACTIVE) {
+ 1171              		.loc 1 127 23 is_stmt 0 discriminator 1 view .LVU355
+ 1172 01e2 013A     		subs	r2, r2, #1
+ 127:Src/ninja_fruit_game.c ****         if (game->fruits[i].state == FRUIT_STATE_INACTIVE) {
+ 1173              		.loc 1 127 38 discriminator 2 view .LVU356
+ 1174 01e4 03F10103 		add	r3, r3, #1
+ 1175              	.LVL104:
+ 127:Src/ninja_fruit_game.c ****         if (game->fruits[i].state == FRUIT_STATE_INACTIVE) {
+ 1176              		.loc 1 127 23 is_stmt 1 discriminator 1 view .LVU357
+ 1177 01e8 7FF45CAF 		bne	.L30
+ 1178 01ec ACE7     		b	.L29
+ 1179              	.LVL105:
+ 1180              	.L31:
+ 127:Src/ninja_fruit_game.c ****         if (game->fruits[i].state == FRUIT_STATE_INACTIVE) {
+ 1181              		.loc 1 127 23 is_stmt 0 discriminator 1 view .LVU358
+ 1182              	.LBE62:
+ 1183              	.LBE90:
+ 1184              	.LBB91:
+ 1185              	.LBB70:
+ 1186              	.LBB69:
+ 1187              	.LBB67:
+ 168:Src/ninja_fruit_game.c ****             // Remove sliced fruits after animation time
+ 1188              		.loc 1 168 14 is_stmt 1 view .LVU359
+ 168:Src/ninja_fruit_game.c ****             // Remove sliced fruits after animation time
+ 1189              		.loc 1 168 17 is_stmt 0 view .LVU360
+ 1190 01ee 0129     		cmp	r1, #1
+ 1191 01f0 07D1     		bne	.L34
+ 170:Src/ninja_fruit_game.c ****                 fruit->state = FRUIT_STATE_INACTIVE;
+ 1192              		.loc 1 170 13 is_stmt 1 view .LVU361
+ 170:Src/ninja_fruit_game.c ****                 fruit->state = FRUIT_STATE_INACTIVE;
+ 1193              		.loc 1 170 30 is_stmt 0 view .LVU362
+ 1194 01f2 9969     		ldr	r1, [r3, #24]
+ 1195 01f4 411A     		subs	r1, r0, r1
+ 170:Src/ninja_fruit_game.c ****                 fruit->state = FRUIT_STATE_INACTIVE;
+ 1196              		.loc 1 170 16 view .LVU363
+ 1197 01f6 B1F5FA7F 		cmp	r1, #500
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 34
+
+
+ 1198 01fa D5D9     		bls	.L33
+ 1199              	.L61:
+ 176:Src/ninja_fruit_game.c ****         }
+ 1200              		.loc 1 176 13 is_stmt 1 view .LVU364
+ 176:Src/ninja_fruit_game.c ****         }
+ 1201              		.loc 1 176 26 is_stmt 0 view .LVU365
+ 1202 01fc 0321     		movs	r1, #3
+ 1203 01fe 5974     		strb	r1, [r3, #17]
+ 1204 0200 D2E7     		b	.L33
+ 1205              	.L34:
+ 174:Src/ninja_fruit_game.c ****             // Remove missed fruits immediately
+ 1206              		.loc 1 174 14 is_stmt 1 view .LVU366
+ 174:Src/ninja_fruit_game.c ****             // Remove missed fruits immediately
+ 1207              		.loc 1 174 17 is_stmt 0 view .LVU367
+ 1208 0202 0229     		cmp	r1, #2
+ 1209 0204 D0D1     		bne	.L33
+ 1210 0206 F9E7     		b	.L61
+ 1211              	.LVL106:
+ 1212              	.L37:
+ 174:Src/ninja_fruit_game.c ****             // Remove missed fruits immediately
+ 1213              		.loc 1 174 17 view .LVU368
+ 1214              	.LBE67:
+ 1215              	.LBE69:
+ 1216              	.LBE70:
+ 1217              	.LBE91:
+ 1218              	.LBB92:
+  98:Src/ninja_fruit_game.c ****             swipe.end_y = keypoints[KEYPOINT_LEFT_WRIST].y_center;
+ 1219              		.loc 1 98 13 is_stmt 1 view .LVU369
+ 1220 0208 0428     		cmp	r0, #4
+  98:Src/ninja_fruit_game.c ****             swipe.end_y = keypoints[KEYPOINT_LEFT_WRIST].y_center;
+ 1221              		.loc 1 98 57 is_stmt 0 view .LVU370
+ 1222 020a 97ED0FAA 		vldr.32	s20, [r7, #60]
+ 1223              	.LVL107:
+  99:Src/ninja_fruit_game.c ****         } else {
+ 1224              		.loc 1 99 13 is_stmt 1 view .LVU371
+  99:Src/ninja_fruit_game.c ****         } else {
+ 1225              		.loc 1 99 57 is_stmt 0 view .LVU372
+ 1226 020e D7ED10BA 		vldr.32	s23, [r7, #64]
+ 1227              	.LVL108:
+ 106:Src/ninja_fruit_game.c ****                        detected_gesture == GESTURE_RIGHT_ARM_SWIPE_RIGHT) ? -0.2f : 0.2f;
+ 1228              		.loc 1 106 9 is_stmt 1 view .LVU373
+ 1229 0212 7CD0     		beq	.L49
+ 1230              	.L41:
+ 1231              	.LVL109:
+ 102:Src/ninja_fruit_game.c ****         }
+ 1232              		.loc 1 102 58 is_stmt 0 view .LVU374
+ 1233 0214 9FED4D8A 		vldr.32	s16, .L63+44
+ 1234 0218 DFED4A7A 		vldr.32	s15, .L63+36
+ 1235 021c 0228     		cmp	r0, #2
+ 1236 021e 08FE278A 		vseleq.f32	s16, s16, s15
+ 1237              	.L62:
+  99:Src/ninja_fruit_game.c ****         } else {
+ 1238              		.loc 1 99 57 view .LVU375
+ 1239 0222 9FED4B9A 		vldr.32	s18, .L63+48
+ 1240              	.L40:
+ 1241              	.LVL110:
+ 110:Src/ninja_fruit_game.c ****         swipe.start_y = swipe.end_y + dy;
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 35
+
+
+ 1242              		.loc 1 110 9 is_stmt 1 view .LVU376
+ 110:Src/ninja_fruit_game.c ****         swipe.start_y = swipe.end_y + dy;
+ 1243              		.loc 1 110 37 is_stmt 0 view .LVU377
+ 1244 0226 38EE0A8A 		vadd.f32	s16, s16, s20
+ 111:Src/ninja_fruit_game.c ****         swipe.timestamp = current_time;
+ 1245              		.loc 1 111 9 is_stmt 1 view .LVU378
+ 111:Src/ninja_fruit_game.c ****         swipe.timestamp = current_time;
+ 1246              		.loc 1 111 37 is_stmt 0 view .LVU379
+ 1247 022a 39EE2B9A 		vadd.f32	s18, s18, s23
+ 1248              	.LVL111:
+ 112:Src/ninja_fruit_game.c ****         swipe.active = 1;
+ 1249              		.loc 1 112 9 is_stmt 1 view .LVU380
+ 113:Src/ninja_fruit_game.c **** 
+ 1250              		.loc 1 113 9 view .LVU381
+ 115:Src/ninja_fruit_game.c ****     }
+ 1251              		.loc 1 115 9 view .LVU382
+ 1252              	.LBB72:
+ 1253              	.LBI72:
+ 181:Src/ninja_fruit_game.c **** {
+ 1254              		.loc 1 181 13 view .LVU383
+ 183:Src/ninja_fruit_game.c **** 
+ 1255              		.loc 1 183 5 view .LVU384
+ 1256              	.LBB73:
+ 185:Src/ninja_fruit_game.c ****         Fruit_t *fruit = &game->fruits[i];
+ 1257              		.loc 1 185 23 discriminator 1 view .LVU385
+ 1258              	.LBB74:
+ 1259              	.LBB75:
+ 1260              	.LBB76:
+ 1261              	.LBB77:
+ 224:Src/ninja_fruit_game.c **** 
+ 1262              		.loc 1 224 8 is_stmt 0 view .LVU386
+ 1263 022e DFED49AA 		vldr.32	s21, .L63+52
+ 1264              	.LBE77:
+ 1265              	.LBE76:
+ 192:Src/ninja_fruit_game.c ****                                    swipe->end_x, swipe->end_y,
+ 1266              		.loc 1 192 16 discriminator 1 view .LVU387
+ 1267 0232 9FED49BA 		vldr.32	s22, .L63+56
+ 1268              	.LVL112:
+ 1269              	.L48:
+ 192:Src/ninja_fruit_game.c ****                                    swipe->end_x, swipe->end_y,
+ 1270              		.loc 1 192 16 discriminator 1 view .LVU388
+ 1271              	.LBE75:
+ 186:Src/ninja_fruit_game.c **** 
+ 1272              		.loc 1 186 9 is_stmt 1 view .LVU389
+ 188:Src/ninja_fruit_game.c ****             // Check if swipe line intersects with fruit circle
+ 1273              		.loc 1 188 9 view .LVU390
+ 188:Src/ninja_fruit_game.c ****             // Check if swipe line intersects with fruit circle
+ 1274              		.loc 1 188 12 is_stmt 0 view .LVU391
+ 1275 0236 6B7C     		ldrb	r3, [r5, #17]	@ zero_extendqisi2
+ 1276 0238 002B     		cmp	r3, #0
+ 1277 023a 5DD1     		bne	.L43
+ 1278              	.LBB85:
+ 190:Src/ninja_fruit_game.c **** 
+ 1279              		.loc 1 190 13 is_stmt 1 view .LVU392
+ 1280              	.LVL113:
+ 192:Src/ninja_fruit_game.c ****                                    swipe->end_x, swipe->end_y,
+ 1281              		.loc 1 192 13 view .LVU393
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 36
+
+
+ 1282              	.LBB81:
+ 1283              	.LBB78:
+ 221:Src/ninja_fruit_game.c ****     float32_t length = sqrtf(dx*dx + dy*dy);
+ 1284              		.loc 1 221 15 is_stmt 0 view .LVU394
+ 1285 023c 3BEEC9CA 		vsub.f32	s24, s23, s18
+ 220:Src/ninja_fruit_game.c ****     float32_t dy = y2 - y1;
+ 1286              		.loc 1 220 15 view .LVU395
+ 1287 0240 7AEE48CA 		vsub.f32	s25, s20, s16
+ 222:Src/ninja_fruit_game.c **** 
+ 1288              		.loc 1 222 40 view .LVU396
+ 1289 0244 2CEE0C0A 		vmul.f32	s0, s24, s24
+ 222:Src/ninja_fruit_game.c **** 
+ 1290              		.loc 1 222 24 view .LVU397
+ 1291 0248 ACEEAC0A 		vfma.f32	s0, s25, s25
+ 1292              	.LBE78:
+ 1293              	.LBE81:
+ 192:Src/ninja_fruit_game.c ****                                    swipe->end_x, swipe->end_y,
+ 1294              		.loc 1 192 17 view .LVU398
+ 1295 024c D5ED009A 		vldr.32	s19, [r5]
+ 1296 0250 D5ED018A 		vldr.32	s17, [r5, #4]
+ 1297              	.LVL114:
+ 1298              	.LBB82:
+ 1299              	.LBI76:
+ 216:Src/ninja_fruit_game.c ****                                    float32_t cx, float32_t cy, float32_t radius)
+ 1300              		.loc 1 216 16 is_stmt 1 view .LVU399
+ 1301              	.LBB79:
+ 220:Src/ninja_fruit_game.c ****     float32_t dy = y2 - y1;
+ 1302              		.loc 1 220 5 view .LVU400
+ 221:Src/ninja_fruit_game.c ****     float32_t length = sqrtf(dx*dx + dy*dy);
+ 1303              		.loc 1 221 5 view .LVU401
+ 222:Src/ninja_fruit_game.c **** 
+ 1304              		.loc 1 222 5 view .LVU402
+ 222:Src/ninja_fruit_game.c **** 
+ 1305              		.loc 1 222 24 is_stmt 0 view .LVU403
+ 1306 0254 FFF7FEFF 		bl	sqrtf
+ 1307              	.LVL115:
+ 224:Src/ninja_fruit_game.c **** 
+ 1308              		.loc 1 224 5 is_stmt 1 view .LVU404
+ 224:Src/ninja_fruit_game.c **** 
+ 1309              		.loc 1 224 8 is_stmt 0 view .LVU405
+ 1310 0258 B4EEEA0A 		vcmpe.f32	s0, s21
+ 1311 025c F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1312 0260 4AD4     		bmi	.L43
+ 227:Src/ninja_fruit_game.c ****     dy /= length;
+ 1313              		.loc 1 227 5 is_stmt 1 view .LVU406
+ 228:Src/ninja_fruit_game.c **** 
+ 1314              		.loc 1 228 8 is_stmt 0 view .LVU407
+ 1315 0262 CCEE006A 		vdiv.f32	s13, s24, s0
+ 232:Src/ninja_fruit_game.c **** 
+ 1316              		.loc 1 232 15 view .LVU408
+ 1317 0266 78EEC97A 		vsub.f32	s15, s17, s18
+ 227:Src/ninja_fruit_game.c ****     dy /= length;
+ 1318              		.loc 1 227 8 view .LVU409
+ 1319 026a 8CEE806A 		vdiv.f32	s12, s25, s0
+ 1320              	.LVL116:
+ 228:Src/ninja_fruit_game.c **** 
+ 1321              		.loc 1 228 5 is_stmt 1 view .LVU410
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 37
+
+
+ 231:Src/ninja_fruit_game.c ****     float32_t fy = cy - y1;
+ 1322              		.loc 1 231 5 view .LVU411
+ 232:Src/ninja_fruit_game.c **** 
+ 1323              		.loc 1 232 5 view .LVU412
+ 235:Src/ninja_fruit_game.c **** 
+ 1324              		.loc 1 235 5 view .LVU413
+ 231:Src/ninja_fruit_game.c ****     float32_t fy = cy - y1;
+ 1325              		.loc 1 231 15 is_stmt 0 view .LVU414
+ 1326 026e 39EEC87A 		vsub.f32	s14, s19, s16
+ 1327              	.LVL117:
+ 235:Src/ninja_fruit_game.c **** 
+ 1328              		.loc 1 235 32 view .LVU415
+ 1329 0272 67EEA67A 		vmul.f32	s15, s15, s13
+ 1330              	.LVL118:
+ 235:Src/ninja_fruit_game.c **** 
+ 1331              		.loc 1 235 15 view .LVU416
+ 1332 0276 E6EE077A 		vfma.f32	s15, s12, s14
+ 1333              	.LVL119:
+ 238:Src/ninja_fruit_game.c ****     if (t > length) t = length;
+ 1334              		.loc 1 238 5 is_stmt 1 view .LVU417
+ 238:Src/ninja_fruit_game.c ****     if (t > length) t = length;
+ 1335              		.loc 1 238 8 is_stmt 0 view .LVU418
+ 1336 027a F5EEC07A 		vcmpe.f32	s15, #0
+ 1337 027e F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1338 0282 47D4     		bmi	.L52
+ 239:Src/ninja_fruit_game.c **** 
+ 1339              		.loc 1 239 5 is_stmt 1 view .LVU419
+ 239:Src/ninja_fruit_game.c **** 
+ 1340              		.loc 1 239 8 is_stmt 0 view .LVU420
+ 1341 0284 B4EEE70A 		vcmpe.f32	s0, s15
+ 1342 0288 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1343 028c 58BF     		it	pl
+ 1344 028e B0EE670A 		vmovpl.f32	s0, s15
+ 1345              	.LVL120:
+ 1346              	.L45:
+ 242:Src/ninja_fruit_game.c ****     float32_t closest_y = y1 + t * dy;
+ 1347              		.loc 1 242 5 is_stmt 1 view .LVU421
+ 243:Src/ninja_fruit_game.c **** 
+ 1348              		.loc 1 243 15 is_stmt 0 view .LVU422
+ 1349 0292 F0EE497A 		vmov.f32	s15, s18
+ 242:Src/ninja_fruit_game.c ****     float32_t closest_y = y1 + t * dy;
+ 1350              		.loc 1 242 15 view .LVU423
+ 1351 0296 B0EE487A 		vmov.f32	s14, s16
+ 1352              	.LVL121:
+ 243:Src/ninja_fruit_game.c **** 
+ 1353              		.loc 1 243 15 view .LVU424
+ 1354 029a E6EE807A 		vfma.f32	s15, s13, s0
+ 242:Src/ninja_fruit_game.c ****     float32_t closest_y = y1 + t * dy;
+ 1355              		.loc 1 242 15 view .LVU425
+ 1356 029e A6EE007A 		vfma.f32	s14, s12, s0
+ 1357              	.LVL122:
+ 243:Src/ninja_fruit_game.c **** 
+ 1358              		.loc 1 243 5 is_stmt 1 view .LVU426
+ 246:Src/ninja_fruit_game.c **** 
+ 1359              		.loc 1 246 5 view .LVU427
+ 246:Src/ninja_fruit_game.c **** 
+ 1360              		.loc 1 246 67 is_stmt 0 view .LVU428
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 38
+
+
+ 1361 02a2 78EEE78A 		vsub.f32	s17, s17, s15
+ 1362              	.LVL123:
+ 246:Src/ninja_fruit_game.c **** 
+ 1363              		.loc 1 246 29 view .LVU429
+ 1364 02a6 79EEC79A 		vsub.f32	s19, s19, s14
+ 1365              	.LVL124:
+ 246:Src/ninja_fruit_game.c **** 
+ 1366              		.loc 1 246 80 view .LVU430
+ 1367 02aa 68EEA88A 		vmul.f32	s17, s17, s17
+ 246:Src/ninja_fruit_game.c **** 
+ 1368              		.loc 1 246 15 view .LVU431
+ 1369 02ae E9EEA98A 		vfma.f32	s17, s19, s19
+ 1370              	.LVL125:
+ 248:Src/ninja_fruit_game.c **** }
+ 1371              		.loc 1 248 5 is_stmt 1 view .LVU432
+ 248:Src/ninja_fruit_game.c **** }
+ 1372              		.loc 1 248 5 is_stmt 0 view .LVU433
+ 1373              	.LBE79:
+ 1374              	.LBE82:
+ 192:Src/ninja_fruit_game.c ****                                    swipe->end_x, swipe->end_y,
+ 1375              		.loc 1 192 16 discriminator 1 view .LVU434
+ 1376 02b2 F4EECB8A 		vcmpe.f32	s17, s22
+ 1377 02b6 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1378 02ba 1DD8     		bhi	.L43
+ 1379              	.LBB83:
+ 197:Src/ninja_fruit_game.c ****                 fruit->slice_time = HAL_GetTick();
+ 1380              		.loc 1 197 17 is_stmt 1 view .LVU435
+ 197:Src/ninja_fruit_game.c ****                 fruit->slice_time = HAL_GetTick();
+ 1381              		.loc 1 197 30 is_stmt 0 view .LVU436
+ 1382 02bc 0123     		movs	r3, #1
+ 1383 02be 6B74     		strb	r3, [r5, #17]
+ 198:Src/ninja_fruit_game.c ****                 fruit->slice_direction = (swipe->end_x > swipe->start_x) ? 1 : 0;
+ 1384              		.loc 1 198 17 is_stmt 1 view .LVU437
+ 198:Src/ninja_fruit_game.c ****                 fruit->slice_direction = (swipe->end_x > swipe->start_x) ? 1 : 0;
+ 1385              		.loc 1 198 37 is_stmt 0 view .LVU438
+ 1386 02c0 FFF7FEFF 		bl	HAL_GetTick
+ 1387              	.LVL126:
+ 199:Src/ninja_fruit_game.c **** 
+ 1388              		.loc 1 199 78 view .LVU439
+ 1389 02c4 B4EECA8A 		vcmpe.f32	s16, s20
+ 1390 02c8 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1391 02cc 4CBF     		ite	mi
+ 1392 02ce 0123     		movmi	r3, #1
+ 1393 02d0 0023     		movpl	r3, #0
+ 1394 02d2 2B77     		strb	r3, [r5, #28]
+ 203:Src/ninja_fruit_game.c ****                     case FRUIT_APPLE: base_score = 10; break;
+ 1395              		.loc 1 203 30 view .LVU440
+ 1396 02d4 2B7C     		ldrb	r3, [r5, #16]	@ zero_extendqisi2
+ 198:Src/ninja_fruit_game.c ****                 fruit->slice_direction = (swipe->end_x > swipe->start_x) ? 1 : 0;
+ 1397              		.loc 1 198 35 discriminator 1 view .LVU441
+ 1398 02d6 A861     		str	r0, [r5, #24]
+ 199:Src/ninja_fruit_game.c **** 
+ 1399              		.loc 1 199 17 is_stmt 1 view .LVU442
+ 202:Src/ninja_fruit_game.c ****                 switch (fruit->type) {
+ 1400              		.loc 1 202 17 view .LVU443
+ 1401              	.LVL127:
+ 203:Src/ninja_fruit_game.c ****                     case FRUIT_APPLE: base_score = 10; break;
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 39
+
+
+ 1402              		.loc 1 203 17 view .LVU444
+ 1403 02d8 5A1E     		subs	r2, r3, #1
+ 1404 02da 022A     		cmp	r2, #2
+ 1405 02dc 03EB8303 		add	r3, r3, r3, lsl #2
+ 1406 02e0 03F10A03 		add	r3, r3, #10
+ 1407 02e4 88BF     		it	hi
+ 1408 02e6 0A23     		movhi	r3, #10
+ 1409              	.LVL128:
+ 210:Src/ninja_fruit_game.c ****             }
+ 1410              		.loc 1 210 17 view .LVU445
+ 210:Src/ninja_fruit_game.c ****             }
+ 1411              		.loc 1 210 29 is_stmt 0 view .LVU446
+ 1412 02e8 D4F80021 		ldr	r2, [r4, #256]
+ 210:Src/ninja_fruit_game.c ****             }
+ 1413              		.loc 1 210 43 view .LVU447
+ 1414 02ec D4F81411 		ldr	r1, [r4, #276]
+ 210:Src/ninja_fruit_game.c ****             }
+ 1415              		.loc 1 210 29 view .LVU448
+ 1416 02f0 01FB0322 		mla	r2, r1, r3, r2
+ 1417 02f4 C4F80021 		str	r2, [r4, #256]
+ 1418              	.LVL129:
+ 1419              	.L43:
+ 210:Src/ninja_fruit_game.c ****             }
+ 1420              		.loc 1 210 29 view .LVU449
+ 1421              	.LBE83:
+ 1422              	.LBE85:
+ 1423              	.LBE74:
+ 185:Src/ninja_fruit_game.c ****         Fruit_t *fruit = &game->fruits[i];
+ 1424              		.loc 1 185 38 is_stmt 1 discriminator 2 view .LVU450
+ 185:Src/ninja_fruit_game.c ****         Fruit_t *fruit = &game->fruits[i];
+ 1425              		.loc 1 185 23 discriminator 1 view .LVU451
+ 1426 02f8 2035     		adds	r5, r5, #32
+ 1427 02fa B542     		cmp	r5, r6
+ 1428 02fc 9BD1     		bne	.L48
+ 1429              	.LVL130:
+ 1430              	.L39:
+ 185:Src/ninja_fruit_game.c ****         Fruit_t *fruit = &game->fruits[i];
+ 1431              		.loc 1 185 23 is_stmt 0 discriminator 1 view .LVU452
+ 1432              	.LBE73:
+ 1433              	.LBE72:
+ 1434              	.LBE92:
+ 119:Src/ninja_fruit_game.c ****         game->game_over = 1;
+ 1435              		.loc 1 119 5 is_stmt 1 view .LVU453
+ 119:Src/ninja_fruit_game.c ****         game->game_over = 1;
+ 1436              		.loc 1 119 8 is_stmt 0 view .LVU454
+ 1437 02fe D4F80431 		ldr	r3, [r4, #260]
+ 1438 0302 042B     		cmp	r3, #4
+ 120:Src/ninja_fruit_game.c ****     }
+ 1439              		.loc 1 120 9 is_stmt 1 view .LVU455
+ 120:Src/ninja_fruit_game.c ****     }
+ 1440              		.loc 1 120 25 is_stmt 0 view .LVU456
+ 1441 0304 84BF     		itt	hi
+ 1442 0306 0123     		movhi	r3, #1
+ 1443 0308 84F80C31 		strbhi	r3, [r4, #268]
+ 1444 030c 8FE6     		b	.L21
+ 1445              	.LVL131:
+ 1446              	.L49:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 40
+
+
+ 1447              	.LBB93:
+  99:Src/ninja_fruit_game.c ****         } else {
+ 1448              		.loc 1 99 57 view .LVU457
+ 1449 030e 9FED0F8A 		vldr.32	s16, .L63+44
+ 1450 0312 86E7     		b	.L62
+ 1451              	.LVL132:
+ 1452              	.L52:
+ 1453              	.LBB89:
+ 1454              	.LBB88:
+ 1455              	.LBB87:
+ 1456              	.LBB86:
+ 1457              	.LBB84:
+ 1458              	.LBB80:
+ 238:Src/ninja_fruit_game.c ****     if (t > length) t = length;
+ 1459              		.loc 1 238 18 discriminator 1 view .LVU458
+ 1460 0314 9FED0E0A 		vldr.32	s0, .L63+48
+ 1461              	.LVL133:
+ 238:Src/ninja_fruit_game.c ****     if (t > length) t = length;
+ 1462              		.loc 1 238 18 discriminator 1 view .LVU459
+ 1463 0318 BBE7     		b	.L45
+ 1464              	.L64:
+ 1465 031a 00BFAFF3 		.align	3
+ 1465      0080
+ 1466              	.L63:
+ 1467 0320 5C8FC2F5 		.word	-171798692
+ 1468 0324 285CEF3F 		.word	1072651304
+ 1469 0328 9A99993E 		.word	1050253722
+ 1470 032c 0000FA44 		.word	1157234688
+ 1471 0330 00007A44 		.word	1148846080
+ 1472 0334 0AD7A33C 		.word	1017370378
+ 1473 0338 00401C46 		.word	1176256512
+ 1474 033c 9A99193E 		.word	1041865114
+ 1475 0340 6F12833C 		.word	1015222895
+ 1476 0344 CDCC4C3E 		.word	1045220557
+ 1477 0348 9A9999BE 		.word	-1097229926
+ 1478 034c CDCC4CBE 		.word	-1102263091
+ 1479 0350 00000000 		.word	0
+ 1480 0354 6F12833A 		.word	981668463
+ 1481 0358 EC51B839 		.word	968380908
+ 1482              	.LBE80:
+ 1483              	.LBE84:
+ 1484              	.LBE86:
+ 1485              	.LBE87:
+ 1486              	.LBE88:
+ 1487              	.LBE89:
+ 1488              	.LBE93:
+ 1489              		.cfi_endproc
+ 1490              	.LFE3340:
+ 1492              		.section	.rodata.fruit_colors,"a"
+ 1493              		.align	2
+ 1496              	fruit_colors:
+ 1497 0000 0000FFFF 		.word	-65536
+ 1498 0004 00A5FFFF 		.word	-23296
+ 1499 0008 00FFFFFF 		.word	-256
+ 1500 000c 8080FFFF 		.word	-32640
+ 1501              		.text
+ 1502              	.Letext0:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 41
+
+
+ 1503              		.file 2 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 1504              		.file 3 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 1505              		.file 4 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 1506              		.file 5 "../../STM32Cube_FW_N6/Utilities/lcd/../Fonts/fonts.h"
+ 1507              		.file 6 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 1508              		.file 7 "../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Inc/spe_pp_output_if.h"
+ 1509              		.file 8 "../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.h"
+ 1510              		.file 9 "Inc/gesture_detection.h"
+ 1511              		.file 10 "Inc/ninja_fruit_game.h"
+ 1512              		.file 11 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltoo
+ 1513              		.file 12 "../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Inc/stm32n6xx_hal.h"
+ 1514              		.file 13 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltoo
+ 1515              		.file 14 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltoo
+ 1516              		.file 15 "<built-in>"
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 42
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ninja_fruit_game.c
+C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s:26     .text.NinjaGame_Init:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s:32     .text.NinjaGame_Init:00000000 NinjaGame_Init
+C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s:147    .text.NinjaGame_Render:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s:153    .text.NinjaGame_Render:00000000 NinjaGame_Render
+C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s:669    .text.NinjaGame_Render:00000284 $d
+C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s:1496   .rodata.fruit_colors:00000000 fruit_colors
+C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s:695    .text.NinjaGame_Reset:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s:701    .text.NinjaGame_Reset:00000000 NinjaGame_Reset
+C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s:737    .text.NinjaGame_Update:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s:743    .text.NinjaGame_Update:00000000 NinjaGame_Update
+C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s:1467   .text.NinjaGame_Update:00000320 $d
+C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s:1493   .rodata.fruit_colors:00000000 $d
+                           .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
+                           .group:00000000 wm4.stm32n6xx_hal_conf.h.21.e6f895f5dec93fd886896ef3aa220611
+                           .group:00000000 wm4.stddef.h.39.0dc9006b34572d4d9cae4c8b422c4971
+                           .group:00000000 wm4.arm_cmse.h.103.a0d15a79c4c9a67da8d5831704d7248e
+                           .group:00000000 wm4.stm32n6xx.h.34.80585dd08aa426c932f6311fdb7386da
+                           .group:00000000 wm4.stm32n657xx.h.26.acd272cb67318cc1a4791ce2f0720ca6
+                           .group:00000000 wm4._newlib_version.h.4.411db44ea2338a62eca2f0777f81481b
+                           .group:00000000 wm4.features.h.33.e0c9f337c65cb9f22ed5f23d082bc78b
+                           .group:00000000 wm4._default_types.h.15.247e5cd201eca3442cbf5404108c4935
+                           .group:00000000 wm4._intsup.h.10.48bafbb683905c4daa4565a85aeeb264
+                           .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+                           .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+                           .group:00000000 wm4.cmsis_version.h.32.0ac195c83bb4537824e6ad1c47474b79
+                           .group:00000000 wm4.core_cm55.h.68.832d5cf835639cc0d28219c3d2867330
+                           .group:00000000 wm4.cmsis_gcc.h.26.7a5fd1a99dbedde687044a4433ab3e15
+                           .group:00000000 wm4.core_cm55.h.196.52e437a270752da561676e507b35baeb
+                           .group:00000000 wm4.mpu_armv8.h.32.9d72426c8e2b47753456dcb84802c5b3
+                           .group:00000000 wm4.pmu_armv8.h.32.eaa95f88a71b29390b135fd81c071b6b
+                           .group:00000000 wm4.core_cm55.h.4411.860dad8650880893dd57b815844f7186
+                           .group:00000000 wm4.cachel1_armv7.h.32.abd77761a989e008b0c60891114a33c7
+                           .group:00000000 wm4.stm32n657xx.h.575.1c2a5e6bedffc6f9083dcc857bc6d09d
+                           .group:00000000 wm4.stm32n6xx.h.114.5cf793d8af485e14f110e3e24bde1aa5
+                           .group:00000000 wm4.stm32_hal_legacy.h.22.87fb12bf5a1a1e00fc134f22bc9aa8c4
+                           .group:00000000 wm4.newlib.h.7.a37ffbe9e5aff74303f4e60b1cc1c01b
+                           .group:00000000 wm4.ieeefp.h.77.bd5feb87d9990dd328793ced294f6a87
+                           .group:00000000 wm4.config.h.224.10ee1ad185d877c6e334e6581faab44d
+                           .group:00000000 wm4._ansi.h.31.de524f58584151836e90d8620a16f8e8
+                           .group:00000000 wm4.cdefs.h.49.70fc7af612f78ddcace70fdd90b5623b
+                           .group:00000000 wm4._types.h.20.dd0d04dca3800a0d2a6129b87f3adbb2
+                           .group:00000000 wm4.stddef.h.158.6f8e08a347b1cff664332fa350bfceb3
+                           .group:00000000 wm4._types.h.127.3bdfe3ff8ea2d0985b03d9cbe93480e3
+                           .group:00000000 wm4.reent.h.18.25503cdc8b7e55dd0d6ea7b3e5af7a03
+                           .group:00000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
+                           .group:00000000 wm4.reent.h.78.6b87466b04591b1f1cb88c14fdf2ba9e
+                           .group:00000000 wm4.math.h.13.47cfc34cae8a1153323939c4d32cf7c2
+                           .group:00000000 wm4.stm32n6xx_hal_def.h.63.3a8f01490e8852464e9fcb69092e9c75
+                           .group:00000000 wm4.stm32n6xx_ll_bus.h.38.2366a295ee4cdb04833997d3787fcd2d
+                           .group:00000000 wm4.stm32n6xx_ll_rcc.h.21.002e22a16fd7f67dde6dce41e8ba9620
+                           .group:00000000 wm4.stm32n6xx_hal_rcc.h.194.1cb1283e40f9bebcd3fba2a9a961838e
+                           .group:00000000 wm4.stm32n6xx_hal_rcc_ex.h.21.79aa32178dfef625fbd20d362449acfa
+                           .group:00000000 wm4.stm32n6xx_hal_rcc.h.4359.3f0b7ad33826d95438602c9aebc08af9
+                           .group:00000000 wm4.stm32n6xx_hal_gpio.h.21.89d54af663b98eb8fc098192053f7eeb
+                           .group:00000000 wm4.stm32n6xx_hal_gpio_ex.h.22.4acb2e3511a98bb48b81cfc8e09fd59e
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 43
+
+
+                           .group:00000000 wm4.stm32n6xx_hal_rif.h.21.424d0bafb874a777dee3742a22e13037
+                           .group:00000000 wm4.stm32n6xx_hal_dma.h.21.61e48c5c2e8d25d22177834b232fe45c
+                           .group:00000000 wm4.stm32n6xx_hal_dma_ex.h.21.66e597beb090a165329d6ccf665e41bc
+                           .group:00000000 wm4.stm32n6xx_hal_dma.h.1020.87e2180c009560b617c1f8208140c950
+                           .group:00000000 wm4.stm32n6xx_hal_cortex.h.21.f493623cc58f9454ab4eae41e395c5cc
+                           .group:00000000 wm4.stm32n6xx_hal_bsec.h.21.61b309e67dd810e28897a01b1b21a97f
+                           .group:00000000 wm4.stm32n6xx_hal_dcmipp.h.21.f538bfd785c6469670251ac9bc7af55d
+                           .group:00000000 wm4.stm32n6xx_hal_dma2d.h.21.75c8d46cdbb72970123b3f34ae2043d7
+                           .group:00000000 wm4.stm32n6xx_hal_exti.h.21.fda87e715ea6b98239ec30171d1df594
+                           .group:00000000 wm4.stm32n6xx_hal_i2c.h.21.3f483626ff64c5bf027265bb2e1d1331
+                           .group:00000000 wm4.stm32n6xx_hal_i2c_ex.h.21.79e9196c22282cdaf6b4047893638c45
+                           .group:00000000 wm4.stm32n6xx_hal_i2c.h.741.1084702632703acc669e4282b3043372
+                           .group:00000000 wm4.stm32n6xx_hal_ltdc.h.21.ae1eb09930e7e550e48e418ac5849e4d
+                           .group:00000000 wm4.stm32n6xx_hal_ltdc.h.1002.b13ede7fc94ed5ad1c6768a157d2149a
+                           .group:00000000 wm4.stm32n6xx_hal_pwr.h.21.cdb73e4869c3fed3fc84f901ec0e5f0a
+                           .group:00000000 wm4.stm32n6xx_hal_pwr_ex.h.21.1a673224a58b0c1e5fad8eeda6514208
+                           .group:00000000 wm4.stm32n6xx_hal_ramcfg.h.21.a62dfbb4d2c14e9a8c634a215e37bd3d
+                           .group:00000000 wm4.stm32n6xx_hal_uart.h.21.230f549bfa0d5ebfd77bfb311b2aca15
+                           .group:00000000 wm4.stm32n6xx_hal_uart_ex.h.21.a0d5511e1d0703b7b5278c8f5472b96d
+                           .group:00000000 wm4.stm32n6xx_hal_xspi.h.21.e17898be2073b6b6b19faf30b4e304e9
+                           .group:00000000 wm4.stm32n6xx_hal_cacheaxi.h.21.7c3375b7903ec42376e4883320997f74
+                           .group:00000000 wm4.stm32n6xx_hal.h.81.5e59143eba07faca3e9aeaa5470826c8
+                           .group:00000000 wm4.lcd.h.21.98701c105e66fef2e089854e5bc0fe32
+                           .group:00000000 wm4.stm32_lcd.h.55.1a04e503950bf34ef3721d2ebb9542fc
+                           .group:00000000 wm4.main.h.30.caab52a0a8de64f9677f2eb568935933
+                           .group:00000000 wm4.string.h.8.c4b8571ce60dff2817f43fec8b86aecd
+                           .group:00000000 wm4.stddef.h.158.eec8bf00b5213f43d095cb984c5f22e3
+                           .group:00000000 wm4.string.h.177.59a005921fa78485abc80a0267de5752
+                           .group:00000000 wm4.float.h.29.0e9d9baf95ec39f9555dc80c6e28186b
+                           .group:00000000 wm4.syslimits.h.34.de5cbd310098bc5895998b6bde577ed2
+                           .group:00000000 wm4.limits.h.9.70fb0ada6f71b16202a66baaa6d8ea70
+                           .group:00000000 wm4.limits.h.60.56a1ae353e2028a24298ec6463b8b593
+                           .group:00000000 wm4.arm_math_types.h.94.a6c8422e2657ad4cd95bd8be69ba02aa
+                           .group:00000000 wm4.stdbool.h.29.c08aa3eec75cf5b9b5003883f43253f0
+                           .group:00000000 wm4.arm_mve.h.38.47b22bbd301ce82bc6dafd1a387f65a3
+                           .group:00000000 wm4.arm_math_types.h.559.cab78f278b684a3ea2271947c7aea680
+                           .group:00000000 wm4.arm_math_memory.h.28.fe8a81c6a9ac13061a5f748732089249
+                           .group:00000000 wm4.none.h.185.db055cca83e83f96d8d0bb450fbdf4bb
+                           .group:00000000 wm4.utils.h.27.57524573fe37b04009eecf3582a4c591
+                           .group:00000000 wm4.fast_math_functions.h.28.8eb7477260c1d6b62047c49a01c4cbaa
+                           .group:00000000 wm4.controller_functions.h.28.7bed7d7a726df2f65b8a3d89cff01247
+                           .group:00000000 wm4.filtering_functions.h.46.6cf1424fb1f86d5f9958d208b83340a1
+                           .group:00000000 wm4.app_config.h.24.e9b8ad8c27ec31b3b21644fa8513e998
+                           .group:00000000 wm4.spe_pp_output_if.h.11.7212d2990e83c8afeadfa97fa05d17c4
+                           .group:00000000 wm4.gesture_detection.h.10.d7513471c97a364c41f0081fc9baf7b8
+                           .group:00000000 wm4.ninja_fruit_game.h.17.d5162bdc95f0a704ee00f86b01440df2
+                           .group:00000000 wm4.utils.h.20.a122c519940ea111a25b4d1f17b5f8d3
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.alloca.h.8.dfc0c703c47ec3e69746825b17d9e66d
+                           .group:00000000 wm4.stdlib.h.56.f4862cfbf4363a1db01842d5bdf72c18
+
+UNDEFINED SYMBOLS
+memset
+UTIL_LCD_SetBackColor
+UTIL_LCD_GetFont
+UTIL_LCDEx_PrintfAt
+UTIL_LCD_FillCircle
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccH0rJLs.s 			page 44
+
+
+UTIL_LCD_SetTextColor
+HAL_GetTick
+Gesture_GetCurrentDisplayGesture
+rand
+sqrtf

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 1
 
 
    1              		.arch armv8.1-m.main
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
   22:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   *     DOPI = 0 and SOPI = 0: Operates in Single IO protocol (accepts 1-1-1 commands)
   23:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   *   Enter SOPI mode by configuring DOPI = 0 and SOPI = 1 in CR2-Addr0
   24:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   *   Exit SOPI mode by configuring DOPI = 0 and SOPI = 0 in CR2-Addr0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 2
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 2
 
 
   25:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   *   Enter DOPI mode by configuring DOPI = 1 and SOPI = 0 in CR2-Addr0
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
   46              		.loc 1 67 29 is_stmt 0 view .LVU4
   47 000c 4FF48052 		mov	r2, #4096
   48 0010 4FF40063 		mov	r3, #2048
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 3
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 3
 
 
   49 0014 C0E90232 		strd	r3, r2, [r0, #8]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
   86:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                                         MX66UW1G45G_Transfer_t Rate)
   87:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** {
   83              		.loc 1 87 1 is_stmt 1 view -0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 4
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 4
 
 
   84              		.cfi_startproc
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  129              	.L2:
   95:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   }
   96:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 5
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 5
 
 
   97:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   /* Configure automatic polling mode to wait for memory ready */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  130              		.loc 1 150 1 view .LVU30
  131 0028 18B0     		add	sp, sp, #96
  132              		.cfi_remember_state
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 6
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 6
 
 
  133              		.cfi_def_cfa_offset 16
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  172              		.loc 1 108 25 view .LVU45
  173 0058 0792     		str	r2, [sp, #28]
  114:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.AddressWidth = HAL_XSPI_ADDRESS_32_BITS;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 7
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 7
 
 
  174              		.loc 1 114 34 view .LVU46
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  127:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.DQSMode = (Rate == MX66UW1G45G_DTR_TRANSFER) ? HAL_XSPI_DQS_ENABLE : HAL_XSPI_DQS_DISAB
  210              		.loc 1 127 24 is_stmt 0 discriminator 4 view .LVU65
  211 0082 0222     		movs	r2, #2
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 8
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 8
 
 
  128:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****  #if defined (XSPI_CCR_SIOO)
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  250 00b8 18BF     		it	ne
  251 00ba 0120     		movne	r0, #1
  252 00bc 4042     		rsbs	r0, r0, #0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 9
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 9
 
 
  253 00be B3E7     		b	.L2
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  156:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   * @param  Ctx Component object pointer
  157:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   * @param  Mode Interface mode
  158:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   * @param  AddressWidth Address size
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 10
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 10
 
 
  159:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   * @param  pData Pointer to data to be read
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  334              	.L29:
  171:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   {
  172:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****     return MX66UW1G45G_ERROR;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 11
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 11
 
 
  335              		.loc 1 172 12 view .LVU103
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  341              		.cfi_def_cfa_offset 20
  342              		@ sp needed
  343 0022 F0BD     		pop	{r4, r5, r6, r7, pc}
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 12
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 12
 
 
  344              	.LVL16:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  196:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.AlternateBytesMode = HAL_XSPI_ALT_BYTES_NONE;
  381              		.loc 1 196 21 view .LVU122
  382 004c 0793     		str	r3, [sp, #28]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 13
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 13
 
 
  197:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.DataMode = (Mode == MX66UW1G45G_SPI_MODE) ? HAL_XSPI_DATA_1_LINE : HAL_XSPI_DATA_8_LINE
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  421              	.LVL18:
  214:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   {
  422              		.loc 1 214 6 discriminator 1 view .LVU139
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 14
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 14
 
 
  423 0084 0038     		subs	r0, r0, #0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  232:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   */
  233:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** int32_t MX66UW1G45G_ReadDTR(XSPI_HandleTypeDef *Ctx, uint8_t *pData, uint32_t ReadAddr, uint32_t Si
  234:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 15
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 15
 
 
  459              		.loc 1 234 1 is_stmt 1 view -0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  501              		.loc 1 241 30 is_stmt 0 view .LVU164
  502 001c 1023     		movs	r3, #16
  503 001e CDE90531 		strd	r3, r1, [sp, #20]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 16
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 16
 
 
  242:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.Instruction = MX66UW1G45G_OCTA_READ_DTR_CMD;
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  247:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.DataMode = HAL_XSPI_DATA_8_LINES;
  537              		.loc 1 247 3 is_stmt 1 view .LVU181
  248:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.DataDTRMode = HAL_XSPI_DATA_DTR_ENABLE;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 17
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 17
 
 
  538              		.loc 1 248 3 view .LVU182
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  574              		.loc 1 260 12 view .LVU195
  575 007a 4FF0FF30 		mov	r0, #-1
  576 007e FAE7     		b	.L33
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 18
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 18
 
 
  577              		.cfi_endproc
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  612              		.loc 1 289 26 view .LVU201
  613 000c 4C22     		movs	r2, #76
  614              	.LVL29:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 19
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 19
 
 
  615              		.loc 1 289 26 view .LVU202
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  325:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****  #if defined (XSPI_CCR_SIOO)
  326:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.SIOOMode            = HAL_XSPI_SIOO_INST_EVERY_CMD;
  327:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****  #endif
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 20
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 20
 
 
  328:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  314:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.AddressWidth = (AddressWidth == MX66UW1G45G_3BYTES_SIZE)
  662              		.loc 1 314 3 is_stmt 1 view .LVU220
  315:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                                ? HAL_XSPI_ADDRESS_24_BITS
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 21
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 21
 
 
  663              		.loc 1 315 3 view .LVU221
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  330:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   {
  699              		.loc 1 330 3 view .LVU240
  330:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 22
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 22
 
 
  700              		.loc 1 330 7 is_stmt 0 view .LVU241
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  742              		.global	MX66UW1G45G_PageProgramDTR
  743              		.syntax unified
  744              		.thumb
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 23
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 23
 
 
  745              		.thumb_func
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  357:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** 
  358:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   /* Initialize the program command */
  359:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.OperationType = HAL_XSPI_OPTYPE_COMMON_CFG;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 24
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 24
 
 
  783              		.loc 1 359 3 is_stmt 1 view .LVU264
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  377:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** 
  378:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   /* Configure the command */
  379:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   if (HAL_XSPI_Command(Ctx, &s_command, HAL_XSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 25
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 25
 
 
  816              		.loc 1 379 7 view .LVU282
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  852 006e F0BD     		pop	{r4, r5, r6, r7, pc}
  853              	.LVL42:
  854              	.L51:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 26
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 26
 
 
  855              		.cfi_restore_state
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  889              		.loc 1 408 1 view .LVU300
  890 0008 0646     		mov	r6, r0
  891 000a 1446     		mov	r4, r2
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 27
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 27
 
 
  892              		.loc 1 410 26 view .LVU301
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  424:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.InstructionDTRMode = (Rate == MX66UW1G45G_DTR_TRANSFER)
  928              		.loc 1 424 32 view .LVU314
  929 0030 0693     		str	r3, [sp, #24]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 28
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 28
 
 
  427:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.InstructionWidth   = (Mode == MX66UW1G45G_SPI_MODE)
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  441:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****  #if defined (XSPI_CCR_SIOO)
  956              		.loc 1 441 3 view .LVU330
  957              		.loc 1 446 3 view .LVU331
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 29
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 29
 
 
  958 004e 1FD1     		bne	.L57
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  978 0070 01A9     		add	r1, sp, #4
  455:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****       }
  979              		.loc 1 455 31 view .LVU339
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 30
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 30
 
 
  980 0072 0393     		str	r3, [sp, #12]
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  1020              		.loc 1 469 9 is_stmt 1 view .LVU350
  471:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****       }
  1021              		.loc 1 471 33 is_stmt 0 discriminator 1 view .LVU351
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 31
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 31
 
 
  1022 00a0 002D     		cmp	r5, #0
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  1064              	.LVL53:
  1065              		.loc 1 494 26 view .LVU358
  1066 000c 4C22     		movs	r2, #76
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 32
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 32
 
 
  1067              	.LVL54:
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  1097 0028 46F29F03 		movw	r3, #24735
  1098              	.L73:
  516:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.AddressMode = HAL_XSPI_ADDRESS_NONE;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 33
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 33
 
 
  517:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.AlternateBytesMode = HAL_XSPI_ALT_BYTES_NONE;
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  509:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.InstructionWidth = (Mode == MX66UW1G45G_SPI_MODE)
  1130              		.loc 1 509 38 is_stmt 0 view .LVU384
  1131 0046 631E     		subs	r3, r4, #1
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 34
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 34
 
 
  1132 0048 5C42     		rsbs	r4, r3, #0
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  1172              		.cfi_def_cfa_offset 112
  1173              		.loc 1 545 26 view .LVU390
  1174 0006 0021     		movs	r1, #0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 35
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 35
 
 
  1175              	.LVL61:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  569:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.AddressDTRMode = HAL_XSPI_ADDRESS_DTR_DISABLE;
  570:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.AddressWidth = (AddressWidth == MX66UW1G45G_3BYTES_SIZE)
  571:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                                ? HAL_XSPI_ADDRESS_24_BITS
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 36
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 36
 
 
  572:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                                : HAL_XSPI_ADDRESS_32_BITS;
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  1216 002c 0594     		str	r4, [sp, #20]
  556:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                                   ? HAL_XSPI_INSTRUCTION_1_LINE
  1217              		.loc 1 556 3 is_stmt 1 view .LVU404
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 37
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 37
 
 
  1218              	.L80:
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  1255 0060 0A23     		movne	r3, #10
  1256 0062 1392     		str	r2, [sp, #76]
  583:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 38
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 38
 
 
  1257              		.loc 1 583 7 view .LVU422
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  598:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   {
  1295              		.loc 1 598 7 is_stmt 0 view .LVU439
  1296 0090 FFF7FEFF 		bl	HAL_XSPI_Command
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 39
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 39
 
 
  1297              	.LVL68:
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  1335 00bc 0B22     		moveq	r2, #11
  568:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.AddressDTRMode = HAL_XSPI_ADDRESS_DTR_DISABLE;
  1336              		.loc 1 568 3 is_stmt 1 view .LVU456
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 40
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 40
 
 
  568:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.AddressDTRMode = HAL_XSPI_ADDRESS_DTR_DISABLE;
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  1373              		.cfi_def_cfa_offset 112
  623:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   /* Prevent unused argument(s) compilation warning */
  1374              		.loc 1 623 1 view .LVU465
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 41
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 41
 
 
  1375 0006 0446     		mov	r4, r0
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  1415              		.loc 1 636 25 view .LVU483
  1416 0038 0C93     		str	r3, [sp, #48]
  637:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.AddressDTRMode = HAL_XSPI_ADDRESS_DTR_ENABLE;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 42
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 42
 
 
  1417              		.loc 1 637 3 is_stmt 1 view .LVU484
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  655:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.OperationType = HAL_XSPI_OPTYPE_WRITE_CFG;
  656:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.Instruction = MX66UW1G45G_OCTA_PAGE_PROG_CMD;
  657:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.DummyCycles = 0U;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 43
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 43
 
 
  658:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.DQSMode = HAL_XSPI_DQS_DISABLE;
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  1479 0084 FFF7FEFF 		bl	HAL_XSPI_Command
  1480              	.LVL77:
  661:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 44
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 44
 
 
  1481              		.loc 1 661 6 discriminator 1 view .LVU512
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  1519              		.cfi_def_cfa_offset 16
  1520              		.cfi_offset 4, -16
  1521              		.cfi_offset 5, -12
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 45
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 45
 
 
  1522              		.cfi_offset 6, -8
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  1557              		.loc 1 702 3 is_stmt 1 view .LVU532
  703:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                                    ? HAL_XSPI_INSTRUCTION_8_BITS
  704:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                                    : HAL_XSPI_INSTRUCTION_16_BITS;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 46
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 46
 
 
  1558              		.loc 1 704 36 is_stmt 0 view .LVU533
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  722:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** 
  723:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   return MX66UW1G45G_OK;
  724:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** }
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 47
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 47
 
 
  1588              		.loc 1 724 1 view .LVU547
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  1629              		@ frame_needed = 0, uses_anonymous_args = 0
  736:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   XSPI_RegularCmdTypeDef s_command = {0};
  1630              		.loc 1 736 3 view .LVU553
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 48
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 48
 
 
  735:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   XSPI_RegularCmdTypeDef s_command = {0};
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  1667              		.loc 1 746 29 view .LVU564
  1668 001e 0493     		str	r3, [sp, #16]
  749:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                                      ? HAL_XSPI_INSTRUCTION_DTR_ENABLE
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 49
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 49
 
 
  1669              		.loc 1 749 32 view .LVU565
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  1699 003e 0120     		movne	r0, #1
  1700 0040 4042     		rsbs	r0, r0, #0
  1701              	.L104:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 50
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 50
 
 
  769:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   {
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  783:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   * @retval error status
  784:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   */
  785:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** int32_t MX66UW1G45G_WriteEnable(XSPI_HandleTypeDef *Ctx, MX66UW1G45G_Interface_t Mode, MX66UW1G45G_
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 51
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 51
 
 
  786:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** {
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  792:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   {
  793:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****     return MX66UW1G45G_ERROR;
  1786              		.loc 1 793 12 view .LVU599
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 52
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 52
 
 
  1787 0024 4FF0FF30 		mov	r0, #-1
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  846:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   if (HAL_XSPI_Command(Ctx, &s_command, HAL_XSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
  847:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   {
  848:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****     return MX66UW1G45G_ERROR;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 53
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 53
 
 
  849:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   }
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  1819 0042 40F2F963 		movw	r3, #1785
  1820              	.L115:
  820:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 54
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 54
 
 
  1821              		.loc 1 820 7 view .LVU610
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  835:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.DataDTRMode = (Rate == MX66UW1G45G_DTR_TRANSFER) ? HAL_XSPI_DATA_DTR_ENABLE : HAL_XSPI_
  1858              		.loc 1 835 3 view .LVU628
  835:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.DataDTRMode = (Rate == MX66UW1G45G_DTR_TRANSFER) ? HAL_XSPI_DATA_DTR_ENABLE : HAL_XSPI_
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 55
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 55
 
 
  1859              		.loc 1 835 78 is_stmt 0 view .LVU629
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  1897              		.loc 1 830 28 view .LVU645
  1898 00ac 0E97     		str	r7, [sp, #56]
  834:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.DataMode = (Mode == MX66UW1G45G_SPI_MODE) ? HAL_XSPI_DATA_1_LINE : HAL_XSPI_DATA_8_LINE
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 56
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 56
 
 
  1899              		.loc 1 834 21 view .LVU646
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  803:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.InstructionWidth = (Mode == MX66UW1G45G_SPI_MODE)
  1938              		.loc 1 803 38 discriminator 2 view .LVU662
  1939 00e2 2346     		mov	r3, r4
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 57
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 57
 
 
  1940 00e4 A7E7     		b	.L113
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  1982              		.thumb
  1983              		.thumb_func
  1985              	MX66UW1G45G_WriteDisable:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 58
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 58
 
 
  1986              	.LVL106:
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  2023 0018 1DD0     		beq	.L132
  2024 001a 0123     		movs	r3, #1
  879:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 59
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 59
 
 
  880:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****     return MX66UW1G45G_ERROR;
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  2047              		.loc 1 894 25 view .LVU696
  2048 0034 0393     		str	r3, [sp, #12]
  897:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.AddressMode = HAL_XSPI_ADDRESS_NONE;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 60
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 60
 
 
  2049              		.loc 1 897 3 is_stmt 1 view .LVU697
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  2089              		.cfi_endproc
  2090              	.LFE848:
  2092              		.section	.text.MX66UW1G45G_ReadStatusRegister,"ax",%progbits
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 61
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 61
 
 
  2093              		.align	1
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  2131 0010 1F46     		mov	r7, r3
  2132              		.loc 1 927 26 view .LVU718
  2133 0012 FFF7FEFF 		bl	memset
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 62
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 62
 
 
  2134              	.LVL118:
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  971:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   /* Send the command */
  972:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   if (HAL_XSPI_Command(Ctx, &s_command, HAL_XSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
  973:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 63
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 63
 
 
  974:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****     return MX66UW1G45G_ERROR;
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  2178              	.L138:
  949:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.AddressDTRMode = (Rate == MX66UW1G45G_DTR_TRANSFER)
  2179              		.loc 1 949 25 discriminator 4 view .LVU734
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 64
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 64
 
 
  2180 0042 0893     		str	r3, [sp, #32]
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  2215 006a 26D0     		beq	.L140
  962:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                                      ? DUMMY_CYCLES_REG_OCTAL_DTR
  2216              		.loc 1 962 31 discriminator 1 view .LVU754
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 65
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 65
 
 
  2217 006c 012C     		cmp	r4, #1
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  2258 00a4 0123     		movs	r3, #1
  942:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.InstructionWidth = (Mode == MX66UW1G45G_SPI_MODE)
  2259              		.loc 1 942 38 discriminator 2 view .LVU768
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 66
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 66
 
 
  2260 00a6 2A46     		mov	r2, r5
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  997:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** {
  998:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   XSPI_RegularCmdTypeDef s_command = {0};
  999:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   uint8_t reg[2];
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 67
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 67
 
 
 1000:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** 
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
 1054:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** 
 1055:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   if (HAL_XSPI_Transmit(Ctx, reg, HAL_XSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
 1056:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 68
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 68
 
 
 1057:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****     return MX66UW1G45G_ERROR;
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  2329              	.LVL126:
 1076:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   uint8_t reg[2];
  2330              		.loc 1 1076 3 is_stmt 1 view .LVU785
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 69
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 69
 
 
 1077:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** 
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
 1119:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.DataMode = (Mode == MX66UW1G45G_SPI_MODE) ? HAL_XSPI_DATA_1_LINE : HAL_XSPI_DATA_8_LINE
 1120:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.DataDTRMode = (Rate == MX66UW1G45G_DTR_TRANSFER)
 1121:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                               ? HAL_XSPI_DATA_DTR_ENABLE
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 70
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 70
 
 
 1122:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                               : HAL_XSPI_DATA_DTR_DISABLE;
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
 1099:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.InstructionMode = (Mode == MX66UW1G45G_SPI_MODE)
  2369              		.loc 1 1099 3 is_stmt 1 view .LVU798
 1099:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.InstructionMode = (Mode == MX66UW1G45G_SPI_MODE)
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 71
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 71
 
 
  2370              		.loc 1 1099 27 is_stmt 0 view .LVU799
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
 1118:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.DataMode = (Mode == MX66UW1G45G_SPI_MODE) ? HAL_XSPI_DATA_1_LINE : HAL_XSPI_DATA_8_LINE
  2410              		.loc 1 1118 32 view .LVU814
  2411 007e 4FF00002 		mov	r2, #0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 72
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 72
 
 
 1105:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.InstructionWidth = (Mode == MX66UW1G45G_SPI_MODE)
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  2446 00a4 0023     		movs	r3, #0
 1131:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   {
  2447              		.loc 1 1131 7 view .LVU835
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 73
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 73
 
 
  2448 00a6 41F28832 		movw	r2, #5000
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  2490              		.align	1
  2491              		.global	MX66UW1G45G_ReadCfgRegister
  2492              		.syntax unified
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 74
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 74
 
 
  2493              		.thumb
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  2531              	.LVL136:
 1157:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** 
 1158:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   /* SPI mode and DTR transfer not supported by memory */
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 75
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 75
 
 
 1159:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   if ((Mode == MX66UW1G45G_SPI_MODE) && (Rate == MX66UW1G45G_DTR_TRANSFER))
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
 1203:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****     return MX66UW1G45G_ERROR;
 1204:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   }
 1205:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 76
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 76
 
 
 1206:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   /* Reception of the data */
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  2577 0042 0893     		str	r3, [sp, #32]
 1179:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                                  ? HAL_XSPI_ADDRESS_DTR_ENABLE
  2578              		.loc 1 1179 3 is_stmt 1 view .LVU874
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 77
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 77
 
 
 1181:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.AddressWidth = HAL_XSPI_ADDRESS_32_BITS;
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  2614              		.loc 1 1191 31 is_stmt 0 view .LVU893
  2615 006e 26D0     		beq	.L171
 1191:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                                      ? DUMMY_CYCLES_REG_OCTAL_DTR
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 78
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 78
 
 
  2616              		.loc 1 1191 31 discriminator 1 view .LVU894
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  2657              		.loc 1 1207 6 discriminator 1 view .LVU907
  2658 00a8 0123     		movs	r3, #1
 1171:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.InstructionWidth = (Mode == MX66UW1G45G_SPI_MODE)
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 79
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 79
 
 
  2659              		.loc 1 1171 38 discriminator 2 view .LVU908
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  2705              		.cfi_offset 4, -24
  2706              		.cfi_offset 5, -20
  2707              		.cfi_offset 6, -16
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 80
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 80
 
 
  2708              		.cfi_offset 7, -12
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  2750              	.L185:
  2751              		.cfi_restore_state
 1008:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 81
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 81
 
 
  2752              		.loc 1 1008 3 is_stmt 1 view .LVU931
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  2792 0066 0DBF     		iteet	eq
  2793 0068 2046     		moveq	r0, r4
  2794 006a 4FF48060 		movne	r0, #1024
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 82
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 82
 
 
 1038:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.DataDTRMode = (Rate == MX66UW1G45G_DTR_TRANSFER)
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  2828              		.loc 1 1043 62 is_stmt 0 view .LVU966
  2829 0098 1BD0     		beq	.L194
 1043:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.DQSMode = HAL_XSPI_DQS_DISABLE;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 83
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 83
 
 
  2830              		.loc 1 1043 62 discriminator 4 view .LVU967
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
 1043:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.DQSMode = HAL_XSPI_DQS_DISABLE;
  2872              		.loc 1 1043 62 discriminator 2 view .LVU980
  2873 00d2 0223     		movs	r3, #2
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 84
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 84
 
 
  2874 00d4 E5E7     		b	.L190
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  2914 000e 01A8     		add	r0, sp, #4
  2915              	.LVL152:
 1226:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   XSPI_RegularCmdTypeDef s_command = {0};
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 85
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 85
 
 
  2916              		.loc 1 1226 1 view .LVU988
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
 1267:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   /* Send the command */
 1268:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   if (HAL_XSPI_Command(Ctx, &s_command, HAL_XSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
 1269:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 86
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 86
 
 
 1270:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****     return MX66UW1G45G_ERROR;
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
 1249:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.AddressDTRMode = (Rate == MX66UW1G45G_DTR_TRANSFER)
  2965              		.loc 1 1249 25 discriminator 4 view .LVU1005
  2966 0042 0893     		str	r3, [sp, #32]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 87
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 87
 
 
 1250:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                                  ? HAL_XSPI_ADDRESS_DTR_ENABLE
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
 1261:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.DQSMode = HAL_XSPI_DQS_DISABLE;
  3002              		.loc 1 1261 3 view .LVU1025
 1261:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.DQSMode = HAL_XSPI_DQS_DISABLE;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 88
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 88
 
 
  3003              		.loc 1 1261 62 is_stmt 0 view .LVU1026
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  3045 00a4 7222     		movs	r2, #114
 1249:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.AddressDTRMode = (Rate == MX66UW1G45G_DTR_TRANSFER)
  3046              		.loc 1 1249 84 discriminator 1 view .LVU1039
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 89
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 89
 
 
  3047 00a6 4FF48073 		mov	r3, #256
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  3086 000a 0021     		movs	r1, #0
  3087              	.LVL158:
  3088              		.loc 1 1293 26 view .LVU1046
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 90
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 90
 
 
  3089 000c 4C22     		movs	r2, #76
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
 1327:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                               ? 0U
 1328:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                               : ((Rate == MX66UW1G45G_DTR_TRANSFER)
 1329:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                                      ? DUMMY_CYCLES_REG_OCTAL_DTR
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 91
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 91
 
 
 1330:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                                      : DUMMY_CYCLES_REG_OCTAL);
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  3135 0036 1023     		movs	r3, #16
  3136 0038 47F28E12 		movw	r2, #29070
  3137 003c 0593     		str	r3, [sp, #20]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 92
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 92
 
 
 1312:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                               ? MX66UW1G45G_READ_CFG_REG2_CMD
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  3173              		.loc 1 1322 3 view .LVU1080
 1322:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.DataDTRMode = (Rate == MX66UW1G45G_DTR_TRANSFER)
  3174              		.loc 1 1322 22 is_stmt 0 discriminator 4 view .LVU1081
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 93
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 93
 
 
  3175 0068 0F93     		str	r3, [sp, #60]
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  3213 0096 1A99     		ldr	r1, [sp, #104]
  3214 0098 FFF7FEFF 		bl	HAL_XSPI_Receive
  3215              	.LVL164:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 94
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 94
 
 
 1344:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   {
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  3262              	.LFB855:
 1351:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** 
 1352:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** /**
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 95
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 95
 
 
 1353:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   * @brief  Write Flash Security register
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  3297              		.loc 1 1370 38 discriminator 1 view .LVU1119
  3298 0016 012C     		cmp	r4, #1
  3299 0018 1DD0     		beq	.L232
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 96
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 96
 
 
  3300 001a 0123     		movs	r3, #1
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  3322 0032 01A9     		add	r1, sp, #4
 1386:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                               ? MX66UW1G45G_WRITE_SECURITY_REG_CMD
  3323              		.loc 1 1386 25 view .LVU1129
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 97
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 97
 
 
  3324 0034 0393     		str	r3, [sp, #12]
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  3363 0056 4FF0FF30 		mov	r0, #-1
  3364 005a F2E7     		b	.L227
  3365              		.cfi_endproc
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 98
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 98
 
 
  3366              	.LFE855:
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
 1418:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   XSPI_RegularCmdTypeDef s_command = {0};
  3406              		.loc 1 1418 1 view .LVU1150
  3407 0010 1F46     		mov	r7, r3
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 99
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 99
 
 
  3408              		.loc 1 1419 26 view .LVU1151
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
 1461:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****  #endif
 1462:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** 
 1463:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   /* Send the command */
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 100
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 100
 
 
 1464:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   if (HAL_XSPI_Command(Ctx, &s_command, HAL_XSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  3452              		.loc 1 1441 82 is_stmt 0 discriminator 2 view .LVU1166
  3453 003e 4FF48063 		mov	r3, #1024
  3454              	.L238:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 101
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 101
 
 
 1441:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.AddressDTRMode = (Rate == MX66UW1G45G_DTR_TRANSFER)
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
 1454:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                                      ? DUMMY_CYCLES_REG_OCTAL_DTR
  3490              		.loc 1 1454 31 is_stmt 0 view .LVU1186
  3491 006a 26D0     		beq	.L240
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 102
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 102
 
 
 1454:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                                      ? DUMMY_CYCLES_REG_OCTAL_DTR
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
 1470:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   {
  3533              		.loc 1 1470 6 discriminator 1 view .LVU1200
  3534 00a4 0123     		movs	r3, #1
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 103
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 103
 
 
 1434:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.InstructionWidth = (Mode == MX66UW1G45G_SPI_MODE)
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
 1487:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   * @retval error status
 1488:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   */
 1489:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** int32_t MX66UW1G45G_ReadID(XSPI_HandleTypeDef *Ctx, MX66UW1G45G_Interface_t Mode, MX66UW1G45G_Trans
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 104
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 104
 
 
 1490:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                            uint8_t *ID)
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  3616              	.L252:
 1498:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   }
 1499:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 105
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 105
 
 
 1500:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   /* Initialize the read ID command */
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  3623              	.LVL187:
  3624              	.L253:
  3625              		.cfi_restore_state
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 106
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 106
 
 
 1505:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                                      ? HAL_XSPI_INSTRUCTION_DTR_ENABLE
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
 1523:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.DataDTRMode = HAL_XSPI_DATA_DTR_DISABLE;
  3664              		.loc 1 1523 22 discriminator 4 view .LVU1239
  3665 0052 002D     		cmp	r5, #0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 107
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 107
 
 
 1520:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.Address = 0U;
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  3702              		.loc 1 1535 6 discriminator 1 view .LVU1257
  3703 0080 0028     		cmp	r0, #0
  3704 0082 CBD1     		bne	.L258
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 108
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 108
 
 
 1541:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   {
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  3743              		.cfi_startproc
  3744              		@ args = 0, pretend = 0, frame = 80
  3745              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 109
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 109
 
 
 1560:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   XSPI_RegularCmdTypeDef s_command = {0};
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
 1574:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.InstructionDTRMode = (Rate == MX66UW1G45G_DTR_TRANSFER)
  3783              		.loc 1 1574 3 is_stmt 1 view .LVU1277
 1575:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                                      ? HAL_XSPI_INSTRUCTION_DTR_ENABLE
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 110
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 110
 
 
 1576:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                                      : HAL_XSPI_INSTRUCTION_DTR_DISABLE;
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  3814              		.loc 1 1586 3 view .LVU1292
 1587:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** 
  3815              		.loc 1 1587 3 view .LVU1293
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 111
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 111
 
 
  3816              		.loc 1 1591 3 view .LVU1294
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
 1602:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   * @param  Ctx Component object pointer
 1603:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   * @param  Mode Interface select
 1604:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   * @param  Rate Transfer rate STR or DTR
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 112
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 112
 
 
 1605:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   * @retval error status
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
 1620:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                                   ? HAL_XSPI_INSTRUCTION_1_LINE
 1621:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                                   : HAL_XSPI_INSTRUCTION_8_LINES;
 1622:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.InstructionDTRMode = (Rate == MX66UW1G45G_DTR_TRANSFER)
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 113
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 113
 
 
 1623:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****                                      ? HAL_XSPI_INSTRUCTION_DTR_ENABLE
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  3923              		.loc 1 1634 3 view .LVU1325
 1635:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****  #if defined (XSPI_CCR_SIOO)
  3924              		.loc 1 1635 3 view .LVU1326
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 114
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 114
 
 
  3925              		.loc 1 1641 3 view .LVU1327
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  3971              	.LVL207:
  3972              	.LFB860:
 1648:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 115
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 115
 
 
 1649:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** /**
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
 1664:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****     return MX66UW1G45G_ERROR;
 1665:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   }
 1666:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 116
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 116
 
 
 1667:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   /* Initialize the no operation command */
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  4036 0032 01A9     		add	r1, sp, #4
 1678:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.AddressMode = HAL_XSPI_ADDRESS_NONE;
  4037              		.loc 1 1678 25 discriminator 4 view .LVU1357
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 117
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 117
 
 
  4038 0034 0393     		str	r3, [sp, #12]
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  4079              		.align	1
  4080              		.global	MX66UW1G45G_EnterPowerDown
  4081              		.syntax unified
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 118
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 118
 
 
  4082              		.thumb
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  4119              		.loc 1 1711 6 is_stmt 0 view .LVU1379
  4120 0014 BDB9     		cbnz	r5, .L284
  4121              		.loc 1 1711 38 discriminator 1 view .LVU1380
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 119
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 119
 
 
  4122 0016 012C     		cmp	r4, #1
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  4143              		.loc 1 1741 7 view .LVU1389
  4144 002c 41F28832 		movw	r2, #5000
  4145 0030 3046     		mov	r0, r6
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 120
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 120
 
 
  4146 0032 01A9     		add	r1, sp, #4
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  4185              	.L288:
 1713:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   }
  4186              		.loc 1 1713 12 view .LVU1403
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 121
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 121
 
 
  4187 0056 4FF0FF30 		mov	r0, #-1
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  4228              	.LVL228:
  4229              		.loc 1 1760 26 view .LVU1411
  4230 0010 FFF7FEFF 		bl	memset
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 122
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 122
 
 
  4231              	.LVL229:
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
 1786:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.DummyCycles = 0U;
 1787:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.DQSMode = HAL_XSPI_DQS_DISABLE;
 1788:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****  #if defined (XSPI_CCR_SIOO)
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 123
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 123
 
 
 1789:../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c ****   s_command.SIOOMode            = HAL_XSPI_SIOO_INST_EVERY_CMD;
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  4292 004c E400     		lsls	r4, r4, #3
  4293 004e 0423     		movs	r3, #4
  4294 0050 E5E7     		b	.L293
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 124
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 124
 
 
  4295              	.L296:
@@ -7404,70 +7404,70 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 1
  4314              		.file 8 "../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Inc/stm32n6xx_hal_xspi.h"
  4315              		.file 9 "../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.h"
  4316              		.file 10 "<built-in>"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 125
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 125
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 mx66uw1g45g.c
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:26     .text.MX66UW1G45G_GetFlashInfo:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:32     .text.MX66UW1G45G_GetFlashInfo:00000000 MX66UW1G45G_GetFlashInfo
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:74     .text.MX66UW1G45G_AutoPollingMemReady:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:80     .text.MX66UW1G45G_AutoPollingMemReady:00000000 MX66UW1G45G_AutoPollingMemReady
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:286    .text.MX66UW1G45G_ReadSTR:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:292    .text.MX66UW1G45G_ReadSTR:00000000 MX66UW1G45G_ReadSTR
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:450    .text.MX66UW1G45G_ReadDTR:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:456    .text.MX66UW1G45G_ReadDTR:00000000 MX66UW1G45G_ReadDTR
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:581    .text.MX66UW1G45G_PageProgram:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:587    .text.MX66UW1G45G_PageProgram:00000000 MX66UW1G45G_PageProgram
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:741    .text.MX66UW1G45G_PageProgramDTR:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:747    .text.MX66UW1G45G_PageProgramDTR:00000000 MX66UW1G45G_PageProgramDTR
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:863    .text.MX66UW1G45G_BlockErase:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:869    .text.MX66UW1G45G_BlockErase:00000000 MX66UW1G45G_BlockErase
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:1035   .text.MX66UW1G45G_ChipErase:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:1041   .text.MX66UW1G45G_ChipErase:00000000 MX66UW1G45G_ChipErase
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:1149   .text.MX66UW1G45G_EnableSTRMemoryMappedMode:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:1155   .text.MX66UW1G45G_EnableSTRMemoryMappedMode:00000000 MX66UW1G45G_EnableSTRMemoryMappedMode
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:1348   .text.MX66UW1G45G_EnableDTRMemoryMappedMode:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:1354   .text.MX66UW1G45G_EnableDTRMemoryMappedMode:00000000 MX66UW1G45G_EnableDTRMemoryMappedMode
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:1503   .text.MX66UW1G45G_Suspend:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:1509   .text.MX66UW1G45G_Suspend:00000000 MX66UW1G45G_Suspend
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:1617   .text.MX66UW1G45G_Resume:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:1623   .text.MX66UW1G45G_Resume:00000000 MX66UW1G45G_Resume
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:1731   .text.MX66UW1G45G_WriteEnable:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:1737   .text.MX66UW1G45G_WriteEnable:00000000 MX66UW1G45G_WriteEnable
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:1979   .text.MX66UW1G45G_WriteDisable:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:1985   .text.MX66UW1G45G_WriteDisable:00000000 MX66UW1G45G_WriteDisable
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:2093   .text.MX66UW1G45G_ReadStatusRegister:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:2099   .text.MX66UW1G45G_ReadStatusRegister:00000000 MX66UW1G45G_ReadStatusRegister
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:2288   .text.MX66UW1G45G_WriteCfgRegister:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:2294   .text.MX66UW1G45G_WriteCfgRegister:00000000 MX66UW1G45G_WriteCfgRegister
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:2490   .text.MX66UW1G45G_ReadCfgRegister:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:2496   .text.MX66UW1G45G_ReadCfgRegister:00000000 MX66UW1G45G_ReadCfgRegister
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:2688   .text.MX66UW1G45G_WriteStatusRegister:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:2694   .text.MX66UW1G45G_WriteStatusRegister:00000000 MX66UW1G45G_WriteStatusRegister
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:2879   .text.MX66UW1G45G_WriteCfg2Register:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:2885   .text.MX66UW1G45G_WriteCfg2Register:00000000 MX66UW1G45G_WriteCfg2Register
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:3057   .text.MX66UW1G45G_ReadCfg2Register:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:3063   .text.MX66UW1G45G_ReadCfg2Register:00000000 MX66UW1G45G_ReadCfg2Register
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:3254   .text.MX66UW1G45G_WriteSecurityRegister:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:3260   .text.MX66UW1G45G_WriteSecurityRegister:00000000 MX66UW1G45G_WriteSecurityRegister
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:3369   .text.MX66UW1G45G_ReadSecurityRegister:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:3375   .text.MX66UW1G45G_ReadSecurityRegister:00000000 MX66UW1G45G_ReadSecurityRegister
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:3564   .text.MX66UW1G45G_ReadID:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:3570   .text.MX66UW1G45G_ReadID:00000000 MX66UW1G45G_ReadID
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:3733   .text.MX66UW1G45G_ResetEnable:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:3739   .text.MX66UW1G45G_ResetEnable:00000000 MX66UW1G45G_ResetEnable
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:3850   .text.MX66UW1G45G_ResetMemory:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:3856   .text.MX66UW1G45G_ResetMemory:00000000 MX66UW1G45G_ResetMemory
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:3964   .text.MX66UW1G45G_NoOperation:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:3970   .text.MX66UW1G45G_NoOperation:00000000 MX66UW1G45G_NoOperation
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:4079   .text.MX66UW1G45G_EnterPowerDown:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:4085   .text.MX66UW1G45G_EnterPowerDown:00000000 MX66UW1G45G_EnterPowerDown
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:4193   .text.MX66UW1G45G_ReleasePowerDown:00000000 $t
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 126
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:26     .text.MX66UW1G45G_GetFlashInfo:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:32     .text.MX66UW1G45G_GetFlashInfo:00000000 MX66UW1G45G_GetFlashInfo
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:74     .text.MX66UW1G45G_AutoPollingMemReady:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:80     .text.MX66UW1G45G_AutoPollingMemReady:00000000 MX66UW1G45G_AutoPollingMemReady
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:286    .text.MX66UW1G45G_ReadSTR:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:292    .text.MX66UW1G45G_ReadSTR:00000000 MX66UW1G45G_ReadSTR
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:450    .text.MX66UW1G45G_ReadDTR:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:456    .text.MX66UW1G45G_ReadDTR:00000000 MX66UW1G45G_ReadDTR
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:581    .text.MX66UW1G45G_PageProgram:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:587    .text.MX66UW1G45G_PageProgram:00000000 MX66UW1G45G_PageProgram
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:741    .text.MX66UW1G45G_PageProgramDTR:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:747    .text.MX66UW1G45G_PageProgramDTR:00000000 MX66UW1G45G_PageProgramDTR
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:863    .text.MX66UW1G45G_BlockErase:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:869    .text.MX66UW1G45G_BlockErase:00000000 MX66UW1G45G_BlockErase
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:1035   .text.MX66UW1G45G_ChipErase:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:1041   .text.MX66UW1G45G_ChipErase:00000000 MX66UW1G45G_ChipErase
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:1149   .text.MX66UW1G45G_EnableSTRMemoryMappedMode:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:1155   .text.MX66UW1G45G_EnableSTRMemoryMappedMode:00000000 MX66UW1G45G_EnableSTRMemoryMappedMode
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:1348   .text.MX66UW1G45G_EnableDTRMemoryMappedMode:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:1354   .text.MX66UW1G45G_EnableDTRMemoryMappedMode:00000000 MX66UW1G45G_EnableDTRMemoryMappedMode
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:1503   .text.MX66UW1G45G_Suspend:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:1509   .text.MX66UW1G45G_Suspend:00000000 MX66UW1G45G_Suspend
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:1617   .text.MX66UW1G45G_Resume:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:1623   .text.MX66UW1G45G_Resume:00000000 MX66UW1G45G_Resume
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:1731   .text.MX66UW1G45G_WriteEnable:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:1737   .text.MX66UW1G45G_WriteEnable:00000000 MX66UW1G45G_WriteEnable
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:1979   .text.MX66UW1G45G_WriteDisable:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:1985   .text.MX66UW1G45G_WriteDisable:00000000 MX66UW1G45G_WriteDisable
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:2093   .text.MX66UW1G45G_ReadStatusRegister:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:2099   .text.MX66UW1G45G_ReadStatusRegister:00000000 MX66UW1G45G_ReadStatusRegister
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:2288   .text.MX66UW1G45G_WriteCfgRegister:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:2294   .text.MX66UW1G45G_WriteCfgRegister:00000000 MX66UW1G45G_WriteCfgRegister
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:2490   .text.MX66UW1G45G_ReadCfgRegister:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:2496   .text.MX66UW1G45G_ReadCfgRegister:00000000 MX66UW1G45G_ReadCfgRegister
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:2688   .text.MX66UW1G45G_WriteStatusRegister:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:2694   .text.MX66UW1G45G_WriteStatusRegister:00000000 MX66UW1G45G_WriteStatusRegister
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:2879   .text.MX66UW1G45G_WriteCfg2Register:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:2885   .text.MX66UW1G45G_WriteCfg2Register:00000000 MX66UW1G45G_WriteCfg2Register
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:3057   .text.MX66UW1G45G_ReadCfg2Register:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:3063   .text.MX66UW1G45G_ReadCfg2Register:00000000 MX66UW1G45G_ReadCfg2Register
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:3254   .text.MX66UW1G45G_WriteSecurityRegister:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:3260   .text.MX66UW1G45G_WriteSecurityRegister:00000000 MX66UW1G45G_WriteSecurityRegister
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:3369   .text.MX66UW1G45G_ReadSecurityRegister:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:3375   .text.MX66UW1G45G_ReadSecurityRegister:00000000 MX66UW1G45G_ReadSecurityRegister
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:3564   .text.MX66UW1G45G_ReadID:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:3570   .text.MX66UW1G45G_ReadID:00000000 MX66UW1G45G_ReadID
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:3733   .text.MX66UW1G45G_ResetEnable:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:3739   .text.MX66UW1G45G_ResetEnable:00000000 MX66UW1G45G_ResetEnable
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:3850   .text.MX66UW1G45G_ResetMemory:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:3856   .text.MX66UW1G45G_ResetMemory:00000000 MX66UW1G45G_ResetMemory
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:3964   .text.MX66UW1G45G_NoOperation:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:3970   .text.MX66UW1G45G_NoOperation:00000000 MX66UW1G45G_NoOperation
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:4079   .text.MX66UW1G45G_EnterPowerDown:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:4085   .text.MX66UW1G45G_EnterPowerDown:00000000 MX66UW1G45G_EnterPowerDown
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:4193   .text.MX66UW1G45G_ReleasePowerDown:00000000 $t
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 126
 
 
-C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:4199   .text.MX66UW1G45G_ReleasePowerDown:00000000 MX66UW1G45G_ReleasePowerDown
+C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s:4199   .text.MX66UW1G45G_ReleasePowerDown:00000000 MX66UW1G45G_ReleasePowerDown
                            .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
                            .group:00000000 wm4.stm32n6xx_hal_conf.h.21.e6f895f5dec93fd886896ef3aa220611
                            .group:00000000 wm4.stddef.h.39.0dc9006b34572d4d9cae4c8b422c4971
@@ -7524,7 +7524,7 @@ C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s:4199   .text.MX66UW1G45G_ReleaseP
                            .group:00000000 wm4.stm32n6xx_hal_i2c_ex.h.21.79e9196c22282cdaf6b4047893638c45
                            .group:00000000 wm4.stm32n6xx_hal_i2c.h.741.1084702632703acc669e4282b3043372
                            .group:00000000 wm4.stm32n6xx_hal_ltdc.h.21.ae1eb09930e7e550e48e418ac5849e4d
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccN4qsU4.s 			page 127
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccaaQPYa.s 			page 127
 
 
                            .group:00000000 wm4.stm32n6xx_hal_ltdc.h.1002.b13ede7fc94ed5ad1c6768a157d2149a

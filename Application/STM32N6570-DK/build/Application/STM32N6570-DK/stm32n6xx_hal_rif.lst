@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 1
 
 
    1              		.arch armv8.1-m.main
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
   23:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   ==============================================================================
   24:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****                 ##### RIF main features #####
   25:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   ==============================================================================
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 2
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 2
 
 
   26:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   [..]
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
   80:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** 
   81:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** #if defined(GENERATOR_RIF_FEATURE_ENCRYPTION_IMPLEMENTED)
   82:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****     *** Encryption-related functions ***
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 3
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 3
 
 
   83:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****     ============================================================
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  137:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   */
  138:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** 
  139:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** /** @defgroup RIF RIF
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 4
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 4
 
 
  140:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   * @brief RIF HAL module driver.
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  189:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   /* Set RIMC Lock bit */
  190:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   RIFSC->RIMC_CR |= RIFSC_RIMC_CR_GLOCK;
   39              		.loc 1 190 3 view .LVU1
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 5
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 5
 
 
   40              		.loc 1 190 8 is_stmt 0 view .LVU2
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
   80 000a 7047     		bx	lr
   81              	.L6:
   82              		.align	2
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 6
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 6
 
 
   83              	.L5:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  230:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   /* Check the parameter */
  231:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   assert_param(IS_RIF_SINGLE_CID(CID));
  108              		.loc 1 231 3 view .LVU15
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 7
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 7
 
 
  109 0000 2028     		cmp	r0, #32
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
   30:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wsign-conversion"
   31:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wconversion"
   32:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wunused-parameter"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 8
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 8
 
 
   33:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
   87:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
   88:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
   89:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 9
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 9
 
 
   90:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_READ { uint16_t v; };
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  144:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****   } __zero_table_t;
  145:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** 
  146:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __copy_table_t __copy_table_start__;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 10
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 10
 
 
  147:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __copy_table_t __copy_table_end__;
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  201:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** }
  202:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  203:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 11
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 11
 
 
  204:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  258:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __ISB(void)
  259:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** {
  260:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("isb 0xF":::"memory");
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 12
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 12
 
 
  261:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** }
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  315:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM ("rev16 %0, %1" : __CMSIS_GCC_OUT_REG (result) : __CMSIS_GCC_USE_REG (value) );
  316:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****   return result;
  317:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 13
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 13
 
 
  318:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  372:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  373:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __RBIT(uint32_t value)
  129              		.loc 2 373 31 view .LVU19
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 14
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 14
 
 
  130              	.LBB19:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  410:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****      is non-zero".
  411:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****      ARM GCC 7.3 and possibly earlier will optimise this test away, leaving a
  412:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****      single CLZ instruction.
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 15
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 15
 
 
  413:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****    */
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  189 0040 E7E7     		b	.L11
  190              	.LVL12:
  191              	.L8:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 16
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 16
 
 
  231:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  230              	.LVL13:
  252:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   dap_cid = (1UL << dap_cid);
  231              		.loc 1 252 3 is_stmt 1 view .LVU47
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 17
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 17
 
 
  253:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** }
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  267              		.cfi_offset 5, -8
  268              		.cfi_offset 14, -4
  268:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   uint32_t master_cid;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 18
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 18
 
 
  269              		.loc 1 268 1 view .LVU56
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  319 0046 032B     		cmp	r3, #3
  320 0048 04D9     		bls	.L34
  321              		.loc 1 277 3 is_stmt 0 discriminator 1 view .LVU68
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 19
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 19
 
 
  322 004a 40F21511 		movw	r1, #277
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  282:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   rimc_attr_val |= ((master_cid << RIFSC_RIMC_ATTRx_MCID_Pos) | (pConfig->SecPriv << RIFSC_RIMC_ATT
  365              		.loc 1 282 3 view .LVU82
  366              		.loc 1 282 83 is_stmt 0 view .LVU83
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 20
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 20
 
 
  367 006c 6968     		ldr	r1, [r5, #4]
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  418              	HAL_RIF_RIMC_GetConfigMasterAttributes:
  419              	.LVL30:
  420              	.LFB840:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 21
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 21
 
 
  285:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** #endif /* defined(CPU_AS_TRUSTED_DOMAIN) && defined(CPU_IN_SECURE_STATE) */
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  455 001a 0948     		ldr	r0, .L51
  456 001c FFF7FEFF 		bl	assert_failed
  457              	.LVL34:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 22
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 22
 
 
  458              	.L50:
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  310:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** /**
  311:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   * @}
  312:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   */
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 23
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 23
 
 
  313:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** 
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  533              	HAL_RIF_RISC_GetLock:
  534              	.LFB842:
  341:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** #endif /* defined(CPU_AS_TRUSTED_DOMAIN) && defined(CPU_IN_SECURE_STATE) */
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 24
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 24
 
 
  342:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  364:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   *         This parameter can be one or a combination of @ref RIF_SEC_PRIV
  365:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   * @retval None
  366:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   */
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 25
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 25
 
 
  367:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** void HAL_RIF_RISC_SetSlaveSecureAttributes(uint32_t PeriphId, uint32_t SecPriv)
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  613              		.loc 1 374 3 is_stmt 1 view .LVU137
  375:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   sec_reg_val &= (~(1U << (PeriphId & RIF_PERIPH_BIT_POSITION)));
  614              		.loc 1 375 24 is_stmt 0 view .LVU138
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 26
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 26
 
 
  615 003a 0122     		movs	r2, #1
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  657 0070 A140     		lsls	r1, r1, r4
  379:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   sec_reg_val &= (~(1U << (PeriphId & RIF_PERIPH_BIT_POSITION)));
  658              		.loc 1 379 15 view .LVU159
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 27
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 27
 
 
  659 0072 0193     		str	r3, [sp, #4]
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  709 00b2 9842     		cmp	r0, r3
  710 00b4 03D8     		bhi	.L68
  711 00b6 B0F1405F 		cmp	r0, #805306368
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 28
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 28
 
 
  712 00ba B7D2     		bcs	.L65
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  765              	.LFB844:
  384:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** 
  385:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** /**
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 29
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 29
 
 
  386:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   * @brief  Get the Security and Privilege configuration of a designated slave peripheral.
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  803              		.loc 1 400 47 view .LVU185
  804 002c 220F     		lsrs	r2, r4, #28
  805              	.LVL52:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 30
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 30
 
 
  401:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   sec_attr = ((*p_sec_reg & ((uint32_t)RIF_ATTRIBUTE_SEC << (PeriphId & RIF_PERIPH_BIT_POSITION))) 
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  847 005a 00F16042 		add	r2, r0, #-536870912
  848 005e 19E0     		b	.L90
  849              	.L89:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 31
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 31
 
 
  850              		.loc 1 407 1 view .LVU203
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  902 00b8 30400254 		.word	1409433648
  903 00bc 0B8C832E 		.word	780373003
  904 00c0 3BF0DF77 		.word	2011164731
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 32
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 32
 
 
  905 00c4 08000030 		.word	805306376
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  943 0014 28D8     		bhi	.L99
  944 0016 B0F1005F 		cmp	r0, #536870912
  945 001a 17D2     		bcs	.L100
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 33
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 33
 
 
  946 001c 214B     		ldr	r3, .L112+8
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  993 005a E6D9     		bls	.L102
  994 005c 17E0     		b	.L104
  995              	.L101:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 34
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 34
 
 
  996 005e 00F17043 		add	r3, r0, #-268435456
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  1049              		.section	.text.HAL_RIF_RISC_GetSlaveConfigLock,"ax",%progbits
  1050              		.align	1
  1051              		.global	HAL_RIF_RISC_GetSlaveConfigLock
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 35
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 35
 
 
  1052              		.syntax unified
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  1089 0026 9A42     		cmp	r2, r3
  1090 0028 13D9     		bls	.L125
  1091              	.LVL68:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 36
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 36
 
 
  1092              	.L120:
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  1136 0058 E7D9     		bls	.L120
  1137 005a 17E0     		b	.L122
  1138              	.L119:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 37
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 37
 
 
  1139 005c 00F17043 		add	r3, r0, #-268435456
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  1192              		.section	.text.HAL_RIF_RISAF_Lock,"ax",%progbits
  1193              		.align	1
  1194              		.global	HAL_RIF_RISAF_Lock
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 38
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 38
 
 
  1195              		.syntax unified
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  1216 0006 0446     		mov	r4, r0
  1217              		.loc 1 482 3 view .LVU265
  1218 0008 44D0     		beq	.L133
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 39
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 39
 
 
  1219              		.loc 1 482 3 discriminator 1 view .LVU266
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  1273 0076 9842     		cmp	r0, r3
  1274 0078 0CD0     		beq	.L133
  1275              		.loc 1 482 3 discriminator 15 view .LVU280
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 40
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 40
 
 
  1276 007a 03F58053 		add	r3, r3, #4096
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  496:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** {
  1319              		.loc 1 496 1 is_stmt 1 view -0
  1320              		.cfi_startproc
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 41
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 41
 
 
  1321              		@ args = 0, pretend = 0, frame = 0
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  526:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   * @retval None
  527:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   */
  528:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** void HAL_RIF_RISAF_WriteEncryptionKeys(RISAF_TypeDef *RISAFx, RISAF_EncryptionKeys_t *Keys)
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 42
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 42
 
 
  529:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** {
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  1362 0004 0D46     		mov	r5, r1
  1363              		.loc 1 566 3 view .LVU300
  1364 0006 1646     		mov	r6, r2
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 43
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 43
 
 
  1365 0008 22B9     		cbnz	r2, .L138
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  1418 007a 9C42     		cmp	r4, r3
  1419 007c 00F06282 		beq	.L141
  1420              		.loc 1 567 3 discriminator 11 view .LVU315
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 44
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 44
 
 
  1421 0080 03F58053 		add	r3, r3, #4096
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  1473 00ee FFF7FEFF 		bl	assert_failed
  1474              	.LVL88:
  1475 00f2 18E2     		b	.L242
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 45
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 45
 
 
  1476              	.L238:
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  1530              	.LVL89:
  1531              	.L162:
  570:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 46
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 46
 
 
  571:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   /* Only disable the section */
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  1573 01a6 032B     		cmp	r3, #3
  1574 01a8 04D9     		bls	.L168
  1575              		.loc 1 583 5 is_stmt 0 discriminator 1 view .LVU350
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 47
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 47
 
 
  1576 01aa 40F24721 		movw	r1, #583
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  1623              		.loc 1 585 5 discriminator 5 view .LVU363
  1624 01f0 7369     		ldr	r3, [r6, #20]
  1625 01f2 B3F5801F 		cmp	r3, #1048576
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 48
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 48
 
 
  1626 01f6 E8E7     		b	.L305
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  584:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****     assert_param(IS_RISAF_GRANULARITY(RISAFx, pConfig->StartAddress));
  1674              		.loc 1 584 5 discriminator 16 view .LVU378
  1675 023a C3F30B03 		ubfx	r3, r3, #0, #12
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 49
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 49
 
 
  584:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****     assert_param(IS_RISAF_GRANULARITY(RISAFx, pConfig->StartAddress));
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  1719 0292 9C42     		cmp	r4, r3
  1720 0294 49D0     		beq	.L201
  585:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****     assert_param(IS_RISAF_LIMIT_ADDRESS_SPACE_SIZE(RISAFx, pConfig->StartAddress));
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 50
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 50
 
 
  1721              		.loc 1 585 5 discriminator 21 view .LVU390
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  1767              		.loc 1 584 5 discriminator 19 view .LVU398
  1768 02f6 C3F30B03 		ubfx	r3, r3, #0, #12
  584:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****     assert_param(IS_RISAF_GRANULARITY(RISAFx, pConfig->StartAddress));
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 51
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 51
 
 
  1769              		.loc 1 584 5 discriminator 56 view .LVU399
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  584:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****     assert_param(IS_RISAF_GRANULARITY(RISAFx, pConfig->StartAddress));
  1813              		.loc 1 584 5 discriminator 37 view .LVU410
  1814 0338 C3F30B03 		ubfx	r3, r3, #0, #12
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 52
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 52
 
 
  584:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****     assert_param(IS_RISAF_GRANULARITY(RISAFx, pConfig->StartAddress));
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  1858 037c 03D1     		bne	.L207
  1859              	.L208:
  585:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****     assert_param(IS_RISAF_LIMIT_ADDRESS_SPACE_SIZE(RISAFx, pConfig->StartAddress));
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 53
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 53
 
 
  1860              		.loc 1 585 5 discriminator 38 view .LVU422
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  1910              		.loc 1 587 5 discriminator 38 view .LVU433
  1911 03d0 80F09080 		bcs	.L223
  1912              	.L210:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 54
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 54
 
 
  588:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****     assert_param(pConfig->StartAddress < pConfig->EndAddress);
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  586:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****     assert_param(IS_RISAF_LIMIT_ADDRESS_SPACE_SIZE(RISAFx, pConfig->EndAddress));
  1956              		.loc 1 586 5 discriminator 26 view .LVU449
  1957 0412 534A     		ldr	r2, .L313+20
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 55
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 55
 
 
  1958 0414 9442     		cmp	r4, r2
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  2001              	.L221:
  587:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****     assert_param(pConfig->StartAddress < pConfig->EndAddress);
  2002              		.loc 1 587 5 discriminator 36 view .LVU461
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 56
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 56
 
 
  2003 045a 464B     		ldr	r3, .L313+40
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  2047              		.loc 1 587 5 discriminator 15 view .LVU471
  2048 04a4 2C4B     		ldr	r3, .L313+12
  2049 04a6 9C42     		cmp	r4, r3
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 57
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 57
 
 
  2050 04a8 03D1     		bne	.L227
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  2094 04f2 AAD0     		beq	.L220
  2095              	.L223:
  587:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****     assert_param(pConfig->StartAddress < pConfig->EndAddress);
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 58
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 58
 
 
  2096              		.loc 1 587 5 discriminator 45 view .LVU482
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  574:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   }
  2140              		.loc 1 574 24 is_stmt 0 view .LVU493
  2141 0532 236C     		ldr	r3, [r4, #64]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 59
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 59
 
 
  574:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   }
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  2191              	HAL_RIF_RISAF_GetConfigBaseRegion:
  2192              	.LVL107:
  2193              	.LFB850:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 60
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 60
 
 
  600:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** #endif /* defined(CPU_AS_TRUSTED_DOMAIN) */
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  2213 0008 0C46     		mov	r4, r1
  2214 000a 1646     		mov	r6, r2
  2215              		.loc 1 632 3 view .LVU507
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 61
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 61
 
 
  2216 000c 57D0     		beq	.L318
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  2270 0076 03F58053 		add	r3, r3, #4096
  2271 007a 9842     		cmp	r0, r3
  2272 007c 1FD0     		beq	.L318
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 62
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 62
 
 
  2273              		.loc 1 632 3 discriminator 15 view .LVU522
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  2323 00c0 ECD8     		bhi	.L338
  2324              		.loc 1 634 3 is_stmt 0 discriminator 25 view .LVU535
  2325 00c2 062C     		cmp	r4, #6
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 63
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 63
 
 
  2326 00c4 02E0     		b	.L361
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  2371              	.LVL119:
  2372              		.loc 1 642 26 view .LVU552
  2373 00f8 B360     		str	r3, [r6, #8]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 64
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 64
 
 
  643:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   pConfig->ReadWhitelist = (cidcfgr_reg & RIF_CID_MASK);
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  2418              	.LVL122:
  2419              	.LFB851:
  648:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 65
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 65
 
 
  649:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** #if defined(CPU_AS_TRUSTED_DOMAIN)
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  2435              		.cfi_offset 14, -4
  681:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   uint32_t cid;
  2436              		.loc 1 681 1 view .LVU574
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 66
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 66
 
 
  2437 0002 0546     		mov	r5, r0
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  2490 006c 03F50053 		add	r3, r3, #8192
  2491 0070 9D42     		cmp	r5, r3
  2492 0072 7CD0     		beq	.L370
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 67
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 67
 
 
  2493              		.loc 1 687 3 discriminator 10 view .LVU589
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  690:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   assert_param(IS_RISAF_SUBREGION(SubRegion));
  2545              		.loc 1 690 3 is_stmt 1 view .LVU602
  2546 00ca 012E     		cmp	r6, #1
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 68
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 68
 
 
  2547 00cc 04D9     		bls	.L388
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  2591              		.syntax unified
  2592              	.LBE27:
  2593              	.LBE26:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 69
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 69
 
 
  2594              	.LBB28:
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  2633              		.loc 1 702 32 is_stmt 0 view .LVU630
  2634 0118 E365     		str	r3, [r4, #92]
  2635              	.L366:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 70
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 70
 
 
  703:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   }
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  708:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****     RISAFx->REG[Region].BNESTR = nestr_reg;
  2674              		.loc 1 708 15 view .LVU640
  2675 0146 1343     		orrs	r3, r3, r2
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 71
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 71
 
 
  2676              	.LVL144:
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  2720 0180 11100010 		.word	268439569
  2721              		.cfi_endproc
  2722              	.LFE851:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 72
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 72
 
 
  2724              		.section	.text.HAL_RIF_RISAF_GetConfigSubRegionDelegation,"ax",%progbits
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  2741 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
  2742              		.cfi_def_cfa_offset 24
  2743              		.cfi_offset 3, -24
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 73
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 73
 
 
  2744              		.cfi_offset 4, -20
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  2796 0050 9D42     		cmp	r5, r3
  2797 0052 61D0     		beq	.L439
  2798              		.loc 1 749 3 discriminator 8 view .LVU669
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 74
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 74
 
 
  2799 0054 03F58053 		add	r3, r3, #4096
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  2851 00b0 8CBF     		ite	hi
  2852 00b2 0023     		movhi	r3, #0
  2853 00b4 0123     		movls	r3, #1
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 75
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 75
 
 
  2854              		.loc 1 751 3 discriminator 64 view .LVU683
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  2892 00e0 03F00403 		and	r3, r3, #4
  756:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****     cid = ((RISAFx->REG[Region].ANESTR & RISAF_REGx_zNESTR_DCCID) >> RISAF_REGx_zNESTR_DCCID_Pos);
  2893              		.loc 1 756 25 view .LVU699
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 76
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 76
 
 
  2894 00e4 3360     		str	r3, [r6]
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  2935              		.loc 1 751 3 is_stmt 0 discriminator 40 view .LVU713
  2936 0114 012C     		cmp	r4, #1
  2937 0116 CBE7     		b	.L485
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 77
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 77
 
 
  2938              	.L439:
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  796:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   * @param  pConfig Pointer on RISAF Base Region configuration structure
  797:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   * @retval None
  798:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   */
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 78
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 78
 
 
  799:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** void HAL_RIF_RISAF_ConfigSubRegion(RISAF_TypeDef *RISAFx, uint32_t Region, uint32_t SubRegion,
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  3007              		.loc 1 806 3 discriminator 3 view .LVU728
  3008 0034 03F58053 		add	r3, r3, #4096
  3009 0038 9C42     		cmp	r4, r3
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 79
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 79
 
 
  3010 003a 00F06984 		beq	.L497
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  3064 00be 40F22631 		movw	r1, #806
  3065 00c2 8148     		ldr	r0, .L800
  3066 00c4 FFF7FEFF 		bl	assert_failed
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 80
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 80
 
 
  3067              	.LVL164:
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  3119 012a 00F0FD83 		beq	.L511
  3120              		.loc 1 808 3 discriminator 26 view .LVU755
  3121 012e 03F50053 		add	r3, r3, #8192
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 81
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 81
 
 
  3122 0132 9C42     		cmp	r4, r3
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  3158 017a 40F23A31 		movw	r1, #826
  3159 017e 5248     		ldr	r0, .L800
  3160 0180 FFF7FEFF 		bl	assert_failed
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 82
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 82
 
 
  3161              	.LVL167:
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  3209              	.L552:
  3210              		.loc 1 829 7 discriminator 5 view .LVU778
  3211 01ca 6B69     		ldr	r3, [r5, #20]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 83
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 83
 
 
  3212 01cc B3F5801F 		cmp	r3, #1048576
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  3260              		.loc 1 830 7 discriminator 20 view .LVU793
  3261 0210 344A     		ldr	r2, .L800+28
  3262 0212 9442     		cmp	r4, r2
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 84
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 84
 
 
  3263 0214 40F0F080 		bne	.L567
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  3312 0264 1848     		ldr	r0, .L800
  3313 0266 FFF7FEFF 		bl	assert_failed
  3314              	.LVL171:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 85
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 85
 
 
  3315              	.L587:
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  828:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       assert_param(IS_RISAF_LIMIT_ADDRESS_SPACE_SIZE(RISAFx, pConfig->StartAddress));
  3356              		.loc 1 828 7 discriminator 19 view .LVU822
  3357 029e C3F30B03 		ubfx	r3, r3, #0, #12
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 86
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 86
 
 
  828:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       assert_param(IS_RISAF_LIMIT_ADDRESS_SPACE_SIZE(RISAFx, pConfig->StartAddress));
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  3403 02fc 7FF451AF 		bne	.L526
  3404              	.L556:
  829:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       assert_param(IS_RISAF_GRANULARITY(RISAFx, (pConfig->EndAddress + 1U)));
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 87
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 87
 
 
  3405              		.loc 1 829 7 discriminator 20 view .LVU832
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  3449 0344 59E7     		b	.L768
  3450              	.L545:
  828:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       assert_param(IS_RISAF_LIMIT_ADDRESS_SPACE_SIZE(RISAFx, pConfig->StartAddress));
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 88
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 88
 
 
  3451              		.loc 1 828 7 discriminator 41 view .LVU843
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  829:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       assert_param(IS_RISAF_GRANULARITY(RISAFx, (pConfig->EndAddress + 1U)));
  3495              		.loc 1 829 7 discriminator 18 view .LVU854
  3496 039c 03F58053 		add	r3, r3, #4096
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 89
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 89
 
 
  3497 03a0 9C42     		cmp	r4, r3
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  3541 03f0 9C42     		cmp	r4, r3
  3542 03f2 3FF4EFAE 		beq	.L529
  3543 03f6 02E7     		b	.L564
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 90
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 90
 
 
  3544              	.L567:
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  3587 0442 07E7     		b	.L771
  3588              	.L574:
  830:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       assert_param(IS_RISAF_LIMIT_ADDRESS_SPACE_SIZE(RISAFx, pConfig->EndAddress));
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 91
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 91
 
 
  3589              		.loc 1 830 7 discriminator 41 view .LVU876
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  3633 0492 9C42     		cmp	r4, r3
  3634 0494 03D1     		bne	.L581
  831:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       assert_param(pConfig->StartAddress < pConfig->EndAddress);
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 92
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 92
 
 
  3635              		.loc 1 831 7 discriminator 14 view .LVU887
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  831:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       assert_param(pConfig->StartAddress < pConfig->EndAddress);
  3680              		.loc 1 831 7 discriminator 39 view .LVU897
  3681 04e0 154B     		ldr	r3, .L802+36
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 93
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 93
 
 
  3682 04e2 9C42     		cmp	r4, r3
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  858:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** 
  859:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       RISAFx->REG[Region].BSTARTR = pConfig->StartAddress;
  860:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       RISAFx->REG[Region].BENDR = pConfig->EndAddress;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 94
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 94
 
 
  861:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       RISAFx->REG[Region].BCFGR = (pConfig->Filtering  | (pConfig->Lock << RISAF_REGx_zCFGR_RLOCK_P
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  853:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       assert_param(IS_RISAF_LIMIT_ADDRESS_SPACE_SIZE(RISAFx, pConfig->StartAddress));
  3757              		.loc 1 853 7 is_stmt 1 view .LVU916
  3758 056c 994A     		ldr	r2, .L804+4
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 95
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 95
 
 
  853:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       assert_param(IS_RISAF_LIMIT_ADDRESS_SPACE_SIZE(RISAFx, pConfig->StartAddress));
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  3801 05b0 9A42     		cmp	r2, r3
  3802 05b2 04D3     		bcc	.L657
  857:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 96
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 96
 
 
  3803              		.loc 1 857 7 is_stmt 0 discriminator 1 view .LVU929
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  3842 05e6 C3F30B03 		ubfx	r3, r3, #0, #12
  853:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       assert_param(IS_RISAF_LIMIT_ADDRESS_SPACE_SIZE(RISAFx, pConfig->StartAddress));
  3843              		.loc 1 853 7 discriminator 56 view .LVU945
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 97
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 97
 
 
  3844 05ea 002B     		cmp	r3, #0
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  855:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       assert_param(IS_RISAF_LIMIT_ADDRESS_SPACE_SIZE(RISAFx, pConfig->EndAddress));
  3886              		.loc 1 855 7 discriminator 7 view .LVU958
  3887 0626 03F10103 		add	r3, r3, #1
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 98
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 98
 
 
  855:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       assert_param(IS_RISAF_LIMIT_ADDRESS_SPACE_SIZE(RISAFx, pConfig->EndAddress));
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  3930 066c 5B4B     		ldr	r3, .L804+12
  3931 066e 9C42     		cmp	r4, r3
  3932 0670 D1D0     		beq	.L622
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 99
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 99
 
 
  854:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       assert_param(IS_RISAF_GRANULARITY(RISAFx, (pConfig->EndAddress + 1U)));
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  3976 06ce 49D1     		bne	.L613
  3977 06d0 3FE0     		b	.L784
  3978              	.L599:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 100
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 100
 
 
  853:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       assert_param(IS_RISAF_LIMIT_ADDRESS_SPACE_SIZE(RISAFx, pConfig->StartAddress));
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  4021              		.loc 1 853 7 discriminator 25 view .LVU993
  4022 0710 C3F30B03 		ubfx	r3, r3, #0, #12
  853:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       assert_param(IS_RISAF_LIMIT_ADDRESS_SPACE_SIZE(RISAFx, pConfig->StartAddress));
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 101
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 101
 
 
  4023              		.loc 1 853 7 discriminator 56 view .LVU994
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  4067              	.L784:
  854:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       assert_param(IS_RISAF_GRANULARITY(RISAFx, (pConfig->EndAddress + 1U)));
  4068              		.loc 1 854 7 discriminator 44 view .LVU1005
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 102
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 102
 
 
  4069 0752 6B69     		ldr	r3, [r5, #20]
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  4113              		.loc 1 855 7 discriminator 10 view .LVU1015
  4114 079c AB69     		ldr	r3, [r5, #24]
  4115 079e 1B05     		lsls	r3, r3, #20
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 103
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 103
 
 
  855:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       assert_param(IS_RISAF_LIMIT_ADDRESS_SPACE_SIZE(RISAFx, pConfig->EndAddress));
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  855:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       assert_param(IS_RISAF_LIMIT_ADDRESS_SPACE_SIZE(RISAFx, pConfig->EndAddress));
  4163              		.loc 1 855 7 discriminator 23 view .LVU1023
  4164 0814 644A     		ldr	r2, .L806
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 104
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 104
 
 
  4165 0816 9442     		cmp	r4, r2
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  4208 0858 9442     		cmp	r4, r2
  4209 085a 06D1     		bne	.L644
  855:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       assert_param(IS_RISAF_LIMIT_ADDRESS_SPACE_SIZE(RISAFx, pConfig->EndAddress));
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 105
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 105
 
 
  4210              		.loc 1 855 7 discriminator 56 view .LVU1035
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  4254 08ae 3FF47DAE 		beq	.L637
  856:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       assert_param(pConfig->StartAddress < pConfig->EndAddress);
  4255              		.loc 1 856 7 discriminator 12 view .LVU1046
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 106
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 106
 
 
  4256 08b2 03F58053 		add	r3, r3, #4096
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  4300 0908 3048     		ldr	r0, .L806+36
  4301 090a FFF7FEFF 		bl	assert_failed
  4302              	.LVL180:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 107
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 107
 
 
  4303 090e 4DE6     		b	.L637
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  4347 0952 FFF7FEFF 		bl	assert_failed
  4348              	.LVL184:
  4349              	.L516:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 108
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 108
 
 
  811:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** 
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  4392              	.LVL187:
  4393              		.loc 2 418 10 is_stmt 0 discriminator 1 view .LVU1079
  4394 0970 B7FA87F7 		clz	r7, r7
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 109
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 109
 
 
  4395              	.LVL188:
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  4435              	.L494:
  807:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   assert_param(IS_RISAF_MAX_REGION(RISAFx, Region));
  4436              		.loc 1 807 3 is_stmt 1 view .LVU1096
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 110
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 110
 
 
  4437 09a2 0E2E     		cmp	r6, #14
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  893:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   * @param  pConfig Pointer on RISAF Base Region configuration structure
  894:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   * @retval None
  895:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   */
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 111
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 111
 
 
  896:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** void HAL_RIF_RISAF_GetConfigSubRegion(const RISAF_TypeDef *RISAFx, uint32_t Region, uint32_t SubReg
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  4510 002c 9D42     		cmp	r5, r3
  4511 002e 00F08180 		beq	.L812
  4512              		.loc 1 904 3 discriminator 3 view .LVU1110
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 112
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 112
 
 
  4513 0032 03F58053 		add	r3, r3, #4096
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  4567 00a0 04D0     		beq	.L826
  4568              		.loc 1 904 3 discriminator 17 view .LVU1124
  4569 00a2 4FF46271 		mov	r1, #904
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 113
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 113
 
 
  4570 00a6 2548     		ldr	r0, .L860
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  4610              		.loc 1 918 5 is_stmt 1 view .LVU1136
  4611              		.loc 1 918 48 is_stmt 0 view .LVU1137
  4612 00d6 426E     		ldr	r2, [r0, #100]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 114
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 114
 
 
  4613              		.loc 1 918 27 view .LVU1138
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  923:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   cid = ((cfgr_reg & RISAF_REGx_zCFGR_SRCID) >> RISAF_REGx_zCFGR_SRCID_Pos);
  4651              		.loc 1 923 7 view .LVU1157
  4652 00f6 C3F30211 		ubfx	r1, r3, #4, #3
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 115
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 115
 
 
  4653              		.loc 1 924 23 view .LVU1158
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  4697 012e F2D8     		bhi	.L834
  906:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   assert_param(IS_RISAF_SUBREGION(SubRegion));
  4698              		.loc 1 906 3 is_stmt 0 discriminator 40 view .LVU1175
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 116
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 116
 
 
  4699 0130 012C     		cmp	r4, #1
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  4731              		.loc 1 950 3 view .LVU1180
  951:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** 
  952:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   /* Check the parameters */
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 117
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 117
 
 
  953:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   assert_param(IllegalAccess != (void *)NULL);
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  4782 0046 2CD0     		beq	.L864
  4783              		.loc 1 954 3 discriminator 7 view .LVU1195
  4784 0048 03F58053 		add	r3, r3, #4096
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 118
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 118
 
 
  4785 004c 9C42     		cmp	r4, r3
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  958:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** 
  959:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   if (IllegalAccess->ErrorType != RISAF_ILLEGAL_ACCESS_NONE)
  4836              		.loc 1 959 3 is_stmt 1 view .LVU1210
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 119
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 119
 
 
  4837              		.loc 1 959 6 is_stmt 0 view .LVU1211
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  966:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** 
  4870              		.loc 1 966 5 is_stmt 1 view .LVU1228
  966:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 120
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 120
 
 
  4871              		.loc 1 966 51 is_stmt 0 view .LVU1229
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  981:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** #endif /* defined(CPU_AS_TRUSTED_DOMAIN) */
  982:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** /**
  983:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   * @}
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 121
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 121
 
 
  984:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   */
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  4932 0014 26D8     		bhi	.L878
  4933 0016 C21F     		subs	r2, r0, #7
  4934 0018 223B     		subs	r3, r3, #34
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 122
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 122
 
 
  4935 001a 9A42     		cmp	r2, r3
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  4979              	.LVL221:
  4980 0050 E5E7     		b	.L879
  4981              	.LVL222:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 123
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 123
 
 
  4982              	.L877:
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  5033              		.align	1
  5034              		.global	HAL_RIF_IAC_DisableIT
  5035              		.syntax unified
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 124
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 124
 
 
  5036              		.thumb
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  5070              		.loc 1 1039 30 is_stmt 0 view .LVU1269
  5071 001e 0121     		movs	r1, #1
 1038:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   *p_interrupt_reg &= (~(1UL << (PeriphId & RIF_PERIPH_BIT_POSITION)));
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 125
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 125
 
 
  5072              		.loc 1 1038 41 view .LVU1270
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  5119 005c A0F10803 		sub	r3, r0, #8
  5120 0060 172B     		cmp	r3, #23
  5121              	.L902:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 126
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 126
 
 
 1036:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** 
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
 1045:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   * @param  PeriphId specifies the index of the bus slave.
 1046:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   *         This parameter can be one of @ref RIF_PERIPHERAL_INDEX
 1047:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   *         bits[31:28] define the register index a peripheral belongs to, value from 0 to 5
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 127
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 127
 
 
 1048:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   *         bits[4:0]   define the bit position within the register, value from 0 to 31
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  5209 0024 240F     		lsrs	r4, r4, #28
  5210              	.LVL234:
 1062:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   interrupt_flag = ((*p_interrupt_reg & (1UL << shift_var)) >> shift_var);
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 128
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 128
 
 
  5211              		.loc 1 1062 3 is_stmt 1 view .LVU1298
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  5255 0056 A0F10803 		sub	r3, r0, #8
  5256 005a 172B     		cmp	r3, #23
  5257              	.L918:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 129
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 129
 
 
 1058:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** 
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
 1069:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   * @note   This API is protected by the Trusted Domain compilation directive.
 1070:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   * @param  PeriphId specifies the index of the bus slave.
 1071:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   *         This parameter can be one of @ref RIF_PERIPHERAL_INDEX
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 130
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 130
 
 
 1072:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   *         bits[31:28] define the register index a peripheral belongs to, value from 0 to 5
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  5347              	.LVL245:
  5348              		.loc 1 1084 27 view .LVU1325
  5349 0028 A340     		lsls	r3, r3, r4
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 131
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 131
 
 
  5350              		.loc 1 1084 20 view .LVU1326
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  5397 006a B0F1804F 		cmp	r0, #1073741824
  5398 006e DFD2     		bcs	.L930
  5399 0070 0C4B     		ldr	r3, .L937+28
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 132
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 132
 
 
  5400 0072 9842     		cmp	r0, r3
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
 1107:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****       {
 1108:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****         periph_id = ((reg_index << RIF_PERIPH_REG_SHIFT) | position);
 1109:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****         HAL_RIF_IAC_ClearFlag(periph_id);
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 133
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 133
 
 
 1110:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****         HAL_RIF_ILA_Callback(periph_id);
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  5461              		.loc 1 1096 3 view .LVU1342
 1097:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** 
  5462              		.loc 1 1097 3 view .LVU1343
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 134
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 134
 
 
 1099:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c ****   {
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
 1115:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rif.c **** 
  5504              		.loc 1 1115 1 is_stmt 0 view .LVU1357
  5505 0024 BDE8F883 		pop	{r3, r4, r5, r6, r7, r8, r9, pc}
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 135
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 135
 
 
  5506              	.LVL256:
@@ -8088,101 +8088,101 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 1
  5542              		.file 5 "../../STM32Cube_FW_N6/Drivers/CMSIS/Device/ST/STM32N6xx/Include/stm32n657xx.h"
  5543              		.file 6 "../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Inc/stm32n6xx_hal_rif.h"
  5544              		.file 7 "Inc/stm32n6xx_hal_conf.h"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 136
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 136
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32n6xx_hal_rif.c
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:26     .text.HAL_RIF_RIMC_Lock:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:32     .text.HAL_RIF_RIMC_Lock:00000000 HAL_RIF_RIMC_Lock
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:51     .text.HAL_RIF_RIMC_Lock:00000010 $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:56     .text.HAL_RIF_RIMC_GetLock:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:62     .text.HAL_RIF_RIMC_GetLock:00000000 HAL_RIF_RIMC_GetLock
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:84     .text.HAL_RIF_RIMC_GetLock:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:93     .text.HAL_RIF_RIMC_SetDebugAccessPortCID:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:99     .text.HAL_RIF_RIMC_SetDebugAccessPortCID:00000000 HAL_RIF_RIMC_SetDebugAccessPortCID
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:201    .text.HAL_RIF_RIMC_SetDebugAccessPortCID:0000004c $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:208    .text.HAL_RIF_RIMC_GetDebugAccessPortCID:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:214    .text.HAL_RIF_RIMC_GetDebugAccessPortCID:00000000 HAL_RIF_RIMC_GetDebugAccessPortCID
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:241    .text.HAL_RIF_RIMC_GetDebugAccessPortCID:00000010 $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:246    .text.HAL_RIF_RIMC_ConfigMasterAttributes:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:252    .text.HAL_RIF_RIMC_ConfigMasterAttributes:00000000 HAL_RIF_RIMC_ConfigMasterAttributes
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:406    .text.HAL_RIF_RIMC_ConfigMasterAttributes:000000a4 $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:412    .text.HAL_RIF_RIMC_GetConfigMasterAttributes:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:418    .text.HAL_RIF_RIMC_GetConfigMasterAttributes:00000000 HAL_RIF_RIMC_GetConfigMasterAttributes
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:491    .text.HAL_RIF_RIMC_GetConfigMasterAttributes:00000040 $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:497    .text.HAL_RIF_RISC_Lock:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:503    .text.HAL_RIF_RISC_Lock:00000000 HAL_RIF_RISC_Lock
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:522    .text.HAL_RIF_RISC_Lock:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:527    .text.HAL_RIF_RISC_GetLock:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:533    .text.HAL_RIF_RISC_GetLock:00000000 HAL_RIF_RISC_GetLock
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:555    .text.HAL_RIF_RISC_GetLock:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:560    .text.HAL_RIF_RISC_SetSlaveSecureAttributes:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:566    .text.HAL_RIF_RISC_SetSlaveSecureAttributes:00000000 HAL_RIF_RISC_SetSlaveSecureAttributes
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:744    .text.HAL_RIF_RISC_SetSlaveSecureAttributes:000000e4 $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:757    .text.HAL_RIF_RISC_GetSlaveSecureAttributes:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:763    .text.HAL_RIF_RISC_GetSlaveSecureAttributes:00000000 HAL_RIF_RISC_GetSlaveSecureAttributes
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:898    .text.HAL_RIF_RISC_GetSlaveSecureAttributes:000000a8 $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:913    .text.HAL_RIF_RISC_SlaveConfigLock:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:919    .text.HAL_RIF_RISC_SlaveConfigLock:00000000 HAL_RIF_RISC_SlaveConfigLock
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:1036   .text.HAL_RIF_RISC_SlaveConfigLock:0000009c $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:1050   .text.HAL_RIF_RISC_GetSlaveConfigLock:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:1056   .text.HAL_RIF_RISC_GetSlaveConfigLock:00000000 HAL_RIF_RISC_GetSlaveConfigLock
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:1179   .text.HAL_RIF_RISC_GetSlaveConfigLock:00000098 $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:1193   .text.HAL_RIF_RISAF_Lock:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:1199   .text.HAL_RIF_RISAF_Lock:00000000 HAL_RIF_RISAF_Lock
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:1304   .text.HAL_RIF_RISAF_Lock:000000a0 $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:1310   .text.HAL_RIF_RISAF_GetLock:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:1316   .text.HAL_RIF_RISAF_GetLock:00000000 HAL_RIF_RISAF_GetLock
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:1339   .text.HAL_RIF_RISAF_ConfigBaseRegion:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:1345   .text.HAL_RIF_RISAF_ConfigBaseRegion:00000000 HAL_RIF_RISAF_ConfigBaseRegion
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:1745   .text.HAL_RIF_RISAF_ConfigBaseRegion:000002c0 $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:1756   .text.HAL_RIF_RISAF_ConfigBaseRegion:000002e4 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:2165   .text.HAL_RIF_RISAF_ConfigBaseRegion:0000054c $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:2185   .text.HAL_RIF_RISAF_GetConfigBaseRegion:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:2191   .text.HAL_RIF_RISAF_GetConfigBaseRegion:00000000 HAL_RIF_RISAF_GetConfigBaseRegion
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:2405   .text.HAL_RIF_RISAF_GetConfigBaseRegion:00000110 $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:2411   .text.HAL_RIF_RISAF_ConfigSubRegionDelegation:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:2417   .text.HAL_RIF_RISAF_ConfigSubRegionDelegation:00000000 HAL_RIF_RISAF_ConfigSubRegionDelegation
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:2718   .text.HAL_RIF_RISAF_ConfigSubRegionDelegation:00000178 $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:2725   .text.HAL_RIF_RISAF_GetConfigSubRegionDelegation:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:2731   .text.HAL_RIF_RISAF_GetConfigSubRegionDelegation:00000000 HAL_RIF_RISAF_GetConfigSubRegionDelegation
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:2948   .text.HAL_RIF_RISAF_GetConfigSubRegionDelegation:00000120 $d
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 137
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:26     .text.HAL_RIF_RIMC_Lock:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:32     .text.HAL_RIF_RIMC_Lock:00000000 HAL_RIF_RIMC_Lock
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:51     .text.HAL_RIF_RIMC_Lock:00000010 $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:56     .text.HAL_RIF_RIMC_GetLock:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:62     .text.HAL_RIF_RIMC_GetLock:00000000 HAL_RIF_RIMC_GetLock
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:84     .text.HAL_RIF_RIMC_GetLock:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:93     .text.HAL_RIF_RIMC_SetDebugAccessPortCID:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:99     .text.HAL_RIF_RIMC_SetDebugAccessPortCID:00000000 HAL_RIF_RIMC_SetDebugAccessPortCID
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:201    .text.HAL_RIF_RIMC_SetDebugAccessPortCID:0000004c $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:208    .text.HAL_RIF_RIMC_GetDebugAccessPortCID:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:214    .text.HAL_RIF_RIMC_GetDebugAccessPortCID:00000000 HAL_RIF_RIMC_GetDebugAccessPortCID
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:241    .text.HAL_RIF_RIMC_GetDebugAccessPortCID:00000010 $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:246    .text.HAL_RIF_RIMC_ConfigMasterAttributes:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:252    .text.HAL_RIF_RIMC_ConfigMasterAttributes:00000000 HAL_RIF_RIMC_ConfigMasterAttributes
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:406    .text.HAL_RIF_RIMC_ConfigMasterAttributes:000000a4 $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:412    .text.HAL_RIF_RIMC_GetConfigMasterAttributes:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:418    .text.HAL_RIF_RIMC_GetConfigMasterAttributes:00000000 HAL_RIF_RIMC_GetConfigMasterAttributes
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:491    .text.HAL_RIF_RIMC_GetConfigMasterAttributes:00000040 $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:497    .text.HAL_RIF_RISC_Lock:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:503    .text.HAL_RIF_RISC_Lock:00000000 HAL_RIF_RISC_Lock
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:522    .text.HAL_RIF_RISC_Lock:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:527    .text.HAL_RIF_RISC_GetLock:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:533    .text.HAL_RIF_RISC_GetLock:00000000 HAL_RIF_RISC_GetLock
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:555    .text.HAL_RIF_RISC_GetLock:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:560    .text.HAL_RIF_RISC_SetSlaveSecureAttributes:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:566    .text.HAL_RIF_RISC_SetSlaveSecureAttributes:00000000 HAL_RIF_RISC_SetSlaveSecureAttributes
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:744    .text.HAL_RIF_RISC_SetSlaveSecureAttributes:000000e4 $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:757    .text.HAL_RIF_RISC_GetSlaveSecureAttributes:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:763    .text.HAL_RIF_RISC_GetSlaveSecureAttributes:00000000 HAL_RIF_RISC_GetSlaveSecureAttributes
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:898    .text.HAL_RIF_RISC_GetSlaveSecureAttributes:000000a8 $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:913    .text.HAL_RIF_RISC_SlaveConfigLock:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:919    .text.HAL_RIF_RISC_SlaveConfigLock:00000000 HAL_RIF_RISC_SlaveConfigLock
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:1036   .text.HAL_RIF_RISC_SlaveConfigLock:0000009c $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:1050   .text.HAL_RIF_RISC_GetSlaveConfigLock:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:1056   .text.HAL_RIF_RISC_GetSlaveConfigLock:00000000 HAL_RIF_RISC_GetSlaveConfigLock
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:1179   .text.HAL_RIF_RISC_GetSlaveConfigLock:00000098 $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:1193   .text.HAL_RIF_RISAF_Lock:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:1199   .text.HAL_RIF_RISAF_Lock:00000000 HAL_RIF_RISAF_Lock
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:1304   .text.HAL_RIF_RISAF_Lock:000000a0 $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:1310   .text.HAL_RIF_RISAF_GetLock:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:1316   .text.HAL_RIF_RISAF_GetLock:00000000 HAL_RIF_RISAF_GetLock
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:1339   .text.HAL_RIF_RISAF_ConfigBaseRegion:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:1345   .text.HAL_RIF_RISAF_ConfigBaseRegion:00000000 HAL_RIF_RISAF_ConfigBaseRegion
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:1745   .text.HAL_RIF_RISAF_ConfigBaseRegion:000002c0 $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:1756   .text.HAL_RIF_RISAF_ConfigBaseRegion:000002e4 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:2165   .text.HAL_RIF_RISAF_ConfigBaseRegion:0000054c $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:2185   .text.HAL_RIF_RISAF_GetConfigBaseRegion:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:2191   .text.HAL_RIF_RISAF_GetConfigBaseRegion:00000000 HAL_RIF_RISAF_GetConfigBaseRegion
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:2405   .text.HAL_RIF_RISAF_GetConfigBaseRegion:00000110 $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:2411   .text.HAL_RIF_RISAF_ConfigSubRegionDelegation:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:2417   .text.HAL_RIF_RISAF_ConfigSubRegionDelegation:00000000 HAL_RIF_RISAF_ConfigSubRegionDelegation
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:2718   .text.HAL_RIF_RISAF_ConfigSubRegionDelegation:00000178 $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:2725   .text.HAL_RIF_RISAF_GetConfigSubRegionDelegation:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:2731   .text.HAL_RIF_RISAF_GetConfigSubRegionDelegation:00000000 HAL_RIF_RISAF_GetConfigSubRegionDelegation
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:2948   .text.HAL_RIF_RISAF_GetConfigSubRegionDelegation:00000120 $d
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 137
 
 
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:2954   .text.HAL_RIF_RISAF_ConfigSubRegion:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:2960   .text.HAL_RIF_RISAF_ConfigSubRegion:00000000 HAL_RIF_RISAF_ConfigSubRegion
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:3384   .text.HAL_RIF_RISAF_ConfigSubRegion:000002c8 $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:3396   .text.HAL_RIF_RISAF_ConfigSubRegion:000002f0 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:3721   .text.HAL_RIF_RISAF_ConfigSubRegion:00000514 $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:3736   .text.HAL_RIF_RISAF_ConfigSubRegion:00000548 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:4145   .text.HAL_RIF_RISAF_ConfigSubRegion:000007d0 $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:4164   .text.HAL_RIF_RISAF_ConfigSubRegion:00000814 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:4443   .text.HAL_RIF_RISAF_ConfigSubRegion:000009a8 $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:4458   .text.HAL_RIF_RISAF_GetConfigSubRegion:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:4464   .text.HAL_RIF_RISAF_GetConfigSubRegion:00000000 HAL_RIF_RISAF_GetConfigSubRegion
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:4711   .text.HAL_RIF_RISAF_GetConfigSubRegion:0000013c $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:4717   .text.HAL_RIF_RISAF_GetIllegalAccess:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:4723   .text.HAL_RIF_RISAF_GetIllegalAccess:00000000 HAL_RIF_RISAF_GetIllegalAccess
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:4897   .text.HAL_RIF_RISAF_GetIllegalAccess:000000e8 $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:4903   .text.HAL_RIF_IAC_EnableIT:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:4909   .text.HAL_RIF_IAC_EnableIT:00000000 HAL_RIF_IAC_EnableIT
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:5021   .text.HAL_RIF_IAC_EnableIT:00000090 $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:5033   .text.HAL_RIF_IAC_DisableIT:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:5039   .text.HAL_RIF_IAC_DisableIT:00000000 HAL_RIF_IAC_DisableIT
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:5151   .text.HAL_RIF_IAC_DisableIT:00000094 $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:5163   .text.HAL_RIF_IAC_GetFlag:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:5169   .text.HAL_RIF_IAC_GetFlag:00000000 HAL_RIF_IAC_GetFlag
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:5287   .text.HAL_RIF_IAC_GetFlag:0000008c $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:5300   .text.HAL_RIF_IAC_ClearFlag:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:5306   .text.HAL_RIF_IAC_ClearFlag:00000000 HAL_RIF_IAC_ClearFlag
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:5413   .text.HAL_RIF_IAC_ClearFlag:00000088 $d
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:5426   .text.HAL_RIF_ILA_Callback:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:5432   .text.HAL_RIF_ILA_Callback:00000000 HAL_RIF_ILA_Callback
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:5447   .text.HAL_RIF_IRQHandler:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:5453   .text.HAL_RIF_IRQHandler:00000000 HAL_RIF_IRQHandler
-C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:5534   .text.HAL_RIF_IRQHandler:00000040 $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:2954   .text.HAL_RIF_RISAF_ConfigSubRegion:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:2960   .text.HAL_RIF_RISAF_ConfigSubRegion:00000000 HAL_RIF_RISAF_ConfigSubRegion
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:3384   .text.HAL_RIF_RISAF_ConfigSubRegion:000002c8 $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:3396   .text.HAL_RIF_RISAF_ConfigSubRegion:000002f0 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:3721   .text.HAL_RIF_RISAF_ConfigSubRegion:00000514 $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:3736   .text.HAL_RIF_RISAF_ConfigSubRegion:00000548 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:4145   .text.HAL_RIF_RISAF_ConfigSubRegion:000007d0 $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:4164   .text.HAL_RIF_RISAF_ConfigSubRegion:00000814 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:4443   .text.HAL_RIF_RISAF_ConfigSubRegion:000009a8 $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:4458   .text.HAL_RIF_RISAF_GetConfigSubRegion:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:4464   .text.HAL_RIF_RISAF_GetConfigSubRegion:00000000 HAL_RIF_RISAF_GetConfigSubRegion
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:4711   .text.HAL_RIF_RISAF_GetConfigSubRegion:0000013c $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:4717   .text.HAL_RIF_RISAF_GetIllegalAccess:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:4723   .text.HAL_RIF_RISAF_GetIllegalAccess:00000000 HAL_RIF_RISAF_GetIllegalAccess
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:4897   .text.HAL_RIF_RISAF_GetIllegalAccess:000000e8 $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:4903   .text.HAL_RIF_IAC_EnableIT:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:4909   .text.HAL_RIF_IAC_EnableIT:00000000 HAL_RIF_IAC_EnableIT
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:5021   .text.HAL_RIF_IAC_EnableIT:00000090 $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:5033   .text.HAL_RIF_IAC_DisableIT:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:5039   .text.HAL_RIF_IAC_DisableIT:00000000 HAL_RIF_IAC_DisableIT
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:5151   .text.HAL_RIF_IAC_DisableIT:00000094 $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:5163   .text.HAL_RIF_IAC_GetFlag:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:5169   .text.HAL_RIF_IAC_GetFlag:00000000 HAL_RIF_IAC_GetFlag
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:5287   .text.HAL_RIF_IAC_GetFlag:0000008c $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:5300   .text.HAL_RIF_IAC_ClearFlag:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:5306   .text.HAL_RIF_IAC_ClearFlag:00000000 HAL_RIF_IAC_ClearFlag
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:5413   .text.HAL_RIF_IAC_ClearFlag:00000088 $d
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:5426   .text.HAL_RIF_ILA_Callback:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:5432   .text.HAL_RIF_ILA_Callback:00000000 HAL_RIF_ILA_Callback
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:5447   .text.HAL_RIF_IRQHandler:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:5453   .text.HAL_RIF_IRQHandler:00000000 HAL_RIF_IRQHandler
+C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s:5534   .text.HAL_RIF_IRQHandler:00000040 $d
                            .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
                            .group:00000000 wm4.stm32n6xx_hal_conf.h.21.e6f895f5dec93fd886896ef3aa220611
                            .group:00000000 wm4.stddef.h.39.0dc9006b34572d4d9cae4c8b422c4971
@@ -8208,7 +8208,7 @@ C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s:5534   .text.HAL_RIF_IRQHandler:0
                            .group:00000000 wm4.stm32_hal_legacy.h.22.87fb12bf5a1a1e00fc134f22bc9aa8c4
                            .group:00000000 wm4.newlib.h.7.a37ffbe9e5aff74303f4e60b1cc1c01b
                            .group:00000000 wm4.ieeefp.h.77.bd5feb87d9990dd328793ced294f6a87
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccYpdgeL.s 			page 138
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccgDmxoZ.s 			page 138
 
 
                            .group:00000000 wm4.config.h.224.10ee1ad185d877c6e334e6581faab44d

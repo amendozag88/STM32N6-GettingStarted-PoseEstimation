@@ -41,6 +41,7 @@
 #endif
 
 #include "gesture_detection.h"
+#include "ninja_fruit_game.h"
 
 #define MAX_NUMBER_OUTPUT 5
 #define LCD_FG_WIDTH  SCREEN_WIDTH
@@ -112,7 +113,9 @@ __attribute__ ((section (".psram_bss")))
 __attribute__ ((aligned (32)))
 uint8_t lcd_fg_buffer[2][LCD_FG_WIDTH * LCD_FG_HEIGHT * 2];
 static int lcd_fg_buffer_rd_idx;
-GestureDetector_t gesture_detector;
+
+GestureDetector_t gesture_detector;  //Global for gesture detection
+NinjaGame_t ninja_game; //Global for game state
 
 static void SystemClock_Config(void);
 static void NPURam_enable(void);
@@ -125,7 +128,7 @@ static void IAC_Config(void);
 static void Display_WelcomeScreen(void);
 static void Hardware_init(void);
 static void NeuralNetwork_init(uint32_t *nnin_length, float32_t *nn_out[], int *number_output, int32_t nn_out_len[]);
-
+static void Display_GameAndPoseInfo(void *p_postprocess, uint32_t inference_ms);
 
 /**
   * @brief  Main program
@@ -152,6 +155,8 @@ int main(void)
   /* Gesture detection Init */
   // Initialize gesture detection
   Gesture_Init(&gesture_detector);
+  //Initialize ninja fruit game
+  NinjaGame_Init(&ninja_game);
 
   /*** Camera Init ************************************************************/
   CameraPipeline_Init(&lcd_bg_area.XSize, &lcd_bg_area.YSize, &pitch_nn);
@@ -204,8 +209,8 @@ int main(void)
 
     spe_pp_outBuffer_t *keypoints = ((spe_pp_out_t *) &pp_output)->pOutBuff;
     GestureType_t detected_gesture = Gesture_Detect(&gesture_detector, keypoints);
-   // UTIL_LCDEx_PrintfAt(0, LINE(16), CENTER_MODE, "X: %f, Y: %f P:%f", x_coord,y_coord, confidence	  );
 
+#if (KEYPOINT_DEBUG==1)
     //Debug a keypoint:
     float32_t wrist_x, wrist_y, wrist_conf, wrist_speed;
     float32_t wrist_x2, wrist_y2, wrist_conf2, wrist_speed2;
@@ -228,9 +233,20 @@ int main(void)
     UTIL_LCDEx_PrintfAt(0, LINE(18), CENTER_MODE, "RW Past: (%.2f,%.2f) C:%.2f Spd:%.3f",
                         wrist_x2, wrist_y2, wrist_conf2, wrist_speed2);
     //End of kepoint debug print
+#endif
 
+    //ADded for the ninja fruit gaem
 
-    Display_NetworkOutput(&pp_output, ts[1] - ts[0]);
+    // NEW GAME UPDATE AND RENDER
+	NinjaGame_Update(&ninja_game, &gesture_detector, keypoints);
+
+	// Still display inference time and basic pose detection info
+	Display_GameAndPoseInfo(&pp_output, ts[1] - ts[0]);
+
+	// Render the game
+	NinjaGame_Render(&ninja_game);
+
+    //    Display_NetworkOutput(&pp_output, ts[1] - ts[0]); //Replaced by Display_GameAndPoseInfo for ninja fruit
     /* Discard nn_out region (used by pp_input and pp_outputs variables) to avoid Dcache evictions during nn inference */
     for (int i = 0; i < number_output; i++)
     {
@@ -546,6 +562,51 @@ static void LCD_init(void)
 #endif
 }
 
+
+static void Display_GameAndPoseInfo(void *p_postprocess, uint32_t inference_ms)
+{
+    spe_pp_outBuffer_t *roi = ((spe_pp_out_t *) p_postprocess)->pOutBuff;
+    int ret;
+
+    // Set up LCD layer for overlay graphics
+    ret = HAL_LTDC_SetAddress_NoReload(&hlcd_ltdc, (uint32_t) lcd_fg_buffer[lcd_fg_buffer_rd_idx], LTDC_LAYER_2);
+    assert(ret == HAL_OK);
+
+    /* Clear overlay layer */
+    UTIL_LCD_FillRect(lcd_fg_area.X0, lcd_fg_area.Y0, lcd_fg_area.XSize, lcd_fg_area.YSize, 0x00000000);
+
+    // Draw pose keypoints for debugging/feedback (optional)
+    #ifndef HIDE_POSE_OVERLAY
+    Display_spe_Detection(roi);
+    #endif
+
+    // Show inference performance in a corner (smaller text)
+    UTIL_LCD_SetBackColor(0x40000000);
+    UTIL_LCD_SetFont(&Font16); // Smaller font
+    UTIL_LCDEx_PrintfAt(650, LINE(20), LEFT_MODE, "AI: %ums", inference_ms);
+
+    // Show gesture detection result
+    GestureType_t current_gesture = Gesture_GetCurrentDisplayGesture(&gesture_detector);
+       if (current_gesture != GESTURE_NONE) {
+         UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_YELLOW); // Highlight detected gesture
+         UTIL_LCDEx_PrintfAt(0, LINE(24), RIGHT_MODE, "GESTURE: %s", Gesture_GetName(current_gesture));
+         UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_WHITE);  // Reset to white
+       } else {
+         UTIL_LCDEx_PrintfAt(0, LINE(24), RIGHT_MODE, "Gesture: %s", Gesture_GetName(current_gesture));
+       }
+
+
+    UTIL_LCD_SetFont(&Font20); // Reset to normal font
+    UTIL_LCD_SetBackColor(0);
+
+    // Update LCD
+    SCB_CleanDCache_by_Addr(lcd_fg_buffer[lcd_fg_buffer_rd_idx], LCD_FG_FRAMEBUFFER_SIZE);
+    ret = HAL_LTDC_ReloadLayer(&hlcd_ltdc, LTDC_RELOAD_VERTICAL_BLANKING, LTDC_LAYER_2);
+    assert(ret == HAL_OK);
+    lcd_fg_buffer_rd_idx = 1 - lcd_fg_buffer_rd_idx;
+}
+
+
 /**
  * @brief Displays a Welcome screen
  */
@@ -555,14 +616,14 @@ static void Display_WelcomeScreen(void)
   if (t0 == 0)
     t0 = HAL_GetTick();
 
-  if (HAL_GetTick() - t0 < 4000)
+  if (HAL_GetTick() - t0 < 3000)
   {
     /* Draw logo */
     UTIL_LCD_FillRGBRect(300, 100, (uint8_t *) stlogo, 200, 107);
 
     /* Display welcome message */
     UTIL_LCD_SetBackColor(0x40000000);
-    UTIL_LCDEx_PrintfAt(0, LINE(16), CENTER_MODE, "Pose estimation");
+    UTIL_LCDEx_PrintfAt(0, LINE(16), CENTER_MODE, "Ninja Fruit demo");
     UTIL_LCDEx_PrintfAt(0, LINE(17), CENTER_MODE, WELCOME_MSG_1);
     UTIL_LCDEx_PrintfAt(0, LINE(18), CENTER_MODE, WELCOME_MSG_2);
     UTIL_LCD_SetBackColor(0);
