@@ -1,4 +1,5 @@
 Src/ninja_fruit_game.c:32:6:NinjaGame_Init	8	static
-Src/ninja_fruit_game.c:251:6:NinjaGame_Render	72	static
-Src/ninja_fruit_game.c:347:6:NinjaGame_Reset	8	static
-Src/ninja_fruit_game.c:45:6:NinjaGame_Update	64	static
+Src/ninja_fruit_game.c:295:6:NinjaGame_Render	72	static
+Src/ninja_fruit_game.c:391:6:NinjaGame_Reset	8	static
+Src/ninja_fruit_game.c:46:6:NinjaGame_Update	64	static
+Src/ninja_fruit_game.c:403:6:NinjaGame_SetMode	0	static

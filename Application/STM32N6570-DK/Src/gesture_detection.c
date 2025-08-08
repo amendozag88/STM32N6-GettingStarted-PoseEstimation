@@ -99,7 +99,7 @@ static GestureType_t Detect_ArmSwipe(GestureDetector_t *detector, spe_pp_outBuff
 
         float32_t wrist_dx = left_wrist[curr_idx].x - left_wrist[prev_idx].x;
         float32_t wrist_speed = Gesture_CalculateSpeed(left_wrist, curr_idx, 3);
-        UTIL_LCDEx_PrintfAt(0, LINE(15), CENTER_MODE, "idx:%d/%d,w_dx: %.3f, w_sp: %.3f", prev_idx, curr_idx, wrist_dx, wrist_speed);
+       // UTIL_LCDEx_PrintfAt(0, LINE(15), CENTER_MODE, "idx:%d/%d,w_dx: %.3f, w_sp: %.3f", prev_idx, curr_idx, wrist_dx, wrist_speed);
         if (fabsf(wrist_dx) > 0.05f && wrist_speed > SWIPE_MIN_SPEED) {
         //    float32_t arm_extension = Gesture_CalculateDistance(
          //       left_wrist[curr_idx].x, left_wrist[curr_idx].y,
