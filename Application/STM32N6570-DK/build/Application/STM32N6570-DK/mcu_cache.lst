@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 1
 
 
    1              		.arch armv8.1-m.main
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
   35              		.cfi_startproc
   36              		@ args = 0, pretend = 0, frame = 0
   37              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 2
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 2
 
 
   22:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/mcu_cache.c ****   SCB_EnableDCache();
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
   50:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h **** #define __SCB_ICACHE_LINE_SIZE  32U /*!< Cortex-M7 cache line size is fixed to 32 bytes (8 words). 
   51:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h **** #endif
   52:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 3
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 3
 
 
   53:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h **** /**
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  107:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h **** /**
  108:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h ****   \brief   I-Cache Invalidate by address
  109:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h ****   \details Invalidates I-Cache for the given address.
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 4
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 4
 
 
  110:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h ****            I-Cache is invalidated starting from a 32 byte aligned address in 32 byte granularity.
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
   56              		.cfi_offset 5, -12
   57              		.cfi_offset 6, -8
   58              		.cfi_offset 14, -4
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 5
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 5
 
 
   59              	.LBB215:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
   38:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** 
   39:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** /* CMSIS compiler specific defines */
   40:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __ASM
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 6
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 6
 
 
   41:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __ASM                                  __asm
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
   95:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
   96:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
   97:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 7
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 7
 
 
   98:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_WRITE { uint32_t v; };
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  152:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****     for(uint32_t i=0u; i<pTable->wlen; ++i) {
  153:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****       pTable->dest[i] = pTable->src[i];
  154:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****     }
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 8
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 8
 
 
  155:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****   }
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  209:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** */
  210:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** 
  211:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** /* Define macros for porting to both thumb1 and thumb2.
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 9
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 9
 
 
  212:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****  * For thumb1, use low register (r0-r7), specified by constraint "l"
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  266:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Acts as a special kind of Data Memory Barrier.
  267:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****            It completes when all explicit memory accesses before this instruction complete.
  268:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****  */
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 10
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 10
 
 
  269:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __DSB(void)
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  107 0030 03EA0406 		and	r6, r3, r4
  108              	.LVL3:
  109              	.L3:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 11
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 11
 
 
  159:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h ****         SCB->DCISW = (((sets << SCB_DCISW_SET_Pos) & SCB_DCISW_SET_Msk) |
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  150              	.LBB211:
  151              		.loc 3 271 3 view .LVU43
  152              		.syntax unified
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 12
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 12
 
 
  153              	@ 271 "../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h" 1
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  200              		.cfi_startproc
  201              		@ args = 0, pretend = 0, frame = 0
  202              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 13
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 13
 
 
   28:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/mcu_cache.c ****   SCB_DisableDCache();
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  231              		.loc 3 271 3 view .LVU60
  232              		.syntax unified
  233              	@ 271 "../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h" 1
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 14
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 14
 
 
  234 000a BFF34F8F 		dsb 0xF
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  223:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h ****     #endif
  224:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h **** 
  225:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h ****     locals.ccsidr = SCB->CCSIDR;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 15
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 15
 
 
  260              		.loc 2 225 5 view .LVU67
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  294 0042 0139     		subs	r1, r1, #1
  295              	.LVL10:
  296              		.loc 2 236 30 discriminator 1 view .LVU84
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 16
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 16
 
 
  297 0044 0FF007C8 		le	lr, .L10
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  341 005c 00ED00E0 		.word	-536810240
  342              		.cfi_endproc
  343              	.LFE837:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 17
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 17
 
 
  345              		.section	.text.mcu_cache_invalidate,"ax",%progbits
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  370 0002 70B5     		push	{r4, r5, r6, lr}
  371              		.cfi_def_cfa_offset 16
  372              		.cfi_offset 4, -16
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 18
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 18
 
 
  373              		.cfi_offset 5, -12
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  408              		.thumb
  409              		.syntax unified
  410              	.LBE235:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 19
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 19
 
 
  411              	.LBE234:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  270:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h ****         #endif
  271:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h ****       } while (ways-- != 0U);
  444              		.loc 2 271 23 is_stmt 1 discriminator 1 view .LVU129
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 20
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 20
 
 
  445              		.loc 2 271 20 is_stmt 0 discriminator 1 view .LVU130
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  488              		.loc 1 38 1 is_stmt 0 view .LVU141
  489 0052 0020     		movs	r0, #0
  490 0054 70BD     		pop	{r4, r5, r6, pc}
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 21
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 21
 
 
  491              	.L26:
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  540              	.LBI244:
  276:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h ****   #endif
  277:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h **** }
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 22
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 22
 
 
  278:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h **** 
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  569              	.LVL18:
  297:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h ****     do {
  570              		.loc 2 297 5 is_stmt 1 view .LVU164
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 23
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 23
 
 
  299:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h ****       do {
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  609              		.loc 3 269 27 view .LVU181
  610              	.LBB249:
  611              		.loc 3 271 3 view .LVU182
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 24
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 24
 
 
  612              		.syntax unified
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
   49:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/mcu_cache.c **** {
  659              		.loc 1 49 1 is_stmt 1 view -0
  660              		.cfi_startproc
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 25
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 25
 
 
  661              		@ args = 0, pretend = 0, frame = 0
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  697              		.loc 2 324 5 view .LVU202
  325:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h **** 
  326:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h ****     SCB->CSSELR = 0U;                       /* select Level 1 data cache */
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 26
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 26
 
 
  698              		.loc 2 326 5 view .LVU203
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  334:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h ****       do {
  734              		.loc 2 334 12 is_stmt 0 view .LVU217
  735 0026 00F1010E 		add	lr, r0, #1
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 27
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 27
 
 
  736 002a 0146     		mov	r1, r0
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  777              		.loc 3 260 3 view .LVU232
  778              		.syntax unified
  779              	@ 260 "../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h" 1
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 28
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 28
 
 
  780 004e BFF36F8F 		isb 0xF
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  826              		.cfi_def_cfa_offset 12
  827              		.cfi_offset 4, -12
  828              		.cfi_offset 5, -8
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 29
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 29
 
 
  829              		.cfi_offset 14, -4
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  862              	.LBB271:
  863              	.LBI271:
  269:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 30
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 30
 
 
  864              		.loc 3 269 27 view .LVU254
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  373:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h ****       __DSB();
  905              		.loc 2 373 7 view .LVU266
  906              	.LBB273:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 31
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 31
 
 
  907              	.LBI273:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  954              		.thumb
  955              		.thumb_func
  957              	mcu_cache_clean_range:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 32
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 32
 
 
  958              	.LVL38:
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  386:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h ****   \param[in]   dsize   size of memory block (in number of bytes)
  387:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h **** */
  388:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h **** __STATIC_FORCEINLINE void SCB_CleanDCache_by_Addr (volatile void *addr, int32_t dsize)
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 33
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 33
 
 
  995              		.loc 2 388 27 is_stmt 1 view .LVU285
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  1035 0028 2033     		adds	r3, r3, #32
  1036 002a 02F1010E 		add	lr, r2, #1
  1037 002e D8BF     		it	le
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 34
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 34
 
 
  1038 0030 4FF0010E 		movle	lr, #1
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  1080              	.L60:
  260:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** }
  1081              		.loc 3 260 3 is_stmt 0 view .LVU311
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 35
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 35
 
 
  1082              	.LBE289:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  1131              		.loc 4 25 7 view .LVU320
  1132 0006 DB03     		lsls	r3, r3, #15
  1133 0008 1FD5     		bpl	.L70
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 36
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 36
 
 
  1134              		.loc 4 25 35 is_stmt 1 discriminator 1 view .LVU321
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  1165 0016 BFF34F8F 		dsb 0xF
  1166              	@ 0 "" 2
  1167              		.thumb
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 37
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 37
 
 
  1168              		.syntax unified
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  1207              		.syntax unified
  1208              	@ 271 "../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h" 1
  1209 0042 BFF34F8F 		dsb 0xF
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 38
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 38
 
 
  1210              	@ 0 "" 2
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  1256              		.loc 1 78 1 is_stmt 1 view -0
  1257              		.cfi_startproc
  1258              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 39
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 39
 
 
  1259              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  1301              	.LBB308:
  260:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** }
  1302              		.loc 3 260 3 view .LVU367
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 40
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 40
 
 
  1303              		.syntax unified
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  1347 002a 5A61     		str	r2, [r3, #20]
   68:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h ****     __ISB();
  1348              		.loc 2 68 5 is_stmt 1 view .LVU379
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 41
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 41
 
 
  1349              	.LBB313:
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
   87:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/mcu_cache.c ****   
   88:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/mcu_cache.c ****   if (d_cache_state)
  1392              		.loc 1 88 3 view .LVU388
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 42
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 42
 
 
  1393 0034 304B     		ldr	r3, .L94
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  1431 004c D3F88020 		ldr	r2, [r3, #128]
  1432              	.LVL55:
  156:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h ****     do {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 43
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 43
 
 
  1433              		.loc 2 156 5 is_stmt 1 view .LVU406
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  1471              	.LBB330:
  1472              	.LBI330:
  269:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 44
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 44
 
 
  1473              		.loc 3 269 27 view .LVU423
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  1519              		.loc 2 240 5 view .LVU435
  1520              	.LBB338:
  1521              	.LBI338:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 45
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 45
 
 
  258:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  1562              		.loc 3 258 27 view .LVU445
  1563              	.LBB324:
  260:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 46
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 46
 
 
  1564              		.loc 3 260 3 view .LVU446
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  1606              		.syntax unified
  1607              	.LBE341:
  1608              	.LBE340:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 47
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 47
 
 
  197:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cachel1_armv7.h ****     __DSB();
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  1648              		.loc 2 229 19 is_stmt 0 view .LVU475
  1649 00d0 00F1010E 		add	lr, r0, #1
  1650 00d4 0146     		mov	r1, r0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 48
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 48
 
 
  1651 00d6 4EF001E0 		dls	lr, lr
@@ -2865,38 +2865,38 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 1
  1684              		.file 5 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
  1685              		.file 6 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
  1686              		.file 7 "../../STM32Cube_FW_N6/Drivers/CMSIS/Include/core_cm55.h"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 49
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 49
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 mcu_cache.c
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:26     .text.mcu_cache_enable:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:32     .text.mcu_cache_enable:00000000 mcu_cache_enable
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:186    .text.mcu_cache_enable:00000064 $d
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:191    .text.mcu_cache_disable:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:197    .text.mcu_cache_disable:00000000 mcu_cache_disable
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:341    .text.mcu_cache_disable:0000005c $d
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:346    .text.mcu_cache_invalidate:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:352    .text.mcu_cache_invalidate:00000000 mcu_cache_invalidate
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:494    .text.mcu_cache_invalidate:00000058 $d
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:499    .text.mcu_cache_clean:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:505    .text.mcu_cache_clean:00000000 mcu_cache_clean
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:646    .text.mcu_cache_clean:00000058 $d
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:651    .text.mcu_cache_clean_invalidate:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:657    .text.mcu_cache_clean_invalidate:00000000 mcu_cache_clean_invalidate
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:798    .text.mcu_cache_clean_invalidate:00000058 $d
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:803    .text.mcu_cache_invalidate_range:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:809    .text.mcu_cache_invalidate_range:00000000 mcu_cache_invalidate_range
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:946    .text.mcu_cache_invalidate_range:00000050 $d
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:951    .text.mcu_cache_clean_range:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:957    .text.mcu_cache_clean_range:00000000 mcu_cache_clean_range
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:1094   .text.mcu_cache_clean_range:00000050 $d
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:1099   .text.mcu_cache_clean_invalidate_range:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:1105   .text.mcu_cache_clean_invalidate_range:00000000 mcu_cache_clean_invalidate_range
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:1242   .text.mcu_cache_clean_invalidate_range:00000050 $d
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:1247   .text.set_mcu_cache_state:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:1253   .text.set_mcu_cache_state:00000000 set_mcu_cache_state
-C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:1676   .text.set_mcu_cache_state:000000f8 $d
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:26     .text.mcu_cache_enable:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:32     .text.mcu_cache_enable:00000000 mcu_cache_enable
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:186    .text.mcu_cache_enable:00000064 $d
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:191    .text.mcu_cache_disable:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:197    .text.mcu_cache_disable:00000000 mcu_cache_disable
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:341    .text.mcu_cache_disable:0000005c $d
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:346    .text.mcu_cache_invalidate:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:352    .text.mcu_cache_invalidate:00000000 mcu_cache_invalidate
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:494    .text.mcu_cache_invalidate:00000058 $d
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:499    .text.mcu_cache_clean:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:505    .text.mcu_cache_clean:00000000 mcu_cache_clean
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:646    .text.mcu_cache_clean:00000058 $d
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:651    .text.mcu_cache_clean_invalidate:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:657    .text.mcu_cache_clean_invalidate:00000000 mcu_cache_clean_invalidate
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:798    .text.mcu_cache_clean_invalidate:00000058 $d
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:803    .text.mcu_cache_invalidate_range:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:809    .text.mcu_cache_invalidate_range:00000000 mcu_cache_invalidate_range
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:946    .text.mcu_cache_invalidate_range:00000050 $d
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:951    .text.mcu_cache_clean_range:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:957    .text.mcu_cache_clean_range:00000000 mcu_cache_clean_range
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:1094   .text.mcu_cache_clean_range:00000050 $d
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:1099   .text.mcu_cache_clean_invalidate_range:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:1105   .text.mcu_cache_clean_invalidate_range:00000000 mcu_cache_clean_invalidate_range
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:1242   .text.mcu_cache_clean_invalidate_range:00000050 $d
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:1247   .text.set_mcu_cache_state:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:1253   .text.set_mcu_cache_state:00000000 set_mcu_cache_state
+C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s:1676   .text.set_mcu_cache_state:000000f8 $d
                            .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
                            .group:00000000 wm4.stm32n6xx_hal_conf.h.21.e6f895f5dec93fd886896ef3aa220611
                            .group:00000000 wm4.stddef.h.39.0dc9006b34572d4d9cae4c8b422c4971
@@ -2925,7 +2925,7 @@ C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s:1676   .text.set_mcu_cache_state:
                            .group:00000000 wm4.config.h.224.10ee1ad185d877c6e334e6581faab44d
                            .group:00000000 wm4._ansi.h.31.de524f58584151836e90d8620a16f8e8
                            .group:00000000 wm4.cdefs.h.49.70fc7af612f78ddcace70fdd90b5623b
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccMMun2b.s 			page 50
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccnvhGwg.s 			page 50
 
 
                            .group:00000000 wm4._types.h.20.dd0d04dca3800a0d2a6129b87f3adbb2

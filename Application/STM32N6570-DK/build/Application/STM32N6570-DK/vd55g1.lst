@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 1
 
 
    1              		.arch armv8.1-m.main
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
   23:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** #include "vd55g1_patch_cut_1.c"
   24:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** #include "vd55g1_patch_cut_2.c"
   25:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 2
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 2
 
 
   26:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** #define VD55G1_REG_MODEL_ID                           0x0000
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
   80:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** #define VD55G1_REG_Y_START                            0x0510
   81:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** #define VD55G1_REG_Y_HEIGHT                           0x0512
   82:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** #define VD55G1_REG_X_START                            0x0514
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 3
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 3
 
 
   83:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** #define VD55G1_REG_X_WIDTH                            0x0516
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  137:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
  138:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** struct vd55g1_mode {
  139:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   uint32_t width;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 4
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 4
 
 
  140:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   uint32_t height;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  194:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   if (_ret_) display_error(_ctx_); \
  195:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   if (_ret_) return _ret_; \
  196:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** } while(0)
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 5
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 5
 
 
  197:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
   56              		.loc 1 225 3 view .LVU7
   57 000c 0193     		str	r3, [sp, #4]
   58              		.loc 1 226 3 is_stmt 1 view .LVU8
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 6
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 6
 
 
   59 000e A047     		blx	r4
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  247:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** {
  248:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   uint16_t reg16;
  249:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   int ret;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 7
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 7
 
 
  250:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  103 0000 F0B5     		push	{r4, r5, r6, r7, lr}
  104              		.cfi_def_cfa_offset 20
  105              		.cfi_offset 4, -20
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 8
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 8
 
 
  106              		.cfi_offset 5, -16
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  298:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
  299:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   VD55G1_dbg(ctx, 0, "current state %d\n", val);
  150              		.loc 1 299 3 is_stmt 1 view .LVU32
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 9
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 9
 
 
  151              		.loc 1 299 3 view .LVU33
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  193      20726561 
  194              		.section	.text.VD55G1_WaitState,"ax",%progbits
  195              		.align	1
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 10
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 10
 
 
  196              		.syntax unified
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  230 0010 50B1     		cbz	r0, .L14
  321:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****     VD55G1_warn(ctx, "Unable to reach state %d\n", state);
  231              		.loc 1 321 5 is_stmt 1 view .LVU50
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 11
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 11
 
 
  232              		.loc 1 321 5 view .LVU51
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  325:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** }
  275              		.loc 1 325 3 view .LVU61
  325:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** }
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 12
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 12
 
 
  276              		.loc 1 325 10 is_stmt 0 view .LVU62
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  251:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   assert(ret == 0);
  315              		.loc 1 251 9 view .LVU68
  316 0002 1021     		movs	r1, #16
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 13
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 13
 
 
  317 0004 8368     		ldr	r3, [r0, #8]
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  359              		.cfi_def_cfa_offset 8
  360              		@ sp needed
  361 0030 10BD     		pop	{r4, pc}
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 14
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 14
 
 
  362              	.LVL27:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  327:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
  328:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** static int VD55G1_CheckModelId(VD55G1_Ctx_t *ctx)
  329:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 15
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 15
 
 
  330:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   struct drv_ctx *drv_ctx = &ctx->ctx;
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  406              		.cfi_offset 5, -16
  407              		.cfi_offset 6, -12
  408              		.cfi_offset 7, -8
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 16
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 16
 
 
  409              		.cfi_offset 14, -4
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  456 0032 02E0     		b	.L38
  457              	.L23:
  372:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   VD55G1_TraceError(ctx, ret);
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 17
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 17
 
 
  458              		.loc 1 372 3 discriminator 1 view .LVU106
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  490              		.loc 1 377 3 view .LVU120
  377:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   VD55G1_TraceError(ctx, ret);
  491              		.loc 1 377 9 is_stmt 0 view .LVU121
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 18
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 18
 
 
  492 0052 0246     		mov	r2, r0
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  530 007e 0290     		str	r0, [sp, #8]
  531 0080 DBE7     		b	.L38
  532              	.L36:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 19
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 19
 
 
  381:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   VD55G1_dbg(ctx, 0, "patch = 0x%04x\n", reg16);
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  572              		.loc 1 385 5 discriminator 1 view .LVU152
  386:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   }
  573              		.loc 1 386 5 view .LVU153
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 20
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 20
 
 
  386:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   }
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  611              		.loc 1 391 3 discriminator 8 view .LVU166
  393:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
  612              		.loc 1 393 3 view .LVU167
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 21
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 21
 
 
  393:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  655              	VD55G1_ComputeFrameLength:
  656              	.LVL53:
  657              	.LFB19:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 22
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 22
 
 
  397:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  451:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   return 0;
  452:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** }
  453:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 23
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 23
 
 
  454:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** static uint32_t VD55G1_GetSystemClock(VD55G1_Ctx_t *ctx)
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  508:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****     return -1;
  509:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
  510:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   return 0;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 24
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 24
 
 
  511:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** }
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  565:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** static int VD55G1_SetupLineLen(VD55G1_Ctx_t *ctx)
  566:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** {
  567:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   struct drv_ctx *drv_ctx = &ctx->ctx;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 25
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 25
 
 
  568:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   int min_line_len_mipi;
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  681 0006 1746     		mov	r7, r2
  682              		.loc 1 596 9 view .LVU185
  683 0008 4FF44071 		mov	r1, #768
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 26
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 26
 
 
  684              	.LVL54:
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  731 003e 0021     		movs	r1, #0
  732 0040 164A     		ldr	r2, .L48+4
  733 0042 0193     		str	r3, [sp, #4]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 27
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 27
 
 
  734 0044 FFF7FEFF 		bl	VD55G1_log_impl
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  605:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
  606:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   VD55G1_dbg(ctx, 1, "frame_length to MAX(%d, %d) = %d to reach %d fps\n", min_frame_length, req_fr
  781              		.loc 1 606 3 is_stmt 1 view .LVU226
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 28
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 28
 
 
  782              		.loc 1 606 3 view .LVU227
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  619:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   if (ret)
  620:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****     return ret;
  621:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 29
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 29
 
 
  622:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   ret = VD55G1_ComputeFrameLength(ctx, drv_ctx->config_save.frame_rate, &frame_length);
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  676:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   case VD55G1_FLIP:
  677:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****     mode = 2;
  678:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****     break;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 30
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 30
 
 
  679:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   case VD55G1_MIRROR:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  828              		@ args = 0, pretend = 0, frame = 0
  829              		@ frame_needed = 0, uses_anonymous_args = 0
  731:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   uint16_t mode;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 31
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 31
 
 
  830              		.loc 1 731 3 view .LVU235
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  865 0024 2846     		mov	r0, r5
  866              	.LVL73:
  867              		.loc 1 749 3 is_stmt 0 discriminator 1 view .LVU246
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 32
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 32
 
 
  868 0026 0021     		movs	r1, #0
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  755:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** {
  756:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   struct drv_ctx *drv_ctx = &ctx->ctx;
  757:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 33
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 33
 
 
  758:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   return VD55G1_SetFlicker(ctx, drv_ctx->config_save.flicker);
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  914              		.loc 1 811 1 is_stmt 1 view -0
  915              		.cfi_startproc
  916              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 34
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 34
 
 
  917              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  961 002a 02E0     		b	.L68
  962              	.L60:
  815:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   VD55G1_TraceError(ctx, ret);
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 35
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 35
 
 
  963              		.loc 1 815 3 discriminator 1 view .LVU271
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  1006 0054 18B1     		cbz	r0, .L67
  1007              		.loc 1 821 3 discriminator 1 view .LVU290
  1008              		.loc 1 821 3 discriminator 1 view .LVU291
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 36
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 36
 
 
  1009 0056 40F23533 		movw	r3, #821
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  1059              		@ frame_needed = 0, uses_anonymous_args = 0
  271:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   int ret;
  1060              		.loc 1 271 3 view .LVU304
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 37
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 37
 
 
  272:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  1099 001a 6B69     		ldr	r3, [r5, #20]
  1100 001c BDF81620 		ldrh	r2, [sp, #22]
  1101 0020 9847     		blx	r3
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 38
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 38
 
 
  1102              	.LVL95:
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  1142              		@ sp needed
  1143 004e 70BD     		pop	{r4, r5, r6, pc}
  1144              	.LVL99:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 39
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 39
 
 
  1145              	.L78:
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  1190 000e 0546     		mov	r5, r0
  261:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   VD55G1_TraceError(ctx, ret);
  1191              		.loc 1 261 9 view .LVU346
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 40
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 40
 
 
  1192 0010 9847     		blx	r3
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  1231 003a 0021     		movs	r1, #0
  1232 003c 054A     		ldr	r2, .L85+4
  1233 003e 0193     		str	r3, [sp, #4]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 41
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 41
 
 
  1234 0040 FFF7FEFF 		bl	VD55G1_log_impl
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  1269              	.LC16:
  1270 0083 56443535 		.ascii	"VD55G1_ERR-%d : Unsupported revision0x%04x\012\000"
  1270      47315F45 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 42
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 42
 
 
  1270      52522D25 
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  861:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****     return ret;
  862:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   ret = VD55G1_Copy16(ctx, VD55G1_REG_X_START_3, VD55G1_REG_X_START);
  863:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   if (ret)
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 43
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 43
 
 
  864:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****     return ret;
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  918:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   VD55G1_TraceError(ctx, ret);
  919:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
  920:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   reg32 &= ~0xfffff800;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 44
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 44
 
 
  921:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   reg32 |= (frame_length << 16) |
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  975:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****     drv_ctx->state = VD55G1_ST_IDLE;
  976:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   }
  977:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 45
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 45
 
 
  978:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   return VD55G1_StartAWU(ctx);
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  1320 0014 032B     		cmp	r3, #3
  1321 0016 05D9     		bls	.L89
  1322              	.LVL112:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 46
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 46
 
 
  1323              	.L88:
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  1344 002a 13B1     		cbz	r3, .L91
 1000:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****       return -1;
  1345              		.loc 1 1000 5 is_stmt 1 view .LVU389
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 47
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 47
 
 
 1000:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****       return -1;
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  1388              		.loc 1 1011 3 view .LVU401
  1389 005e 0A21     		movs	r1, #10
  1390 0060 2846     		mov	r0, r5
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 48
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 48
 
 
  1391 0062 2B6A     		ldr	r3, [r5, #32]
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  335:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   VD55G1_TraceError(ctx, ret);
  1429              		.loc 1 335 9 view .LVU418
  1430 007a 05AA     		add	r2, sp, #20
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 49
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 49
 
 
  1431 007c 9847     		blx	r3
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  1471              	.LVL129:
  339:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****     return -1;
  1472              		.loc 1 339 5 discriminator 1 view .LVU433
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 50
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 50
 
 
  340:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   }
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  1514              	.LBE27:
  1515              	.LBE19:
  1516              	.LBE18:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 51
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 51
 
 
 1014:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****     return ret;
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  1557 00fa 41F21002 		movw	r2, #4112
  1558 00fe BDF81230 		ldrh	r3, [sp, #18]
  1559 0102 9342     		cmp	r3, r2
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 52
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 52
 
 
  1560 0104 10D0     		beq	.L96
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  359:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   VD55G1_dbg(ctx, 0, "rom = 0x%04x\n", reg32);
  1602              		.loc 1 359 3 view .LVU473
  1603 0134 0446     		mov	r4, r0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 53
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 53
 
 
  1604 0136 D0B9     		cbnz	r0, .L98
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  1641 0156 0ED0     		beq	.L99
  1642 0158 42F22002 		movw	r2, #8224
  1643 015c 9342     		cmp	r3, r2
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 54
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 54
 
 
  1644 015e 2BD0     		beq	.L100
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  444:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****     return ret;
  1688              		.loc 1 444 6 is_stmt 0 view .LVU501
  1689 018a 0028     		cmp	r0, #0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 55
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 55
 
 
  1690 018c 7FF446AF 		bne	.L87
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  1733 01c2 DEE7     		b	.L117
  1734              	.LVL152:
  1735              	.L103:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 56
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 56
 
 
  407:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****                                    VD55G1_FWPATCH_REVISION_MAJOR_CUT_2, VD55G1_FWPATCH_REVISION_MIN
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  1779 0204 00000000 		.word	patch_array_cut_2
  1780              		.cfi_endproc
  1781              	.LFE36:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 57
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 57
 
 
  1783              		.section	.text.VD55G1_DeInit,"ax",%progbits
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  1824              		.loc 1 1032 10 is_stmt 0 view .LVU535
  1825 0018 0020     		movs	r0, #0
  1826              	.L122:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 58
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 58
 
 
 1033:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** }
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
 1036:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** {
  1861              		.loc 1 1036 1 is_stmt 1 view -0
  1862              		.cfi_startproc
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 59
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 59
 
 
  1863              		@ args = 0, pretend = 0, frame = 8
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  1902              		.loc 1 496 75 view .LVU553
  1903 0008 3344     		add	r3, r3, r6
  496:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****       drv_ctx->config_save.out_itf.data_rate_in_mps > VD55G1_MAX_DATARATE)
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 60
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 60
 
 
  1904              		.loc 1 496 6 view .LVU554
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  1945 002c 0446     		mov	r4, r0
  1946 002e 00B3     		cbz	r0, .L188
  504:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 61
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 61
 
 
  1947              		.loc 1 504 3 discriminator 1 view .LVU568
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  1986 0058 0294     		str	r4, [sp, #8]
  1987              	.L208:
  787:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 62
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 62
 
 
  1988              		.loc 1 787 3 is_stmt 0 discriminator 1 view .LVU584
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  2029              	.LBB90:
  504:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
  2030              		.loc 1 504 3 is_stmt 1 discriminator 3 view .LVU596
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 63
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 63
 
 
  504:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  463:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****     return mipi_data_rate;
  2067              		.loc 1 463 36 view .LVU615
  2068 0088 1A44     		add	r2, r2, r3
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 64
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 64
 
 
  463:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****     return mipi_data_rate;
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  484:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   else if (system_clk <= 780000000 && system_clk >= 600000000)
  2106              		.loc 1 484 23 is_stmt 0 view .LVU633
  2107 00aa 94BF     		ite	ls
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 65
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 65
 
 
  2108 00ac 0622     		movls	r2, #6
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  2146 00c0 DB08     		lsrs	r3, r3, #3
  2147              	.LVL177:
  482:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   else if (system_clk <= 900000000 && system_clk > 780000000)
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 66
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 66
 
 
  2148              		.loc 1 482 23 view .LVU650
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  2183              		.loc 1 521 36 is_stmt 0 view .LVU669
  2184 00d0 EB6C     		ldr	r3, [r5, #76]
  524:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   VD55G1_TraceError(ctx, ret);
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 67
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 67
 
 
  2185              		.loc 1 524 9 view .LVU670
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  2225              	.LVL182:
  531:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
  2226              		.loc 1 531 3 discriminator 6 view .LVU685
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 68
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 68
 
 
  531:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  2266              		.loc 1 498 12 view .LVU700
  2267              	.LBE92:
  2268              	.LBE100:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 69
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 69
 
 
  2269              	.LBB101:
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  2306              		.loc 1 535 3 is_stmt 1 view .LVU717
  535:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
  2307              		.loc 1 535 3 view .LVU718
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 70
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 70
 
 
  2308 013c 0446     		mov	r4, r0
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  2344              	.LBB104:
  2345              	.LBI104:
  198:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 71
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 71
 
 
  2346              		.loc 1 198 34 is_stmt 1 view .LVU737
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  2387              		.loc 1 560 3 is_stmt 1 discriminator 3 view .LVU750
  560:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
  2388              		.loc 1 560 3 discriminator 3 view .LVU751
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 72
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 72
 
 
  560:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  554:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   ret = ctx->write16(ctx, VD55G1_REG_X_WIDTH, mode->crop.width);
  2427              		.loc 1 554 3 discriminator 3 view .LVU768
  554:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   ret = ctx->write16(ctx, VD55G1_REG_X_WIDTH, mode->crop.width);
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 73
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 73
 
 
  2428              		.loc 1 554 3 discriminator 6 view .LVU769
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  2465              		.loc 1 557 9 view .LVU786
  2466 01d0 6B69     		ldr	r3, [r5, #20]
  2467 01d2 328A     		ldrh	r2, [r6, #16]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 74
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 74
 
 
  2468 01d4 9847     		blx	r3
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  2506              	.LBE105:
  2507              	.LBE107:
  772:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 75
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 75
 
 
  2508              		.loc 1 772 3 is_stmt 1 view .LVU803
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  2541              		.loc 1 574 3 view .LVU824
  2542 0206 0446     		mov	r4, r0
  2543 0208 A0B3     		cbz	r0, .L194
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 76
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 76
 
 
  574:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  2585 0234 80D99F38 		.word	950000000
  2586 0238 00000000 		.word	__func__.19
  2587 023c 00000000 		.word	.LC6
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 77
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 77
 
 
  2588 0240 00000000 		.word	__func__.20
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  2631 0298 4FF44071 		mov	r1, #768
  2632 029c 82B2     		uxth	r2, r0
  578:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 78
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 78
 
 
  2633              		.loc 1 578 14 view .LVU849
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  2671              		.loc 1 584 3 is_stmt 0 view .LVU865
  2672              	.LBE112:
  2673              	.LBE114:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 79
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 79
 
 
  619:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****     return ret;
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  2715              	.LVL224:
  628:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
  2716              		.loc 1 628 3 is_stmt 0 view .LVU879
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 80
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 80
 
 
  2717              	.LBE116:
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  2750 0308 FFF7FEFF 		bl	VD55G1_ComputeFrameLength
  2751              	.LVL226:
  651:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****     return ret;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 81
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 81
 
 
  2752              		.loc 1 651 3 is_stmt 1 view .LVU901
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  2793              	.LVL231:
  661:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
  2794              		.loc 1 661 3 discriminator 6 view .LVU915
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 82
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 82
 
 
  661:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  2837 035e 4FF0FF34 		mov	r4, #-1
  2838 0362 16E7     		b	.L145
  2839              	.LVL235:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 83
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 83
 
 
  2840              	.L161:
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  660:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   VD55G1_TraceError(ctx, ret);
  2881              		.loc 1 660 3 view .LVU941
  659:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   ret = ctx->write8(ctx, VD55G1_REG_EXP_MODE, reg);
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 84
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 84
 
 
  2882              		.loc 1 659 7 is_stmt 0 view .LVU942
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  2920              	.LBB126:
  668:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   uint8_t mode;
  2921              		.loc 1 668 3 view .LVU959
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 85
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 85
 
 
  669:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   int ret;
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  2962              		.loc 1 781 3 is_stmt 1 view .LVU973
  781:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
  2963              		.loc 1 781 3 view .LVU974
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 86
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 86
 
 
  781:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  3001 03ec 0290     		str	r0, [sp, #8]
  3002 03ee 0092     		str	r2, [sp]
  3003 03f0 2846     		mov	r0, r5
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 87
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 87
 
 
  3004              	.LVL249:
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  3044 0418 0446     		mov	r4, r0
  3045 041a 70B1     		cbz	r0, .L172
  718:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****     ret = ctx->write8(ctx, VD55G1_REG_DARKCAL_CTRL, VD55G1_DARKCAL_BYPASS_DARKAVG);
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 88
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 88
 
 
  3046              		.loc 1 718 5 discriminator 1 view .LVU1006
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  3085 043c 40F22A31 		movw	r1, #810
  3086 0440 2846     		mov	r0, r5
  3087              	.LVL259:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 89
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 89
 
 
  719:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****     VD55G1_TraceError(ctx, ret);
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  3127              		.loc 1 784 3 view .LVU1036
  784:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
  3128              		.loc 1 784 3 discriminator 3 view .LVU1037
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 90
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 90
 
 
  784:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  3166              		.loc 1 1044 3 view .LVU1054
  3167              	.LBB149:
  3168              	.LBI146:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 91
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 91
 
 
  792:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** {
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  3207 04a8 0446     		mov	r4, r0
  3208 04aa 48B9     		cbnz	r0, .L177
  800:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 92
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 92
 
 
  3209              		.loc 1 800 3 discriminator 3 view .LVU1071
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  3245 04ce 2846     		mov	r0, r5
  3246              	.LVL271:
  805:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 93
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 93
 
 
  3247              		.loc 1 805 3 is_stmt 0 view .LVU1090
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  3293              	.LFE38:
  3295              		.section	.text.VD55G1_Stop,"ax",%progbits
  3296              		.align	1
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 94
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 94
 
 
  3297              		.global	VD55G1_Stop
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  3338              	.LC23:
  3339 0000 56443535 		.ascii	"VD55G1_NOT-%d : Awu is on\012\000"
  3339      47315F4E 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 95
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 95
 
 
  3339      4F542D25 
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  848:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
  3380              		.loc 1 848 3 view .LVU1124
  850:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   if (ret)
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 96
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 96
 
 
  3381              		.loc 1 850 3 view .LVU1125
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  859:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   if (ret)
  3421              		.loc 1 859 9 is_stmt 0 view .LVU1140
  3422 004a 40F21252 		movw	r2, #1298
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 97
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 97
 
 
  3423 004e 40F20261 		movw	r1, #1538
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  3462 0084 40F21E61 		movw	r1, #1566
  3463 0088 2846     		mov	r0, r5
  3464              	.LVL291:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 98
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 98
 
 
  868:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   if (ret)
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  3501              		.loc 1 896 3 view .LVU1172
  3502 009e 0446     		mov	r4, r0
  3503              	.LVL296:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 99
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 99
 
 
  896:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
 1083:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
 1084:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   return 0;
 1085:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** }
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 100
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 100
 
 
  3539              		.loc 1 1085 1 view .LVU1186
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  3578              		.loc 1 900 3 discriminator 1 view .LVU1201
  3579 00e0 4FF46173 		mov	r3, #900
  3580 00e4 0290     		str	r0, [sp, #8]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 101
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 101
 
 
  3581 00e6 DFE7     		b	.L242
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  3619              		.loc 1 918 3 is_stmt 1 view .LVU1217
  918:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
  3620              		.loc 1 918 3 view .LVU1218
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 102
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 102
 
 
  3621 0106 0446     		mov	r4, r0
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  921:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****            (awu->zone_nb << 11);
  3658              		.loc 1 921 9 view .LVU1236
  3659 0132 0592     		str	r2, [sp, #20]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 103
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 103
 
 
  923:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   VD55G1_TraceError(ctx, ret);
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  932:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
  3697              		.loc 1 932 3 view .LVU1254
  3698 015a 0446     		mov	r4, r0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 104
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 104
 
 
  3699 015c 88B9     		cbnz	r0, .L224
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  3736              	.L224:
  932:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
  3737              		.loc 1 932 3 discriminator 1 view .LVU1272
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 105
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 105
 
 
  932:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  3781              	.LBB180:
  3782 01ac 40F21168 		movw	r8, #1553
  3783 01b0 05F16307 		add	r7, r5, #99
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 106
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 106
 
 
  3784              	.LVL318:
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  3824              		.loc 1 1080 3 view .LVU1297
  3825              	.LBB185:
  3826              	.LBI185:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 107
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 107
 
 
  966:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** {
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  833:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
  3865              		.loc 1 833 3 is_stmt 1 view .LVU1314
  833:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 108
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 108
 
 
  3866              		.loc 1 833 3 view .LVU1315
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  3903              		.loc 1 838 9 view .LVU1332
  3904 021e FFF7FEFF 		bl	VD55G1_WaitState
  3905              	.LVL329:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 109
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 109
 
 
  839:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  3943              	.LBE188:
  3944              	.LBE187:
  3945              	.LBE186:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 110
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 110
 
 
  3946              	.LBE185:
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
 1088:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   struct drv_ctx *drv_ctx = &ctx->ctx;
  3989              		.loc 1 1088 1 is_stmt 0 view .LVU1360
  3990 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 111
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 111
 
 
  3991              		.cfi_def_cfa_offset 24
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
 1095:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****     return is_streaming;
 1096:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c **** 
 1097:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   if (is_streaming) {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 112
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 112
 
 
  4032              		.loc 1 1097 3 view .LVU1374
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4068              	.L249:
  4069              		.cfi_restore_state
 1094:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****     return is_streaming;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 113
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 113
 
 
  4070              		.loc 1 1094 3 is_stmt 1 view .LVU1387
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4114              		.cfi_offset 6, -8
  4115              		.cfi_offset 14, -4
  4116 0002 86B0     		sub	sp, sp, #24
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 114
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 114
 
 
  4117              		.cfi_def_cfa_offset 40
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
 1120:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   *level = value;
  4162              		.loc 1 1120 3 is_stmt 0 discriminator 1 view .LVU1413
  4163 0030 0021     		movs	r1, #0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 115
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 115
 
 
  4164 0032 054A     		ldr	r2, .L258+4
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4207              		.loc 1 1127 1 view .LVU1422
  4208 0004 0546     		mov	r5, r0
  4209 0006 85B0     		sub	sp, sp, #20
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 116
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 116
 
 
  4210              		.cfi_def_cfa_offset 32
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4255              		.cfi_def_cfa_offset 12
  4256              		@ sp needed
  4257 0038 30BD     		pop	{r4, r5, pc}
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 117
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 117
 
 
  4258              	.LVL359:
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4303              	.LVL362:
 1146:../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1.c ****   if (ret)
  4304              		.loc 1 1146 3 is_stmt 1 view .LVU1448
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 118
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 118
 
 
  4305              		.loc 1 1146 6 is_stmt 0 view .LVU1449
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4359      69676874 
  4359      6E657373 
  4360              		.section	.rodata.__func__.2,"a"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 119
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 119
 
 
  4363              	__func__.2:
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4404 0000 56443535 		.ascii	"VD55G1_SetFlicker\000"
  4404      47315F53 
  4404      6574466C 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 120
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 120
 
 
  4404      69636B65 
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4444      47315F53 
  4444      65747570 
  4444      4F757470 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 121
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 121
 
 
  4444      757400
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4489 000c 00000000 		.word	0
  4490 0010 00000000 		.word	0
  4491 0014 24030000 		.word	804
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 122
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 122
 
 
  4492 0018 C0020000 		.word	704
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4527      0B84A85D 
  4527      00EF2B80 
  4527      01831B8C 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 123
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 123
 
 
  4528 006e D84960EF 		.ascii	"\330I`\357\013\241e\202\013\016\210\371\012\000\000"
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4540      5700EF25 
  4540      0E28F802 
  4540      02
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 124
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 124
 
 
  4541 013e FCEDF649 		.ascii	"\374\355\366I\375o\340\377\004\312\024\006\300\340\017"
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4553      0410E023 
  4553      4230E015 
  4553      0034
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 125
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 125
 
 
  4554 0213 E0864404 		.ascii	"\340\206D\004\340#B8\340\005\0000\340\306\002\010\340"
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4565 02d4 4A4680E0 		.ascii	"JF\200\3404\312G\306\021\215AF\320\3404\210v\002\000"
  4565      34CA47C6 
  4565      118D4146 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 126
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 126
 
 
  4565      D0E03488 
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4578 03a9 7E400068 		.ascii	"~@\000h\035\300\340\370\211@\000H<\270\340\000\220@"
  4578      1DC0E0F8 
  4578      89400048 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 127
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 127
 
 
  4578      3CB8E000 
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4594      250E24E0 
  4594      12528C
  4595 00ad F1149C84 		.ascii	"\361\024\234\204\200'\315\027\325\245\020\350\340$\000"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 128
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 128
 
 
  4595      8027CD17 
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4607      225280F1 
  4607      049CA510 
  4607      E8E017
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 129
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 129
 
 
  4608 017d CD07D524 		.ascii	"\315\007\325$\336\024\002\200\373\004\000\200\373\003"
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4620      E0248804 
  4620      0080FB2B 
  4620      04
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 130
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 130
 
 
  4621 0250 E4E00DC4 		.ascii	"\344\340\015\304#B\000\300L\014\004\362\223\335\303"
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4633      00A00A40 
  4633      9CE985
  4634 0319 82118116 		.ascii	"\202\021\201\026\200\230yp\357\001\201\010p4\357\001"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 131
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 131
 
 
  4634      80987970 
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4646      8CF8
  4647 03e7 6D14EF45 		.ascii	"m\024\357E\201\013\214Xm\024\357\013\214\350k\024\357"
  4647      810B8C58 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 132
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 132
 
 
  4647      6D14EF0B 
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4659      0B1088F9 
  4659      A1810B
  4660 04b7 A9018701 		.ascii	"\251\001\207\001P8\341U\204\005\020\200\345\241\201"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 133
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 133
 
 
  4660      5038E155 
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4673 0584 14A203AE 		.ascii	"\024\242\003\256\016\340\015\302\024\240\005P\004\300"
  4673      0EE00DC2 
  4673      14A00550 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 134
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 134
 
 
  4673      04C0
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4687 0658 4C047CFA 		.ascii	"L\004|\372\206N\374\340\005\016<\370\021\221\021N\314"
  4687      864EFCE0 
  4687      050E3CF8 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 135
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 135
 
 
  4687      1191114E 
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4699      7CF2
  4700 0730 93DDC3C1 		.ascii	"\223\335\303\301\014\004\204\372^@\001`\020\300\030"
  4700      0C0484FA 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 136
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 136
 
 
  4700      5E400160 
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4713      060A0160 
  4713      00F04F8A 
  4713      060A0160 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 137
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 137
 
 
  4713      00
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4725      5CC11402 
  4725      8CC110
  4726 08df 4204D015 		.ascii	"B\004\320\025@,\300\245\201\031\000\024\340\033\241"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 138
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 138
 
 
  4726      402CC0A5 
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4738      050E
  4739 09b0 3CE60BA3 		.ascii	"<\346\013\243\025\206\306\014|\341\360\002\320\344\013"
  4739      1586C60C 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 139
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 139
 
 
  4739      7CE1F002 
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4751 0a83 E034C247 		.ascii	"\3404\302G\306!\215AF\320\3404\200v\004\000\300\006"
  4751      C6218D41 
  4751      46D0E034 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 140
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 140
 
 
  4751      80760400 
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4763      E11140D0 
  4763      E1
  4764 0b5c 114040E2 		.ascii	"\021@@\342\021@0\342#@\340\340!\235#@\320\340;\000@"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 141
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 141
 
 
  4764      114030E2 
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4775      A0
  4776 0c2f E0188429 		.ascii	"\340\030\204)\000H\340\031\210 D\354\363/\242!@H\340"
  4776      0048E019 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 142
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 142
 
 
  4776      882044EC 
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4788      EFA600E4 
  4789 0d03 E008804A 		.ascii	"\340\010\200J@\220\340\005\202\001\207\330}(\357`\000"
  4789      4090E005 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 143
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 143
 
 
  4789      820187D8 
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4801      E40A4E9C 
  4801      E9
  4802 0dda 735068E2 		.ascii	"sPh\342\265P,\341\245P0\341n\344\250\005\000\240+\020"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 144
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 144
 
 
  4802      B5502CE1 
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4814 0ea6 C3C10C04 		.ascii	"\303\301\014\004|\372\360\036\260\356\360\000\020\344"
  4814      7CFAF01E 
  4814      B0EEF000 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 145
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 145
 
 
  4814      10E4
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4827      C7C6F010 
  4827      30E68398 
  4827      7EA0C506 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 146
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 146
 
 
  4828 0f82 2CFC9182 		.ascii	",\374\221\202\302N\024\370\317\351|\340\314\342\224"
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4841      4744CF28 
  4841      4C44EF
  4842 1050 0BA1C582 		.ascii	"\013\241\305\202\010\230\012\000\004\360U\202\011\014"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 147
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 147
 
 
  4842      08980A00 
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4855 111a 18981A00 		.ascii	"\030\230\032\000\010\340\020B\374\362\026\230\010\230"
  4855      08E01042 
  4855      FCF21698 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 148
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 148
 
 
  4855      0898
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4867      98E01880 
  4867      1042F8F3 
  4868 11f2 168093DD 		.ascii	"\026\200\223\335\000\000\034\251\000\000 \221@\000H"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 149
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 149
 
 
  4868      00001CA9 
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4879      B8
  4880 12bb E0D01041 		.ascii	"\340\320\020A\000\250\004\200\340Pu@\000\250\032\314"
  4880      00A80480 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 150
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 150
 
 
  4880      E0507540 
@@ -8960,104 +8960,104 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 1
  4890              		.file 7 "../../Middlewares/Camera_Middleware/sensors/vd55g1/vd55g1_patch_cut_2.c"
  4891              		.file 8 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
  4892              		.file 9 "<built-in>"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 151
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 151
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 vd55g1.c
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:26     .text.VD55G1_log_impl:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:31     .text.VD55G1_log_impl:00000000 VD55G1_log_impl
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:83     .text.VD55G1_PollReg8:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:88     .text.VD55G1_PollReg8:00000000 VD55G1_PollReg8
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:185    .text.VD55G1_PollReg8:00000054 $d
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:195    .text.VD55G1_WaitState:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:200    .text.VD55G1_WaitState:00000000 VD55G1_WaitState
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:281    .text.VD55G1_WaitState:00000040 $d
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:295    .text.display_error:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:300    .text.display_error:00000000 display_error
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:367    .text.display_error:00000034 $d
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4473   .rodata.__func__.24:00000000 __func__.24
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:387    .text.VD55G1_ApplyPatchCommon:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:392    .text.VD55G1_ApplyPatchCommon:00000000 VD55G1_ApplyPatchCommon
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:636    .text.VD55G1_ApplyPatchCommon:00000104 $d
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4463   .rodata.__func__.22:00000000 __func__.22
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:650    .text.VD55G1_ComputeFrameLength:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:655    .text.VD55G1_ComputeFrameLength:00000000 VD55G1_ComputeFrameLength
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:811    .text.VD55G1_ComputeFrameLength:00000098 $d
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4423   .rodata.__func__.14:00000000 __func__.14
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:818    .text.VD55G1_SetFlicker:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:823    .text.VD55G1_SetFlicker:00000000 VD55G1_SetFlicker
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:896    .text.VD55G1_SetFlicker:00000044 $d
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4321   .rodata.CSWTCH.65:00000000 CSWTCH.65
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4403   .rodata.__func__.10:00000000 __func__.10
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:906    .text.VD55G1_StopStreaming:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:911    .text.VD55G1_StopStreaming:00000000 VD55G1_StopStreaming
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:1041   .text.VD55G1_StopStreaming:00000074 $d
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4393   .rodata.__func__.8:00000000 __func__.8
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:1048   .text.VD55G1_Copy16:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:1053   .text.VD55G1_Copy16:00000000 VD55G1_Copy16
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:1149   .text.VD55G1_Copy16:00000050 $d
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4388   .rodata.__func__.7:00000000 __func__.7
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:1155   .text.VD55G1_Copy8:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:1160   .text.VD55G1_Copy8:00000000 VD55G1_Copy8
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:1256   .text.VD55G1_Copy8:00000050 $d
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4383   .rodata.__func__.6:00000000 __func__.6
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:1276   .text.VD55G1_Init:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:1282   .text.VD55G1_Init:00000000 VD55G1_Init
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:1766   .text.VD55G1_Init:000001d0 $d
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4478   .rodata.__func__.25:00000000 __func__.25
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4468   .rodata.__func__.23:00000000 __func__.23
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4583   .rodata.patch_array_cut_1:00000000 patch_array_cut_1
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4458   .rodata.__func__.21:00000000 __func__.21
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4520   .rodata.patch_array_cut_2:00000000 patch_array_cut_2
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:1784   .text.VD55G1_DeInit:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:1790   .text.VD55G1_DeInit:00000000 VD55G1_DeInit
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:1852   .text.VD55G1_Start:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:1858   .text.VD55G1_Start:00000000 VD55G1_Start
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:2584   .text.VD55G1_Start:00000230 $d
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4448   .rodata.__func__.19:00000000 __func__.19
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4453   .rodata.__func__.20:00000000 __func__.20
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4443   .rodata.__func__.18:00000000 __func__.18
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4345   .rodata.CSWTCH.42:00000000 CSWTCH.42
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4438   .rodata.__func__.17:00000000 __func__.17
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 152
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:26     .text.VD55G1_log_impl:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:31     .text.VD55G1_log_impl:00000000 VD55G1_log_impl
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:83     .text.VD55G1_PollReg8:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:88     .text.VD55G1_PollReg8:00000000 VD55G1_PollReg8
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:185    .text.VD55G1_PollReg8:00000054 $d
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:195    .text.VD55G1_WaitState:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:200    .text.VD55G1_WaitState:00000000 VD55G1_WaitState
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:281    .text.VD55G1_WaitState:00000040 $d
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:295    .text.display_error:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:300    .text.display_error:00000000 display_error
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:367    .text.display_error:00000034 $d
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4473   .rodata.__func__.24:00000000 __func__.24
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:387    .text.VD55G1_ApplyPatchCommon:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:392    .text.VD55G1_ApplyPatchCommon:00000000 VD55G1_ApplyPatchCommon
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:636    .text.VD55G1_ApplyPatchCommon:00000104 $d
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4463   .rodata.__func__.22:00000000 __func__.22
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:650    .text.VD55G1_ComputeFrameLength:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:655    .text.VD55G1_ComputeFrameLength:00000000 VD55G1_ComputeFrameLength
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:811    .text.VD55G1_ComputeFrameLength:00000098 $d
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4423   .rodata.__func__.14:00000000 __func__.14
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:818    .text.VD55G1_SetFlicker:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:823    .text.VD55G1_SetFlicker:00000000 VD55G1_SetFlicker
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:896    .text.VD55G1_SetFlicker:00000044 $d
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4321   .rodata.CSWTCH.65:00000000 CSWTCH.65
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4403   .rodata.__func__.10:00000000 __func__.10
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:906    .text.VD55G1_StopStreaming:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:911    .text.VD55G1_StopStreaming:00000000 VD55G1_StopStreaming
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:1041   .text.VD55G1_StopStreaming:00000074 $d
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4393   .rodata.__func__.8:00000000 __func__.8
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:1048   .text.VD55G1_Copy16:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:1053   .text.VD55G1_Copy16:00000000 VD55G1_Copy16
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:1149   .text.VD55G1_Copy16:00000050 $d
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4388   .rodata.__func__.7:00000000 __func__.7
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:1155   .text.VD55G1_Copy8:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:1160   .text.VD55G1_Copy8:00000000 VD55G1_Copy8
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:1256   .text.VD55G1_Copy8:00000050 $d
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4383   .rodata.__func__.6:00000000 __func__.6
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:1276   .text.VD55G1_Init:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:1282   .text.VD55G1_Init:00000000 VD55G1_Init
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:1766   .text.VD55G1_Init:000001d0 $d
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4478   .rodata.__func__.25:00000000 __func__.25
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4468   .rodata.__func__.23:00000000 __func__.23
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4583   .rodata.patch_array_cut_1:00000000 patch_array_cut_1
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4458   .rodata.__func__.21:00000000 __func__.21
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4520   .rodata.patch_array_cut_2:00000000 patch_array_cut_2
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:1784   .text.VD55G1_DeInit:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:1790   .text.VD55G1_DeInit:00000000 VD55G1_DeInit
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:1852   .text.VD55G1_Start:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:1858   .text.VD55G1_Start:00000000 VD55G1_Start
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:2584   .text.VD55G1_Start:00000230 $d
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4448   .rodata.__func__.19:00000000 __func__.19
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4453   .rodata.__func__.20:00000000 __func__.20
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4443   .rodata.__func__.18:00000000 __func__.18
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4345   .rodata.CSWTCH.42:00000000 CSWTCH.42
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4438   .rodata.__func__.17:00000000 __func__.17
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 152
 
 
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4428   .rodata.__func__.15:00000000 __func__.15
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:2612   .text.VD55G1_Start:00000274 $t
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:3278   .text.VD55G1_Start:000004e0 $d
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4418   .rodata.__func__.13:00000000 __func__.13
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4433   .rodata.__func__.16:00000000 __func__.16
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4336   .rodata.CSWTCH.61:00000000 CSWTCH.61
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4413   .rodata.__func__.12:00000000 __func__.12
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4329   .rodata.CSWTCH.63:00000000 CSWTCH.63
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4408   .rodata.__func__.11:00000000 __func__.11
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4398   .rodata.__func__.9:00000000 __func__.9
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:3296   .text.VD55G1_Stop:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:3302   .text.VD55G1_Stop:00000000 VD55G1_Stop
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:3341   .text.VD55G1_StartAutoWakeUp:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:3347   .text.VD55G1_StartAutoWakeUp:00000000 VD55G1_StartAutoWakeUp
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:3953   .text.VD55G1_StartAutoWakeUp:0000024c $d
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4378   .rodata.__func__.5:00000000 __func__.5
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4373   .rodata.__func__.4:00000000 __func__.4
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4368   .rodata.__func__.3:00000000 __func__.3
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4363   .rodata.__func__.2:00000000 __func__.2
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:3963   .text.VD55G1_SetFlipMirrorMode:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:3969   .text.VD55G1_SetFlipMirrorMode:00000000 VD55G1_SetFlipMirrorMode
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4093   .text.VD55G1_GetBrightnessLevel:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4099   .text.VD55G1_GetBrightnessLevel:00000000 VD55G1_GetBrightnessLevel
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4179   .text.VD55G1_GetBrightnessLevel:00000044 $d
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4358   .rodata.__func__.1:00000000 __func__.1
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4185   .text.VD55G1_SetBrightnessLevel:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4191   .text.VD55G1_SetBrightnessLevel:00000000 VD55G1_SetBrightnessLevel
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4267   .text.VD55G1_SetBrightnessLevel:00000040 $d
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4353   .rodata.__func__.0:00000000 __func__.0
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4273   .text.VD55G1_SetFlickerMode:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4279   .text.VD55G1_SetFlickerMode:00000000 VD55G1_SetFlickerMode
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4326   .rodata.CSWTCH.63:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4342   .rodata.CSWTCH.42:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4484   .rodata.vd55g1_supported_modes:00000000 vd55g1_supported_modes
-C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4481   .rodata.vd55g1_supported_modes:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4428   .rodata.__func__.15:00000000 __func__.15
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:2612   .text.VD55G1_Start:00000274 $t
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:3278   .text.VD55G1_Start:000004e0 $d
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4418   .rodata.__func__.13:00000000 __func__.13
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4433   .rodata.__func__.16:00000000 __func__.16
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4336   .rodata.CSWTCH.61:00000000 CSWTCH.61
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4413   .rodata.__func__.12:00000000 __func__.12
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4329   .rodata.CSWTCH.63:00000000 CSWTCH.63
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4408   .rodata.__func__.11:00000000 __func__.11
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4398   .rodata.__func__.9:00000000 __func__.9
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:3296   .text.VD55G1_Stop:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:3302   .text.VD55G1_Stop:00000000 VD55G1_Stop
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:3341   .text.VD55G1_StartAutoWakeUp:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:3347   .text.VD55G1_StartAutoWakeUp:00000000 VD55G1_StartAutoWakeUp
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:3953   .text.VD55G1_StartAutoWakeUp:0000024c $d
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4378   .rodata.__func__.5:00000000 __func__.5
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4373   .rodata.__func__.4:00000000 __func__.4
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4368   .rodata.__func__.3:00000000 __func__.3
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4363   .rodata.__func__.2:00000000 __func__.2
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:3963   .text.VD55G1_SetFlipMirrorMode:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:3969   .text.VD55G1_SetFlipMirrorMode:00000000 VD55G1_SetFlipMirrorMode
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4093   .text.VD55G1_GetBrightnessLevel:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4099   .text.VD55G1_GetBrightnessLevel:00000000 VD55G1_GetBrightnessLevel
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4179   .text.VD55G1_GetBrightnessLevel:00000044 $d
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4358   .rodata.__func__.1:00000000 __func__.1
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4185   .text.VD55G1_SetBrightnessLevel:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4191   .text.VD55G1_SetBrightnessLevel:00000000 VD55G1_SetBrightnessLevel
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4267   .text.VD55G1_SetBrightnessLevel:00000040 $d
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4353   .rodata.__func__.0:00000000 __func__.0
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4273   .text.VD55G1_SetFlickerMode:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4279   .text.VD55G1_SetFlickerMode:00000000 VD55G1_SetFlickerMode
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4326   .rodata.CSWTCH.63:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4342   .rodata.CSWTCH.42:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4484   .rodata.vd55g1_supported_modes:00000000 vd55g1_supported_modes
+C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s:4481   .rodata.vd55g1_supported_modes:00000000 $d
                            .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
                            .group:00000000 wm4.stdarg.h.31.f7f4f3bfddce9ed034956076d59396f7
                            .group:00000000 wm4._newlib_version.h.4.411db44ea2338a62eca2f0777f81481b
@@ -9080,7 +9080,7 @@ C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s:4481   .rodata.vd55g1_supported_m
                            .group:00000000 wm4.stddef.h.158.6f8e08a347b1cff664332fa350bfceb3
                            .group:00000000 wm4._types.h.127.3bdfe3ff8ea2d0985b03d9cbe93480e3
                            .group:00000000 wm4.reent.h.18.25503cdc8b7e55dd0d6ea7b3e5af7a03
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccqcsqe0.s 			page 153
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cck8eIAk.s 			page 153
 
 
                            .group:00000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f

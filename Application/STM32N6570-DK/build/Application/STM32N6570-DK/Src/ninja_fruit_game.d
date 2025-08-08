@@ -77,7 +77,10 @@ build/Application/STM32N6570-DK/Src/ninja_fruit_game.o: \
  ../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Inc/spe_movenet_pp_if.h \
  ../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Inc/spe_pp_output_if.h \
  ../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Inc/spe_pp_output_if.h \
- Inc/utils.h
+ Inc/utils.h \
+ ../../STM32Cube_FW_N6/Drivers/BSP/STM32N6570-DK/stm32n6570_discovery.h \
+ Inc/stm32n6570_discovery_conf.h \
+ ../../STM32Cube_FW_N6/Drivers/BSP/STM32N6570-DK/stm32n6570_discovery_errno.h
 Inc/ninja_fruit_game.h:
 Inc/main.h:
 ../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Inc/stm32n6xx_hal.h:
@@ -159,3 +162,6 @@ Inc/display_spe.h:
 ../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Inc/spe_pp_output_if.h:
 ../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Inc/spe_pp_output_if.h:
 Inc/utils.h:
+../../STM32Cube_FW_N6/Drivers/BSP/STM32N6570-DK/stm32n6570_discovery.h:
+Inc/stm32n6570_discovery_conf.h:
+../../STM32Cube_FW_N6/Drivers/BSP/STM32N6570-DK/stm32n6570_discovery_errno.h:

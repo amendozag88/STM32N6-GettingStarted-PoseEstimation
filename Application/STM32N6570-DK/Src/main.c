@@ -300,6 +300,9 @@ static void Hardware_init(void)
   IAC_Config();
   set_clk_sleep_mode();
 
+  /* Initialize user button for mode switching */
+    BSP_PB_Init(BUTTON_USER1, BUTTON_MODE_GPIO);
+
 }
 
 static void NeuralNetwork_init(uint32_t *nnin_length, float32_t *nn_out[], int *number_output, int32_t nn_out_len[])

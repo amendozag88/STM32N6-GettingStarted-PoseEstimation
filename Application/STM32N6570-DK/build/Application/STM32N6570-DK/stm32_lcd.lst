@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 1
 
 
    1              		.arch armv8.1-m.main
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
   22:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** --------------------------
   23:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****    - This driver is a generic driver that provides basic display services. It should
   24:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****      be used by any platform once LCD is initialized and following draw methods are
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 2
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 2
 
 
   25:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****      registered:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
   79:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   * @{
   80:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   */
   81:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 3
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 3
 
 
   82:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** /** @addtogroup STM32_EVAL
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  136:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   uint32_t x1;
  137:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   uint32_t y1;
  138:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   uint32_t x2;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 4
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 4
 
 
  139:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   uint32_t y2;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
   45              		.cfi_offset 6, -8
   46              		.cfi_offset 14, -4
  182:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   FuncDriver.FillRGBRect    = pDrv->FillRGBRect;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 5
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 5
 
 
  183:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   FuncDriver.DrawHLine      = pDrv->DrawHLine;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
   76 001c E360     		str	r3, [r4, #12]
  185:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   FuncDriver.GetPixel       = pDrv->GetPixel;
   77              		.loc 1 185 3 is_stmt 1 view .LVU19
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 6
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 6
 
 
  185:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   FuncDriver.GetPixel       = pDrv->GetPixel;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  112 003c A262     		str	r2, [r4, #40]
  193:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   DrawProp->LcdDevice = 0;
  113              		.loc 1 193 3 is_stmt 1 view .LVU40
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 7
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 7
 
 
  114              		.loc 1 195 3 view .LVU41
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  159              		.loc 1 205 1 is_stmt 1 view -0
  160              		.cfi_startproc
  161              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 8
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 8
 
 
  162              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  206 002c 1831     		adds	r1, r1, #24
  207 002e 9847     		blx	r3
  208              	.LVL9:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 9
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 9
 
 
  213:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****       FuncDriver.GetFormat(DrawProp->LcdDevice, &DrawProp[DrawProp->LcdLayer].LcdPixelFormat);
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  253              		@ args = 0, pretend = 0, frame = 0
  254              		@ frame_needed = 0, uses_anonymous_args = 0
  224:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   DrawProp->LcdDevice = Device;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 10
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 10
 
 
  255              		.loc 1 224 3 view .LVU68
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  302              		.align	1
  303              		.global	UTIL_LCD_SetTextColor
  304              		.syntax unified
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 11
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 11
 
 
  305              		.thumb
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  345              		.loc 1 244 3 view .LVU85
  346              		.loc 1 244 38 is_stmt 0 view .LVU86
  347 0000 024A     		ldr	r2, .L17
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 12
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 12
 
 
  348 0002 D368     		ldr	r3, [r2, #12]
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  395              		.thumb_func
  397              	UTIL_LCD_GetBackColor:
  398              	.LFB6:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 13
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 13
 
 
  255:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  438 0004 03EB4213 		add	r3, r3, r2, lsl #5
  439 0008 9860     		str	r0, [r3, #8]
  272:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** }
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 14
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 14
 
 
  440              		.loc 1 272 1 view .LVU99
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  283:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** /**
  284:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   * @brief  Draws a RGB rectangle in currently active layer.
  285:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   * @param  pData   Pointer to RGB rectangle data
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 15
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 15
 
 
  286:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   * @param  Xpos    X position
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  533              		.section	.text.UTIL_LCD_DrawHLine,"ax",%progbits
  534              		.align	1
  535              		.global	UTIL_LCD_DrawHLine
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 16
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 16
 
 
  536              		.syntax unified
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  572              		.loc 1 306 5 view .LVU124
  573 0014 022C     		cmp	r4, #2
  574 0016 10D1     		bne	.L35
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 17
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 17
 
 
  575              		.loc 1 308 5 is_stmt 1 view .LVU125
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  613 003c 03D1     		bne	.L37
  312:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   }
  614              		.loc 1 312 5 is_stmt 1 view .LVU136
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 18
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 18
 
 
  615 003e 23F07F43 		bic	r3, r3, #-16777216
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  324:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** /**
  325:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   * @brief  Draws a vertical line in currently active layer.
  326:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   * @param  Xpos    X position
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 19
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 19
 
 
  327:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   * @param  Ypos    Y position
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  700 0024 3C43     		orrs	r4, r4, r7
  701              		.loc 1 336 67 view .LVU160
  702 0026 C3F3C403 		ubfx	r3, r3, #3, #5
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 20
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 20
 
 
  703              	.LVL39:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  739              	.LVL45:
  740              	.L46:
  342:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 21
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 21
 
 
  741              		.loc 1 342 8 view .LVU170
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  781              		@ args = 0, pretend = 0, frame = 0
  782              		@ frame_needed = 0, uses_anonymous_args = 0
  360:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   /* Get Pixel */
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 22
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 22
 
 
  361:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   FuncDriver.GetPixel(DrawProp->LcdDevice, Xpos, Ypos, Color);
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  831 003e 1732     		adds	r2, r2, #23
  832 0040 8909     		lsrs	r1, r1, #6
  833 0042 9209     		lsrs	r2, r2, #6
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 23
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 23
 
 
  834 0044 0902     		lsls	r1, r1, #8
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  869 0074 C2F30323 		ubfx	r3, r2, #8, #4
  870 0078 03EB0313 		add	r3, r3, r3, lsl #4
  871 007c 1B04     		lsls	r3, r3, #16
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 24
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 24
 
 
  872 007e 43EA0163 		orr	r3, r3, r1, lsl #24
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  915              	.LVL54:
  383:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   /* Set Pixel */
  916              		.loc 1 383 1 view .LVU210
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 25
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 25
 
 
  917 0006 1346     		mov	r3, r2
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  955              		.loc 1 391 5 is_stmt 1 view .LVU225
  956 0034 23F07F43 		bic	r3, r3, #-16777216
  957              	.LVL58:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 26
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 26
 
 
  958              	.L62:
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  997              	.L65:
  998              		.align	2
  999              	.L64:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 27
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 27
 
 
  1000 0060 00000000 		.word	DrawProp
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  1024              		.cfi_offset 5, -32
  1025              		.cfi_offset 6, -28
  1026              		.cfi_offset 7, -24
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 28
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 28
 
 
  1027              		.cfi_offset 8, -20
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  457:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   xsize = (DrawProp[DrawProp->LcdLayer].LcdXsize/DrawProp[DrawProp->LcdLayer].pFont->Width);
  458:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** 
  459:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   switch (Mode)
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 29
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 29
 
 
  460:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   {
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  514:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   * @brief  Draws an uni-line (between two points) in currently active layer.
  515:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   * @param  Xpos1 Point 1 X position
  516:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   * @param  Ypos1 Point 1 Y position
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 30
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 30
 
 
  517:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   * @param  Xpos2 Point 2 X position
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  571:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     den = deltay;
  572:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     num = deltay / 2;
  573:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     numadd = deltax;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 31
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 31
 
 
  574:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     numpixels = deltay;         /* There are more y-values than x-values */
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  628:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   while (current_x <= current_y)
  629:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   {
  630:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     if((Ypos - current_y) < DrawProp[DrawProp->LcdLayer].LcdYsize)
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 32
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 32
 
 
  631:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     {
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  685:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****       current_y--;
  686:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     }
  687:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     current_x++;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 33
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 33
 
 
  688:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   }
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  742:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     e2 = err;
  743:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     if (e2 <= x_pos)
  744:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 34
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 34
 
 
  745:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****       err += ++x_pos*2+1;
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  799:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   * @param  Radius Circle radius
  800:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   * @param  Color  Draw color
  801:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   */
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 35
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 35
 
 
  802:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** void UTIL_LCD_FillCircle(uint32_t Xpos, uint32_t Ypos, uint32_t Radius, uint32_t Color)
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  856:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** 
  857:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** /**
  858:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   * @brief  Draws a full poly-line (between many points) in currently active layer.
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 36
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 36
 
 
  859:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   * @param  Points     Pointer to the points array
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  913:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     positions.x1 = X;
  914:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     positions.y1 = Y;
  915:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     positions.x2 = X2;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 37
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 37
 
 
  916:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     positions.y2 = Y2;
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  970:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   float k = 0, rad1 = 0, rad2 = 0;
  971:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** 
  972:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   rad1 = XRadius;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 38
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 38
 
 
  973:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   rad2 = YRadius;
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  1066              		.loc 1 1014 3 view .LVU259
  1067              	.LBE5:
  1068              	.LBE4:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 39
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 39
 
 
  433:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** }
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
 1048:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****         }
 1049:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****       }
 1050:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****       UTIL_LCD_FillRGBRect(Xpos,  Ypos++, &rgb8[0], width, 1);
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 40
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 40
 
 
 1051:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     }
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  1129 0052 02D8     		bhi	.L91
  1130              	.LBE7:
  1131              	.LBE10:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 41
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 41
 
 
  434:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** 
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  1172 007a 3CD1     		bne	.L72
  1173 007c 4FF0010C 		mov	ip, #1
 1041:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****         {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 42
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 42
 
 
  1174              		.loc 1 1041 43 view .LVU292
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  1194              		.loc 1 1085 7 is_stmt 0 view .LVU297
  1195 009e CDF800C0 		str	ip, [sp]
  1196              	.LVL81:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 43
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 43
 
 
  1197              	.L99:
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  1227              		.loc 1 1033 31 view .LVU308
  1228 00bc 43EA0223 		orr	r3, r3, r2, lsl #8
 1033:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****       break;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 44
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 44
 
 
  1229              		.loc 1 1033 55 view .LVU309
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  1268 00f4 D1E7     		b	.L73
  1269              	.LVL92:
  1270              	.L72:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 45
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 45
 
 
 1052:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     {
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  1311 0124 14BF     		ite	ne
  1312 0126 0368     		ldrne	r3, [r0]
 1064:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****           rgb8[j + 1U] = (CONVERTARGB88882RGB888((DrawProp[DrawProp->LcdLayer].BackColor)) >> 8) & 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 46
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 46
 
 
  1313              		.loc 1 1064 11 is_stmt 1 view .LVU341
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  1350 0154 039B     		ldr	r3, [sp, #12]
  1351 0156 BC42     		cmp	r4, r7
  1352 0158 03F1FF3B 		add	fp, r3, #-1
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 47
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 47
 
 
  1353 015c 04EB0603 		add	r3, r4, r6
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  1392              		.loc 1 1074 14 view .LVU373
  1393 0192 4FF0000E 		mov	lr, #0
 1076:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****         {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 48
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 48
 
 
  1394              		.loc 1 1076 43 view .LVU374
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
 1074:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****       {
  1436              		.loc 1 1074 31 is_stmt 1 discriminator 2 view .LVU387
  1437              	.LVL106:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 49
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 49
 
 
 1074:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****       {
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  1484              	.LVL108:
  448:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   uint32_t refcolumn = 1, i = 0;
  1485              		.loc 1 448 1 view .LVU398
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 50
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 50
 
 
  1486 000c 9946     		mov	r9, r3
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  1524              		.loc 1 484 6 is_stmt 0 view .LVU414
  1525 0040 47F6FE73 		movw	r3, #32766
  1526              	.LVL113:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 51
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 51
 
 
  484:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   {
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  463:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****       break;
  1566              		.loc 1 463 17 is_stmt 0 view .LVU430
  1567 006e 05EB5405 		add	r5, r5, r4, lsr #1
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 52
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 52
 
 
  1568              	.LVL118:
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  509:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   UTIL_LCD_DisplayStringAt(0, LINE(Line), ptr, LEFT_MODE);
  1613              		.loc 1 509 1 is_stmt 1 view -0
  1614              		.cfi_startproc
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 53
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 53
 
 
  1615              		@ args = 0, pretend = 0, frame = 0
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  1661              		@ args = 4, pretend = 0, frame = 16
  1662              		@ frame_needed = 0, uses_anonymous_args = 0
  523:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   yinc1 = 0, yinc2 = 0, den = 0, num = 0, numadd = 0, numpixels = 0,
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 54
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 54
 
 
  1663              		.loc 1 523 3 view .LVU453
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  532:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   x = Xpos1;                       /* Start x off at the first pixel */
  1705              		.loc 1 532 3 is_stmt 1 view .LVU466
  549:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     yinc2 = 1;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 55
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 55
 
 
  1706              		.loc 1 549 11 is_stmt 0 view .LVU467
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  1742              		.loc 1 560 11 view .LVU485
  1743 0046 4B46     		mov	r3, r9
  1744              	.LVL139:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 56
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 56
 
 
  563:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     numadd = deltay;
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  573:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     numpixels = deltay;         /* There are more y-values than x-values */
  1784              		.loc 1 573 12 view .LVU501
  1785 0068 1E46     		mov	r6, r3
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 57
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 57
 
 
  1786              	.LVL146:
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  583:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****       x += xinc1;                             /* Change the x as appropriate */
  1826              		.loc 1 583 7 is_stmt 1 view .LVU516
  584:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****       y += yinc1;                             /* Change the y as appropriate */
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 58
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 58
 
 
  1827              		.loc 1 584 9 is_stmt 0 view .LVU517
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  577:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   {
  1865              		.loc 1 577 53 is_stmt 1 discriminator 2 view .LVU534
  577:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 59
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 59
 
 
  1866              		.loc 1 577 53 is_stmt 0 discriminator 2 view .LVU535
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  1902              		.cfi_offset 7, -24
  1903              		.cfi_offset 8, -20
  1904              		.cfi_offset 9, -16
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 60
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 60
 
 
  1905              		.cfi_offset 10, -12
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
 1134:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   }
 1135:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** 
 1136:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   if (Positions->y2 >= Positions->y1)                 /* The y-values are increasing */
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 61
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 61
 
 
 1137:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   {
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
 1150:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     yinc2 = 0;                  /* Don't change the y for every iteration */
  1972              		.loc 1 1150 5 view .LVU571
 1151:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     den = deltax;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 62
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 62
 
 
  1973              		.loc 1 1151 5 view .LVU572
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
 1178:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     y += yinc2;                 /* Change the y as appropriate */
 1179:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   }
 1180:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** }
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 63
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 63
 
 
  1999              		.loc 1 1180 1 is_stmt 0 view .LVU583
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
 1168:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** 
  2039              		.loc 1 1168 5 is_stmt 1 view .LVU598
  2040 0088 039B     		ldr	r3, [sp, #12]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 64
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 64
 
 
 1170:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     if (num >= den)             /* Check if numerator >= denominator */
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  2079              	.L135:
 1177:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     y += yinc2;                 /* Change the y as appropriate */
  2080              		.loc 1 1177 5 is_stmt 1 view .LVU615
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 65
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 65
 
 
 1177:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     y += yinc2;                 /* Change the y as appropriate */
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  2125              		.cfi_offset 6, -16
  2126              		.cfi_offset 7, -12
  2127              		.cfi_offset 8, -8
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 66
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 66
 
 
  2128              		.cfi_offset 14, -4
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  2173              		.cfi_def_cfa_offset 0
  2174              	.LVL203:
  608:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** }
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 67
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 67
 
 
  2175              		.loc 1 608 3 view .LVU637
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  2221 000e 5700     		lsls	r7, r2, #1
  630:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     {
  2222              		.loc 1 630 46 view .LVU648
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 68
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 68
 
 
  2223 0010 4D4C     		ldr	r4, .L161
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  636:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****       {
  2261              		.loc 1 636 59 view .LVU665
  2262 0042 04EB4313 		add	r3, r4, r3, lsl #5
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 69
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 69
 
 
  636:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****       {
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  648:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****       {
  2303              		.loc 1 648 16 view .LVU680
  2304 0080 A8EB0500 		sub	r0, r8, r5
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 70
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 70
 
 
  648:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****       {
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  2345              		.loc 1 660 9 view .LVU694
  2346 00c2 A8EB0600 		sub	r0, r8, r6
  660:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****       {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 71
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 71
 
 
  2347              		.loc 1 660 59 view .LVU695
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  2387              		.loc 1 672 59 is_stmt 0 view .LVU709
  2388 0102 E368     		ldr	r3, [r4, #12]
  672:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****       {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 72
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 72
 
 
  2389              		.loc 1 672 16 view .LVU710
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  2429 0136 A8BF     		it	ge
  2430 0138 07EB8307 		addge	r7, r7, r3, lsl #2
  2431              	.LVL220:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 73
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 73
 
 
  685:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     }
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  701:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   {
  2477              		.loc 1 701 5 view .LVU736
  2478 000a 1FD9     		bls	.L163
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 74
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 74
 
 
  706:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** 
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  708:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   {
  2518              		.loc 1 708 9 is_stmt 1 view .LVU752
  708:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 75
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 75
 
 
  2519              		.loc 1 708 9 is_stmt 0 view .LVU753
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  2566              		.cfi_offset 8, -20
  2567              		.cfi_offset 9, -16
  2568              		.cfi_offset 10, -12
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 76
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 76
 
 
  2569              		.cfi_offset 11, -8
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  2607              		.loc 1 737 29 view .LVU778
  2608 0042 FCEEE77A 		vcvt.u32.f32	s15, s15
  737:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     UTIL_LCD_SetPixel((Xpos+(uint32_t)(x_pos/k)), (Ypos + y_pos), Color);
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 77
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 77
 
 
  2609              		.loc 1 737 5 view .LVU779
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  742:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     if (e2 <= x_pos)
  2653              		.loc 1 742 5 view .LVU790
  743:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 78
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 78
 
 
  2654              		.loc 1 743 5 view .LVU791
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  2692 00b6 5D1C     		adds	r5, r3, #1
  2693              	.LVL246:
  2694              	.L170:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 79
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 79
 
 
  752:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** }
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  2742              		.loc 1 762 1 is_stmt 0 view .LVU816
  2743 0000 1346     		mov	r3, r2
  763:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** }
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 80
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 80
 
 
  2744              		.loc 1 763 13 view .LVU817
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  777:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   {
  2792              		.loc 1 777 3 view .LVU826
  775:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   /* Fill the rectangle */
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 81
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 81
 
 
  2793              		.loc 1 775 1 is_stmt 0 view .LVU827
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  2833              	.L183:
  787:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   }
  2834              		.loc 1 787 5 view .LVU842
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 82
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 82
 
 
  2835 0030 2C43     		orrs	r4, r4, r5
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  2876 0058 45EA0C35 		orr	r5, r5, ip, lsl #12
  787:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   }
  2877              		.loc 1 787 73 view .LVU856
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 83
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 83
 
 
  2878 005c 4FEA142C 		lsr	ip, r4, #8
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  2925 0014 FFF7FEFF 		bl	UTIL_LCD_FillRect
  2926              	.LVL265:
  411:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 84
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 84
 
 
  2927              		.loc 1 411 1 view .LVU866
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  2974              	.LVL267:
  420:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** }
  2975              		.loc 1 420 3 view .LVU876
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 85
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 85
 
 
  2976 001a FFF7FEFF 		bl	UTIL_LCD_FillRect
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3024 000a 1D46     		mov	r5, r3
  811:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** 
  3025              		.loc 1 811 13 view .LVU885
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 86
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 86
 
 
  3026 000c 1646     		mov	r6, r2
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3064              	.L207:
  825:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****       }
  3065              		.loc 1 825 9 is_stmt 0 view .LVU902
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 87
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 87
 
 
  3066 003a FFF7FEFF 		bl	UTIL_LCD_DrawHLine
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3106              	.LVL277:
  848:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****       current_y--;
  3107              		.loc 1 848 31 view .LVU917
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 88
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 88
 
 
  3108 006c A31B     		subge	r3, r4, r6
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3151              		.cfi_restore 4
  3152              		.cfi_def_cfa_offset 0
  3153              	.LVL283:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 89
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 89
 
 
  854:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c **** }
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3202              		.cfi_startproc
  3203              		@ args = 0, pretend = 0, frame = 40
  3204              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 90
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 90
 
 
  865:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   uint32_t  image_left = 0, image_right = 0, image_top = 0, image_bottom = 0;
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3243 0018 8BB0     		sub	sp, sp, #44
  3244              		.cfi_def_cfa_offset 80
  3245              	.LVL291:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 91
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 91
 
 
  3246              	.L210:
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  909:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     Points++;
  3283              		.loc 1 909 7 is_stmt 0 view .LVU970
  3284 0034 34F9023C 		ldrsh	r3, [r4, #-2]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 92
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 92
 
 
  3285              	.LVL299:
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3320              		.loc 1 922 18 view .LVU989
  3321 0060 CDE90665 		strd	r6, r5, [sp, #24]
  923:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     positions.y3 = Y2;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 93
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 93
 
 
  3322              		.loc 1 923 5 is_stmt 1 view .LVU990
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3358              		.loc 1 906 9 view .LVU1008
  3359 008a 0193     		str	r3, [sp, #4]
  3360 008c D2D1     		bne	.L213
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 94
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 94
 
 
  936:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     positions.y1 = y_first;
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  954:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     positions.y3 = y_first;
  3396              		.loc 1 954 5 is_stmt 1 view .LVU1028
  955:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     FillTriangle(&positions, Color);
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 95
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 95
 
 
  3397              		.loc 1 955 18 is_stmt 0 view .LVU1029
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3438 00e4 28BF     		it	cs
  3439 00e6 6546     		movcs	r5, ip
  3440              	.LVL315:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 96
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 96
 
 
  889:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     {
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3488              		.cfi_offset 14, -4
  3489 0014 8146     		mov	r9, r0
  3490 0016 2DED028B 		vpush.64	{d8}
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 97
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 97
 
 
  3491              		.cfi_def_cfa_offset 48
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  979:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****     UTIL_LCD_DrawHLine((Xpos-(uint32_t)(x_pos/k)), (Ypos - y_pos), (2*(uint32_t)(x_pos/k) + 1), Col
  3528              		.loc 1 979 5 view .LVU1069
  3529 0048 0136     		adds	r6, r6, #1
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 98
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 98
 
 
  3530 004a 5346     		mov	r3, r10
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  988:../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.c ****   }
  3570              		.loc 1 988 8 is_stmt 0 view .LVU1084
  3571 007e A542     		cmp	r5, r4
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 99
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 99
 
 
  3572 0080 0BDA     		bge	.L221
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3618      00000000 
  3618      00000000 
  3618      00000000 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 100
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 100
 
 
  3618      00000000 
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3646      00002050 
  3646      10201060 
  3646      00001030 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 101
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 101
 
 
  3647 00a5 38000070 		.ascii	"8\000\000p@`\020P \000\0000@`PP`\000\000pP\020   \000"
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3658      E8000070 
  3658      50201050 
  3658      700000F8 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 102
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 102
 
 
  3658      A8202020 
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3670      38081800 
  3670      00782020 
  3670      70000000 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 103
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 103
 
 
  3670      00302010 
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3694      00
  3695 0054 00101010 		.ascii	"\000\020\020\020\020\000\000\000\000\000\000\000\000"
  3695      10000000 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 104
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 104
 
 
  3695      00000000 
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3707      44443800 
  3707      000000
  3708 012d 38444444 		.ascii	"8DDD<\004\010p\000\000\000\000\000\00000\000\00000\000"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 105
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 105
 
 
  3708      3C040870 
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3719      20202020 
  3720 021a 000000EE 		.ascii	"\000\000\000\356llTTDD\356\000\000\000\000\356ddTTT"
  3720      6C6C5454 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 106
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 106
 
 
  3720      4444EE00 
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3732 0300 00100800 		.ascii	"\000\020\010\000\000\000\000\000\000\000\000\000\000"
  3732      00000000 
  3732      00000000 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 107
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 107
 
 
  3732      00
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3744 03e2 00000000 		.ascii	"\000\000\000\000\000<D8\004Dx\000\000\000\000\000 |"
  3744      003C4438 
  3744      04447800 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 108
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 108
 
 
  3744      00000000 
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3769 001a 00000000 		.ascii	"\000\000\000\000\000\000\000\000\014\000\014\000\014"
  3769      00000000 
  3769      0C000C00 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 109
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 109
 
 
  3769      0C
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3783 00dd 00000000 		.ascii	"\000\000\000\000\000\000\000\007\000\007\000\002\000"
  3783      00000007 
  3783      00070002 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 110
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 110
 
 
  3783      00
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3797      08000000 
  3797      00000000 
  3797      00
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 111
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 111
 
 
  3798 01a3 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000?\200\000\000\000"
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3811      00000000 
  3811      3F006180 
  3811      018003
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 112
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 112
 
 
  3812 0269 001F0003 		.ascii	"\000\037\000\003\200\001\200\001\200a\200?\000\000\000"
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3825      00318031 
  3825      8033801D 
  3825      80018003 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 113
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 113
 
 
  3826 0331 0007003C 		.ascii	"\000\007\000<\000\000\000\000\000\000\000\000\000\000"
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3839      31803180 
  3839      018007
  3840 03ed 000C000C 		.ascii	"\000\014\000\014\000\000\000\014\000\000\000\000\000"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 114
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 114
 
 
  3840      0000000C 
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3852      30803080 
  3852      7F80
  3853 04b6 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 115
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 115
 
 
  3853      00000000 
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3865      000000
  3866 057f 00000000 		.ascii	"\000\000\000\000\000~\000\030\000\030\000\030\000\030"
  3866      007E0018 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 116
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 116
 
 
  3866      00180018 
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3879      31807CE0 
  3879      00000000 
  3879      0000
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 117
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 117
 
 
  3880 065c 00000000 		.ascii	"\000\000\000\000\000\000\000\000\037\2001\2001\2008"
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3893 071f 00000000 		.ascii	"\000\000\000\000\000y\3400\300\031\200\017\000\006\000"
  3893      0079E030 
  3893      C019800F 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 118
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 118
 
 
  3893      000600
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3907      00000000 
  3907      00000000 
  3907      00
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 119
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 119
 
 
  3908 07ea 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3920      00
  3921 08a5 0000001F 		.ascii	"\000\000\000\037\0001\200`\300\177\300`\0000\300\037"
  3921      00318060 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 120
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 120
 
 
  3921      C07FC060 
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3934      3C003600 
  3934      330077C0 
  3935 0977 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\036\000"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 121
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 121
 
 
  3935      00000000 
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3948 0a3b C0000000 		.ascii	"\300\000\000\000\000\000\000\000\000\000\000\000\000"
  3948      00000000 
  3948      00000000 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 122
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 122
 
 
  3948      00
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3961      0000
  3962 0b02 00000000 		.ascii	"\000\000\000\000\000\000{\300\033\000\016\000\016\000"
  3962      00007BC0 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 123
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 123
 
 
  3962      1B000E00 
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  3976 0bc0 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\030\000$\200"
  3976      00000000 
  3976      00001800 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 124
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 124
 
 
  3976      2480
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4002      C00CC00C 
  4002      C00CC03F 
  4002      F03FF0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 125
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 125
 
 
  4003 0086 0CC00CC0 		.ascii	"\014\300\014\300?\360?\360\014\300\014\300\014\300\014"
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4016      00000000 
  4016      C000C001 
  4016      80
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 126
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 126
 
 
  4017 0148 01800180 		.ascii	"\001\200\001\200\003\000\003\000\003\000\003\000\003"
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4030      06000600 
  4030      04
  4031 0201 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 127
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 127
 
 
  4031      00000000 
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4044      E01FE000 
  4044      00
  4045 02c6 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\017"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 128
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 128
 
 
  4045      00000000 
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4058      C0078000 
  4058      00000000 
  4058      0000
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 129
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 129
 
 
  4059 0393 00000000 		.ascii	"\000\000\000\000\000\000\000?\340?\3400`\000`\000\300"
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4071      03
  4072 044f 80030006 		.ascii	"\200\003\000\006\000\006\000\004\000\000\000\000\000"
  4072      00060004 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 130
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 130
 
 
  4072      00000000 
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4086 0511 40124011 		.ascii	"@\022@\021\300\020\000\010\000\010@\007\200\000\000"
  4086      C0100008 
  4086      00084007 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 131
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 131
 
 
  4086      800000
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4099      F0000000 
  4099      00000000 
  4099      000000
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 132
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 132
 
 
  4100 05ee 00000000 		.ascii	"\000\000\000\000\000\000?\360?\360\0300\0300\031\200"
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4112      00000000 
  4113 06b3 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000>\370>\370\030\340"
  4113      00000000 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 133
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 133
 
 
  4113      003EF83E 
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4125      3FC0
  4126 0786 3FE01870 		.ascii	"?\340\030p\0300\0300\030p\037\340\037\300\030\000\030"
  4126      18301830 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 134
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 134
 
 
  4126      18701FE0 
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4139 0851 60186018 		.ascii	"`\030`\030`\030`\030`\030`\030`\034\340\017\300\007"
  4139      60186018 
  4139      60186018 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 135
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 135
 
 
  4139      601CE00F 
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4152      00030006 
  4152      000C
  4153 0925 6018601F 		.ascii	"`\030`\037\340\037\340\000\000\000\000\000\000\000\000"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 136
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 136
 
 
  4153      E01FE000 
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4166      00
  4167 09e2 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
  4167      00000000 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 137
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 137
 
 
  4167      00000000 
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4180      07B01FF0 
  4180      18703030 
  4180      30303030 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 138
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 138
 
 
  4181 0ab9 F807B800 		.ascii	"\370\007\270\000\000\000\000\000\000\000\000\000\000"
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4193      1F
  4194 0b75 00030003 		.ascii	"\000\003\000\003\000\003\000\003\000\003\000\037\340"
  4194      00030003 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 139
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 139
 
 
  4194      0003001F 
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4207      00000000 
  4207      3BC0
  4208 0c3c 3FE01C60 		.ascii	"?\340\034`\030`\030`\030`\030`<\360<\360\000\000\000"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 140
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 140
 
 
  4208      18601860 
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4220      000F
  4221 0d0b C001E018 		.ascii	"\300\001\340\030`\037\340\037\200\000\000\000\000\000"
  4221      601FE01F 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 141
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 141
 
 
  4221      80000000 
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4234      0CC00780 
  4234      030007
  4235 0dd5 800CC03C 		.ascii	"\200\014\300<\360<\360\000\000\000\000\000\000\000\000"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 142
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 142
 
 
  4235      F03CF000 
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4248      06
  4249 0e91 00060006 		.ascii	"\000\006\000\006\000\006\000\007\000\003\200\007\000"
  4249      00060007 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 143
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 143
 
 
  4249      00038007 
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4275      80000380 
  4275      00038000 
  4275      03
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 144
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 144
 
 
  4276 005b 80000380 		.ascii	"\200\000\003\200\000\003\200\000\003\200\000\003\200"
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4289 0113 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
  4289      00000000 
  4289      00000000 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 145
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 145
 
 
  4289      00
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4303      0018F000 
  4303      1870000F 
  4303      FC00
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 146
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 146
 
 
  4304 01e0 07DC0000 		.ascii	"\007\334\000\000\000\000\000\000\000\000\000\000\000"
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4317      00000E00 
  4317      00
  4318 029a 07000007 		.ascii	"\007\000\000\007\000\000\003\200\000\003\200\000\003"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 147
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 147
 
 
  4318      00000380 
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4331      00
  4332 0354 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
  4332      00000000 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 148
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 148
 
 
  4332      00000000 
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4346 040a 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
  4346      00000000 
  4346      00000000 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 149
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 149
 
 
  4346      00
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4360 04c8 00000000 		.ascii	"\000\000\000\000\000\000\000\200\000\007\200\000\037"
  4360      00000080 
  4360      00078000 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 150
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 150
 
 
  4360      1F
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4374      00000000 
  4374      00000000 
  4374      00
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 151
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 151
 
 
  4375 0597 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4388      30001818 
  4388      00181800 
  4388      1818
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 152
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 152
 
 
  4389 0659 000C3800 		.ascii	"\000\0148\000\017\360\000\003\340\000\000\000\000\000"
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4402      001C3000 
  4402      1818
  4403 0719 00181800 		.ascii	"\000\030\030\000\030\030\000\0148\000\017\370\000\003"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 153
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 153
 
 
  4403      1818000C 
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4417 07d0 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
  4417      00000000 
  4417      00000000 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 154
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 154
 
 
  4417      00
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4431      00007800 
  4431      01E00007 
  4431      80001E
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 155
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 155
 
 
  4432 089b 00007800 		.ascii	"\000\000x\000\000p\000\000\000\000\000\000\000\000\000"
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4445      1FC00001 
  4445      C0
  4446 0959 00036000 		.ascii	"\000\003`\000\003`\000\0060\000\0060\000\0140\000\017"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 156
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 156
 
 
  4446      03600006 
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4459      00000000 
  4459      00000000 
  4459      00
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 157
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 157
 
 
  4460 0a1b 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4473      000CC000 
  4473      0C
  4474 0ad5 C0000C00 		.ascii	"\300\000\014\000\000\014\000\000?\300\000?\300\000\000"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 158
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 158
 
 
  4474      000C0000 
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4487      1FF80001 
  4487      80
  4488 0b99 00018000 		.ascii	"\000\001\200\000\001\200\000\001\200\000\001\200\000"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 159
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 159
 
 
  4488      01800001 
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4501      00000000 
  4501      00
  4502 0c60 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\177\200\000\177"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 160
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 160
 
 
  4502      00000000 
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4515      18007F18 
  4515      000000
  4516 0d25 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 161
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 161
 
 
  4516      00000000 
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4529      00300C00 
  4529      300C0030 
  4529      0C
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 162
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 162
 
 
  4530 0deb 00381C00 		.ascii	"\0008\034\000\030\030\000\0348\000\017\360\000\007\300"
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4543      0000003F 
  4543      FC00
  4544 0eac 3FFC0031 		.ascii	"?\374\0001\214\0001\214\0001\214\0001\214\000\001\200"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 163
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 163
 
 
  4544      8C00318C 
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4557      00000000 
  4557      00
  4558 0f6e 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 164
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 164
 
 
  4558      00000000 
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4572 1033 80000FF0 		.ascii	"\200\000\017\360\000\017\360\000\000\000\000\000\000"
  4572      000FF000 
  4572      00000000 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 165
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 165
 
 
  4572      00
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4586      00060000 
  4586      03000003 
  4586      00
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 166
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 166
 
 
  4587 10fa 00018000 		.ascii	"\000\001\200\000\001\200\000\000\300\000\000\300\000"
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4600      00000000 
  4600      00000000 
  4600      00
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 167
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 167
 
 
  4601 11b6 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4614      001FF000 
  4614      38300030 
  4614      3000
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 168
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 168
 
 
  4615 1272 3070001F 		.ascii	"0p\000\037\374\000\017\274\000\000\000\000\000\000\000"
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4628      00180000 
  4628      180007
  4629 1333 D8001FF8 		.ascii	"\330\000\037\370\000\0308\0000\030\0000\030\0000\030"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 169
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 169
 
 
  4629      00183800 
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4642      00
  4643 13f6 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
  4643      00000000 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 170
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 170
 
 
  4643      00000000 
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4656      3FFC00
  4657 14bb 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
  4657      00000000 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 171
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 171
 
 
  4657      00000000 
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4670      01
  4671 157f 80000180 		.ascii	"\200\000\001\200\000\001\200\000\001\200\000\001\200"
  4671      00018000 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 172
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 172
 
 
  4671      01800001 
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4684      00
  4685 1642 00000000 		.ascii	"\000\000\000\000\000\000\000\000\003\300\000\017\360"
  4685      00000000 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 173
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 173
 
 
  4685      03C0000F 
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4698      00
  4699 1704 00FE0000 		.ascii	"\000\376\000\000\376\000\000\000\000\000\000\000\000"
  4699      FE000000 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 174
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 174
 
 
  4699      00000000 
@@ -10438,7 +10438,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4713 17c1 0C00000C 		.ascii	"\014\000\000\014\000\000\014\000\000\014\034\000\007"
  4713      00000C00 
  4713      000C1C00 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 175
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 175
 
 
  4713      07
@@ -10498,7 +10498,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4727      00000000 
  4727      00783C00 
  4727      783C0031 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 176
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 176
 
 
  4727      18
@@ -10558,7 +10558,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4740      000000
  4741 194f 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
  4741      00000000 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 177
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 177
 
 
  4741      00000000 
@@ -10618,7 +10618,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4755 1a07 01800001 		.ascii	"\001\200\000\001\200\000\001\200\000\001\200\000\001"
  4755      80000180 
  4755      00018000 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 178
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 178
 
 
  4755      01
@@ -10678,7 +10678,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4772              		.file 3 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
  4773              		.file 4 "../../STM32Cube_FW_N6/Utilities/lcd/../Fonts/fonts.h"
  4774              		.file 5 "../../STM32Cube_FW_N6/Drivers/BSP/Components/Common/lcd.h"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 179
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 179
 
 
  4775              		.file 6 "../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.h"
@@ -10688,114 +10688,114 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 1
  4779              		.file 10 "../../STM32Cube_FW_N6/Utilities/lcd/../Fonts/font12.c"
  4780              		.file 11 "../../STM32Cube_FW_N6/Utilities/lcd/../Fonts/font8.c"
  4781              		.file 12 "<built-in>"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 180
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 180
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32_lcd.c
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:26     .text.UTIL_LCD_SetFuncDriver:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:32     .text.UTIL_LCD_SetFuncDriver:00000000 UTIL_LCD_SetFuncDriver
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:144    .text.UTIL_LCD_SetFuncDriver:00000060 $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:3617   .bss.FuncDriver:00000000 FuncDriver
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:3623   .bss.DrawProp:00000000 DrawProp
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:150    .text.UTIL_LCD_SetLayer:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:156    .text.UTIL_LCD_SetLayer:00000000 UTIL_LCD_SetLayer
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:236    .text.UTIL_LCD_SetLayer:00000044 $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:242    .text.UTIL_LCD_SetDevice:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:248    .text.UTIL_LCD_SetDevice:00000000 UTIL_LCD_SetDevice
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:296    .text.UTIL_LCD_SetDevice:00000020 $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:302    .text.UTIL_LCD_SetTextColor:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:308    .text.UTIL_LCD_SetTextColor:00000000 UTIL_LCD_SetTextColor
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:327    .text.UTIL_LCD_SetTextColor:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:332    .text.UTIL_LCD_GetTextColor:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:338    .text.UTIL_LCD_GetTextColor:00000000 UTIL_LCD_GetTextColor
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:356    .text.UTIL_LCD_GetTextColor:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:361    .text.UTIL_LCD_SetBackColor:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:367    .text.UTIL_LCD_SetBackColor:00000000 UTIL_LCD_SetBackColor
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:386    .text.UTIL_LCD_SetBackColor:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:391    .text.UTIL_LCD_GetBackColor:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:397    .text.UTIL_LCD_GetBackColor:00000000 UTIL_LCD_GetBackColor
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:415    .text.UTIL_LCD_GetBackColor:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:420    .text.UTIL_LCD_SetFont:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:426    .text.UTIL_LCD_SetFont:00000000 UTIL_LCD_SetFont
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:445    .text.UTIL_LCD_SetFont:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:450    .text.UTIL_LCD_GetFont:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:456    .text.UTIL_LCD_GetFont:00000000 UTIL_LCD_GetFont
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:474    .text.UTIL_LCD_GetFont:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:479    .text.UTIL_LCD_FillRGBRect:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:485    .text.UTIL_LCD_FillRGBRect:00000000 UTIL_LCD_FillRGBRect
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:528    .text.UTIL_LCD_FillRGBRect:0000001c $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:534    .text.UTIL_LCD_DrawHLine:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:540    .text.UTIL_LCD_DrawHLine:00000000 UTIL_LCD_DrawHLine
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:646    .text.UTIL_LCD_DrawHLine:00000064 $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:652    .text.UTIL_LCD_DrawVLine:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:658    .text.UTIL_LCD_DrawVLine:00000000 UTIL_LCD_DrawVLine
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:764    .text.UTIL_LCD_DrawVLine:00000064 $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:770    .text.UTIL_LCD_GetPixel:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:776    .text.UTIL_LCD_GetPixel:00000000 UTIL_LCD_GetPixel
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:884    .text.UTIL_LCD_GetPixel:0000009c $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:890    .text.UTIL_LCD_SetPixel:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:896    .text.UTIL_LCD_SetPixel:00000000 UTIL_LCD_SetPixel
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:1000   .text.UTIL_LCD_SetPixel:00000060 $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:1006   .text.UTIL_LCD_DisplayChar:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:1012   .text.UTIL_LCD_DisplayChar:00000000 UTIL_LCD_DisplayChar
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:1443   .text.UTIL_LCD_DisplayChar:000001e8 $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:1450   .text.UTIL_LCD_DisplayStringAt:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:1456   .text.UTIL_LCD_DisplayStringAt:00000000 UTIL_LCD_DisplayStringAt
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:1599   .text.UTIL_LCD_DisplayStringAt:00000090 $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:1604   .text.UTIL_LCD_DisplayStringAtLine:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:1610   .text.UTIL_LCD_DisplayStringAtLine:00000000 UTIL_LCD_DisplayStringAtLine
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:1650   .text.UTIL_LCD_DrawLine:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:1656   .text.UTIL_LCD_DrawLine:00000000 UTIL_LCD_DrawLine
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:1875   .text.FillTriangle:00000000 $t
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 181
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:26     .text.UTIL_LCD_SetFuncDriver:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:32     .text.UTIL_LCD_SetFuncDriver:00000000 UTIL_LCD_SetFuncDriver
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:144    .text.UTIL_LCD_SetFuncDriver:00000060 $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:3617   .bss.FuncDriver:00000000 FuncDriver
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:3623   .bss.DrawProp:00000000 DrawProp
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:150    .text.UTIL_LCD_SetLayer:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:156    .text.UTIL_LCD_SetLayer:00000000 UTIL_LCD_SetLayer
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:236    .text.UTIL_LCD_SetLayer:00000044 $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:242    .text.UTIL_LCD_SetDevice:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:248    .text.UTIL_LCD_SetDevice:00000000 UTIL_LCD_SetDevice
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:296    .text.UTIL_LCD_SetDevice:00000020 $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:302    .text.UTIL_LCD_SetTextColor:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:308    .text.UTIL_LCD_SetTextColor:00000000 UTIL_LCD_SetTextColor
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:327    .text.UTIL_LCD_SetTextColor:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:332    .text.UTIL_LCD_GetTextColor:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:338    .text.UTIL_LCD_GetTextColor:00000000 UTIL_LCD_GetTextColor
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:356    .text.UTIL_LCD_GetTextColor:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:361    .text.UTIL_LCD_SetBackColor:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:367    .text.UTIL_LCD_SetBackColor:00000000 UTIL_LCD_SetBackColor
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:386    .text.UTIL_LCD_SetBackColor:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:391    .text.UTIL_LCD_GetBackColor:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:397    .text.UTIL_LCD_GetBackColor:00000000 UTIL_LCD_GetBackColor
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:415    .text.UTIL_LCD_GetBackColor:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:420    .text.UTIL_LCD_SetFont:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:426    .text.UTIL_LCD_SetFont:00000000 UTIL_LCD_SetFont
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:445    .text.UTIL_LCD_SetFont:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:450    .text.UTIL_LCD_GetFont:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:456    .text.UTIL_LCD_GetFont:00000000 UTIL_LCD_GetFont
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:474    .text.UTIL_LCD_GetFont:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:479    .text.UTIL_LCD_FillRGBRect:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:485    .text.UTIL_LCD_FillRGBRect:00000000 UTIL_LCD_FillRGBRect
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:528    .text.UTIL_LCD_FillRGBRect:0000001c $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:534    .text.UTIL_LCD_DrawHLine:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:540    .text.UTIL_LCD_DrawHLine:00000000 UTIL_LCD_DrawHLine
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:646    .text.UTIL_LCD_DrawHLine:00000064 $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:652    .text.UTIL_LCD_DrawVLine:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:658    .text.UTIL_LCD_DrawVLine:00000000 UTIL_LCD_DrawVLine
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:764    .text.UTIL_LCD_DrawVLine:00000064 $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:770    .text.UTIL_LCD_GetPixel:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:776    .text.UTIL_LCD_GetPixel:00000000 UTIL_LCD_GetPixel
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:884    .text.UTIL_LCD_GetPixel:0000009c $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:890    .text.UTIL_LCD_SetPixel:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:896    .text.UTIL_LCD_SetPixel:00000000 UTIL_LCD_SetPixel
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:1000   .text.UTIL_LCD_SetPixel:00000060 $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:1006   .text.UTIL_LCD_DisplayChar:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:1012   .text.UTIL_LCD_DisplayChar:00000000 UTIL_LCD_DisplayChar
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:1443   .text.UTIL_LCD_DisplayChar:000001e8 $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:1450   .text.UTIL_LCD_DisplayStringAt:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:1456   .text.UTIL_LCD_DisplayStringAt:00000000 UTIL_LCD_DisplayStringAt
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:1599   .text.UTIL_LCD_DisplayStringAt:00000090 $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:1604   .text.UTIL_LCD_DisplayStringAtLine:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:1610   .text.UTIL_LCD_DisplayStringAtLine:00000000 UTIL_LCD_DisplayStringAtLine
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:1650   .text.UTIL_LCD_DrawLine:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:1656   .text.UTIL_LCD_DrawLine:00000000 UTIL_LCD_DrawLine
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:1875   .text.FillTriangle:00000000 $t
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 181
 
 
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:1880   .text.FillTriangle:00000000 FillTriangle
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:2106   .text.UTIL_LCD_DrawRect:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:2112   .text.UTIL_LCD_DrawRect:00000000 UTIL_LCD_DrawRect
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:2183   .text.UTIL_LCD_DrawCircle:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:2189   .text.UTIL_LCD_DrawCircle:00000000 UTIL_LCD_DrawCircle
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:2444   .text.UTIL_LCD_DrawCircle:00000148 $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:2449   .text.UTIL_LCD_DrawPolygon:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:2455   .text.UTIL_LCD_DrawPolygon:00000000 UTIL_LCD_DrawPolygon
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:2539   .text.UTIL_LCD_DrawEllipse:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:2545   .text.UTIL_LCD_DrawEllipse:00000000 UTIL_LCD_DrawEllipse
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:2727   .text.UTIL_LCD_DrawBitmap:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:2733   .text.UTIL_LCD_DrawBitmap:00000000 UTIL_LCD_DrawBitmap
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:2773   .text.UTIL_LCD_DrawBitmap:00000018 $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:2779   .text.UTIL_LCD_FillRect:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:2785   .text.UTIL_LCD_FillRect:00000000 UTIL_LCD_FillRect
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:2889   .text.UTIL_LCD_FillRect:00000070 $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:2895   .text.UTIL_LCD_Clear:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:2901   .text.UTIL_LCD_Clear:00000000 UTIL_LCD_Clear
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:2935   .text.UTIL_LCD_Clear:00000020 $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:2940   .text.UTIL_LCD_ClearStringLine:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:2946   .text.UTIL_LCD_ClearStringLine:00000000 UTIL_LCD_ClearStringLine
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:2986   .text.UTIL_LCD_ClearStringLine:00000024 $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:2991   .text.UTIL_LCD_FillCircle:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:2997   .text.UTIL_LCD_FillCircle:00000000 UTIL_LCD_FillCircle
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:3192   .text.UTIL_LCD_FillPolygon:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:3198   .text.UTIL_LCD_FillPolygon:00000000 UTIL_LCD_FillPolygon
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:3456   .text.UTIL_LCD_FillEllipse:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:3462   .text.UTIL_LCD_FillEllipse:00000000 UTIL_LCD_FillEllipse
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:3614   .bss.FuncDriver:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:3620   .bss.DrawProp:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:3630   .data.Font8:00000000 Font8
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:3627   .data.Font8:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:3638   .rodata.Font8_Table:00000000 Font8_Table
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:3681   .data.Font12:00000000 Font12
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:3678   .data.Font12:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:3689   .rodata.Font12_Table:00000000 Font12_Table
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:3758   .data.Font16:00000000 Font16
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:3755   .data.Font16:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:3766   .rodata.Font16_Table:00000000 Font16_Table
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:3984   .data.Font20:00000000 Font20
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:3981   .data.Font20:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:3992   .rodata.Font20_Table:00000000 Font20_Table
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:4260   .data.Font24:00000000 Font24
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:4257   .data.Font24:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:4268   .rodata.Font24_Table:00000000 Font24_Table
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:1880   .text.FillTriangle:00000000 FillTriangle
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:2106   .text.UTIL_LCD_DrawRect:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:2112   .text.UTIL_LCD_DrawRect:00000000 UTIL_LCD_DrawRect
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:2183   .text.UTIL_LCD_DrawCircle:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:2189   .text.UTIL_LCD_DrawCircle:00000000 UTIL_LCD_DrawCircle
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:2444   .text.UTIL_LCD_DrawCircle:00000148 $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:2449   .text.UTIL_LCD_DrawPolygon:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:2455   .text.UTIL_LCD_DrawPolygon:00000000 UTIL_LCD_DrawPolygon
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:2539   .text.UTIL_LCD_DrawEllipse:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:2545   .text.UTIL_LCD_DrawEllipse:00000000 UTIL_LCD_DrawEllipse
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:2727   .text.UTIL_LCD_DrawBitmap:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:2733   .text.UTIL_LCD_DrawBitmap:00000000 UTIL_LCD_DrawBitmap
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:2773   .text.UTIL_LCD_DrawBitmap:00000018 $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:2779   .text.UTIL_LCD_FillRect:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:2785   .text.UTIL_LCD_FillRect:00000000 UTIL_LCD_FillRect
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:2889   .text.UTIL_LCD_FillRect:00000070 $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:2895   .text.UTIL_LCD_Clear:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:2901   .text.UTIL_LCD_Clear:00000000 UTIL_LCD_Clear
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:2935   .text.UTIL_LCD_Clear:00000020 $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:2940   .text.UTIL_LCD_ClearStringLine:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:2946   .text.UTIL_LCD_ClearStringLine:00000000 UTIL_LCD_ClearStringLine
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:2986   .text.UTIL_LCD_ClearStringLine:00000024 $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:2991   .text.UTIL_LCD_FillCircle:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:2997   .text.UTIL_LCD_FillCircle:00000000 UTIL_LCD_FillCircle
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:3192   .text.UTIL_LCD_FillPolygon:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:3198   .text.UTIL_LCD_FillPolygon:00000000 UTIL_LCD_FillPolygon
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:3456   .text.UTIL_LCD_FillEllipse:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:3462   .text.UTIL_LCD_FillEllipse:00000000 UTIL_LCD_FillEllipse
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:3614   .bss.FuncDriver:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:3620   .bss.DrawProp:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:3630   .data.Font8:00000000 Font8
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:3627   .data.Font8:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:3638   .rodata.Font8_Table:00000000 Font8_Table
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:3681   .data.Font12:00000000 Font12
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:3678   .data.Font12:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:3689   .rodata.Font12_Table:00000000 Font12_Table
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:3758   .data.Font16:00000000 Font16
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:3755   .data.Font16:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:3766   .rodata.Font16_Table:00000000 Font16_Table
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:3984   .data.Font20:00000000 Font20
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:3981   .data.Font20:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:3992   .rodata.Font20_Table:00000000 Font20_Table
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:4260   .data.Font24:00000000 Font24
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:4257   .data.Font24:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s:4268   .rodata.Font24_Table:00000000 Font24_Table
                            .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
                            .group:00000000 wm4._newlib_version.h.4.411db44ea2338a62eca2f0777f81481b
                            .group:00000000 wm4.features.h.33.e0c9f337c65cb9f22ed5f23d082bc78b
@@ -10808,7 +10808,7 @@ C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s:4268   .rodata.Font24_Table:00000
                            .group:00000000 wm4.stm32_lcd.h.55.1a04e503950bf34ef3721d2ebb9542fc
 
 UNDEFINED SYMBOLS
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccwGHXwh.s 			page 182
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBM9XnU.s 			page 182
 
 
 strlen

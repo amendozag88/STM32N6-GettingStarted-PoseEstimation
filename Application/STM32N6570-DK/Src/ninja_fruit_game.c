@@ -9,6 +9,7 @@
 
 #include "ninja_fruit_game.h"
 #include "utils.h"
+#include "stm32n6570_discovery.h"
 #include <stdlib.h>
 #include <math.h>
 
@@ -29,6 +30,26 @@ static const char* fruit_names[FRUIT_TYPES_COUNT] = {
     "Apple", "Orange", "Banana", "Berry"
 };
 
+
+
+static uint32_t last_mode_toggle = 0;
+static void CheckModeToggle(NinjaGame_t *game)
+{
+    uint32_t now = HAL_GetTick();
+
+    if ((!game->game_started && !game->game_over) || game->game_over)
+    {
+        if ((BSP_PB_GetState(BUTTON_USER1) == GPIO_PIN_SET) &&
+            (now - last_mode_toggle > 300))
+        {
+            game->mode = (game->mode == NINJA_MODE_SLICE) ? NINJA_MODE_POP : NINJA_MODE_SLICE;
+            last_mode_toggle = now;
+        }
+    }
+}
+
+
+
 void NinjaGame_Init(NinjaGame_t *game)
 {
     memset(game, 0, sizeof(NinjaGame_t));
@@ -46,7 +67,7 @@ void NinjaGame_Init(NinjaGame_t *game)
 void NinjaGame_Update(NinjaGame_t *game, GestureDetector_t *gesture_detector, spe_pp_outBuffer_t *keypoints)
 {
     uint32_t current_time = HAL_GetTick();
-
+    CheckModeToggle(game);
     // Start game on first gesture detection
     if (!game->game_started && !game->game_over) {
         GestureType_t current_gesture = Gesture_GetCurrentDisplayGesture(gesture_detector);
@@ -304,6 +325,7 @@ void NinjaGame_Render(NinjaGame_t *game)
         UTIL_LCDEx_PrintfAt(0, LINE(10), CENTER_MODE, "Make any gesture to start!");
         UTIL_LCDEx_PrintfAt(0, LINE(12), CENTER_MODE, "Slice fruits with arm swipes");
         UTIL_LCDEx_PrintfAt(0, LINE(13), CENTER_MODE, "Don't let %d fruits fall!", MAX_MISSED_FRUITS);
+        UTIL_LCDEx_PrintfAt(0, LINE(15), CENTER_MODE, "Mode: %s", (game->mode == NINJA_MODE_SLICE) ? "SLICE" : "POP");
         UTIL_LCD_SetBackColor(0);
         return;
     }
@@ -315,6 +337,7 @@ void NinjaGame_Render(NinjaGame_t *game)
         UTIL_LCDEx_PrintfAt(0, LINE(10), CENTER_MODE, "Final Score: %lu", game->score);
         UTIL_LCDEx_PrintfAt(0, LINE(11), CENTER_MODE, "Level Reached: %lu", game->level);
         UTIL_LCDEx_PrintfAt(0, LINE(13), CENTER_MODE, "Make any gesture to restart");
+        UTIL_LCDEx_PrintfAt(0, LINE(15), CENTER_MODE, "Mode: %s", (game->mode == NINJA_MODE_SLICE) ? "SLICE" : "POP");
         UTIL_LCD_SetBackColor(0);
         return;
     }

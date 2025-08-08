@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 1
 
 
    1              		.arch armv8.1-m.main
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
   23:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c **** /** @addtogroup BSP
   24:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   * @{
   25:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   */
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 2
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 2
 
 
   26:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
   80:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   {0x3715, 0x02},
   81:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   {0x3716, 0x01},
   82:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   {0x3717, 0x03},
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 3
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 3
 
 
   83:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   {0x371c, 0x3d},
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  137:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c **** static const struct regval mode_2l_10b_regs[] = {
  138:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   {0x3050, 0x00},
  139:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   {0x319D, 0x00},
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 4
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 4
 
 
  140:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   {0x341c, 0xff},
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  194:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c **** 
  195:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c **** static const struct regval framerate_10fps_regs[] = {
  196:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   {0x3030, 0xC0},
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 5
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 5
 
 
  197:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   {0x3031, 0x34},
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  251:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****     {0x3083, 0x02}, //RESERVED
  252:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****     {0x30b6, 0x00}, //RESERVED
  253:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****     {0x30b7, 0x00}, //RESERVED
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 6
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 6
 
 
  254:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****     {0x3116, 0x08}, //RESERVED
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  308:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c **** 
  309:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c **** /** @defgroup IMX335_Private_Functions Private Functions
  310:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   * @{
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 7
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 7
 
 
  311:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   */
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  359:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   return pObj->IO.ReadReg(pObj->IO.Address, Reg, pData, Length);
   40              		.loc 1 359 3 view .LVU2
  356:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   IMX335_Object_t *pObj = (IMX335_Object_t *)handle;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 8
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 8
 
 
   41              		.loc 1 356 1 is_stmt 0 view .LVU3
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
   79 0000 10B4     		push	{r4}
   80              		.cfi_def_cfa_offset 4
   81              		.cfi_offset 4, -4
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 9
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 9
 
 
   82              		.loc 1 374 10 view .LVU13
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  128 0006 04EB8206 		add	r6, r4, r2, lsl #2
  322:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****       {
  129              		.loc 1 322 10 view .LVU25
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 10
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 10
 
 
  130 000a 00F11807 		add	r7, r0, #24
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  176              	.LFB145:
  376:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c **** 
  377:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c **** /**
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 11
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 11
 
 
  378:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   * @}
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  203 000e CA68     		ldr	r2, [r1, #12]
  204              		.loc 1 402 24 view .LVU51
  205 0010 C260     		str	r2, [r0, #12]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 12
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 12
 
 
  403:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****     pObj->IO.ReadReg   = pIO->ReadReg;
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  236              		.loc 1 421 1 is_stmt 0 view .LVU69
  237 0028 4FF0FF30 		mov	r0, #-1
  238              	.LVL13:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 13
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 13
 
 
  239              		.loc 1 421 1 view .LVU70
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  278 000c 02D0     		beq	.L20
  279              	.LVL15:
  280              	.L22:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 14
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 14
 
 
  437:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****     {
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  301              		.loc 1 450 5 is_stmt 1 view .LVU86
  452:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****       {
  302              		.loc 1 452 7 view .LVU87
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 15
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 15
 
 
  452:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****       {
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  342              		@ args = 0, pretend = 0, frame = 8
  343              		@ frame_needed = 0, uses_anonymous_args = 0
  475:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   uint8_t tmp;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 16
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 16
 
 
  344              		.loc 1 475 3 view .LVU96
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  383 001e 6B69     		ldr	r3, [r5, #20]
  384 0020 9847     		blx	r3
  385              	.LVL25:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 17
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 17
 
 
  340:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   while((pObj->IO.GetTick() - tickstart) < Delay)
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  431              	.LVL30:
  432              	.LFB148:
  487:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 18
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 18
 
 
  488:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c **** /**
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  511:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c **** {
  466              		.loc 1 511 1 is_stmt 1 view -0
  467              		.cfi_startproc
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 19
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 19
 
 
  468              		@ args = 0, pretend = 0, frame = 8
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  528:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   /* Component status */
  529:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   return ret;
  530:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c **** }
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 20
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 20
 
 
  504              		.loc 1 530 1 is_stmt 0 view .LVU145
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  547:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   {
  548:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****     Capabilities->Config_Brightness    = 0;
  541              		.loc 1 548 5 is_stmt 1 view .LVU153
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 21
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 21
 
 
  542              		.loc 1 548 40 is_stmt 0 view .LVU154
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  569              		.loc 1 557 5 is_stmt 1 view .LVU170
  557:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****     Capabilities->Config_Saturation    = 0;
  570              		.loc 1 557 40 is_stmt 0 view .LVU171
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 22
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 22
 
 
  571 001c 0860     		str	r0, [r1]
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  575:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   */
  576:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c **** int32_t IMX335_SetGain(IMX335_Object_t *pObj, int32_t gain)
  577:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c **** {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 23
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 23
 
 
  607              		.loc 1 577 1 is_stmt 1 view -0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  603:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****         hold = 0;
  604:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****         if(imx335_write_reg(&pObj->Ctx, IMX335_REG_HOLD, &hold, 1) != IMX335_OK)
  605:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****         {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 24
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 24
 
 
  606:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****           ret = IMX335_ERROR;
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  668              	.LVL49:
  591:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****     {
  669              		.loc 1 591 7 discriminator 1 view .LVU206
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 25
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 25
 
 
  670 0036 0028     		cmp	r0, #0
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  715              		.thumb_func
  717              	IMX335_SetExposure:
  718              	.LVL53:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 26
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 26
 
 
  719              	.LFB152:
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  755              	.LVL56:
  756              		.loc 1 628 6 discriminator 1 view .LVU229
  757 001e 28B1     		cbz	r0, .L45
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 27
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 27
 
 
  758              	.LVL57:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  774              	.LVL59:
  775              	.L45:
  776              		.cfi_restore_state
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 28
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 28
 
 
  634:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c **** 
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  813 0066 FFF7FEFF 		bl	imx335_write_reg
  814              	.LVL61:
  643:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****       {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 29
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 29
 
 
  815              		.loc 1 643 9 discriminator 1 view .LVU250
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  860              		.thumb
  861              		.thumb_func
  863              	IMX335_SetFrequency:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 30
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 30
 
 
  864              	.LVL65:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  877 0004 08B5     		push	{r3, lr}
  878              		.cfi_def_cfa_offset 8
  879              		.cfi_offset 3, -8
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 31
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 31
 
 
  880              		.cfi_offset 14, -4
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  919 0026 0549     		ldr	r1, .L59+8
  920 0028 F4E7     		b	.L58
  921              	.L56:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 32
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 32
 
 
  699:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****       {
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  962              		.cfi_offset 3, -8
  963              		.cfi_offset 14, -4
  723:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   uint32_t ret = IMX335_OK;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 33
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 33
 
 
  964              		.loc 1 723 1 view .LVU286
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  746:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****       {
  989              		.loc 1 746 7 is_stmt 1 view .LVU293
  746:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****       {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 34
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 34
 
 
  990              		.loc 1 746 10 is_stmt 0 view .LVU294
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  740:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****       {
  1029              		.loc 1 740 10 is_stmt 0 view .LVU307
  1030 003c 0222     		movs	r2, #2
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 35
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 35
 
 
  1031 003e 0549     		ldr	r1, .L70+16
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  784:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****     case IMX335_MIRROR_FLIP_NONE:
  785:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****     default:
  786:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****       ret = IMX335_WriteTable(pObj, mirrorflip_mode_regs[0], ARRAY_SIZE(mirrorflip_mode_regs[0]));
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 36
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 36
 
 
  1064              		.loc 1 786 13 is_stmt 0 view .LVU312
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  1109 0030 00000000 		.word	mirrorflip_mode_regs
  1110              		.cfi_endproc
  1111              	.LFE155:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 37
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 37
 
 
  1113              		.section	.text.IMX335_SetTestPattern,"ax",%progbits
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  812:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   int32_t ret = IMX335_OK;
  1137              		.loc 1 812 1 view .LVU332
  1138 0004 0446     		mov	r4, r0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 38
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 38
 
 
  1139              		.loc 1 816 6 view .LVU333
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  837:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c **** 
  838:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c ****   return ret;
  839:../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c **** }
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 39
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 39
 
 
  1173              		.loc 1 839 1 view .LVU345
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  1226 001a 01       		.byte	1
  1227 001b 00       		.space	1
  1228              		.section	.rodata.test_pattern_enable_regs,"a"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 40
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 40
 
 
  1229              		.align	1
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  1287 0026 00       		.byte	0
  1288 0027 00       		.space	1
  1289 0028 7430     		.short	12404
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 41
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 41
 
 
  1290 002a F8       		.byte	-8
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  1344 0072 08       		.byte	8
  1345 0073 00       		.space	1
  1346 0074 1731     		.short	12567
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 42
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 42
 
 
  1347 0076 00       		.byte	0
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  1407 0002 60       		.byte	96
  1408 0003 00       		.space	1
  1409 0004 3130     		.short	12337
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 43
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 43
 
 
  1410 0006 1A       		.byte	26
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  1472 000a 84       		.byte	-124
  1473 000b 00       		.space	1
  1474 000c 4D31     		.short	12621
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 44
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 44
 
 
  1475 000e 00       		.byte	0
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  1533 0016 8F       		.byte	-113
  1534 0017 00       		.space	1
  1535 0018 6A31     		.short	12650
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 45
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 45
 
 
  1536 001a 7E       		.byte	126
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  1596 000a 3B       		.byte	59
  1597 000b 00       		.space	1
  1598 000c 0D30     		.short	12301
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 46
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 46
 
 
  1599 000e 2A       		.byte	42
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  1653 0056 04       		.byte	4
  1654 0057 00       		.space	1
  1655 0058 4C36     		.short	13900
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 47
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 47
 
 
  1656 005a 04       		.byte	4
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  1710 00a2 08       		.byte	8
  1711 00a3 00       		.space	1
  1712 00a4 3337     		.short	14131
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 48
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 48
 
 
  1713 00a6 01       		.byte	1
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  1767 00ee 00       		.byte	0
  1768 00ef 00       		.space	1
  1769 00f0 7A37     		.short	14202
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 49
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 49
 
 
  1770 00f2 89       		.byte	-119
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  1824 013a F5       		.byte	-11
  1825 013b 00       		.space	1
  1826 013c 9237     		.short	14226
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 50
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 50
 
 
  1827 013e 43       		.byte	67
@@ -2961,84 +2961,84 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 1
  1844              		.file 3 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
  1845              		.file 4 "../../Middlewares/Camera_Middleware/sensors/imx335/imx335_reg.h"
  1846              		.file 5 "../../Middlewares/Camera_Middleware/sensors/imx335/imx335.h"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 51
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 51
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 imx335.c
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:26     .text.IMX335_ReadRegWrap:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:31     .text.IMX335_ReadRegWrap:00000000 IMX335_ReadRegWrap
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:63     .text.IMX335_WriteRegWrap:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:68     .text.IMX335_WriteRegWrap:00000000 IMX335_WriteRegWrap
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:100    .text.IMX335_WriteTable:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:105    .text.IMX335_WriteTable:00000000 IMX335_WriteTable
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:168    .text.IMX335_RegisterBusIO:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:174    .text.IMX335_RegisterBusIO:00000000 IMX335_RegisterBusIO
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:244    .text.IMX335_RegisterBusIO:00000030 $d
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:250    .text.IMX335_Init:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:256    .text.IMX335_Init:00000000 IMX335_Init
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:325    .text.IMX335_Init:00000038 $d
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1588   .rodata.res_2592_1944_regs:00000000 res_2592_1944_regs
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1568   .rodata.mode_2l_10b_regs:00000000 mode_2l_10b_regs
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:331    .text.IMX335_Start:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:337    .text.IMX335_Start:00000000 IMX335_Start
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:424    .text.IMX335_DeInit:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:430    .text.IMX335_DeInit:00000000 IMX335_DeInit
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:457    .text.IMX335_ReadID:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:463    .text.IMX335_ReadID:00000000 IMX335_ReadID
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:523    .text.IMX335_GetCapabilities:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:529    .text.IMX335_GetCapabilities:00000000 IMX335_GetCapabilities
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:598    .text.IMX335_SetGain:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:604    .text.IMX335_SetGain:00000000 IMX335_SetGain
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:706    .text.IMX335_SetGain:0000006c $d
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:711    .text.IMX335_SetExposure:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:717    .text.IMX335_SetExposure:00000000 IMX335_SetExposure
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:852    .text.IMX335_SetExposure:000000a0 $d
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:857    .text.IMX335_SetFrequency:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:863    .text.IMX335_SetFrequency:00000000 IMX335_SetFrequency
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:886    .text.IMX335_SetFrequency:0000000e $d
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:890    .text.IMX335_SetFrequency:00000012 $t
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:934    .text.IMX335_SetFrequency:00000034 $d
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1542   .rodata.inck_74Mhz_regs:00000000 inck_74Mhz_regs
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1516   .rodata.inck_27Mhz_regs:00000000 inck_27Mhz_regs
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1490   .rodata.inck_24Mhz_regs:00000000 inck_24Mhz_regs
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1464   .rodata.inck_18Mhz_regs:00000000 inck_18Mhz_regs
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1438   .rodata.inck_6Mhz_regs:00000000 inck_6Mhz_regs
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:943    .text.IMX335_SetFramerate:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:949    .text.IMX335_SetFramerate:00000000 IMX335_SetFramerate
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1038   .text.IMX335_SetFramerate:00000044 $d
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1383   .rodata.framerate_30fps_regs:00000000 framerate_30fps_regs
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1394   .rodata.framerate_25fps_regs:00000000 framerate_25fps_regs
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1427   .rodata.framerate_10fps_regs:00000000 framerate_10fps_regs
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1416   .rodata.framerate_15fps_regs:00000000 framerate_15fps_regs
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1405   .rodata.framerate_20fps_regs:00000000 framerate_20fps_regs
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1047   .text.IMX335_MirrorFlipConfig:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1053   .text.IMX335_MirrorFlipConfig:00000000 IMX335_MirrorFlipConfig
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1106   .text.IMX335_MirrorFlipConfig:00000024 $d
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1258   .rodata.mirrorflip_mode_regs:00000000 mirrorflip_mode_regs
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1114   .text.IMX335_SetTestPattern:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1120   .text.IMX335_SetTestPattern:00000000 IMX335_SetTestPattern
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1197   .text.IMX335_SetTestPattern:00000040 $d
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1232   .rodata.test_pattern_enable_regs:00000000 test_pattern_enable_regs
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1206   .rodata.test_pattern_disable_regs:00000000 test_pattern_disable_regs
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s 			page 52
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:26     .text.IMX335_ReadRegWrap:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:31     .text.IMX335_ReadRegWrap:00000000 IMX335_ReadRegWrap
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:63     .text.IMX335_WriteRegWrap:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:68     .text.IMX335_WriteRegWrap:00000000 IMX335_WriteRegWrap
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:100    .text.IMX335_WriteTable:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:105    .text.IMX335_WriteTable:00000000 IMX335_WriteTable
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:168    .text.IMX335_RegisterBusIO:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:174    .text.IMX335_RegisterBusIO:00000000 IMX335_RegisterBusIO
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:244    .text.IMX335_RegisterBusIO:00000030 $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:250    .text.IMX335_Init:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:256    .text.IMX335_Init:00000000 IMX335_Init
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:325    .text.IMX335_Init:00000038 $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1588   .rodata.res_2592_1944_regs:00000000 res_2592_1944_regs
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1568   .rodata.mode_2l_10b_regs:00000000 mode_2l_10b_regs
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:331    .text.IMX335_Start:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:337    .text.IMX335_Start:00000000 IMX335_Start
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:424    .text.IMX335_DeInit:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:430    .text.IMX335_DeInit:00000000 IMX335_DeInit
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:457    .text.IMX335_ReadID:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:463    .text.IMX335_ReadID:00000000 IMX335_ReadID
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:523    .text.IMX335_GetCapabilities:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:529    .text.IMX335_GetCapabilities:00000000 IMX335_GetCapabilities
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:598    .text.IMX335_SetGain:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:604    .text.IMX335_SetGain:00000000 IMX335_SetGain
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:706    .text.IMX335_SetGain:0000006c $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:711    .text.IMX335_SetExposure:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:717    .text.IMX335_SetExposure:00000000 IMX335_SetExposure
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:852    .text.IMX335_SetExposure:000000a0 $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:857    .text.IMX335_SetFrequency:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:863    .text.IMX335_SetFrequency:00000000 IMX335_SetFrequency
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:886    .text.IMX335_SetFrequency:0000000e $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:890    .text.IMX335_SetFrequency:00000012 $t
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:934    .text.IMX335_SetFrequency:00000034 $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1542   .rodata.inck_74Mhz_regs:00000000 inck_74Mhz_regs
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1516   .rodata.inck_27Mhz_regs:00000000 inck_27Mhz_regs
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1490   .rodata.inck_24Mhz_regs:00000000 inck_24Mhz_regs
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1464   .rodata.inck_18Mhz_regs:00000000 inck_18Mhz_regs
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1438   .rodata.inck_6Mhz_regs:00000000 inck_6Mhz_regs
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:943    .text.IMX335_SetFramerate:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:949    .text.IMX335_SetFramerate:00000000 IMX335_SetFramerate
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1038   .text.IMX335_SetFramerate:00000044 $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1383   .rodata.framerate_30fps_regs:00000000 framerate_30fps_regs
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1394   .rodata.framerate_25fps_regs:00000000 framerate_25fps_regs
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1427   .rodata.framerate_10fps_regs:00000000 framerate_10fps_regs
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1416   .rodata.framerate_15fps_regs:00000000 framerate_15fps_regs
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1405   .rodata.framerate_20fps_regs:00000000 framerate_20fps_regs
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1047   .text.IMX335_MirrorFlipConfig:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1053   .text.IMX335_MirrorFlipConfig:00000000 IMX335_MirrorFlipConfig
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1106   .text.IMX335_MirrorFlipConfig:00000024 $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1258   .rodata.mirrorflip_mode_regs:00000000 mirrorflip_mode_regs
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1114   .text.IMX335_SetTestPattern:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1120   .text.IMX335_SetTestPattern:00000000 IMX335_SetTestPattern
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1197   .text.IMX335_SetTestPattern:00000040 $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1232   .rodata.test_pattern_enable_regs:00000000 test_pattern_enable_regs
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1206   .rodata.test_pattern_disable_regs:00000000 test_pattern_disable_regs
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s 			page 52
 
 
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1203   .rodata.test_pattern_disable_regs:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1229   .rodata.test_pattern_enable_regs:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1255   .rodata.mirrorflip_mode_regs:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1380   .rodata.framerate_30fps_regs:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1391   .rodata.framerate_25fps_regs:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1402   .rodata.framerate_20fps_regs:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1413   .rodata.framerate_15fps_regs:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1424   .rodata.framerate_10fps_regs:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1435   .rodata.inck_6Mhz_regs:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1461   .rodata.inck_18Mhz_regs:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1487   .rodata.inck_24Mhz_regs:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1513   .rodata.inck_27Mhz_regs:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1539   .rodata.inck_74Mhz_regs:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1565   .rodata.mode_2l_10b_regs:00000000 $d
-C:\Users\Antonio\AppData\Local\Temp\ccCWzJzy.s:1585   .rodata.res_2592_1944_regs:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1203   .rodata.test_pattern_disable_regs:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1229   .rodata.test_pattern_enable_regs:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1255   .rodata.mirrorflip_mode_regs:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1380   .rodata.framerate_30fps_regs:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1391   .rodata.framerate_25fps_regs:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1402   .rodata.framerate_20fps_regs:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1413   .rodata.framerate_15fps_regs:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1424   .rodata.framerate_10fps_regs:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1435   .rodata.inck_6Mhz_regs:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1461   .rodata.inck_18Mhz_regs:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1487   .rodata.inck_24Mhz_regs:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1513   .rodata.inck_27Mhz_regs:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1539   .rodata.inck_74Mhz_regs:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1565   .rodata.mode_2l_10b_regs:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccVDSZiT.s:1585   .rodata.res_2592_1944_regs:00000000 $d
                            .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
                            .group:00000000 wm4._newlib_version.h.4.411db44ea2338a62eca2f0777f81481b
                            .group:00000000 wm4.features.h.33.e0c9f337c65cb9f22ed5f23d082bc78b
