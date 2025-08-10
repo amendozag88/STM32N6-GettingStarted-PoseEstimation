@@ -24,7 +24,7 @@
 #define USE_DCACHE
 
 /*Defines: CMW_MIRRORFLIP_NONE; CMW_MIRRORFLIP_FLIP; CMW_MIRRORFLIP_MIRROR; CMW_MIRRORFLIP_FLIP_MIRROR;*/
-#define CAMERA_FLIP CMW_MIRRORFLIP_NONE
+#define CAMERA_FLIP CMW_MIRRORFLIP_MIRROR//It was CMW_MIRRORFLIP_NONE
 
 #define ASPECT_RATIO_CROP       (1) /* Crop both pipes to nn input aspect ratio; Original aspect ratio kept */
 #define ASPECT_RATIO_FIT        (2) /* Resize both pipe to NN input aspect ratio; Original aspect ratio not kept */

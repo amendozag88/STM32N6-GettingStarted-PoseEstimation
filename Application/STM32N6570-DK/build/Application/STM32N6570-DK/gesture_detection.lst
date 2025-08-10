@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 1
 
 
    1              		.arch armv8.1-m.main
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
   39              		@ link register save eliminated.
   18:Src/gesture_detection.c ****     memset(detector, 0, sizeof(GestureDetector_t));
   40              		.loc 1 18 5 view .LVU1
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 2
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 2
 
 
   41 0000 42F29002 		movw	r2, #8336
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
   88              		.thumb
   89              		.thumb_func
   91              	Gesture_CalculateSpeed:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 3
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 3
 
 
   92              	.LVL7:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
  123              		.loc 1 35 37 view .LVU22
  124 000e 8C1A     		subs	r4, r1, r2
   35:Src/gesture_detection.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 4
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 4
 
 
  125              		.loc 1 35 51 view .LVU23
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
   45:Src/gesture_detection.c **** }
  165              		.loc 1 45 21 view .LVU38
  166 0056 D8E7     		b	.L3
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 5
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 5
 
 
  167              	.L11:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
   85:Src/gesture_detection.c ****                     return GESTURE_RIGHT_ARM_SWIPE_LEFT;
   86:Src/gesture_detection.c ****                 }
   87:Src/gesture_detection.c ****             //}
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 6
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 6
 
 
   88:Src/gesture_detection.c ****         }
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
  142:Src/gesture_detection.c ****         float32_t curr_y = right_wrist[curr_idx].y;
  143:Src/gesture_detection.c ****         float32_t vertical_movement = curr_y - start_y;
  144:Src/gesture_detection.c ****         float32_t start_nose = nose[start_idx].y;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 7
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 7
 
 
  145:Src/gesture_detection.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
  206              		.cfi_offset 83, -40
  207 0008 0646     		mov	r6, r0
  178:Src/gesture_detection.c ****     uint32_t current_time = HAL_GetTick();
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 8
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 8
 
 
  208              		.loc 1 178 5 is_stmt 1 view .LVU41
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
  250              		.loc 1 185 23 discriminator 1 view .LVU57
  251 0044 0C31     		adds	r1, r1, #12
  252              		.loc 1 186 57 view .LVU58
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 9
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 9
 
 
  253 0046 1860     		str	r0, [r3]	@ float
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
  205:Src/gesture_detection.c ****         detector->last_detected_gesture = detected_gesture;
  206:Src/gesture_detection.c ****         detector->last_gesture_time = current_time;
  207:Src/gesture_detection.c ****         detector->current_display_gesture = detected_gesture;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 10
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 10
 
 
  208:Src/gesture_detection.c ****         detector->gesture_display_timeout = current_time + GESTURE_DISPLAY_TIME;
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
  129:Src/gesture_detection.c **** 
  313              		.loc 1 129 5 view .LVU83
  131:Src/gesture_detection.c ****         right_shoulder[curr_idx].confidence < MIN_CONFIDENCE ||
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 11
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 11
 
 
  314              		.loc 1 131 5 view .LVU84
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
  141:Src/gesture_detection.c ****         float32_t curr_y = right_wrist[curr_idx].y;
  354              		.loc 1 141 40 view .LVU99
  355 00c8 00EB0213 		add	r3, r0, r2, lsl #4
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 12
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 12
 
 
  144:Src/gesture_detection.c **** 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
  394              		.loc 1 159 9 view .LVU115
  159:Src/gesture_detection.c ****         float32_t arm_extension = Gesture_CalculateDistance(
  395              		.loc 1 159 19 is_stmt 0 view .LVU116
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 13
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 13
 
 
  396 0100 B0EEC88A 		vabs.f32	s16, s16
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
  435              	.LBB31:
  100:Src/gesture_detection.c ****         float32_t wrist_speed = Gesture_CalculateSpeed(left_wrist, curr_idx, 3);
  436              		.loc 1 100 9 is_stmt 1 view .LVU132
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 14
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 14
 
 
  437              	.LBE31:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
  478 017a CCBF     		ite	gt
  479 017c 0420     		movgt	r0, #4
  480 017e 0320     		movle	r0, #3
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 15
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 15
 
 
  481 0180 2CE0     		b	.L38
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
  524              		.loc 1 205 9 is_stmt 1 view .LVU156
  525 01b4 12E0     		b	.L38
  526              	.LVL40:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 16
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 16
 
 
  527              	.L18:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
  217:Src/gesture_detection.c ****         detector->gesture_display_timeout = current_time + GESTURE_DISPLAY_TIME;
  568              		.loc 1 217 43 is_stmt 0 view .LVU170
  569 01e8 88F88800 		strb	r0, [r8, #136]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 17
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 17
 
 
  218:Src/gesture_detection.c ****         return detected_gesture;
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
  615 000e 0248     		ldrhi	r0, .L44+4
  230:Src/gesture_detection.c ****         case GESTURE_RIGHT_ARM_SWIPE_LEFT:   return "Right Arm Swipe Left";
  231:Src/gesture_detection.c ****         case GESTURE_RIGHT_ARM_SWIPE_RIGHT:  return "Right Arm Swipe Right";
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 18
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 18
 
 
  232:Src/gesture_detection.c ****         case GESTURE_LEFT_ARM_SWIPE_LEFT:    return "Left Arm Swipe Left";
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
  655 000c D3F88C20 		ldr	r2, [r3, #140]
  656 0010 8242     		cmp	r2, r0
  247:Src/gesture_detection.c ****         detector->current_display_gesture = GESTURE_NONE;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 19
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 19
 
 
  657              		.loc 1 247 9 is_stmt 1 view .LVU189
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
  701              		.loc 1 257 8 view .LVU200
  702 0008 06D9     		bls	.L49
  258:Src/gesture_detection.c ****         *current_x = 0.0f;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 20
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 20
 
 
  703              		.loc 1 258 9 is_stmt 1 view .LVU201
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
  734              		.loc 1 266 49 view .LVU216
  735 0022 2835     		adds	r5, r5, #40
  266:Src/gesture_detection.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 21
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 21
 
 
  736              		.loc 1 266 73 view .LVU217
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
  775              	.LFE3347:
  777              		.section	.text.Gesture_GetPastKeypointDebugInfo,"ax",%progbits
  778              		.align	1
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 22
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 22
 
 
  779              		.global	Gesture_GetPastKeypointDebugInfo
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
  287:Src/gesture_detection.c ****         return;
  821              		.loc 1 287 9 view .LVU247
  822              	.LVL62:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 23
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 23
 
 
  823              	.L53:
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
  299:Src/gesture_detection.c **** }
  854              		.loc 1 299 22 view .LVU259
  855 003e C9B2     		uxtb	r1, r1
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 24
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 24
 
 
  294:Src/gesture_detection.c ****     *current_y = detector->history[keypoint_idx][read_idx].y;
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
  891              	.LC3:
  892 002b 4C656674 		.ascii	"Left Arm Swipe Left\000"
  892      2041726D 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 25
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 25
 
 
  892      20537769 
@@ -1490,32 +1490,32 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 1
  922              		.file 9 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
  923              		.file 10 "../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Inc/stm32n6xx_hal.h"
  924              		.file 11 "<built-in>"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 26
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 26
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gesture_detection.c
-C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s:26     .text.Gesture_Init:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s:32     .text.Gesture_Init:00000000 Gesture_Init
-C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s:50     .text.Gesture_CalculateDistance:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s:56     .text.Gesture_CalculateDistance:00000000 Gesture_CalculateDistance
-C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s:85     .text.Gesture_CalculateSpeed:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s:91     .text.Gesture_CalculateSpeed:00000000 Gesture_CalculateSpeed
-C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s:170    .text.Gesture_CalculateSpeed:00000058 $d
-C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s:176    .text.Gesture_Detect:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s:182    .text.Gesture_Detect:00000000 Gesture_Detect
-C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s:579    .text.Gesture_Detect:000001f4 $d
-C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s:589    .text.Gesture_GetName:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s:595    .text.Gesture_GetName:00000000 Gesture_GetName
-C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s:621    .text.Gesture_GetName:00000014 $d
-C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s:905    .rodata.CSWTCH.10:00000000 CSWTCH.10
-C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s:627    .text.Gesture_GetCurrentDisplayGesture:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s:633    .text.Gesture_GetCurrentDisplayGesture:00000000 Gesture_GetCurrentDisplayGesture
-C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s:673    .text.Gesture_GetKeypointDebugInfo:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s:679    .text.Gesture_GetKeypointDebugInfo:00000000 Gesture_GetKeypointDebugInfo
-C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s:778    .text.Gesture_GetPastKeypointDebugInfo:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s:784    .text.Gesture_GetPastKeypointDebugInfo:00000000 Gesture_GetPastKeypointDebugInfo
-C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s:902    .rodata.CSWTCH.10:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s:26     .text.Gesture_Init:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s:32     .text.Gesture_Init:00000000 Gesture_Init
+C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s:50     .text.Gesture_CalculateDistance:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s:56     .text.Gesture_CalculateDistance:00000000 Gesture_CalculateDistance
+C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s:85     .text.Gesture_CalculateSpeed:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s:91     .text.Gesture_CalculateSpeed:00000000 Gesture_CalculateSpeed
+C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s:170    .text.Gesture_CalculateSpeed:00000058 $d
+C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s:176    .text.Gesture_Detect:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s:182    .text.Gesture_Detect:00000000 Gesture_Detect
+C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s:579    .text.Gesture_Detect:000001f4 $d
+C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s:589    .text.Gesture_GetName:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s:595    .text.Gesture_GetName:00000000 Gesture_GetName
+C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s:621    .text.Gesture_GetName:00000014 $d
+C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s:905    .rodata.CSWTCH.10:00000000 CSWTCH.10
+C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s:627    .text.Gesture_GetCurrentDisplayGesture:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s:633    .text.Gesture_GetCurrentDisplayGesture:00000000 Gesture_GetCurrentDisplayGesture
+C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s:673    .text.Gesture_GetKeypointDebugInfo:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s:679    .text.Gesture_GetKeypointDebugInfo:00000000 Gesture_GetKeypointDebugInfo
+C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s:778    .text.Gesture_GetPastKeypointDebugInfo:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s:784    .text.Gesture_GetPastKeypointDebugInfo:00000000 Gesture_GetPastKeypointDebugInfo
+C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s:902    .rodata.CSWTCH.10:00000000 $d
                            .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
                            .group:00000000 wm4._newlib_version.h.4.411db44ea2338a62eca2f0777f81481b
                            .group:00000000 wm4.features.h.33.e0c9f337c65cb9f22ed5f23d082bc78b
@@ -1550,14 +1550,14 @@ C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s:902    .rodata.CSWTCH.10:00000000
                            .group:00000000 wm4.arm_math_types.h.559.cab78f278b684a3ea2271947c7aea680
                            .group:00000000 wm4.arm_math_memory.h.28.fe8a81c6a9ac13061a5f748732089249
                            .group:00000000 wm4.none.h.185.db055cca83e83f96d8d0bb450fbdf4bb
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 27
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 27
 
 
                            .group:00000000 wm4.utils.h.27.57524573fe37b04009eecf3582a4c591
                            .group:00000000 wm4.fast_math_functions.h.28.8eb7477260c1d6b62047c49a01c4cbaa
                            .group:00000000 wm4.controller_functions.h.28.7bed7d7a726df2f65b8a3d89cff01247
                            .group:00000000 wm4.filtering_functions.h.46.6cf1424fb1f86d5f9958d208b83340a1
-                           .group:00000000 wm4.app_config.h.24.e9b8ad8c27ec31b3b21644fa8513e998
+                           .group:00000000 wm4.app_config.h.24.f038a6307a621be7ff1c53b769c184df
                            .group:00000000 wm4.spe_pp_output_if.h.11.7212d2990e83c8afeadfa97fa05d17c4
                            .group:00000000 wm4.gesture_detection.h.10.d7513471c97a364c41f0081fc9baf7b8
                            .group:00000000 wm4.stm32n6xx_hal_conf.h.21.e6f895f5dec93fd886896ef3aa220611
@@ -1610,7 +1610,7 @@ C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s:902    .rodata.CSWTCH.10:00000000
 
 UNDEFINED SYMBOLS
 memset
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccBvicZk.s 			page 28
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccjJXm64.s 			page 28
 
 
 sqrtf

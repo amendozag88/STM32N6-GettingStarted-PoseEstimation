@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 1
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s 			page 1
 
 
    1              		.arch armv8.1-m.main
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 1
   39              		.thumb
   40              		.thumb_func
   42              	CameraPipeline_Init:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 2
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s 			page 2
 
 
   43              	.LVL0:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 1
   53:Src/app_camerapipeline.c ****   }
   54:Src/app_camerapipeline.c ****   else if (ASPECT_RATIO_MODE == ASPECT_RATIO_FULLSCREEN)
   55:Src/app_camerapipeline.c ****   {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 3
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s 			page 3
 
 
   56:Src/app_camerapipeline.c ****     aspect_ratio = CMW_Aspect_ratio_fullscreen;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 1
  110:Src/app_camerapipeline.c ****   dcmipp_conf.enable_gamma_conversion = GAMMA_CONVERSION;
  111:Src/app_camerapipeline.c ****   ret = CMW_CAMERA_SetPipeConfig(DCMIPP_PIPE2, &dcmipp_conf, pitch);
  112:Src/app_camerapipeline.c ****   assert(ret == HAL_OK);
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 4
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s 			page 4
 
 
  113:Src/app_camerapipeline.c **** }
@@ -204,606 +204,611 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 1
   51              		.loc 1 126 3 view .LVU3
  122:Src/app_camerapipeline.c ****   int ret;
   52              		.loc 1 122 1 is_stmt 0 view .LVU4
-  53 0000 F0B5     		push	{r4, r5, r6, r7, lr}
-  54              		.cfi_def_cfa_offset 20
-  55              		.cfi_offset 4, -20
-  56              		.cfi_offset 5, -16
-  57              		.cfi_offset 6, -12
-  58              		.cfi_offset 7, -8
-  59              		.cfi_offset 14, -4
-  60              		.loc 1 126 18 view .LVU5
-  61 0002 0023     		movs	r3, #0
+  53 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+  54              		.cfi_def_cfa_offset 24
+  55              		.cfi_offset 4, -24
+  56              		.cfi_offset 5, -20
+  57              		.cfi_offset 6, -16
+  58              		.cfi_offset 7, -12
+  59              		.cfi_offset 8, -8
+  60              		.cfi_offset 14, -4
+  61              		.loc 1 126 18 view .LVU5
+  62 0004 0023     		movs	r3, #0
  122:Src/app_camerapipeline.c ****   int ret;
-  62              		.loc 1 122 1 view .LVU6
-  63 0004 1546     		mov	r5, r2
+  63              		.loc 1 122 1 view .LVU6
+  64 0006 1646     		mov	r6, r2
  127:Src/app_camerapipeline.c ****   cam_conf.height = CAMERA_HEIGHT;
  128:Src/app_camerapipeline.c ****   cam_conf.fps = CAMERA_FPS;
-  64              		.loc 1 128 16 view .LVU7
-  65 0006 1E22     		movs	r2, #30
-  66              	.LVL1:
- 122:Src/app_camerapipeline.c ****   int ret;
-  67              		.loc 1 122 1 view .LVU8
-  68 0008 93B0     		sub	sp, sp, #76
-  69              		.cfi_def_cfa_offset 96
- 122:Src/app_camerapipeline.c ****   int ret;
-  70              		.loc 1 122 1 view .LVU9
-  71 000a 0746     		mov	r7, r0
  129:Src/app_camerapipeline.c ****   cam_conf.pixel_format = 0; /* Default; Not implemented yet */
  130:Src/app_camerapipeline.c ****   cam_conf.anti_flicker = 0;
  131:Src/app_camerapipeline.c ****   cam_conf.mirror_flip = CAMERA_FLIP;
+  65              		.loc 1 131 24 view .LVU7
+  66 0008 0225     		movs	r5, #2
+ 128:Src/app_camerapipeline.c ****   cam_conf.pixel_format = 0; /* Default; Not implemented yet */
+  67              		.loc 1 128 16 view .LVU8
+  68 000a 1E22     		movs	r2, #30
+  69              	.LVL1:
+ 122:Src/app_camerapipeline.c ****   int ret;
+  70              		.loc 1 122 1 view .LVU9
+  71 000c 92B0     		sub	sp, sp, #72
+  72              		.cfi_def_cfa_offset 96
+ 122:Src/app_camerapipeline.c ****   int ret;
+  73              		.loc 1 122 1 view .LVU10
+  74 000e 8046     		mov	r8, r0
  132:Src/app_camerapipeline.c **** 
  133:Src/app_camerapipeline.c ****   ret = CMW_CAMERA_Init(&cam_conf);
-  72              		.loc 1 133 9 view .LVU10
-  73 000c 01A8     		add	r0, sp, #4
-  74              	.LVL2:
+  75              		.loc 1 133 9 view .LVU11
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s 			page 5
+
+
+  76 0010 01A8     		add	r0, sp, #4
+  77              	.LVL2:
  122:Src/app_camerapipeline.c ****   int ret;
-  75              		.loc 1 122 1 view .LVU11
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 5
-
-
-  76 000e 0E46     		mov	r6, r1
- 127:Src/app_camerapipeline.c ****   cam_conf.height = CAMERA_HEIGHT;
-  77              		.loc 1 127 19 view .LVU12
-  78 0010 CDE90133 		strd	r3, r3, [sp, #4]
+  78              		.loc 1 122 1 view .LVU12
+  79 0012 0F46     		mov	r7, r1
+ 127:Src/app_camerapipeline.c ****   cam_conf.fps = CAMERA_FPS;
+  80              		.loc 1 127 19 view .LVU13
+  81 0014 CDE90133 		strd	r3, r3, [sp, #4]
  128:Src/app_camerapipeline.c ****   cam_conf.pixel_format = 0; /* Default; Not implemented yet */
-  79              		.loc 1 128 3 is_stmt 1 view .LVU13
- 129:Src/app_camerapipeline.c ****   cam_conf.pixel_format = 0; /* Default; Not implemented yet */
-  80              		.loc 1 129 25 is_stmt 0 view .LVU14
-  81 0014 CDE90323 		strd	r2, r3, [sp, #12]
+  82              		.loc 1 128 3 is_stmt 1 view .LVU14
+ 129:Src/app_camerapipeline.c ****   cam_conf.anti_flicker = 0;
+  83              		.loc 1 129 25 is_stmt 0 view .LVU15
+  84 0018 CDE90323 		strd	r2, r3, [sp, #12]
  130:Src/app_camerapipeline.c ****   cam_conf.mirror_flip = CAMERA_FLIP;
-  82              		.loc 1 130 3 is_stmt 1 view .LVU15
+  85              		.loc 1 130 3 is_stmt 1 view .LVU16
+ 130:Src/app_camerapipeline.c ****   cam_conf.mirror_flip = CAMERA_FLIP;
+  86              		.loc 1 130 25 is_stmt 0 view .LVU17
+  87 001c 0593     		str	r3, [sp, #20]
  131:Src/app_camerapipeline.c **** 
-  83              		.loc 1 131 24 is_stmt 0 view .LVU16
-  84 0018 CDE90533 		strd	r3, r3, [sp, #20]
-  85              		.loc 1 133 3 is_stmt 1 view .LVU17
-  86              		.loc 1 133 9 is_stmt 0 view .LVU18
-  87 001c FFF7FEFF 		bl	CMW_CAMERA_Init
-  88              	.LVL3:
+  88              		.loc 1 131 3 is_stmt 1 view .LVU18
+ 131:Src/app_camerapipeline.c **** 
+  89              		.loc 1 131 24 is_stmt 0 view .LVU19
+  90 001e 0695     		str	r5, [sp, #24]
+  91              		.loc 1 133 3 is_stmt 1 view .LVU20
+  92              		.loc 1 133 9 is_stmt 0 view .LVU21
+  93 0020 FFF7FEFF 		bl	CMW_CAMERA_Init
+  94              	.LVL3:
  134:Src/app_camerapipeline.c ****   assert(ret == CMW_ERROR_NONE);
-  89              		.loc 1 134 3 is_stmt 1 view .LVU19
-  90 0020 0146     		mov	r1, r0
-  91 0022 28B1     		cbz	r0, .L2
-  92              		.loc 1 134 3 is_stmt 0 discriminator 1 view .LVU20
-  93 0024 8621     		movs	r1, #134
-  94 0026 204B     		ldr	r3, .L7
-  95 0028 204A     		ldr	r2, .L7+4
-  96              	.LVL4:
-  97              	.L6:
-  98              	.LBB6:
-  99              	.LBB7:
+  95              		.loc 1 134 3 is_stmt 1 view .LVU22
+  96 0024 0146     		mov	r1, r0
+  97 0026 28B1     		cbz	r0, .L2
+  98              		.loc 1 134 3 is_stmt 0 discriminator 1 view .LVU23
+  99 0028 8621     		movs	r1, #134
+ 100 002a 204B     		ldr	r3, .L7
+ 101 002c 204A     		ldr	r2, .L7+4
+ 102              	.LVL4:
+ 103              	.L6:
+ 104              	.LBB6:
+ 105              	.LBB7:
   81:Src/app_camerapipeline.c ****   assert(dcmipp_conf.output_width * dcmipp_conf.output_bpp == pitch);
- 100              		.loc 1 81 3 discriminator 1 view .LVU21
- 101 002a 2148     		ldr	r0, .L7+8
- 102 002c FFF7FEFF 		bl	__assert_func
- 103              	.LVL5:
- 104              	.L2:
+ 106              		.loc 1 81 3 discriminator 1 view .LVU24
+ 107 002e 2148     		ldr	r0, .L7+8
+ 108 0030 FFF7FEFF 		bl	__assert_func
+ 109              	.LVL5:
+ 110              	.L2:
   81:Src/app_camerapipeline.c ****   assert(dcmipp_conf.output_width * dcmipp_conf.output_bpp == pitch);
- 105              		.loc 1 81 3 discriminator 1 view .LVU22
- 106              	.LBE7:
- 107              	.LBE6:
+ 111              		.loc 1 81 3 discriminator 1 view .LVU25
+ 112              	.LBE7:
+ 113              	.LBE6:
  135:Src/app_camerapipeline.c ****   DCMIPP_PipeInitDisplay(&cam_conf, lcd_bg_width, lcd_bg_height);
- 108              		.loc 1 135 3 is_stmt 1 view .LVU23
- 109 0030 029C     		ldr	r4, [sp, #8]
- 110              	.LVL6:
- 111              	.LBB9:
- 112              	.LBI6:
+ 114              		.loc 1 135 3 is_stmt 1 view .LVU26
+ 115 0034 029C     		ldr	r4, [sp, #8]
+ 116              	.LVL6:
+ 117              	.LBB9:
+ 118              	.LBI6:
   40:Src/app_camerapipeline.c **** {
- 113              		.loc 1 40 13 view .LVU24
- 114              	.LBB8:
+ 119              		.loc 1 40 13 view .LVU27
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s 			page 6
+
+
+ 120              	.LBB8:
   42:Src/app_camerapipeline.c ****   CMW_DCMIPP_Conf_t dcmipp_conf = {0};
- 115              		.loc 1 42 3 view .LVU25
+ 121              		.loc 1 42 3 view .LVU28
   43:Src/app_camerapipeline.c ****   int ret;
- 116              		.loc 1 43 3 view .LVU26
+ 122              		.loc 1 43 3 view .LVU29
   43:Src/app_camerapipeline.c ****   int ret;
- 117              		.loc 1 43 21 is_stmt 0 view .LVU27
- 118 0032 1C22     		movs	r2, #28
- 119 0034 0BA8     		add	r0, sp, #44
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 6
-
-
- 120              	.LVL7:
+ 123              		.loc 1 43 21 is_stmt 0 view .LVU30
+ 124 0036 1C22     		movs	r2, #28
+ 125 0038 0BA8     		add	r0, sp, #44
+ 126              	.LVL7:
   43:Src/app_camerapipeline.c ****   int ret;
- 121              		.loc 1 43 21 view .LVU28
- 122 0036 FFF7FEFF 		bl	memset
- 123              	.LVL8:
+ 127              		.loc 1 43 21 view .LVU31
+ 128 003a FFF7FEFF 		bl	memset
+ 129              	.LVL8:
   44:Src/app_camerapipeline.c **** 
- 124              		.loc 1 44 3 is_stmt 1 view .LVU29
+ 130              		.loc 1 44 3 is_stmt 1 view .LVU32
   46:Src/app_camerapipeline.c ****   {
- 125              		.loc 1 46 3 view .LVU30
+ 131              		.loc 1 46 3 view .LVU33
   48:Src/app_camerapipeline.c ****   }
- 126              		.loc 1 48 5 view .LVU31
+ 132              		.loc 1 48 5 view .LVU34
   59:Src/app_camerapipeline.c ****   int lcd_bg_height;
- 127              		.loc 1 59 3 view .LVU32
+ 133              		.loc 1 59 3 view .LVU35
   60:Src/app_camerapipeline.c **** 
- 128              		.loc 1 60 3 view .LVU33
+ 134              		.loc 1 60 3 view .LVU36
   62:Src/app_camerapipeline.c **** 
- 129              		.loc 1 62 3 view .LVU34
+ 135              		.loc 1 62 3 view .LVU37
   62:Src/app_camerapipeline.c **** 
- 130              		.loc 1 62 72 is_stmt 0 view .LVU35
- 131 003a B4F5F07F 		cmp	r4, #480
- 132 003e 28BF     		it	cs
- 133 0040 4FF4F074 		movcs	r4, #480
- 134              	.LVL9:
+ 136              		.loc 1 62 72 is_stmt 0 view .LVU38
+ 137 003e B4F5F07F 		cmp	r4, #480
+ 138 0042 28BF     		it	cs
+ 139 0044 4FF4F074 		movcs	r4, #480
+ 140              	.LVL9:
   67:Src/app_camerapipeline.c **** #endif
- 135              		.loc 1 67 3 is_stmt 1 view .LVU36
+ 141              		.loc 1 67 3 is_stmt 1 view .LVU39
   70:Src/app_camerapipeline.c ****   *bg_height = lcd_bg_height;
- 136              		.loc 1 70 3 view .LVU37
+ 142              		.loc 1 70 3 view .LVU40
   70:Src/app_camerapipeline.c ****   *bg_height = lcd_bg_height;
- 137              		.loc 1 70 13 is_stmt 0 view .LVU38
- 138 0044 3C60     		str	r4, [r7]
+ 143              		.loc 1 70 13 is_stmt 0 view .LVU41
+ 144 0048 C8F80040 		str	r4, [r8]
   71:Src/app_camerapipeline.c **** 
- 139              		.loc 1 71 3 is_stmt 1 view .LVU39
+ 145              		.loc 1 71 3 is_stmt 1 view .LVU42
   74:Src/app_camerapipeline.c ****   dcmipp_conf.output_format = DCMIPP_PIXEL_PACKER_FORMAT_RGB565_1;
- 140              		.loc 1 74 29 is_stmt 0 view .LVU40
- 141 0046 CDE90744 		strd	r4, r4, [sp, #28]
+ 146              		.loc 1 74 29 is_stmt 0 view .LVU43
+ 147 004c CDE90744 		strd	r4, r4, [sp, #28]
   71:Src/app_camerapipeline.c **** 
- 142              		.loc 1 71 14 view .LVU41
- 143 004a 3460     		str	r4, [r6]
+ 148              		.loc 1 71 14 view .LVU44
+ 149 0050 3C60     		str	r4, [r7]
   73:Src/app_camerapipeline.c ****   dcmipp_conf.output_height = lcd_bg_height;
- 144              		.loc 1 73 3 is_stmt 1 view .LVU42
+ 150              		.loc 1 73 3 is_stmt 1 view .LVU45
   75:Src/app_camerapipeline.c ****   dcmipp_conf.output_bpp = 2;
- 145              		.loc 1 75 3 view .LVU43
-  76:Src/app_camerapipeline.c ****   dcmipp_conf.mode = aspect_ratio;
- 146              		.loc 1 76 26 is_stmt 0 view .LVU44
- 147 004c 0124     		movs	r4, #1
- 148              	.LVL10:
-  76:Src/app_camerapipeline.c ****   dcmipp_conf.mode = aspect_ratio;
- 149              		.loc 1 76 26 view .LVU45
- 150 004e 0226     		movs	r6, #2
- 151              	.LVL11:
+ 151              		.loc 1 75 3 view .LVU46
+  75:Src/app_camerapipeline.c ****   dcmipp_conf.output_bpp = 2;
+ 152              		.loc 1 75 29 is_stmt 0 view .LVU47
+ 153 0052 0124     		movs	r4, #1
+ 154              	.LVL10:
   80:Src/app_camerapipeline.c ****   assert(ret == HAL_OK);
- 152              		.loc 1 80 9 view .LVU46
- 153 0050 6A46     		mov	r2, sp
- 154 0052 2046     		mov	r0, r4
- 155 0054 07A9     		add	r1, sp, #28
+ 155              		.loc 1 80 9 view .LVU48
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s 			page 7
+
+
+ 156 0054 6A46     		mov	r2, sp
+ 157 0056 2046     		mov	r0, r4
+ 158 0058 07A9     		add	r1, sp, #28
   76:Src/app_camerapipeline.c ****   dcmipp_conf.mode = aspect_ratio;
- 156              		.loc 1 76 26 view .LVU47
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 7
-
-
- 157 0056 CDE90946 		strd	r4, r6, [sp, #36]
+ 159              		.loc 1 76 26 view .LVU49
+ 160 005a CDE90945 		strd	r4, r5, [sp, #36]
   77:Src/app_camerapipeline.c ****   dcmipp_conf.enable_gamma_conversion = GAMMA_CONVERSION;
- 158              		.loc 1 77 3 is_stmt 1 view .LVU48
+ 161              		.loc 1 77 3 is_stmt 1 view .LVU50
   78:Src/app_camerapipeline.c ****   uint32_t pitch;
- 159              		.loc 1 78 3 view .LVU49
+ 162              		.loc 1 78 3 view .LVU51
   79:Src/app_camerapipeline.c ****   ret = CMW_CAMERA_SetPipeConfig(DCMIPP_PIPE1, &dcmipp_conf, &pitch);
- 160              		.loc 1 79 3 view .LVU50
+ 163              		.loc 1 79 3 view .LVU52
   80:Src/app_camerapipeline.c ****   assert(ret == HAL_OK);
- 161              		.loc 1 80 3 view .LVU51
+ 164              		.loc 1 80 3 view .LVU53
   80:Src/app_camerapipeline.c ****   assert(ret == HAL_OK);
- 162              		.loc 1 80 9 is_stmt 0 view .LVU52
- 163 005a FFF7FEFF 		bl	CMW_CAMERA_SetPipeConfig
- 164              	.LVL12:
+ 165              		.loc 1 80 9 is_stmt 0 view .LVU54
+ 166 005e FFF7FEFF 		bl	CMW_CAMERA_SetPipeConfig
+ 167              	.LVL11:
   81:Src/app_camerapipeline.c ****   assert(dcmipp_conf.output_width * dcmipp_conf.output_bpp == pitch);
- 165              		.loc 1 81 3 is_stmt 1 view .LVU53
- 166 005e 18B1     		cbz	r0, .L3
+ 168              		.loc 1 81 3 is_stmt 1 view .LVU55
+ 169 0062 18B1     		cbz	r0, .L3
   81:Src/app_camerapipeline.c ****   assert(dcmipp_conf.output_width * dcmipp_conf.output_bpp == pitch);
- 167              		.loc 1 81 3 is_stmt 0 discriminator 1 view .LVU54
- 168 0060 5121     		movs	r1, #81
- 169 0062 144B     		ldr	r3, .L7+12
- 170 0064 144A     		ldr	r2, .L7+16
- 171 0066 E0E7     		b	.L6
- 172              	.L3:
+ 170              		.loc 1 81 3 is_stmt 0 discriminator 1 view .LVU56
+ 171 0064 5121     		movs	r1, #81
+ 172 0066 144B     		ldr	r3, .L7+12
+ 173 0068 144A     		ldr	r2, .L7+16
+ 174 006a E0E7     		b	.L6
+ 175              	.L3:
   82:Src/app_camerapipeline.c **** }
- 173              		.loc 1 82 3 is_stmt 1 view .LVU55
- 174 0068 0A9A     		ldr	r2, [sp, #40]
- 175 006a 079B     		ldr	r3, [sp, #28]
- 176 006c 5343     		muls	r3, r2, r3
- 177 006e 009A     		ldr	r2, [sp]
- 178 0070 9342     		cmp	r3, r2
- 179 0072 03D0     		beq	.L4
+ 176              		.loc 1 82 3 is_stmt 1 view .LVU57
+ 177 006c 0A9A     		ldr	r2, [sp, #40]
+ 178 006e 079B     		ldr	r3, [sp, #28]
+ 179 0070 5343     		muls	r3, r2, r3
+ 180 0072 009A     		ldr	r2, [sp]
+ 181 0074 9342     		cmp	r3, r2
+ 182 0076 03D0     		beq	.L4
   82:Src/app_camerapipeline.c **** }
- 180              		.loc 1 82 3 is_stmt 0 discriminator 1 view .LVU56
- 181 0074 5221     		movs	r1, #82
- 182 0076 114B     		ldr	r3, .L7+20
- 183 0078 0F4A     		ldr	r2, .L7+16
- 184 007a D6E7     		b	.L6
- 185              	.L4:
- 186              	.LVL13:
+ 183              		.loc 1 82 3 is_stmt 0 discriminator 1 view .LVU58
+ 184 0078 5221     		movs	r1, #82
+ 185 007a 114B     		ldr	r3, .L7+20
+ 186 007c 0F4A     		ldr	r2, .L7+16
+ 187 007e D6E7     		b	.L6
+ 188              	.L4:
+ 189              	.LVL12:
   82:Src/app_camerapipeline.c **** }
- 187              		.loc 1 82 3 discriminator 1 view .LVU57
- 188              	.LBE8:
- 189              	.LBE9:
+ 190              		.loc 1 82 3 discriminator 1 view .LVU59
+ 191              	.LBE8:
+ 192              	.LBE9:
  136:Src/app_camerapipeline.c ****   DCMIPP_PipeInitNn(pitch_nn);
- 190              		.loc 1 136 3 is_stmt 1 view .LVU58
- 191              	.LBB10:
- 192              	.LBI10:
+ 193              		.loc 1 136 3 is_stmt 1 view .LVU60
+ 194              	.LBB10:
+ 195              	.LBI10:
   85:Src/app_camerapipeline.c **** {
- 193              		.loc 1 85 13 view .LVU59
- 194              	.LBB11:
+ 196              		.loc 1 85 13 view .LVU61
+ 197              	.LBB11:
   87:Src/app_camerapipeline.c ****   CMW_DCMIPP_Conf_t dcmipp_conf;
- 195              		.loc 1 87 3 view .LVU60
+ 198              		.loc 1 87 3 view .LVU62
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s 			page 8
+
+
   88:Src/app_camerapipeline.c ****   int ret;
- 196              		.loc 1 88 3 view .LVU61
+ 199              		.loc 1 88 3 view .LVU63
   89:Src/app_camerapipeline.c **** 
- 197              		.loc 1 89 3 view .LVU62
+ 200              		.loc 1 89 3 view .LVU64
   91:Src/app_camerapipeline.c ****   {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 8
-
-
- 198              		.loc 1 91 3 view .LVU63
+ 201              		.loc 1 91 3 view .LVU65
   93:Src/app_camerapipeline.c ****   }
- 199              		.loc 1 93 5 view .LVU64
+ 202              		.loc 1 93 5 view .LVU66
  104:Src/app_camerapipeline.c ****   dcmipp_conf.output_height = NN_HEIGHT;
- 200              		.loc 1 104 3 view .LVU65
+ 203              		.loc 1 104 3 view .LVU67
  104:Src/app_camerapipeline.c ****   dcmipp_conf.output_height = NN_HEIGHT;
- 201              		.loc 1 104 28 is_stmt 0 view .LVU66
- 202 007c C023     		movs	r3, #192
+ 204              		.loc 1 104 28 is_stmt 0 view .LVU68
+ 205 0080 C023     		movs	r3, #192
  105:Src/app_camerapipeline.c ****   dcmipp_conf.output_format = DCMIPP_PIXEL_PACKER_FORMAT_RGB888_YUV444_1;
- 203              		.loc 1 105 29 view .LVU67
- 204 007e CDE90733 		strd	r3, r3, [sp, #28]
+ 206              		.loc 1 105 29 view .LVU69
+ 207 0082 CDE90733 		strd	r3, r3, [sp, #28]
  106:Src/app_camerapipeline.c ****   dcmipp_conf.output_bpp = NN_BPP;
- 205              		.loc 1 106 3 is_stmt 1 view .LVU68
+ 208              		.loc 1 106 3 is_stmt 1 view .LVU70
  107:Src/app_camerapipeline.c ****   dcmipp_conf.mode = aspect_ratio;
- 206              		.loc 1 107 26 is_stmt 0 view .LVU69
- 207 0082 0323     		movs	r3, #3
+ 209              		.loc 1 107 26 is_stmt 0 view .LVU71
+ 210 0086 0323     		movs	r3, #3
  110:Src/app_camerapipeline.c ****   ret = CMW_CAMERA_SetPipeConfig(DCMIPP_PIPE2, &dcmipp_conf, pitch);
- 208              		.loc 1 110 39 view .LVU70
- 209 0084 CDE90B40 		strd	r4, r0, [sp, #44]
+ 211              		.loc 1 110 39 view .LVU72
+ 212 0088 CDE90B40 		strd	r4, r0, [sp, #44]
  106:Src/app_camerapipeline.c ****   dcmipp_conf.output_bpp = NN_BPP;
- 210              		.loc 1 106 29 view .LVU71
- 211 0088 0990     		str	r0, [sp, #36]
+ 213              		.loc 1 106 29 view .LVU73
+ 214 008c 0990     		str	r0, [sp, #36]
  107:Src/app_camerapipeline.c ****   dcmipp_conf.mode = aspect_ratio;
- 212              		.loc 1 107 3 is_stmt 1 view .LVU72
+ 215              		.loc 1 107 3 is_stmt 1 view .LVU74
  108:Src/app_camerapipeline.c ****   dcmipp_conf.enable_swap = COLOR_MODE;
- 213              		.loc 1 108 20 is_stmt 0 view .LVU73
- 214 008a 0D90     		str	r0, [sp, #52]
+ 216              		.loc 1 108 20 is_stmt 0 view .LVU75
+ 217 008e 0D90     		str	r0, [sp, #52]
  111:Src/app_camerapipeline.c ****   assert(ret == HAL_OK);
- 215              		.loc 1 111 9 view .LVU74
- 216 008c 2A46     		mov	r2, r5
- 217 008e 3046     		mov	r0, r6
- 218 0090 07A9     		add	r1, sp, #28
+ 218              		.loc 1 111 9 view .LVU76
+ 219 0090 3246     		mov	r2, r6
+ 220 0092 2846     		mov	r0, r5
+ 221 0094 07A9     		add	r1, sp, #28
  107:Src/app_camerapipeline.c ****   dcmipp_conf.mode = aspect_ratio;
- 219              		.loc 1 107 26 view .LVU75
- 220 0092 0A93     		str	r3, [sp, #40]
+ 222              		.loc 1 107 26 view .LVU77
+ 223 0096 0A93     		str	r3, [sp, #40]
  108:Src/app_camerapipeline.c ****   dcmipp_conf.enable_swap = COLOR_MODE;
- 221              		.loc 1 108 3 is_stmt 1 view .LVU76
+ 224              		.loc 1 108 3 is_stmt 1 view .LVU78
  109:Src/app_camerapipeline.c ****   dcmipp_conf.enable_gamma_conversion = GAMMA_CONVERSION;
- 222              		.loc 1 109 3 view .LVU77
+ 225              		.loc 1 109 3 view .LVU79
  111:Src/app_camerapipeline.c ****   assert(ret == HAL_OK);
- 223              		.loc 1 111 3 view .LVU78
+ 226              		.loc 1 111 3 view .LVU80
  111:Src/app_camerapipeline.c ****   assert(ret == HAL_OK);
- 224              		.loc 1 111 9 is_stmt 0 view .LVU79
- 225 0094 FFF7FEFF 		bl	CMW_CAMERA_SetPipeConfig
- 226              	.LVL14:
+ 227              		.loc 1 111 9 is_stmt 0 view .LVU81
+ 228 0098 FFF7FEFF 		bl	CMW_CAMERA_SetPipeConfig
+ 229              	.LVL13:
  112:Src/app_camerapipeline.c **** }
- 227              		.loc 1 112 3 is_stmt 1 view .LVU80
- 228 0098 18B1     		cbz	r0, .L1
+ 230              		.loc 1 112 3 is_stmt 1 view .LVU82
+ 231 009c 18B1     		cbz	r0, .L1
  112:Src/app_camerapipeline.c **** }
- 229              		.loc 1 112 3 is_stmt 0 discriminator 1 view .LVU81
- 230 009a 7021     		movs	r1, #112
- 231 009c 054B     		ldr	r3, .L7+12
- 232 009e 084A     		ldr	r2, .L7+24
- 233 00a0 C3E7     		b	.L6
- 234              	.L1:
- 235              	.LBE11:
- 236              	.LBE10:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 9
+ 232              		.loc 1 112 3 is_stmt 0 discriminator 1 view .LVU83
+ 233 009e 7021     		movs	r1, #112
+ 234 00a0 054B     		ldr	r3, .L7+12
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s 			page 9
 
 
+ 235 00a2 084A     		ldr	r2, .L7+24
+ 236 00a4 C3E7     		b	.L6
+ 237              	.L1:
+ 238              	.LBE11:
+ 239              	.LBE10:
  137:Src/app_camerapipeline.c **** }
- 237              		.loc 1 137 1 view .LVU82
- 238 00a2 13B0     		add	sp, sp, #76
- 239              		.cfi_def_cfa_offset 20
- 240              		@ sp needed
- 241 00a4 F0BD     		pop	{r4, r5, r6, r7, pc}
- 242              	.LVL15:
- 243              	.L8:
- 244              		.loc 1 137 1 view .LVU83
- 245 00a6 00BF     		.align	2
- 246              	.L7:
- 247 00a8 00000000 		.word	.LC0
- 248 00ac 00000000 		.word	__func__.7
- 249 00b0 16000000 		.word	.LC1
- 250 00b4 2F000000 		.word	.LC2
- 251 00b8 00000000 		.word	__func__.6
- 252 00bc 3D000000 		.word	.LC3
- 253 00c0 00000000 		.word	__func__.5
- 254              		.cfi_endproc
- 255              	.LFE3344:
- 257              		.section	.text.CameraPipeline_DeInit,"ax",%progbits
- 258              		.align	1
- 259              		.global	CameraPipeline_DeInit
- 260              		.syntax unified
- 261              		.thumb
- 262              		.thumb_func
- 264              	CameraPipeline_DeInit:
- 265              	.LFB3345:
+ 240              		.loc 1 137 1 view .LVU84
+ 241 00a6 12B0     		add	sp, sp, #72
+ 242              		.cfi_def_cfa_offset 24
+ 243              		@ sp needed
+ 244 00a8 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 245              	.LVL14:
+ 246              	.L8:
+ 247              		.loc 1 137 1 view .LVU85
+ 248              		.align	2
+ 249              	.L7:
+ 250 00ac 00000000 		.word	.LC0
+ 251 00b0 00000000 		.word	__func__.7
+ 252 00b4 16000000 		.word	.LC1
+ 253 00b8 2F000000 		.word	.LC2
+ 254 00bc 00000000 		.word	__func__.6
+ 255 00c0 3D000000 		.word	.LC3
+ 256 00c4 00000000 		.word	__func__.5
+ 257              		.cfi_endproc
+ 258              	.LFE3344:
+ 260              		.section	.text.CameraPipeline_DeInit,"ax",%progbits
+ 261              		.align	1
+ 262              		.global	CameraPipeline_DeInit
+ 263              		.syntax unified
+ 264              		.thumb
+ 265              		.thumb_func
+ 267              	CameraPipeline_DeInit:
+ 268              	.LFB3345:
  138:Src/app_camerapipeline.c **** 
  139:Src/app_camerapipeline.c **** void CameraPipeline_DeInit(void)
  140:Src/app_camerapipeline.c **** {
- 266              		.loc 1 140 1 is_stmt 1 view -0
- 267              		.cfi_startproc
- 268              		@ args = 0, pretend = 0, frame = 0
- 269              		@ frame_needed = 0, uses_anonymous_args = 0
+ 269              		.loc 1 140 1 is_stmt 1 view -0
+ 270              		.cfi_startproc
+ 271              		@ args = 0, pretend = 0, frame = 0
+ 272              		@ frame_needed = 0, uses_anonymous_args = 0
  141:Src/app_camerapipeline.c ****   int ret;
- 270              		.loc 1 141 3 view .LVU85
+ 273              		.loc 1 141 3 view .LVU87
  142:Src/app_camerapipeline.c ****   ret = CMW_CAMERA_DeInit();
- 271              		.loc 1 142 3 view .LVU86
+ 274              		.loc 1 142 3 view .LVU88
  140:Src/app_camerapipeline.c ****   int ret;
- 272              		.loc 1 140 1 is_stmt 0 view .LVU87
- 273 0000 08B5     		push	{r3, lr}
- 274              		.cfi_def_cfa_offset 8
- 275              		.cfi_offset 3, -8
- 276              		.cfi_offset 14, -4
- 277              		.loc 1 142 9 view .LVU88
- 278 0002 FFF7FEFF 		bl	CMW_CAMERA_DeInit
- 279              	.LVL16:
+ 275              		.loc 1 140 1 is_stmt 0 view .LVU89
+ 276 0000 08B5     		push	{r3, lr}
+ 277              		.cfi_def_cfa_offset 8
+ 278              		.cfi_offset 3, -8
+ 279              		.cfi_offset 14, -4
+ 280              		.loc 1 142 9 view .LVU90
+ 281 0002 FFF7FEFF 		bl	CMW_CAMERA_DeInit
+ 282              	.LVL15:
  143:Src/app_camerapipeline.c ****   assert(ret == CMW_ERROR_NONE);
- 280              		.loc 1 143 3 is_stmt 1 view .LVU89
- 281 0006 28B1     		cbz	r0, .L9
- 282              		.loc 1 143 3 is_stmt 0 discriminator 1 view .LVU90
- 283 0008 8F21     		movs	r1, #143
- 284 000a 034B     		ldr	r3, .L11
- 285 000c 034A     		ldr	r2, .L11+4
- 286 000e 0448     		ldr	r0, .L11+8
- 287              	.LVL17:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 10
+ 283              		.loc 1 143 3 is_stmt 1 view .LVU91
+ 284 0006 28B1     		cbz	r0, .L9
+ 285              		.loc 1 143 3 is_stmt 0 discriminator 1 view .LVU92
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s 			page 10
 
 
- 288              		.loc 1 143 3 discriminator 1 view .LVU91
- 289 0010 FFF7FEFF 		bl	__assert_func
- 290              	.LVL18:
- 291              	.L9:
+ 286 0008 8F21     		movs	r1, #143
+ 287 000a 034B     		ldr	r3, .L11
+ 288 000c 034A     		ldr	r2, .L11+4
+ 289 000e 0448     		ldr	r0, .L11+8
+ 290              	.LVL16:
+ 291              		.loc 1 143 3 discriminator 1 view .LVU93
+ 292 0010 FFF7FEFF 		bl	__assert_func
+ 293              	.LVL17:
+ 294              	.L9:
  144:Src/app_camerapipeline.c **** }
- 292              		.loc 1 144 1 view .LVU92
- 293 0014 08BD     		pop	{r3, pc}
- 294              	.L12:
- 295 0016 00BF     		.align	2
- 296              	.L11:
- 297 0018 00000000 		.word	.LC0
- 298 001c 00000000 		.word	__func__.4
- 299 0020 16000000 		.word	.LC1
- 300              		.cfi_endproc
- 301              	.LFE3345:
- 303              		.section	.text.CameraPipeline_DisplayPipe_Start,"ax",%progbits
- 304              		.align	1
- 305              		.global	CameraPipeline_DisplayPipe_Start
- 306              		.syntax unified
- 307              		.thumb
- 308              		.thumb_func
- 310              	CameraPipeline_DisplayPipe_Start:
- 311              	.LVL19:
- 312              	.LFB3346:
+ 295              		.loc 1 144 1 view .LVU94
+ 296 0014 08BD     		pop	{r3, pc}
+ 297              	.L12:
+ 298 0016 00BF     		.align	2
+ 299              	.L11:
+ 300 0018 00000000 		.word	.LC0
+ 301 001c 00000000 		.word	__func__.4
+ 302 0020 16000000 		.word	.LC1
+ 303              		.cfi_endproc
+ 304              	.LFE3345:
+ 306              		.section	.text.CameraPipeline_DisplayPipe_Start,"ax",%progbits
+ 307              		.align	1
+ 308              		.global	CameraPipeline_DisplayPipe_Start
+ 309              		.syntax unified
+ 310              		.thumb
+ 311              		.thumb_func
+ 313              	CameraPipeline_DisplayPipe_Start:
+ 314              	.LVL18:
+ 315              	.LFB3346:
  145:Src/app_camerapipeline.c **** 
  146:Src/app_camerapipeline.c **** void CameraPipeline_DisplayPipe_Start(uint8_t *display_pipe_dst, uint32_t cam_mode)
  147:Src/app_camerapipeline.c **** {
- 313              		.loc 1 147 1 is_stmt 1 view -0
- 314              		.cfi_startproc
- 315              		@ args = 0, pretend = 0, frame = 0
- 316              		@ frame_needed = 0, uses_anonymous_args = 0
+ 316              		.loc 1 147 1 is_stmt 1 view -0
+ 317              		.cfi_startproc
+ 318              		@ args = 0, pretend = 0, frame = 0
+ 319              		@ frame_needed = 0, uses_anonymous_args = 0
  148:Src/app_camerapipeline.c ****   int ret;
- 317              		.loc 1 148 3 view .LVU94
+ 320              		.loc 1 148 3 view .LVU96
  149:Src/app_camerapipeline.c ****   ret = CMW_CAMERA_Start(DCMIPP_PIPE1, display_pipe_dst, cam_mode);
- 318              		.loc 1 149 3 view .LVU95
+ 321              		.loc 1 149 3 view .LVU97
  147:Src/app_camerapipeline.c ****   int ret;
- 319              		.loc 1 147 1 is_stmt 0 view .LVU96
- 320 0000 0A46     		mov	r2, r1
- 321 0002 08B5     		push	{r3, lr}
- 322              		.cfi_def_cfa_offset 8
- 323              		.cfi_offset 3, -8
- 324              		.cfi_offset 14, -4
- 325              		.loc 1 149 9 view .LVU97
- 326 0004 0146     		mov	r1, r0
- 327              	.LVL20:
- 328              		.loc 1 149 9 view .LVU98
- 329 0006 0120     		movs	r0, #1
- 330              	.LVL21:
- 331              		.loc 1 149 9 view .LVU99
- 332 0008 FFF7FEFF 		bl	CMW_CAMERA_Start
- 333              	.LVL22:
+ 322              		.loc 1 147 1 is_stmt 0 view .LVU98
+ 323 0000 0A46     		mov	r2, r1
+ 324 0002 08B5     		push	{r3, lr}
+ 325              		.cfi_def_cfa_offset 8
+ 326              		.cfi_offset 3, -8
+ 327              		.cfi_offset 14, -4
+ 328              		.loc 1 149 9 view .LVU99
+ 329 0004 0146     		mov	r1, r0
+ 330              	.LVL19:
+ 331              		.loc 1 149 9 view .LVU100
+ 332 0006 0120     		movs	r0, #1
+ 333              	.LVL20:
+ 334              		.loc 1 149 9 view .LVU101
+ 335 0008 FFF7FEFF 		bl	CMW_CAMERA_Start
+ 336              	.LVL21:
  150:Src/app_camerapipeline.c ****   assert(ret == CMW_ERROR_NONE);
- 334              		.loc 1 150 3 is_stmt 1 view .LVU100
- 335 000c 28B1     		cbz	r0, .L13
- 336              		.loc 1 150 3 is_stmt 0 discriminator 1 view .LVU101
- 337 000e 9621     		movs	r1, #150
- 338 0010 024B     		ldr	r3, .L15
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 11
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s 			page 11
 
 
- 339 0012 034A     		ldr	r2, .L15+4
- 340 0014 0348     		ldr	r0, .L15+8
- 341              	.LVL23:
- 342              		.loc 1 150 3 discriminator 1 view .LVU102
- 343 0016 FFF7FEFF 		bl	__assert_func
- 344              	.LVL24:
- 345              	.L13:
+ 337              		.loc 1 150 3 is_stmt 1 view .LVU102
+ 338 000c 28B1     		cbz	r0, .L13
+ 339              		.loc 1 150 3 is_stmt 0 discriminator 1 view .LVU103
+ 340 000e 9621     		movs	r1, #150
+ 341 0010 024B     		ldr	r3, .L15
+ 342 0012 034A     		ldr	r2, .L15+4
+ 343 0014 0348     		ldr	r0, .L15+8
+ 344              	.LVL22:
+ 345              		.loc 1 150 3 discriminator 1 view .LVU104
+ 346 0016 FFF7FEFF 		bl	__assert_func
+ 347              	.LVL23:
+ 348              	.L13:
  151:Src/app_camerapipeline.c **** }
- 346              		.loc 1 151 1 view .LVU103
- 347 001a 08BD     		pop	{r3, pc}
- 348              	.L16:
- 349              		.align	2
- 350              	.L15:
- 351 001c 00000000 		.word	.LC0
- 352 0020 00000000 		.word	__func__.3
- 353 0024 16000000 		.word	.LC1
- 354              		.cfi_endproc
- 355              	.LFE3346:
- 357              		.section	.text.CameraPipeline_NNPipe_Start,"ax",%progbits
- 358              		.align	1
- 359              		.global	CameraPipeline_NNPipe_Start
- 360              		.syntax unified
- 361              		.thumb
- 362              		.thumb_func
- 364              	CameraPipeline_NNPipe_Start:
- 365              	.LVL25:
- 366              	.LFB3347:
+ 349              		.loc 1 151 1 view .LVU105
+ 350 001a 08BD     		pop	{r3, pc}
+ 351              	.L16:
+ 352              		.align	2
+ 353              	.L15:
+ 354 001c 00000000 		.word	.LC0
+ 355 0020 00000000 		.word	__func__.3
+ 356 0024 16000000 		.word	.LC1
+ 357              		.cfi_endproc
+ 358              	.LFE3346:
+ 360              		.section	.text.CameraPipeline_NNPipe_Start,"ax",%progbits
+ 361              		.align	1
+ 362              		.global	CameraPipeline_NNPipe_Start
+ 363              		.syntax unified
+ 364              		.thumb
+ 365              		.thumb_func
+ 367              	CameraPipeline_NNPipe_Start:
+ 368              	.LVL24:
+ 369              	.LFB3347:
  152:Src/app_camerapipeline.c **** 
  153:Src/app_camerapipeline.c **** void CameraPipeline_NNPipe_Start(uint8_t *nn_pipe_dst, uint32_t cam_mode)
  154:Src/app_camerapipeline.c **** {
- 367              		.loc 1 154 1 is_stmt 1 view -0
- 368              		.cfi_startproc
- 369              		@ args = 0, pretend = 0, frame = 0
- 370              		@ frame_needed = 0, uses_anonymous_args = 0
+ 370              		.loc 1 154 1 is_stmt 1 view -0
+ 371              		.cfi_startproc
+ 372              		@ args = 0, pretend = 0, frame = 0
+ 373              		@ frame_needed = 0, uses_anonymous_args = 0
  155:Src/app_camerapipeline.c ****   int ret;
- 371              		.loc 1 155 3 view .LVU105
+ 374              		.loc 1 155 3 view .LVU107
  156:Src/app_camerapipeline.c **** 
  157:Src/app_camerapipeline.c ****   ret = CMW_CAMERA_Start(DCMIPP_PIPE2, nn_pipe_dst, cam_mode);
- 372              		.loc 1 157 3 view .LVU106
+ 375              		.loc 1 157 3 view .LVU108
  154:Src/app_camerapipeline.c ****   int ret;
- 373              		.loc 1 154 1 is_stmt 0 view .LVU107
- 374 0000 0A46     		mov	r2, r1
- 375 0002 08B5     		push	{r3, lr}
- 376              		.cfi_def_cfa_offset 8
- 377              		.cfi_offset 3, -8
- 378              		.cfi_offset 14, -4
- 379              		.loc 1 157 9 view .LVU108
- 380 0004 0146     		mov	r1, r0
- 381              	.LVL26:
- 382              		.loc 1 157 9 view .LVU109
- 383 0006 0220     		movs	r0, #2
- 384              	.LVL27:
- 385              		.loc 1 157 9 view .LVU110
- 386 0008 FFF7FEFF 		bl	CMW_CAMERA_Start
- 387              	.LVL28:
+ 376              		.loc 1 154 1 is_stmt 0 view .LVU109
+ 377 0000 0A46     		mov	r2, r1
+ 378 0002 08B5     		push	{r3, lr}
+ 379              		.cfi_def_cfa_offset 8
+ 380              		.cfi_offset 3, -8
+ 381              		.cfi_offset 14, -4
+ 382              		.loc 1 157 9 view .LVU110
+ 383 0004 0146     		mov	r1, r0
+ 384              	.LVL25:
+ 385              		.loc 1 157 9 view .LVU111
+ 386 0006 0220     		movs	r0, #2
+ 387              	.LVL26:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s 			page 12
+
+
+ 388              		.loc 1 157 9 view .LVU112
+ 389 0008 FFF7FEFF 		bl	CMW_CAMERA_Start
+ 390              	.LVL27:
  158:Src/app_camerapipeline.c ****   assert(ret == CMW_ERROR_NONE);
- 388              		.loc 1 158 3 is_stmt 1 view .LVU111
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 12
-
-
- 389 000c 28B1     		cbz	r0, .L17
- 390              		.loc 1 158 3 is_stmt 0 discriminator 1 view .LVU112
- 391 000e 9E21     		movs	r1, #158
- 392 0010 024B     		ldr	r3, .L19
- 393 0012 034A     		ldr	r2, .L19+4
- 394 0014 0348     		ldr	r0, .L19+8
- 395              	.LVL29:
- 396              		.loc 1 158 3 discriminator 1 view .LVU113
- 397 0016 FFF7FEFF 		bl	__assert_func
- 398              	.LVL30:
- 399              	.L17:
+ 391              		.loc 1 158 3 is_stmt 1 view .LVU113
+ 392 000c 28B1     		cbz	r0, .L17
+ 393              		.loc 1 158 3 is_stmt 0 discriminator 1 view .LVU114
+ 394 000e 9E21     		movs	r1, #158
+ 395 0010 024B     		ldr	r3, .L19
+ 396 0012 034A     		ldr	r2, .L19+4
+ 397 0014 0348     		ldr	r0, .L19+8
+ 398              	.LVL28:
+ 399              		.loc 1 158 3 discriminator 1 view .LVU115
+ 400 0016 FFF7FEFF 		bl	__assert_func
+ 401              	.LVL29:
+ 402              	.L17:
  159:Src/app_camerapipeline.c **** }
- 400              		.loc 1 159 1 view .LVU114
- 401 001a 08BD     		pop	{r3, pc}
- 402              	.L20:
- 403              		.align	2
- 404              	.L19:
- 405 001c 00000000 		.word	.LC0
- 406 0020 00000000 		.word	__func__.2
- 407 0024 16000000 		.word	.LC1
- 408              		.cfi_endproc
- 409              	.LFE3347:
- 411              		.section	.text.CameraPipeline_DisplayPipe_Stop,"ax",%progbits
- 412              		.align	1
- 413              		.global	CameraPipeline_DisplayPipe_Stop
- 414              		.syntax unified
- 415              		.thumb
- 416              		.thumb_func
- 418              	CameraPipeline_DisplayPipe_Stop:
- 419              	.LFB3348:
+ 403              		.loc 1 159 1 view .LVU116
+ 404 001a 08BD     		pop	{r3, pc}
+ 405              	.L20:
+ 406              		.align	2
+ 407              	.L19:
+ 408 001c 00000000 		.word	.LC0
+ 409 0020 00000000 		.word	__func__.2
+ 410 0024 16000000 		.word	.LC1
+ 411              		.cfi_endproc
+ 412              	.LFE3347:
+ 414              		.section	.text.CameraPipeline_DisplayPipe_Stop,"ax",%progbits
+ 415              		.align	1
+ 416              		.global	CameraPipeline_DisplayPipe_Stop
+ 417              		.syntax unified
+ 418              		.thumb
+ 419              		.thumb_func
+ 421              	CameraPipeline_DisplayPipe_Stop:
+ 422              	.LFB3348:
  160:Src/app_camerapipeline.c **** 
  161:Src/app_camerapipeline.c **** void CameraPipeline_DisplayPipe_Stop()
  162:Src/app_camerapipeline.c **** {
- 420              		.loc 1 162 1 is_stmt 1 view -0
- 421              		.cfi_startproc
- 422              		@ args = 0, pretend = 0, frame = 0
- 423              		@ frame_needed = 0, uses_anonymous_args = 0
+ 423              		.loc 1 162 1 is_stmt 1 view -0
+ 424              		.cfi_startproc
+ 425              		@ args = 0, pretend = 0, frame = 0
+ 426              		@ frame_needed = 0, uses_anonymous_args = 0
  163:Src/app_camerapipeline.c ****   int ret;
- 424              		.loc 1 163 3 view .LVU116
+ 427              		.loc 1 163 3 view .LVU118
  164:Src/app_camerapipeline.c ****   ret = CMW_CAMERA_Suspend(DCMIPP_PIPE1);
- 425              		.loc 1 164 3 view .LVU117
+ 428              		.loc 1 164 3 view .LVU119
  162:Src/app_camerapipeline.c ****   int ret;
- 426              		.loc 1 162 1 is_stmt 0 view .LVU118
- 427 0000 08B5     		push	{r3, lr}
- 428              		.cfi_def_cfa_offset 8
- 429              		.cfi_offset 3, -8
- 430              		.cfi_offset 14, -4
- 431              		.loc 1 164 9 view .LVU119
- 432 0002 0120     		movs	r0, #1
- 433 0004 FFF7FEFF 		bl	CMW_CAMERA_Suspend
- 434              	.LVL31:
+ 429              		.loc 1 162 1 is_stmt 0 view .LVU120
+ 430 0000 08B5     		push	{r3, lr}
+ 431              		.cfi_def_cfa_offset 8
+ 432              		.cfi_offset 3, -8
+ 433              		.cfi_offset 14, -4
+ 434              		.loc 1 164 9 view .LVU121
+ 435 0002 0120     		movs	r0, #1
+ 436 0004 FFF7FEFF 		bl	CMW_CAMERA_Suspend
+ 437              	.LVL30:
  165:Src/app_camerapipeline.c ****   assert(ret == CMW_ERROR_NONE);
- 435              		.loc 1 165 3 is_stmt 1 view .LVU120
- 436 0008 28B1     		cbz	r0, .L21
- 437              		.loc 1 165 3 is_stmt 0 discriminator 1 view .LVU121
- 438 000a A521     		movs	r1, #165
- 439 000c 024B     		ldr	r3, .L23
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 13
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s 			page 13
 
 
- 440 000e 034A     		ldr	r2, .L23+4
- 441 0010 0348     		ldr	r0, .L23+8
- 442              	.LVL32:
- 443              		.loc 1 165 3 discriminator 1 view .LVU122
- 444 0012 FFF7FEFF 		bl	__assert_func
- 445              	.LVL33:
- 446              	.L21:
+ 438              		.loc 1 165 3 is_stmt 1 view .LVU122
+ 439 0008 28B1     		cbz	r0, .L21
+ 440              		.loc 1 165 3 is_stmt 0 discriminator 1 view .LVU123
+ 441 000a A521     		movs	r1, #165
+ 442 000c 024B     		ldr	r3, .L23
+ 443 000e 034A     		ldr	r2, .L23+4
+ 444 0010 0348     		ldr	r0, .L23+8
+ 445              	.LVL31:
+ 446              		.loc 1 165 3 discriminator 1 view .LVU124
+ 447 0012 FFF7FEFF 		bl	__assert_func
+ 448              	.LVL32:
+ 449              	.L21:
  166:Src/app_camerapipeline.c **** }
- 447              		.loc 1 166 1 view .LVU123
- 448 0016 08BD     		pop	{r3, pc}
- 449              	.L24:
- 450              		.align	2
- 451              	.L23:
- 452 0018 00000000 		.word	.LC0
- 453 001c 00000000 		.word	__func__.1
- 454 0020 16000000 		.word	.LC1
- 455              		.cfi_endproc
- 456              	.LFE3348:
- 458              		.section	.text.CameraPipeline_IspUpdate,"ax",%progbits
- 459              		.align	1
- 460              		.global	CameraPipeline_IspUpdate
- 461              		.syntax unified
- 462              		.thumb
- 463              		.thumb_func
- 465              	CameraPipeline_IspUpdate:
- 466              	.LFB3349:
+ 450              		.loc 1 166 1 view .LVU125
+ 451 0016 08BD     		pop	{r3, pc}
+ 452              	.L24:
+ 453              		.align	2
+ 454              	.L23:
+ 455 0018 00000000 		.word	.LC0
+ 456 001c 00000000 		.word	__func__.1
+ 457 0020 16000000 		.word	.LC1
+ 458              		.cfi_endproc
+ 459              	.LFE3348:
+ 461              		.section	.text.CameraPipeline_IspUpdate,"ax",%progbits
+ 462              		.align	1
+ 463              		.global	CameraPipeline_IspUpdate
+ 464              		.syntax unified
+ 465              		.thumb
+ 466              		.thumb_func
+ 468              	CameraPipeline_IspUpdate:
+ 469              	.LFB3349:
  167:Src/app_camerapipeline.c **** 
  168:Src/app_camerapipeline.c **** void CameraPipeline_IspUpdate(void)
  169:Src/app_camerapipeline.c **** {
- 467              		.loc 1 169 1 is_stmt 1 view -0
- 468              		.cfi_startproc
- 469              		@ args = 0, pretend = 0, frame = 0
- 470              		@ frame_needed = 0, uses_anonymous_args = 0
+ 470              		.loc 1 169 1 is_stmt 1 view -0
+ 471              		.cfi_startproc
+ 472              		@ args = 0, pretend = 0, frame = 0
+ 473              		@ frame_needed = 0, uses_anonymous_args = 0
  170:Src/app_camerapipeline.c ****   int ret = CMW_ERROR_NONE;
- 471              		.loc 1 170 3 view .LVU125
- 472              	.LVL34:
+ 474              		.loc 1 170 3 view .LVU127
+ 475              	.LVL33:
  171:Src/app_camerapipeline.c ****   ret = CMW_CAMERA_Run();
- 473              		.loc 1 171 3 view .LVU126
+ 476              		.loc 1 171 3 view .LVU128
  169:Src/app_camerapipeline.c ****   int ret = CMW_ERROR_NONE;
- 474              		.loc 1 169 1 is_stmt 0 view .LVU127
- 475 0000 08B5     		push	{r3, lr}
- 476              		.cfi_def_cfa_offset 8
- 477              		.cfi_offset 3, -8
- 478              		.cfi_offset 14, -4
- 479              		.loc 1 171 9 view .LVU128
- 480 0002 FFF7FEFF 		bl	CMW_CAMERA_Run
- 481              	.LVL35:
+ 477              		.loc 1 169 1 is_stmt 0 view .LVU129
+ 478 0000 08B5     		push	{r3, lr}
+ 479              		.cfi_def_cfa_offset 8
+ 480              		.cfi_offset 3, -8
+ 481              		.cfi_offset 14, -4
+ 482              		.loc 1 171 9 view .LVU130
+ 483 0002 FFF7FEFF 		bl	CMW_CAMERA_Run
+ 484              	.LVL34:
  172:Src/app_camerapipeline.c ****   assert(ret == CMW_ERROR_NONE);
- 482              		.loc 1 172 3 is_stmt 1 view .LVU129
- 483 0006 28B1     		cbz	r0, .L25
- 484              		.loc 1 172 3 is_stmt 0 discriminator 1 view .LVU130
- 485 0008 AC21     		movs	r1, #172
- 486 000a 034B     		ldr	r3, .L27
- 487 000c 034A     		ldr	r2, .L27+4
- 488 000e 0448     		ldr	r0, .L27+8
- 489              	.LVL36:
- 490              		.loc 1 172 3 discriminator 1 view .LVU131
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 14
+ 485              		.loc 1 172 3 is_stmt 1 view .LVU131
+ 486 0006 28B1     		cbz	r0, .L25
+ 487              		.loc 1 172 3 is_stmt 0 discriminator 1 view .LVU132
+ 488 0008 AC21     		movs	r1, #172
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s 			page 14
 
 
- 491 0010 FFF7FEFF 		bl	__assert_func
- 492              	.LVL37:
- 493              	.L25:
+ 489 000a 034B     		ldr	r3, .L27
+ 490 000c 034A     		ldr	r2, .L27+4
+ 491 000e 0448     		ldr	r0, .L27+8
+ 492              	.LVL35:
+ 493              		.loc 1 172 3 discriminator 1 view .LVU133
+ 494 0010 FFF7FEFF 		bl	__assert_func
+ 495              	.LVL36:
+ 496              	.L25:
  173:Src/app_camerapipeline.c **** }
- 494              		.loc 1 173 1 view .LVU132
- 495 0014 08BD     		pop	{r3, pc}
- 496              	.L28:
- 497 0016 00BF     		.align	2
- 498              	.L27:
- 499 0018 00000000 		.word	.LC0
- 500 001c 00000000 		.word	__func__.0
- 501 0020 16000000 		.word	.LC1
- 502              		.cfi_endproc
- 503              	.LFE3349:
- 505              		.section	.text.CMW_CAMERA_PIPE_FrameEventCallback,"ax",%progbits
- 506              		.align	1
- 507              		.global	CMW_CAMERA_PIPE_FrameEventCallback
- 508              		.syntax unified
- 509              		.thumb
- 510              		.thumb_func
- 512              	CMW_CAMERA_PIPE_FrameEventCallback:
- 513              	.LVL38:
- 514              	.LFB3350:
+ 497              		.loc 1 173 1 view .LVU134
+ 498 0014 08BD     		pop	{r3, pc}
+ 499              	.L28:
+ 500 0016 00BF     		.align	2
+ 501              	.L27:
+ 502 0018 00000000 		.word	.LC0
+ 503 001c 00000000 		.word	__func__.0
+ 504 0020 16000000 		.word	.LC1
+ 505              		.cfi_endproc
+ 506              	.LFE3349:
+ 508              		.section	.text.CMW_CAMERA_PIPE_FrameEventCallback,"ax",%progbits
+ 509              		.align	1
+ 510              		.global	CMW_CAMERA_PIPE_FrameEventCallback
+ 511              		.syntax unified
+ 512              		.thumb
+ 513              		.thumb_func
+ 515              	CMW_CAMERA_PIPE_FrameEventCallback:
+ 516              	.LVL37:
+ 517              	.LFB3350:
  174:Src/app_camerapipeline.c **** 
  175:Src/app_camerapipeline.c **** /**
  176:Src/app_camerapipeline.c ****   * @brief  Frame event callback
@@ -812,150 +817,150 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 1
  179:Src/app_camerapipeline.c ****   */
  180:Src/app_camerapipeline.c **** int CMW_CAMERA_PIPE_FrameEventCallback(uint32_t pipe)
  181:Src/app_camerapipeline.c **** {
- 515              		.loc 1 181 1 is_stmt 1 view -0
- 516              		.cfi_startproc
- 517              		@ args = 0, pretend = 0, frame = 0
- 518              		@ frame_needed = 0, uses_anonymous_args = 0
- 519              		@ link register save eliminated.
+ 518              		.loc 1 181 1 is_stmt 1 view -0
+ 519              		.cfi_startproc
+ 520              		@ args = 0, pretend = 0, frame = 0
+ 521              		@ frame_needed = 0, uses_anonymous_args = 0
+ 522              		@ link register save eliminated.
  182:Src/app_camerapipeline.c ****   switch (pipe)
- 520              		.loc 1 182 3 view .LVU134
- 521 0000 0228     		cmp	r0, #2
+ 523              		.loc 1 182 3 view .LVU136
+ 524 0000 0228     		cmp	r0, #2
  183:Src/app_camerapipeline.c ****   {
  184:Src/app_camerapipeline.c ****     case DCMIPP_PIPE2 :
  185:Src/app_camerapipeline.c ****       cameraFrameReceived++;
- 522              		.loc 1 185 7 view .LVU135
- 523              		.loc 1 185 26 is_stmt 0 view .LVU136
- 524 0002 08BF     		it	eq
- 525 0004 034A     		ldreq	r2, .L31
+ 525              		.loc 1 185 7 view .LVU137
+ 526              		.loc 1 185 26 is_stmt 0 view .LVU138
+ 527 0002 08BF     		it	eq
+ 528 0004 034A     		ldreq	r2, .L31
  186:Src/app_camerapipeline.c ****       break;
  187:Src/app_camerapipeline.c ****   }
  188:Src/app_camerapipeline.c ****   return 0;
  189:Src/app_camerapipeline.c **** }
- 526              		.loc 1 189 1 view .LVU137
- 527 0006 4FF00000 		mov	r0, #0
- 528              	.LVL39:
+ 529              		.loc 1 189 1 view .LVU139
+ 530 0006 4FF00000 		mov	r0, #0
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s 			page 15
+
+
+ 531              	.LVL38:
  185:Src/app_camerapipeline.c ****       break;
- 529              		.loc 1 185 26 view .LVU138
- 530 000a 02BF     		ittt	eq
- 531 000c 1368     		ldreq	r3, [r2]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 15
-
-
- 532 000e 0133     		addeq	r3, r3, #1
- 533 0010 1360     		streq	r3, [r2]
+ 532              		.loc 1 185 26 view .LVU140
+ 533 000a 02BF     		ittt	eq
+ 534 000c 1368     		ldreq	r3, [r2]
+ 535 000e 0133     		addeq	r3, r3, #1
+ 536 0010 1360     		streq	r3, [r2]
  186:Src/app_camerapipeline.c ****       break;
- 534              		.loc 1 186 7 is_stmt 1 view .LVU139
+ 537              		.loc 1 186 7 is_stmt 1 view .LVU141
  188:Src/app_camerapipeline.c **** }
- 535              		.loc 1 188 3 view .LVU140
- 536              		.loc 1 189 1 is_stmt 0 view .LVU141
- 537 0012 7047     		bx	lr
- 538              	.L32:
- 539              		.align	2
- 540              	.L31:
- 541 0014 00000000 		.word	cameraFrameReceived
- 542              		.cfi_endproc
- 543              	.LFE3350:
- 545              		.section	.rodata.__func__.0,"a"
- 548              	__func__.0:
- 549 0000 43616D65 		.ascii	"CameraPipeline_IspUpdate\000"
- 549      72615069 
- 549      70656C69 
- 549      6E655F49 
- 549      73705570 
- 550              		.section	.rodata.__func__.1,"a"
- 553              	__func__.1:
- 554 0000 43616D65 		.ascii	"CameraPipeline_DisplayPipe_Stop\000"
- 554      72615069 
- 554      70656C69 
- 554      6E655F44 
- 554      6973706C 
- 555              		.section	.rodata.__func__.2,"a"
- 558              	__func__.2:
- 559 0000 43616D65 		.ascii	"CameraPipeline_NNPipe_Start\000"
- 559      72615069 
- 559      70656C69 
- 559      6E655F4E 
- 559      4E506970 
- 560              		.section	.rodata.__func__.3,"a"
- 563              	__func__.3:
- 564 0000 43616D65 		.ascii	"CameraPipeline_DisplayPipe_Start\000"
- 564      72615069 
- 564      70656C69 
- 564      6E655F44 
- 564      6973706C 
- 565              		.section	.rodata.__func__.4,"a"
- 568              	__func__.4:
- 569 0000 43616D65 		.ascii	"CameraPipeline_DeInit\000"
- 569      72615069 
- 569      70656C69 
- 569      6E655F44 
- 569      65496E69 
- 570              		.section	.rodata.__func__.5,"a"
- 573              	__func__.5:
- 574 0000 44434D49 		.ascii	"DCMIPP_PipeInitNn\000"
- 574      50505F50 
- 574      69706549 
- 574      6E69744E 
- 574      6E00
- 575              		.section	.rodata.__func__.6,"a"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 16
+ 538              		.loc 1 188 3 view .LVU142
+ 539              		.loc 1 189 1 is_stmt 0 view .LVU143
+ 540 0012 7047     		bx	lr
+ 541              	.L32:
+ 542              		.align	2
+ 543              	.L31:
+ 544 0014 00000000 		.word	cameraFrameReceived
+ 545              		.cfi_endproc
+ 546              	.LFE3350:
+ 548              		.section	.rodata.__func__.0,"a"
+ 551              	__func__.0:
+ 552 0000 43616D65 		.ascii	"CameraPipeline_IspUpdate\000"
+ 552      72615069 
+ 552      70656C69 
+ 552      6E655F49 
+ 552      73705570 
+ 553              		.section	.rodata.__func__.1,"a"
+ 556              	__func__.1:
+ 557 0000 43616D65 		.ascii	"CameraPipeline_DisplayPipe_Stop\000"
+ 557      72615069 
+ 557      70656C69 
+ 557      6E655F44 
+ 557      6973706C 
+ 558              		.section	.rodata.__func__.2,"a"
+ 561              	__func__.2:
+ 562 0000 43616D65 		.ascii	"CameraPipeline_NNPipe_Start\000"
+ 562      72615069 
+ 562      70656C69 
+ 562      6E655F4E 
+ 562      4E506970 
+ 563              		.section	.rodata.__func__.3,"a"
+ 566              	__func__.3:
+ 567 0000 43616D65 		.ascii	"CameraPipeline_DisplayPipe_Start\000"
+ 567      72615069 
+ 567      70656C69 
+ 567      6E655F44 
+ 567      6973706C 
+ 568              		.section	.rodata.__func__.4,"a"
+ 571              	__func__.4:
+ 572 0000 43616D65 		.ascii	"CameraPipeline_DeInit\000"
+ 572      72615069 
+ 572      70656C69 
+ 572      6E655F44 
+ 572      65496E69 
+ 573              		.section	.rodata.__func__.5,"a"
+ 576              	__func__.5:
+ 577 0000 44434D49 		.ascii	"DCMIPP_PipeInitNn\000"
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s 			page 16
 
 
- 578              	__func__.6:
- 579 0000 44434D49 		.ascii	"DCMIPP_PipeInitDisplay\000"
- 579      50505F50 
- 579      69706549 
- 579      6E697444 
- 579      6973706C 
- 580              		.section	.rodata.__func__.7,"a"
- 583              	__func__.7:
- 584 0000 43616D65 		.ascii	"CameraPipeline_Init\000"
- 584      72615069 
- 584      70656C69 
- 584      6E655F49 
- 584      6E697400 
- 585              		.text
- 586              	.Letext0:
- 587              		.file 2 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
- 588              		.file 3 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
- 589              		.file 4 "../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Inc/stm32n6xx_hal_def.h"
- 590              		.file 5 "../../Middlewares/Camera_Middleware/cmw_camera.h"
- 591              		.file 6 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
- 592              		.file 7 "<built-in>"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 17
+ 577      50505F50 
+ 577      69706549 
+ 577      6E69744E 
+ 577      6E00
+ 578              		.section	.rodata.__func__.6,"a"
+ 581              	__func__.6:
+ 582 0000 44434D49 		.ascii	"DCMIPP_PipeInitDisplay\000"
+ 582      50505F50 
+ 582      69706549 
+ 582      6E697444 
+ 582      6973706C 
+ 583              		.section	.rodata.__func__.7,"a"
+ 586              	__func__.7:
+ 587 0000 43616D65 		.ascii	"CameraPipeline_Init\000"
+ 587      72615069 
+ 587      70656C69 
+ 587      6E655F49 
+ 587      6E697400 
+ 588              		.text
+ 589              	.Letext0:
+ 590              		.file 2 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 591              		.file 3 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 592              		.file 4 "../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Inc/stm32n6xx_hal_def.h"
+ 593              		.file 5 "../../Middlewares/Camera_Middleware/cmw_camera.h"
+ 594              		.file 6 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 595              		.file 7 "<built-in>"
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s 			page 17
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 app_camerapipeline.c
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:36     .text.CameraPipeline_Init:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:42     .text.CameraPipeline_Init:00000000 CameraPipeline_Init
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:247    .text.CameraPipeline_Init:000000a8 $d
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:583    .rodata.__func__.7:00000000 __func__.7
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:578    .rodata.__func__.6:00000000 __func__.6
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:573    .rodata.__func__.5:00000000 __func__.5
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:258    .text.CameraPipeline_DeInit:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:264    .text.CameraPipeline_DeInit:00000000 CameraPipeline_DeInit
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:297    .text.CameraPipeline_DeInit:00000018 $d
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:568    .rodata.__func__.4:00000000 __func__.4
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:304    .text.CameraPipeline_DisplayPipe_Start:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:310    .text.CameraPipeline_DisplayPipe_Start:00000000 CameraPipeline_DisplayPipe_Start
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:351    .text.CameraPipeline_DisplayPipe_Start:0000001c $d
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:563    .rodata.__func__.3:00000000 __func__.3
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:358    .text.CameraPipeline_NNPipe_Start:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:364    .text.CameraPipeline_NNPipe_Start:00000000 CameraPipeline_NNPipe_Start
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:405    .text.CameraPipeline_NNPipe_Start:0000001c $d
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:558    .rodata.__func__.2:00000000 __func__.2
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:412    .text.CameraPipeline_DisplayPipe_Stop:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:418    .text.CameraPipeline_DisplayPipe_Stop:00000000 CameraPipeline_DisplayPipe_Stop
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:452    .text.CameraPipeline_DisplayPipe_Stop:00000018 $d
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:553    .rodata.__func__.1:00000000 __func__.1
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:459    .text.CameraPipeline_IspUpdate:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:465    .text.CameraPipeline_IspUpdate:00000000 CameraPipeline_IspUpdate
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:499    .text.CameraPipeline_IspUpdate:00000018 $d
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:548    .rodata.__func__.0:00000000 __func__.0
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:506    .text.CMW_CAMERA_PIPE_FrameEventCallback:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:512    .text.CMW_CAMERA_PIPE_FrameEventCallback:00000000 CMW_CAMERA_PIPE_FrameEventCallback
-C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:541    .text.CMW_CAMERA_PIPE_FrameEventCallback:00000014 $d
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:36     .text.CameraPipeline_Init:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:42     .text.CameraPipeline_Init:00000000 CameraPipeline_Init
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:250    .text.CameraPipeline_Init:000000ac $d
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:586    .rodata.__func__.7:00000000 __func__.7
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:581    .rodata.__func__.6:00000000 __func__.6
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:576    .rodata.__func__.5:00000000 __func__.5
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:261    .text.CameraPipeline_DeInit:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:267    .text.CameraPipeline_DeInit:00000000 CameraPipeline_DeInit
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:300    .text.CameraPipeline_DeInit:00000018 $d
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:571    .rodata.__func__.4:00000000 __func__.4
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:307    .text.CameraPipeline_DisplayPipe_Start:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:313    .text.CameraPipeline_DisplayPipe_Start:00000000 CameraPipeline_DisplayPipe_Start
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:354    .text.CameraPipeline_DisplayPipe_Start:0000001c $d
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:566    .rodata.__func__.3:00000000 __func__.3
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:361    .text.CameraPipeline_NNPipe_Start:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:367    .text.CameraPipeline_NNPipe_Start:00000000 CameraPipeline_NNPipe_Start
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:408    .text.CameraPipeline_NNPipe_Start:0000001c $d
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:561    .rodata.__func__.2:00000000 __func__.2
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:415    .text.CameraPipeline_DisplayPipe_Stop:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:421    .text.CameraPipeline_DisplayPipe_Stop:00000000 CameraPipeline_DisplayPipe_Stop
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:455    .text.CameraPipeline_DisplayPipe_Stop:00000018 $d
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:556    .rodata.__func__.1:00000000 __func__.1
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:462    .text.CameraPipeline_IspUpdate:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:468    .text.CameraPipeline_IspUpdate:00000000 CameraPipeline_IspUpdate
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:502    .text.CameraPipeline_IspUpdate:00000018 $d
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:551    .rodata.__func__.0:00000000 __func__.0
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:509    .text.CMW_CAMERA_PIPE_FrameEventCallback:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:515    .text.CMW_CAMERA_PIPE_FrameEventCallback:00000000 CMW_CAMERA_PIPE_FrameEventCallback
+C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s:544    .text.CMW_CAMERA_PIPE_FrameEventCallback:00000014 $d
                            .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
                            .group:00000000 wm4._newlib_version.h.4.411db44ea2338a62eca2f0777f81481b
                            .group:00000000 wm4.newlib.h.27.a82728f74da661df333d09507bfef510
@@ -982,7 +987,7 @@ C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:541    .text.CMW_CAMERA_PIPE_Fram
                            .group:00000000 wm4.pmu_armv8.h.32.eaa95f88a71b29390b135fd81c071b6b
                            .group:00000000 wm4.core_cm55.h.4411.860dad8650880893dd57b815844f7186
                            .group:00000000 wm4.cachel1_armv7.h.32.abd77761a989e008b0c60891114a33c7
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 18
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s 			page 18
 
 
                            .group:00000000 wm4.stm32n657xx.h.575.1c2a5e6bedffc6f9083dcc857bc6d09d
@@ -1042,7 +1047,7 @@ C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:541    .text.CMW_CAMERA_PIPE_Fram
                            .group:00000000 wm4.stdlib.h.56.f4862cfbf4363a1db01842d5bdf72c18
                            .group:00000000 wm4.string.h.8.c4b8571ce60dff2817f43fec8b86aecd
                            .group:00000000 wm4.string.h.177.59a005921fa78485abc80a0267de5752
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s 			page 19
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccXJqROZ.s 			page 19
 
 
                            .group:00000000 wm4.stdbool.h.29.c08aa3eec75cf5b9b5003883f43253f0
@@ -1062,7 +1067,7 @@ C:\Users\Antonio\AppData\Local\Temp\ccmDQiuQ.s:541    .text.CMW_CAMERA_PIPE_Fram
                            .group:00000000 wm4.fast_math_functions.h.28.8eb7477260c1d6b62047c49a01c4cbaa
                            .group:00000000 wm4.controller_functions.h.28.7bed7d7a726df2f65b8a3d89cff01247
                            .group:00000000 wm4.filtering_functions.h.46.6cf1424fb1f86d5f9958d208b83340a1
-                           .group:00000000 wm4.app_config.h.24.e9b8ad8c27ec31b3b21644fa8513e998
+                           .group:00000000 wm4.app_config.h.24.f038a6307a621be7ff1c53b769c184df
 
 UNDEFINED SYMBOLS
 CMW_CAMERA_Init
