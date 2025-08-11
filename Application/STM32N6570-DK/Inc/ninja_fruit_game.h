@@ -17,11 +17,12 @@
 #define MAX_FRUITS 8
 #define FRUIT_SPAWN_INTERVAL 2000  // milliseconds
 #define FRUIT_FALL_SPEED 0.15f     // normalized screen coordinates per second
-#define FRUIT_SIZE 30              // pixels
+#define FRUIT_SIZE 40              // pixels
 #define SLICE_TOLERANCE 40         // pixels for slice detection
 #define MAX_MISSED_FRUITS 5        // game over condition
 #define SLICE_ANIMATION_TIME 500   // milliseconds
-
+#define SPECIAL_MODE_DURATION 20000 // milliseconds special modes last
+#define MODE_MESSAGE_DURATION 2000  // milliseconds mode change messages display
 // Fruit types
 typedef enum {
     FRUIT_APPLE = 0,
@@ -39,6 +40,14 @@ typedef enum {
     FRUIT_STATE_INACTIVE
 } FruitState_t;
 
+// Special fruit effects
+typedef enum {
+    FRUIT_EFFECT_NONE = 0,
+    FRUIT_EFFECT_NOSE_MODE,
+    FRUIT_EFFECT_MIRROR_MODE
+} FruitEffect_t;
+
+
 // Gameplay mode
 typedef enum {
     NINJA_MODE_SLICE = 0,
@@ -55,6 +64,7 @@ typedef struct {
     float32_t velocity_x;           // horizontal drift
     FruitType_t type;
     FruitState_t state;
+    FruitEffect_t effect;           // special effect triggered when sliced
     uint32_t spawn_time;
     uint32_t slice_time;
     uint8_t slice_direction;        // 0=left, 1=right
@@ -72,6 +82,13 @@ typedef struct {
     uint32_t level;                 // increases difficulty
     float32_t spawn_rate_multiplier; // increases spawn frequency
     NinjaGameMode_t mode;           // slicing or pop mode
+    uint32_t nose_mode_end_time;    // timestamp when nose mode ends
+	uint32_t mirror_mode_end_time;  // timestamp when mirror mode ends
+	uint8_t  mirror_mode_active;    // 1 when camera output is mirrored
+    uint32_t mode_message_end_time; // timestamp when mode change message disappears
+    char     mode_message[20];      // current mode change message
+    uint8_t  prev_nose_mode;        // previous nose mode state for change detection
+    uint8_t  prev_mirror_mode;      // previous mirror mode state for change detection
 } NinjaGame_t;
 
 // Swipe trajectory for slice detection
@@ -93,8 +110,9 @@ static void SpawnFruit(NinjaGame_t *game);
 static void UpdateFruits(NinjaGame_t *game);
 static void CheckSlices(NinjaGame_t *game, SwipeTrajectory_t *swipe);
 static void CheckBubblePops(NinjaGame_t *game, spe_pp_outBuffer_t *keypoints);
-static void RenderFruit(Fruit_t *fruit, uint32_t screen_width, uint32_t screen_height);
-static void RenderUI(NinjaGame_t *game);
+static void RenderFruit(Fruit_t *fruit, uint32_t screen_width, uint32_t screen_height, uint8_t mirror);
+static void RenderUI(NinjaGame_t *game, uint32_t screen_width, uint8_t mirror);
+static void ShowModeMessage(NinjaGame_t *game, const char *msg);
 static uint8_t LineIntersectsCircle(float32_t x1, float32_t y1, float32_t x2, float32_t y2,
                                    float32_t cx, float32_t cy, float32_t radius);
 

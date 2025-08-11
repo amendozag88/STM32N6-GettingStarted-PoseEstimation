@@ -10,6 +10,7 @@
 #include "ninja_fruit_game.h"
 #include "utils.h"
 #include "stm32n6570_discovery.h"
+#include "cmw_camera.h"
 #include <stdlib.h>
 #include <math.h>
 
@@ -29,7 +30,6 @@ static const uint32_t fruit_colors[FRUIT_TYPES_COUNT] = {
 static const char* fruit_names[FRUIT_TYPES_COUNT] = {
     "Apple", "Orange", "Banana", "Berry"
 };
-
 
 
 static uint32_t last_mode_toggle = 0;
@@ -54,20 +54,33 @@ void NinjaGame_Init(NinjaGame_t *game)
 {
     memset(game, 0, sizeof(NinjaGame_t));
 
-    // Initialize all fruits as inactive
-    for (int i = 0; i < MAX_FRUITS; i++) {
-        game->fruits[i].state = FRUIT_STATE_INACTIVE;
-    }
+    // Initialize all fruits as inactive with no special effects
+       for (int i = 0; i < MAX_FRUITS; i++) {
+           game->fruits[i].state = FRUIT_STATE_INACTIVE;
+           game->fruits[i].effect = FRUIT_EFFECT_NONE;
+       }
 
     game->spawn_rate_multiplier = 1.0f;
     game->level = 1;
     game->mode = NINJA_MODE_SLICE;
+    game->mirror_mode_active = 0;
+    game->mode_message_end_time = 0;
+    game->mode_message[0] = '\0';
+    game->prev_nose_mode = 0;
+    game->prev_mirror_mode = 0;
+    CMW_CAMERA_SetMirrorFlip(CMW_MIRRORFLIP_NONE);
+
 }
 
 void NinjaGame_Update(NinjaGame_t *game, GestureDetector_t *gesture_detector, spe_pp_outBuffer_t *keypoints)
 {
     uint32_t current_time = HAL_GetTick();
     CheckModeToggle(game);
+
+    if (game->mirror_mode_active && current_time >= game->mirror_mode_end_time) {
+        CMW_CAMERA_SetMirrorFlip(CMW_MIRRORFLIP_NONE);
+        game->mirror_mode_active = 0;
+    }
     // Start game on first gesture detection
     if (!game->game_started && !game->game_over) {
         GestureType_t current_gesture = Gesture_GetCurrentDisplayGesture(gesture_detector);
@@ -144,6 +157,19 @@ void NinjaGame_Update(NinjaGame_t *game, GestureDetector_t *gesture_detector, sp
     if (game->missed_count >= MAX_MISSED_FRUITS) {
         game->game_over = 1;
     }
+    uint8_t nose_now = (current_time < game->nose_mode_end_time);
+     uint8_t mirror_now = (current_time < game->mirror_mode_end_time);
+     if (nose_now && !game->prev_nose_mode) {
+         ShowModeMessage(game, "NOSE MODE");
+     }
+     if (mirror_now && !game->prev_mirror_mode) {
+         ShowModeMessage(game, "MIRROR MODE");
+     }
+     if (!nose_now && !mirror_now && (game->prev_nose_mode || game->prev_mirror_mode)) {
+         ShowModeMessage(game, "NORMAL MODE");
+     }
+     game->prev_nose_mode = nose_now;
+     game->prev_mirror_mode = mirror_now;
 }
 
 static void SpawnFruit(NinjaGame_t *game)
@@ -164,6 +190,12 @@ static void SpawnFruit(NinjaGame_t *game)
             // Random fruit type
             fruit->type = rand() % FRUIT_TYPES_COUNT;
             fruit->state = FRUIT_STATE_FALLING;
+            fruit->effect = FRUIT_EFFECT_NONE;
+            // Occasionally spawn special fruits with effects
+            if (rand() % 20 == 0) { // ~5% chance
+                fruit->effect = (rand() % 2) ? FRUIT_EFFECT_NOSE_MODE : FRUIT_EFFECT_MIRROR_MODE;
+                fruit->effect = FRUIT_EFFECT_NOSE_MODE;
+            }
             fruit->spawn_time = HAL_GetTick();
 
             break;
@@ -233,6 +265,16 @@ static void CheckSlices(NinjaGame_t *game, SwipeTrajectory_t *swipe)
                 }
 
                 game->score += base_score * game->level;
+                // Activate special modes if this was a special fruit
+                if (fruit->effect == FRUIT_EFFECT_NOSE_MODE) {
+                    game->nose_mode_end_time = HAL_GetTick() + SPECIAL_MODE_DURATION;
+                } else if (fruit->effect == FRUIT_EFFECT_MIRROR_MODE) {
+                    game->mirror_mode_end_time = HAL_GetTick() + SPECIAL_MODE_DURATION;
+                    if (!game->mirror_mode_active) {
+                        CMW_CAMERA_SetMirrorFlip(CMW_MIRRORFLIP_MIRROR);
+                        game->mirror_mode_active = 1;
+                    }
+                }
             }
         }
     }
@@ -240,26 +282,43 @@ static void CheckSlices(NinjaGame_t *game, SwipeTrajectory_t *swipe)
 
 static void CheckBubblePops(NinjaGame_t *game, spe_pp_outBuffer_t *keypoints)
 {
-    float32_t lx = keypoints[KEYPOINT_LEFT_WRIST].x_center;
-    float32_t ly = keypoints[KEYPOINT_LEFT_WRIST].y_center;
-    float32_t rx = keypoints[KEYPOINT_RIGHT_WRIST].x_center;
-    float32_t ry = keypoints[KEYPOINT_RIGHT_WRIST].y_center;
+
     float32_t radius = FRUIT_SIZE / 2.0f / 800.0f;
     float32_t radius_sq = radius * radius;
+    uint8_t nose_mode = (HAL_GetTick() < game->nose_mode_end_time);
 
     for (int i = 0; i < MAX_FRUITS; i++) {
         Fruit_t *fruit = &game->fruits[i];
 
         if (fruit->state == FRUIT_STATE_FALLING) {
-            float32_t dx = lx - fruit->x;
-            float32_t dy = ly - fruit->y;
-            float32_t dist_left_sq = dx * dx + dy * dy;
+        	uint8_t popped = 0;
+			if (nose_mode) {
+				float32_t nx = keypoints[KEYPOINT_NOSE].x_center;
+				float32_t ny = keypoints[KEYPOINT_NOSE].y_center;
+				float32_t dx = nx - fruit->x;
+				float32_t dy = ny - fruit->y;
+				float32_t dist_nose_sq = dx * dx + dy * dy;
+				if (dist_nose_sq <= radius_sq) {
+					popped = 1;
+				}
+			} else {
+				float32_t lx = keypoints[KEYPOINT_LEFT_WRIST].x_center;
+				float32_t ly = keypoints[KEYPOINT_LEFT_WRIST].y_center;
+				float32_t rx = keypoints[KEYPOINT_RIGHT_WRIST].x_center;
+				float32_t ry = keypoints[KEYPOINT_RIGHT_WRIST].y_center;
+				float32_t dx = lx - fruit->x;
+				float32_t dy = ly - fruit->y;
+				float32_t dist_left_sq = dx * dx + dy * dy;
 
-            dx = rx - fruit->x;
-            dy = ry - fruit->y;
-            float32_t dist_right_sq = dx * dx + dy * dy;
+				dx = rx - fruit->x;
+				dy = ry - fruit->y;
+				float32_t dist_right_sq = dx * dx + dy * dy;
 
-            if (dist_left_sq <= radius_sq || dist_right_sq <= radius_sq) {
+				if (dist_left_sq <= radius_sq || dist_right_sq <= radius_sq) {
+					popped = 1;
+				}
+			}
+			if (popped) {
                 fruit->state = FRUIT_STATE_SLICED;
                 fruit->slice_time = HAL_GetTick();
                 fruit->slice_direction = 0;
@@ -272,6 +331,16 @@ static void CheckBubblePops(NinjaGame_t *game, spe_pp_outBuffer_t *keypoints)
                     case FRUIT_STRAWBERRY: base_score = 25; break;
                 }
                 game->score += base_score * game->level;
+                // Activate special effects if any
+                if (fruit->effect == FRUIT_EFFECT_NOSE_MODE) {
+                    game->nose_mode_end_time = HAL_GetTick() + SPECIAL_MODE_DURATION;
+                } else if (fruit->effect == FRUIT_EFFECT_MIRROR_MODE) {
+                    game->mirror_mode_end_time = HAL_GetTick() + SPECIAL_MODE_DURATION;
+                    if (!game->mirror_mode_active) {
+                        CMW_CAMERA_SetMirrorFlip(CMW_MIRRORFLIP_MIRROR);
+                        game->mirror_mode_active = 1;
+                    }
+                }
             }
         }
     }
@@ -317,6 +386,7 @@ void NinjaGame_Render(NinjaGame_t *game)
 {
     uint32_t screen_width = SCREEN_WIDTH;
     uint32_t screen_height = SCREEN_HEIGHT;
+    uint8_t mirror = (HAL_GetTick() < game->mirror_mode_end_time);
 
     if (!game->game_started && !game->game_over) {
         // Show start screen
@@ -345,21 +415,29 @@ void NinjaGame_Render(NinjaGame_t *game)
     // Render fruits
     for (int i = 0; i < MAX_FRUITS; i++) {
         if (game->fruits[i].state != FRUIT_STATE_INACTIVE) {
-            RenderFruit(&game->fruits[i], screen_width, screen_height);
+        	RenderFruit(&game->fruits[i], screen_width, screen_height, mirror);
         }
     }
 
     // Render UI
-    RenderUI(game);
+    RenderUI(game, screen_width, mirror);
 }
 
-static void RenderFruit(Fruit_t *fruit, uint32_t screen_width, uint32_t screen_height)
+static void RenderFruit(Fruit_t *fruit, uint32_t screen_width, uint32_t screen_height, uint8_t mirror)
 {
     // Convert normalized coordinates to screen coordinates
     int screen_x = (int)(fruit->x * screen_width);
     int screen_y = (int)(fruit->y * screen_height);
+    if (mirror) {
+        screen_x = screen_width - screen_x;
+    }
 
     uint32_t color = fruit_colors[fruit->type];
+    if (fruit->effect == FRUIT_EFFECT_NOSE_MODE) {
+        color = UTIL_LCD_COLOR_CYAN;
+    } else if (fruit->effect == FRUIT_EFFECT_MIRROR_MODE) {
+        color = UTIL_LCD_COLOR_MAGENTA;
+    }
 
     if (fruit->state == FRUIT_STATE_FALLING) {
         // Draw whole fruit
@@ -386,7 +464,7 @@ static void RenderFruit(Fruit_t *fruit, uint32_t screen_width, uint32_t screen_h
     }
 }
 
-static void RenderUI(NinjaGame_t *game)
+static void RenderUI(NinjaGame_t *game, uint32_t screen_width, uint8_t mirror)
 {
     UTIL_LCD_SetBackColor(0x40000000);
 
@@ -408,6 +486,27 @@ static void RenderUI(NinjaGame_t *game)
     uint32_t game_time = (HAL_GetTick() - game->game_start_time) / 1000;
     UTIL_LCDEx_PrintfAt(600, LINE(1), LEFT_MODE, "Time: %lus", game_time);
 
+    // Show active special modes
+      if (HAL_GetTick() < game->nose_mode_end_time) {
+            UTIL_LCDEx_PrintfAt(0, LINE(4), CENTER_MODE, "NOSE MODE!");
+          }
+      if (HAL_GetTick() < game->mirror_mode_end_time) {
+            UTIL_LCDEx_PrintfAt(0, LINE(5), CENTER_MODE, "MIRROR MODE!");
+          }
+
+      if (HAL_GetTick() < game->mode_message_end_time) {
+          sFONT *old_font = UTIL_LCD_GetFont();
+          UTIL_LCD_SetFont(&Font24);
+          UTIL_LCD_SetBackColor(0x40000000);
+          UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_YELLOW);
+          UTIL_LCDEx_PrintfAt(0, LINE(8), CENTER_MODE, "%s", game->mode_message);
+          UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_WHITE);
+          UTIL_LCD_SetBackColor(0);
+          UTIL_LCD_SetFont(old_font);
+      }
+
+
+
     UTIL_LCD_SetBackColor(0);
 }
 
@@ -426,4 +525,11 @@ void NinjaGame_Reset(NinjaGame_t *game)
 void NinjaGame_SetMode(NinjaGame_t *game, NinjaGameMode_t mode)
 {
     game->mode = mode;
+}
+
+static void ShowModeMessage(NinjaGame_t *game, const char *msg)
+{
+    strncpy(game->mode_message, msg, sizeof(game->mode_message) - 1);
+    game->mode_message[sizeof(game->mode_message) - 1] = '\0';
+    game->mode_message_end_time = HAL_GetTick() + MODE_MESSAGE_DURATION;
 }

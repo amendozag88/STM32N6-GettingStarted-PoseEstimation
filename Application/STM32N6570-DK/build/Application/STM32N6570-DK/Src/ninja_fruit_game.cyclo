@@ -1,5 +1,6 @@
+Src/ninja_fruit_game.c:530:13:ShowModeMessage	1
 Src/ninja_fruit_game.c:53:6:NinjaGame_Init	1
-Src/ninja_fruit_game.c:316:6:NinjaGame_Render	9
-Src/ninja_fruit_game.c:414:6:NinjaGame_Reset	1
-Src/ninja_fruit_game.c:67:6:NinjaGame_Update	34
-Src/ninja_fruit_game.c:426:6:NinjaGame_SetMode	1
+Src/ninja_fruit_game.c:385:6:NinjaGame_Render	13
+Src/ninja_fruit_game.c:513:6:NinjaGame_Reset	1
+Src/ninja_fruit_game.c:75:6:NinjaGame_Update	51
+Src/ninja_fruit_game.c:525:6:NinjaGame_SetMode	1

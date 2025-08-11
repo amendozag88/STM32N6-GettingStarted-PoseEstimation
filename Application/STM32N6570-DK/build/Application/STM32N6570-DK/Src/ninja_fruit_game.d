@@ -80,7 +80,14 @@ build/Application/STM32N6570-DK/Src/ninja_fruit_game.o: \
  Inc/utils.h \
  ../../STM32Cube_FW_N6/Drivers/BSP/STM32N6570-DK/stm32n6570_discovery.h \
  Inc/stm32n6570_discovery_conf.h \
- ../../STM32Cube_FW_N6/Drivers/BSP/STM32N6570-DK/stm32n6570_discovery_errno.h
+ ../../STM32Cube_FW_N6/Drivers/BSP/STM32N6570-DK/stm32n6570_discovery_errno.h \
+ ../../Middlewares/Camera_Middleware/cmw_camera.h \
+ ../../Middlewares/Camera_Middleware/cmw_errno.h Inc/cmw_camera_conf.h \
+ ../../STM32Cube_FW_N6/Drivers/BSP/STM32N6570-DK/stm32n6570_discovery_bus.h \
+ ../../Middlewares/Camera_Middleware/sensors/cmw_sensors_if.h \
+ ../../Middlewares/Camera_Middleware/ISP_Library/isp/Inc/isp_core.h \
+ Inc/isp_conf.h \
+ ../../Middlewares/Camera_Middleware/ISP_Library/isp/Inc/isp_platform.h
 Inc/ninja_fruit_game.h:
 Inc/main.h:
 ../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Inc/stm32n6xx_hal.h:
@@ -165,3 +172,11 @@ Inc/utils.h:
 ../../STM32Cube_FW_N6/Drivers/BSP/STM32N6570-DK/stm32n6570_discovery.h:
 Inc/stm32n6570_discovery_conf.h:
 ../../STM32Cube_FW_N6/Drivers/BSP/STM32N6570-DK/stm32n6570_discovery_errno.h:
+../../Middlewares/Camera_Middleware/cmw_camera.h:
+../../Middlewares/Camera_Middleware/cmw_errno.h:
+Inc/cmw_camera_conf.h:
+../../STM32Cube_FW_N6/Drivers/BSP/STM32N6570-DK/stm32n6570_discovery_bus.h:
+../../Middlewares/Camera_Middleware/sensors/cmw_sensors_if.h:
+../../Middlewares/Camera_Middleware/ISP_Library/isp/Inc/isp_core.h:
+Inc/isp_conf.h:
+../../Middlewares/Camera_Middleware/ISP_Library/isp/Inc/isp_platform.h:
