@@ -1,0 +1,5 @@
+Src/simon_says_game.c:83:13:PlayWav	6
+Src/simon_says_game.c:113:13:NewInstruction	3
+Src/simon_says_game.c:132:6:SimonSays_Init	1
+Src/simon_says_game.c:138:6:SimonSays_Update	25
+Src/simon_says_game.c:165:6:SimonSays_Render	5

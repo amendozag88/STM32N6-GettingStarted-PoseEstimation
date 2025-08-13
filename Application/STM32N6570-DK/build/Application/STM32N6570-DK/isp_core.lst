@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 1
 
 
    1              		.arch armv8.1-m.main
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
   36      78706F73 
   37 00db 656D656E 		.ascii	"emented\015\000"
   37      7465640D 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 2
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 2
 
 
   37      00
@@ -90,7 +90,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
   49              		.thumb_func
   51              	ISP_Init:
   52              	.LVL0:
-  53              	.LFB838:
+  53              	.LFB840:
    1:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
    2:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****  ******************************************************************************
    3:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****  * @file    isp_core.c
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
   25:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** #include "isp_tool_com.h"
   26:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** #include "isp_cmd_parser.h"
   27:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** #endif
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 3
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 3
 
 
   28:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** #include <math.h>
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
   74 000a 0028     		cmp	r0, #0
   75 000c 66D0     		beq	.L13
   76              		.loc 1 59 22 discriminator 1 view .LVU6
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 4
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 4
 
 
   77 000e 0029     		cmp	r1, #0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  110              	.LVL7:
  111              		.loc 1 76 22 view .LVU21
  112 002e 0FC6     		stmia	r6!, {r0, r1, r2, r3}
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 5
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 5
 
 
  113 0030 2368     		ldr	r3, [r4]
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  113:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ret = ISP_SVC_Sensor_GetInfo(hIsp, &hIsp->sensorInfo);
  114:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
  115:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 6
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 6
 
 
  116:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     return ret;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
   83:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
  140              		.loc 1 83 3 is_stmt 1 view .LVU29
   83:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 7
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 7
 
 
  141              		.loc 1 83 6 is_stmt 0 view .LVU30
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  181 0070 0028     		cmp	r0, #0
  182 0072 E5D1     		bne	.L2
  113:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (ret != ISP_OK)
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 8
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 8
 
 
  183              		.loc 1 113 3 is_stmt 1 view .LVU45
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  221              	.LVL15:
  140:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
  222              		.loc 1 140 5 is_stmt 1 view .LVU62
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 9
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 9
 
 
  140:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  261              		.loc 1 156 3 is_stmt 1 view .LVU78
  262 00cc 2846     		mov	r0, r5
  263              	.LVL22:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 10
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 10
 
 
  156:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
@@ -575,7 +575,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  290 00f0 E4000000 		.word	.LC4
  291 00f4 20010000 		.word	.LC5
  292              		.cfi_endproc
- 293              	.LFE838:
+ 293              	.LFE840:
  295              		.section	.text.ISP_DeInit,"ax",%progbits
  296              		.align	1
  297              		.global	ISP_DeInit
@@ -584,7 +584,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  300              		.thumb_func
  302              	ISP_DeInit:
  303              	.LVL26:
- 304              	.LFB839:
+ 304              	.LFB841:
  160:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  161:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
  162:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_DeInit
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  306              		.cfi_startproc
  307              		@ args = 0, pretend = 0, frame = 0
  308              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 11
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 11
 
 
  169:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ISP_StatusTypeDef ret;
@@ -658,13 +658,13 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  343              	.L25:
  173:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
  344              		.loc 1 173 12 view .LVU97
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 12
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 12
 
 
  345 001c 0124     		movs	r4, #1
  346 001e FBE7     		b	.L22
  347              		.cfi_endproc
- 348              	.LFE839:
+ 348              	.LFE841:
  350              		.section	.text.ISP_Start,"ax",%progbits
  351              		.align	1
  352              		.global	ISP_Start
@@ -673,7 +673,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  355              		.thumb_func
  357              	ISP_Start:
  358              	.LVL31:
- 359              	.LFB840:
+ 359              	.LFB842:
  188:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  189:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
  190:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_Start
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  381              		.loc 1 206 3 is_stmt 1 view .LVU106
  382              		.loc 1 206 6 is_stmt 0 view .LVU107
  383 000e 0028     		cmp	r0, #0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 13
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 13
 
 
  384 0010 49D1     		bne	.L27
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  227:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   ret = ISP_SVC_ISP_SetContrast(hIsp, &IQParamConfig->contrast);
  418              		.loc 1 227 3 is_stmt 1 view .LVU121
  419              		.loc 1 227 9 is_stmt 0 view .LVU122
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 14
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 14
 
 
  420 0034 2846     		mov	r0, r5
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  447              		.loc 1 254 11 view .LVU134
  448 0050 06F15C01 		add	r1, r6, #92
  449 0054 FFF7FEFF 		bl	ISP_SVC_ISP_SetBadPixel
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 15
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 15
 
 
  450              	.LVL43:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  479 0076 002B     		cmp	r3, #0
  480 0078 2FD1     		bne	.L38
  481              	.L39:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 16
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 16
 
 
  280:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  516 00a2 0028     		cmp	r0, #0
  517 00a4 CED0     		beq	.L31
  518              	.LVL50:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 17
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 17
 
 
  519              	.L27:
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  550 00c8 D3D1     		bne	.L37
  272:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
  551              		.loc 1 272 5 is_stmt 1 view .LVU169
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 18
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 18
 
 
  272:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     if (ret != ISP_OK)
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  592              		.loc 1 299 9 view .LVU183
  593 00fa 06F51571 		add	r1, r6, #596
  594 00fe FFF7FEFF 		bl	ISP_SVC_ISP_SetGamma
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 19
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 19
 
 
  595              	.LVL59:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  632              		.loc 1 202 12 view .LVU200
  633 0136 B6E7     		b	.L27
  634              	.L54:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 20
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 20
 
 
  635              		.align	3
@@ -1146,7 +1146,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  637 0138 00000000 		.word	0
  638 013c 00004C40 		.word	1078722560
  639              		.cfi_endproc
- 640              	.LFE840:
+ 640              	.LFE842:
  642              		.section	.text.ISP_BackgroundProcess,"ax",%progbits
  643              		.align	1
  644              		.global	ISP_BackgroundProcess
@@ -1155,7 +1155,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  647              		.thumb_func
  649              	ISP_BackgroundProcess:
  650              	.LVL63:
- 651              	.LFB841:
+ 651              	.LFB843:
  310:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  311:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
  312:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_BackgroundProcess
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  332:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
  333:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     retCmdParser = ISP_CmdParser_ProcessCommand(hIsp, cmd);
  334:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   }
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 21
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 21
 
 
  335:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** #endif
@@ -1255,10 +1255,10 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  693 001c 0124     		movs	r4, #1
  694 001e FBE7     		b	.L56
  695              		.cfi_endproc
- 696              	.LFE841:
+ 696              	.LFE843:
  698              		.section	.text.ISP_SetExposureTarget,"ax",%progbits
  699              		.align	1
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 22
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 22
 
 
  700              		.global	ISP_SetExposureTarget
@@ -1267,7 +1267,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  703              		.thumb_func
  705              	ISP_SetExposureTarget:
  706              	.LVL69:
- 707              	.LFB842:
+ 707              	.LFB844:
  360:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  361:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
  362:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_SetExposureTarget
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  736              	.LVL71:
  373:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   IQParamConfig->AECAlgo.exposureCompensation = ExposureCompensation;
  737              		.loc 1 373 3 is_stmt 1 view .LVU225
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 23
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 23
 
 
  738              		.loc 1 374 3 view .LVU226
@@ -1350,7 +1350,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  759 0038 00000000 		.word	0
  760 003c 00004C40 		.word	1078722560
  761              		.cfi_endproc
- 762              	.LFE842:
+ 762              	.LFE844:
  764              		.section	.text.ISP_GetExposureTarget,"ax",%progbits
  765              		.align	1
  766              		.global	ISP_GetExposureTarget
@@ -1359,7 +1359,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  769              		.thumb_func
  771              	ISP_GetExposureTarget:
  772              	.LVL74:
- 773              	.LFB843:
+ 773              	.LFB845:
  378:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  379:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
  380:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_GetExposureTarget
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  778              		.loc 1 388 3 view .LVU236
  389:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  390:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   IQParamConfig = ISP_SVC_IQParam_Get(hIsp);
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 24
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 24
 
 
  779              		.loc 1 390 3 view .LVU237
@@ -1422,7 +1422,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  808 0016 38BD     		pop	{r3, r4, r5, pc}
  809              		.loc 1 395 1 view .LVU250
  810              		.cfi_endproc
- 811              	.LFE843:
+ 811              	.LFE845:
  813              		.section	.text.ISP_SetAECState,"ax",%progbits
  814              		.align	1
  815              		.global	ISP_SetAECState
@@ -1431,14 +1431,14 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  818              		.thumb_func
  820              	ISP_SetAECState:
  821              	.LVL77:
- 822              	.LFB844:
+ 822              	.LFB846:
  396:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  397:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
  398:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_SetAECState
  399:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Set AEC algorithm state
  400:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
  401:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  enable: AEC algorithm state ('true' if algo is running, 'false' if algo is stopped)
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 25
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 25
 
 
  402:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval Operation status
@@ -1481,7 +1481,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  847 000e 10BD     		pop	{r4, pc}
  848              		.loc 1 412 1 view .LVU262
  849              		.cfi_endproc
- 850              	.LFE844:
+ 850              	.LFE846:
  852              		.section	.text.ISP_GetAECState,"ax",%progbits
  853              		.align	1
  854              		.global	ISP_GetAECState
@@ -1490,7 +1490,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  857              		.thumb_func
  859              	ISP_GetAECState:
  860              	.LVL80:
- 861              	.LFB845:
+ 861              	.LFB847:
  413:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  414:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
  415:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_GetAECState
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  417:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
  418:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  pEnable: AEC algorithm pointer to current state ('true' if algo is running, 'false' if 
  419:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @retval Operation status
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 26
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 26
 
 
  420:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
@@ -1544,7 +1544,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  888 0010 10BD     		pop	{r4, pc}
  889              		.loc 1 429 1 view .LVU275
  890              		.cfi_endproc
- 891              	.LFE845:
+ 891              	.LFE847:
  893              		.section	.text.ISP_ListWBRefModes,"ax",%progbits
  894              		.align	1
  895              		.global	ISP_ListWBRefModes
@@ -1553,12 +1553,12 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  898              		.thumb_func
  900              	ISP_ListWBRefModes:
  901              	.LVL83:
- 902              	.LFB846:
+ 902              	.LFB848:
  430:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  431:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
  432:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_ListWBRefModes
  433:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         List the reference modes (color temperature) that define a white balance configuration
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 27
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 27
 
 
  434:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @param  hIsp: ISP device handle
@@ -1610,7 +1610,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  933 0024 10BD     		pop	{r4, pc}
  934              		.loc 1 447 1 view .LVU286
  935              		.cfi_endproc
- 936              	.LFE846:
+ 936              	.LFE848:
  938              		.section	.text.ISP_SetWBRefMode,"ax",%progbits
  939              		.align	1
  940              		.global	ISP_SetWBRefMode
@@ -1618,11 +1618,11 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  942              		.thumb
  943              		.thumb_func
  945              	ISP_SetWBRefMode:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 28
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 28
 
 
  946              	.LVL86:
- 947              	.LFB847:
+ 947              	.LFB849:
  448:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  449:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
  450:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_SetWBRefMode
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  469:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   {
  470:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     /* Start the AWB algorithm */
  471:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     IQParamConfig->AWBAlgo.enable = 1;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 29
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 29
 
 
  977              		.loc 1 471 5 is_stmt 1 view .LVU299
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  983              	.LVL88:
  984              	.L74:
  520:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 30
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 30
 
 
  985              		.loc 1 520 1 view .LVU302
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  489:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  1026              		.loc 1 489 35 view .LVU316
  1027 003e 80F87430 		strb	r3, [r0, #116]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 31
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 31
 
 
  492:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     ISPGain.ispGainR = IQParamConfig->AWBAlgo.ispGainR[index];
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1063              	.L72:
  497:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  1064              		.loc 1 497 5 view .LVU336
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 32
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 32
 
 
  1065 0072 1646     		mov	r6, r2
@@ -1918,12 +1918,12 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1105              	.LVL99:
  513:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****     {
  1106              		.loc 1 513 5 is_stmt 1 view .LVU351
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 33
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 33
 
 
  1107 00a6 B7E7     		b	.L74
  1108              		.cfi_endproc
- 1109              	.LFE847:
+ 1109              	.LFE849:
  1111              		.section	.text.ISP_GetWBRefMode,"ax",%progbits
  1112              		.align	1
  1113              		.global	ISP_GetWBRefMode
@@ -1932,7 +1932,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1116              		.thumb_func
  1118              	ISP_GetWBRefMode:
  1119              	.LVL100:
- 1120              	.LFB848:
+ 1120              	.LFB850:
  521:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  522:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
  523:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_GetWBRefMode
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1145 0010 3370     		strb	r3, [r6]
  537:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  538:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   if (!*pAutomatic)
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 34
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 34
 
 
  1146              		.loc 1 538 3 is_stmt 1 view .LVU361
@@ -2002,7 +2002,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1160 001e 70BD     		pop	{r4, r5, r6, pc}
  1161              		.loc 1 542 1 view .LVU367
  1162              		.cfi_endproc
- 1163              	.LFE848:
+ 1163              	.LFE850:
  1165              		.section	.text.ISP_GetDecimationFactor,"ax",%progbits
  1166              		.align	1
  1167              		.global	ISP_GetDecimationFactor
@@ -2011,7 +2011,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1170              		.thumb_func
  1172              	ISP_GetDecimationFactor:
  1173              	.LVL104:
- 1174              	.LFB849:
+ 1174              	.LFB851:
  543:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  544:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
  545:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_GetDecimationFactor
@@ -2035,10 +2035,10 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1183              	.LVL105:
  1184              		.loc 1 554 10 view .LVU371
  1185              		.cfi_endproc
- 1186              	.LFE849:
+ 1186              	.LFE851:
  1188              		.section	.text.ISP_SetStatArea,"ax",%progbits
  1189              		.align	1
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 35
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 35
 
 
  1190              		.global	ISP_SetStatArea
@@ -2047,7 +2047,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1193              		.thumb_func
  1195              	ISP_SetStatArea:
  1196              	.LVL106:
- 1197              	.LFB850:
+ 1197              	.LFB852:
  555:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
  556:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  557:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
@@ -2071,7 +2071,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1206              	.LVL107:
  1207              		.loc 1 566 10 view .LVU375
  1208              		.cfi_endproc
- 1209              	.LFE850:
+ 1209              	.LFE852:
  1211              		.section	.text.ISP_GetStatArea,"ax",%progbits
  1212              		.align	1
  1213              		.global	ISP_GetStatArea
@@ -2080,7 +2080,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1216              		.thumb_func
  1218              	ISP_GetStatArea:
  1219              	.LVL108:
- 1220              	.LFB851:
+ 1220              	.LFB853:
  567:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
  568:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  569:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1224              		@ frame_needed = 0, uses_anonymous_args = 0
  1225              		@ link register save eliminated.
  578:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   return ISP_SVC_ISP_GetStatArea(hIsp, pStatArea);
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 36
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 36
 
 
  1226              		.loc 1 578 3 view .LVU377
@@ -2107,7 +2107,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1229              	.LVL109:
  1230              		.loc 1 578 10 view .LVU379
  1231              		.cfi_endproc
- 1232              	.LFE851:
+ 1232              	.LFE853:
  1234              		.section	.text.ISP_GatherStatistics,"ax",%progbits
  1235              		.align	1
  1236              		.global	ISP_GatherStatistics
@@ -2116,7 +2116,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1239              		.thumb_func
  1241              	ISP_GatherStatistics:
  1242              	.LVL110:
- 1243              	.LFB852:
+ 1243              	.LFB854:
  579:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
  580:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  581:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
@@ -2138,7 +2138,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1251              	.LVL111:
  1252              		.loc 1 589 3 is_stmt 0 view .LVU382
  1253              		.cfi_endproc
- 1254              	.LFE852:
+ 1254              	.LFE854:
  1256              		.section	.text.ISP_IncMainFrameId,"ax",%progbits
  1257              		.align	1
  1258              		.global	ISP_IncMainFrameId
@@ -2147,7 +2147,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1261              		.thumb_func
  1263              	ISP_IncMainFrameId:
  1264              	.LVL112:
- 1265              	.LFB853:
+ 1265              	.LFB855:
  590:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
  591:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  592:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  597:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   */
  598:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** void ISP_IncMainFrameId(ISP_HandleTypeDef *hIsp)
  599:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 37
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 37
 
 
  1266              		.loc 1 599 1 is_stmt 1 view -0
@@ -2172,7 +2172,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1273              	.LVL113:
  1274              		.loc 1 600 3 is_stmt 0 view .LVU385
  1275              		.cfi_endproc
- 1276              	.LFE853:
+ 1276              	.LFE855:
  1278              		.section	.text.ISP_GetMainFrameId,"ax",%progbits
  1279              		.align	1
  1280              		.global	ISP_GetMainFrameId
@@ -2181,7 +2181,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1283              		.thumb_func
  1285              	ISP_GetMainFrameId:
  1286              	.LVL114:
- 1287              	.LFB854:
+ 1287              	.LFB856:
  601:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
  602:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  603:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
@@ -2204,7 +2204,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1296              	.LVL115:
  1297              		.loc 1 611 10 view .LVU389
  1298              		.cfi_endproc
- 1299              	.LFE854:
+ 1299              	.LFE856:
  1301              		.section	.text.ISP_IncAncillaryFrameId,"ax",%progbits
  1302              		.align	1
  1303              		.global	ISP_IncAncillaryFrameId
@@ -2213,12 +2213,12 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1306              		.thumb_func
  1308              	ISP_IncAncillaryFrameId:
  1309              	.LVL116:
- 1310              	.LFB855:
+ 1310              	.LFB857:
  612:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
  613:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  614:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
  615:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   * @brief  ISP_IncAncillaryFrameId
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 38
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 38
 
 
  616:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c ****   *         Increment the frame ID of the frame output on the ancillary pipe
@@ -2238,7 +2238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1318              	.LVL117:
  1319              		.loc 1 622 2 is_stmt 0 view .LVU392
  1320              		.cfi_endproc
- 1321              	.LFE855:
+ 1321              	.LFE857:
  1323              		.section	.text.ISP_GetAncillaryFrameId,"ax",%progbits
  1324              		.align	1
  1325              		.global	ISP_GetAncillaryFrameId
@@ -2247,7 +2247,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1328              		.thumb_func
  1330              	ISP_GetAncillaryFrameId:
  1331              	.LVL118:
- 1332              	.LFB856:
+ 1332              	.LFB858:
  623:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
  624:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  625:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
@@ -2270,7 +2270,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1341              	.LVL119:
  1342              		.loc 1 633 10 view .LVU396
  1343              		.cfi_endproc
- 1344              	.LFE856:
+ 1344              	.LFE858:
  1346              		.section	.text.ISP_IncDumpFrameId,"ax",%progbits
  1347              		.align	1
  1348              		.global	ISP_IncDumpFrameId
@@ -2278,11 +2278,11 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1350              		.thumb
  1351              		.thumb_func
  1353              	ISP_IncDumpFrameId:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 39
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 39
 
 
  1354              	.LVL120:
- 1355              	.LFB857:
+ 1355              	.LFB859:
  634:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
  635:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  636:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
@@ -2304,7 +2304,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1363              	.LVL121:
  1364              		.loc 1 644 3 is_stmt 0 view .LVU399
  1365              		.cfi_endproc
- 1366              	.LFE857:
+ 1366              	.LFE859:
  1368              		.section	.text.ISP_GetDumpFrameId,"ax",%progbits
  1369              		.align	1
  1370              		.global	ISP_GetDumpFrameId
@@ -2313,7 +2313,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1373              		.thumb_func
  1375              	ISP_GetDumpFrameId:
  1376              	.LVL122:
- 1377              	.LFB858:
+ 1377              	.LFB860:
  645:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
  646:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  647:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
@@ -2336,9 +2336,9 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1386              	.LVL123:
  1387              		.loc 1 655 10 view .LVU403
  1388              		.cfi_endproc
- 1389              	.LFE858:
+ 1389              	.LFE860:
  1391              		.section	.rodata.ISP_OutputMeta.str1.1,"aMS",%progbits,1
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 40
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 40
 
 
  1392              	.LC6:
@@ -2357,7 +2357,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1400              		.thumb_func
  1402              	ISP_OutputMeta:
  1403              	.LVL124:
- 1404              	.LFB859:
+ 1404              	.LFB861:
  656:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** }
  657:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** 
  658:../../Middlewares/Camera_Middleware/ISP_Library/isp/Src/isp_core.c **** /**
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1426 0012 0093     		str	r3, [sp]
  1427 0014 5368     		ldr	r3, [r2, #4]
  1428 0016 016C     		ldr	r1, [r0, #64]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 41
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 41
 
 
  1429 0018 5278     		ldrb	r2, [r2, #1]	@ zero_extendqisi2
@@ -2421,7 +2421,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1444 0028 00000000 		.word	Meta
  1445 002c 00000000 		.word	.LC6
  1446              		.cfi_endproc
- 1447              	.LFE859:
+ 1447              	.LFE861:
  1449              		.text
  1450              	.Letext0:
  1451              		.file 2 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
@@ -2434,67 +2434,67 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 1
  1458              		.file 9 "../../Middlewares/Camera_Middleware/ISP_Library/isp/Inc/isp_algo.h"
  1459              		.file 10 "<built-in>"
  1460              		.file 11 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltoo
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 42
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 42
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 isp_core.c
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:45     .text.ISP_Init:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:51     .text.ISP_Init:00000000 ISP_Init
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:286    .text.ISP_Init:000000e0 $d
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:296    .text.ISP_DeInit:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:302    .text.ISP_DeInit:00000000 ISP_DeInit
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:351    .text.ISP_Start:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:357    .text.ISP_Start:00000000 ISP_Start
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:637    .text.ISP_Start:00000138 $d
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:643    .text.ISP_BackgroundProcess:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:649    .text.ISP_BackgroundProcess:00000000 ISP_BackgroundProcess
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:699    .text.ISP_SetExposureTarget:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:705    .text.ISP_SetExposureTarget:00000000 ISP_SetExposureTarget
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:759    .text.ISP_SetExposureTarget:00000038 $d
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:765    .text.ISP_GetExposureTarget:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:771    .text.ISP_GetExposureTarget:00000000 ISP_GetExposureTarget
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:814    .text.ISP_SetAECState:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:820    .text.ISP_SetAECState:00000000 ISP_SetAECState
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:853    .text.ISP_GetAECState:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:859    .text.ISP_GetAECState:00000000 ISP_GetAECState
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:894    .text.ISP_ListWBRefModes:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:900    .text.ISP_ListWBRefModes:00000000 ISP_ListWBRefModes
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:939    .text.ISP_SetWBRefMode:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:945    .text.ISP_SetWBRefMode:00000000 ISP_SetWBRefMode
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1112   .text.ISP_GetWBRefMode:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1118   .text.ISP_GetWBRefMode:00000000 ISP_GetWBRefMode
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1166   .text.ISP_GetDecimationFactor:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1172   .text.ISP_GetDecimationFactor:00000000 ISP_GetDecimationFactor
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1189   .text.ISP_SetStatArea:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1195   .text.ISP_SetStatArea:00000000 ISP_SetStatArea
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1212   .text.ISP_GetStatArea:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1218   .text.ISP_GetStatArea:00000000 ISP_GetStatArea
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1235   .text.ISP_GatherStatistics:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1241   .text.ISP_GatherStatistics:00000000 ISP_GatherStatistics
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1257   .text.ISP_IncMainFrameId:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1263   .text.ISP_IncMainFrameId:00000000 ISP_IncMainFrameId
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1279   .text.ISP_GetMainFrameId:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1285   .text.ISP_GetMainFrameId:00000000 ISP_GetMainFrameId
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1302   .text.ISP_IncAncillaryFrameId:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1308   .text.ISP_IncAncillaryFrameId:00000000 ISP_IncAncillaryFrameId
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1324   .text.ISP_GetAncillaryFrameId:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1330   .text.ISP_GetAncillaryFrameId:00000000 ISP_GetAncillaryFrameId
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1347   .text.ISP_IncDumpFrameId:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1353   .text.ISP_IncDumpFrameId:00000000 ISP_IncDumpFrameId
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1369   .text.ISP_GetDumpFrameId:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1375   .text.ISP_GetDumpFrameId:00000000 ISP_GetDumpFrameId
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1396   .text.ISP_OutputMeta:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1402   .text.ISP_OutputMeta:00000000 ISP_OutputMeta
-C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1444   .text.ISP_OutputMeta:00000028 $d
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:45     .text.ISP_Init:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:51     .text.ISP_Init:00000000 ISP_Init
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:286    .text.ISP_Init:000000e0 $d
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:296    .text.ISP_DeInit:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:302    .text.ISP_DeInit:00000000 ISP_DeInit
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:351    .text.ISP_Start:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:357    .text.ISP_Start:00000000 ISP_Start
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:637    .text.ISP_Start:00000138 $d
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:643    .text.ISP_BackgroundProcess:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:649    .text.ISP_BackgroundProcess:00000000 ISP_BackgroundProcess
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:699    .text.ISP_SetExposureTarget:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:705    .text.ISP_SetExposureTarget:00000000 ISP_SetExposureTarget
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:759    .text.ISP_SetExposureTarget:00000038 $d
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:765    .text.ISP_GetExposureTarget:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:771    .text.ISP_GetExposureTarget:00000000 ISP_GetExposureTarget
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:814    .text.ISP_SetAECState:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:820    .text.ISP_SetAECState:00000000 ISP_SetAECState
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:853    .text.ISP_GetAECState:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:859    .text.ISP_GetAECState:00000000 ISP_GetAECState
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:894    .text.ISP_ListWBRefModes:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:900    .text.ISP_ListWBRefModes:00000000 ISP_ListWBRefModes
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:939    .text.ISP_SetWBRefMode:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:945    .text.ISP_SetWBRefMode:00000000 ISP_SetWBRefMode
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1112   .text.ISP_GetWBRefMode:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1118   .text.ISP_GetWBRefMode:00000000 ISP_GetWBRefMode
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1166   .text.ISP_GetDecimationFactor:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1172   .text.ISP_GetDecimationFactor:00000000 ISP_GetDecimationFactor
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1189   .text.ISP_SetStatArea:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1195   .text.ISP_SetStatArea:00000000 ISP_SetStatArea
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1212   .text.ISP_GetStatArea:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1218   .text.ISP_GetStatArea:00000000 ISP_GetStatArea
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1235   .text.ISP_GatherStatistics:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1241   .text.ISP_GatherStatistics:00000000 ISP_GatherStatistics
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1257   .text.ISP_IncMainFrameId:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1263   .text.ISP_IncMainFrameId:00000000 ISP_IncMainFrameId
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1279   .text.ISP_GetMainFrameId:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1285   .text.ISP_GetMainFrameId:00000000 ISP_GetMainFrameId
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1302   .text.ISP_IncAncillaryFrameId:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1308   .text.ISP_IncAncillaryFrameId:00000000 ISP_IncAncillaryFrameId
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1324   .text.ISP_GetAncillaryFrameId:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1330   .text.ISP_GetAncillaryFrameId:00000000 ISP_GetAncillaryFrameId
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1347   .text.ISP_IncDumpFrameId:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1353   .text.ISP_IncDumpFrameId:00000000 ISP_IncDumpFrameId
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1369   .text.ISP_GetDumpFrameId:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1375   .text.ISP_GetDumpFrameId:00000000 ISP_GetDumpFrameId
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1396   .text.ISP_OutputMeta:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1402   .text.ISP_OutputMeta:00000000 ISP_OutputMeta
+C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s:1444   .text.ISP_OutputMeta:00000028 $d
                            .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
                            .group:00000000 wm4.isp_conf.h.21.f38432dbfef47e2ce2a64e60ef6a2d79
-                           .group:00000000 wm4.stm32n6xx_hal_conf.h.21.e6f895f5dec93fd886896ef3aa220611
+                           .group:00000000 wm4.stm32n6xx_hal_conf.h.21.e108a0e1f8e9094b9ec5c3fbf543a831
                            .group:00000000 wm4.stddef.h.39.0dc9006b34572d4d9cae4c8b422c4971
                            .group:00000000 wm4.arm_cmse.h.103.a0d15a79c4c9a67da8d5831704d7248e
                            .group:00000000 wm4.stm32n6xx.h.34.80585dd08aa426c932f6311fdb7386da
                            .group:00000000 wm4.stm32n657xx.h.26.acd272cb67318cc1a4791ce2f0720ca6
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 43
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 43
 
 
                            .group:00000000 wm4._newlib_version.h.4.411db44ea2338a62eca2f0777f81481b
@@ -2548,15 +2548,23 @@ C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s:1444   .text.ISP_OutputMeta:00000
                            .group:00000000 wm4.stm32n6xx_hal_i2c.h.741.1084702632703acc669e4282b3043372
                            .group:00000000 wm4.stm32n6xx_hal_ltdc.h.21.ae1eb09930e7e550e48e418ac5849e4d
                            .group:00000000 wm4.stm32n6xx_hal_ltdc.h.1002.b13ede7fc94ed5ad1c6768a157d2149a
+                           .group:00000000 wm4.stm32n6xx_hal_mdf.h.21.6eb130451a4e0db5b8befb63f326c92c
                            .group:00000000 wm4.stm32n6xx_hal_pwr.h.21.cdb73e4869c3fed3fc84f901ec0e5f0a
                            .group:00000000 wm4.stm32n6xx_hal_pwr_ex.h.21.1a673224a58b0c1e5fad8eeda6514208
                            .group:00000000 wm4.stm32n6xx_hal_ramcfg.h.21.a62dfbb4d2c14e9a8c634a215e37bd3d
+                           .group:00000000 wm4.stm32n6xx_hal_sai.h.21.d6c5e096d8c222239b66c09476942511
+                           .group:00000000 wm4.stm32n6xx_hal_sai_ex.h.21.98cc4c637392fcbacd0a3564bad4bba3
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 44
+
+
+                           .group:00000000 wm4.stm32n6xx_hal_sai.h.825.fc46628357edde5e604f90f7e222e919
+                           .group:00000000 wm4.stm32n6xx_ll_sdmmc.h.21.a8483ddbe319d8ff397cbc0087d2c233
+                           .group:00000000 wm4.stm32n6xx_ll_dlyb.h.21.05e6efa24db86ad89cfd13eda5cfcd3e
+                           .group:00000000 wm4.stm32n6xx_hal_sd.h.71.b83d10af03e36c820c893444588bae05
+                           .group:00000000 wm4.stm32n6xx_hal_sd_ex.h.21.0294125df092827b72ace449508982b9
                            .group:00000000 wm4.stm32n6xx_hal_uart.h.21.230f549bfa0d5ebfd77bfb311b2aca15
                            .group:00000000 wm4.stm32n6xx_hal_uart_ex.h.21.a0d5511e1d0703b7b5278c8f5472b96d
                            .group:00000000 wm4.stm32n6xx_hal_xspi.h.21.e17898be2073b6b6b19faf30b4e304e9
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccvlrM4z.s 			page 44
-
-
                            .group:00000000 wm4.stm32n6xx_hal_cacheaxi.h.21.7c3375b7903ec42376e4883320997f74
                            .group:00000000 wm4.stm32n6xx_hal.h.81.5e59143eba07faca3e9aeaa5470826c8
                            .group:00000000 wm4.stdio.h.27.3fc80220048df77954e38daec3bb9670
@@ -2606,6 +2614,9 @@ ISP_SVC_ISP_GetStatArea
 ISP_SVC_Stats_Gather
 ISP_SVC_Misc_IncMainFrameId
 ISP_SVC_Misc_GetMainFrameId
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccIhLhNB.s 			page 45
+
+
 ISP_SVC_Misc_IncAncillaryFrameId
 ISP_SVC_Misc_GetAncillaryFrameId
 ISP_SVC_Misc_IncDumpFrameId

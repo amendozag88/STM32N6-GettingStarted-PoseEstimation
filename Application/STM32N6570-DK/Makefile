@@ -63,14 +63,26 @@ C_SOURCES += ../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_ha
 C_SOURCES += ../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_rcc_ex.c
 C_SOURCES += ../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_xspi.c
 C_SOURCES += ../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_bsec.c
+C_SOURCES += ../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_sai.c
+C_SOURCES += ../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_dma.c
+C_SOURCES += ../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_dma_ex.c
+C_SOURCES += ../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_sd.c
+C_SOURCES += ../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_ll_sdmmc.c
 C_SOURCES += ../../STM32Cube_FW_N6/Drivers/BSP/STM32N6570-DK/stm32n6570_discovery.c
 C_SOURCES += ../../STM32Cube_FW_N6/Drivers/BSP/STM32N6570-DK/stm32n6570_discovery_bus.c
 C_SOURCES += ../../Middlewares/Camera_Middleware/cmw_camera.c
 C_SOURCES += ../../Middlewares/Camera_Middleware/cmw_utils.c
 C_SOURCES += ../../STM32Cube_FW_N6/Drivers/BSP/STM32N6570-DK/stm32n6570_discovery_lcd.c
 C_SOURCES += ../../STM32Cube_FW_N6/Drivers/BSP/STM32N6570-DK/stm32n6570_discovery_xspi.c
+C_SOURCES += ../../STM32Cube_FW_N6/Drivers/BSP/STM32N6570-DK/stm32n6570_discovery_audio.c
+C_SOURCES += ../../STM32Cube_FW_N6/Drivers/BSP/STM32N6570-DK/stm32n6570_discovery_sd.c
+#C_SOURCES += ../../STM32Cube_FW_N6/Drivers/BSP/Components/wm8904/wm8904.c
 C_SOURCES += ../../STM32Cube_FW_N6/Drivers/BSP/Components/aps256xx/aps256xx.c
 C_SOURCES += ../../STM32Cube_FW_N6/Drivers/BSP/Components/mx66uw1g45g/mx66uw1g45g.c
+C_SOURCES += ../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff.c
+C_SOURCES += ../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c
+C_SOURCES += ../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c
+
 C_SOURCES += ../../Middlewares/Camera_Middleware/sensors/imx335/imx335.c
 C_SOURCES += ../../Middlewares/Camera_Middleware/sensors/imx335/imx335_reg.c
 C_SOURCES += ../../Middlewares/Camera_Middleware/sensors/vd6g/vd6g.c
@@ -94,9 +106,12 @@ C_SOURCES += ../../Middlewares/AI_Runtime/Npu/ll_aton/ll_sw_float.c
 C_SOURCES += ../../Middlewares/AI_Runtime/Npu/ll_aton/ll_sw_integer.c
 C_SOURCES += ../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_lib.c
 C_SOURCES += ../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_lib_sw_operators.c
+
 C_SOURCES += Src/gesture_detection.c 
 C_SOURCES += Src/ninja_fruit_game.c 
-
+C_SOURCES += Src/simon_says_game.c
+C_SOURCES += Src/wm8904.c  
+C_SOURCES += Src/wm8904_reg.c
 # ASM sources
 ASM_SOURCES += ../../STM32Cube_FW_N6/Drivers/CMSIS/Device/ST/STM32N6xx/Source/Templates/gcc/startup_stm32n657xx_fsbl.s
 
@@ -174,6 +189,8 @@ C_INCLUDES += -I../../Middlewares/AI_Runtime/Inc
 C_INCLUDES += -I../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX
 C_INCLUDES += -I../../STM32Cube_FW_N6/Utilities/lcd
 C_INCLUDES += -I../../STM32Cube_FW_N6/Drivers/BSP/Components/aps256xx
+C_INCLUDES += -I../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source
+C_INCLUDES += -I../../STM32Cube_FW_N6/Drivers/BSP/Components/wm8904
 
 ASFLAGS = $(MCU) $(AS_DEFS) $(AS_INCLUDES) $(OPT) -Wall -fstack-usage -fdata-sections -ffunction-sections -fcyclomatic-complexity
 CFLAGS = $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -fstack-usage -fdata-sections -ffunction-sections -fcyclomatic-complexity

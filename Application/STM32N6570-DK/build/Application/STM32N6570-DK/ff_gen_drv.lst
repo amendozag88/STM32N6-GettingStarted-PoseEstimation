@@ -1,0 +1,482 @@
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s 			page 1
+
+
+   1              		.arch armv8.1-m.main
+   2              		.fpu fpv5-d16
+   3              		.arch_extension dsp
+   4              		.arch_extension fp
+   5              		.arch_extension fp.dp
+   6              		.arch_extension mve
+   7              		.arch_extension mve.fp
+   8              		.eabi_attribute 5, "cortex-m55"
+   9              		.eabi_attribute 28, 1
+  10              		.eabi_attribute 20, 1
+  11              		.eabi_attribute 21, 1
+  12              		.eabi_attribute 23, 3
+  13              		.eabi_attribute 24, 1
+  14              		.eabi_attribute 25, 1
+  15              		.eabi_attribute 26, 1
+  16              		.eabi_attribute 30, 4
+  17              		.eabi_attribute 34, 1
+  18              		.eabi_attribute 38, 1
+  19              		.eabi_attribute 18, 4
+  20              		.file	"ff_gen_drv.c"
+  21              		.text
+  22              	.Ltext0:
+  23              		.cfi_sections	.debug_frame
+  24              		.file 1 "../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c"
+  25              		.section	.text.FATFS_LinkDriverEx,"ax",%progbits
+  26              		.align	1
+  27              		.global	FATFS_LinkDriverEx
+  28              		.syntax unified
+  29              		.thumb
+  30              		.thumb_func
+  32              	FATFS_LinkDriverEx:
+  33              	.LVL0:
+  34              	.LFB0:
+   1:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** /**
+   2:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   ******************************************************************************
+   3:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @file    ff_gen_drv.c
+   4:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @author  MCD Application Team
+   5:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @brief   FatFs generic low level driver.
+   6:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   ******************************************************************************
+   7:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @attention
+   8:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   *
+   9:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * Copyright (c) 2023 STMicroelectronics.
+  10:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * All rights reserved.
+  11:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   *
+  12:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * This software is licensed under terms that can be found in the st_license.txt
+  13:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * file in the root directory of this software component.
+  14:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * If no st_license.txt file comes with this software, it is provided AS-IS.
+  15:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   *
+  16:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   ******************************************************************************
+  17:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   */
+  18:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** 
+  19:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** /* Includes ------------------------------------------------------------------*/
+  20:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** #include "ff_gen_drv.h"
+  21:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** 
+  22:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** /* Private typedef -----------------------------------------------------------*/
+  23:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** /* Private define ------------------------------------------------------------*/
+  24:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** /* Private variables ---------------------------------------------------------*/
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s 			page 2
+
+
+  25:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** Disk_drvTypeDef disk = {{0},{0},{0},0};
+  26:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** 
+  27:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** /* Private function prototypes -----------------------------------------------*/
+  28:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** /* Private functions ---------------------------------------------------------*/
+  29:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** 
+  30:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** /**
+  31:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @brief  Links a compatible diskio driver/lun id and increments the number of active
+  32:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   *         linked drivers.
+  33:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @note   The number of linked drivers (volumes) is up to 10 due to FatFs limits.
+  34:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @param  drv: pointer to the disk IO Driver structure
+  35:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @param  path: pointer to the logical drive path
+  36:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @param  lun : only used for USB Key Disk to add multi-lun management
+  37:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****             else the parameter must be equal to 0
+  38:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @retval Returns 0 in case of success, otherwise 1.
+  39:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   */
+  40:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** uint8_t FATFS_LinkDriverEx(const Diskio_drvTypeDef *drv, char *path, uint8_t lun)
+  41:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** {
+  35              		.loc 1 41 1 view -0
+  36              		.cfi_startproc
+  37              		@ args = 0, pretend = 0, frame = 0
+  38              		@ frame_needed = 0, uses_anonymous_args = 0
+  42:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   uint8_t ret = 1;
+  39              		.loc 1 42 3 view .LVU1
+  43:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   uint8_t DiskNum = 0;
+  40              		.loc 1 43 3 view .LVU2
+  44:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** 
+  45:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   if(disk.nbr < FF_VOLUMES)
+  41              		.loc 1 45 3 view .LVU3
+  41:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   uint8_t ret = 1;
+  42              		.loc 1 41 1 is_stmt 0 view .LVU4
+  43 0000 30B5     		push	{r4, r5, lr}
+  44              		.cfi_def_cfa_offset 12
+  45              		.cfi_offset 4, -12
+  46              		.cfi_offset 5, -8
+  47              		.cfi_offset 14, -4
+  48              		.loc 1 45 10 view .LVU5
+  49 0002 0E4B     		ldr	r3, .L4
+  41:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   uint8_t ret = 1;
+  50              		.loc 1 41 1 view .LVU6
+  51 0004 0546     		mov	r5, r0
+  52              		.loc 1 45 10 view .LVU7
+  53 0006 5C7A     		ldrb	r4, [r3, #9]	@ zero_extendqisi2
+  54              		.loc 1 45 5 view .LVU8
+  55 0008 04F0FF00 		and	r0, r4, #255
+  56              	.LVL1:
+  57              		.loc 1 45 5 view .LVU9
+  58 000c A4B9     		cbnz	r4, .L3
+  59              	.LVL2:
+  60              	.LBB4:
+  61              	.LBI4:
+  40:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** {
+  62              		.loc 1 40 9 is_stmt 1 view .LVU10
+  63              	.LBB5:
+  46:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   {
+  47:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****     disk.is_initialized[disk.nbr] = 0;
+  64              		.loc 1 47 5 view .LVU11
+  65              		.loc 1 47 29 is_stmt 0 view .LVU12
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s 			page 3
+
+
+  66 000e 5C7A     		ldrb	r4, [r3, #9]	@ zero_extendqisi2
+  67              		.loc 1 47 35 view .LVU13
+  68 0010 1855     		strb	r0, [r3, r4]
+  48:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****     disk.drv[disk.nbr] = drv;
+  69              		.loc 1 48 5 is_stmt 1 view .LVU14
+  70              		.loc 1 48 18 is_stmt 0 view .LVU15
+  71 0012 5C7A     		ldrb	r4, [r3, #9]	@ zero_extendqisi2
+  72              		.loc 1 48 24 view .LVU16
+  73 0014 03EB8404 		add	r4, r3, r4, lsl #2
+  74 0018 6560     		str	r5, [r4, #4]
+  49:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****     disk.lun[disk.nbr] = lun;
+  75              		.loc 1 49 5 is_stmt 1 view .LVU17
+  76              		.loc 1 49 18 is_stmt 0 view .LVU18
+  77 001a 5C7A     		ldrb	r4, [r3, #9]	@ zero_extendqisi2
+  78              		.loc 1 49 24 view .LVU19
+  79 001c 1C44     		add	r4, r4, r3
+  80 001e 2272     		strb	r2, [r4, #8]
+  50:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****     DiskNum = disk.nbr++;
+  81              		.loc 1 50 5 is_stmt 1 view .LVU20
+  82              		.loc 1 50 19 is_stmt 0 view .LVU21
+  83 0020 5A7A     		ldrb	r2, [r3, #9]	@ zero_extendqisi2
+  84              	.LVL3:
+  85              		.loc 1 50 23 view .LVU22
+  86 0022 541C     		adds	r4, r2, #1
+  87              	.LVL4:
+  88              		.loc 1 50 23 view .LVU23
+  89 0024 E4B2     		uxtb	r4, r4
+  90 0026 5C72     		strb	r4, [r3, #9]
+  91              	.LVL5:
+  51:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****     path[0] = DiskNum + '0';
+  92              		.loc 1 51 5 is_stmt 1 view .LVU24
+  52:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****     path[1] = ':';
+  93              		.loc 1 52 13 is_stmt 0 view .LVU25
+  94 0028 3A23     		movs	r3, #58
+  95              	.LVL6:
+  96              		.loc 1 52 13 view .LVU26
+  97 002a 4B70     		strb	r3, [r1, #1]
+  98              	.LVL7:
+  53:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****     path[2] = '/';
+  99              		.loc 1 53 13 view .LVU27
+ 100 002c 2F23     		movs	r3, #47
+  51:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****     path[0] = DiskNum + '0';
+ 101              		.loc 1 51 23 view .LVU28
+ 102 002e 3032     		adds	r2, r2, #48
+ 103              	.LVL8:
+  51:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****     path[0] = DiskNum + '0';
+ 104              		.loc 1 51 13 view .LVU29
+ 105 0030 0A70     		strb	r2, [r1]
+  52:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****     path[1] = ':';
+ 106              		.loc 1 52 5 is_stmt 1 view .LVU30
+ 107              		.loc 1 53 5 view .LVU31
+ 108              		.loc 1 53 13 is_stmt 0 view .LVU32
+ 109 0032 8B70     		strb	r3, [r1, #2]
+  54:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****     path[3] = 0;
+ 110              		.loc 1 54 5 is_stmt 1 view .LVU33
+ 111              		.loc 1 54 13 is_stmt 0 view .LVU34
+ 112 0034 C870     		strb	r0, [r1, #3]
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s 			page 4
+
+
+  55:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****     ret = 0;
+ 113              		.loc 1 55 5 is_stmt 1 view .LVU35
+ 114              	.LVL9:
+  56:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   }
+  57:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** 
+  58:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   return ret;
+ 115              		.loc 1 58 3 view .LVU36
+ 116              	.L2:
+ 117              		.loc 1 58 3 is_stmt 0 view .LVU37
+ 118              	.LBE5:
+ 119              	.LBE4:
+ 120              		.loc 1 58 3 is_stmt 1 view .LVU38
+  59:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** }
+ 121              		.loc 1 59 1 is_stmt 0 view .LVU39
+ 122 0036 30BD     		pop	{r4, r5, pc}
+ 123              	.LVL10:
+ 124              	.L3:
+  42:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   uint8_t DiskNum = 0;
+ 125              		.loc 1 42 11 view .LVU40
+ 126 0038 0120     		movs	r0, #1
+ 127 003a FCE7     		b	.L2
+ 128              	.L5:
+ 129              		.align	2
+ 130              	.L4:
+ 131 003c 00000000 		.word	disk
+ 132              		.cfi_endproc
+ 133              	.LFE0:
+ 135              		.section	.text.FATFS_LinkDriver,"ax",%progbits
+ 136              		.align	1
+ 137              		.global	FATFS_LinkDriver
+ 138              		.syntax unified
+ 139              		.thumb
+ 140              		.thumb_func
+ 142              	FATFS_LinkDriver:
+ 143              	.LVL11:
+ 144              	.LFB1:
+  60:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** 
+  61:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** /**
+  62:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @brief  Links a compatible diskio driver and increments the number of active
+  63:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   *         linked drivers.
+  64:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @note   The number of linked drivers (volumes) is up to 10 due to FatFs limits
+  65:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @param  drv: pointer to the disk IO Driver structure
+  66:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @param  path: pointer to the logical drive path
+  67:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @retval Returns 0 in case of success, otherwise 1.
+  68:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   */
+  69:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** uint8_t FATFS_LinkDriver(const Diskio_drvTypeDef *drv, char *path)
+  70:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** {
+ 145              		.loc 1 70 1 is_stmt 1 view -0
+ 146              		.cfi_startproc
+ 147              		@ args = 0, pretend = 0, frame = 0
+ 148              		@ frame_needed = 0, uses_anonymous_args = 0
+ 149              		@ link register save eliminated.
+  71:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   return FATFS_LinkDriverEx(drv, path, 0);
+ 150              		.loc 1 71 3 view .LVU42
+ 151              		.loc 1 71 10 is_stmt 0 view .LVU43
+ 152 0000 0022     		movs	r2, #0
+ 153 0002 FFF7FEBF 		b	FATFS_LinkDriverEx
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s 			page 5
+
+
+ 154              	.LVL12:
+ 155              		.loc 1 71 10 view .LVU44
+ 156              		.cfi_endproc
+ 157              	.LFE1:
+ 159              		.section	.text.FATFS_UnLinkDriverEx,"ax",%progbits
+ 160              		.align	1
+ 161              		.global	FATFS_UnLinkDriverEx
+ 162              		.syntax unified
+ 163              		.thumb
+ 164              		.thumb_func
+ 166              	FATFS_UnLinkDriverEx:
+ 167              	.LVL13:
+ 168              	.LFB2:
+  72:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** }
+  73:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** 
+  74:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** /**
+  75:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @brief  Unlinks a diskio driver and decrements the number of active linked
+  76:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   *         drivers.
+  77:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @param  path: pointer to the logical drive path
+  78:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @param  lun : not used
+  79:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @retval Returns 0 in case of success, otherwise 1.
+  80:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   */
+  81:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** uint8_t FATFS_UnLinkDriverEx(char *path, uint8_t lun)
+  82:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** {
+ 169              		.loc 1 82 1 is_stmt 1 view -0
+ 170              		.cfi_startproc
+ 171              		@ args = 0, pretend = 0, frame = 0
+ 172              		@ frame_needed = 0, uses_anonymous_args = 0
+ 173              		@ link register save eliminated.
+  83:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   uint8_t DiskNum = 0;
+ 174              		.loc 1 83 3 view .LVU46
+  84:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   uint8_t ret = 1;
+ 175              		.loc 1 84 3 view .LVU47
+  85:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** 
+  86:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   if(disk.nbr >= 1)
+ 176              		.loc 1 86 3 view .LVU48
+ 177              		.loc 1 86 10 is_stmt 0 view .LVU49
+ 178 0000 0A4A     		ldr	r2, .L11
+ 179 0002 537A     		ldrb	r3, [r2, #9]	@ zero_extendqisi2
+ 180              		.loc 1 86 5 view .LVU50
+ 181 0004 7BB1     		cbz	r3, .L10
+ 182              	.LBB8:
+ 183              	.LBI8:
+  81:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** {
+ 184              		.loc 1 81 9 is_stmt 1 view .LVU51
+ 185              	.LVL14:
+ 186              	.LBB9:
+  87:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   {
+  88:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****     DiskNum = path[0] - '0';
+ 187              		.loc 1 88 5 view .LVU52
+  89:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****     if(disk.drv[DiskNum] != 0)
+ 188              		.loc 1 89 5 view .LVU53
+  88:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****     if(disk.drv[DiskNum] != 0)
+ 189              		.loc 1 88 13 is_stmt 0 view .LVU54
+ 190 0006 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+ 191 0008 303B     		subs	r3, r3, #48
+ 192              		.loc 1 89 16 view .LVU55
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s 			page 6
+
+
+ 193 000a DBB2     		uxtb	r3, r3
+ 194 000c 02EB8301 		add	r1, r2, r3, lsl #2
+ 195              	.LVL15:
+ 196              		.loc 1 89 7 view .LVU56
+ 197 0010 4868     		ldr	r0, [r1, #4]
+ 198              	.LVL16:
+ 199              		.loc 1 89 7 view .LVU57
+ 200 0012 40B1     		cbz	r0, .L10
+  90:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****     {
+  91:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****       disk.drv[DiskNum] = 0;
+ 201              		.loc 1 91 7 is_stmt 1 view .LVU58
+ 202              		.loc 1 91 25 is_stmt 0 view .LVU59
+ 203 0014 0020     		movs	r0, #0
+  92:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****       disk.lun[DiskNum] = 0;
+ 204              		.loc 1 92 25 view .LVU60
+ 205 0016 1344     		add	r3, r3, r2
+ 206 0018 1872     		strb	r0, [r3, #8]
+ 207              	.LVL17:
+  93:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****       disk.nbr--;
+ 208              		.loc 1 93 11 view .LVU61
+ 209 001a 537A     		ldrb	r3, [r2, #9]	@ zero_extendqisi2
+  91:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****       disk.lun[DiskNum] = 0;
+ 210              		.loc 1 91 25 view .LVU62
+ 211 001c 4860     		str	r0, [r1, #4]
+  92:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****       disk.lun[DiskNum] = 0;
+ 212              		.loc 1 92 7 is_stmt 1 view .LVU63
+ 213              		.loc 1 93 7 view .LVU64
+ 214              		.loc 1 93 15 is_stmt 0 view .LVU65
+ 215 001e 013B     		subs	r3, r3, #1
+ 216 0020 DBB2     		uxtb	r3, r3
+ 217 0022 5372     		strb	r3, [r2, #9]
+  94:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****       ret = 0;
+ 218              		.loc 1 94 7 is_stmt 1 view .LVU66
+ 219              	.LVL18:
+ 220              		.loc 1 94 7 is_stmt 0 view .LVU67
+ 221 0024 7047     		bx	lr
+ 222              	.LVL19:
+ 223              	.L10:
+ 224              		.loc 1 94 7 view .LVU68
+ 225              	.LBE9:
+ 226              	.LBE8:
+  84:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** 
+ 227              		.loc 1 84 11 view .LVU69
+ 228 0026 0120     		movs	r0, #1
+ 229              	.LVL20:
+  95:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****     }
+  96:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   }
+  97:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** 
+  98:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   return ret;
+ 230              		.loc 1 98 3 is_stmt 1 view .LVU70
+  99:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** }
+ 231              		.loc 1 99 1 is_stmt 0 view .LVU71
+ 232 0028 7047     		bx	lr
+ 233              	.L12:
+ 234 002a 00BF     		.align	2
+ 235              	.L11:
+ 236 002c 00000000 		.word	disk
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s 			page 7
+
+
+ 237              		.cfi_endproc
+ 238              	.LFE2:
+ 240              		.section	.text.FATFS_UnLinkDriver,"ax",%progbits
+ 241              		.align	1
+ 242              		.global	FATFS_UnLinkDriver
+ 243              		.syntax unified
+ 244              		.thumb
+ 245              		.thumb_func
+ 247              	FATFS_UnLinkDriver:
+ 248              	.LVL21:
+ 249              	.LFB3:
+ 100:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** 
+ 101:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** /**
+ 102:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @brief  Unlinks a diskio driver and decrements the number of active linked
+ 103:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   *         drivers.
+ 104:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @param  path: pointer to the logical drive path
+ 105:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @retval Returns 0 in case of success, otherwise 1.
+ 106:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   */
+ 107:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** uint8_t FATFS_UnLinkDriver(char *path)
+ 108:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** {
+ 250              		.loc 1 108 1 is_stmt 1 view -0
+ 251              		.cfi_startproc
+ 252              		@ args = 0, pretend = 0, frame = 0
+ 253              		@ frame_needed = 0, uses_anonymous_args = 0
+ 254              		@ link register save eliminated.
+ 109:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   return FATFS_UnLinkDriverEx(path, 0);
+ 255              		.loc 1 109 3 view .LVU73
+ 256              		.loc 1 109 10 is_stmt 0 view .LVU74
+ 257 0000 0021     		movs	r1, #0
+ 258 0002 FFF7FEBF 		b	FATFS_UnLinkDriverEx
+ 259              	.LVL22:
+ 260              		.loc 1 109 10 view .LVU75
+ 261              		.cfi_endproc
+ 262              	.LFE3:
+ 264              		.section	.text.FATFS_GetAttachedDriversNbr,"ax",%progbits
+ 265              		.align	1
+ 266              		.global	FATFS_GetAttachedDriversNbr
+ 267              		.syntax unified
+ 268              		.thumb
+ 269              		.thumb_func
+ 271              	FATFS_GetAttachedDriversNbr:
+ 272              	.LFB4:
+ 110:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** }
+ 111:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** 
+ 112:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** /**
+ 113:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @brief  Gets number of linked drivers to the FatFs module.
+ 114:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @param  None
+ 115:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   * @retval Number of attached drivers.
+ 116:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   */
+ 117:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** uint8_t FATFS_GetAttachedDriversNbr(void)
+ 118:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** {
+ 273              		.loc 1 118 1 is_stmt 1 view -0
+ 274              		.cfi_startproc
+ 275              		@ args = 0, pretend = 0, frame = 0
+ 276              		@ frame_needed = 0, uses_anonymous_args = 0
+ 277              		@ link register save eliminated.
+ 119:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c ****   return disk.nbr;
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s 			page 8
+
+
+ 278              		.loc 1 119 3 view .LVU77
+ 279              		.loc 1 119 14 is_stmt 0 view .LVU78
+ 280 0000 014B     		ldr	r3, .L15
+ 281 0002 587A     		ldrb	r0, [r3, #9]	@ zero_extendqisi2
+ 120:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.c **** }
+ 282              		.loc 1 120 1 view .LVU79
+ 283 0004 7047     		bx	lr
+ 284              	.L16:
+ 285 0006 00BF     		.align	2
+ 286              	.L15:
+ 287 0008 00000000 		.word	disk
+ 288              		.cfi_endproc
+ 289              	.LFE4:
+ 291              		.global	disk
+ 292              		.section	.bss.disk,"aw",%nobits
+ 293              		.align	2
+ 296              	disk:
+ 297 0000 00000000 		.space	12
+ 297      00000000 
+ 297      00000000 
+ 298              		.text
+ 299              	.Letext0:
+ 300              		.file 2 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 301              		.file 3 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 302              		.file 4 "../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff.h"
+ 303              		.file 5 "../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.h"
+ 304              		.file 6 "../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.h"
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ff_gen_drv.c
+C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s:26     .text.FATFS_LinkDriverEx:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s:32     .text.FATFS_LinkDriverEx:00000000 FATFS_LinkDriverEx
+C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s:131    .text.FATFS_LinkDriverEx:0000003c $d
+C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s:296    .bss.disk:00000000 disk
+C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s:136    .text.FATFS_LinkDriver:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s:142    .text.FATFS_LinkDriver:00000000 FATFS_LinkDriver
+C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s:160    .text.FATFS_UnLinkDriverEx:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s:166    .text.FATFS_UnLinkDriverEx:00000000 FATFS_UnLinkDriverEx
+C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s:236    .text.FATFS_UnLinkDriverEx:0000002c $d
+C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s:241    .text.FATFS_UnLinkDriver:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s:247    .text.FATFS_UnLinkDriver:00000000 FATFS_UnLinkDriver
+C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s:265    .text.FATFS_GetAttachedDriversNbr:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s:271    .text.FATFS_GetAttachedDriversNbr:00000000 FATFS_GetAttachedDriversNbr
+C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s:287    .text.FATFS_GetAttachedDriversNbr:00000008 $d
+C:\Users\Antonio\AppData\Local\Temp\cclkD88o.s:293    .bss.disk:00000000 $d
+                           .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
+                           .group:00000000 wm4.ffconf.h.5.408396d4b7b8768464107f30988c29ce
+                           .group:00000000 wm4._newlib_version.h.4.411db44ea2338a62eca2f0777f81481b
+                           .group:00000000 wm4.features.h.33.e0c9f337c65cb9f22ed5f23d082bc78b
+                           .group:00000000 wm4._default_types.h.15.247e5cd201eca3442cbf5404108c4935
+                           .group:00000000 wm4._intsup.h.10.48bafbb683905c4daa4565a85aeeb264
+                           .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+                           .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+                           .group:00000000 wm4.ff.h.106.b48356f5b3b39c0e3352a7b42055ad6b
+                           .group:00000000 wm4.diskio.h.40.f14b58c437ba6a5ed4192f306a7f1740
+
+NO UNDEFINED SYMBOLS

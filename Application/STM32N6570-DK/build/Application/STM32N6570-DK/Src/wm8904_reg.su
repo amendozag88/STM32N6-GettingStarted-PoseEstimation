@@ -1,0 +1,2 @@
+Src/wm8904_reg.c:45:9:wm8904_read_reg	16	static
+Src/wm8904_reg.c:68:9:wm8904_write_reg	16	static

@@ -42,6 +42,7 @@
 
 #include "gesture_detection.h"
 #include "ninja_fruit_game.h"
+#include "simon_says_game.h"
 
 #define MAX_NUMBER_OUTPUT 5
 #define LCD_FG_WIDTH  SCREEN_WIDTH
@@ -116,6 +117,11 @@ static int lcd_fg_buffer_rd_idx;
 
 GestureDetector_t gesture_detector;  //Global for gesture detection
 NinjaGame_t ninja_game; //Global for game state
+SimonSaysGame_t simon_game; //Global for Simon Says
+
+typedef enum { GAME_MODE_NINJA = 0, GAME_MODE_SIMON } GameMode_t;
+static GameMode_t current_mode = GAME_MODE_NINJA;
+static uint32_t last_mode_switch = 0;
 
 static void SystemClock_Config(void);
 static void NPURam_enable(void);
@@ -158,6 +164,7 @@ int main(void)
   //Initialize ninja fruit game
   NinjaGame_Init(&ninja_game);
   NinjaGame_SetMode(&ninja_game, NINJA_MODE_POP);
+  SimonSays_Init(&simon_game);
   /*** Camera Init ************************************************************/
   CameraPipeline_Init(&lcd_bg_area.XSize, &lcd_bg_area.YSize, &pitch_nn);
 
@@ -235,16 +242,22 @@ int main(void)
     //End of kepoint debug print
 #endif
 
-    //ADded for the ninja fruit gaem
+    // Toggle between game modes
+    if (BSP_PB_GetState(BUTTON_USER1) == GPIO_PIN_SET && (HAL_GetTick() - last_mode_switch) > 300) {
+        current_mode = (current_mode == GAME_MODE_NINJA) ? GAME_MODE_SIMON : GAME_MODE_NINJA;
+        last_mode_switch = HAL_GetTick();
+    }
 
-    // NEW GAME UPDATE AND RENDER
-	NinjaGame_Update(&ninja_game, &gesture_detector, keypoints);
+    if (current_mode == GAME_MODE_NINJA) {
+        NinjaGame_Update(&ninja_game, &gesture_detector, keypoints);
+        Display_GameAndPoseInfo(&pp_output, ts[1] - ts[0]);
+        NinjaGame_Render(&ninja_game);
+    } else {
+        SimonSays_Update(&simon_game, keypoints);
+        Display_GameAndPoseInfo(&pp_output, ts[1] - ts[0]);
+        SimonSays_Render(&simon_game);
+    }
 
-	// Still display inference time and basic pose detection info
-	Display_GameAndPoseInfo(&pp_output, ts[1] - ts[0]);
-
-	// Render the game
-	NinjaGame_Render(&ninja_game);
 
     //    Display_NetworkOutput(&pp_output, ts[1] - ts[0]); //Replaced by Display_GameAndPoseInfo for ninja fruit
     /* Discard nn_out region (used by pp_input and pp_outputs variables) to avoid Dcache evictions during nn inference */

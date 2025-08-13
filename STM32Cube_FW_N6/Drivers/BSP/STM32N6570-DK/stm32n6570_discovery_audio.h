@@ -29,11 +29,11 @@ extern "C" {
 #include "stm32n6570_discovery_conf.h"
 #include "stm32n6570_discovery_errno.h"
 #include "../Components/Common/audio.h"
-#if defined(USE_AUDIO_CODEC_WM8904)
+//#if defined(USE_AUDIO_CODEC_WM8904)
 #include "../Components/wm8904/wm8904.h"
-#else /* USE_AUDIO_CODEC_WM8904 */
-#include "../Components/cs42l51/cs42l51.h"
-#endif /* USE_AUDIO_CODEC_WM8904 */
+//#else /* USE_AUDIO_CODEC_WM8904 */
+//#include "../Components/cs42l51/cs42l51.h"
+//#endif /* USE_AUDIO_CODEC_WM8904 */
 
 /** @addtogroup BSP
   * @{

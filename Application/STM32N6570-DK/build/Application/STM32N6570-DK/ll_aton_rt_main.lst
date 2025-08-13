@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cclCgSpg.s 			page 1
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccsLEURh.s 			page 1
 
 
    1              		.arch armv8.1-m.main
@@ -54,11 +54,11 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cclCgSpg.s 			page 1
   38              		.thumb_func
   40              	LL_ATON_RT_Main:
   41              	.LVL0:
-  42              	.LFB4832:
+  42              	.LFB4834:
    1:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c **** /**
    2:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  ******************************************************************************
    3:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  * @file    ll_aton_rt_main.c
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cclCgSpg.s 			page 2
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccsLEURh.s 			page 2
 
 
    4:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****  * @author  SRA Artificial Intelligence & Embedded Architectures
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cclCgSpg.s 			page 1
   52              		.cfi_offset 4, -8
   53              		.cfi_offset 14, -4
   54              		.loc 1 47 3 view .LVU4
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cclCgSpg.s 			page 3
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccsLEURh.s 			page 3
 
 
   55 0002 0446     		mov	r4, r0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cclCgSpg.s 			page 1
   94 002e 0128     		cmp	r0, #1
   95 0030 01D1     		bne	.L4
   63:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****     { /*** subject to change to fit also user code requirements ***/
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cclCgSpg.s 			page 4
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccsLEURh.s 			page 4
 
 
   64:../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_rt_main.c ****       LL_ATON_OSAL_WFE();
@@ -230,7 +230,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cclCgSpg.s 			page 1
  130 0050 20000000 		.word	.LC1
  131 0054 5B000000 		.word	.LC2
  132              		.cfi_endproc
- 133              	.LFE4832:
+ 133              	.LFE4834:
  135              		.section	.rodata.__func__.0,"a"
  138              	__func__.0:
  139 0000 4C4C5F41 		.ascii	"LL_ATON_RT_Main\000"
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cclCgSpg.s 			page 1
  139      52545F4D 
  139      61696E00 
  140              		.text
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cclCgSpg.s 			page 5
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccsLEURh.s 			page 5
 
 
  141              	.Letext0:
@@ -247,15 +247,15 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cclCgSpg.s 			page 1
  144              		.file 4 "../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_NN_interface.h"
  145              		.file 5 "../../Middlewares/AI_Runtime/Npu/ll_aton/ll_aton_runtime.h"
  146              		.file 6 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cclCgSpg.s 			page 6
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccsLEURh.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 ll_aton_rt_main.c
-C:\Users\Antonio\AppData\Local\Temp\cclCgSpg.s:34     .text.LL_ATON_RT_Main:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cclCgSpg.s:40     .text.LL_ATON_RT_Main:00000000 LL_ATON_RT_Main
-C:\Users\Antonio\AppData\Local\Temp\cclCgSpg.s:128    .text.LL_ATON_RT_Main:00000048 $d
-C:\Users\Antonio\AppData\Local\Temp\cclCgSpg.s:138    .rodata.__func__.0:00000000 __func__.0
+C:\Users\Antonio\AppData\Local\Temp\ccsLEURh.s:34     .text.LL_ATON_RT_Main:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccsLEURh.s:40     .text.LL_ATON_RT_Main:00000000 LL_ATON_RT_Main
+C:\Users\Antonio\AppData\Local\Temp\ccsLEURh.s:128    .text.LL_ATON_RT_Main:00000048 $d
+C:\Users\Antonio\AppData\Local\Temp\ccsLEURh.s:138    .rodata.__func__.0:00000000 __func__.0
                            .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
                            .group:00000000 wm4._newlib_version.h.4.411db44ea2338a62eca2f0777f81481b
                            .group:00000000 wm4.newlib.h.27.a82728f74da661df333d09507bfef510
@@ -296,7 +296,7 @@ C:\Users\Antonio\AppData\Local\Temp\cclCgSpg.s:138    .rodata.__func__.0:0000000
                            .group:00000000 wm4.ll_aton_NN_interface.h.391.60880269f073611ab8a2cfeebdea17d5
                            .group:00000000 wm4.ll_aton_osal.h.20.db6912f3379b6bd6fb65d7a2b7fdbb53
                            .group:00000000 wm4.ll_aton_platform.h.20.06ded592ee586a6abb6019a90ebd54df
-                           .group:00000000 wm4.stm32n6xx_hal_conf.h.21.e6f895f5dec93fd886896ef3aa220611
+                           .group:00000000 wm4.stm32n6xx_hal_conf.h.21.e108a0e1f8e9094b9ec5c3fbf543a831
                            .group:00000000 wm4.arm_cmse.h.103.a0d15a79c4c9a67da8d5831704d7248e
                            .group:00000000 wm4.stm32n6xx.h.34.80585dd08aa426c932f6311fdb7386da
                            .group:00000000 wm4.stm32n657xx.h.26.acd272cb67318cc1a4791ce2f0720ca6
@@ -307,7 +307,7 @@ C:\Users\Antonio\AppData\Local\Temp\cclCgSpg.s:138    .rodata.__func__.0:0000000
                            .group:00000000 wm4.mpu_armv8.h.32.9d72426c8e2b47753456dcb84802c5b3
                            .group:00000000 wm4.pmu_armv8.h.32.eaa95f88a71b29390b135fd81c071b6b
                            .group:00000000 wm4.core_cm55.h.4411.860dad8650880893dd57b815844f7186
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cclCgSpg.s 			page 7
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccsLEURh.s 			page 7
 
 
                            .group:00000000 wm4.cachel1_armv7.h.32.abd77761a989e008b0c60891114a33c7
@@ -337,9 +337,17 @@ C:\Users\Antonio\AppData\Local\Temp\cclCgSpg.s:138    .rodata.__func__.0:0000000
                            .group:00000000 wm4.stm32n6xx_hal_i2c.h.741.1084702632703acc669e4282b3043372
                            .group:00000000 wm4.stm32n6xx_hal_ltdc.h.21.ae1eb09930e7e550e48e418ac5849e4d
                            .group:00000000 wm4.stm32n6xx_hal_ltdc.h.1002.b13ede7fc94ed5ad1c6768a157d2149a
+                           .group:00000000 wm4.stm32n6xx_hal_mdf.h.21.6eb130451a4e0db5b8befb63f326c92c
                            .group:00000000 wm4.stm32n6xx_hal_pwr.h.21.cdb73e4869c3fed3fc84f901ec0e5f0a
                            .group:00000000 wm4.stm32n6xx_hal_pwr_ex.h.21.1a673224a58b0c1e5fad8eeda6514208
                            .group:00000000 wm4.stm32n6xx_hal_ramcfg.h.21.a62dfbb4d2c14e9a8c634a215e37bd3d
+                           .group:00000000 wm4.stm32n6xx_hal_sai.h.21.d6c5e096d8c222239b66c09476942511
+                           .group:00000000 wm4.stm32n6xx_hal_sai_ex.h.21.98cc4c637392fcbacd0a3564bad4bba3
+                           .group:00000000 wm4.stm32n6xx_hal_sai.h.825.fc46628357edde5e604f90f7e222e919
+                           .group:00000000 wm4.stm32n6xx_ll_sdmmc.h.21.a8483ddbe319d8ff397cbc0087d2c233
+                           .group:00000000 wm4.stm32n6xx_ll_dlyb.h.21.05e6efa24db86ad89cfd13eda5cfcd3e
+                           .group:00000000 wm4.stm32n6xx_hal_sd.h.71.b83d10af03e36c820c893444588bae05
+                           .group:00000000 wm4.stm32n6xx_hal_sd_ex.h.21.0294125df092827b72ace449508982b9
                            .group:00000000 wm4.stm32n6xx_hal_uart.h.21.230f549bfa0d5ebfd77bfb311b2aca15
                            .group:00000000 wm4.stm32n6xx_hal_uart_ex.h.21.a0d5511e1d0703b7b5278c8f5472b96d
                            .group:00000000 wm4.stm32n6xx_hal_xspi.h.21.e17898be2073b6b6b19faf30b4e304e9
@@ -359,3 +367,6 @@ LL_ATON_RT_Init_Network
 LL_ATON_RT_RunEpochBlock
 LL_ATON_RT_DeInit_Network
 LL_ATON_RT_RuntimeDeInit
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccsLEURh.s 			page 8
+
+

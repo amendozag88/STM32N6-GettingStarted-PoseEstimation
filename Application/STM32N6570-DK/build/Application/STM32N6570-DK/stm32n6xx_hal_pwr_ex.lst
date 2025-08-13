@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 1
 
 
    1              		.arch armv8.1-m.main
@@ -45,7 +45,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
   34              		.thumb_func
   36              	HAL_PWREx_ConfigSupply:
   37              	.LVL0:
-  38              	.LFB835:
+  38              	.LFB837:
    1:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
    2:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   ******************************************************************************
    3:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @file    stm32n6xx_hal_pwr_ex.c
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
   10:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   *           + Voltage Monitoring Functions
   11:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   *           + Memories Retention Functions
   12:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   *           + I/O Pull-Up Pull-Down Configuration Functions
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 2
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 2
 
 
   13:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   ******************************************************************************
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
   67:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****        duration of the pwr_on low pulse in Standby mode ( between ~ 0 -> 31 ms).
   68:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
   69:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****    (#) Call HAL_PWREx_GetPulseLow() function to get the minimum guaranteed
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 3
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 3
 
 
   70:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****        duration of the pwr_on low pulse in Standby mode.
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  124:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****    (#) Call HAL_PWREx_EnableVddIO4() and HAL_PWREx_DisableVddIO4()
  125:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****        functions to enable and disable the VDDIO4 supply valid.
  126:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 4
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 4
 
 
  127:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****    (#) Call HAL_PWREx_EnableVddIO5() and HAL_PWREx_DisableVddIO5()
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  181:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   */
  182:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  183:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /** @defgroup PWREx_WakeUp_Pins_Offsets PWREx Wake-Up Pins masks and offsets
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 5
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 5
 
 
  184:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @{
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  238:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  239:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****    (+) The STM32N6 series devices allows two different supply configurations:
  240:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****        Direct SMPS supply and external supply.
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 6
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 6
 
 
  241:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
   61              	.LVL1:
   62              		.loc 1 270 3 discriminator 2 view .LVU8
   63 0010 FFF7FEFF 		bl	assert_failed
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 7
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 7
 
 
   64              	.LVL2:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
   97              		.loc 1 281 24 discriminator 1 view .LVU20
   98 0034 001B     		subs	r0, r0, r4
  281:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****     {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 8
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 8
 
 
   99              		.loc 1 281 8 discriminator 1 view .LVU21
@@ -434,7 +434,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  108 0040 00000000 		.word	.LC0
  109 0044 00480256 		.word	1442990080
  110              		.cfi_endproc
- 111              	.LFE835:
+ 111              	.LFE837:
  113              		.section	.text.HAL_PWREx_GetSupplyConfig,"ax",%progbits
  114              		.align	1
  115              		.global	HAL_PWREx_GetSupplyConfig
@@ -442,7 +442,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  117              		.thumb
  118              		.thumb_func
  120              	HAL_PWREx_GetSupplyConfig:
- 121              	.LFB836:
+ 121              	.LFB838:
  289:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  290:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  291:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief Get the power supply configuration.
@@ -469,7 +469,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  136              	.L13:
  137 000c 00480256 		.word	1442990080
  138              		.cfi_endproc
- 139              	.LFE836:
+ 139              	.LFE838:
  141              		.section	.text.HAL_PWREx_ControlVoltageScaling,"ax",%progbits
  142              		.align	1
  143              		.global	HAL_PWREx_ControlVoltageScaling
@@ -478,10 +478,10 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  146              		.thumb_func
  148              	HAL_PWREx_ControlVoltageScaling:
  149              	.LVL7:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 9
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 9
 
 
- 150              	.LFB837:
+ 150              	.LFB839:
  298:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  299:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  300:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief Configure the main internal regulator output voltage.
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  323:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   /* Set the voltage range */
  324:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   MODIFY_REG(PWR->VOSCR, PWR_VOSCR_VOS, VoltageScaling);
  177              		.loc 1 324 3 is_stmt 1 view .LVU35
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 10
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 10
 
 
  178 0012 0C4D     		ldr	r5, .L21+4
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  334:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****     }
  213              		.loc 1 334 14 view .LVU48
  214 003a 0120     		movs	r0, #1
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 11
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 11
 
 
  215 003c F6E7     		b	.L18
@@ -608,7 +608,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  219 0040 00000000 		.word	.LC0
  220 0044 00480256 		.word	1442990080
  221              		.cfi_endproc
- 222              	.LFE837:
+ 222              	.LFE839:
  224              		.section	.text.HAL_PWREx_GetVoltageRange,"ax",%progbits
  225              		.align	1
  226              		.global	HAL_PWREx_GetVoltageRange
@@ -616,7 +616,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  228              		.thumb
  229              		.thumb_func
  231              	HAL_PWREx_GetVoltageRange:
- 232              	.LFB838:
+ 232              	.LFB840:
  340:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  341:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  342:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief Get the main internal regulator output voltage. Reflecting the last
@@ -645,7 +645,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  247              	.L24:
  248 000c 00480256 		.word	1442990080
  249              		.cfi_endproc
- 250              	.LFE838:
+ 250              	.LFE840:
  252              		.section	.text.HAL_PWREx_ControlStopModeVoltageScaling,"ax",%progbits
  253              		.align	1
  254              		.global	HAL_PWREx_ControlStopModeVoltageScaling
@@ -654,11 +654,11 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  257              		.thumb_func
  259              	HAL_PWREx_ControlStopModeVoltageScaling:
  260              	.LVL14:
- 261              	.LFB839:
+ 261              	.LFB841:
  351:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  352:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  353:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief Configure the main internal regulator output voltage in STOP mode.
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 12
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 12
 
 
  354:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @param  VoltageScaling : Specifies the regulator output voltage when the
@@ -718,10 +718,10 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  298 0024 00000000 		.word	.LC0
  299 0028 00480256 		.word	1442990080
  300              		.cfi_endproc
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 13
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 13
 
 
- 301              	.LFE839:
+ 301              	.LFE841:
  303              		.section	.text.HAL_PWREx_GetStopModeVoltageRange,"ax",%progbits
  304              		.align	1
  305              		.global	HAL_PWREx_GetStopModeVoltageRange
@@ -729,7 +729,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  307              		.thumb
  308              		.thumb_func
  310              	HAL_PWREx_GetStopModeVoltageRange:
- 311              	.LFB840:
+ 311              	.LFB842:
  370:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  371:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  372:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief Get the main internal regulator output voltage in STOP mode.
@@ -757,7 +757,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  326              	.L34:
  327 000c 00480256 		.word	1442990080
  328              		.cfi_endproc
- 329              	.LFE840:
+ 329              	.LFE842:
  331              		.section	.text.HAL_PWREx_EnableWakeUpPin,"ax",%progbits
  332              		.align	1
  333              		.global	HAL_PWREx_EnableWakeUpPin
@@ -766,7 +766,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  336              		.thumb_func
  338              	HAL_PWREx_EnableWakeUpPin:
  339              	.LVL18:
- 340              	.LFB841:
+ 340              	.LFB843:
  380:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  381:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @}
  382:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   */
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  388:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****  ===============================================================================
  389:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****                      ##### Wakeup Pins configuration functions #####
  390:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****  ===============================================================================
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 14
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 14
 
 
  391:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****     [..]
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  354              		.cfi_offset 4, -16
  355              		.cfi_offset 5, -12
  356              		.cfi_offset 6, -8
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 15
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 15
 
 
  357              		.cfi_offset 14, -4
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  408              		.loc 1 432 3 is_stmt 0 discriminator 1 view .LVU80
  409 0060 4FF4D871 		mov	r1, #432
  410 0064 1948     		ldr	r0, .L50
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 16
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 16
 
 
  411 0066 FFF7FEFF 		bl	assert_failed
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
   42:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   43:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __INLINE
   44:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __INLINE                               inline
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 17
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 17
 
 
   45:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
   99:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
  100:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_WRITE(addr, val)    (void)((((struct T_UINT32_WRITE *)(void *)(addr))-
  101:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 18
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 18
 
 
  102:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_READ
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  156:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** 
  157:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****   for (__zero_table_t const* pTable = &__zero_table_start__; pTable < &__zero_table_end__; ++pTable
  158:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****     for(uint32_t i=0u; i<pTable->wlen; ++i) {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 19
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 19
 
 
  159:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****       pTable->dest[i] = 0u;
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  213:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****  * Otherwise, use general registers, specified by constraint "r" */
  214:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** #if defined (__thumb__) && !defined (__thumb2__)
  215:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_OUT_REG(r) "=l" (r)
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 20
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 20
 
 
  216:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_RW_REG(r) "+l" (r)
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  270:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** {
  271:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("dsb 0xF":::"memory");
  272:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 21
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 21
 
 
  273:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  327:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** {
  328:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** #if (__GNUC__ > 4) || (__GNUC__ == 4 && __GNUC_MINOR__ >= 8)
  329:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h ****   return (int16_t)__builtin_bswap16(value);
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 22
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 22
 
 
  330:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** #else
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  424              		.loc 2 380 4 view .LVU85
  425              		.syntax unified
  426              	@ 380 "../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h" 1
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 23
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 23
 
 
  427 006e 90FAA0F3 		rbit r3, r0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  443              	.LVL27:
  444              		.loc 2 418 10 discriminator 1 view .LVU91
  445              	.LBE21:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 24
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 24
 
 
  446              	.LBE20:
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  485              	.LBB26:
  486              	.LBI26:
  373:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 25
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 25
 
 
  487              		.loc 2 373 31 view .LVU109
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  523              	.LBB30:
  524              	.LBI30:
  373:../../STM32Cube_FW_N6/Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 26
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 26
 
 
  525              		.loc 2 373 31 is_stmt 1 view .LVU126
@@ -1557,8 +1557,8 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  564 00d0 00480256 		.word	1442990080
  565 00d4 00500256 		.word	1442992128
  566              		.cfi_endproc
- 567              	.LFE841:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 27
+ 567              	.LFE843:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 27
 
 
  569              		.section	.text.HAL_PWREx_EnableBkupRAMRetention,"ax",%progbits
@@ -1568,7 +1568,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  573              		.thumb
  574              		.thumb_func
  576              	HAL_PWREx_EnableBkupRAMRetention:
- 577              	.LFB842:
+ 577              	.LFB844:
  450:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  451:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @}
  452:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   */
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  496:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** void HAL_PWREx_EnableBkupRAMRetention(void)
  497:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** {
  578              		.loc 1 497 1 is_stmt 1 view -0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 28
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 28
 
 
  579              		.cfi_startproc
@@ -1639,7 +1639,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  592              	.L53:
  593 000c 00480256 		.word	1442990080
  594              		.cfi_endproc
- 595              	.LFE842:
+ 595              	.LFE844:
  597              		.section	.text.HAL_PWREx_DisableBkupRAMRetention,"ax",%progbits
  598              		.align	1
  599              		.global	HAL_PWREx_DisableBkupRAMRetention
@@ -1647,7 +1647,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  601              		.thumb
  602              		.thumb_func
  604              	HAL_PWREx_DisableBkupRAMRetention:
- 605              	.LFB843:
+ 605              	.LFB845:
  500:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  501:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  502:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Disable the Backup RAM retention in Standby and VBAT modes.
@@ -1676,9 +1676,9 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  620              	.L56:
  621 000c 00480256 		.word	1442990080
  622              		.cfi_endproc
- 623              	.LFE843:
+ 623              	.LFE845:
  625              		.section	.text.HAL_PWREx_EnableTCMRetention,"ax",%progbits
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 29
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 29
 
 
  626              		.align	1
@@ -1687,7 +1687,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  629              		.thumb
  630              		.thumb_func
  632              	HAL_PWREx_EnableTCMRetention:
- 633              	.LFB844:
+ 633              	.LFB846:
  511:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  512:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  513:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief Enable the TCM RAMs retention in Standby mode.
@@ -1714,7 +1714,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  648              	.L59:
  649 000c 00480256 		.word	1442990080
  650              		.cfi_endproc
- 651              	.LFE844:
+ 651              	.LFE846:
  653              		.section	.text.HAL_PWREx_DisableTCMRetention,"ax",%progbits
  654              		.align	1
  655              		.global	HAL_PWREx_DisableTCMRetention
@@ -1722,7 +1722,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  657              		.thumb
  658              		.thumb_func
  660              	HAL_PWREx_DisableTCMRetention:
- 661              	.LFB845:
+ 661              	.LFB847:
  520:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  521:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  522:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief Disable the TCM RAMs retention in Standby mode.
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  527:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   CLEAR_BIT(PWR->CR4, PWR_CR4_TCMRBSEN);
  667              		.loc 1 527 3 view .LVU152
  668 0000 024A     		ldr	r2, .L62
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 30
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 30
 
 
  669 0002 D368     		ldr	r3, [r2, #12]
@@ -1752,7 +1752,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  676              	.L62:
  677 000c 00480256 		.word	1442990080
  678              		.cfi_endproc
- 679              	.LFE845:
+ 679              	.LFE847:
  681              		.section	.text.HAL_PWREx_EnableTCMFLXRetention,"ax",%progbits
  682              		.align	1
  683              		.global	HAL_PWREx_EnableTCMFLXRetention
@@ -1760,7 +1760,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  685              		.thumb
  686              		.thumb_func
  688              	HAL_PWREx_EnableTCMFLXRetention:
- 689              	.LFB846:
+ 689              	.LFB848:
  529:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  530:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  531:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief Enable the I-TCM FLEXMEM retention in Standby mode.
@@ -1787,7 +1787,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  704              	.L65:
  705 000c 00480256 		.word	1442990080
  706              		.cfi_endproc
- 707              	.LFE846:
+ 707              	.LFE848:
  709              		.section	.text.HAL_PWREx_DisableTCMFLXRetention,"ax",%progbits
  710              		.align	1
  711              		.global	HAL_PWREx_DisableTCMFLXRetention
@@ -1795,10 +1795,10 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  713              		.thumb
  714              		.thumb_func
  716              	HAL_PWREx_DisableTCMFLXRetention:
- 717              	.LFB847:
+ 717              	.LFB849:
  538:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  539:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 31
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 31
 
 
  540:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief Disable the I-TCM FLEXMEM retention in Standby mode.
@@ -1825,7 +1825,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  732              	.L68:
  733 000c 00480256 		.word	1442990080
  734              		.cfi_endproc
- 735              	.LFE847:
+ 735              	.LFE849:
  737              		.section	.text.HAL_PWREx_SetPulseLow,"ax",%progbits
  738              		.align	1
  739              		.global	HAL_PWREx_SetPulseLow
@@ -1834,7 +1834,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  742              		.thumb_func
  744              	HAL_PWREx_SetPulseLow:
  745              	.LVL32:
- 746              	.LFB848:
+ 746              	.LFB850:
  547:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  548:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @}
  549:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   */
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  567:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****                            the pwr_on low pulse in Standby mode.
  568:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   *          This parameter can be a value between 0 and 31:
  569:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   *            0: No guaranteed minimum low time.
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 32
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 32
 
 
  570:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   *            1: 1* 32 LSI cycles= ~ 1 ms guaranteed minimum low time.
@@ -1913,18 +1913,18 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  783 0024 00000000 		.word	.LC0
  784 0028 00480256 		.word	1442990080
  785              		.cfi_endproc
- 786              	.LFE848:
+ 786              	.LFE850:
  788              		.section	.text.HAL_PWREx_GetPulseLow,"ax",%progbits
  789              		.align	1
  790              		.global	HAL_PWREx_GetPulseLow
  791              		.syntax unified
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 33
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 33
 
 
  792              		.thumb
  793              		.thumb_func
  795              	HAL_PWREx_GetPulseLow:
- 796              	.LFB849:
+ 796              	.LFB851:
  581:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  582:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  583:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief Get the pwr_on pulse low configuration.
@@ -1953,7 +1953,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  811              	.L75:
  812 000c 00480256 		.word	1442990080
  813              		.cfi_endproc
- 814              	.LFE849:
+ 814              	.LFE851:
  816              		.section	.text.HAL_PWREx_EnableSMPSPWM,"ax",%progbits
  817              		.align	1
  818              		.global	HAL_PWREx_EnableSMPSPWM
@@ -1961,7 +1961,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  820              		.thumb
  821              		.thumb_func
  823              	HAL_PWREx_EnableSMPSPWM:
- 824              	.LFB850:
+ 824              	.LFB852:
  592:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  593:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  594:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Enable SMPS low-power mode (SVOS range 3 only).
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  600:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   SET_BIT(PWR->CR1, PWR_CR1_LPDS08V);
  830              		.loc 1 600 3 view .LVU175
  831 0000 024A     		ldr	r2, .L78
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 34
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 34
 
 
  832 0002 1368     		ldr	r3, [r2]
@@ -1992,7 +1992,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  839              	.L78:
  840 000c 00480256 		.word	1442990080
  841              		.cfi_endproc
- 842              	.LFE850:
+ 842              	.LFE852:
  844              		.section	.text.HAL_PWREx_DisableSMPSPWM,"ax",%progbits
  845              		.align	1
  846              		.global	HAL_PWREx_DisableSMPSPWM
@@ -2000,7 +2000,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  848              		.thumb
  849              		.thumb_func
  851              	HAL_PWREx_DisableSMPSPWM:
- 852              	.LFB851:
+ 852              	.LFB853:
  602:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  603:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  604:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Disable SMPS low-power mode (SVOS range 3 only).
@@ -2027,7 +2027,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  867              	.L81:
  868 000c 00480256 		.word	1442990080
  869              		.cfi_endproc
- 870              	.LFE851:
+ 870              	.LFE853:
  872              		.section	.text.HAL_PWREx_EnablePullDownOutput,"ax",%progbits
  873              		.align	1
  874              		.global	HAL_PWREx_EnablePullDownOutput
@@ -2035,10 +2035,10 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  876              		.thumb
  877              		.thumb_func
  879              	HAL_PWREx_EnablePullDownOutput:
- 880              	.LFB852:
+ 880              	.LFB854:
  611:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  612:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 35
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 35
 
 
  613:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Enable the pull down on output voltage during power-down mode.
@@ -2065,7 +2065,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  895              	.L84:
  896 000c 00480256 		.word	1442990080
  897              		.cfi_endproc
- 898              	.LFE852:
+ 898              	.LFE854:
  900              		.section	.text.HAL_PWREx_DisablePullDownOutput,"ax",%progbits
  901              		.align	1
  902              		.global	HAL_PWREx_DisablePullDownOutput
@@ -2073,7 +2073,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  904              		.thumb
  905              		.thumb_func
  907              	HAL_PWREx_DisablePullDownOutput:
- 908              	.LFB853:
+ 908              	.LFB855:
  620:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  621:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  622:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Disable the pull down on output voltage during power-down mode.
@@ -2098,12 +2098,12 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  921              	.L88:
  922              		.align	2
  923              	.L87:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 36
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 36
 
 
  924 000c 00480256 		.word	1442990080
  925              		.cfi_endproc
- 926              	.LFE853:
+ 926              	.LFE855:
  928              		.section	.text.HAL_PWREx_EnableMonitoring,"ax",%progbits
  929              		.align	1
  930              		.global	HAL_PWREx_EnableMonitoring
@@ -2111,7 +2111,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  932              		.thumb
  933              		.thumb_func
  935              	HAL_PWREx_EnableMonitoring:
- 936              	.LFB854:
+ 936              	.LFB856:
  629:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  630:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @}
  631:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   */
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  672:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   */
  673:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** void HAL_PWREx_EnableMonitoring(void)
  674:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 37
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 37
 
 
  937              		.loc 1 674 1 is_stmt 1 view -0
@@ -2181,7 +2181,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  951              	.L90:
  952 000c 00480256 		.word	1442990080
  953              		.cfi_endproc
- 954              	.LFE854:
+ 954              	.LFE856:
  956              		.section	.text.HAL_PWREx_DisableMonitoring,"ax",%progbits
  957              		.align	1
  958              		.global	HAL_PWREx_DisableMonitoring
@@ -2189,7 +2189,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  960              		.thumb
  961              		.thumb_func
  963              	HAL_PWREx_DisableMonitoring:
- 964              	.LFB855:
+ 964              	.LFB857:
  678:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  679:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  680:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief Disable the VBAT and temperature monitoring.
@@ -2218,11 +2218,11 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  978              		.align	2
  979              	.L93:
  980 000c 00480256 		.word	1442990080
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 38
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 38
 
 
  981              		.cfi_endproc
- 982              	.LFE855:
+ 982              	.LFE857:
  984              		.section	.text.HAL_PWREx_GetTemperatureLevel,"ax",%progbits
  985              		.align	1
  986              		.global	HAL_PWREx_GetTemperatureLevel
@@ -2230,7 +2230,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  988              		.thumb
  989              		.thumb_func
  991              	HAL_PWREx_GetTemperatureLevel:
- 992              	.LFB856:
+ 992              	.LFB858:
  690:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  691:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  692:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief Indicate whether the junction temperature is between, above or below
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1016 001a 1846     		movne	r0, r3
  1017              	.LVL37:
  1018              		.loc 1 710 11 view .LVU200
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 39
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 39
 
 
  1019 001c 1046     		moveq	r0, r2
@@ -2300,7 +2300,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1024              	.L100:
  1025 0020 00480256 		.word	1442990080
  1026              		.cfi_endproc
- 1027              	.LFE856:
+ 1027              	.LFE858:
  1029              		.section	.text.HAL_PWREx_GetVBATLevel,"ax",%progbits
  1030              		.align	1
  1031              		.global	HAL_PWREx_GetVBATLevel
@@ -2308,7 +2308,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1033              		.thumb
  1034              		.thumb_func
  1036              	HAL_PWREx_GetVBATLevel:
- 1037              	.LFB857:
+ 1037              	.LFB859:
  722:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  723:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  724:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief Indicate whether the Battery voltage level is between, above or below
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1051              	.LVL38:
  735:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  736:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   /* Check if the VBAT is below the threshold */
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 40
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 40
 
 
  737:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   if (regValue == PWR_BDCR1_VBATL)
@@ -2378,7 +2378,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1069              	.L107:
  1070 0020 00480256 		.word	1442990080
  1071              		.cfi_endproc
- 1072              	.LFE857:
+ 1072              	.LFE859:
  1074              		.section	.text.HAL_PWREx_EnableVDDCOREMonitoring,"ax",%progbits
  1075              		.align	1
  1076              		.global	HAL_PWREx_EnableVDDCOREMonitoring
@@ -2386,7 +2386,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1078              		.thumb
  1079              		.thumb_func
  1081              	HAL_PWREx_EnableVDDCOREMonitoring:
- 1082              	.LFB858:
+ 1082              	.LFB860:
  754:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  755:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  756:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief Enable the VDDCORE monitoring.
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1084              		.cfi_startproc
  1085              		@ args = 0, pretend = 0, frame = 0
  1086              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 41
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 41
 
 
  1087              		@ link register save eliminated.
@@ -2417,7 +2417,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1097              	.L110:
  1098 000c 00480256 		.word	1442990080
  1099              		.cfi_endproc
- 1100              	.LFE858:
+ 1100              	.LFE860:
  1102              		.section	.text.HAL_PWREx_DisableVDDCOREMonitoring,"ax",%progbits
  1103              		.align	1
  1104              		.global	HAL_PWREx_DisableVDDCOREMonitoring
@@ -2425,7 +2425,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1106              		.thumb
  1107              		.thumb_func
  1109              	HAL_PWREx_DisableVDDCOREMonitoring:
- 1110              	.LFB859:
+ 1110              	.LFB861:
  764:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  765:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  766:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief Disable the VDDCORE monitoring.
@@ -2453,19 +2453,19 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1125              	.L113:
  1126 000c 00480256 		.word	1442990080
  1127              		.cfi_endproc
- 1128              	.LFE859:
+ 1128              	.LFE861:
  1130              		.section	.text.HAL_PWREx_ConfigVDDCOREVM,"ax",%progbits
  1131              		.align	1
  1132              		.global	HAL_PWREx_ConfigVDDCOREVM
  1133              		.syntax unified
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 42
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 42
 
 
  1134              		.thumb
  1135              		.thumb_func
  1137              	HAL_PWREx_ConfigVDDCOREVM:
  1138              	.LVL40:
- 1139              	.LFB860:
+ 1139              	.LFB862:
  774:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  775:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  776:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Configure the VDDCORE voltage detector low-level selection.
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1176 0028 FFF7FEFF 		bl	assert_failed
  1177              	.LVL43:
  1178 002c 02E0     		b	.L117
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 43
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 43
 
 
  1179              	.L118:
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  798:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****     __HAL_PWR_VCOREVM_EXTI_ENABLE_IT();
  1216              		.loc 1 798 5 is_stmt 1 view .LVU238
  1217 0070 42BF     		ittt	mi
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 44
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 44
 
 
  1218 0072 D3F8A010 		ldrmi	r1, [r3, #160]
@@ -2638,11 +2638,11 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1252 00ac 00000000 		.word	.LC0
  1253 00b0 00500256 		.word	1442992128
  1254 00b4 00480256 		.word	1442990080
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 45
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 45
 
 
  1255              		.cfi_endproc
- 1256              	.LFE860:
+ 1256              	.LFE862:
  1258              		.section	.text.HAL_PWREx_GetVDDCORELevel,"ax",%progbits
  1259              		.align	1
  1260              		.global	HAL_PWREx_GetVDDCORELevel
@@ -2650,7 +2650,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1262              		.thumb
  1263              		.thumb_func
  1265              	HAL_PWREx_GetVDDCORELevel:
- 1266              	.LFB861:
+ 1266              	.LFB863:
  819:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  820:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  821:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief Indicate whether the VDDCORE level is between, above or below
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1290 001a 1846     		movne	r0, r3
  1291              	.LVL46:
  1292              		.loc 1 839 11 view .LVU257
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 46
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 46
 
 
  1293 001c 1046     		moveq	r0, r2
@@ -2720,7 +2720,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1298              	.L149:
  1299 0020 00480256 		.word	1442990080
  1300              		.cfi_endproc
- 1301              	.LFE861:
+ 1301              	.LFE863:
  1303              		.section	.text.HAL_PWREx_ConfigVddIORange,"ax",%progbits
  1304              		.align	1
  1305              		.global	HAL_PWREx_ConfigVddIORange
@@ -2729,7 +2729,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1308              		.thumb_func
  1310              	HAL_PWREx_ConfigVddIORange:
  1311              	.LVL47:
- 1312              	.LFB862:
+ 1312              	.LFB864:
  851:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  852:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  853:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Configure the VDD I/O voltage range.
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1316              		@ frame_needed = 0, uses_anonymous_args = 0
  873:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   /* Check the parameters */
  874:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   assert_param(IS_PWR_VDDIO(VddIOPort));
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 47
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 47
 
 
  1317              		.loc 1 874 3 view .LVU260
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1365 0032 F6D9     		bls	.L154
  1366 0034 F0E7     		b	.L155
  1367              	.LVL53:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 48
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 48
 
 
  1368              	.L161:
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1395 0060 EFE7     		b	.L163
  1396              	.L158:
  892:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****       break;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 49
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 49
 
 
  1397              		.loc 1 892 7 view .LVU277
@@ -2908,7 +2908,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1418 0084 00000000 		.word	.LC0
  1419 0088 00480256 		.word	1442990080
  1420              		.cfi_endproc
- 1421              	.LFE862:
+ 1421              	.LFE864:
  1423              		.section	.text.HAL_PWREx_GetVddIORange,"ax",%progbits
  1424              		.align	1
  1425              		.global	HAL_PWREx_GetVddIORange
@@ -2917,7 +2917,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1428              		.thumb_func
  1430              	HAL_PWREx_GetVddIORange:
  1431              	.LVL55:
- 1432              	.LFB863:
+ 1432              	.LFB865:
  903:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  904:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  905:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Configure the VDD I/O voltage range.
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1434              		.cfi_startproc
  1435              		@ args = 0, pretend = 0, frame = 0
  1436              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 50
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 50
 
 
  919:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   uint32_t voltage_range = 0U;
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  949:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   return voltage_range;
  950:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** }
  1459              		.loc 1 950 1 view .LVU291
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 51
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 51
 
 
  1460 0012 08BD     		pop	{r3, pc}
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  935:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****       break;
  1502              		.loc 1 935 7 view .LVU304
  935:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****       break;
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 52
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 52
 
 
  1503              		.loc 1 935 24 is_stmt 0 view .LVU305
@@ -3091,7 +3091,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1524 0044 00000000 		.word	.LC0
  1525 0048 00480256 		.word	1442990080
  1526              		.cfi_endproc
- 1527              	.LFE863:
+ 1527              	.LFE865:
  1529              		.section	.text.HAL_PWREx_EnableVddIO4RangeSTBY,"ax",%progbits
  1530              		.align	1
  1531              		.global	HAL_PWREx_EnableVddIO4RangeSTBY
@@ -3099,7 +3099,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1533              		.thumb
  1534              		.thumb_func
  1536              	HAL_PWREx_EnableVddIO4RangeSTBY:
- 1537              	.LFB864:
+ 1537              	.LFB866:
  951:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  952:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  953:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Enable VDD IO4 voltage range Standby mode.
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1540              		@ args = 0, pretend = 0, frame = 0
  1541              		@ frame_needed = 0, uses_anonymous_args = 0
  1542              		@ link register save eliminated.
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 53
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 53
 
 
  964:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   SET_BIT(PWR->SVMCR1, PWR_SVMCR1_VDDIO4VRSTBY);
@@ -3135,7 +3135,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1552              	.L179:
  1553 000c 00480256 		.word	1442990080
  1554              		.cfi_endproc
- 1555              	.LFE864:
+ 1555              	.LFE866:
  1557              		.section	.text.HAL_PWREx_DisableVddIO4RangeSTBY,"ax",%progbits
  1558              		.align	1
  1559              		.global	HAL_PWREx_DisableVddIO4RangeSTBY
@@ -3143,7 +3143,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1561              		.thumb
  1562              		.thumb_func
  1564              	HAL_PWREx_DisableVddIO4RangeSTBY:
- 1565              	.LFB865:
+ 1565              	.LFB867:
  966:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  967:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  968:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Disable VDD IO4 voltage range Standby mode.
@@ -3170,7 +3170,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1580              	.L182:
  1581 000c 00480256 		.word	1442990080
  1582              		.cfi_endproc
- 1583              	.LFE865:
+ 1583              	.LFE867:
  1585              		.section	.text.HAL_PWREx_EnableVddIO5RangeSTBY,"ax",%progbits
  1586              		.align	1
  1587              		.global	HAL_PWREx_EnableVddIO5RangeSTBY
@@ -3178,10 +3178,10 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1589              		.thumb
  1590              		.thumb_func
  1592              	HAL_PWREx_EnableVddIO5RangeSTBY:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 54
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 54
 
 
- 1593              	.LFB866:
+ 1593              	.LFB868:
  975:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  976:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  977:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Enable VDD IO5 voltage range Standby mode.
@@ -3214,7 +3214,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1608              	.L185:
  1609 000c 00480256 		.word	1442990080
  1610              		.cfi_endproc
- 1611              	.LFE866:
+ 1611              	.LFE868:
  1613              		.section	.text.HAL_PWREx_DisableVddIO5RangeSTBY,"ax",%progbits
  1614              		.align	1
  1615              		.global	HAL_PWREx_DisableVddIO5RangeSTBY
@@ -3222,7 +3222,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1617              		.thumb
  1618              		.thumb_func
  1620              	HAL_PWREx_DisableVddIO5RangeSTBY:
- 1621              	.LFB867:
+ 1621              	.LFB869:
  990:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
  991:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
  992:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Disable VDD IO5 voltage range Standby mode.
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  997:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   CLEAR_BIT(PWR->SVMCR2, PWR_SVMCR2_VDDIO5VRSTBY);
  1627              		.loc 1 997 3 view .LVU322
  1628 0000 024A     		ldr	r2, .L188
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 55
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 55
 
 
  1629 0002 936B     		ldr	r3, [r2, #56]
@@ -3252,7 +3252,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1636              	.L188:
  1637 000c 00480256 		.word	1442990080
  1638              		.cfi_endproc
- 1639              	.LFE867:
+ 1639              	.LFE869:
  1641              		.section	.text.HAL_PWREx_EnableVddUSB,"ax",%progbits
  1642              		.align	1
  1643              		.global	HAL_PWREx_EnableVddUSB
@@ -3260,7 +3260,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1645              		.thumb
  1646              		.thumb_func
  1648              	HAL_PWREx_EnableVddUSB:
- 1649              	.LFB868:
+ 1649              	.LFB870:
  999:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1000:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1001:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Enable VDDUSB supply valid.
@@ -3289,7 +3289,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1664              	.L191:
  1665 000c 00480256 		.word	1442990080
  1666              		.cfi_endproc
- 1667              	.LFE868:
+ 1667              	.LFE870:
  1669              		.section	.text.HAL_PWREx_DisableVddUSB,"ax",%progbits
  1670              		.align	1
  1671              		.global	HAL_PWREx_DisableVddUSB
@@ -3297,8 +3297,8 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1673              		.thumb
  1674              		.thumb_func
  1676              	HAL_PWREx_DisableVddUSB:
- 1677              	.LFB869:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 56
+ 1677              	.LFB871:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 56
 
 
 1010:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
@@ -3327,7 +3327,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1692              	.L194:
  1693 000c 00480256 		.word	1442990080
  1694              		.cfi_endproc
- 1695              	.LFE869:
+ 1695              	.LFE871:
  1697              		.section	.text.HAL_PWREx_EnableVddIO2,"ax",%progbits
  1698              		.align	1
  1699              		.global	HAL_PWREx_EnableVddIO2
@@ -3335,7 +3335,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1701              		.thumb
  1702              		.thumb_func
  1704              	HAL_PWREx_EnableVddIO2:
- 1705              	.LFB870:
+ 1705              	.LFB872:
 1019:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1020:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1021:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Enable VDDIO2 supply valid.
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
 1028:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** }
  1716              		.loc 1 1028 1 is_stmt 0 view .LVU332
  1717 000a 7047     		bx	lr
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 57
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 57
 
 
  1718              	.L198:
@@ -3366,7 +3366,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1720              	.L197:
  1721 000c 00480256 		.word	1442990080
  1722              		.cfi_endproc
- 1723              	.LFE870:
+ 1723              	.LFE872:
  1725              		.section	.text.HAL_PWREx_DisableVddIO2,"ax",%progbits
  1726              		.align	1
  1727              		.global	HAL_PWREx_DisableVddIO2
@@ -3374,7 +3374,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1729              		.thumb
  1730              		.thumb_func
  1732              	HAL_PWREx_DisableVddIO2:
- 1733              	.LFB871:
+ 1733              	.LFB873:
 1029:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1030:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1031:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Disable VDDIO2 supply valid.
@@ -3401,7 +3401,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1748              	.L200:
  1749 000c 00480256 		.word	1442990080
  1750              		.cfi_endproc
- 1751              	.LFE871:
+ 1751              	.LFE873:
  1753              		.section	.text.HAL_PWREx_EnableVddIO3,"ax",%progbits
  1754              		.align	1
  1755              		.global	HAL_PWREx_EnableVddIO3
@@ -3409,7 +3409,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1757              		.thumb
  1758              		.thumb_func
  1760              	HAL_PWREx_EnableVddIO3:
- 1761              	.LFB872:
+ 1761              	.LFB874:
 1038:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1039:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1040:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Enable VDDIO3 supply valid.
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
 1043:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   */
 1044:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** void HAL_PWREx_EnableVddIO3(void)
 1045:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 58
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 58
 
 
  1762              		.loc 1 1045 1 is_stmt 1 view -0
@@ -3440,7 +3440,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1776              	.L203:
  1777 000c 00480256 		.word	1442990080
  1778              		.cfi_endproc
- 1779              	.LFE872:
+ 1779              	.LFE874:
  1781              		.section	.text.HAL_PWREx_DisableVddIO3,"ax",%progbits
  1782              		.align	1
  1783              		.global	HAL_PWREx_DisableVddIO3
@@ -3448,7 +3448,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1785              		.thumb
  1786              		.thumb_func
  1788              	HAL_PWREx_DisableVddIO3:
- 1789              	.LFB873:
+ 1789              	.LFB875:
 1048:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1049:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1050:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Disable VDDIO3 supply valid.
@@ -3475,10 +3475,10 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1804              	.L206:
  1805 000c 00480256 		.word	1442990080
  1806              		.cfi_endproc
- 1807              	.LFE873:
+ 1807              	.LFE875:
  1809              		.section	.text.HAL_PWREx_EnableVddIO4,"ax",%progbits
  1810              		.align	1
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 59
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 59
 
 
  1811              		.global	HAL_PWREx_EnableVddIO4
@@ -3486,7 +3486,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1813              		.thumb
  1814              		.thumb_func
  1816              	HAL_PWREx_EnableVddIO4:
- 1817              	.LFB874:
+ 1817              	.LFB876:
 1057:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1058:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1059:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Enable VDDIO4 supply valid.
@@ -3514,7 +3514,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1832              	.L209:
  1833 000c 00480256 		.word	1442990080
  1834              		.cfi_endproc
- 1835              	.LFE874:
+ 1835              	.LFE876:
  1837              		.section	.text.HAL_PWREx_DisableVddIO4,"ax",%progbits
  1838              		.align	1
  1839              		.global	HAL_PWREx_DisableVddIO4
@@ -3522,7 +3522,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1841              		.thumb
  1842              		.thumb_func
  1844              	HAL_PWREx_DisableVddIO4:
- 1845              	.LFB875:
+ 1845              	.LFB877:
 1067:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1068:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1069:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Disable VDDIO4 supply valid.
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
 1074:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   CLEAR_BIT(PWR->SVMCR1, PWR_SVMCR1_VDDIO4SV);
  1851              		.loc 1 1074 3 view .LVU346
  1852 0000 024A     		ldr	r2, .L212
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 60
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 60
 
 
  1853 0002 536B     		ldr	r3, [r2, #52]
@@ -3552,7 +3552,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1860              	.L212:
  1861 000c 00480256 		.word	1442990080
  1862              		.cfi_endproc
- 1863              	.LFE875:
+ 1863              	.LFE877:
  1865              		.section	.text.HAL_PWREx_EnableVddIO5,"ax",%progbits
  1866              		.align	1
  1867              		.global	HAL_PWREx_EnableVddIO5
@@ -3560,7 +3560,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1869              		.thumb
  1870              		.thumb_func
  1872              	HAL_PWREx_EnableVddIO5:
- 1873              	.LFB876:
+ 1873              	.LFB878:
 1076:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1077:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1078:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Enable VDDIO5 supply valid.
@@ -3588,7 +3588,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1888              	.L215:
  1889 000c 00480256 		.word	1442990080
  1890              		.cfi_endproc
- 1891              	.LFE876:
+ 1891              	.LFE878:
  1893              		.section	.text.HAL_PWREx_DisableVddIO5,"ax",%progbits
  1894              		.align	1
  1895              		.global	HAL_PWREx_DisableVddIO5
@@ -3596,9 +3596,9 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1897              		.thumb
  1898              		.thumb_func
  1900              	HAL_PWREx_DisableVddIO5:
- 1901              	.LFB877:
+ 1901              	.LFB879:
 1086:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 61
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 61
 
 
 1087:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
@@ -3626,7 +3626,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1916              	.L218:
  1917 000c 00480256 		.word	1442990080
  1918              		.cfi_endproc
- 1919              	.LFE877:
+ 1919              	.LFE879:
  1921              		.section	.text.HAL_PWREx_EnableVddA,"ax",%progbits
  1922              		.align	1
  1923              		.global	HAL_PWREx_EnableVddA
@@ -3634,7 +3634,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1925              		.thumb
  1926              		.thumb_func
  1928              	HAL_PWREx_EnableVddA:
- 1929              	.LFB878:
+ 1929              	.LFB880:
 1095:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1096:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1097:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Enable VDDA supply valid.
@@ -3658,14 +3658,14 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1940              		.loc 1 1104 1 is_stmt 0 view .LVU356
  1941 000a 7047     		bx	lr
  1942              	.L222:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 62
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 62
 
 
  1943              		.align	2
  1944              	.L221:
  1945 000c 00480256 		.word	1442990080
  1946              		.cfi_endproc
- 1947              	.LFE878:
+ 1947              	.LFE880:
  1949              		.section	.text.HAL_PWREx_DisableVddA,"ax",%progbits
  1950              		.align	1
  1951              		.global	HAL_PWREx_DisableVddA
@@ -3673,7 +3673,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1953              		.thumb
  1954              		.thumb_func
  1956              	HAL_PWREx_DisableVddA:
- 1957              	.LFB879:
+ 1957              	.LFB881:
 1105:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1106:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1107:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Disable VDDA supply valid.
@@ -3700,7 +3700,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1972              	.L224:
  1973 000c 00480256 		.word	1442990080
  1974              		.cfi_endproc
- 1975              	.LFE879:
+ 1975              	.LFE881:
  1977              		.section	.text.HAL_PWREx_EnableVddUSBVMEN,"ax",%progbits
  1978              		.align	1
  1979              		.global	HAL_PWREx_EnableVddUSBVMEN
@@ -3708,7 +3708,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  1981              		.thumb
  1982              		.thumb_func
  1984              	HAL_PWREx_EnableVddUSBVMEN:
- 1985              	.LFB880:
+ 1985              	.LFB882:
 1114:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1115:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1116:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Enable the VDD33USB independent USB 33 voltage monitor.
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
 1120:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** {
  1986              		.loc 1 1120 1 is_stmt 1 view -0
  1987              		.cfi_startproc
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 63
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 63
 
 
  1988              		@ args = 0, pretend = 0, frame = 0
@@ -3738,7 +3738,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2000              	.L227:
  2001 000c 00480256 		.word	1442990080
  2002              		.cfi_endproc
- 2003              	.LFE880:
+ 2003              	.LFE882:
  2005              		.section	.text.HAL_PWREx_DisableVddUSBVMEN,"ax",%progbits
  2006              		.align	1
  2007              		.global	HAL_PWREx_DisableVddUSBVMEN
@@ -3746,7 +3746,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2009              		.thumb
  2010              		.thumb_func
  2012              	HAL_PWREx_DisableVddUSBVMEN:
- 2013              	.LFB881:
+ 2013              	.LFB883:
 1123:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1124:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1125:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Disable the VDD33USB independent USB 33 voltage monitor.
@@ -3773,18 +3773,18 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2028              	.L230:
  2029 000c 00480256 		.word	1442990080
  2030              		.cfi_endproc
- 2031              	.LFE881:
+ 2031              	.LFE883:
  2033              		.section	.text.HAL_PWREx_EnableVddIO2VMEN,"ax",%progbits
  2034              		.align	1
  2035              		.global	HAL_PWREx_EnableVddIO2VMEN
  2036              		.syntax unified
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 64
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 64
 
 
  2037              		.thumb
  2038              		.thumb_func
  2040              	HAL_PWREx_EnableVddIO2VMEN:
- 2041              	.LFB882:
+ 2041              	.LFB884:
 1132:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1133:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1134:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Enable the VDDIO2 independent voltage monitor.
@@ -3811,7 +3811,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2056              	.L233:
  2057 000c 00480256 		.word	1442990080
  2058              		.cfi_endproc
- 2059              	.LFE882:
+ 2059              	.LFE884:
  2061              		.section	.text.HAL_PWREx_DisableVddIO2VMEN,"ax",%progbits
  2062              		.align	1
  2063              		.global	HAL_PWREx_DisableVddIO2VMEN
@@ -3819,7 +3819,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2065              		.thumb
  2066              		.thumb_func
  2068              	HAL_PWREx_DisableVddIO2VMEN:
- 2069              	.LFB883:
+ 2069              	.LFB885:
 1141:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1142:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1143:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Disable the VDDIO2 independent voltage monitor.
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2077 0002 D36B     		ldr	r3, [r2, #60]
  2078 0004 23F00103 		bic	r3, r3, #1
  2079 0008 D363     		str	r3, [r2, #60]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 65
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 65
 
 
 1149:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** }
@@ -3849,7 +3849,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2084              	.L236:
  2085 000c 00480256 		.word	1442990080
  2086              		.cfi_endproc
- 2087              	.LFE883:
+ 2087              	.LFE885:
  2089              		.section	.text.HAL_PWREx_EnableVddIO3VMEN,"ax",%progbits
  2090              		.align	1
  2091              		.global	HAL_PWREx_EnableVddIO3VMEN
@@ -3857,7 +3857,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2093              		.thumb
  2094              		.thumb_func
  2096              	HAL_PWREx_EnableVddIO3VMEN:
- 2097              	.LFB884:
+ 2097              	.LFB886:
 1150:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1151:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1152:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Enable the VDDIO3 independent voltage monitor.
@@ -3884,7 +3884,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2112              	.L239:
  2113 000c 00480256 		.word	1442990080
  2114              		.cfi_endproc
- 2115              	.LFE884:
+ 2115              	.LFE886:
  2117              		.section	.text.HAL_PWREx_DisableVddIO3VMEN,"ax",%progbits
  2118              		.align	1
  2119              		.global	HAL_PWREx_DisableVddIO3VMEN
@@ -3892,13 +3892,13 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2121              		.thumb
  2122              		.thumb_func
  2124              	HAL_PWREx_DisableVddIO3VMEN:
- 2125              	.LFB885:
+ 2125              	.LFB887:
 1159:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1160:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1161:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Disable the VDDIO3 independent voltage monitor.
 1162:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @retval None.
 1163:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   */
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 66
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 66
 
 
 1164:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** void HAL_PWREx_DisableVddIO3VMEN(void)
@@ -3922,7 +3922,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2140              	.L242:
  2141 000c 00480256 		.word	1442990080
  2142              		.cfi_endproc
- 2143              	.LFE885:
+ 2143              	.LFE887:
  2145              		.section	.text.HAL_PWREx_EnableVddIO4VMEN,"ax",%progbits
  2146              		.align	1
  2147              		.global	HAL_PWREx_EnableVddIO4VMEN
@@ -3930,7 +3930,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2149              		.thumb
  2150              		.thumb_func
  2152              	HAL_PWREx_EnableVddIO4VMEN:
- 2153              	.LFB886:
+ 2153              	.LFB888:
 1168:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1169:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1170:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Enable the VDDIO4 independent voltage monitor.
@@ -3957,8 +3957,8 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2168              	.L245:
  2169 000c 00480256 		.word	1442990080
  2170              		.cfi_endproc
- 2171              	.LFE886:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 67
+ 2171              	.LFE888:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 67
 
 
  2173              		.section	.text.HAL_PWREx_DisableVddIO4VMEN,"ax",%progbits
@@ -3968,7 +3968,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2177              		.thumb
  2178              		.thumb_func
  2180              	HAL_PWREx_DisableVddIO4VMEN:
- 2181              	.LFB887:
+ 2181              	.LFB889:
 1177:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1178:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1179:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Disable the VDDIO4 independent voltage monitor.
@@ -3995,7 +3995,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2196              	.L248:
  2197 000c 00480256 		.word	1442990080
  2198              		.cfi_endproc
- 2199              	.LFE887:
+ 2199              	.LFE889:
  2201              		.section	.text.HAL_PWREx_EnableVddIO5VMEN,"ax",%progbits
  2202              		.align	1
  2203              		.global	HAL_PWREx_EnableVddIO5VMEN
@@ -4003,7 +4003,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2205              		.thumb
  2206              		.thumb_func
  2208              	HAL_PWREx_EnableVddIO5VMEN:
- 2209              	.LFB888:
+ 2209              	.LFB890:
 1186:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1187:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1188:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Enable the VDDIO5 independent voltage monitor.
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2214              		@ link register save eliminated.
 1193:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   SET_BIT(PWR->SVMCR2, PWR_SVMCR2_VDDIO5VMEN);
  2215              		.loc 1 1193 3 view .LVU385
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 68
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 68
 
 
  2216 0000 024A     		ldr	r2, .L251
@@ -4033,7 +4033,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2224              	.L251:
  2225 000c 00480256 		.word	1442990080
  2226              		.cfi_endproc
- 2227              	.LFE888:
+ 2227              	.LFE890:
  2229              		.section	.text.HAL_PWREx_DisableVddIO5VMEN,"ax",%progbits
  2230              		.align	1
  2231              		.global	HAL_PWREx_DisableVddIO5VMEN
@@ -4041,7 +4041,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2233              		.thumb
  2234              		.thumb_func
  2236              	HAL_PWREx_DisableVddIO5VMEN:
- 2237              	.LFB889:
+ 2237              	.LFB891:
 1195:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1196:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1197:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Disable the VDDIO5 independent voltage monitor.
@@ -4068,7 +4068,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2252              	.L254:
  2253 000c 00480256 		.word	1442990080
  2254              		.cfi_endproc
- 2255              	.LFE889:
+ 2255              	.LFE891:
  2257              		.section	.text.HAL_PWREx_EnableVddAVMEN,"ax",%progbits
  2258              		.align	1
  2259              		.global	HAL_PWREx_EnableVddAVMEN
@@ -4076,9 +4076,9 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2261              		.thumb
  2262              		.thumb_func
  2264              	HAL_PWREx_EnableVddAVMEN:
- 2265              	.LFB890:
+ 2265              	.LFB892:
 1204:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 69
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 69
 
 
 1205:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
@@ -4106,7 +4106,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2280              	.L257:
  2281 000c 00480256 		.word	1442990080
  2282              		.cfi_endproc
- 2283              	.LFE890:
+ 2283              	.LFE892:
  2285              		.section	.text.HAL_PWREx_DisableVddAVMEN,"ax",%progbits
  2286              		.align	1
  2287              		.global	HAL_PWREx_DisableVddAVMEN
@@ -4114,7 +4114,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2289              		.thumb
  2290              		.thumb_func
  2292              	HAL_PWREx_DisableVddAVMEN:
- 2293              	.LFB891:
+ 2293              	.LFB893:
 1213:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1214:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1215:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Disable the VDDA18ADC independent ADC voltage monitor.
@@ -4138,13 +4138,13 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2305 000a 7047     		bx	lr
  2306              	.L261:
  2307              		.align	2
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 70
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 70
 
 
  2308              	.L260:
  2309 000c 00480256 		.word	1442990080
  2310              		.cfi_endproc
- 2311              	.LFE891:
+ 2311              	.LFE893:
  2313              		.section	.text.HAL_PWREx_ConfigPVM,"ax",%progbits
  2314              		.align	1
  2315              		.global	HAL_PWREx_ConfigPVM
@@ -4153,7 +4153,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2318              		.thumb_func
  2320              	HAL_PWREx_ConfigPVM:
  2321              	.LVL68:
- 2322              	.LFB892:
+ 2322              	.LFB894:
 1222:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1223:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1224:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  Configure the voltage monitor threshold detected by the Peripheral
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2348              		.loc 1 1235 3 is_stmt 1 view .LVU404
  2349 0014 6368     		ldr	r3, [r4, #4]
  2350 0016 63B1     		cbz	r3, .L264
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 71
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 71
 
 
  2351 0018 072B     		cmp	r3, #7
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2394              		.loc 1 1246 7 view .LVU410
  2395 006c 5A6C     		ldr	r2, [r3, #68]
  2396 006e 22F40072 		bic	r2, r2, #512
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 72
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 72
 
 
  2397 0072 5A64     		str	r2, [r3, #68]
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
 1268:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****       {
 1269:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****         __HAL_PWR_USBVM_EXTI_ENABLE_FALLING_EDGE();
  2430              		.loc 1 1269 9 is_stmt 1 view .LVU423
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 73
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 73
 
 
  2431 00a8 6D4A     		ldr	r2, .L370+4
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
 1317:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****         __HAL_PWR_IO3VM_EXTI_ENABLE_IT();
 1318:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****       }
 1319:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 74
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 74
 
 
 1320:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****       /* Configure the IO3VM in event mode */
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
 1374:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****       /* Disable EXTI IO5VM event and interrupt */
 1375:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****       __HAL_PWR_IO5VM_EXTI_DISABLE_EVENT();
 1376:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****       __HAL_PWR_IO5VM_EXTI_DISABLE_IT();
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 75
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 75
 
 
 1377:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****       __HAL_PWR_IO5VM_EXTI_DISABLE_RISING_EDGE();
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
 1431:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****       /* Configure the ADCVM in falling edge */
 1432:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****       if ((pConfigPVM->Mode & PVM_FALLING_EDGE) == PVM_FALLING_EDGE)
 1433:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****       {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 76
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 76
 
 
 1434:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****         __HAL_PWR_ADCVM_EXTI_ENABLE_FALLING_EDGE();
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
 1288:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****       {
  2473              		.loc 1 1288 7 view .LVU435
 1288:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****       {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 77
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 77
 
 
  2474              		.loc 1 1288 10 is_stmt 0 view .LVU436
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2517 0146 5A64     		str	r2, [r3, #68]
 1315:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****       {
  2518              		.loc 1 1315 7 view .LVU448
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 78
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 78
 
 
 1315:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****       {
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2560 018c 22F08002 		bic	r2, r2, #128
  2561 0190 C3F8A420 		str	r2, [r3, #164]
 1343:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****       __HAL_PWR_IO4VM_EXTI_DISABLE_RISING_EDGE();
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 79
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 79
 
 
  2562              		.loc 1 1343 7 view .LVU462
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
 1366:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****       {
  2603              		.loc 1 1366 10 is_stmt 0 view .LVU476
  2604 01e0 9307     		lsls	r3, r2, #30
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 80
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 80
 
 
  2605 01e2 7FF566AF 		bpl	.L279
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2647 0234 41F48071 		orrmi	r1, r1, #256
  2648 0238 C3F8A410 		strmi	r1, [r3, #164]
 1393:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****       {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 81
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 81
 
 
  2649              		.loc 1 1393 7 view .LVU489
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2692              		.loc 1 1414 22 is_stmt 0 view .LVU500
  2693 028e 6268     		ldr	r2, [r4, #4]
 1414:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****       {
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 82
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 82
 
 
  2694              		.loc 1 1414 10 view .LVU501
@@ -4916,9 +4916,9 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2735              	.L372:
  2736 02d4 00500256 		.word	1442992128
  2737              		.cfi_endproc
- 2738              	.LFE892:
+ 2738              	.LFE894:
  2740              		.section	.text.HAL_PWREx_VDDCORE_Rising_Callback,"ax",%progbits
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 83
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 83
 
 
  2741              		.align	1
@@ -4927,7 +4927,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2744              		.thumb
  2745              		.thumb_func
  2747              	HAL_PWREx_VDDCORE_Rising_Callback:
- 2748              	.LFB894:
+ 2748              	.LFB896:
 1445:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1446:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1447:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  This function handles the PWR PVD/PVM interrupt request.
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
 1492:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****     __HAL_PWR_PVD_EXTI_CLEAR_FALLING_FLAG();
 1493:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1494:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****     /* PWR PVD interrupt falling user callback */
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 84
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 84
 
 
 1495:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****     HAL_PWR_PVD_Falling_Callback();
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
 1549:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   if ((falling_flag & PWR_EXTI_LINE_PVM_VDDIO3) != 0U)
 1550:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   {
 1551:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****     /* Clear PVM IO3 exti pending bit */
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 85
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 85
 
 
 1552:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****     __HAL_PWR_IO3VM_EXTI_CLEAR_FALLING_FLAG();
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
 1606:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****     HAL_PWREx_ADCVM_Rising_Callback();
 1607:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   }
 1608:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 86
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 86
 
 
 1609:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   /* Check PWR PVM ADC VM exti falling flag */
@@ -5130,7 +5130,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2754              		.loc 1 1629 1 view .LVU514
  2755 0000 7047     		bx	lr
  2756              		.cfi_endproc
- 2757              	.LFE894:
+ 2757              	.LFE896:
  2759              		.section	.text.HAL_PWREx_VDDCORE_Falling_Callback,"ax",%progbits
  2760              		.align	1
  2761              		.weak	HAL_PWREx_VDDCORE_Falling_Callback
@@ -5138,7 +5138,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2763              		.thumb
  2764              		.thumb_func
  2766              	HAL_PWREx_VDDCORE_Falling_Callback:
- 2767              	.LFB909:
+ 2767              	.LFB911:
  2768              		.cfi_startproc
 1630:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1631:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
@@ -5152,18 +5152,18 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2772              		@ link register save eliminated.
  2773 0000 7047     		bx	lr
  2774              		.cfi_endproc
- 2775              	.LFE909:
+ 2775              	.LFE911:
  2777              		.section	.text.HAL_PWREx_USBVM_Rising_Callback,"ax",%progbits
  2778              		.align	1
  2779              		.weak	HAL_PWREx_USBVM_Rising_Callback
  2780              		.syntax unified
  2781              		.thumb
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 87
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 87
 
 
  2782              		.thumb_func
  2784              	HAL_PWREx_USBVM_Rising_Callback:
- 2785              	.LFB911:
+ 2785              	.LFB913:
  2786              		.cfi_startproc
 1636:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** {
 1637:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   /* NOTE : This function should not be modified; when the callback is needed,
@@ -5182,7 +5182,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2790              		@ link register save eliminated.
  2791 0000 7047     		bx	lr
  2792              		.cfi_endproc
- 2793              	.LFE911:
+ 2793              	.LFE913:
  2795              		.section	.text.HAL_PWREx_USBVM_Falling_Callback,"ax",%progbits
  2796              		.align	1
  2797              		.weak	HAL_PWREx_USBVM_Falling_Callback
@@ -5190,7 +5190,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2799              		.thumb
  2800              		.thumb_func
  2802              	HAL_PWREx_USBVM_Falling_Callback:
- 2803              	.LFB913:
+ 2803              	.LFB915:
  2804              		.cfi_startproc
 1647:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** {
 1648:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   /* NOTE : This function should not be modified; when the callback is needed,
@@ -5209,7 +5209,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2808              		@ link register save eliminated.
  2809 0000 7047     		bx	lr
  2810              		.cfi_endproc
- 2811              	.LFE913:
+ 2811              	.LFE915:
  2813              		.section	.text.HAL_PWREx_IO2VM_Rising_Callback,"ax",%progbits
  2814              		.align	1
  2815              		.weak	HAL_PWREx_IO2VM_Rising_Callback
@@ -5217,8 +5217,8 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2817              		.thumb
  2818              		.thumb_func
  2820              	HAL_PWREx_IO2VM_Rising_Callback:
- 2821              	.LFB915:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 88
+ 2821              	.LFB917:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 88
 
 
  2822              		.cfi_startproc
@@ -5239,7 +5239,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2826              		@ link register save eliminated.
  2827 0000 7047     		bx	lr
  2828              		.cfi_endproc
- 2829              	.LFE915:
+ 2829              	.LFE917:
  2831              		.section	.text.HAL_PWREx_IO2VM_Falling_Callback,"ax",%progbits
  2832              		.align	1
  2833              		.weak	HAL_PWREx_IO2VM_Falling_Callback
@@ -5247,7 +5247,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2835              		.thumb
  2836              		.thumb_func
  2838              	HAL_PWREx_IO2VM_Falling_Callback:
- 2839              	.LFB917:
+ 2839              	.LFB919:
  2840              		.cfi_startproc
 1669:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** {
 1670:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   /* NOTE : This function should not be modified; when the callback is needed,
@@ -5266,7 +5266,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2844              		@ link register save eliminated.
  2845 0000 7047     		bx	lr
  2846              		.cfi_endproc
- 2847              	.LFE917:
+ 2847              	.LFE919:
  2849              		.section	.text.HAL_PWREx_IO3VM_Rising_Callback,"ax",%progbits
  2850              		.align	1
  2851              		.weak	HAL_PWREx_IO3VM_Rising_Callback
@@ -5274,11 +5274,11 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2853              		.thumb
  2854              		.thumb_func
  2856              	HAL_PWREx_IO3VM_Rising_Callback:
- 2857              	.LFB919:
+ 2857              	.LFB921:
  2858              		.cfi_startproc
 1680:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** {
 1681:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   /* NOTE : This function should not be modified; when the callback is needed,
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 89
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 89
 
 
 1682:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****             HAL_PWREx_IO2VM_Falling_Callback() API can be implemented in the user file
@@ -5296,7 +5296,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2862              		@ link register save eliminated.
  2863 0000 7047     		bx	lr
  2864              		.cfi_endproc
- 2865              	.LFE919:
+ 2865              	.LFE921:
  2867              		.section	.text.HAL_PWREx_IO3VM_Falling_Callback,"ax",%progbits
  2868              		.align	1
  2869              		.weak	HAL_PWREx_IO3VM_Falling_Callback
@@ -5304,7 +5304,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2871              		.thumb
  2872              		.thumb_func
  2874              	HAL_PWREx_IO3VM_Falling_Callback:
- 2875              	.LFB921:
+ 2875              	.LFB923:
  2876              		.cfi_startproc
 1691:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** {
 1692:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   /* NOTE : This function should not be modified; when the callback is needed,
@@ -5323,7 +5323,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2880              		@ link register save eliminated.
  2881 0000 7047     		bx	lr
  2882              		.cfi_endproc
- 2883              	.LFE921:
+ 2883              	.LFE923:
  2885              		.section	.text.HAL_PWREx_IO4VM_Rising_Callback,"ax",%progbits
  2886              		.align	1
  2887              		.weak	HAL_PWREx_IO4VM_Rising_Callback
@@ -5331,14 +5331,14 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2889              		.thumb
  2890              		.thumb_func
  2892              	HAL_PWREx_IO4VM_Rising_Callback:
- 2893              	.LFB923:
+ 2893              	.LFB925:
  2894              		.cfi_startproc
 1702:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** {
 1703:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   /* NOTE : This function should not be modified; when the callback is needed,
 1704:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****             HAL_PWREx_IO3VM_Falling_Callback() API can be implemented in the user file
 1705:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****    */
 1706:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** }
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 90
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 90
 
 
 1707:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
@@ -5353,7 +5353,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2898              		@ link register save eliminated.
  2899 0000 7047     		bx	lr
  2900              		.cfi_endproc
- 2901              	.LFE923:
+ 2901              	.LFE925:
  2903              		.section	.text.HAL_PWREx_IO4VM_Falling_Callback,"ax",%progbits
  2904              		.align	1
  2905              		.weak	HAL_PWREx_IO4VM_Falling_Callback
@@ -5361,7 +5361,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2907              		.thumb
  2908              		.thumb_func
  2910              	HAL_PWREx_IO4VM_Falling_Callback:
- 2911              	.LFB925:
+ 2911              	.LFB927:
  2912              		.cfi_startproc
 1713:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** {
 1714:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   /* NOTE : This function should not be modified; when the callback is needed,
@@ -5380,7 +5380,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2916              		@ link register save eliminated.
  2917 0000 7047     		bx	lr
  2918              		.cfi_endproc
- 2919              	.LFE925:
+ 2919              	.LFE927:
  2921              		.section	.text.HAL_PWREx_IO5VM_Rising_Callback,"ax",%progbits
  2922              		.align	1
  2923              		.weak	HAL_PWREx_IO5VM_Rising_Callback
@@ -5388,7 +5388,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2925              		.thumb
  2926              		.thumb_func
  2928              	HAL_PWREx_IO5VM_Rising_Callback:
- 2929              	.LFB927:
+ 2929              	.LFB929:
  2930              		.cfi_startproc
 1724:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** {
 1725:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   /* NOTE : This function should not be modified; when the callback is needed,
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
 1729:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
 1730:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** /**
 1731:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @brief  PWR IO5VM interrupt Rising callback.
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 91
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 91
 
 
 1732:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @retval None.
@@ -5410,7 +5410,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2934              		@ link register save eliminated.
  2935 0000 7047     		bx	lr
  2936              		.cfi_endproc
- 2937              	.LFE927:
+ 2937              	.LFE929:
  2939              		.section	.text.HAL_PWREx_IO5VM_Falling_Callback,"ax",%progbits
  2940              		.align	1
  2941              		.weak	HAL_PWREx_IO5VM_Falling_Callback
@@ -5418,7 +5418,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2943              		.thumb
  2944              		.thumb_func
  2946              	HAL_PWREx_IO5VM_Falling_Callback:
- 2947              	.LFB929:
+ 2947              	.LFB931:
  2948              		.cfi_startproc
 1735:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** {
 1736:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   /* NOTE : This function should not be modified; when the callback is needed,
@@ -5437,7 +5437,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2952              		@ link register save eliminated.
  2953 0000 7047     		bx	lr
  2954              		.cfi_endproc
- 2955              	.LFE929:
+ 2955              	.LFE931:
  2957              		.section	.text.HAL_PWREx_ADCVM_Rising_Callback,"ax",%progbits
  2958              		.align	1
  2959              		.weak	HAL_PWREx_ADCVM_Rising_Callback
@@ -5445,7 +5445,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2961              		.thumb
  2962              		.thumb_func
  2964              	HAL_PWREx_ADCVM_Rising_Callback:
- 2965              	.LFB931:
+ 2965              	.LFB933:
  2966              		.cfi_startproc
 1746:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** {
 1747:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   /* NOTE : This function should not be modified; when the callback is needed,
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
 1754:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   * @retval None.
 1755:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   */
 1756:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** __weak void HAL_PWREx_ADCVM_Rising_Callback(void)
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 92
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 92
 
 
  2967              		.loc 1 1756 13 view -0
@@ -5467,7 +5467,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2970              		@ link register save eliminated.
  2971 0000 7047     		bx	lr
  2972              		.cfi_endproc
- 2973              	.LFE931:
+ 2973              	.LFE933:
  2975              		.section	.text.HAL_PWREx_ADCVM_Falling_Callback,"ax",%progbits
  2976              		.align	1
  2977              		.weak	HAL_PWREx_ADCVM_Falling_Callback
@@ -5475,7 +5475,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2979              		.thumb
  2980              		.thumb_func
  2982              	HAL_PWREx_ADCVM_Falling_Callback:
- 2983              	.LFB933:
+ 2983              	.LFB935:
  2984              		.cfi_startproc
 1757:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** {
 1758:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   /* NOTE : This function should not be modified; when the callback is needed,
@@ -5494,7 +5494,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2988              		@ link register save eliminated.
  2989 0000 7047     		bx	lr
  2990              		.cfi_endproc
- 2991              	.LFE933:
+ 2991              	.LFE935:
  2993              		.section	.text.HAL_PWREx_PVD_PVM_IRQHandler,"ax",%progbits
  2994              		.align	1
  2995              		.global	HAL_PWREx_PVD_PVM_IRQHandler
@@ -5502,7 +5502,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  2997              		.thumb
  2998              		.thumb_func
  3000              	HAL_PWREx_PVD_PVM_IRQHandler:
- 3001              	.LFB893:
+ 3001              	.LFB895:
 1451:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   uint32_t  rising_flag;
  3002              		.loc 1 1451 1 view -0
  3003              		.cfi_startproc
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  3009              		.loc 1 1451 1 is_stmt 0 view .LVU532
  3010 0000 70B5     		push	{r4, r5, r6, lr}
  3011              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 93
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 93
 
 
  3012              		.cfi_offset 4, -16
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  3052 0026 334B     		ldr	r3, .L453
  3053 0028 DA64     		str	r2, [r3, #76]
 1485:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   }
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 94
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 94
 
 
  3054              		.loc 1 1485 5 view .LVU547
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
 1519:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   {
  3095              		.loc 1 1519 6 is_stmt 0 view .LVU561
  3096 005c AE06     		lsls	r6, r5, #26
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 95
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 95
 
 
  3097 005e 04D5     		bpl	.L395
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
 1555:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c ****   }
  3138              		.loc 1 1555 5 view .LVU575
  3139 0090 FFF7FEFF 		bl	HAL_PWREx_IO3VM_Falling_Callback
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 96
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 96
 
 
  3140              	.LVL95:
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  3180 00c0 E105     		lsls	r1, r4, #23
  3181 00c2 05D5     		bpl	.L402
 1592:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_pwr_ex.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 97
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 97
 
 
  3182              		.loc 1 1592 5 is_stmt 1 view .LVU590
@@ -5813,12 +5813,12 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  3220              	.L453:
  3221 00f4 00500256 		.word	1442992128
  3222              		.cfi_endproc
- 3223              	.LFE893:
+ 3223              	.LFE895:
  3225              		.text
  3226              	.Letext0:
  3227              		.file 3 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
  3228              		.file 4 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 98
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 98
 
 
  3229              		.file 5 "../../STM32Cube_FW_N6/Drivers/CMSIS/Device/ST/STM32N6xx/Include/stm32n657xx.h"
@@ -5827,236 +5827,236 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 1
  3232              		.file 8 "../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Inc/stm32n6xx_hal_pwr.h"
  3233              		.file 9 "../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Inc/stm32n6xx_hal.h"
  3234              		.file 10 "Inc/stm32n6xx_hal_conf.h"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 99
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 99
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32n6xx_hal_pwr_ex.c
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:30     .text.HAL_PWREx_ConfigSupply:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:36     .text.HAL_PWREx_ConfigSupply:00000000 HAL_PWREx_ConfigSupply
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:108    .text.HAL_PWREx_ConfigSupply:00000040 $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:114    .text.HAL_PWREx_GetSupplyConfig:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:120    .text.HAL_PWREx_GetSupplyConfig:00000000 HAL_PWREx_GetSupplyConfig
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:137    .text.HAL_PWREx_GetSupplyConfig:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:142    .text.HAL_PWREx_ControlVoltageScaling:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:148    .text.HAL_PWREx_ControlVoltageScaling:00000000 HAL_PWREx_ControlVoltageScaling
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:219    .text.HAL_PWREx_ControlVoltageScaling:00000040 $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:225    .text.HAL_PWREx_GetVoltageRange:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:231    .text.HAL_PWREx_GetVoltageRange:00000000 HAL_PWREx_GetVoltageRange
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:248    .text.HAL_PWREx_GetVoltageRange:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:253    .text.HAL_PWREx_ControlStopModeVoltageScaling:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:259    .text.HAL_PWREx_ControlStopModeVoltageScaling:00000000 HAL_PWREx_ControlStopModeVoltageScaling
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:298    .text.HAL_PWREx_ControlStopModeVoltageScaling:00000024 $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:304    .text.HAL_PWREx_GetStopModeVoltageRange:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:310    .text.HAL_PWREx_GetStopModeVoltageRange:00000000 HAL_PWREx_GetStopModeVoltageRange
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:327    .text.HAL_PWREx_GetStopModeVoltageRange:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:332    .text.HAL_PWREx_EnableWakeUpPin:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:338    .text.HAL_PWREx_EnableWakeUpPin:00000000 HAL_PWREx_EnableWakeUpPin
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:563    .text.HAL_PWREx_EnableWakeUpPin:000000cc $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:570    .text.HAL_PWREx_EnableBkupRAMRetention:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:576    .text.HAL_PWREx_EnableBkupRAMRetention:00000000 HAL_PWREx_EnableBkupRAMRetention
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:593    .text.HAL_PWREx_EnableBkupRAMRetention:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:598    .text.HAL_PWREx_DisableBkupRAMRetention:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:604    .text.HAL_PWREx_DisableBkupRAMRetention:00000000 HAL_PWREx_DisableBkupRAMRetention
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:621    .text.HAL_PWREx_DisableBkupRAMRetention:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:626    .text.HAL_PWREx_EnableTCMRetention:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:632    .text.HAL_PWREx_EnableTCMRetention:00000000 HAL_PWREx_EnableTCMRetention
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:649    .text.HAL_PWREx_EnableTCMRetention:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:654    .text.HAL_PWREx_DisableTCMRetention:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:660    .text.HAL_PWREx_DisableTCMRetention:00000000 HAL_PWREx_DisableTCMRetention
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:677    .text.HAL_PWREx_DisableTCMRetention:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:682    .text.HAL_PWREx_EnableTCMFLXRetention:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:688    .text.HAL_PWREx_EnableTCMFLXRetention:00000000 HAL_PWREx_EnableTCMFLXRetention
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:705    .text.HAL_PWREx_EnableTCMFLXRetention:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:710    .text.HAL_PWREx_DisableTCMFLXRetention:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:716    .text.HAL_PWREx_DisableTCMFLXRetention:00000000 HAL_PWREx_DisableTCMFLXRetention
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:733    .text.HAL_PWREx_DisableTCMFLXRetention:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:738    .text.HAL_PWREx_SetPulseLow:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:744    .text.HAL_PWREx_SetPulseLow:00000000 HAL_PWREx_SetPulseLow
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:783    .text.HAL_PWREx_SetPulseLow:00000024 $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:789    .text.HAL_PWREx_GetPulseLow:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:795    .text.HAL_PWREx_GetPulseLow:00000000 HAL_PWREx_GetPulseLow
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:812    .text.HAL_PWREx_GetPulseLow:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:817    .text.HAL_PWREx_EnableSMPSPWM:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:823    .text.HAL_PWREx_EnableSMPSPWM:00000000 HAL_PWREx_EnableSMPSPWM
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:840    .text.HAL_PWREx_EnableSMPSPWM:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:845    .text.HAL_PWREx_DisableSMPSPWM:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:851    .text.HAL_PWREx_DisableSMPSPWM:00000000 HAL_PWREx_DisableSMPSPWM
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:868    .text.HAL_PWREx_DisableSMPSPWM:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:873    .text.HAL_PWREx_EnablePullDownOutput:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:879    .text.HAL_PWREx_EnablePullDownOutput:00000000 HAL_PWREx_EnablePullDownOutput
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:896    .text.HAL_PWREx_EnablePullDownOutput:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:901    .text.HAL_PWREx_DisablePullDownOutput:00000000 $t
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 100
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:30     .text.HAL_PWREx_ConfigSupply:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:36     .text.HAL_PWREx_ConfigSupply:00000000 HAL_PWREx_ConfigSupply
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:108    .text.HAL_PWREx_ConfigSupply:00000040 $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:114    .text.HAL_PWREx_GetSupplyConfig:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:120    .text.HAL_PWREx_GetSupplyConfig:00000000 HAL_PWREx_GetSupplyConfig
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:137    .text.HAL_PWREx_GetSupplyConfig:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:142    .text.HAL_PWREx_ControlVoltageScaling:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:148    .text.HAL_PWREx_ControlVoltageScaling:00000000 HAL_PWREx_ControlVoltageScaling
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:219    .text.HAL_PWREx_ControlVoltageScaling:00000040 $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:225    .text.HAL_PWREx_GetVoltageRange:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:231    .text.HAL_PWREx_GetVoltageRange:00000000 HAL_PWREx_GetVoltageRange
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:248    .text.HAL_PWREx_GetVoltageRange:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:253    .text.HAL_PWREx_ControlStopModeVoltageScaling:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:259    .text.HAL_PWREx_ControlStopModeVoltageScaling:00000000 HAL_PWREx_ControlStopModeVoltageScaling
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:298    .text.HAL_PWREx_ControlStopModeVoltageScaling:00000024 $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:304    .text.HAL_PWREx_GetStopModeVoltageRange:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:310    .text.HAL_PWREx_GetStopModeVoltageRange:00000000 HAL_PWREx_GetStopModeVoltageRange
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:327    .text.HAL_PWREx_GetStopModeVoltageRange:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:332    .text.HAL_PWREx_EnableWakeUpPin:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:338    .text.HAL_PWREx_EnableWakeUpPin:00000000 HAL_PWREx_EnableWakeUpPin
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:563    .text.HAL_PWREx_EnableWakeUpPin:000000cc $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:570    .text.HAL_PWREx_EnableBkupRAMRetention:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:576    .text.HAL_PWREx_EnableBkupRAMRetention:00000000 HAL_PWREx_EnableBkupRAMRetention
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:593    .text.HAL_PWREx_EnableBkupRAMRetention:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:598    .text.HAL_PWREx_DisableBkupRAMRetention:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:604    .text.HAL_PWREx_DisableBkupRAMRetention:00000000 HAL_PWREx_DisableBkupRAMRetention
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:621    .text.HAL_PWREx_DisableBkupRAMRetention:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:626    .text.HAL_PWREx_EnableTCMRetention:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:632    .text.HAL_PWREx_EnableTCMRetention:00000000 HAL_PWREx_EnableTCMRetention
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:649    .text.HAL_PWREx_EnableTCMRetention:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:654    .text.HAL_PWREx_DisableTCMRetention:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:660    .text.HAL_PWREx_DisableTCMRetention:00000000 HAL_PWREx_DisableTCMRetention
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:677    .text.HAL_PWREx_DisableTCMRetention:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:682    .text.HAL_PWREx_EnableTCMFLXRetention:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:688    .text.HAL_PWREx_EnableTCMFLXRetention:00000000 HAL_PWREx_EnableTCMFLXRetention
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:705    .text.HAL_PWREx_EnableTCMFLXRetention:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:710    .text.HAL_PWREx_DisableTCMFLXRetention:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:716    .text.HAL_PWREx_DisableTCMFLXRetention:00000000 HAL_PWREx_DisableTCMFLXRetention
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:733    .text.HAL_PWREx_DisableTCMFLXRetention:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:738    .text.HAL_PWREx_SetPulseLow:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:744    .text.HAL_PWREx_SetPulseLow:00000000 HAL_PWREx_SetPulseLow
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:783    .text.HAL_PWREx_SetPulseLow:00000024 $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:789    .text.HAL_PWREx_GetPulseLow:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:795    .text.HAL_PWREx_GetPulseLow:00000000 HAL_PWREx_GetPulseLow
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:812    .text.HAL_PWREx_GetPulseLow:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:817    .text.HAL_PWREx_EnableSMPSPWM:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:823    .text.HAL_PWREx_EnableSMPSPWM:00000000 HAL_PWREx_EnableSMPSPWM
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:840    .text.HAL_PWREx_EnableSMPSPWM:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:845    .text.HAL_PWREx_DisableSMPSPWM:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:851    .text.HAL_PWREx_DisableSMPSPWM:00000000 HAL_PWREx_DisableSMPSPWM
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:868    .text.HAL_PWREx_DisableSMPSPWM:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:873    .text.HAL_PWREx_EnablePullDownOutput:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:879    .text.HAL_PWREx_EnablePullDownOutput:00000000 HAL_PWREx_EnablePullDownOutput
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:896    .text.HAL_PWREx_EnablePullDownOutput:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:901    .text.HAL_PWREx_DisablePullDownOutput:00000000 $t
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 100
 
 
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:907    .text.HAL_PWREx_DisablePullDownOutput:00000000 HAL_PWREx_DisablePullDownOutput
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:924    .text.HAL_PWREx_DisablePullDownOutput:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:929    .text.HAL_PWREx_EnableMonitoring:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:935    .text.HAL_PWREx_EnableMonitoring:00000000 HAL_PWREx_EnableMonitoring
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:952    .text.HAL_PWREx_EnableMonitoring:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:957    .text.HAL_PWREx_DisableMonitoring:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:963    .text.HAL_PWREx_DisableMonitoring:00000000 HAL_PWREx_DisableMonitoring
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:980    .text.HAL_PWREx_DisableMonitoring:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:985    .text.HAL_PWREx_GetTemperatureLevel:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:991    .text.HAL_PWREx_GetTemperatureLevel:00000000 HAL_PWREx_GetTemperatureLevel
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1025   .text.HAL_PWREx_GetTemperatureLevel:00000020 $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1030   .text.HAL_PWREx_GetVBATLevel:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1036   .text.HAL_PWREx_GetVBATLevel:00000000 HAL_PWREx_GetVBATLevel
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1070   .text.HAL_PWREx_GetVBATLevel:00000020 $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1075   .text.HAL_PWREx_EnableVDDCOREMonitoring:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1081   .text.HAL_PWREx_EnableVDDCOREMonitoring:00000000 HAL_PWREx_EnableVDDCOREMonitoring
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1098   .text.HAL_PWREx_EnableVDDCOREMonitoring:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1103   .text.HAL_PWREx_DisableVDDCOREMonitoring:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1109   .text.HAL_PWREx_DisableVDDCOREMonitoring:00000000 HAL_PWREx_DisableVDDCOREMonitoring
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1126   .text.HAL_PWREx_DisableVDDCOREMonitoring:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1131   .text.HAL_PWREx_ConfigVDDCOREVM:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1137   .text.HAL_PWREx_ConfigVDDCOREVM:00000000 HAL_PWREx_ConfigVDDCOREVM
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1252   .text.HAL_PWREx_ConfigVDDCOREVM:000000ac $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1259   .text.HAL_PWREx_GetVDDCORELevel:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1265   .text.HAL_PWREx_GetVDDCORELevel:00000000 HAL_PWREx_GetVDDCORELevel
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1299   .text.HAL_PWREx_GetVDDCORELevel:00000020 $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1304   .text.HAL_PWREx_ConfigVddIORange:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1310   .text.HAL_PWREx_ConfigVddIORange:00000000 HAL_PWREx_ConfigVddIORange
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1355   .text.HAL_PWREx_ConfigVddIORange:0000002a $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1418   .text.HAL_PWREx_ConfigVddIORange:00000084 $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1424   .text.HAL_PWREx_GetVddIORange:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1430   .text.HAL_PWREx_GetVddIORange:00000000 HAL_PWREx_GetVddIORange
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1472   .text.HAL_PWREx_GetVddIORange:00000020 $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1476   .text.HAL_PWREx_GetVddIORange:00000024 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1524   .text.HAL_PWREx_GetVddIORange:00000044 $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1530   .text.HAL_PWREx_EnableVddIO4RangeSTBY:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1536   .text.HAL_PWREx_EnableVddIO4RangeSTBY:00000000 HAL_PWREx_EnableVddIO4RangeSTBY
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1553   .text.HAL_PWREx_EnableVddIO4RangeSTBY:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1558   .text.HAL_PWREx_DisableVddIO4RangeSTBY:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1564   .text.HAL_PWREx_DisableVddIO4RangeSTBY:00000000 HAL_PWREx_DisableVddIO4RangeSTBY
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1581   .text.HAL_PWREx_DisableVddIO4RangeSTBY:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1586   .text.HAL_PWREx_EnableVddIO5RangeSTBY:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1592   .text.HAL_PWREx_EnableVddIO5RangeSTBY:00000000 HAL_PWREx_EnableVddIO5RangeSTBY
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1609   .text.HAL_PWREx_EnableVddIO5RangeSTBY:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1614   .text.HAL_PWREx_DisableVddIO5RangeSTBY:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1620   .text.HAL_PWREx_DisableVddIO5RangeSTBY:00000000 HAL_PWREx_DisableVddIO5RangeSTBY
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1637   .text.HAL_PWREx_DisableVddIO5RangeSTBY:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1642   .text.HAL_PWREx_EnableVddUSB:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1648   .text.HAL_PWREx_EnableVddUSB:00000000 HAL_PWREx_EnableVddUSB
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1665   .text.HAL_PWREx_EnableVddUSB:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1670   .text.HAL_PWREx_DisableVddUSB:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1676   .text.HAL_PWREx_DisableVddUSB:00000000 HAL_PWREx_DisableVddUSB
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1693   .text.HAL_PWREx_DisableVddUSB:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1698   .text.HAL_PWREx_EnableVddIO2:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1704   .text.HAL_PWREx_EnableVddIO2:00000000 HAL_PWREx_EnableVddIO2
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1721   .text.HAL_PWREx_EnableVddIO2:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1726   .text.HAL_PWREx_DisableVddIO2:00000000 $t
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 101
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:907    .text.HAL_PWREx_DisablePullDownOutput:00000000 HAL_PWREx_DisablePullDownOutput
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:924    .text.HAL_PWREx_DisablePullDownOutput:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:929    .text.HAL_PWREx_EnableMonitoring:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:935    .text.HAL_PWREx_EnableMonitoring:00000000 HAL_PWREx_EnableMonitoring
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:952    .text.HAL_PWREx_EnableMonitoring:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:957    .text.HAL_PWREx_DisableMonitoring:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:963    .text.HAL_PWREx_DisableMonitoring:00000000 HAL_PWREx_DisableMonitoring
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:980    .text.HAL_PWREx_DisableMonitoring:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:985    .text.HAL_PWREx_GetTemperatureLevel:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:991    .text.HAL_PWREx_GetTemperatureLevel:00000000 HAL_PWREx_GetTemperatureLevel
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1025   .text.HAL_PWREx_GetTemperatureLevel:00000020 $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1030   .text.HAL_PWREx_GetVBATLevel:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1036   .text.HAL_PWREx_GetVBATLevel:00000000 HAL_PWREx_GetVBATLevel
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1070   .text.HAL_PWREx_GetVBATLevel:00000020 $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1075   .text.HAL_PWREx_EnableVDDCOREMonitoring:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1081   .text.HAL_PWREx_EnableVDDCOREMonitoring:00000000 HAL_PWREx_EnableVDDCOREMonitoring
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1098   .text.HAL_PWREx_EnableVDDCOREMonitoring:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1103   .text.HAL_PWREx_DisableVDDCOREMonitoring:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1109   .text.HAL_PWREx_DisableVDDCOREMonitoring:00000000 HAL_PWREx_DisableVDDCOREMonitoring
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1126   .text.HAL_PWREx_DisableVDDCOREMonitoring:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1131   .text.HAL_PWREx_ConfigVDDCOREVM:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1137   .text.HAL_PWREx_ConfigVDDCOREVM:00000000 HAL_PWREx_ConfigVDDCOREVM
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1252   .text.HAL_PWREx_ConfigVDDCOREVM:000000ac $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1259   .text.HAL_PWREx_GetVDDCORELevel:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1265   .text.HAL_PWREx_GetVDDCORELevel:00000000 HAL_PWREx_GetVDDCORELevel
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1299   .text.HAL_PWREx_GetVDDCORELevel:00000020 $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1304   .text.HAL_PWREx_ConfigVddIORange:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1310   .text.HAL_PWREx_ConfigVddIORange:00000000 HAL_PWREx_ConfigVddIORange
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1355   .text.HAL_PWREx_ConfigVddIORange:0000002a $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1418   .text.HAL_PWREx_ConfigVddIORange:00000084 $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1424   .text.HAL_PWREx_GetVddIORange:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1430   .text.HAL_PWREx_GetVddIORange:00000000 HAL_PWREx_GetVddIORange
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1472   .text.HAL_PWREx_GetVddIORange:00000020 $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1476   .text.HAL_PWREx_GetVddIORange:00000024 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1524   .text.HAL_PWREx_GetVddIORange:00000044 $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1530   .text.HAL_PWREx_EnableVddIO4RangeSTBY:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1536   .text.HAL_PWREx_EnableVddIO4RangeSTBY:00000000 HAL_PWREx_EnableVddIO4RangeSTBY
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1553   .text.HAL_PWREx_EnableVddIO4RangeSTBY:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1558   .text.HAL_PWREx_DisableVddIO4RangeSTBY:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1564   .text.HAL_PWREx_DisableVddIO4RangeSTBY:00000000 HAL_PWREx_DisableVddIO4RangeSTBY
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1581   .text.HAL_PWREx_DisableVddIO4RangeSTBY:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1586   .text.HAL_PWREx_EnableVddIO5RangeSTBY:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1592   .text.HAL_PWREx_EnableVddIO5RangeSTBY:00000000 HAL_PWREx_EnableVddIO5RangeSTBY
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1609   .text.HAL_PWREx_EnableVddIO5RangeSTBY:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1614   .text.HAL_PWREx_DisableVddIO5RangeSTBY:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1620   .text.HAL_PWREx_DisableVddIO5RangeSTBY:00000000 HAL_PWREx_DisableVddIO5RangeSTBY
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1637   .text.HAL_PWREx_DisableVddIO5RangeSTBY:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1642   .text.HAL_PWREx_EnableVddUSB:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1648   .text.HAL_PWREx_EnableVddUSB:00000000 HAL_PWREx_EnableVddUSB
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1665   .text.HAL_PWREx_EnableVddUSB:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1670   .text.HAL_PWREx_DisableVddUSB:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1676   .text.HAL_PWREx_DisableVddUSB:00000000 HAL_PWREx_DisableVddUSB
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1693   .text.HAL_PWREx_DisableVddUSB:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1698   .text.HAL_PWREx_EnableVddIO2:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1704   .text.HAL_PWREx_EnableVddIO2:00000000 HAL_PWREx_EnableVddIO2
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1721   .text.HAL_PWREx_EnableVddIO2:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1726   .text.HAL_PWREx_DisableVddIO2:00000000 $t
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 101
 
 
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1732   .text.HAL_PWREx_DisableVddIO2:00000000 HAL_PWREx_DisableVddIO2
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1749   .text.HAL_PWREx_DisableVddIO2:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1754   .text.HAL_PWREx_EnableVddIO3:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1760   .text.HAL_PWREx_EnableVddIO3:00000000 HAL_PWREx_EnableVddIO3
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1777   .text.HAL_PWREx_EnableVddIO3:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1782   .text.HAL_PWREx_DisableVddIO3:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1788   .text.HAL_PWREx_DisableVddIO3:00000000 HAL_PWREx_DisableVddIO3
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1805   .text.HAL_PWREx_DisableVddIO3:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1810   .text.HAL_PWREx_EnableVddIO4:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1816   .text.HAL_PWREx_EnableVddIO4:00000000 HAL_PWREx_EnableVddIO4
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1833   .text.HAL_PWREx_EnableVddIO4:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1838   .text.HAL_PWREx_DisableVddIO4:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1844   .text.HAL_PWREx_DisableVddIO4:00000000 HAL_PWREx_DisableVddIO4
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1861   .text.HAL_PWREx_DisableVddIO4:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1866   .text.HAL_PWREx_EnableVddIO5:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1872   .text.HAL_PWREx_EnableVddIO5:00000000 HAL_PWREx_EnableVddIO5
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1889   .text.HAL_PWREx_EnableVddIO5:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1894   .text.HAL_PWREx_DisableVddIO5:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1900   .text.HAL_PWREx_DisableVddIO5:00000000 HAL_PWREx_DisableVddIO5
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1917   .text.HAL_PWREx_DisableVddIO5:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1922   .text.HAL_PWREx_EnableVddA:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1928   .text.HAL_PWREx_EnableVddA:00000000 HAL_PWREx_EnableVddA
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1945   .text.HAL_PWREx_EnableVddA:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1950   .text.HAL_PWREx_DisableVddA:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1956   .text.HAL_PWREx_DisableVddA:00000000 HAL_PWREx_DisableVddA
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1973   .text.HAL_PWREx_DisableVddA:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1978   .text.HAL_PWREx_EnableVddUSBVMEN:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1984   .text.HAL_PWREx_EnableVddUSBVMEN:00000000 HAL_PWREx_EnableVddUSBVMEN
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2001   .text.HAL_PWREx_EnableVddUSBVMEN:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2006   .text.HAL_PWREx_DisableVddUSBVMEN:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2012   .text.HAL_PWREx_DisableVddUSBVMEN:00000000 HAL_PWREx_DisableVddUSBVMEN
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2029   .text.HAL_PWREx_DisableVddUSBVMEN:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2034   .text.HAL_PWREx_EnableVddIO2VMEN:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2040   .text.HAL_PWREx_EnableVddIO2VMEN:00000000 HAL_PWREx_EnableVddIO2VMEN
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2057   .text.HAL_PWREx_EnableVddIO2VMEN:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2062   .text.HAL_PWREx_DisableVddIO2VMEN:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2068   .text.HAL_PWREx_DisableVddIO2VMEN:00000000 HAL_PWREx_DisableVddIO2VMEN
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2085   .text.HAL_PWREx_DisableVddIO2VMEN:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2090   .text.HAL_PWREx_EnableVddIO3VMEN:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2096   .text.HAL_PWREx_EnableVddIO3VMEN:00000000 HAL_PWREx_EnableVddIO3VMEN
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2113   .text.HAL_PWREx_EnableVddIO3VMEN:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2118   .text.HAL_PWREx_DisableVddIO3VMEN:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2124   .text.HAL_PWREx_DisableVddIO3VMEN:00000000 HAL_PWREx_DisableVddIO3VMEN
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2141   .text.HAL_PWREx_DisableVddIO3VMEN:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2146   .text.HAL_PWREx_EnableVddIO4VMEN:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2152   .text.HAL_PWREx_EnableVddIO4VMEN:00000000 HAL_PWREx_EnableVddIO4VMEN
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2169   .text.HAL_PWREx_EnableVddIO4VMEN:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2174   .text.HAL_PWREx_DisableVddIO4VMEN:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2180   .text.HAL_PWREx_DisableVddIO4VMEN:00000000 HAL_PWREx_DisableVddIO4VMEN
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2197   .text.HAL_PWREx_DisableVddIO4VMEN:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2202   .text.HAL_PWREx_EnableVddIO5VMEN:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2208   .text.HAL_PWREx_EnableVddIO5VMEN:00000000 HAL_PWREx_EnableVddIO5VMEN
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2225   .text.HAL_PWREx_EnableVddIO5VMEN:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2230   .text.HAL_PWREx_DisableVddIO5VMEN:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2236   .text.HAL_PWREx_DisableVddIO5VMEN:00000000 HAL_PWREx_DisableVddIO5VMEN
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2253   .text.HAL_PWREx_DisableVddIO5VMEN:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2258   .text.HAL_PWREx_EnableVddAVMEN:00000000 $t
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 102
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1732   .text.HAL_PWREx_DisableVddIO2:00000000 HAL_PWREx_DisableVddIO2
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1749   .text.HAL_PWREx_DisableVddIO2:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1754   .text.HAL_PWREx_EnableVddIO3:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1760   .text.HAL_PWREx_EnableVddIO3:00000000 HAL_PWREx_EnableVddIO3
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1777   .text.HAL_PWREx_EnableVddIO3:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1782   .text.HAL_PWREx_DisableVddIO3:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1788   .text.HAL_PWREx_DisableVddIO3:00000000 HAL_PWREx_DisableVddIO3
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1805   .text.HAL_PWREx_DisableVddIO3:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1810   .text.HAL_PWREx_EnableVddIO4:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1816   .text.HAL_PWREx_EnableVddIO4:00000000 HAL_PWREx_EnableVddIO4
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1833   .text.HAL_PWREx_EnableVddIO4:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1838   .text.HAL_PWREx_DisableVddIO4:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1844   .text.HAL_PWREx_DisableVddIO4:00000000 HAL_PWREx_DisableVddIO4
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1861   .text.HAL_PWREx_DisableVddIO4:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1866   .text.HAL_PWREx_EnableVddIO5:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1872   .text.HAL_PWREx_EnableVddIO5:00000000 HAL_PWREx_EnableVddIO5
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1889   .text.HAL_PWREx_EnableVddIO5:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1894   .text.HAL_PWREx_DisableVddIO5:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1900   .text.HAL_PWREx_DisableVddIO5:00000000 HAL_PWREx_DisableVddIO5
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1917   .text.HAL_PWREx_DisableVddIO5:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1922   .text.HAL_PWREx_EnableVddA:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1928   .text.HAL_PWREx_EnableVddA:00000000 HAL_PWREx_EnableVddA
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1945   .text.HAL_PWREx_EnableVddA:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1950   .text.HAL_PWREx_DisableVddA:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1956   .text.HAL_PWREx_DisableVddA:00000000 HAL_PWREx_DisableVddA
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1973   .text.HAL_PWREx_DisableVddA:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1978   .text.HAL_PWREx_EnableVddUSBVMEN:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1984   .text.HAL_PWREx_EnableVddUSBVMEN:00000000 HAL_PWREx_EnableVddUSBVMEN
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2001   .text.HAL_PWREx_EnableVddUSBVMEN:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2006   .text.HAL_PWREx_DisableVddUSBVMEN:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2012   .text.HAL_PWREx_DisableVddUSBVMEN:00000000 HAL_PWREx_DisableVddUSBVMEN
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2029   .text.HAL_PWREx_DisableVddUSBVMEN:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2034   .text.HAL_PWREx_EnableVddIO2VMEN:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2040   .text.HAL_PWREx_EnableVddIO2VMEN:00000000 HAL_PWREx_EnableVddIO2VMEN
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2057   .text.HAL_PWREx_EnableVddIO2VMEN:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2062   .text.HAL_PWREx_DisableVddIO2VMEN:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2068   .text.HAL_PWREx_DisableVddIO2VMEN:00000000 HAL_PWREx_DisableVddIO2VMEN
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2085   .text.HAL_PWREx_DisableVddIO2VMEN:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2090   .text.HAL_PWREx_EnableVddIO3VMEN:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2096   .text.HAL_PWREx_EnableVddIO3VMEN:00000000 HAL_PWREx_EnableVddIO3VMEN
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2113   .text.HAL_PWREx_EnableVddIO3VMEN:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2118   .text.HAL_PWREx_DisableVddIO3VMEN:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2124   .text.HAL_PWREx_DisableVddIO3VMEN:00000000 HAL_PWREx_DisableVddIO3VMEN
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2141   .text.HAL_PWREx_DisableVddIO3VMEN:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2146   .text.HAL_PWREx_EnableVddIO4VMEN:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2152   .text.HAL_PWREx_EnableVddIO4VMEN:00000000 HAL_PWREx_EnableVddIO4VMEN
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2169   .text.HAL_PWREx_EnableVddIO4VMEN:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2174   .text.HAL_PWREx_DisableVddIO4VMEN:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2180   .text.HAL_PWREx_DisableVddIO4VMEN:00000000 HAL_PWREx_DisableVddIO4VMEN
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2197   .text.HAL_PWREx_DisableVddIO4VMEN:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2202   .text.HAL_PWREx_EnableVddIO5VMEN:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2208   .text.HAL_PWREx_EnableVddIO5VMEN:00000000 HAL_PWREx_EnableVddIO5VMEN
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2225   .text.HAL_PWREx_EnableVddIO5VMEN:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2230   .text.HAL_PWREx_DisableVddIO5VMEN:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2236   .text.HAL_PWREx_DisableVddIO5VMEN:00000000 HAL_PWREx_DisableVddIO5VMEN
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2253   .text.HAL_PWREx_DisableVddIO5VMEN:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2258   .text.HAL_PWREx_EnableVddAVMEN:00000000 $t
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 102
 
 
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2264   .text.HAL_PWREx_EnableVddAVMEN:00000000 HAL_PWREx_EnableVddAVMEN
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2281   .text.HAL_PWREx_EnableVddAVMEN:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2286   .text.HAL_PWREx_DisableVddAVMEN:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2292   .text.HAL_PWREx_DisableVddAVMEN:00000000 HAL_PWREx_DisableVddAVMEN
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2309   .text.HAL_PWREx_DisableVddAVMEN:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2314   .text.HAL_PWREx_ConfigPVM:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2320   .text.HAL_PWREx_ConfigPVM:00000000 HAL_PWREx_ConfigPVM
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2373   .text.HAL_PWREx_ConfigPVM:0000003e $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2379   .text.HAL_PWREx_ConfigPVM:0000004a $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2670   .text.HAL_PWREx_ConfigPVM:0000025c $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2675   .text.HAL_PWREx_ConfigPVM:00000264 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2736   .text.HAL_PWREx_ConfigPVM:000002d4 $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2741   .text.HAL_PWREx_VDDCORE_Rising_Callback:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2747   .text.HAL_PWREx_VDDCORE_Rising_Callback:00000000 HAL_PWREx_VDDCORE_Rising_Callback
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2760   .text.HAL_PWREx_VDDCORE_Falling_Callback:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2766   .text.HAL_PWREx_VDDCORE_Falling_Callback:00000000 HAL_PWREx_VDDCORE_Falling_Callback
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2778   .text.HAL_PWREx_USBVM_Rising_Callback:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2784   .text.HAL_PWREx_USBVM_Rising_Callback:00000000 HAL_PWREx_USBVM_Rising_Callback
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2796   .text.HAL_PWREx_USBVM_Falling_Callback:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2802   .text.HAL_PWREx_USBVM_Falling_Callback:00000000 HAL_PWREx_USBVM_Falling_Callback
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2814   .text.HAL_PWREx_IO2VM_Rising_Callback:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2820   .text.HAL_PWREx_IO2VM_Rising_Callback:00000000 HAL_PWREx_IO2VM_Rising_Callback
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2832   .text.HAL_PWREx_IO2VM_Falling_Callback:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2838   .text.HAL_PWREx_IO2VM_Falling_Callback:00000000 HAL_PWREx_IO2VM_Falling_Callback
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2850   .text.HAL_PWREx_IO3VM_Rising_Callback:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2856   .text.HAL_PWREx_IO3VM_Rising_Callback:00000000 HAL_PWREx_IO3VM_Rising_Callback
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2868   .text.HAL_PWREx_IO3VM_Falling_Callback:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2874   .text.HAL_PWREx_IO3VM_Falling_Callback:00000000 HAL_PWREx_IO3VM_Falling_Callback
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2886   .text.HAL_PWREx_IO4VM_Rising_Callback:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2892   .text.HAL_PWREx_IO4VM_Rising_Callback:00000000 HAL_PWREx_IO4VM_Rising_Callback
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2904   .text.HAL_PWREx_IO4VM_Falling_Callback:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2910   .text.HAL_PWREx_IO4VM_Falling_Callback:00000000 HAL_PWREx_IO4VM_Falling_Callback
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2922   .text.HAL_PWREx_IO5VM_Rising_Callback:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2928   .text.HAL_PWREx_IO5VM_Rising_Callback:00000000 HAL_PWREx_IO5VM_Rising_Callback
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2940   .text.HAL_PWREx_IO5VM_Falling_Callback:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2946   .text.HAL_PWREx_IO5VM_Falling_Callback:00000000 HAL_PWREx_IO5VM_Falling_Callback
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2958   .text.HAL_PWREx_ADCVM_Rising_Callback:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2964   .text.HAL_PWREx_ADCVM_Rising_Callback:00000000 HAL_PWREx_ADCVM_Rising_Callback
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2976   .text.HAL_PWREx_ADCVM_Falling_Callback:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2982   .text.HAL_PWREx_ADCVM_Falling_Callback:00000000 HAL_PWREx_ADCVM_Falling_Callback
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:2994   .text.HAL_PWREx_PVD_PVM_IRQHandler:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:3000   .text.HAL_PWREx_PVD_PVM_IRQHandler:00000000 HAL_PWREx_PVD_PVM_IRQHandler
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:3221   .text.HAL_PWREx_PVD_PVM_IRQHandler:000000f4 $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1361   .text.HAL_PWREx_ConfigVddIORange:0000002f $d
-C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1361   .text.HAL_PWREx_ConfigVddIORange:00000030 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2264   .text.HAL_PWREx_EnableVddAVMEN:00000000 HAL_PWREx_EnableVddAVMEN
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2281   .text.HAL_PWREx_EnableVddAVMEN:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2286   .text.HAL_PWREx_DisableVddAVMEN:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2292   .text.HAL_PWREx_DisableVddAVMEN:00000000 HAL_PWREx_DisableVddAVMEN
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2309   .text.HAL_PWREx_DisableVddAVMEN:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2314   .text.HAL_PWREx_ConfigPVM:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2320   .text.HAL_PWREx_ConfigPVM:00000000 HAL_PWREx_ConfigPVM
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2373   .text.HAL_PWREx_ConfigPVM:0000003e $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2379   .text.HAL_PWREx_ConfigPVM:0000004a $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2670   .text.HAL_PWREx_ConfigPVM:0000025c $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2675   .text.HAL_PWREx_ConfigPVM:00000264 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2736   .text.HAL_PWREx_ConfigPVM:000002d4 $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2741   .text.HAL_PWREx_VDDCORE_Rising_Callback:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2747   .text.HAL_PWREx_VDDCORE_Rising_Callback:00000000 HAL_PWREx_VDDCORE_Rising_Callback
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2760   .text.HAL_PWREx_VDDCORE_Falling_Callback:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2766   .text.HAL_PWREx_VDDCORE_Falling_Callback:00000000 HAL_PWREx_VDDCORE_Falling_Callback
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2778   .text.HAL_PWREx_USBVM_Rising_Callback:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2784   .text.HAL_PWREx_USBVM_Rising_Callback:00000000 HAL_PWREx_USBVM_Rising_Callback
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2796   .text.HAL_PWREx_USBVM_Falling_Callback:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2802   .text.HAL_PWREx_USBVM_Falling_Callback:00000000 HAL_PWREx_USBVM_Falling_Callback
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2814   .text.HAL_PWREx_IO2VM_Rising_Callback:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2820   .text.HAL_PWREx_IO2VM_Rising_Callback:00000000 HAL_PWREx_IO2VM_Rising_Callback
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2832   .text.HAL_PWREx_IO2VM_Falling_Callback:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2838   .text.HAL_PWREx_IO2VM_Falling_Callback:00000000 HAL_PWREx_IO2VM_Falling_Callback
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2850   .text.HAL_PWREx_IO3VM_Rising_Callback:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2856   .text.HAL_PWREx_IO3VM_Rising_Callback:00000000 HAL_PWREx_IO3VM_Rising_Callback
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2868   .text.HAL_PWREx_IO3VM_Falling_Callback:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2874   .text.HAL_PWREx_IO3VM_Falling_Callback:00000000 HAL_PWREx_IO3VM_Falling_Callback
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2886   .text.HAL_PWREx_IO4VM_Rising_Callback:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2892   .text.HAL_PWREx_IO4VM_Rising_Callback:00000000 HAL_PWREx_IO4VM_Rising_Callback
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2904   .text.HAL_PWREx_IO4VM_Falling_Callback:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2910   .text.HAL_PWREx_IO4VM_Falling_Callback:00000000 HAL_PWREx_IO4VM_Falling_Callback
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2922   .text.HAL_PWREx_IO5VM_Rising_Callback:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2928   .text.HAL_PWREx_IO5VM_Rising_Callback:00000000 HAL_PWREx_IO5VM_Rising_Callback
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2940   .text.HAL_PWREx_IO5VM_Falling_Callback:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2946   .text.HAL_PWREx_IO5VM_Falling_Callback:00000000 HAL_PWREx_IO5VM_Falling_Callback
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2958   .text.HAL_PWREx_ADCVM_Rising_Callback:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2964   .text.HAL_PWREx_ADCVM_Rising_Callback:00000000 HAL_PWREx_ADCVM_Rising_Callback
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2976   .text.HAL_PWREx_ADCVM_Falling_Callback:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2982   .text.HAL_PWREx_ADCVM_Falling_Callback:00000000 HAL_PWREx_ADCVM_Falling_Callback
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:2994   .text.HAL_PWREx_PVD_PVM_IRQHandler:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:3000   .text.HAL_PWREx_PVD_PVM_IRQHandler:00000000 HAL_PWREx_PVD_PVM_IRQHandler
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:3221   .text.HAL_PWREx_PVD_PVM_IRQHandler:000000f4 $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1361   .text.HAL_PWREx_ConfigVddIORange:0000002f $d
+C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s:1361   .text.HAL_PWREx_ConfigVddIORange:00000030 $t
                            .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
-                           .group:00000000 wm4.stm32n6xx_hal_conf.h.21.e6f895f5dec93fd886896ef3aa220611
+                           .group:00000000 wm4.stm32n6xx_hal_conf.h.21.e108a0e1f8e9094b9ec5c3fbf543a831
                            .group:00000000 wm4.stddef.h.39.0dc9006b34572d4d9cae4c8b422c4971
                            .group:00000000 wm4.arm_cmse.h.103.a0d15a79c4c9a67da8d5831704d7248e
                            .group:00000000 wm4.stm32n6xx.h.34.80585dd08aa426c932f6311fdb7386da
@@ -6067,7 +6067,7 @@ C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1361   .text.HAL_PWREx_ConfigVddI
                            .group:00000000 wm4._intsup.h.10.48bafbb683905c4daa4565a85aeeb264
                            .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
                            .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 103
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 103
 
 
                            .group:00000000 wm4.cmsis_version.h.32.0ac195c83bb4537824e6ad1c47474b79
@@ -6115,10 +6115,21 @@ C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1361   .text.HAL_PWREx_ConfigVddI
                            .group:00000000 wm4.stm32n6xx_hal_i2c.h.741.1084702632703acc669e4282b3043372
                            .group:00000000 wm4.stm32n6xx_hal_ltdc.h.21.ae1eb09930e7e550e48e418ac5849e4d
                            .group:00000000 wm4.stm32n6xx_hal_ltdc.h.1002.b13ede7fc94ed5ad1c6768a157d2149a
+                           .group:00000000 wm4.stm32n6xx_hal_mdf.h.21.6eb130451a4e0db5b8befb63f326c92c
                            .group:00000000 wm4.stm32n6xx_hal_pwr.h.21.cdb73e4869c3fed3fc84f901ec0e5f0a
                            .group:00000000 wm4.stm32n6xx_hal_pwr_ex.h.21.1a673224a58b0c1e5fad8eeda6514208
                            .group:00000000 wm4.stm32n6xx_hal_ramcfg.h.21.a62dfbb4d2c14e9a8c634a215e37bd3d
+                           .group:00000000 wm4.stm32n6xx_hal_sai.h.21.d6c5e096d8c222239b66c09476942511
+                           .group:00000000 wm4.stm32n6xx_hal_sai_ex.h.21.98cc4c637392fcbacd0a3564bad4bba3
+                           .group:00000000 wm4.stm32n6xx_hal_sai.h.825.fc46628357edde5e604f90f7e222e919
+                           .group:00000000 wm4.stm32n6xx_ll_sdmmc.h.21.a8483ddbe319d8ff397cbc0087d2c233
+                           .group:00000000 wm4.stm32n6xx_ll_dlyb.h.21.05e6efa24db86ad89cfd13eda5cfcd3e
+                           .group:00000000 wm4.stm32n6xx_hal_sd.h.71.b83d10af03e36c820c893444588bae05
+                           .group:00000000 wm4.stm32n6xx_hal_sd_ex.h.21.0294125df092827b72ace449508982b9
                            .group:00000000 wm4.stm32n6xx_hal_uart.h.21.230f549bfa0d5ebfd77bfb311b2aca15
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccryNonn.s 			page 104
+
+
                            .group:00000000 wm4.stm32n6xx_hal_uart_ex.h.21.a0d5511e1d0703b7b5278c8f5472b96d
                            .group:00000000 wm4.stm32n6xx_hal_xspi.h.21.e17898be2073b6b6b19faf30b4e304e9
                            .group:00000000 wm4.stm32n6xx_hal_cacheaxi.h.21.7c3375b7903ec42376e4883320997f74
@@ -6127,8 +6138,5 @@ C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s:1361   .text.HAL_PWREx_ConfigVddI
 UNDEFINED SYMBOLS
 assert_failed
 HAL_GetTick
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cceRKwyQ.s 			page 104
-
-
 HAL_PWR_PVD_Rising_Callback
 HAL_PWR_PVD_Falling_Callback

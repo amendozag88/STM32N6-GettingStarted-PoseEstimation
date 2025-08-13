@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s 			page 1
 
 
    1              		.arch armv8.1-m.main
@@ -45,7 +45,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
   34              		.thumb_func
   36              	HAL_I2CEx_ConfigAnalogFilter:
   37              	.LVL0:
-  38              	.LFB835:
+  38              	.LFB837:
    1:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c **** /**
    2:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c ****   ******************************************************************************
    3:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c ****   * @file    stm32n6xx_hal_i2c_ex.c
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
   10:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c ****   *           + FastModePlus Functions
   11:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c ****   *
   12:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c ****   ******************************************************************************
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 2
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s 			page 2
 
 
   13:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c ****   * @attention
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
   67:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c **** /* Private function prototypes -----------------------------------------------*/
   68:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c **** /* Private functions ---------------------------------------------------------*/
   69:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 3
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s 			page 3
 
 
   70:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c **** /** @defgroup I2CEx_Exported_Functions I2C Extended Exported Functions
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
   61 000c 1CD0     		beq	.L2
   62              		.loc 1 98 3 discriminator 1 view .LVU8
   63 000e 02F17042 		add	r2, r2, #-268435456
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 4
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s 			page 4
 
 
   64 0012 9342     		cmp	r3, r2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
  115 005c D9B2     		uxtb	r1, r3
  116              		.loc 1 101 6 view .LVU24
  117 005e 1CD1     		bne	.L6
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 5
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s 			page 5
 
 
  102:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c ****   {
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
  144              		.loc 1 115 19 is_stmt 0 view .LVU38
  145 0082 1A68     		ldr	r2, [r3]
  115:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 6
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s 			page 6
 
 
  146              		.loc 1 115 25 view .LVU39
@@ -345,7 +345,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
  175 00ac 001C0056 		.word	1442847744
  176 00b0 00000000 		.word	.LC0
  177              		.cfi_endproc
- 178              	.LFE835:
+ 178              	.LFE837:
  180              		.section	.text.HAL_I2CEx_ConfigDigitalFilter,"ax",%progbits
  181              		.align	1
  182              		.global	HAL_I2CEx_ConfigDigitalFilter
@@ -354,11 +354,11 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
  185              		.thumb_func
  187              	HAL_I2CEx_ConfigDigitalFilter:
  188              	.LVL6:
- 189              	.LFB836:
+ 189              	.LFB838:
  131:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c **** 
  132:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c **** /**
  133:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c ****   * @brief  Configure I2C Digital noise filter.
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 7
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s 			page 7
 
 
  134:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c ****   * @param  hi2c Pointer to a I2C_HandleTypeDef structure that contains
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
  230              		.loc 1 144 3 discriminator 5 view .LVU62
  231 002a 02F17042 		add	r2, r2, #-268435456
  232 002e 9342     		cmp	r3, r2
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 8
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s 			page 8
 
 
  233 0030 0AD0     		beq	.L13
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
  279 0066 2423     		movs	r3, #36
  280 0068 84F84130 		strb	r3, [r4, #65]
  153:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 9
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s 			page 9
 
 
  154:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c ****     /* Disable the selected I2C peripheral */
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
  314 0090 84F84000 		strb	r0, [r4, #64]
  315              		.loc 1 174 5 view .LVU96
  175:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c **** 
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 10
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s 			page 10
 
 
  176:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c ****     return HAL_OK;
@@ -568,7 +568,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
  332 00a8 001C0056 		.word	1442847744
  333 00ac 00000000 		.word	.LC0
  334              		.cfi_endproc
- 335              	.LFE836:
+ 335              	.LFE838:
  337              		.section	.text.HAL_I2CEx_EnableWakeUp,"ax",%progbits
  338              		.align	1
  339              		.global	HAL_I2CEx_EnableWakeUp
@@ -577,7 +577,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
  342              		.thumb_func
  344              	HAL_I2CEx_EnableWakeUp:
  345              	.LVL18:
- 346              	.LFB837:
+ 346              	.LFB839:
  183:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c **** /**
  184:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c ****   * @}
  185:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c ****   */
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
  200:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c **** 
  201:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c **** /**
  202:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c ****   * @brief  Enable I2C wakeup from Stop mode(s).
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 11
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s 			page 11
 
 
  203:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c ****   * @param  hi2c Pointer to a I2C_HandleTypeDef structure that contains
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
  391 003a 9342     		cmp	r3, r2
  392 003c 03D0     		beq	.L21
  393              		.loc 1 210 3 discriminator 8 view .LVU113
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 12
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s 			page 12
 
 
  394 003e D221     		movs	r1, #210
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
  426 0062 1A68     		ldr	r2, [r3]
  427 0064 22F00102 		bic	r2, r2, #1
  428 0068 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 13
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s 			page 13
 
 
  223:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c **** 
@@ -771,19 +771,19 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
  461 0094 001C0056 		.word	1442847744
  462 0098 00000000 		.word	.LC0
  463              		.cfi_endproc
- 464              	.LFE837:
+ 464              	.LFE839:
  466              		.section	.text.HAL_I2CEx_DisableWakeUp,"ax",%progbits
  467              		.align	1
  468              		.global	HAL_I2CEx_DisableWakeUp
  469              		.syntax unified
  470              		.thumb
  471              		.thumb_func
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 14
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s 			page 14
 
 
  473              	HAL_I2CEx_DisableWakeUp:
  474              	.LVL22:
- 475              	.LFB838:
+ 475              	.LFB840:
  239:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c **** 
  240:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c **** /**
  241:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c ****   * @brief  Disable I2C wakeup from Stop mode(s).
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
  514              		.loc 1 249 3 discriminator 6 view .LVU152
  515 0030 184A     		ldr	r2, .L32+12
  516 0032 9342     		cmp	r3, r2
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 15
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s 			page 15
 
 
  517 0034 07D0     		beq	.L28
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
  256:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c **** 
  551              		.loc 1 256 17 view .LVU168
  552 005c 84F84130 		strb	r3, [r4, #65]
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 16
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s 			page 16
 
 
  259:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c **** 
@@ -957,8 +957,8 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
  590 0094 001C0056 		.word	1442847744
  591 0098 00000000 		.word	.LC0
  592              		.cfi_endproc
- 593              	.LFE838:
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 17
+ 593              	.LFE840:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s 			page 17
 
 
  595              		.section	.text.HAL_I2CEx_ConfigFastModePlus,"ax",%progbits
@@ -969,7 +969,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
  600              		.thumb_func
  602              	HAL_I2CEx_ConfigFastModePlus:
  603              	.LVL26:
- 604              	.LFB839:
+ 604              	.LFB841:
  278:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c **** /**
  279:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c ****   * @}
  280:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c ****   */
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
  304:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c ****   /* Check the parameters */
  620              		.loc 1 304 1 view .LVU186
  621 0006 0446     		mov	r4, r0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 18
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s 			page 18
 
 
  622              		.loc 1 306 3 view .LVU187
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
  674              	.L36:
  308:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c **** 
  309:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c ****   if (hi2c->State == HAL_I2C_STATE_READY)
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 19
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s 			page 19
 
 
  675              		.loc 1 309 3 is_stmt 1 view .LVU202
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
  328:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c ****     }
  329:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c **** 
  330:../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_i2c_ex.c ****     __HAL_I2C_ENABLE(hi2c);
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 20
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s 			page 20
 
 
  710              		.loc 1 330 5 is_stmt 1 view .LVU218
@@ -1198,13 +1198,13 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
  744 00a8 00540050 		.word	1342198784
  745 00ac 00580050 		.word	1342199808
  746 00b0 005C0050 		.word	1342200832
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 21
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s 			page 21
 
 
  747 00b4 001C0056 		.word	1442847744
  748 00b8 00000000 		.word	.LC0
  749              		.cfi_endproc
- 750              	.LFE839:
+ 750              	.LFE841:
  752              		.text
  753              	.Letext0:
  754              		.file 2 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
@@ -1215,28 +1215,28 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 1
  759              		.file 7 "../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Inc/stm32n6xx_hal_dma_ex.h"
  760              		.file 8 "../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Inc/stm32n6xx_hal_i2c.h"
  761              		.file 9 "Inc/stm32n6xx_hal_conf.h"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 22
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s 			page 22
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32n6xx_hal_i2c_ex.c
-C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s:30     .text.HAL_I2CEx_ConfigAnalogFilter:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s:36     .text.HAL_I2CEx_ConfigAnalogFilter:00000000 HAL_I2CEx_ConfigAnalogFilter
-C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s:172    .text.HAL_I2CEx_ConfigAnalogFilter:000000a0 $d
-C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s:181    .text.HAL_I2CEx_ConfigDigitalFilter:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s:187    .text.HAL_I2CEx_ConfigDigitalFilter:00000000 HAL_I2CEx_ConfigDigitalFilter
-C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s:329    .text.HAL_I2CEx_ConfigDigitalFilter:0000009c $d
-C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s:338    .text.HAL_I2CEx_EnableWakeUp:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s:344    .text.HAL_I2CEx_EnableWakeUp:00000000 HAL_I2CEx_EnableWakeUp
-C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s:458    .text.HAL_I2CEx_EnableWakeUp:00000088 $d
-C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s:467    .text.HAL_I2CEx_DisableWakeUp:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s:473    .text.HAL_I2CEx_DisableWakeUp:00000000 HAL_I2CEx_DisableWakeUp
-C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s:587    .text.HAL_I2CEx_DisableWakeUp:00000088 $d
-C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s:596    .text.HAL_I2CEx_ConfigFastModePlus:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s:602    .text.HAL_I2CEx_ConfigFastModePlus:00000000 HAL_I2CEx_ConfigFastModePlus
-C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s:744    .text.HAL_I2CEx_ConfigFastModePlus:000000a8 $d
+C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s:30     .text.HAL_I2CEx_ConfigAnalogFilter:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s:36     .text.HAL_I2CEx_ConfigAnalogFilter:00000000 HAL_I2CEx_ConfigAnalogFilter
+C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s:172    .text.HAL_I2CEx_ConfigAnalogFilter:000000a0 $d
+C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s:181    .text.HAL_I2CEx_ConfigDigitalFilter:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s:187    .text.HAL_I2CEx_ConfigDigitalFilter:00000000 HAL_I2CEx_ConfigDigitalFilter
+C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s:329    .text.HAL_I2CEx_ConfigDigitalFilter:0000009c $d
+C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s:338    .text.HAL_I2CEx_EnableWakeUp:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s:344    .text.HAL_I2CEx_EnableWakeUp:00000000 HAL_I2CEx_EnableWakeUp
+C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s:458    .text.HAL_I2CEx_EnableWakeUp:00000088 $d
+C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s:467    .text.HAL_I2CEx_DisableWakeUp:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s:473    .text.HAL_I2CEx_DisableWakeUp:00000000 HAL_I2CEx_DisableWakeUp
+C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s:587    .text.HAL_I2CEx_DisableWakeUp:00000088 $d
+C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s:596    .text.HAL_I2CEx_ConfigFastModePlus:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s:602    .text.HAL_I2CEx_ConfigFastModePlus:00000000 HAL_I2CEx_ConfigFastModePlus
+C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s:744    .text.HAL_I2CEx_ConfigFastModePlus:000000a8 $d
                            .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
-                           .group:00000000 wm4.stm32n6xx_hal_conf.h.21.e6f895f5dec93fd886896ef3aa220611
+                           .group:00000000 wm4.stm32n6xx_hal_conf.h.21.e108a0e1f8e9094b9ec5c3fbf543a831
                            .group:00000000 wm4.stddef.h.39.0dc9006b34572d4d9cae4c8b422c4971
                            .group:00000000 wm4.arm_cmse.h.103.a0d15a79c4c9a67da8d5831704d7248e
                            .group:00000000 wm4.stm32n6xx.h.34.80585dd08aa426c932f6311fdb7386da
@@ -1275,7 +1275,7 @@ C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s:744    .text.HAL_I2CEx_ConfigFast
                            .group:00000000 wm4.stm32n6xx_ll_rcc.h.21.002e22a16fd7f67dde6dce41e8ba9620
                            .group:00000000 wm4.stm32n6xx_hal_rcc.h.194.1cb1283e40f9bebcd3fba2a9a961838e
                            .group:00000000 wm4.stm32n6xx_hal_rcc_ex.h.21.79aa32178dfef625fbd20d362449acfa
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s 			page 23
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccodYNaj.s 			page 23
 
 
                            .group:00000000 wm4.stm32n6xx_hal_rcc.h.4359.3f0b7ad33826d95438602c9aebc08af9
@@ -1295,9 +1295,17 @@ C:\Users\Antonio\AppData\Local\Temp\cc3blfLG.s:744    .text.HAL_I2CEx_ConfigFast
                            .group:00000000 wm4.stm32n6xx_hal_i2c.h.741.1084702632703acc669e4282b3043372
                            .group:00000000 wm4.stm32n6xx_hal_ltdc.h.21.ae1eb09930e7e550e48e418ac5849e4d
                            .group:00000000 wm4.stm32n6xx_hal_ltdc.h.1002.b13ede7fc94ed5ad1c6768a157d2149a
+                           .group:00000000 wm4.stm32n6xx_hal_mdf.h.21.6eb130451a4e0db5b8befb63f326c92c
                            .group:00000000 wm4.stm32n6xx_hal_pwr.h.21.cdb73e4869c3fed3fc84f901ec0e5f0a
                            .group:00000000 wm4.stm32n6xx_hal_pwr_ex.h.21.1a673224a58b0c1e5fad8eeda6514208
                            .group:00000000 wm4.stm32n6xx_hal_ramcfg.h.21.a62dfbb4d2c14e9a8c634a215e37bd3d
+                           .group:00000000 wm4.stm32n6xx_hal_sai.h.21.d6c5e096d8c222239b66c09476942511
+                           .group:00000000 wm4.stm32n6xx_hal_sai_ex.h.21.98cc4c637392fcbacd0a3564bad4bba3
+                           .group:00000000 wm4.stm32n6xx_hal_sai.h.825.fc46628357edde5e604f90f7e222e919
+                           .group:00000000 wm4.stm32n6xx_ll_sdmmc.h.21.a8483ddbe319d8ff397cbc0087d2c233
+                           .group:00000000 wm4.stm32n6xx_ll_dlyb.h.21.05e6efa24db86ad89cfd13eda5cfcd3e
+                           .group:00000000 wm4.stm32n6xx_hal_sd.h.71.b83d10af03e36c820c893444588bae05
+                           .group:00000000 wm4.stm32n6xx_hal_sd_ex.h.21.0294125df092827b72ace449508982b9
                            .group:00000000 wm4.stm32n6xx_hal_uart.h.21.230f549bfa0d5ebfd77bfb311b2aca15
                            .group:00000000 wm4.stm32n6xx_hal_uart_ex.h.21.a0d5511e1d0703b7b5278c8f5472b96d
                            .group:00000000 wm4.stm32n6xx_hal_xspi.h.21.e17898be2073b6b6b19faf30b4e304e9

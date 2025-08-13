@@ -1,0 +1,509 @@
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s 			page 1
+
+
+   1              		.arch armv8.1-m.main
+   2              		.fpu fpv5-d16
+   3              		.arch_extension dsp
+   4              		.arch_extension fp
+   5              		.arch_extension fp.dp
+   6              		.arch_extension mve
+   7              		.arch_extension mve.fp
+   8              		.eabi_attribute 5, "cortex-m55"
+   9              		.eabi_attribute 28, 1
+  10              		.eabi_attribute 20, 1
+  11              		.eabi_attribute 21, 1
+  12              		.eabi_attribute 23, 3
+  13              		.eabi_attribute 24, 1
+  14              		.eabi_attribute 25, 1
+  15              		.eabi_attribute 26, 1
+  16              		.eabi_attribute 30, 4
+  17              		.eabi_attribute 34, 1
+  18              		.eabi_attribute 38, 1
+  19              		.eabi_attribute 18, 4
+  20              		.file	"diskio.c"
+  21              		.text
+  22              	.Ltext0:
+  23              		.cfi_sections	.debug_frame
+  24              		.file 1 "../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c"
+  25              		.section	.text.disk_status,"ax",%progbits
+  26              		.align	1
+  27              		.global	disk_status
+  28              		.syntax unified
+  29              		.thumb
+  30              		.thumb_func
+  32              	disk_status:
+  33              	.LVL0:
+  34              	.LFB0:
+   1:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** /*-----------------------------------------------------------------------*/
+   2:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** /* Low level disk I/O module skeleton for FatFs     (C)ChaN, 2023        */
+   3:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** /*                                                                       */
+   4:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** /*   Portions COPYRIGHT 2017-2023 STMicroelectronics                     */
+   5:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** /*   Portions Copyright (C) 2013, ChaN, all right reserved               */
+   6:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** /*-----------------------------------------------------------------------*/
+   7:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** /* If a working storage control module is available, it should be        */
+   8:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** /* attached to the FatFs via a glue function rather than modifying it.   */
+   9:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** /* This is an example of glue functions to attach various existing      */
+  10:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** /* storage control modules to the FatFs module with a defined API.       */
+  11:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** /*-----------------------------------------------------------------------*/
+  12:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 
+  13:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** /* Includes ------------------------------------------------------------------*/
+  14:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** #include "diskio.h"
+  15:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** #include "ff_gen_drv.h"
+  16:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 
+  17:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** #if defined ( __GNUC__ )
+  18:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** #ifndef __weak
+  19:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** #define __weak __attribute__((weak))
+  20:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** #endif
+  21:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** #endif
+  22:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 
+  23:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** /* Private typedef -----------------------------------------------------------*/
+  24:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** /* Private define ------------------------------------------------------------*/
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s 			page 2
+
+
+  25:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** /* Private variables ---------------------------------------------------------*/
+  26:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** extern Disk_drvTypeDef  disk;
+  27:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 
+  28:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** /* Private function prototypes -----------------------------------------------*/
+  29:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** /* Private functions ---------------------------------------------------------*/
+  30:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 
+  31:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** /**
+  32:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @brief  Gets Disk Status
+  33:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @param  pdrv: Physical drive number (0..)
+  34:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @retval DSTATUS: Operation status
+  35:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   */
+  36:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** DSTATUS disk_status (
+  37:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 	BYTE pdrv		/* Physical drive number to identify the drive */
+  38:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** )
+  39:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** {
+  35              		.loc 1 39 1 view -0
+  36              		.cfi_startproc
+  37              		@ args = 0, pretend = 0, frame = 0
+  38              		@ frame_needed = 0, uses_anonymous_args = 0
+  39              		@ link register save eliminated.
+  40:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   DSTATUS stat;
+  40              		.loc 1 40 3 view .LVU1
+  41:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 
+  42:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   stat = disk.drv[pdrv]->disk_status(disk.lun[pdrv]);
+  41              		.loc 1 42 3 view .LVU2
+  42              		.loc 1 42 10 is_stmt 0 view .LVU3
+  43 0000 034B     		ldr	r3, .L2
+  44 0002 1A18     		adds	r2, r3, r0
+  45              		.loc 1 42 18 view .LVU4
+  46 0004 03EB8003 		add	r3, r3, r0, lsl #2
+  47              		.loc 1 42 24 view .LVU5
+  48 0008 5B68     		ldr	r3, [r3, #4]
+  49              		.loc 1 42 10 view .LVU6
+  50 000a 107A     		ldrb	r0, [r2, #8]	@ zero_extendqisi2
+  51              	.LVL1:
+  52              		.loc 1 42 10 view .LVU7
+  53 000c 5B68     		ldr	r3, [r3, #4]
+  54 000e 1847     		bx	r3
+  55              	.LVL2:
+  56              	.L3:
+  57              		.align	2
+  58              	.L2:
+  59 0010 00000000 		.word	disk
+  60              		.cfi_endproc
+  61              	.LFE0:
+  63              		.section	.text.disk_initialize,"ax",%progbits
+  64              		.align	1
+  65              		.global	disk_initialize
+  66              		.syntax unified
+  67              		.thumb
+  68              		.thumb_func
+  70              	disk_initialize:
+  71              	.LVL3:
+  72              	.LFB1:
+  43:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   return stat;
+  44:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** }
+  45:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s 			page 3
+
+
+  46:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** /**
+  47:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @brief  Initializes a Drive
+  48:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @param  pdrv: Physical drive number (0..)
+  49:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @retval DSTATUS: Operation status
+  50:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   */
+  51:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** DSTATUS disk_initialize (
+  52:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 	BYTE pdrv				/* Physical drive nmuber to identify the drive */
+  53:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** )
+  54:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** {
+  73              		.loc 1 54 1 is_stmt 1 view -0
+  74              		.cfi_startproc
+  75              		@ args = 0, pretend = 0, frame = 0
+  76              		@ frame_needed = 0, uses_anonymous_args = 0
+  55:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   DSTATUS stat = RES_OK;
+  77              		.loc 1 55 3 view .LVU9
+  56:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 
+  57:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   if(disk.is_initialized[pdrv] == 0)
+  78              		.loc 1 57 3 view .LVU10
+  54:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   DSTATUS stat = RES_OK;
+  79              		.loc 1 54 1 is_stmt 0 view .LVU11
+  80 0000 38B5     		push	{r3, r4, r5, lr}
+  81              		.cfi_def_cfa_offset 16
+  82              		.cfi_offset 3, -16
+  83              		.cfi_offset 4, -12
+  84              		.cfi_offset 5, -8
+  85              		.cfi_offset 14, -4
+  86              		.loc 1 57 25 view .LVU12
+  87 0002 084D     		ldr	r5, .L8
+  54:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   DSTATUS stat = RES_OK;
+  88              		.loc 1 54 1 view .LVU13
+  89 0004 0446     		mov	r4, r0
+  90              		.loc 1 57 5 view .LVU14
+  91 0006 2B5C     		ldrb	r3, [r5, r0]	@ zero_extendqisi2
+  92 0008 53B9     		cbnz	r3, .L7
+  58:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   {
+  59:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****     stat = disk.drv[pdrv]->disk_initialize(disk.lun[pdrv]);
+  93              		.loc 1 59 5 is_stmt 1 view .LVU15
+  94              		.loc 1 59 20 is_stmt 0 view .LVU16
+  95 000a 05EB8002 		add	r2, r5, r0, lsl #2
+  96              		.loc 1 59 26 view .LVU17
+  97 000e 5268     		ldr	r2, [r2, #4]
+  98              		.loc 1 59 12 view .LVU18
+  99 0010 2B18     		adds	r3, r5, r0
+ 100 0012 1268     		ldr	r2, [r2]
+ 101 0014 187A     		ldrb	r0, [r3, #8]	@ zero_extendqisi2
+ 102              	.LVL4:
+ 103              		.loc 1 59 12 view .LVU19
+ 104 0016 9047     		blx	r2
+ 105              	.LVL5:
+  60:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****     if(stat == RES_OK)
+ 106              		.loc 1 60 5 is_stmt 1 view .LVU20
+ 107              		.loc 1 60 7 is_stmt 0 view .LVU21
+ 108 0018 08B9     		cbnz	r0, .L5
+  61:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****     {
+  62:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****       disk.is_initialized[pdrv] = 1;
+ 109              		.loc 1 62 7 is_stmt 1 view .LVU22
+ 110              		.loc 1 62 33 is_stmt 0 view .LVU23
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s 			page 4
+
+
+ 111 001a 0123     		movs	r3, #1
+ 112 001c 2B55     		strb	r3, [r5, r4]
+ 113              	.LVL6:
+ 114              	.L5:
+  63:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****     }
+  64:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   }
+  65:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   return stat;
+ 115              		.loc 1 65 3 is_stmt 1 view .LVU24
+  66:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** }
+ 116              		.loc 1 66 1 is_stmt 0 view .LVU25
+ 117 001e 38BD     		pop	{r3, r4, r5, pc}
+ 118              	.LVL7:
+ 119              	.L7:
+  55:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 
+ 120              		.loc 1 55 11 view .LVU26
+ 121 0020 0020     		movs	r0, #0
+ 122              	.LVL8:
+  55:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 
+ 123              		.loc 1 55 11 view .LVU27
+ 124 0022 FCE7     		b	.L5
+ 125              	.L9:
+ 126              		.align	2
+ 127              	.L8:
+ 128 0024 00000000 		.word	disk
+ 129              		.cfi_endproc
+ 130              	.LFE1:
+ 132              		.section	.text.disk_read,"ax",%progbits
+ 133              		.align	1
+ 134              		.global	disk_read
+ 135              		.syntax unified
+ 136              		.thumb
+ 137              		.thumb_func
+ 139              	disk_read:
+ 140              	.LVL9:
+ 141              	.LFB2:
+  67:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 
+  68:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** /**
+  69:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @brief  Reads Sector(s)
+  70:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @param  pdrv: Physical drive number (0..)
+  71:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @param  *buff: Data buffer to store read data
+  72:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @param  sector: Sector address (LBA)
+  73:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @param  count: Number of sectors to read (1..128)
+  74:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @retval DRESULT: Operation result
+  75:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   */
+  76:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** DRESULT disk_read (
+  77:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 	BYTE pdrv,		/* Physical drive nmuber to identify the drive */
+  78:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 	BYTE *buff,		/* Data buffer to store read data */
+  79:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 	LBA_t sector,   /* Sector address in LBA */
+  80:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 	UINT count		/* Number of sectors to read */
+  81:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** )
+  82:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 
+  83:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** {
+ 142              		.loc 1 83 1 is_stmt 1 view -0
+ 143              		.cfi_startproc
+ 144              		@ args = 0, pretend = 0, frame = 0
+ 145              		@ frame_needed = 0, uses_anonymous_args = 0
+ 146              		@ link register save eliminated.
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s 			page 5
+
+
+  84:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   DRESULT res;
+ 147              		.loc 1 84 3 view .LVU29
+  85:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 
+  86:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   res = disk.drv[pdrv]->disk_read(disk.lun[pdrv], buff, sector, count);
+ 148              		.loc 1 86 3 view .LVU30
+  83:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   DRESULT res;
+ 149              		.loc 1 83 1 is_stmt 0 view .LVU31
+ 150 0000 30B4     		push	{r4, r5}
+ 151              		.cfi_def_cfa_offset 8
+ 152              		.cfi_offset 4, -8
+ 153              		.cfi_offset 5, -4
+ 154              		.loc 1 86 9 view .LVU32
+ 155 0002 054C     		ldr	r4, .L11
+ 156 0004 2518     		adds	r5, r4, r0
+ 157              		.loc 1 86 17 view .LVU33
+ 158 0006 04EB8004 		add	r4, r4, r0, lsl #2
+ 159              		.loc 1 86 23 view .LVU34
+ 160 000a 6068     		ldr	r0, [r4, #4]
+ 161              	.LVL10:
+ 162              		.loc 1 86 9 view .LVU35
+ 163 000c 8468     		ldr	r4, [r0, #8]
+ 164 000e 287A     		ldrb	r0, [r5, #8]	@ zero_extendqisi2
+ 165 0010 A446     		mov	ip, r4
+  87:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   return res;
+  88:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** }
+ 166              		.loc 1 88 1 view .LVU36
+ 167 0012 30BC     		pop	{r4, r5}
+ 168              		.cfi_restore 5
+ 169              		.cfi_restore 4
+ 170              		.cfi_def_cfa_offset 0
+  86:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   return res;
+ 171              		.loc 1 86 9 view .LVU37
+ 172 0014 6047     		bx	ip
+ 173              	.LVL11:
+ 174              	.L12:
+  86:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   return res;
+ 175              		.loc 1 86 9 view .LVU38
+ 176 0016 00BF     		.align	2
+ 177              	.L11:
+ 178 0018 00000000 		.word	disk
+ 179              		.cfi_endproc
+ 180              	.LFE2:
+ 182              		.section	.text.disk_write,"ax",%progbits
+ 183              		.align	1
+ 184              		.global	disk_write
+ 185              		.syntax unified
+ 186              		.thumb
+ 187              		.thumb_func
+ 189              	disk_write:
+ 190              	.LVL12:
+ 191              	.LFB3:
+  89:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 
+  90:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** /**
+  91:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @brief  Writes Sector(s)
+  92:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @param  pdrv: Physical drive number (0..)
+  93:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @param  *buff: Data to be written
+  94:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @param  sector: Sector address (LBA)
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s 			page 6
+
+
+  95:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @param  count: Number of sectors to write (1..128)
+  96:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @retval DRESULT: Operation result
+  97:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   */
+  98:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 
+  99:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** DRESULT disk_write (
+ 100:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 	BYTE pdrv,		/* Physical drive nmuber to identify the drive */
+ 101:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 	const BYTE *buff,	/* Data to be written */
+ 102:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 	LBA_t sector,		/* Sector address in LBA */
+ 103:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 	UINT count        	/* Number of sectors to write */
+ 104:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** )
+ 105:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** {
+ 192              		.loc 1 105 1 is_stmt 1 view -0
+ 193              		.cfi_startproc
+ 194              		@ args = 0, pretend = 0, frame = 0
+ 195              		@ frame_needed = 0, uses_anonymous_args = 0
+ 196              		@ link register save eliminated.
+ 106:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   DRESULT res;
+ 197              		.loc 1 106 3 view .LVU40
+ 107:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 
+ 108:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   res = disk.drv[pdrv]->disk_write(disk.lun[pdrv], buff, sector, count);
+ 198              		.loc 1 108 3 view .LVU41
+ 105:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   DRESULT res;
+ 199              		.loc 1 105 1 is_stmt 0 view .LVU42
+ 200 0000 30B4     		push	{r4, r5}
+ 201              		.cfi_def_cfa_offset 8
+ 202              		.cfi_offset 4, -8
+ 203              		.cfi_offset 5, -4
+ 204              		.loc 1 108 9 view .LVU43
+ 205 0002 054C     		ldr	r4, .L14
+ 206 0004 2518     		adds	r5, r4, r0
+ 207              		.loc 1 108 17 view .LVU44
+ 208 0006 04EB8004 		add	r4, r4, r0, lsl #2
+ 209              		.loc 1 108 23 view .LVU45
+ 210 000a 6068     		ldr	r0, [r4, #4]
+ 211              	.LVL13:
+ 212              		.loc 1 108 9 view .LVU46
+ 213 000c C468     		ldr	r4, [r0, #12]
+ 214 000e 287A     		ldrb	r0, [r5, #8]	@ zero_extendqisi2
+ 215 0010 A446     		mov	ip, r4
+ 109:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   return res;
+ 110:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** }
+ 216              		.loc 1 110 1 view .LVU47
+ 217 0012 30BC     		pop	{r4, r5}
+ 218              		.cfi_restore 5
+ 219              		.cfi_restore 4
+ 220              		.cfi_def_cfa_offset 0
+ 108:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   return res;
+ 221              		.loc 1 108 9 view .LVU48
+ 222 0014 6047     		bx	ip
+ 223              	.LVL14:
+ 224              	.L15:
+ 108:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   return res;
+ 225              		.loc 1 108 9 view .LVU49
+ 226 0016 00BF     		.align	2
+ 227              	.L14:
+ 228 0018 00000000 		.word	disk
+ 229              		.cfi_endproc
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s 			page 7
+
+
+ 230              	.LFE3:
+ 232              		.section	.text.disk_ioctl,"ax",%progbits
+ 233              		.align	1
+ 234              		.global	disk_ioctl
+ 235              		.syntax unified
+ 236              		.thumb
+ 237              		.thumb_func
+ 239              	disk_ioctl:
+ 240              	.LVL15:
+ 241              	.LFB4:
+ 111:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 
+ 112:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 
+ 113:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** /**
+ 114:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @brief  I/O control operation
+ 115:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @param  pdrv: Physical drive number (0..)
+ 116:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @param  cmd: Control code
+ 117:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @param  *buff: Buffer to send/receive control data
+ 118:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @retval DRESULT: Operation result
+ 119:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   */
+ 120:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 
+ 121:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** DRESULT disk_ioctl (
+ 122:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 	BYTE pdrv,		/* Physical drive nmuber (0..) */
+ 123:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 	BYTE cmd,		/* Control code */
+ 124:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 	void *buff		/* Buffer to send/receive control data */
+ 125:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** )
+ 126:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** {
+ 242              		.loc 1 126 1 is_stmt 1 view -0
+ 243              		.cfi_startproc
+ 244              		@ args = 0, pretend = 0, frame = 0
+ 245              		@ frame_needed = 0, uses_anonymous_args = 0
+ 246              		@ link register save eliminated.
+ 127:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   DRESULT res;
+ 247              		.loc 1 127 3 view .LVU51
+ 128:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 
+ 129:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   res = disk.drv[pdrv]->disk_ioctl(disk.lun[pdrv], cmd, buff);
+ 248              		.loc 1 129 3 view .LVU52
+ 126:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   DRESULT res;
+ 249              		.loc 1 126 1 is_stmt 0 view .LVU53
+ 250 0000 10B4     		push	{r4}
+ 251              		.cfi_def_cfa_offset 4
+ 252              		.cfi_offset 4, -4
+ 253              		.loc 1 129 9 view .LVU54
+ 254 0002 054B     		ldr	r3, .L17
+ 255 0004 1C18     		adds	r4, r3, r0
+ 256              		.loc 1 129 17 view .LVU55
+ 257 0006 03EB8003 		add	r3, r3, r0, lsl #2
+ 258              		.loc 1 129 23 view .LVU56
+ 259 000a 5B68     		ldr	r3, [r3, #4]
+ 260              		.loc 1 129 9 view .LVU57
+ 261 000c 207A     		ldrb	r0, [r4, #8]	@ zero_extendqisi2
+ 262              	.LVL16:
+ 263              		.loc 1 129 9 view .LVU58
+ 264 000e 1B69     		ldr	r3, [r3, #16]
+ 130:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   return res;
+ 131:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** }
+ 265              		.loc 1 131 1 view .LVU59
+ 266 0010 5DF8044B 		ldr	r4, [sp], #4
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s 			page 8
+
+
+ 267              		.cfi_restore 4
+ 268              		.cfi_def_cfa_offset 0
+ 129:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   return res;
+ 269              		.loc 1 129 9 view .LVU60
+ 270 0014 1847     		bx	r3
+ 271              	.LVL17:
+ 272              	.L18:
+ 129:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   return res;
+ 273              		.loc 1 129 9 view .LVU61
+ 274 0016 00BF     		.align	2
+ 275              	.L17:
+ 276 0018 00000000 		.word	disk
+ 277              		.cfi_endproc
+ 278              	.LFE4:
+ 280              		.section	.text.get_fattime,"ax",%progbits
+ 281              		.align	1
+ 282              		.weak	get_fattime
+ 283              		.syntax unified
+ 284              		.thumb
+ 285              		.thumb_func
+ 287              	get_fattime:
+ 288              	.LFB5:
+ 132:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 
+ 133:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** 
+ 134:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** /**
+ 135:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @brief  Gets Time from RTC
+ 136:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @param  None
+ 137:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   * @retval Time in DWORD
+ 138:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   */
+ 139:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** __weak DWORD get_fattime (void)
+ 140:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** {
+ 289              		.loc 1 140 1 is_stmt 1 view -0
+ 290              		.cfi_startproc
+ 291              		@ args = 0, pretend = 0, frame = 0
+ 292              		@ frame_needed = 0, uses_anonymous_args = 0
+ 293              		@ link register save eliminated.
+ 141:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c ****   return 0;
+ 294              		.loc 1 141 3 view .LVU63
+ 142:../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.c **** }
+ 295              		.loc 1 142 1 is_stmt 0 view .LVU64
+ 296 0000 0020     		movs	r0, #0
+ 297 0002 7047     		bx	lr
+ 298              		.cfi_endproc
+ 299              	.LFE5:
+ 301              		.text
+ 302              	.Letext0:
+ 303              		.file 2 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 304              		.file 3 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 305              		.file 4 "../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff.h"
+ 306              		.file 5 "../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/diskio.h"
+ 307              		.file 6 "../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff_gen_drv.h"
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 diskio.c
+C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s:26     .text.disk_status:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s:32     .text.disk_status:00000000 disk_status
+C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s:59     .text.disk_status:00000010 $d
+C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s:64     .text.disk_initialize:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s:70     .text.disk_initialize:00000000 disk_initialize
+C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s:128    .text.disk_initialize:00000024 $d
+C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s:133    .text.disk_read:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s:139    .text.disk_read:00000000 disk_read
+C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s:178    .text.disk_read:00000018 $d
+C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s:183    .text.disk_write:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s:189    .text.disk_write:00000000 disk_write
+C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s:228    .text.disk_write:00000018 $d
+C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s:233    .text.disk_ioctl:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s:239    .text.disk_ioctl:00000000 disk_ioctl
+C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s:276    .text.disk_ioctl:00000018 $d
+C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s:281    .text.get_fattime:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccTzIneg.s:287    .text.get_fattime:00000000 get_fattime
+                           .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
+                           .group:00000000 wm4.ffconf.h.5.408396d4b7b8768464107f30988c29ce
+                           .group:00000000 wm4._newlib_version.h.4.411db44ea2338a62eca2f0777f81481b
+                           .group:00000000 wm4.features.h.33.e0c9f337c65cb9f22ed5f23d082bc78b
+                           .group:00000000 wm4._default_types.h.15.247e5cd201eca3442cbf5404108c4935
+                           .group:00000000 wm4._intsup.h.10.48bafbb683905c4daa4565a85aeeb264
+                           .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+                           .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+                           .group:00000000 wm4.ff.h.106.b48356f5b3b39c0e3352a7b42055ad6b
+                           .group:00000000 wm4.diskio.h.40.f14b58c437ba6a5ed4192f306a7f1740
+
+UNDEFINED SYMBOLS
+disk

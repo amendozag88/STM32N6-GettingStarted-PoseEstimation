@@ -49,6 +49,10 @@ extern "C" {
 #define LCD_LAYER_0_ADDRESS                 0x34200000U
 #define LCD_LAYER_1_ADDRESS                 0x32100000U
 
+/* Audio codec defines */
+#define USE_AUDIO_CODEC_WM8904
+
+
 /* Default Audio IN internal buffer size */
 #define DEFAULT_AUDIO_IN_BUFFER_SIZE        2048U
 

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 1
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s 			page 1
 
 
    1              		.arch armv8.1-m.main
@@ -32,7 +32,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 1
   29              		.thumb
   30              		.thumb_func
   32              	npu_cache_init:
-  33              	.LFB835:
+  33              	.LFB837:
    1:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** /**
    2:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   ******************************************************************************
    3:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c ****   * @file    npu_cache.c
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 1
   23:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** void npu_cache_init(void)
   24:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** {
   34              		.loc 1 24 1 view -0
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 2
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s 			page 2
 
 
   35              		.cfi_startproc
@@ -81,7 +81,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 1
   50 000c 00000000 		.word	hcacheaxi_s
   51 0010 00FC0D58 		.word	1477311488
   52              		.cfi_endproc
-  53              	.LFE835:
+  53              	.LFE837:
   55              		.section	.text.npu_cache_enable,"ax",%progbits
   56              		.align	1
   57              		.global	npu_cache_enable
@@ -89,7 +89,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 1
   59              		.thumb
   60              		.thumb_func
   62              	npu_cache_enable:
-  63              	.LFB836:
+  63              	.LFB838:
   27:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** }
   28:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** 
   29:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** void npu_cache_enable(void)
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 1
   77              		.loc 1 36 5 view .LVU8
   78              		.loc 1 36 14 is_stmt 0 view .LVU9
   79 0004 2046     		mov	r0, r4
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 3
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s 			page 3
 
 
   80 0006 FFF7FEFF 		bl	HAL_CACHEAXI_Enable
@@ -135,7 +135,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 1
   89              	.L8:
   90 0010 00000000 		.word	hcacheaxi_s
   91              		.cfi_endproc
-  92              	.LFE836:
+  92              	.LFE838:
   94              		.section	.text.npu_cache_disable,"ax",%progbits
   95              		.align	1
   96              		.global	npu_cache_disable
@@ -143,7 +143,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 1
   98              		.thumb
   99              		.thumb_func
  101              	npu_cache_disable:
- 102              	.LFB837:
+ 102              	.LFB839:
   39:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** 
   40:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** void npu_cache_disable(void)
   41:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** {
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 1
   47:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** }
  124              		.loc 1 47 1 is_stmt 0 view .LVU19
  125 000e 10BD     		pop	{r4, pc}
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 4
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s 			page 4
 
 
  126              	.L15:
@@ -186,7 +186,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 1
  128              	.L14:
  129 0010 00000000 		.word	hcacheaxi_s
  130              		.cfi_endproc
- 131              	.LFE837:
+ 131              	.LFE839:
  133              		.section	.text.npu_cache_invalidate,"ax",%progbits
  134              		.align	1
  135              		.global	npu_cache_invalidate
@@ -194,7 +194,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 1
  137              		.thumb
  138              		.thumb_func
  140              	npu_cache_invalidate:
- 141              	.LFB838:
+ 141              	.LFB840:
   48:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** 
   49:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** void npu_cache_invalidate(void)
   50:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** {
@@ -213,7 +213,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 1
  153              	.L17:
  154 0008 00000000 		.word	hcacheaxi_s
  155              		.cfi_endproc
- 156              	.LFE838:
+ 156              	.LFE840:
  158              		.section	.text.npu_cache_clean_range,"ax",%progbits
  159              		.align	1
  160              		.global	npu_cache_clean_range
@@ -222,7 +222,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 1
  163              		.thumb_func
  165              	npu_cache_clean_range:
  166              	.LVL4:
- 167              	.LFB839:
+ 167              	.LFB841:
   52:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** }
   53:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** 
   54:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** void npu_cache_clean_range(uint32_t start_addr, uint32_t end_addr)
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 1
  175 0002 0146     		mov	r1, r0
  176              	.LVL5:
  177              		.loc 1 56 3 is_stmt 0 view .LVU24
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 5
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s 			page 5
 
 
  178 0004 0148     		ldr	r0, .L20
@@ -252,7 +252,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 1
  186              	.L20:
  187 000c 00000000 		.word	hcacheaxi_s
  188              		.cfi_endproc
- 189              	.LFE839:
+ 189              	.LFE841:
  191              		.section	.text.npu_cache_clean_invalidate_range,"ax",%progbits
  192              		.align	1
  193              		.global	npu_cache_clean_invalidate_range
@@ -261,7 +261,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 1
  196              		.thumb_func
  198              	npu_cache_clean_invalidate_range:
  199              	.LVL8:
- 200              	.LFB840:
+ 200              	.LFB842:
   57:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** }
   58:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** 
   59:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** void npu_cache_clean_invalidate_range(uint32_t start_addr, uint32_t end_addr)
@@ -288,7 +288,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 1
  219              	.L23:
  220 000c 00000000 		.word	hcacheaxi_s
  221              		.cfi_endproc
- 222              	.LFE840:
+ 222              	.LFE842:
  224              		.section	.text.NPU_CACHE_IRQHandler,"ax",%progbits
  225              		.align	1
  226              		.global	NPU_CACHE_IRQHandler
@@ -296,9 +296,9 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 1
  228              		.thumb
  229              		.thumb_func
  231              	NPU_CACHE_IRQHandler:
- 232              	.LFB841:
+ 232              	.LFB843:
   62:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** }
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 6
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s 			page 6
 
 
   63:../../Middlewares/AI_Runtime/Npu/Devices/STM32N6XX/npu_cache.c **** 
@@ -321,7 +321,7 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 1
  245              		.syntax unified
  246 0002 7047     		bx	lr
  247              		.cfi_endproc
- 248              	.LFE841:
+ 248              	.LFE843:
  250              		.section	.bss.hcacheaxi_s,"aw",%nobits
  251              		.align	2
  254              	hcacheaxi_s:
@@ -335,35 +335,35 @@ ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 1
  260              		.file 4 "../../STM32Cube_FW_N6/Drivers/CMSIS/Device/ST/STM32N6xx/Include/stm32n657xx.h"
  261              		.file 5 "../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Inc/stm32n6xx_hal_def.h"
  262              		.file 6 "../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Inc/stm32n6xx_hal_cacheaxi.h"
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 7
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 npu_cache.c
-C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:26     .text.npu_cache_init:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:32     .text.npu_cache_init:00000000 npu_cache_init
-C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:50     .text.npu_cache_init:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:254    .bss.hcacheaxi_s:00000000 hcacheaxi_s
-C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:56     .text.npu_cache_enable:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:62     .text.npu_cache_enable:00000000 npu_cache_enable
-C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:90     .text.npu_cache_enable:00000010 $d
-C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:95     .text.npu_cache_disable:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:101    .text.npu_cache_disable:00000000 npu_cache_disable
-C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:129    .text.npu_cache_disable:00000010 $d
-C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:134    .text.npu_cache_invalidate:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:140    .text.npu_cache_invalidate:00000000 npu_cache_invalidate
-C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:154    .text.npu_cache_invalidate:00000008 $d
-C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:159    .text.npu_cache_clean_range:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:165    .text.npu_cache_clean_range:00000000 npu_cache_clean_range
-C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:187    .text.npu_cache_clean_range:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:192    .text.npu_cache_clean_invalidate_range:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:198    .text.npu_cache_clean_invalidate_range:00000000 npu_cache_clean_invalidate_range
-C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:220    .text.npu_cache_clean_invalidate_range:0000000c $d
-C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:225    .text.NPU_CACHE_IRQHandler:00000000 $t
-C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:231    .text.NPU_CACHE_IRQHandler:00000000 NPU_CACHE_IRQHandler
-C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:251    .bss.hcacheaxi_s:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s:26     .text.npu_cache_init:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s:32     .text.npu_cache_init:00000000 npu_cache_init
+C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s:50     .text.npu_cache_init:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s:254    .bss.hcacheaxi_s:00000000 hcacheaxi_s
+C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s:56     .text.npu_cache_enable:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s:62     .text.npu_cache_enable:00000000 npu_cache_enable
+C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s:90     .text.npu_cache_enable:00000010 $d
+C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s:95     .text.npu_cache_disable:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s:101    .text.npu_cache_disable:00000000 npu_cache_disable
+C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s:129    .text.npu_cache_disable:00000010 $d
+C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s:134    .text.npu_cache_invalidate:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s:140    .text.npu_cache_invalidate:00000000 npu_cache_invalidate
+C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s:154    .text.npu_cache_invalidate:00000008 $d
+C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s:159    .text.npu_cache_clean_range:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s:165    .text.npu_cache_clean_range:00000000 npu_cache_clean_range
+C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s:187    .text.npu_cache_clean_range:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s:192    .text.npu_cache_clean_invalidate_range:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s:198    .text.npu_cache_clean_invalidate_range:00000000 npu_cache_clean_invalidate_range
+C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s:220    .text.npu_cache_clean_invalidate_range:0000000c $d
+C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s:225    .text.NPU_CACHE_IRQHandler:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s:231    .text.NPU_CACHE_IRQHandler:00000000 NPU_CACHE_IRQHandler
+C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s:251    .bss.hcacheaxi_s:00000000 $d
                            .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
-                           .group:00000000 wm4.stm32n6xx_hal_conf.h.21.e6f895f5dec93fd886896ef3aa220611
+                           .group:00000000 wm4.stm32n6xx_hal_conf.h.21.e108a0e1f8e9094b9ec5c3fbf543a831
                            .group:00000000 wm4.stddef.h.39.0dc9006b34572d4d9cae4c8b422c4971
                            .group:00000000 wm4.arm_cmse.h.103.a0d15a79c4c9a67da8d5831704d7248e
                            .group:00000000 wm4.stm32n6xx.h.34.80585dd08aa426c932f6311fdb7386da
@@ -395,7 +395,7 @@ C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:251    .bss.hcacheaxi_s:00000000 
                            .group:00000000 wm4._types.h.127.3bdfe3ff8ea2d0985b03d9cbe93480e3
                            .group:00000000 wm4.reent.h.18.25503cdc8b7e55dd0d6ea7b3e5af7a03
                            .group:00000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
-ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s 			page 8
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccmd1so3.s 			page 8
 
 
                            .group:00000000 wm4.reent.h.78.6b87466b04591b1f1cb88c14fdf2ba9e
@@ -422,9 +422,17 @@ C:\Users\Antonio\AppData\Local\Temp\ccAxWIOd.s:251    .bss.hcacheaxi_s:00000000 
                            .group:00000000 wm4.stm32n6xx_hal_i2c.h.741.1084702632703acc669e4282b3043372
                            .group:00000000 wm4.stm32n6xx_hal_ltdc.h.21.ae1eb09930e7e550e48e418ac5849e4d
                            .group:00000000 wm4.stm32n6xx_hal_ltdc.h.1002.b13ede7fc94ed5ad1c6768a157d2149a
+                           .group:00000000 wm4.stm32n6xx_hal_mdf.h.21.6eb130451a4e0db5b8befb63f326c92c
                            .group:00000000 wm4.stm32n6xx_hal_pwr.h.21.cdb73e4869c3fed3fc84f901ec0e5f0a
                            .group:00000000 wm4.stm32n6xx_hal_pwr_ex.h.21.1a673224a58b0c1e5fad8eeda6514208
                            .group:00000000 wm4.stm32n6xx_hal_ramcfg.h.21.a62dfbb4d2c14e9a8c634a215e37bd3d
+                           .group:00000000 wm4.stm32n6xx_hal_sai.h.21.d6c5e096d8c222239b66c09476942511
+                           .group:00000000 wm4.stm32n6xx_hal_sai_ex.h.21.98cc4c637392fcbacd0a3564bad4bba3
+                           .group:00000000 wm4.stm32n6xx_hal_sai.h.825.fc46628357edde5e604f90f7e222e919
+                           .group:00000000 wm4.stm32n6xx_ll_sdmmc.h.21.a8483ddbe319d8ff397cbc0087d2c233
+                           .group:00000000 wm4.stm32n6xx_ll_dlyb.h.21.05e6efa24db86ad89cfd13eda5cfcd3e
+                           .group:00000000 wm4.stm32n6xx_hal_sd.h.71.b83d10af03e36c820c893444588bae05
+                           .group:00000000 wm4.stm32n6xx_hal_sd_ex.h.21.0294125df092827b72ace449508982b9
                            .group:00000000 wm4.stm32n6xx_hal_uart.h.21.230f549bfa0d5ebfd77bfb311b2aca15
                            .group:00000000 wm4.stm32n6xx_hal_uart_ex.h.21.a0d5511e1d0703b7b5278c8f5472b96d
                            .group:00000000 wm4.stm32n6xx_hal_xspi.h.21.e17898be2073b6b6b19faf30b4e304e9

@@ -1,0 +1,1529 @@
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 1
+
+
+   1              		.arch armv8.1-m.main
+   2              		.fpu fpv5-d16
+   3              		.arch_extension dsp
+   4              		.arch_extension fp
+   5              		.arch_extension fp.dp
+   6              		.arch_extension mve
+   7              		.arch_extension mve.fp
+   8              		.eabi_attribute 5, "cortex-m55"
+   9              		.eabi_attribute 28, 1
+  10              		.eabi_attribute 20, 1
+  11              		.eabi_attribute 21, 1
+  12              		.eabi_attribute 23, 3
+  13              		.eabi_attribute 24, 1
+  14              		.eabi_attribute 25, 1
+  15              		.eabi_attribute 26, 1
+  16              		.eabi_attribute 30, 4
+  17              		.eabi_attribute 34, 1
+  18              		.eabi_attribute 38, 1
+  19              		.eabi_attribute 18, 4
+  20              		.file	"simon_says_game.c"
+  21              		.text
+  22              	.Ltext0:
+  23              		.cfi_sections	.debug_frame
+  24              		.file 1 "Src/simon_says_game.c"
+  25              		.section	.text.PlayWav,"ax",%progbits
+  26              		.align	1
+  27              		.syntax unified
+  28              		.thumb
+  29              		.thumb_func
+  31              	PlayWav:
+  32              	.LVL0:
+  33              	.LFB3346:
+   1:Src/simon_says_game.c **** #include "simon_says_game.h"
+   2:Src/simon_says_game.c **** #include "gesture_detection.h"
+   3:Src/simon_says_game.c **** #include "utils.h"
+   4:Src/simon_says_game.c **** #include "stm32n6570_discovery.h"
+   5:Src/simon_says_game.c **** #include "stm32n6570_discovery_audio.h"
+   6:Src/simon_says_game.c **** #include "stm32n6570_discovery_sd.h"
+   7:Src/simon_says_game.c **** #include "ff.h"
+   8:Src/simon_says_game.c **** #include "stm32_lcd.h"
+   9:Src/simon_says_game.c **** #include <stdlib.h>
+  10:Src/simon_says_game.c **** #include <string.h>
+  11:Src/simon_says_game.c **** #include <math.h>
+  12:Src/simon_says_game.c **** 
+  13:Src/simon_says_game.c **** #define RESPONSE_TIMEOUT_MS 2000U
+  14:Src/simon_says_game.c **** #define RESULT_DISPLAY_MS   1000U
+  15:Src/simon_says_game.c **** 
+  16:Src/simon_says_game.c **** static const char *pose_names[POSE_COUNT] = {
+  17:Src/simon_says_game.c ****     "Hands Up",
+  18:Src/simon_says_game.c ****     "Hands On Head",
+  19:Src/simon_says_game.c ****     "Hands On Hips",
+  20:Src/simon_says_game.c ****     "Left Arm Out",
+  21:Src/simon_says_game.c ****     "Right Arm Out"
+  22:Src/simon_says_game.c **** };
+  23:Src/simon_says_game.c **** 
+  24:Src/simon_says_game.c **** static const char *pose_audio_files[POSE_COUNT] = {
+  25:Src/simon_says_game.c ****     "hands_up.wav",
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 2
+
+
+  26:Src/simon_says_game.c ****     "hands_on_head.wav",
+  27:Src/simon_says_game.c ****     "hands_on_hips.wav",
+  28:Src/simon_says_game.c ****     "left_arm_out.wav",
+  29:Src/simon_says_game.c ****     "right_arm_out.wav"
+  30:Src/simon_says_game.c **** };
+  31:Src/simon_says_game.c **** 
+  32:Src/simon_says_game.c **** static FATFS sd_fs;
+  33:Src/simon_says_game.c **** static uint8_t audio_ready = 0;
+  34:Src/simon_says_game.c **** 
+  35:Src/simon_says_game.c **** static int PoseMatched(SimonPose_t pose, spe_pp_outBuffer_t *k)
+  36:Src/simon_says_game.c **** {
+  37:Src/simon_says_game.c ****     float32_t lx = k[KEYPOINT_LEFT_WRIST].x_center;
+  38:Src/simon_says_game.c ****     float32_t ly = k[KEYPOINT_LEFT_WRIST].y_center;
+  39:Src/simon_says_game.c ****     float32_t rx = k[KEYPOINT_RIGHT_WRIST].x_center;
+  40:Src/simon_says_game.c ****     float32_t ry = k[KEYPOINT_RIGHT_WRIST].y_center;
+  41:Src/simon_says_game.c ****     switch(pose)
+  42:Src/simon_says_game.c ****     {
+  43:Src/simon_says_game.c ****     case POSE_HANDS_UP:
+  44:Src/simon_says_game.c ****         return (ly < k[KEYPOINT_LEFT_SHOULDER].y_center &&
+  45:Src/simon_says_game.c ****                 ry < k[KEYPOINT_RIGHT_SHOULDER].y_center);
+  46:Src/simon_says_game.c ****     case POSE_HANDS_ON_HEAD:
+  47:Src/simon_says_game.c ****         return (ly < k[KEYPOINT_NOSE].y_center &&
+  48:Src/simon_says_game.c ****                 ry < k[KEYPOINT_NOSE].y_center &&
+  49:Src/simon_says_game.c ****                 fabsf(lx - k[KEYPOINT_NOSE].x_center) < 0.15f &&
+  50:Src/simon_says_game.c ****                 fabsf(rx - k[KEYPOINT_NOSE].x_center) < 0.15f);
+  51:Src/simon_says_game.c ****     case POSE_HANDS_ON_HIPS:
+  52:Src/simon_says_game.c ****         return (fabsf(lx - k[KEYPOINT_LEFT_HIP].x_center) < 0.1f &&
+  53:Src/simon_says_game.c ****                 fabsf(ly - k[KEYPOINT_LEFT_HIP].y_center) < 0.1f &&
+  54:Src/simon_says_game.c ****                 fabsf(rx - k[KEYPOINT_RIGHT_HIP].x_center) < 0.1f &&
+  55:Src/simon_says_game.c ****                 fabsf(ry - k[KEYPOINT_RIGHT_HIP].y_center) < 0.1f);
+  56:Src/simon_says_game.c ****     case POSE_LEFT_ARM_OUT:
+  57:Src/simon_says_game.c ****         return (lx < k[KEYPOINT_LEFT_SHOULDER].x_center - 0.25f &&
+  58:Src/simon_says_game.c ****                 fabsf(ly - k[KEYPOINT_LEFT_SHOULDER].y_center) < 0.15f);
+  59:Src/simon_says_game.c ****     case POSE_RIGHT_ARM_OUT:
+  60:Src/simon_says_game.c ****         return (rx > k[KEYPOINT_RIGHT_SHOULDER].x_center + 0.25f &&
+  61:Src/simon_says_game.c ****                 fabsf(ry - k[KEYPOINT_RIGHT_SHOULDER].y_center) < 0.15f);
+  62:Src/simon_says_game.c ****     default:
+  63:Src/simon_says_game.c ****         return 0;
+  64:Src/simon_says_game.c ****     }
+  65:Src/simon_says_game.c **** }
+  66:Src/simon_says_game.c **** 
+  67:Src/simon_says_game.c **** static void Audio_Init(uint32_t sample_rate, uint32_t bits, uint32_t channels)
+  68:Src/simon_says_game.c **** {
+  69:Src/simon_says_game.c ****     if (audio_ready)
+  70:Src/simon_says_game.c ****         return;
+  71:Src/simon_says_game.c ****     BSP_AUDIO_Init_t init;
+  72:Src/simon_says_game.c ****     init.Device = AUDIO_OUT_DEVICE_HEADPHONE;
+  73:Src/simon_says_game.c ****     init.SampleRate = sample_rate;
+  74:Src/simon_says_game.c ****     init.BitsPerSample = bits;
+  75:Src/simon_says_game.c ****     init.ChannelsNbr = channels;
+  76:Src/simon_says_game.c ****     init.Volume = 70;
+  77:Src/simon_says_game.c ****     if (BSP_AUDIO_OUT_Init(0, &init) == BSP_ERROR_NONE)
+  78:Src/simon_says_game.c ****     {
+  79:Src/simon_says_game.c ****         audio_ready = 1;
+  80:Src/simon_says_game.c ****     }
+  81:Src/simon_says_game.c **** }
+  82:Src/simon_says_game.c **** 
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 3
+
+
+  83:Src/simon_says_game.c **** static void PlayWav(const char *name)
+  84:Src/simon_says_game.c **** {
+  34              		.loc 1 84 1 view -0
+  35              		.cfi_startproc
+  36              		@ args = 0, pretend = 0, frame = 624
+  37              		@ frame_needed = 0, uses_anonymous_args = 0
+  85:Src/simon_says_game.c ****     FIL file;
+  38              		.loc 1 85 5 view .LVU1
+  86:Src/simon_says_game.c ****     if (f_open(&file, name, FA_READ) != FR_OK)
+  39              		.loc 1 86 5 view .LVU2
+  84:Src/simon_says_game.c ****     FIL file;
+  40              		.loc 1 84 1 is_stmt 0 view .LVU3
+  41 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
+  42              		.cfi_def_cfa_offset 32
+  43              		.cfi_offset 4, -32
+  44              		.cfi_offset 5, -28
+  45              		.cfi_offset 6, -24
+  46              		.cfi_offset 7, -20
+  47              		.cfi_offset 8, -16
+  48              		.cfi_offset 9, -12
+  49              		.cfi_offset 10, -8
+  50              		.cfi_offset 14, -4
+  51 0004 ADF51C7D 		sub	sp, sp, #624
+  52              		.cfi_def_cfa_offset 656
+  84:Src/simon_says_game.c ****     FIL file;
+  53              		.loc 1 84 1 view .LVU4
+  54 0008 0146     		mov	r1, r0
+  55              		.loc 1 86 9 view .LVU5
+  56 000a 0122     		movs	r2, #1
+  57 000c 12A8     		add	r0, sp, #72
+  58              	.LVL1:
+  59              		.loc 1 86 9 view .LVU6
+  60 000e FFF7FEFF 		bl	f_open
+  61              	.LVL2:
+  62              		.loc 1 86 8 discriminator 1 view .LVU7
+  63 0012 A0B9     		cbnz	r0, .L1
+  87:Src/simon_says_game.c ****         return;
+  88:Src/simon_says_game.c ****     UINT br;
+  64              		.loc 1 88 5 is_stmt 1 view .LVU8
+  89:Src/simon_says_game.c ****     uint8_t header[44];
+  65              		.loc 1 89 5 view .LVU9
+  90:Src/simon_says_game.c ****     f_read(&file, header, sizeof(header), &br);
+  66              		.loc 1 90 5 view .LVU10
+  67 0014 2C22     		movs	r2, #44
+  68 0016 01AB     		add	r3, sp, #4
+  69 0018 07A9     		add	r1, sp, #28
+  70 001a 12A8     		add	r0, sp, #72
+  71 001c FFF7FEFF 		bl	f_read
+  72              	.LVL3:
+  91:Src/simon_says_game.c ****     uint32_t sample_rate = *(uint32_t*)&header[24];
+  73              		.loc 1 91 5 view .LVU11
+  92:Src/simon_says_game.c ****     uint16_t channels = *(uint16_t*)&header[22];
+  93:Src/simon_says_game.c ****     uint16_t bits = *(uint16_t*)&header[34];
+  94:Src/simon_says_game.c ****     uint32_t data_size = *(uint32_t*)&header[40];
+  74              		.loc 1 94 14 is_stmt 0 view .LVU12
+  75 0020 119D     		ldr	r5, [sp, #68]
+  91:Src/simon_says_game.c ****     uint32_t sample_rate = *(uint32_t*)&header[24];
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 4
+
+
+  76              		.loc 1 91 14 view .LVU13
+  77 0022 DDF834A0 		ldr	r10, [sp, #52]
+  78              	.LVL4:
+  92:Src/simon_says_game.c ****     uint16_t channels = *(uint16_t*)&header[22];
+  79              		.loc 1 92 5 is_stmt 1 view .LVU14
+  95:Src/simon_says_game.c ****     uint8_t *buffer = malloc(data_size);
+  80              		.loc 1 95 23 is_stmt 0 view .LVU15
+  81 0026 2846     		mov	r0, r5
+  92:Src/simon_says_game.c ****     uint16_t channels = *(uint16_t*)&header[22];
+  82              		.loc 1 92 14 view .LVU16
+  83 0028 BDF83280 		ldrh	r8, [sp, #50]
+  84              	.LVL5:
+  93:Src/simon_says_game.c ****     uint32_t data_size = *(uint32_t*)&header[40];
+  85              		.loc 1 93 5 is_stmt 1 view .LVU17
+  93:Src/simon_says_game.c ****     uint32_t data_size = *(uint32_t*)&header[40];
+  86              		.loc 1 93 14 is_stmt 0 view .LVU18
+  87 002c BDF83E90 		ldrh	r9, [sp, #62]
+  88              	.LVL6:
+  94:Src/simon_says_game.c ****     uint8_t *buffer = malloc(data_size);
+  89              		.loc 1 94 5 is_stmt 1 view .LVU19
+  90              		.loc 1 95 5 view .LVU20
+  91              		.loc 1 95 23 is_stmt 0 view .LVU21
+  92 0030 FFF7FEFF 		bl	malloc
+  93              	.LVL7:
+  96:Src/simon_says_game.c ****     if (!buffer)
+  94              		.loc 1 96 5 is_stmt 1 view .LVU22
+  95              		.loc 1 96 8 is_stmt 0 view .LVU23
+  96 0034 0446     		mov	r4, r0
+  97 0036 30B9     		cbnz	r0, .L3
+  97:Src/simon_says_game.c ****     {
+  98:Src/simon_says_game.c ****         f_close(&file);
+  98              		.loc 1 98 9 is_stmt 1 view .LVU24
+  99 0038 12A8     		add	r0, sp, #72
+ 100              	.LVL8:
+ 101              		.loc 1 98 9 is_stmt 0 view .LVU25
+ 102 003a FFF7FEFF 		bl	f_close
+ 103              	.LVL9:
+  99:Src/simon_says_game.c ****         return;
+ 104              		.loc 1 99 9 is_stmt 1 view .LVU26
+ 105              	.L1:
+ 100:Src/simon_says_game.c ****     }
+ 101:Src/simon_says_game.c ****     f_read(&file, buffer, data_size, &br);
+ 102:Src/simon_says_game.c ****     f_close(&file);
+ 103:Src/simon_says_game.c ****     Audio_Init(sample_rate, bits, channels);
+ 104:Src/simon_says_game.c ****     BSP_AUDIO_OUT_Play(0, buffer, data_size);
+ 105:Src/simon_says_game.c ****     uint32_t state;
+ 106:Src/simon_says_game.c ****     do {
+ 107:Src/simon_says_game.c ****         BSP_AUDIO_OUT_GetState(0, &state);
+ 108:Src/simon_says_game.c ****     } while(state == AUDIO_OUT_STATE_PLAYING);
+ 109:Src/simon_says_game.c ****     BSP_AUDIO_OUT_Stop(0);
+ 110:Src/simon_says_game.c ****     free(buffer);
+ 111:Src/simon_says_game.c **** }
+ 106              		.loc 1 111 1 is_stmt 0 view .LVU27
+ 107 003e 0DF51C7D 		add	sp, sp, #624
+ 108              		.cfi_remember_state
+ 109              		.cfi_def_cfa_offset 32
+ 110              		@ sp needed
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 5
+
+
+ 111 0042 BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 112              	.LVL10:
+ 113              	.L3:
+ 114              		.cfi_restore_state
+ 101:Src/simon_says_game.c ****     f_close(&file);
+ 115              		.loc 1 101 5 is_stmt 1 view .LVU28
+ 116 0046 0146     		mov	r1, r0
+ 117 0048 2A46     		mov	r2, r5
+ 118 004a 01AB     		add	r3, sp, #4
+ 119              	.LBB4:
+ 120              	.LBB5:
+  69:Src/simon_says_game.c ****         return;
+ 121              		.loc 1 69 9 is_stmt 0 view .LVU29
+ 122 004c 164E     		ldr	r6, .L9
+ 123              	.LBE5:
+ 124              	.LBE4:
+ 101:Src/simon_says_game.c ****     f_close(&file);
+ 125              		.loc 1 101 5 view .LVU30
+ 126 004e 12A8     		add	r0, sp, #72
+ 127              	.LVL11:
+ 101:Src/simon_says_game.c ****     f_close(&file);
+ 128              		.loc 1 101 5 view .LVU31
+ 129 0050 FFF7FEFF 		bl	f_read
+ 130              	.LVL12:
+ 102:Src/simon_says_game.c ****     Audio_Init(sample_rate, bits, channels);
+ 131              		.loc 1 102 5 is_stmt 1 view .LVU32
+ 132 0054 12A8     		add	r0, sp, #72
+ 133 0056 FFF7FEFF 		bl	f_close
+ 134              	.LVL13:
+ 103:Src/simon_says_game.c ****     BSP_AUDIO_OUT_Play(0, buffer, data_size);
+ 135              		.loc 1 103 5 view .LVU33
+ 136              	.LBB9:
+ 137              	.LBI4:
+  67:Src/simon_says_game.c **** {
+ 138              		.loc 1 67 13 view .LVU34
+ 139              	.LBB6:
+  69:Src/simon_says_game.c ****         return;
+ 140              		.loc 1 69 5 view .LVU35
+  69:Src/simon_says_game.c ****         return;
+ 141              		.loc 1 69 8 is_stmt 0 view .LVU36
+ 142 005a 3078     		ldrb	r0, [r6]	@ zero_extendqisi2
+ 143 005c A8B1     		cbz	r0, .L4
+ 144              	.L6:
+  70:Src/simon_says_game.c ****     BSP_AUDIO_Init_t init;
+ 145              		.loc 1 70 9 is_stmt 1 view .LVU37
+ 146              	.LVL14:
+  70:Src/simon_says_game.c ****     BSP_AUDIO_Init_t init;
+ 147              		.loc 1 70 9 is_stmt 0 view .LVU38
+ 148              	.LBE6:
+ 149              	.LBE9:
+ 104:Src/simon_says_game.c ****     uint32_t state;
+ 150              		.loc 1 104 5 is_stmt 1 view .LVU39
+ 151 005e 2A46     		mov	r2, r5
+ 152 0060 2146     		mov	r1, r4
+ 153 0062 0020     		movs	r0, #0
+ 154 0064 FFF7FEFF 		bl	BSP_AUDIO_OUT_Play
+ 155              	.LVL15:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 6
+
+
+ 156              	.L5:
+ 105:Src/simon_says_game.c ****     do {
+ 157              		.loc 1 105 5 view .LVU40
+ 106:Src/simon_says_game.c ****         BSP_AUDIO_OUT_GetState(0, &state);
+ 158              		.loc 1 106 5 view .LVU41
+ 107:Src/simon_says_game.c ****     } while(state == AUDIO_OUT_STATE_PLAYING);
+ 159              		.loc 1 107 9 view .LVU42
+ 160 0068 0020     		movs	r0, #0
+ 161 006a 02A9     		add	r1, sp, #8
+ 162 006c FFF7FEFF 		bl	BSP_AUDIO_OUT_GetState
+ 163              	.LVL16:
+ 108:Src/simon_says_game.c ****     BSP_AUDIO_OUT_Stop(0);
+ 164              		.loc 1 108 19 discriminator 1 view .LVU43
+ 165 0070 029B     		ldr	r3, [sp, #8]
+ 166 0072 012B     		cmp	r3, #1
+ 167 0074 F8D0     		beq	.L5
+ 109:Src/simon_says_game.c ****     free(buffer);
+ 168              		.loc 1 109 5 view .LVU44
+ 169 0076 0020     		movs	r0, #0
+ 170 0078 FFF7FEFF 		bl	BSP_AUDIO_OUT_Stop
+ 171              	.LVL17:
+ 110:Src/simon_says_game.c **** }
+ 172              		.loc 1 110 5 view .LVU45
+ 173 007c 2046     		mov	r0, r4
+ 174              		.loc 1 111 1 is_stmt 0 view .LVU46
+ 175 007e 0DF51C7D 		add	sp, sp, #624
+ 176              		.cfi_remember_state
+ 177              		.cfi_def_cfa_offset 32
+ 178              		@ sp needed
+ 179 0082 BDE8F047 		pop	{r4, r5, r6, r7, r8, r9, r10, lr}
+ 180              		.cfi_restore 14
+ 181              		.cfi_restore 10
+ 182              		.cfi_restore 9
+ 183              		.cfi_restore 8
+ 184              		.cfi_restore 7
+ 185              		.cfi_restore 6
+ 186              		.cfi_restore 5
+ 187              		.cfi_restore 4
+ 188              		.cfi_def_cfa_offset 0
+ 189              	.LVL18:
+ 110:Src/simon_says_game.c **** }
+ 190              		.loc 1 110 5 view .LVU47
+ 191 0086 FFF7FEBF 		b	free
+ 192              	.LVL19:
+ 193              	.L4:
+ 194              		.cfi_restore_state
+ 195              	.LBB10:
+ 196              	.LBB7:
+  71:Src/simon_says_game.c ****     init.Device = AUDIO_OUT_DEVICE_HEADPHONE;
+ 197              		.loc 1 71 5 is_stmt 1 view .LVU48
+  72:Src/simon_says_game.c ****     init.SampleRate = sample_rate;
+ 198              		.loc 1 72 5 view .LVU49
+  72:Src/simon_says_game.c ****     init.SampleRate = sample_rate;
+ 199              		.loc 1 72 17 is_stmt 0 view .LVU50
+ 200 008a 0127     		movs	r7, #1
+  76:Src/simon_says_game.c ****     if (BSP_AUDIO_OUT_Init(0, &init) == BSP_ERROR_NONE)
+ 201              		.loc 1 76 17 view .LVU51
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 7
+
+
+ 202 008c 4623     		movs	r3, #70
+  77:Src/simon_says_game.c ****     {
+ 203              		.loc 1 77 9 view .LVU52
+ 204 008e 02A9     		add	r1, sp, #8
+  73:Src/simon_says_game.c ****     init.BitsPerSample = bits;
+ 205              		.loc 1 73 21 view .LVU53
+ 206 0090 CDE9027A 		strd	r7, r10, [sp, #8]
+  74:Src/simon_says_game.c ****     init.ChannelsNbr = channels;
+ 207              		.loc 1 74 5 is_stmt 1 view .LVU54
+ 208              	.LBE7:
+ 209              	.LBE10:
+ 103:Src/simon_says_game.c ****     BSP_AUDIO_OUT_Play(0, buffer, data_size);
+ 210              		.loc 1 103 5 is_stmt 0 view .LVU55
+ 211 0094 CDE90498 		strd	r9, r8, [sp, #16]
+ 212              	.LBB11:
+ 213              	.LBB8:
+  76:Src/simon_says_game.c ****     if (BSP_AUDIO_OUT_Init(0, &init) == BSP_ERROR_NONE)
+ 214              		.loc 1 76 5 is_stmt 1 view .LVU56
+  76:Src/simon_says_game.c ****     if (BSP_AUDIO_OUT_Init(0, &init) == BSP_ERROR_NONE)
+ 215              		.loc 1 76 17 is_stmt 0 view .LVU57
+ 216 0098 0693     		str	r3, [sp, #24]
+  77:Src/simon_says_game.c ****     {
+ 217              		.loc 1 77 5 is_stmt 1 view .LVU58
+  77:Src/simon_says_game.c ****     {
+ 218              		.loc 1 77 9 is_stmt 0 view .LVU59
+ 219 009a FFF7FEFF 		bl	BSP_AUDIO_OUT_Init
+ 220              	.LVL20:
+  77:Src/simon_says_game.c ****     {
+ 221              		.loc 1 77 8 discriminator 1 view .LVU60
+ 222 009e 0028     		cmp	r0, #0
+ 223 00a0 DDD1     		bne	.L6
+  79:Src/simon_says_game.c ****     }
+ 224              		.loc 1 79 9 is_stmt 1 view .LVU61
+  79:Src/simon_says_game.c ****     }
+ 225              		.loc 1 79 21 is_stmt 0 view .LVU62
+ 226 00a2 3770     		strb	r7, [r6]
+ 227 00a4 DBE7     		b	.L6
+ 228              	.L10:
+ 229 00a6 00BF     		.align	2
+ 230              	.L9:
+ 231 00a8 00000000 		.word	audio_ready
+ 232              	.LBE8:
+ 233              	.LBE11:
+ 234              		.cfi_endproc
+ 235              	.LFE3346:
+ 237              		.section	.rodata.NewInstruction.str1.1,"aMS",%progbits,1
+ 238              	.LC0:
+ 239 0000 00       		.ascii	"\000"
+ 240              	.LC1:
+ 241 0001 73696D6F 		.ascii	"simon_says.wav\000"
+ 241      6E5F7361 
+ 241      79732E77 
+ 241      617600
+ 242              		.section	.text.NewInstruction,"ax",%progbits
+ 243              		.align	1
+ 244              		.syntax unified
+ 245              		.thumb
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 8
+
+
+ 246              		.thumb_func
+ 248              	NewInstruction:
+ 249              	.LVL21:
+ 250              	.LFB3347:
+ 112:Src/simon_says_game.c **** 
+ 113:Src/simon_says_game.c **** static void NewInstruction(SimonSaysGame_t *g)
+ 114:Src/simon_says_game.c **** {
+ 251              		.loc 1 114 1 is_stmt 1 view -0
+ 252              		.cfi_startproc
+ 253              		@ args = 0, pretend = 0, frame = 0
+ 254              		@ frame_needed = 0, uses_anonymous_args = 0
+ 115:Src/simon_says_game.c ****     g->current_pose = rand() % POSE_COUNT;
+ 255              		.loc 1 115 5 view .LVU64
+ 114:Src/simon_says_game.c ****     g->current_pose = rand() % POSE_COUNT;
+ 256              		.loc 1 114 1 is_stmt 0 view .LVU65
+ 257 0000 38B5     		push	{r3, r4, r5, lr}
+ 258              		.cfi_def_cfa_offset 16
+ 259              		.cfi_offset 3, -16
+ 260              		.cfi_offset 4, -12
+ 261              		.cfi_offset 5, -8
+ 262              		.cfi_offset 14, -4
+ 114:Src/simon_says_game.c ****     g->current_pose = rand() % POSE_COUNT;
+ 263              		.loc 1 114 1 view .LVU66
+ 264 0002 0446     		mov	r4, r0
+ 265              		.loc 1 115 23 view .LVU67
+ 266 0004 FFF7FEFF 		bl	rand
+ 267              	.LVL22:
+ 268              		.loc 1 115 30 discriminator 1 view .LVU68
+ 269 0008 0523     		movs	r3, #5
+ 270 000a 90FBF3F3 		sdiv	r3, r0, r3
+ 271 000e 03EB8303 		add	r3, r3, r3, lsl #2
+ 272 0012 C01A     		subs	r0, r0, r3
+ 273 0014 2070     		strb	r0, [r4]
+ 116:Src/simon_says_game.c ****     g->require_simon = rand() & 1U;
+ 274              		.loc 1 116 5 is_stmt 1 view .LVU69
+ 275              		.loc 1 116 24 is_stmt 0 view .LVU70
+ 276 0016 FFF7FEFF 		bl	rand
+ 277              	.LVL23:
+ 278              		.loc 1 116 31 discriminator 1 view .LVU71
+ 279 001a 00F00100 		and	r0, r0, #1
+ 280              		.loc 1 116 22 discriminator 1 view .LVU72
+ 281 001e 6070     		strb	r0, [r4, #1]
+ 117:Src/simon_says_game.c ****     g->instruction_time = HAL_GetTick();
+ 282              		.loc 1 117 5 is_stmt 1 view .LVU73
+ 283              		.loc 1 117 27 is_stmt 0 view .LVU74
+ 284 0020 FFF7FEFF 		bl	HAL_GetTick
+ 285              	.LVL24:
+ 118:Src/simon_says_game.c ****     g->waiting_for_player = 1;
+ 286              		.loc 1 118 27 view .LVU75
+ 287 0024 0125     		movs	r5, #1
+ 119:Src/simon_says_game.c ****     g->result = 0;
+ 120:Src/simon_says_game.c ****     if (!audio_ready)
+ 288              		.loc 1 120 9 view .LVU76
+ 289 0026 0C4B     		ldr	r3, .L17
+ 117:Src/simon_says_game.c ****     g->waiting_for_player = 1;
+ 290              		.loc 1 117 25 discriminator 1 view .LVU77
+ 291 0028 6060     		str	r0, [r4, #4]
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 9
+
+
+ 118:Src/simon_says_game.c ****     g->waiting_for_player = 1;
+ 292              		.loc 1 118 5 is_stmt 1 view .LVU78
+ 119:Src/simon_says_game.c ****     g->result = 0;
+ 293              		.loc 1 119 5 view .LVU79
+ 294              		.loc 1 120 8 is_stmt 0 view .LVU80
+ 295 002a 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 118:Src/simon_says_game.c ****     g->waiting_for_player = 1;
+ 296              		.loc 1 118 27 view .LVU81
+ 297 002c 6580     		strh	r5, [r4, #2]	@ movhi
+ 298              		.loc 1 120 5 is_stmt 1 view .LVU82
+ 299              		.loc 1 120 8 is_stmt 0 view .LVU83
+ 300 002e 30B9     		cbnz	r0, .L12
+ 121:Src/simon_says_game.c ****     {
+ 122:Src/simon_says_game.c ****         BSP_SD_Init(0);
+ 301              		.loc 1 122 9 is_stmt 1 view .LVU84
+ 302 0030 FFF7FEFF 		bl	BSP_SD_Init
+ 303              	.LVL25:
+ 123:Src/simon_says_game.c ****         f_mount(&sd_fs, "", 1);
+ 304              		.loc 1 123 9 view .LVU85
+ 305 0034 2A46     		mov	r2, r5
+ 306 0036 0949     		ldr	r1, .L17+4
+ 307 0038 0948     		ldr	r0, .L17+8
+ 308 003a FFF7FEFF 		bl	f_mount
+ 309              	.LVL26:
+ 310              	.L12:
+ 124:Src/simon_says_game.c ****     }
+ 125:Src/simon_says_game.c ****     if (g->require_simon)
+ 311              		.loc 1 125 5 view .LVU86
+ 312              		.loc 1 125 8 is_stmt 0 view .LVU87
+ 313 003e 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
+ 314 0040 13B1     		cbz	r3, .L13
+ 126:Src/simon_says_game.c ****     {
+ 127:Src/simon_says_game.c ****         PlayWav("simon_says.wav");
+ 315              		.loc 1 127 9 is_stmt 1 view .LVU88
+ 316 0042 0848     		ldr	r0, .L17+12
+ 317 0044 FFF7FEFF 		bl	PlayWav
+ 318              	.LVL27:
+ 319              	.L13:
+ 128:Src/simon_says_game.c ****     }
+ 129:Src/simon_says_game.c ****     PlayWav(pose_audio_files[g->current_pose]);
+ 320              		.loc 1 129 5 view .LVU89
+ 321              		.loc 1 129 31 is_stmt 0 view .LVU90
+ 322 0048 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
+ 323              		.loc 1 129 5 view .LVU91
+ 324 004a 074B     		ldr	r3, .L17+16
+ 325 004c 53F82200 		ldr	r0, [r3, r2, lsl #2]
+ 130:Src/simon_says_game.c **** }
+ 326              		.loc 1 130 1 view .LVU92
+ 327 0050 BDE83840 		pop	{r3, r4, r5, lr}
+ 328              		.cfi_restore 14
+ 329              		.cfi_restore 5
+ 330              		.cfi_restore 4
+ 331              		.cfi_restore 3
+ 332              		.cfi_def_cfa_offset 0
+ 333              	.LVL28:
+ 129:Src/simon_says_game.c **** }
+ 334              		.loc 1 129 5 view .LVU93
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 10
+
+
+ 335 0054 FFF7FEBF 		b	PlayWav
+ 336              	.LVL29:
+ 337              	.L18:
+ 338              		.align	2
+ 339              	.L17:
+ 340 0058 00000000 		.word	audio_ready
+ 341 005c 00000000 		.word	.LC0
+ 342 0060 00000000 		.word	sd_fs
+ 343 0064 01000000 		.word	.LC1
+ 344 0068 00000000 		.word	pose_audio_files
+ 345              		.cfi_endproc
+ 346              	.LFE3347:
+ 348              		.section	.text.SimonSays_Init,"ax",%progbits
+ 349              		.align	1
+ 350              		.global	SimonSays_Init
+ 351              		.syntax unified
+ 352              		.thumb
+ 353              		.thumb_func
+ 355              	SimonSays_Init:
+ 356              	.LVL30:
+ 357              	.LFB3348:
+ 131:Src/simon_says_game.c **** 
+ 132:Src/simon_says_game.c **** void SimonSays_Init(SimonSaysGame_t *g)
+ 133:Src/simon_says_game.c **** {
+ 358              		.loc 1 133 1 is_stmt 1 view -0
+ 359              		.cfi_startproc
+ 360              		@ args = 0, pretend = 0, frame = 0
+ 361              		@ frame_needed = 0, uses_anonymous_args = 0
+ 362              		@ link register save eliminated.
+ 134:Src/simon_says_game.c ****     memset(g, 0, sizeof(*g));
+ 363              		.loc 1 134 5 view .LVU95
+ 364 0000 0022     		movs	r2, #0
+ 365 0002 0260     		str	r2, [r0]	@ unaligned
+ 366 0004 4260     		str	r2, [r0, #4]	@ unaligned
+ 367 0006 8260     		str	r2, [r0, #8]	@ unaligned
+ 135:Src/simon_says_game.c ****     NewInstruction(g);
+ 368              		.loc 1 135 5 view .LVU96
+ 369 0008 FFF7FEBF 		b	NewInstruction
+ 370              	.LVL31:
+ 371              		.loc 1 135 5 is_stmt 0 view .LVU97
+ 372              		.cfi_endproc
+ 373              	.LFE3348:
+ 375              		.section	.text.SimonSays_Update,"ax",%progbits
+ 376              		.align	1
+ 377              		.global	SimonSays_Update
+ 378              		.syntax unified
+ 379              		.thumb
+ 380              		.thumb_func
+ 382              	SimonSays_Update:
+ 383              	.LVL32:
+ 384              	.LFB3349:
+ 136:Src/simon_says_game.c **** }
+ 137:Src/simon_says_game.c **** 
+ 138:Src/simon_says_game.c **** void SimonSays_Update(SimonSaysGame_t *g, spe_pp_outBuffer_t *k)
+ 139:Src/simon_says_game.c **** {
+ 385              		.loc 1 139 1 is_stmt 1 view -0
+ 386              		.cfi_startproc
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 11
+
+
+ 387              		@ args = 0, pretend = 0, frame = 0
+ 388              		@ frame_needed = 0, uses_anonymous_args = 0
+ 140:Src/simon_says_game.c ****     uint32_t now = HAL_GetTick();
+ 389              		.loc 1 140 5 view .LVU99
+ 139:Src/simon_says_game.c ****     uint32_t now = HAL_GetTick();
+ 390              		.loc 1 139 1 is_stmt 0 view .LVU100
+ 391 0000 38B5     		push	{r3, r4, r5, lr}
+ 392              		.cfi_def_cfa_offset 16
+ 393              		.cfi_offset 3, -16
+ 394              		.cfi_offset 4, -12
+ 395              		.cfi_offset 5, -8
+ 396              		.cfi_offset 14, -4
+ 139:Src/simon_says_game.c ****     uint32_t now = HAL_GetTick();
+ 397              		.loc 1 139 1 view .LVU101
+ 398 0002 0546     		mov	r5, r0
+ 399 0004 0C46     		mov	r4, r1
+ 400              		.loc 1 140 20 view .LVU102
+ 401 0006 FFF7FEFF 		bl	HAL_GetTick
+ 402              	.LVL33:
+ 141:Src/simon_says_game.c ****     if (g->waiting_for_player)
+ 403              		.loc 1 141 5 is_stmt 1 view .LVU103
+ 404              		.loc 1 141 8 is_stmt 0 view .LVU104
+ 405 000a AA78     		ldrb	r2, [r5, #2]	@ zero_extendqisi2
+ 406 000c 6B68     		ldr	r3, [r5, #4]
+ 407 000e 002A     		cmp	r2, #0
+ 408 0010 00F0AB80 		beq	.L21
+ 142:Src/simon_says_game.c ****     {
+ 143:Src/simon_says_game.c ****         if (now - g->instruction_time > RESPONSE_TIMEOUT_MS)
+ 409              		.loc 1 143 9 is_stmt 1 view .LVU105
+ 410              		.loc 1 143 17 is_stmt 0 view .LVU106
+ 411 0014 C31A     		subs	r3, r0, r3
+ 412              		.loc 1 143 12 view .LVU107
+ 413 0016 B3F5FA6F 		cmp	r3, #2000
+ 414 001a 40F2A580 		bls	.L20
+ 415              	.LBB15:
+ 144:Src/simon_says_game.c ****         {
+ 145:Src/simon_says_game.c ****             int matched = PoseMatched(g->current_pose, k);
+ 416              		.loc 1 145 13 is_stmt 1 view .LVU108
+ 417              	.LVL34:
+ 418              	.LBB16:
+ 419              	.LBI16:
+  35:Src/simon_says_game.c **** {
+ 420              		.loc 1 35 12 view .LVU109
+ 421              	.LBB17:
+  37:Src/simon_says_game.c ****     float32_t ly = k[KEYPOINT_LEFT_WRIST].y_center;
+ 422              		.loc 1 37 5 view .LVU110
+  41:Src/simon_says_game.c ****     {
+ 423              		.loc 1 41 5 is_stmt 0 view .LVU111
+ 424 001e 2A78     		ldrb	r2, [r5]	@ zero_extendqisi2
+  37:Src/simon_says_game.c ****     float32_t ly = k[KEYPOINT_LEFT_WRIST].y_center;
+ 425              		.loc 1 37 15 view .LVU112
+ 426 0020 94ED0F6A 		vldr.32	s12, [r4, #60]
+ 427              	.LVL35:
+  38:Src/simon_says_game.c ****     float32_t rx = k[KEYPOINT_RIGHT_WRIST].x_center;
+ 428              		.loc 1 38 5 is_stmt 1 view .LVU113
+  38:Src/simon_says_game.c ****     float32_t rx = k[KEYPOINT_RIGHT_WRIST].x_center;
+ 429              		.loc 1 38 15 is_stmt 0 view .LVU114
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 12
+
+
+ 430 0024 94ED107A 		vldr.32	s14, [r4, #64]
+ 431              	.LVL36:
+  39:Src/simon_says_game.c ****     float32_t ry = k[KEYPOINT_RIGHT_WRIST].y_center;
+ 432              		.loc 1 39 5 is_stmt 1 view .LVU115
+  39:Src/simon_says_game.c ****     float32_t ry = k[KEYPOINT_RIGHT_WRIST].y_center;
+ 433              		.loc 1 39 15 is_stmt 0 view .LVU116
+ 434 0028 D4ED126A 		vldr.32	s13, [r4, #72]
+ 435              	.LVL37:
+  40:Src/simon_says_game.c ****     switch(pose)
+ 436              		.loc 1 40 5 is_stmt 1 view .LVU117
+  40:Src/simon_says_game.c ****     switch(pose)
+ 437              		.loc 1 40 15 is_stmt 0 view .LVU118
+ 438 002c D4ED137A 		vldr.32	s15, [r4, #76]
+ 439              	.LVL38:
+  41:Src/simon_says_game.c ****     {
+ 440              		.loc 1 41 5 is_stmt 1 view .LVU119
+ 441 0030 6B78     		ldrb	r3, [r5, #1]	@ zero_extendqisi2
+ 442 0032 042A     		cmp	r2, #4
+ 443 0034 00F28E80 		bhi	.L23
+ 444 0038 DFE802F0 		tbb	[pc, r2]
+ 445              	.L25:
+ 446 003c 03       		.byte	(.L29-.L25)/2
+ 447 003d 10       		.byte	(.L28-.L25)/2
+ 448 003e 36       		.byte	(.L27-.L25)/2
+ 449 003f 62       		.byte	(.L26-.L25)/2
+ 450 0040 78       		.byte	(.L24-.L25)/2
+ 451 0041 00       		.p2align 1
+ 452              	.L29:
+  44:Src/simon_says_game.c ****                 ry < k[KEYPOINT_RIGHT_SHOULDER].y_center);
+ 453              		.loc 1 44 9 view .LVU120
+  44:Src/simon_says_game.c ****                 ry < k[KEYPOINT_RIGHT_SHOULDER].y_center);
+ 454              		.loc 1 44 57 is_stmt 0 view .LVU121
+ 455 0042 D4ED046A 		vldr.32	s13, [r4, #16]
+ 456              	.LVL39:
+  44:Src/simon_says_game.c ****                 ry < k[KEYPOINT_RIGHT_SHOULDER].y_center);
+ 457              		.loc 1 44 57 view .LVU122
+ 458 0046 B4EEE67A 		vcmpe.f32	s14, s13
+ 459 004a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 460 004e 40F18180 		bpl	.L23
+  44:Src/simon_says_game.c ****                 ry < k[KEYPOINT_RIGHT_SHOULDER].y_center);
+ 461              		.loc 1 44 57 discriminator 1 view .LVU123
+ 462 0052 94ED077A 		vldr.32	s14, [r4, #28]
+ 463              	.LVL40:
+ 464              	.L55:
+  60:Src/simon_says_game.c ****                 fabsf(ry - k[KEYPOINT_RIGHT_SHOULDER].y_center) < 0.15f);
+ 465              		.loc 1 60 66 discriminator 1 view .LVU124
+ 466 0056 F4EEC77A 		vcmpe.f32	s15, s14
+ 467 005a 1EE0     		b	.L54
+ 468              	.LVL41:
+ 469              	.L28:
+  47:Src/simon_says_game.c ****                 ry < k[KEYPOINT_NOSE].y_center &&
+ 470              		.loc 1 47 9 is_stmt 1 view .LVU125
+  47:Src/simon_says_game.c ****                 ry < k[KEYPOINT_NOSE].y_center &&
+ 471              		.loc 1 47 38 is_stmt 0 view .LVU126
+ 472 005c D4ED015A 		vldr.32	s11, [r4, #4]
+  49:Src/simon_says_game.c ****                 fabsf(rx - k[KEYPOINT_NOSE].x_center) < 0.15f);
+ 473              		.loc 1 49 63 view .LVU127
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 13
+
+
+ 474 0060 B4EEE57A 		vcmpe.f32	s14, s11
+ 475 0064 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 476 0068 74D5     		bpl	.L23
+  47:Src/simon_says_game.c ****                 ry < k[KEYPOINT_NOSE].y_center &&
+ 477              		.loc 1 47 48 view .LVU128
+ 478 006a F4EEE57A 		vcmpe.f32	s15, s11
+ 479 006e F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 480 0072 6FD5     		bpl	.L23
+  49:Src/simon_says_game.c ****                 fabsf(rx - k[KEYPOINT_NOSE].x_center) < 0.15f);
+ 481              		.loc 1 49 44 view .LVU129
+ 482 0074 94ED007A 		vldr.32	s14, [r4]
+ 483              	.LVL42:
+  49:Src/simon_says_game.c ****                 fabsf(rx - k[KEYPOINT_NOSE].x_center) < 0.15f);
+ 484              		.loc 1 49 26 view .LVU130
+ 485 0078 36EE476A 		vsub.f32	s12, s12, s14
+ 486              	.LVL43:
+  48:Src/simon_says_game.c ****                 fabsf(lx - k[KEYPOINT_NOSE].x_center) < 0.15f &&
+ 487              		.loc 1 48 48 view .LVU131
+ 488 007c DFED3F7A 		vldr.32	s15, .L56
+ 489              	.LVL44:
+  49:Src/simon_says_game.c ****                 fabsf(rx - k[KEYPOINT_NOSE].x_center) < 0.15f);
+ 490              		.loc 1 49 17 view .LVU132
+ 491 0080 B0EEC66A 		vabs.f32	s12, s12
+  48:Src/simon_says_game.c ****                 fabsf(lx - k[KEYPOINT_NOSE].x_center) < 0.15f &&
+ 492              		.loc 1 48 48 view .LVU133
+ 493 0084 B4EEE76A 		vcmpe.f32	s12, s15
+ 494 0088 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 495 008c 62D5     		bpl	.L23
+  50:Src/simon_says_game.c ****     case POSE_HANDS_ON_HIPS:
+ 496              		.loc 1 50 26 view .LVU134
+ 497 008e 76EEC76A 		vsub.f32	s13, s13, s14
+ 498              	.LVL45:
+  50:Src/simon_says_game.c ****     case POSE_HANDS_ON_HIPS:
+ 499              		.loc 1 50 17 view .LVU135
+ 500 0092 F0EEE66A 		vabs.f32	s13, s13
+  49:Src/simon_says_game.c ****                 fabsf(rx - k[KEYPOINT_NOSE].x_center) < 0.15f);
+ 501              		.loc 1 49 63 discriminator 3 view .LVU136
+ 502 0096 F4EEE76A 		vcmpe.f32	s13, s15
+ 503              	.L54:
+  60:Src/simon_says_game.c ****                 fabsf(ry - k[KEYPOINT_RIGHT_SHOULDER].y_center) < 0.15f);
+ 504              		.loc 1 60 66 discriminator 1 view .LVU137
+ 505 009a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 506 009e 59D5     		bpl	.L23
+ 507              	.LVL46:
+  60:Src/simon_says_game.c ****                 fabsf(ry - k[KEYPOINT_RIGHT_SHOULDER].y_center) < 0.15f);
+ 508              		.loc 1 60 66 discriminator 1 view .LVU138
+ 509              	.LBE17:
+ 510              	.LBE16:
+ 146:Src/simon_says_game.c ****             if ((matched && g->require_simon) || (!matched && !g->require_simon))
+ 511              		.loc 1 146 13 is_stmt 1 view .LVU139
+ 512              		.loc 1 146 26 is_stmt 0 discriminator 1 view .LVU140
+ 513 00a0 002B     		cmp	r3, #0
+ 514 00a2 59D1     		bne	.L41
+ 515              	.LVL47:
+ 516              	.L43:
+ 517              		.loc 1 146 26 discriminator 1 view .LVU141
+ 518 00a4 0223     		movs	r3, #2
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 14
+
+
+ 519 00a6 5BE0     		b	.L42
+ 520              	.LVL48:
+ 521              	.L27:
+ 522              	.LBB19:
+ 523              	.LBB18:
+  52:Src/simon_says_game.c ****                 fabsf(ly - k[KEYPOINT_LEFT_HIP].y_center) < 0.1f &&
+ 524              		.loc 1 52 9 is_stmt 1 view .LVU142
+  52:Src/simon_says_game.c ****                 fabsf(ly - k[KEYPOINT_LEFT_HIP].y_center) < 0.1f &&
+ 525              		.loc 1 52 26 is_stmt 0 view .LVU143
+ 526 00a8 D4ED155A 		vldr.32	s11, [r4, #84]
+ 527 00ac 36EE656A 		vsub.f32	s12, s12, s11
+ 528              	.LVL49:
+  54:Src/simon_says_game.c ****                 fabsf(ry - k[KEYPOINT_RIGHT_HIP].y_center) < 0.1f);
+ 529              		.loc 1 54 67 view .LVU144
+ 530 00b0 DFED335A 		vldr.32	s11, .L56+4
+  52:Src/simon_says_game.c ****                 fabsf(ly - k[KEYPOINT_LEFT_HIP].y_center) < 0.1f &&
+ 531              		.loc 1 52 17 view .LVU145
+ 532 00b4 B0EEC66A 		vabs.f32	s12, s12
+  54:Src/simon_says_game.c ****                 fabsf(ry - k[KEYPOINT_RIGHT_HIP].y_center) < 0.1f);
+ 533              		.loc 1 54 67 view .LVU146
+ 534 00b8 B4EEE56A 		vcmpe.f32	s12, s11
+ 535 00bc F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 536 00c0 48D5     		bpl	.L23
+  53:Src/simon_says_game.c ****                 fabsf(rx - k[KEYPOINT_RIGHT_HIP].x_center) < 0.1f &&
+ 537              		.loc 1 53 26 view .LVU147
+ 538 00c2 94ED166A 		vldr.32	s12, [r4, #88]
+ 539 00c6 37EE467A 		vsub.f32	s14, s14, s12
+ 540              	.LVL50:
+  53:Src/simon_says_game.c ****                 fabsf(rx - k[KEYPOINT_RIGHT_HIP].x_center) < 0.1f &&
+ 541              		.loc 1 53 17 view .LVU148
+ 542 00ca B0EEC77A 		vabs.f32	s14, s14
+  52:Src/simon_says_game.c ****                 fabsf(ly - k[KEYPOINT_LEFT_HIP].y_center) < 0.1f &&
+ 543              		.loc 1 52 66 view .LVU149
+ 544 00ce B4EEE57A 		vcmpe.f32	s14, s11
+ 545 00d2 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 546 00d6 3DD5     		bpl	.L23
+  54:Src/simon_says_game.c ****                 fabsf(ry - k[KEYPOINT_RIGHT_HIP].y_center) < 0.1f);
+ 547              		.loc 1 54 26 view .LVU150
+ 548 00d8 94ED187A 		vldr.32	s14, [r4, #96]
+ 549 00dc 76EEC76A 		vsub.f32	s13, s13, s14
+ 550              	.LVL51:
+  54:Src/simon_says_game.c ****                 fabsf(ry - k[KEYPOINT_RIGHT_HIP].y_center) < 0.1f);
+ 551              		.loc 1 54 17 view .LVU151
+ 552 00e0 F0EEE66A 		vabs.f32	s13, s13
+  53:Src/simon_says_game.c ****                 fabsf(rx - k[KEYPOINT_RIGHT_HIP].x_center) < 0.1f &&
+ 553              		.loc 1 53 66 view .LVU152
+ 554 00e4 F4EEE56A 		vcmpe.f32	s13, s11
+ 555 00e8 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 556 00ec 32D5     		bpl	.L23
+  55:Src/simon_says_game.c ****     case POSE_LEFT_ARM_OUT:
+ 557              		.loc 1 55 26 view .LVU153
+ 558 00ee 94ED197A 		vldr.32	s14, [r4, #100]
+ 559 00f2 77EEC77A 		vsub.f32	s15, s15, s14
+ 560              	.LVL52:
+  55:Src/simon_says_game.c ****     case POSE_LEFT_ARM_OUT:
+ 561              		.loc 1 55 17 view .LVU154
+ 562 00f6 F0EEE77A 		vabs.f32	s15, s15
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 15
+
+
+  54:Src/simon_says_game.c ****                 fabsf(ry - k[KEYPOINT_RIGHT_HIP].y_center) < 0.1f);
+ 563              		.loc 1 54 67 discriminator 3 view .LVU155
+ 564 00fa F4EEE57A 		vcmpe.f32	s15, s11
+ 565 00fe CCE7     		b	.L54
+ 566              	.LVL53:
+ 567              	.L26:
+  57:Src/simon_says_game.c ****                 fabsf(ly - k[KEYPOINT_LEFT_SHOULDER].y_center) < 0.15f);
+ 568              		.loc 1 57 9 is_stmt 1 view .LVU156
+  57:Src/simon_says_game.c ****                 fabsf(ly - k[KEYPOINT_LEFT_SHOULDER].y_center) < 0.15f);
+ 569              		.loc 1 57 57 is_stmt 0 view .LVU157
+ 570 0100 D4ED037A 		vldr.32	s15, [r4, #12]
+ 571              	.LVL54:
+  57:Src/simon_says_game.c ****                 fabsf(ly - k[KEYPOINT_LEFT_SHOULDER].y_center) < 0.15f);
+ 572              		.loc 1 57 57 view .LVU158
+ 573 0104 F5EE006A 		vmov.f32	s13, #2.5e-1
+ 574              	.LVL55:
+  57:Src/simon_says_game.c ****                 fabsf(ly - k[KEYPOINT_LEFT_SHOULDER].y_center) < 0.15f);
+ 575              		.loc 1 57 57 view .LVU159
+ 576 0108 77EEE67A 		vsub.f32	s15, s15, s13
+  57:Src/simon_says_game.c ****                 fabsf(ly - k[KEYPOINT_LEFT_SHOULDER].y_center) < 0.15f);
+ 577              		.loc 1 57 65 view .LVU160
+ 578 010c B4EEE76A 		vcmpe.f32	s12, s15
+ 579 0110 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 580 0114 1ED5     		bpl	.L23
+  58:Src/simon_says_game.c ****     case POSE_RIGHT_ARM_OUT:
+ 581              		.loc 1 58 26 view .LVU161
+ 582 0116 D4ED047A 		vldr.32	s15, [r4, #16]
+ 583 011a 37EE677A 		vsub.f32	s14, s14, s15
+ 584              	.LVL56:
+  57:Src/simon_says_game.c ****                 fabsf(ly - k[KEYPOINT_LEFT_SHOULDER].y_center) < 0.15f);
+ 585              		.loc 1 57 65 discriminator 1 view .LVU162
+ 586 011e DFED177A 		vldr.32	s15, .L56
+  58:Src/simon_says_game.c ****     case POSE_RIGHT_ARM_OUT:
+ 587              		.loc 1 58 17 view .LVU163
+ 588 0122 B0EEC77A 		vabs.f32	s14, s14
+  57:Src/simon_says_game.c ****                 fabsf(ly - k[KEYPOINT_LEFT_SHOULDER].y_center) < 0.15f);
+ 589              		.loc 1 57 65 discriminator 1 view .LVU164
+ 590 0126 B4EEE77A 		vcmpe.f32	s14, s15
+ 591 012a B6E7     		b	.L54
+ 592              	.LVL57:
+ 593              	.L24:
+  60:Src/simon_says_game.c ****                 fabsf(ry - k[KEYPOINT_RIGHT_SHOULDER].y_center) < 0.15f);
+ 594              		.loc 1 60 9 is_stmt 1 view .LVU165
+  60:Src/simon_says_game.c ****                 fabsf(ry - k[KEYPOINT_RIGHT_SHOULDER].y_center) < 0.15f);
+ 595              		.loc 1 60 58 is_stmt 0 view .LVU166
+ 596 012c 94ED067A 		vldr.32	s14, [r4, #24]
+ 597              	.LVL58:
+  60:Src/simon_says_game.c ****                 fabsf(ry - k[KEYPOINT_RIGHT_SHOULDER].y_center) < 0.15f);
+ 598              		.loc 1 60 58 view .LVU167
+ 599 0130 B5EE006A 		vmov.f32	s12, #2.5e-1
+ 600              	.LVL59:
+  60:Src/simon_says_game.c ****                 fabsf(ry - k[KEYPOINT_RIGHT_SHOULDER].y_center) < 0.15f);
+ 601              		.loc 1 60 58 view .LVU168
+ 602 0134 37EE067A 		vadd.f32	s14, s14, s12
+  60:Src/simon_says_game.c ****                 fabsf(ry - k[KEYPOINT_RIGHT_SHOULDER].y_center) < 0.15f);
+ 603              		.loc 1 60 66 view .LVU169
+ 604 0138 F4EEC76A 		vcmpe.f32	s13, s14
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 16
+
+
+ 605 013c F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 606 0140 08DD     		ble	.L23
+  61:Src/simon_says_game.c ****     default:
+ 607              		.loc 1 61 26 view .LVU170
+ 608 0142 94ED077A 		vldr.32	s14, [r4, #28]
+ 609 0146 77EEC77A 		vsub.f32	s15, s15, s14
+ 610              	.LVL60:
+  60:Src/simon_says_game.c ****                 fabsf(ry - k[KEYPOINT_RIGHT_SHOULDER].y_center) < 0.15f);
+ 611              		.loc 1 60 66 discriminator 1 view .LVU171
+ 612 014a 9FED0C7A 		vldr.32	s14, .L56
+  61:Src/simon_says_game.c ****     default:
+ 613              		.loc 1 61 17 view .LVU172
+ 614 014e F0EEE77A 		vabs.f32	s15, s15
+ 615 0152 80E7     		b	.L55
+ 616              	.LVL61:
+ 617              	.L23:
+  61:Src/simon_says_game.c ****     default:
+ 618              		.loc 1 61 17 view .LVU173
+ 619              	.LBE18:
+ 620              	.LBE19:
+ 621              		.loc 1 146 60 discriminator 4 view .LVU174
+ 622 0154 002B     		cmp	r3, #0
+ 623 0156 A5D1     		bne	.L43
+ 624              	.L41:
+ 147:Src/simon_says_game.c ****             {
+ 148:Src/simon_says_game.c ****                 g->score++;
+ 625              		.loc 1 148 17 is_stmt 1 view .LVU175
+ 626              		.loc 1 148 25 is_stmt 0 view .LVU176
+ 627 0158 AB68     		ldr	r3, [r5, #8]
+ 628 015a 0133     		adds	r3, r3, #1
+ 629 015c AB60     		str	r3, [r5, #8]
+ 149:Src/simon_says_game.c ****                 g->result = 1;
+ 630              		.loc 1 149 17 is_stmt 1 view .LVU177
+ 631              		.loc 1 149 27 is_stmt 0 view .LVU178
+ 632 015e 0123     		movs	r3, #1
+ 633              	.L42:
+ 634              		.loc 1 149 27 view .LVU179
+ 635 0160 EB70     		strb	r3, [r5, #3]
+ 150:Src/simon_says_game.c ****             }
+ 151:Src/simon_says_game.c ****             else
+ 152:Src/simon_says_game.c ****             {
+ 153:Src/simon_says_game.c ****                 g->result = 2;
+ 154:Src/simon_says_game.c ****             }
+ 155:Src/simon_says_game.c ****             g->waiting_for_player = 0;
+ 636              		.loc 1 155 13 is_stmt 1 view .LVU180
+ 637              		.loc 1 155 35 is_stmt 0 view .LVU181
+ 638 0162 0023     		movs	r3, #0
+ 156:Src/simon_says_game.c ****             g->instruction_time = now;
+ 639              		.loc 1 156 33 view .LVU182
+ 640 0164 6860     		str	r0, [r5, #4]
+ 155:Src/simon_says_game.c ****             g->instruction_time = now;
+ 641              		.loc 1 155 35 view .LVU183
+ 642 0166 AB70     		strb	r3, [r5, #2]
+ 643              		.loc 1 156 13 is_stmt 1 view .LVU184
+ 644              	.LVL62:
+ 645              	.L20:
+ 646              		.loc 1 156 13 is_stmt 0 view .LVU185
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 17
+
+
+ 647              	.LBE15:
+ 157:Src/simon_says_game.c ****         }
+ 158:Src/simon_says_game.c ****     }
+ 159:Src/simon_says_game.c ****     else if (now - g->instruction_time > RESULT_DISPLAY_MS)
+ 160:Src/simon_says_game.c ****     {
+ 161:Src/simon_says_game.c ****         NewInstruction(g);
+ 162:Src/simon_says_game.c ****     }
+ 163:Src/simon_says_game.c **** }
+ 648              		.loc 1 163 1 view .LVU186
+ 649 0168 38BD     		pop	{r3, r4, r5, pc}
+ 650              	.LVL63:
+ 651              	.L21:
+ 159:Src/simon_says_game.c ****     {
+ 652              		.loc 1 159 10 is_stmt 1 view .LVU187
+ 159:Src/simon_says_game.c ****     {
+ 653              		.loc 1 159 18 is_stmt 0 view .LVU188
+ 654 016a C01A     		subs	r0, r0, r3
+ 655              	.LVL64:
+ 159:Src/simon_says_game.c ****     {
+ 656              		.loc 1 159 13 view .LVU189
+ 657 016c B0F57A7F 		cmp	r0, #1000
+ 658 0170 FAD9     		bls	.L20
+ 161:Src/simon_says_game.c ****     }
+ 659              		.loc 1 161 9 is_stmt 1 view .LVU190
+ 660 0172 2846     		mov	r0, r5
+ 661              		.loc 1 163 1 is_stmt 0 view .LVU191
+ 662 0174 BDE83840 		pop	{r3, r4, r5, lr}
+ 663              		.cfi_restore 14
+ 664              		.cfi_restore 5
+ 665              		.cfi_restore 4
+ 666              		.cfi_restore 3
+ 667              		.cfi_def_cfa_offset 0
+ 668              	.LVL65:
+ 161:Src/simon_says_game.c ****     }
+ 669              		.loc 1 161 9 view .LVU192
+ 670 0178 FFF7FEBF 		b	NewInstruction
+ 671              	.LVL66:
+ 672              	.L57:
+ 161:Src/simon_says_game.c ****     }
+ 673              		.loc 1 161 9 view .LVU193
+ 674              		.align	2
+ 675              	.L56:
+ 676 017c 9A99193E 		.word	1041865114
+ 677 0180 CDCCCC3D 		.word	1036831949
+ 678              		.cfi_endproc
+ 679              	.LFE3349:
+ 681              		.section	.rodata.SimonSays_Render.str1.1,"aMS",%progbits,1
+ 682              	.LC2:
+ 683 0000 53494D4F 		.ascii	"SIMON SAYS %s\000"
+ 683      4E205341 
+ 683      59532025 
+ 683      7300
+ 684              	.LC3:
+ 685 000e 257300   		.ascii	"%s\000"
+ 686              	.LC4:
+ 687 0011 436F7272 		.ascii	"Correct!\000"
+ 687      65637421 
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 18
+
+
+ 687      00
+ 688              	.LC5:
+ 689 001a 57726F6E 		.ascii	"Wrong!\000"
+ 689      672100
+ 690              	.LC6:
+ 691 0021 53636F72 		.ascii	"Score: %lu\000"
+ 691      653A2025 
+ 691      6C7500
+ 692              		.section	.text.SimonSays_Render,"ax",%progbits
+ 693              		.align	1
+ 694              		.global	SimonSays_Render
+ 695              		.syntax unified
+ 696              		.thumb
+ 697              		.thumb_func
+ 699              	SimonSays_Render:
+ 700              	.LVL67:
+ 701              	.LFB3350:
+ 164:Src/simon_says_game.c **** 
+ 165:Src/simon_says_game.c **** void SimonSays_Render(SimonSaysGame_t *g)
+ 166:Src/simon_says_game.c **** {
+ 702              		.loc 1 166 1 is_stmt 1 view -0
+ 703              		.cfi_startproc
+ 704              		@ args = 0, pretend = 0, frame = 0
+ 705              		@ frame_needed = 0, uses_anonymous_args = 0
+ 167:Src/simon_says_game.c ****     UTIL_LCD_SetBackColor(0x40000000);
+ 706              		.loc 1 167 5 view .LVU195
+ 166:Src/simon_says_game.c ****     UTIL_LCD_SetBackColor(0x40000000);
+ 707              		.loc 1 166 1 is_stmt 0 view .LVU196
+ 708 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
+ 709              		.cfi_def_cfa_offset 32
+ 710              		.cfi_offset 4, -20
+ 711              		.cfi_offset 5, -16
+ 712              		.cfi_offset 6, -12
+ 713              		.cfi_offset 7, -8
+ 714              		.cfi_offset 14, -4
+ 166:Src/simon_says_game.c ****     UTIL_LCD_SetBackColor(0x40000000);
+ 715              		.loc 1 166 1 view .LVU197
+ 716 0002 0446     		mov	r4, r0
+ 717              		.loc 1 167 5 view .LVU198
+ 718 0004 4FF08040 		mov	r0, #1073741824
+ 719              	.LVL68:
+ 720              		.loc 1 167 5 view .LVU199
+ 721 0008 FFF7FEFF 		bl	UTIL_LCD_SetBackColor
+ 722              	.LVL69:
+ 168:Src/simon_says_game.c ****     if (g->waiting_for_player)
+ 723              		.loc 1 168 5 is_stmt 1 view .LVU200
+ 724              		.loc 1 168 8 is_stmt 0 view .LVU201
+ 725 000c A578     		ldrb	r5, [r4, #2]	@ zero_extendqisi2
+ 726 000e 5DB3     		cbz	r5, .L59
+ 169:Src/simon_says_game.c ****     {
+ 170:Src/simon_says_game.c ****         if (g->require_simon)
+ 727              		.loc 1 170 9 is_stmt 1 view .LVU202
+ 728              		.loc 1 170 12 is_stmt 0 view .LVU203
+ 729 0010 6578     		ldrb	r5, [r4, #1]	@ zero_extendqisi2
+ 730 0012 1426     		movs	r6, #20
+ 731 0014 1F4F     		ldr	r7, .L65
+ 732 0016 F5B1     		cbz	r5, .L60
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 19
+
+
+ 733              	.LBB20:
+ 171:Src/simon_says_game.c ****         {
+ 172:Src/simon_says_game.c ****             UTIL_LCDEx_PrintfAt(0, LINE(20), CENTER_MODE, "SIMON SAYS %s", pose_names[g->current_po
+ 734              		.loc 1 172 13 is_stmt 1 view .LVU204
+ 735              		.loc 1 172 36 is_stmt 0 view .LVU205
+ 736 0018 FFF7FEFF 		bl	UTIL_LCD_GetFont
+ 737              	.LVL70:
+ 738              		.loc 1 172 88 discriminator 1 view .LVU206
+ 739 001c 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 740              		.loc 1 172 36 discriminator 1 view .LVU207
+ 741 001e C188     		ldrh	r1, [r0, #6]
+ 742              		.loc 1 172 13 discriminator 1 view .LVU208
+ 743 0020 57F82330 		ldr	r3, [r7, r3, lsl #2]
+ 744 0024 0093     		str	r3, [sp]
+ 745 0026 1C4B     		ldr	r3, .L65+4
+ 746              	.L63:
+ 747 0028 0122     		movs	r2, #1
+ 748 002a 0020     		movs	r0, #0
+ 749 002c 7143     		muls	r1, r6, r1
+ 750 002e FFF7FEFF 		bl	UTIL_LCDEx_PrintfAt
+ 751              	.LVL71:
+ 752              	.L61:
+ 753              	.LBE20:
+ 173:Src/simon_says_game.c ****         }
+ 174:Src/simon_says_game.c ****         else
+ 175:Src/simon_says_game.c ****         {
+ 176:Src/simon_says_game.c ****             UTIL_LCDEx_PrintfAt(0, LINE(20), CENTER_MODE, "%s", pose_names[g->current_pose]);
+ 177:Src/simon_says_game.c ****         }
+ 178:Src/simon_says_game.c ****     }
+ 179:Src/simon_says_game.c ****     else if (g->result == 1)
+ 180:Src/simon_says_game.c ****     {
+ 181:Src/simon_says_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(20), CENTER_MODE, "Correct!");
+ 182:Src/simon_says_game.c ****     }
+ 183:Src/simon_says_game.c ****     else if (g->result == 2)
+ 184:Src/simon_says_game.c ****     {
+ 185:Src/simon_says_game.c ****         UTIL_LCDEx_PrintfAt(0, LINE(20), CENTER_MODE, "Wrong!");
+ 186:Src/simon_says_game.c ****     }
+ 187:Src/simon_says_game.c ****     UTIL_LCDEx_PrintfAt(0, LINE(22), CENTER_MODE, "Score: %lu", g->score);
+ 754              		.loc 1 187 5 is_stmt 1 view .LVU209
+ 755              		.loc 1 187 28 is_stmt 0 view .LVU210
+ 756 0032 FFF7FEFF 		bl	UTIL_LCD_GetFont
+ 757              	.LVL72:
+ 758              		.loc 1 187 28 discriminator 1 view .LVU211
+ 759 0036 C188     		ldrh	r1, [r0, #6]
+ 760              		.loc 1 187 5 discriminator 1 view .LVU212
+ 761 0038 1620     		movs	r0, #22
+ 762 003a A368     		ldr	r3, [r4, #8]
+ 763 003c 4143     		muls	r1, r0, r1
+ 764 003e 0093     		str	r3, [sp]
+ 765 0040 0122     		movs	r2, #1
+ 766 0042 164B     		ldr	r3, .L65+8
+ 767 0044 0020     		movs	r0, #0
+ 768 0046 FFF7FEFF 		bl	UTIL_LCDEx_PrintfAt
+ 769              	.LVL73:
+ 188:Src/simon_says_game.c ****     UTIL_LCD_SetBackColor(0);
+ 770              		.loc 1 188 5 is_stmt 1 view .LVU213
+ 771 004a 0020     		movs	r0, #0
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 20
+
+
+ 189:Src/simon_says_game.c **** }
+ 772              		.loc 1 189 1 is_stmt 0 view .LVU214
+ 773 004c 03B0     		add	sp, sp, #12
+ 774              		.cfi_remember_state
+ 775              		.cfi_def_cfa_offset 20
+ 776              		@ sp needed
+ 777 004e BDE8F040 		pop	{r4, r5, r6, r7, lr}
+ 778              		.cfi_restore 14
+ 779              		.cfi_restore 7
+ 780              		.cfi_restore 6
+ 781              		.cfi_restore 5
+ 782              		.cfi_restore 4
+ 783              		.cfi_def_cfa_offset 0
+ 784              	.LVL74:
+ 188:Src/simon_says_game.c ****     UTIL_LCD_SetBackColor(0);
+ 785              		.loc 1 188 5 view .LVU215
+ 786 0052 FFF7FEBF 		b	UTIL_LCD_SetBackColor
+ 787              	.LVL75:
+ 788              	.L60:
+ 789              		.cfi_restore_state
+ 790              	.LBB21:
+ 176:Src/simon_says_game.c ****         }
+ 791              		.loc 1 176 13 is_stmt 1 view .LVU216
+ 176:Src/simon_says_game.c ****         }
+ 792              		.loc 1 176 36 is_stmt 0 view .LVU217
+ 793 0056 FFF7FEFF 		bl	UTIL_LCD_GetFont
+ 794              	.LVL76:
+ 176:Src/simon_says_game.c ****         }
+ 795              		.loc 1 176 77 discriminator 1 view .LVU218
+ 796 005a 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 176:Src/simon_says_game.c ****         }
+ 797              		.loc 1 176 36 discriminator 1 view .LVU219
+ 798 005c C188     		ldrh	r1, [r0, #6]
+ 176:Src/simon_says_game.c ****         }
+ 799              		.loc 1 176 13 discriminator 1 view .LVU220
+ 800 005e 57F82330 		ldr	r3, [r7, r3, lsl #2]
+ 801 0062 0093     		str	r3, [sp]
+ 802 0064 0E4B     		ldr	r3, .L65+12
+ 803 0066 DFE7     		b	.L63
+ 804              	.L59:
+ 176:Src/simon_says_game.c ****         }
+ 805              		.loc 1 176 13 discriminator 1 view .LVU221
+ 806              	.LBE21:
+ 179:Src/simon_says_game.c ****     {
+ 807              		.loc 1 179 10 is_stmt 1 view .LVU222
+ 179:Src/simon_says_game.c ****     {
+ 808              		.loc 1 179 15 is_stmt 0 view .LVU223
+ 809 0068 E678     		ldrb	r6, [r4, #3]	@ zero_extendqisi2
+ 179:Src/simon_says_game.c ****     {
+ 810              		.loc 1 179 13 view .LVU224
+ 811 006a 012E     		cmp	r6, #1
+ 812 006c 0AD1     		bne	.L62
+ 813              	.LBB22:
+ 181:Src/simon_says_game.c ****     }
+ 814              		.loc 1 181 9 is_stmt 1 view .LVU225
+ 181:Src/simon_says_game.c ****     }
+ 815              		.loc 1 181 32 is_stmt 0 view .LVU226
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 21
+
+
+ 816 006e FFF7FEFF 		bl	UTIL_LCD_GetFont
+ 817              	.LVL77:
+ 181:Src/simon_says_game.c ****     }
+ 818              		.loc 1 181 9 discriminator 1 view .LVU227
+ 819 0072 0C4B     		ldr	r3, .L65+16
+ 181:Src/simon_says_game.c ****     }
+ 820              		.loc 1 181 32 discriminator 1 view .LVU228
+ 821 0074 C188     		ldrh	r1, [r0, #6]
+ 822              	.L64:
+ 823              	.LBE22:
+ 824              	.LBB23:
+ 185:Src/simon_says_game.c ****     }
+ 825              		.loc 1 185 9 discriminator 1 view .LVU229
+ 826 0076 1420     		movs	r0, #20
+ 827 0078 0122     		movs	r2, #1
+ 828 007a 4143     		muls	r1, r0, r1
+ 829 007c 2846     		mov	r0, r5
+ 830 007e FFF7FEFF 		bl	UTIL_LCDEx_PrintfAt
+ 831              	.LVL78:
+ 832 0082 D6E7     		b	.L61
+ 833              	.L62:
+ 834              	.LBE23:
+ 183:Src/simon_says_game.c ****     {
+ 835              		.loc 1 183 10 is_stmt 1 view .LVU230
+ 183:Src/simon_says_game.c ****     {
+ 836              		.loc 1 183 13 is_stmt 0 view .LVU231
+ 837 0084 022E     		cmp	r6, #2
+ 838 0086 D4D1     		bne	.L61
+ 839              	.LBB24:
+ 185:Src/simon_says_game.c ****     }
+ 840              		.loc 1 185 9 is_stmt 1 view .LVU232
+ 185:Src/simon_says_game.c ****     }
+ 841              		.loc 1 185 32 is_stmt 0 view .LVU233
+ 842 0088 FFF7FEFF 		bl	UTIL_LCD_GetFont
+ 843              	.LVL79:
+ 185:Src/simon_says_game.c ****     }
+ 844              		.loc 1 185 9 discriminator 1 view .LVU234
+ 845 008c 064B     		ldr	r3, .L65+20
+ 185:Src/simon_says_game.c ****     }
+ 846              		.loc 1 185 32 discriminator 1 view .LVU235
+ 847 008e C188     		ldrh	r1, [r0, #6]
+ 848 0090 F1E7     		b	.L64
+ 849              	.L66:
+ 850 0092 00BF     		.align	2
+ 851              	.L65:
+ 852 0094 00000000 		.word	pose_names
+ 853 0098 00000000 		.word	.LC2
+ 854 009c 21000000 		.word	.LC6
+ 855 00a0 0E000000 		.word	.LC3
+ 856 00a4 11000000 		.word	.LC4
+ 857 00a8 1A000000 		.word	.LC5
+ 858              	.LBE24:
+ 859              		.cfi_endproc
+ 860              	.LFE3350:
+ 862              		.section	.bss.audio_ready,"aw",%nobits
+ 865              	audio_ready:
+ 866 0000 00       		.space	1
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 22
+
+
+ 867              		.section	.bss.sd_fs,"aw",%nobits
+ 868              		.align	2
+ 871              	sd_fs:
+ 872 0000 00000000 		.space	560
+ 872      00000000 
+ 872      00000000 
+ 872      00000000 
+ 872      00000000 
+ 873              		.section	.rodata.str1.1,"aMS",%progbits,1
+ 874              	.LC7:
+ 875 0000 68616E64 		.ascii	"hands_up.wav\000"
+ 875      735F7570 
+ 875      2E776176 
+ 875      00
+ 876              	.LC8:
+ 877 000d 68616E64 		.ascii	"hands_on_head.wav\000"
+ 877      735F6F6E 
+ 877      5F686561 
+ 877      642E7761 
+ 877      7600
+ 878              	.LC9:
+ 879 001f 68616E64 		.ascii	"hands_on_hips.wav\000"
+ 879      735F6F6E 
+ 879      5F686970 
+ 879      732E7761 
+ 879      7600
+ 880              	.LC10:
+ 881 0031 6C656674 		.ascii	"left_arm_out.wav\000"
+ 881      5F61726D 
+ 881      5F6F7574 
+ 881      2E776176 
+ 881      00
+ 882              	.LC11:
+ 883 0042 72696768 		.ascii	"right_arm_out.wav\000"
+ 883      745F6172 
+ 883      6D5F6F75 
+ 883      742E7761 
+ 883      7600
+ 884              		.section	.rodata.pose_audio_files,"a"
+ 885              		.align	2
+ 888              	pose_audio_files:
+ 889 0000 00000000 		.word	.LC7
+ 890 0004 0D000000 		.word	.LC8
+ 891 0008 1F000000 		.word	.LC9
+ 892 000c 31000000 		.word	.LC10
+ 893 0010 42000000 		.word	.LC11
+ 894              		.section	.rodata.str1.1
+ 895              	.LC12:
+ 896 0054 48616E64 		.ascii	"Hands Up\000"
+ 896      73205570 
+ 896      00
+ 897              	.LC13:
+ 898 005d 48616E64 		.ascii	"Hands On Head\000"
+ 898      73204F6E 
+ 898      20486561 
+ 898      6400
+ 899              	.LC14:
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 23
+
+
+ 900 006b 48616E64 		.ascii	"Hands On Hips\000"
+ 900      73204F6E 
+ 900      20486970 
+ 900      7300
+ 901              	.LC15:
+ 902 0079 4C656674 		.ascii	"Left Arm Out\000"
+ 902      2041726D 
+ 902      204F7574 
+ 902      00
+ 903              	.LC16:
+ 904 0086 52696768 		.ascii	"Right Arm Out\000"
+ 904      74204172 
+ 904      6D204F75 
+ 904      7400
+ 905              		.section	.rodata.pose_names,"a"
+ 906              		.align	2
+ 909              	pose_names:
+ 910 0000 54000000 		.word	.LC12
+ 911 0004 5D000000 		.word	.LC13
+ 912 0008 6B000000 		.word	.LC14
+ 913 000c 79000000 		.word	.LC15
+ 914 0010 86000000 		.word	.LC16
+ 915              		.text
+ 916              	.Letext0:
+ 917              		.file 2 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 918              		.file 3 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 919              		.file 4 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 920              		.file 5 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 921              		.file 6 "../../Middlewares/lib_vision_models_pp/lib_vision_models_pp/Inc/spe_pp_output_if.h"
+ 922              		.file 7 "Inc/simon_says_game.h"
+ 923              		.file 8 "../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Inc/stm32n6xx_hal_gpio.h"
+ 924              		.file 9 "../../STM32Cube_FW_N6/Drivers/BSP/STM32N6570-DK/stm32n6570_discovery_audio.h"
+ 925              		.file 10 "../../STM32Cube_FW_N6/Middlewares/Third_Party_fs/source/ff.h"
+ 926              		.file 11 "../../STM32Cube_FW_N6/Utilities/lcd/../Fonts/fonts.h"
+ 927              		.file 12 "../../STM32Cube_FW_N6/Utilities/lcd/stm32_lcd.h"
+ 928              		.file 13 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltoo
+ 929              		.file 14 "../../STM32Cube_FW_N6/Drivers/BSP/STM32N6570-DK/stm32n6570_discovery_sd.h"
+ 930              		.file 15 "../../STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Inc/stm32n6xx_hal.h"
+ 931              		.file 16 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltoo
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 24
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 simon_says_game.c
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:26     .text.PlayWav:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:31     .text.PlayWav:00000000 PlayWav
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:231    .text.PlayWav:000000a8 $d
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:865    .bss.audio_ready:00000000 audio_ready
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:243    .text.NewInstruction:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:248    .text.NewInstruction:00000000 NewInstruction
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:340    .text.NewInstruction:00000058 $d
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:871    .bss.sd_fs:00000000 sd_fs
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:888    .rodata.pose_audio_files:00000000 pose_audio_files
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:349    .text.SimonSays_Init:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:355    .text.SimonSays_Init:00000000 SimonSays_Init
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:376    .text.SimonSays_Update:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:382    .text.SimonSays_Update:00000000 SimonSays_Update
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:446    .text.SimonSays_Update:0000003c $d
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:676    .text.SimonSays_Update:0000017c $d
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:693    .text.SimonSays_Render:00000000 $t
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:699    .text.SimonSays_Render:00000000 SimonSays_Render
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:852    .text.SimonSays_Render:00000094 $d
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:909    .rodata.pose_names:00000000 pose_names
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:866    .bss.audio_ready:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:868    .bss.sd_fs:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:885    .rodata.pose_audio_files:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:906    .rodata.pose_names:00000000 $d
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:451    .text.SimonSays_Update:00000041 $d
+C:\Users\Antonio\AppData\Local\Temp\ccDctive.s:451    .text.SimonSays_Update:00000042 $t
+                           .group:00000000 wm4.0.edffc6ad2f5eb1e671bbefdf8c481eb3
+                           .group:00000000 wm4._newlib_version.h.4.411db44ea2338a62eca2f0777f81481b
+                           .group:00000000 wm4.features.h.33.e0c9f337c65cb9f22ed5f23d082bc78b
+                           .group:00000000 wm4._default_types.h.15.247e5cd201eca3442cbf5404108c4935
+                           .group:00000000 wm4._intsup.h.10.48bafbb683905c4daa4565a85aeeb264
+                           .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+                           .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+                           .group:00000000 wm4.cmsis_gcc.h.26.7a5fd1a99dbedde687044a4433ab3e15
+                           .group:00000000 wm4.newlib.h.7.a37ffbe9e5aff74303f4e60b1cc1c01b
+                           .group:00000000 wm4.ieeefp.h.77.bd5feb87d9990dd328793ced294f6a87
+                           .group:00000000 wm4.config.h.224.10ee1ad185d877c6e334e6581faab44d
+                           .group:00000000 wm4._ansi.h.31.de524f58584151836e90d8620a16f8e8
+                           .group:00000000 wm4.stddef.h.39.0dc9006b34572d4d9cae4c8b422c4971
+                           .group:00000000 wm4.cdefs.h.49.70fc7af612f78ddcace70fdd90b5623b
+                           .group:00000000 wm4._types.h.20.dd0d04dca3800a0d2a6129b87f3adbb2
+                           .group:00000000 wm4.stddef.h.158.6f8e08a347b1cff664332fa350bfceb3
+                           .group:00000000 wm4._types.h.127.3bdfe3ff8ea2d0985b03d9cbe93480e3
+                           .group:00000000 wm4.reent.h.18.25503cdc8b7e55dd0d6ea7b3e5af7a03
+                           .group:00000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
+                           .group:00000000 wm4.reent.h.78.6b87466b04591b1f1cb88c14fdf2ba9e
+                           .group:00000000 wm4.string.h.15.dab3980bf35408a4c507182805e2de3a
+                           .group:00000000 wm4.stddef.h.158.eec8bf00b5213f43d095cb984c5f22e3
+                           .group:00000000 wm4.string.h.177.59a005921fa78485abc80a0267de5752
+                           .group:00000000 wm4.math.h.13.47cfc34cae8a1153323939c4d32cf7c2
+                           .group:00000000 wm4.float.h.29.0e9d9baf95ec39f9555dc80c6e28186b
+                           .group:00000000 wm4.syslimits.h.34.de5cbd310098bc5895998b6bde577ed2
+                           .group:00000000 wm4.limits.h.9.70fb0ada6f71b16202a66baaa6d8ea70
+                           .group:00000000 wm4.limits.h.60.56a1ae353e2028a24298ec6463b8b593
+                           .group:00000000 wm4.arm_math_types.h.94.a6c8422e2657ad4cd95bd8be69ba02aa
+                           .group:00000000 wm4.stdbool.h.29.c08aa3eec75cf5b9b5003883f43253f0
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 25
+
+
+                           .group:00000000 wm4.arm_mve.h.38.47b22bbd301ce82bc6dafd1a387f65a3
+                           .group:00000000 wm4.arm_math_types.h.559.cab78f278b684a3ea2271947c7aea680
+                           .group:00000000 wm4.arm_math_memory.h.28.fe8a81c6a9ac13061a5f748732089249
+                           .group:00000000 wm4.none.h.185.db055cca83e83f96d8d0bb450fbdf4bb
+                           .group:00000000 wm4.utils.h.27.57524573fe37b04009eecf3582a4c591
+                           .group:00000000 wm4.fast_math_functions.h.28.8eb7477260c1d6b62047c49a01c4cbaa
+                           .group:00000000 wm4.controller_functions.h.28.7bed7d7a726df2f65b8a3d89cff01247
+                           .group:00000000 wm4.filtering_functions.h.46.6cf1424fb1f86d5f9958d208b83340a1
+                           .group:00000000 wm4.spe_pp_output_if.h.21.7aed4d6031ba2f64b47a2eb3fe8061d9
+                           .group:00000000 wm4.app_config.h.20.72b03abb6b502d5424fa5de0e4a42760
+                           .group:00000000 wm4.gesture_detection.h.10.d7513471c97a364c41f0081fc9baf7b8
+                           .group:00000000 wm4.utils.h.20.a122c519940ea111a25b4d1f17b5f8d3
+                           .group:00000000 wm4.stm32n6xx_hal_conf.h.21.e108a0e1f8e9094b9ec5c3fbf543a831
+                           .group:00000000 wm4.arm_cmse.h.103.a0d15a79c4c9a67da8d5831704d7248e
+                           .group:00000000 wm4.stm32n6xx.h.34.80585dd08aa426c932f6311fdb7386da
+                           .group:00000000 wm4.stm32n657xx.h.26.acd272cb67318cc1a4791ce2f0720ca6
+                           .group:00000000 wm4.cmsis_version.h.32.0ac195c83bb4537824e6ad1c47474b79
+                           .group:00000000 wm4.core_cm55.h.68.832d5cf835639cc0d28219c3d2867330
+                           .group:00000000 wm4.core_cm55.h.196.52e437a270752da561676e507b35baeb
+                           .group:00000000 wm4.mpu_armv8.h.32.9d72426c8e2b47753456dcb84802c5b3
+                           .group:00000000 wm4.pmu_armv8.h.32.eaa95f88a71b29390b135fd81c071b6b
+                           .group:00000000 wm4.core_cm55.h.4411.860dad8650880893dd57b815844f7186
+                           .group:00000000 wm4.cachel1_armv7.h.32.abd77761a989e008b0c60891114a33c7
+                           .group:00000000 wm4.stm32n657xx.h.575.1c2a5e6bedffc6f9083dcc857bc6d09d
+                           .group:00000000 wm4.stm32n6xx.h.114.5cf793d8af485e14f110e3e24bde1aa5
+                           .group:00000000 wm4.stm32_hal_legacy.h.22.87fb12bf5a1a1e00fc134f22bc9aa8c4
+                           .group:00000000 wm4.stm32n6xx_hal_def.h.63.3a8f01490e8852464e9fcb69092e9c75
+                           .group:00000000 wm4.stm32n6xx_ll_bus.h.38.2366a295ee4cdb04833997d3787fcd2d
+                           .group:00000000 wm4.stm32n6xx_ll_rcc.h.21.002e22a16fd7f67dde6dce41e8ba9620
+                           .group:00000000 wm4.stm32n6xx_hal_rcc.h.194.1cb1283e40f9bebcd3fba2a9a961838e
+                           .group:00000000 wm4.stm32n6xx_hal_rcc_ex.h.21.79aa32178dfef625fbd20d362449acfa
+                           .group:00000000 wm4.stm32n6xx_hal_rcc.h.4359.3f0b7ad33826d95438602c9aebc08af9
+                           .group:00000000 wm4.stm32n6xx_hal_gpio.h.21.89d54af663b98eb8fc098192053f7eeb
+                           .group:00000000 wm4.stm32n6xx_hal_gpio_ex.h.22.4acb2e3511a98bb48b81cfc8e09fd59e
+                           .group:00000000 wm4.stm32n6xx_hal_rif.h.21.424d0bafb874a777dee3742a22e13037
+                           .group:00000000 wm4.stm32n6xx_hal_dma.h.21.61e48c5c2e8d25d22177834b232fe45c
+                           .group:00000000 wm4.stm32n6xx_hal_dma_ex.h.21.66e597beb090a165329d6ccf665e41bc
+                           .group:00000000 wm4.stm32n6xx_hal_dma.h.1020.87e2180c009560b617c1f8208140c950
+                           .group:00000000 wm4.stm32n6xx_hal_cortex.h.21.f493623cc58f9454ab4eae41e395c5cc
+                           .group:00000000 wm4.stm32n6xx_hal_bsec.h.21.61b309e67dd810e28897a01b1b21a97f
+                           .group:00000000 wm4.stm32n6xx_hal_dcmipp.h.21.f538bfd785c6469670251ac9bc7af55d
+                           .group:00000000 wm4.stm32n6xx_hal_dma2d.h.21.75c8d46cdbb72970123b3f34ae2043d7
+                           .group:00000000 wm4.stm32n6xx_hal_exti.h.21.fda87e715ea6b98239ec30171d1df594
+                           .group:00000000 wm4.stm32n6xx_hal_i2c.h.21.3f483626ff64c5bf027265bb2e1d1331
+                           .group:00000000 wm4.stm32n6xx_hal_i2c_ex.h.21.79e9196c22282cdaf6b4047893638c45
+                           .group:00000000 wm4.stm32n6xx_hal_i2c.h.741.1084702632703acc669e4282b3043372
+                           .group:00000000 wm4.stm32n6xx_hal_ltdc.h.21.ae1eb09930e7e550e48e418ac5849e4d
+                           .group:00000000 wm4.stm32n6xx_hal_ltdc.h.1002.b13ede7fc94ed5ad1c6768a157d2149a
+                           .group:00000000 wm4.stm32n6xx_hal_mdf.h.21.6eb130451a4e0db5b8befb63f326c92c
+                           .group:00000000 wm4.stm32n6xx_hal_pwr.h.21.cdb73e4869c3fed3fc84f901ec0e5f0a
+                           .group:00000000 wm4.stm32n6xx_hal_pwr_ex.h.21.1a673224a58b0c1e5fad8eeda6514208
+                           .group:00000000 wm4.stm32n6xx_hal_ramcfg.h.21.a62dfbb4d2c14e9a8c634a215e37bd3d
+                           .group:00000000 wm4.stm32n6xx_hal_sai.h.21.d6c5e096d8c222239b66c09476942511
+                           .group:00000000 wm4.stm32n6xx_hal_sai_ex.h.21.98cc4c637392fcbacd0a3564bad4bba3
+                           .group:00000000 wm4.stm32n6xx_hal_sai.h.825.fc46628357edde5e604f90f7e222e919
+                           .group:00000000 wm4.stm32n6xx_ll_sdmmc.h.21.a8483ddbe319d8ff397cbc0087d2c233
+                           .group:00000000 wm4.stm32n6xx_ll_dlyb.h.21.05e6efa24db86ad89cfd13eda5cfcd3e
+ARM GAS  C:\Users\Antonio\AppData\Local\Temp\ccDctive.s 			page 26
+
+
+                           .group:00000000 wm4.stm32n6xx_hal_sd.h.71.b83d10af03e36c820c893444588bae05
+                           .group:00000000 wm4.stm32n6xx_hal_sd_ex.h.21.0294125df092827b72ace449508982b9
+                           .group:00000000 wm4.stm32n6xx_hal_uart.h.21.230f549bfa0d5ebfd77bfb311b2aca15
+                           .group:00000000 wm4.stm32n6xx_hal_uart_ex.h.21.a0d5511e1d0703b7b5278c8f5472b96d
+                           .group:00000000 wm4.stm32n6xx_hal_xspi.h.21.e17898be2073b6b6b19faf30b4e304e9
+                           .group:00000000 wm4.stm32n6xx_hal_cacheaxi.h.21.7c3375b7903ec42376e4883320997f74
+                           .group:00000000 wm4.stm32n6xx_hal.h.81.5e59143eba07faca3e9aeaa5470826c8
+                           .group:00000000 wm4.stm32n6570_discovery_conf.h.30.2874a177ae83be5e91afce957afe3d33
+                           .group:00000000 wm4.stm32n6570_discovery_errno.h.22.80e523b09444a11ebe4b6e24ae914f0e
+                           .group:00000000 wm4.stdio.h.27.3fc80220048df77954e38daec3bb9670
+                           .group:00000000 wm4.stdarg.h.34.3a23a216c0c293b3d2ea2e89281481e6
+                           .group:00000000 wm4.stdio.h.47.dc31ec4674d7bcb103c9f08809549f45
+                           .group:00000000 wm4.stdio.h.2.4aa87247282eca6c8f36f9de33d8df1a
+                           .group:00000000 wm4.stdio.h.87.a1e20d2651f9bfb66e51bfbe849db00a
+                           .group:00000000 wm4.stm32n6570_discovery.h.60.fc3704802df68626cd6fd14123d1f0c4
+                           .group:00000000 wm4.wm8904_reg.h.21.aa21e8a4f48903356c55cead5db5a9e6
+                           .group:00000000 wm4.wm8904.h.104.3ec26d2fd25a05e7033257bbb4cc40b1
+                           .group:00000000 wm4.stm32n6570_discovery_audio.h.141.81413186bc53e057f21deb75fa34944a
+                           .group:00000000 wm4.stm32n6570_discovery_sd.h.22.d1d3f42bd831553442c8f00cf2b210c3
+                           .group:00000000 wm4.ffconf.h.5.408396d4b7b8768464107f30988c29ce
+                           .group:00000000 wm4.ff.h.47.c23b000040f2a5ffe70323215ed421c7
+                           .group:00000000 wm4.lcd.h.21.98701c105e66fef2e089854e5bc0fe32
+                           .group:00000000 wm4.stm32_lcd.h.55.1a04e503950bf34ef3721d2ebb9542fc
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.alloca.h.8.dfc0c703c47ec3e69746825b17d9e66d
+                           .group:00000000 wm4.stdlib.h.56.f4862cfbf4363a1db01842d5bdf72c18
+
+UNDEFINED SYMBOLS
+f_open
+f_read
+malloc
+f_close
+BSP_AUDIO_OUT_Play
+BSP_AUDIO_OUT_GetState
+BSP_AUDIO_OUT_Stop
+free
+BSP_AUDIO_OUT_Init
+rand
+HAL_GetTick
+BSP_SD_Init
+f_mount
+UTIL_LCD_SetBackColor
+UTIL_LCD_GetFont
+UTIL_LCDEx_PrintfAt
